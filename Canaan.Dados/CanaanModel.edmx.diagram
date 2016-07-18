@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a2bfc5faae014d089d0aec94f8c97e57" Name="Global" ZoomLevel="82" DisplayType="true" ShowGrid="false" >
+        <EntityTypeShape EntityType="CanaanModel.GrupoEmpresa" Width="2" PointX="5.25" PointY="11.375" />
+        <EntityTypeShape EntityType="CanaanModel.Filial" Width="2" PointX="8.75" PointY="11.125" />
+        <AssociationConnector Association="CanaanModel.GrupoEmpresaFilial" />
+        <EntityTypeShape EntityType="CanaanModel.Pais" Width="1.875" PointX="0.75" PointY="15.875" />
+        <EntityTypeShape EntityType="CanaanModel.Estado" Width="1.875" PointX="3.375" PointY="15.625" />
+        <AssociationConnector Association="CanaanModel.PaisEstado" />
+        <EntityTypeShape EntityType="CanaanModel.Cidade" Width="2" PointX="6" PointY="15.375" />
+        <AssociationConnector Association="CanaanModel.EstadoCidade" />
+        <AssociationConnector Association="CanaanModel.CidadeFilial" />
+        <EntityTypeShape EntityType="CanaanModel.CliFor" Width="2.75" PointX="4.625" PointY="18.875" />
+        <AssociationConnector Association="CanaanModel.CidadeCliFor" />
+        <EntityTypeShape EntityType="CanaanModel.CliForReferencia" Width="2.875" PointX="12.25" PointY="15.5" />
+        <AssociationConnector Association="CanaanModel.CliForCliForReferencia" />
+        <EntityTypeShape EntityType="CanaanModel.UsuarioGrupo" Width="2" PointX="11.625" PointY="6.5" />
+        <EntityTypeShape EntityType="CanaanModel.Usuario" Width="2" PointX="8.75" PointY="21.5" />
+        <EntityTypeShape EntityType="CanaanModel.UsuarioFilial" Width="2.125" PointX="11.5" PointY="11.625" />
+        <AssociationConnector Association="CanaanModel.UsuarioUsuarioFilial" />
+        <AssociationConnector Association="CanaanModel.FilialUsuarioFilial" />
+        <AssociationConnector Association="CanaanModel.UsuarioGrupoUsuarioFilial" />
+        <EntityTypeShape EntityType="CanaanModel.Filtro" Width="1.5" PointX="11.5" PointY="25.5" />
+        <AssociationConnector Association="CanaanModel.FK_Filtro_Usuario" />
+        <EntityTypeShape EntityType="CanaanModel.Parametro" Width="2.375" PointX="13.75" PointY="25.375" />
+        <AssociationConnector Association="CanaanModel.FK_Paramentro_Filtro" />
+        <EntityTypeShape EntityType="CanaanModel.Config" Width="1.875" PointX="13.625" PointY="19.5" />
+        <AssociationConnector Association="CanaanModel.FK_Config_Filial" />
+        <EntityTypeShape EntityType="CanaanModel.PessoaFisica" Width="1.5" PointX="2.375" PointY="26.625" />
+        <EntityTypeShape EntityType="CanaanModel.PessoaJuridica" Width="1.5" PointX="6.25" PointY="27.125" />
+        <InheritanceConnector EntityType="CanaanModel.PessoaFisica" />
+        <InheritanceConnector EntityType="CanaanModel.PessoaJuridica" />
+        <EntityTypeShape EntityType="CanaanModel.Backup" Width="1.5" PointX="14.5" PointY="11.5" />
+        <EntityTypeShape EntityType="CanaanModel.BackupItem" Width="1.5" PointX="16.75" PointY="11.375" />
+        <AssociationConnector Association="CanaanModel.FK_Backup_Usuario" />
+        <AssociationConnector Association="CanaanModel.FK_BackupItem_Backup" />
+        <AssociationConnector Association="CanaanModel.FK_Backup_Filial" />
+        <EntityTypeShape EntityType="CanaanModel.EnvioImagem" Width="1.5" PointX="3" PointY="1.25" />
+        <EntityTypeShape EntityType="CanaanModel.EnvioPedido" Width="1.5" PointX="0.75" PointY="1" />
+        <AssociationConnector Association="CanaanModel.FK_EnvioImagem_EnvioPedido" />
+        </Diagram>
+      <Diagram DiagramId="d73f1821c95f4ab095d51b2543d7d911" Name="Views" ZoomLevel="67" >
+        </Diagram>
+      <Diagram DiagramId="6d821c944bc741cd81e96cc310a354bc" Name="Marketing" ZoomLevel="111" >
+        <EntityTypeShape EntityType="CanaanModel.TelemarketingStatus" Width="2" PointX="0.5" PointY="8.5" FillColor="Firebrick" />
+        <EntityTypeShape EntityType="CanaanModel.Cupom" Width="1.5" PointX="3" PointY="6.625" FillColor="Firebrick" />
+        <AssociationConnector Association="CanaanModel.FK_Cupom_TelemarketingStatus" />
+        <EntityTypeShape EntityType="CanaanModel.AgendamentoMov" Width="1.5" PointX="10.5" PointY="8.125" FillColor="Firebrick" />
+        <EntityTypeShape EntityType="CanaanModel.TelemarketingAgenda" Width="2.375" PointX="5.25" PointY="11.375" FillColor="Firebrick" />
+        <AssociationConnector Association="CanaanModel.FK_TelemarketingAgenda_Cupom" />
+        <EntityTypeShape EntityType="CanaanModel.TelemarketingMov" Width="2.125" PointX="5.75" PointY="6.875" FillColor="Firebrick" />
+        <AssociationConnector Association="CanaanModel.FK_TelemarketingMov_Cupom" />
+        <AssociationConnector Association="CanaanModel.FK_TelemarketingMov_TelemarketingStatus" />
+        <EntityTypeShape EntityType="CanaanModel.Agenda" Width="1.5" PointX="6" PointY="0.75" FillColor="Firebrick" />
+        <EntityTypeShape EntityType="CanaanModel.Parceria" Width="1.5" PointX="0.75" PointY="3.25" FillColor="Firebrick" />
+        <AssociationConnector Association="CanaanModel.FK_ParceriaCupom" />
+        <EntityTypeShape EntityType="CanaanModel.Convenio" Width="1.5" PointX="1.5" PointY="13.5" FillColor="Firebrick" />
+        <AssociationConnector Association="CanaanModel.ConvenioParceria" />
+        <EntityTypeShape EntityType="CanaanModel.Agendamento" Width="1.5" PointX="8.5" PointY="7.5" FillColor="Firebrick" />
+        <EntityTypeShape EntityType="CanaanModel.Carta" Width="1.5" PointX="6" PointY="15.375" FillColor="Firebrick" />
+        <AssociationConnector Association="CanaanModel.FK_AgendaAgendamento" />
+        <AssociationConnector Association="CanaanModel.FK_Agendamento_Carta" />
+        <AssociationConnector Association="CanaanModel.FK_AgendamentoAgendamentoMov" />
+        <AssociationConnector Association="CanaanModel.FK_CupomAgendamento" />
+        <EntityTypeShape EntityType="CanaanModel.CupomStatus" Width="1.5" PointX="8.375" PointY="0.875" FillColor="Firebrick" />
+        <AssociationConnector Association="CanaanModel.FK_Cupom_CupomStatus" />
+        <EntityTypeShape EntityType="CanaanModel.AgendamentoStatus" Width="1.5" PointX="8.375" PointY="3.875" FillColor="Firebrick" />
+        <AssociationConnector Association="CanaanModel.FK_Agendamento_AgendamentoStatus" />
+        <AssociationConnector Association="CanaanModel.FK_AgendamentoMov_AgendamentoStatus" />
+      </Diagram>
+      <Diagram DiagramId="d06e7b8fe96349e6bd4ea40ffa11d9f8" Name="Pedido" ZoomLevel="92" >
+        <EntityTypeShape EntityType="CanaanModel.Tabela" Width="1.5" PointX="12.625" PointY="12.75" FillColor="255, 128, 0" />
+        <EntityTypeShape EntityType="CanaanModel.Produto" Width="1.5" PointX="14.875" PointY="13.75" FillColor="255, 128, 0" />
+        <AssociationConnector Association="CanaanModel.TabelaProduto" />
+        <EntityTypeShape EntityType="CanaanModel.VendaItem" Width="1.5" PointX="16.125" PointY="6.375" FillColor="255, 128, 0" />
+        <AssociationConnector Association="CanaanModel.ProdutoVendaItem" />
+        <EntityTypeShape EntityType="CanaanModel.VendaMov" Width="1.5" PointX="25.375" PointY="17" FillColor="255, 128, 0" />
+        <EntityTypeShape EntityType="CanaanModel.ProdutoServico" Width="1.5" PointX="17.125" PointY="14.125" FillColor="255, 128, 0" />
+        <AssociationConnector Association="CanaanModel.ProdutoProdutoServico" />
+        <EntityTypeShape EntityType="CanaanModel.Venda" Width="1.5" PointX="22.75" PointY="20.625" FillColor="255, 128, 0" />
+        <AssociationConnector Association="CanaanModel.VendaVendaItem" />
+        <AssociationConnector Association="CanaanModel.VendaVendaMov" />
+        <EntityTypeShape EntityType="CanaanModel.CompraMov" Width="1.5" PointX="30.125" PointY="22.75" FillColor="255, 128, 0" />
+        <EntityTypeShape EntityType="CanaanModel.Pedido" Width="1.5" PointX="27.875" PointY="14.75" FillColor="255, 128, 0" />
+        <InheritanceConnector EntityType="CanaanModel.Venda" />
+        <AssociationConnector Association="CanaanModel.PedidoCompraMov" />
+        <EntityTypeShape EntityType="CanaanModel.CompraItem" Width="1.5" PointX="30.625" PointY="15.375" FillColor="255, 128, 0" />
+        <EntityTypeShape EntityType="CanaanModel.PedidoLancamento" Width="2" PointX="28.375" PointY="11.5" FillColor="255, 128, 0" />
+        <AssociationConnector Association="CanaanModel.PedidoPedidoLancamento" />
+        <EntityTypeShape EntityType="CanaanModel.Compra" Width="1.5" PointX="30.125" PointY="20" FillColor="255, 128, 0" />
+        <InheritanceConnector EntityType="CanaanModel.Compra" />
+        <AssociationConnector Association="CanaanModel.CompraCompraItem" />
+        <EntityTypeShape EntityType="CanaanModel.TabelaFilial" Width="1.5" PointX="14.875" PointY="11" FillColor="255, 128, 0" />
+        <AssociationConnector Association="CanaanModel.FK_TabelaFilial_Tabela" />
+        <EntityTypeShape EntityType="CanaanModel.FormaEntrada" Width="1.5" PointX="20.875" PointY="17.25" FillColor="255, 128, 0" />
+        <AssociationConnector Association="CanaanModel.FK_FormaEntradaVenda" />
+        <EntityTypeShape EntityType="CanaanModel.FormaPgto" Width="1.5" PointX="23.875" PointY="11.25" FillColor="255, 128, 0" />
+        <AssociationConnector Association="CanaanModel.FK_FormaPgtoPedido" />
+        <EntityTypeShape EntityType="CanaanModel.VendaItemOrdemServico" Width="2.75" PointX="20.5" PointY="6.625" FillColor="255, 128, 0" />
+        <AssociationConnector Association="CanaanModel.FK_VendaItemOrdemServico_VendaItem" />
+        <EntityTypeShape EntityType="CanaanModel.sysdiagrams" Width="1.5" PointX="17.375" PointY="2.125" />
+        <EntityTypeShape EntityType="CanaanModel.VendaStatus" Width="1.5" PointX="20.875" PointY="24.125" FillColor="255, 128, 0" />
+        <AssociationConnector Association="CanaanModel.FK_Pedido_Venda_VendaStatus" />
+        <AssociationConnector Association="CanaanModel.FK_VendaMov_VendaStatus" />
+        <EntityTypeShape EntityType="CanaanModel.Motivo" Width="1.5" PointX="26.75" PointY="6.5" FillColor="255, 128, 0" />
+        <EntityTypeShape EntityType="CanaanModel.MotivoDevolucao" Width="1.5" PointX="31" PointY="12" FillColor="255, 128, 0" />
+        <AssociationConnector Association="CanaanModel.FK_MotivoDevolucao_Motivo" />
+        <AssociationConnector Association="CanaanModel.FK_MotivoDevolucao_VendaMov" />
+      </Diagram>
+      <Diagram DiagramId="433c31ff1cd3451db1813b40481f0f48" Name="Financeiro" ZoomLevel="111" >
+        <EntityTypeShape EntityType="CanaanModel.RenegociacaoItem" Width="1.5" PointX="17.25" PointY="15.625" FillColor="DarkOliveGreen" />
+        <EntityTypeShape EntityType="CanaanModel.Lancamento" Width="1.5" PointX="15" PointY="15.5" FillColor="DarkOliveGreen" />
+        <AssociationConnector Association="CanaanModel.FK_RenegociacaoItem_Lancamento" />
+        <EntityTypeShape EntityType="CanaanModel.Renegociacao" Width="1.5" PointX="9.75" PointY="14.625" FillColor="DarkOliveGreen" />
+        <AssociationConnector Association="CanaanModel.FK_RenegociacaoItem_Renegociacao" />
+        <EntityTypeShape EntityType="CanaanModel.Banco" Width="1.5" PointX="0.75" PointY="11.625" FillColor="DarkOliveGreen" />
+        <EntityTypeShape EntityType="CanaanModel.RetornoLog" Width="1.5" PointX="12" PointY="19.875" FillColor="DarkOliveGreen" />
+        <EntityTypeShape EntityType="CanaanModel.Retorno" Width="1.5" PointX="9.75" PointY="19.875" FillColor="DarkOliveGreen" />
+        <AssociationConnector Association="CanaanModel.FK_RetornoLog_Retorno" />
+        <EntityTypeShape EntityType="CanaanModel.Extrato" Width="1.5" PointX="9.75" PointY="23.5" FillColor="DarkOliveGreen" />
+        <AssociationConnector Association="CanaanModel.FK_Lancamento_Extrato" />
+        <EntityTypeShape EntityType="CanaanModel.LancamentoHist" Width="1.5" PointX="17.25" PointY="19.375" FillColor="DarkOliveGreen" />
+        <AssociationConnector Association="CanaanModel.LancamentoLancamentoHist" />
+        <EntityTypeShape EntityType="CanaanModel.LancamentoMov" Width="1.5" PointX="17.25" PointY="22.5" FillColor="DarkOliveGreen" />
+        <AssociationConnector Association="CanaanModel.LancamentoLancamentoMov" />
+        <EntityTypeShape EntityType="CanaanModel.Conta" Width="1.5" PointX="5.25" PointY="10.625" FillColor="DarkOliveGreen" />
+        <EntityTypeShape EntityType="CanaanModel.ContaCaixa" Width="1.5" PointX="7.5" PointY="11" FillColor="DarkOliveGreen" />
+        <AssociationConnector Association="CanaanModel.ContaContaCaixa" />
+        <AssociationConnector Association="CanaanModel.ContaCaixaLancamento" />
+        <AssociationConnector Association="CanaanModel.FK_ContaCaixaExtrato" />
+        <AssociationConnector Association="CanaanModel.FK_Renegociacao_ContaCaixa" />
+        <AssociationConnector Association="CanaanModel.FK_Retorno_ContaCaixa" />
+        <EntityTypeShape EntityType="CanaanModel.Agencia" Width="1.5" PointX="3" PointY="11.125" FillColor="DarkOliveGreen" />
+        <AssociationConnector Association="CanaanModel.FK_AgenciaConta" />
+        <AssociationConnector Association="CanaanModel.FK_BancoAgencia" />
+      </Diagram>
+      <Diagram DiagramId="60738213ddb0499896541e8b8503f786" Name="Integracao" >
+        <EntityTypeShape EntityType="CanaanModel.Album" Width="1.5" PointX="0.75" PointY="7.125" FillColor="Teal" />
+        <EntityTypeShape EntityType="CanaanModel.OrdemServicoMov" Width="2.125" PointX="5.25" PointY="3.375" FillColor="Teal" />
+        <EntityTypeShape EntityType="CanaanModel.EfeitoDigital" Width="1.5" PointX="6" PointY="0.75" FillColor="Teal" />
+        <EntityTypeShape EntityType="CanaanModel.Moldura" Width="1.5" PointX="0.75" PointY="9.75" FillColor="Teal" />
+        <EntityTypeShape EntityType="CanaanModel.Servico" Width="1.5" PointX="0.75" PointY="12.25" FillColor="Teal" />
+        <EntityTypeShape EntityType="CanaanModel.OrdemServico" Width="1.5" PointX="3" PointY="2.375" FillColor="Teal" />
+        <AssociationConnector Association="CanaanModel.FK_AlbumOrdemServico" />
+        <AssociationConnector Association="CanaanModel.FK_MolduraOrdemServico" />
+        <AssociationConnector Association="CanaanModel.FK_OrdemServicoOrdemServicoMov" />
+        <AssociationConnector Association="CanaanModel.FK_ServicoOrdemServico" />
+        <EntityTypeShape EntityType="CanaanModel.OrdemServicoItem" Width="2.125" PointX="8.25" PointY="3.25" FillColor="Teal" />
+        <AssociationConnector Association="CanaanModel.FK_EfeitoDigitalOrdemServicoItem" />
+        <AssociationConnector Association="CanaanModel.FK_OrdemServicoOrdemServicoItem" />
+        <EntityTypeShape EntityType="CanaanModel.OrdemStatus" Width="1.5" PointX="0.75" PointY="3.75" FillColor="Teal" />
+        <AssociationConnector Association="CanaanModel.FK_OrdemServico_OrdemStatus" />
+        <AssociationConnector Association="CanaanModel.FK_OrdemServicoMov_OrdemStatus" />
+        <EntityTypeShape EntityType="CanaanModel.Envio" Width="1.5" PointX="7.625" PointY="7" />
+        <EntityTypeShape EntityType="CanaanModel.EnvioStatus" Width="1.5" PointX="5.375" PointY="7.5" />
+        <AssociationConnector Association="CanaanModel.FK_Envio_EnvioStatus" />
+        </Diagram>
+      <Diagram DiagramId="a8dce0b12a29448e97c8b6924099dc2c" Name="Atendimento" ZoomLevel="94" >
+        <EntityTypeShape EntityType="CanaanModel.Foto" Width="1.5" PointX="5.25" PointY="3.125" FillColor="Purple" />
+        <EntityTypeShape EntityType="CanaanModel.Sessao" Width="1.5" PointX="3" PointY="2.875" FillColor="Purple" />
+        <AssociationConnector Association="CanaanModel.FK_SessaoFoto" />
+        <EntityTypeShape EntityType="CanaanModel.Atendimento" Width="1.875" PointX="0.75" PointY="5.625" FillColor="Purple" />
+        <AssociationConnector Association="CanaanModel.FK_AtendimentoSessao" />
+        <EntityTypeShape EntityType="CanaanModel.Modelo" Width="1.5" PointX="3.75" PointY="17.125" FillColor="Purple" />
+        <EntityTypeShape EntityType="CanaanModel.ModeloResp" Width="1.5" PointX="6" PointY="18.375" FillColor="Purple" />
+        <AssociationConnector Association="CanaanModel.FK_ModeloModeloResp" />
+        <EntityTypeShape EntityType="CanaanModel.Indicacao" Width="1.5" PointX="3" PointY="7.5" FillColor="Purple" />
+        <AssociationConnector Association="CanaanModel.FK_Indicacao_Atendimento" />
+        <EntityTypeShape EntityType="CanaanModel.VendaFoto" Width="1.5" PointX="7.5" PointY="3.75" FillColor="Purple" />
+        <AssociationConnector Association="CanaanModel.FK_FotoVendaFoto" />
+        <EntityTypeShape EntityType="CanaanModel.AtendimentoModelo" Width="2.25" PointX="6" PointY="7.75" FillColor="Purple" />
+        <AssociationConnector Association="CanaanModel.AtendimentoAtendimentoModelo" />
+        <AssociationConnector Association="CanaanModel.FK_ModeloAtendimentoModelo" />
+        <EntityTypeShape EntityType="CanaanModel.AtendimentoHist" Width="2.125" PointX="2.875" PointY="10.75" FillColor="Purple" />
+        <AssociationConnector Association="CanaanModel.AtendimentoAtendimentoHist" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

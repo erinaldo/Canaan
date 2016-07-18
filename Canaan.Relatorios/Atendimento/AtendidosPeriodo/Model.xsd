@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Model" targetNamespace="http://tempuri.org/Model.xsd" xmlns:mstns="http://tempuri.org/Model.xsd" xmlns="http://tempuri.org/Model.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="Model" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="Model" msprop:Generator_UserDSName="Model">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Atendidos" msprop:Generator_TableClassName="AtendidosDataTable" msprop:Generator_TableVarName="tableAtendidos" msprop:Generator_RowChangedName="AtendidosRowChanged" msprop:Generator_TablePropName="Atendidos" msprop:Generator_RowDeletingName="AtendidosRowDeleting" msprop:Generator_RowChangingName="AtendidosRowChanging" msprop:Generator_RowEvHandlerName="AtendidosRowChangeEventHandler" msprop:Generator_RowDeletedName="AtendidosRowDeleted" msprop:Generator_RowClassName="AtendidosRow" msprop:Generator_UserTableName="Atendidos" msprop:Generator_RowEvArgName="AtendidosRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdAtendimento" msprop:Generator_ColumnVarNameInTable="columnIdAtendimento" msprop:Generator_ColumnPropNameInRow="IdAtendimento" msprop:Generator_ColumnPropNameInTable="IdAtendimentoColumn" msprop:Generator_UserColumnName="IdAtendimento" type="xs:int" />
+              <xs:element name="CodReduzido" msprop:Generator_ColumnVarNameInTable="columnCodReduzido" msprop:Generator_ColumnPropNameInRow="CodReduzido" msprop:Generator_ColumnPropNameInTable="CodReduzidoColumn" msprop:Generator_UserColumnName="CodReduzido" type="xs:int" minOccurs="0" />
+              <xs:element name="Cliente" msprop:Generator_ColumnVarNameInTable="columnCliente" msprop:Generator_ColumnPropNameInRow="Cliente" msprop:Generator_ColumnPropNameInTable="ClienteColumn" msprop:Generator_UserColumnName="Cliente" type="xs:string" minOccurs="0" />
+              <xs:element name="Data" msprop:Generator_ColumnVarNameInTable="columnData" msprop:Generator_ColumnPropNameInRow="Data" msprop:Generator_ColumnPropNameInTable="DataColumn" msprop:Generator_UserColumnName="Data" type="xs:string" minOccurs="0" />
+              <xs:element name="Sessao" msprop:Generator_ColumnVarNameInTable="columnSessao" msprop:Generator_ColumnPropNameInRow="Sessao" msprop:Generator_ColumnPropNameInTable="SessaoColumn" msprop:Generator_UserColumnName="Sessao" type="xs:string" minOccurs="0" />
+              <xs:element name="Logo" msprop:Generator_ColumnVarNameInTable="columnLogo" msprop:Generator_ColumnPropNameInRow="Logo" msprop:Generator_ColumnPropNameInTable="LogoColumn" msprop:Generator_UserColumnName="Logo" type="xs:base64Binary" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Atendidos" />
+      <xs:field xpath="mstns:IdAtendimento" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

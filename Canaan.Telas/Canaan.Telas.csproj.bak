@@ -1,0 +1,1778 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{91149BD4-202A-4536-B86E-323862D73A55}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Canaan.Telas</RootNamespace>
+    <AssemblyName>Canaan.Telas</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisIgnoreGeneratedCode>false</CodeAnalysisIgnoreGeneratedCode>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Canaan.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Win32Resource>
+    </Win32Resource>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Boleto.Net, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Boleto.Net.2.0.15\lib\net20\Boleto.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Data.v13.1, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v13.1.Core, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Sparkline.v13.1.Core, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.SpellChecker.v13.1.Core, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v13.1, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v13.1, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v13.1, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v13.1, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraLayout.v13.1, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraNavBar.v13.1, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraPrinting.v13.1, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraScheduler.v13.1, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraScheduler.v13.1.Core, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraScheduler.v13.1.Extensions, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraSpellChecker.v13.1, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraTreeList.v13.1, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraWizard.v13.1, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Autenticacao\Contexto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Autenticacao\Contexto.Designer.cs">
+      <DependentUpon>Contexto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Base\FormBrowser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Base\FormBrowser.Designer.cs">
+      <DependentUpon>FormBrowser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Base\FormEdita.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Base\FormEdita.Designer.cs">
+      <DependentUpon>FormEdita.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Base\FormFilterBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Base\FormFilterBase.Designer.cs">
+      <DependentUpon>FormFilterBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Base\FormFilterParam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Base\FormFilterParam.Designer.cs">
+      <DependentUpon>FormFilterParam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Base\FormLista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Base\FormLista.Designer.cs">
+      <DependentUpon>FormLista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Base\FormSelecao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Base\FormSelecao.Designer.cs">
+      <DependentUpon>FormSelecao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Base\FormVendaBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Base\FormVendaBase.Designer.cs">
+      <DependentUpon>FormVendaBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cadastros\ClienteFornecedor\Lista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cadastros\ClienteFornecedor\Lista.Designer.cs">
+      <DependentUpon>Lista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cadastros\ClienteFornecedor\Referencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cadastros\ClienteFornecedor\Referencia.Designer.cs">
+      <DependentUpon>Referencia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cadastros\ClienteFornecedor\Wizard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cadastros\ClienteFornecedor\Wizard.Designer.cs">
+      <DependentUpon>Wizard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Canaan.Telas.Resource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Canaan.Telas.Resource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Configuracoes\Geral\Filiais\Seleciona.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuracoes\Geral\Filiais\Seleciona.Designer.cs">
+      <DependentUpon>Seleciona.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configuracoes\Integracao\Servicos\Edita.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuracoes\Integracao\Servicos\Edita.Designer.cs">
+      <DependentUpon>Edita.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configuracoes\Integracao\Servicos\Lista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuracoes\Integracao\Servicos\Lista.Designer.cs">
+      <DependentUpon>Lista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configuracoes\Marketing\Agenda\Edita.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuracoes\Marketing\Agenda\Edita.Designer.cs">
+      <DependentUpon>Edita.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configuracoes\Geral\Cidade\Seleciona.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuracoes\Geral\Cidade\Seleciona.Designer.cs">
+      <DependentUpon>Seleciona.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configuracoes\Geral\Filiais\Edita.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuracoes\Geral\Filiais\Edita.Designer.cs">
+      <DependentUpon>Edita.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configuracoes\Geral\Filiais\Lista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuracoes\Geral\Filiais\Lista.Designer.cs">
+      <DependentUpon>Lista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configuracoes\Geral\GrupoEmpresa\Edita.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuracoes\Geral\GrupoEmpresa\Edita.Designer.cs">
+      <DependentUpon>Edita.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configuracoes\Geral\GrupoEmpresa\Lista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuracoes\Geral\GrupoEmpresa\Lista.Designer.cs">
+      <DependentUpon>Lista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Autenticacao\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Autenticacao\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configuracoes\Pedido\Produto\Edita.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuracoes\Pedido\Produto\Edita.Designer.cs">
+      <DependentUpon>Edita.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configuracoes\Pedido\Produto\Lista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuracoes\Pedido\Produto\Lista.Designer.cs">
+      <DependentUpon>Lista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configuracoes\Pedido\Produto\Servicos\Seleciona.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuracoes\Pedido\Produto\Servicos\Seleciona.Designer.cs">
+      <DependentUpon>Seleciona.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configuracoes\Pedido\Produto\Servicos\Servicos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuracoes\Pedido\Produto\Servicos\Servicos.Designer.cs">
+      <DependentUpon>Servicos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configuracoes\Pedido\Status\StatusServico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuracoes\Pedido\Status\StatusServico.Designer.cs">
+      <DependentUpon>StatusServico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configuracoes\Pedido\Tabela\Edita.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuracoes\Pedido\Tabela\Edita.Designer.cs">
+      <DependentUpon>Edita.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configuracoes\Pedido\Tabela\Estudio\Seleciona.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuracoes\Pedido\Tabela\Estudio\Seleciona.Designer.cs">
+      <DependentUpon>Seleciona.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configuracoes\Pedido\Tabela\Lista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuracoes\Pedido\Tabela\Lista.Designer.cs">
+      <DependentUpon>Lista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configuracoes\Seguranca\UsuarioFilial\Edita.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuracoes\Seguranca\UsuarioFilial\Edita.Designer.cs">
+      <DependentUpon>Edita.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configuracoes\Seguranca\UsuarioFilial\Lista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuracoes\Seguranca\UsuarioFilial\Lista.Designer.cs">
+      <DependentUpon>Lista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configuracoes\Seguranca\Usuario\ChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuracoes\Seguranca\Usuario\ChangePassword.Designer.cs">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configuracoes\Seguranca\Usuario\Edita.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuracoes\Seguranca\Usuario\Edita.Designer.cs">
+      <DependentUpon>Edita.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configuracoes\Seguranca\Usuario\Lista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuracoes\Seguranca\Usuario\Lista.Designer.cs">
+      <DependentUpon>Lista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configuracoes\Marketing\Convenio\Edita.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuracoes\Marketing\Convenio\Edita.Designer.cs">
+      <DependentUpon>Edita.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configuracoes\Marketing\Convenio\Lista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuracoes\Marketing\Convenio\Lista.Designer.cs">
+      <DependentUpon>Lista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configuracoes\Marketing\Convenio\Tipo\Seleciona.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuracoes\Marketing\Convenio\Tipo\Seleciona.Designer.cs">
+      <DependentUpon>Seleciona.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Financeiro\Agencia\Edita.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Financeiro\Agencia\Edita.Designer.cs">
+      <DependentUpon>Edita.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Financeiro\Agencia\Lista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Financeiro\Agencia\Lista.Designer.cs">
+      <DependentUpon>Lista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Financeiro\Agencia\Seleciona.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Financeiro\Agencia\Seleciona.Designer.cs">
+      <DependentUpon>Seleciona.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Financeiro\Banco\Edita.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Financeiro\Banco\Edita.Designer.cs">
+      <DependentUpon>Edita.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Financeiro\Banco\Lista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Financeiro\Banco\Lista.Designer.cs">
+      <DependentUpon>Lista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Financeiro\ContaCaixa\Edita.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Financeiro\ContaCaixa\Edita.Designer.cs">
+      <DependentUpon>Edita.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Financeiro\ContaCaixa\Lista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Financeiro\ContaCaixa\Lista.Designer.cs">
+      <DependentUpon>Lista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Financeiro\ContaCaixa\Seleciona.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Financeiro\ContaCaixa\Seleciona.Designer.cs">
+      <DependentUpon>Seleciona.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Financeiro\Conta\Edita.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Financeiro\Conta\Edita.Designer.cs">
+      <DependentUpon>Edita.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Financeiro\Conta\Lista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Financeiro\Conta\Lista.Designer.cs">
+      <DependentUpon>Lista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Financeiro\Conta\Seleciona.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Financeiro\Conta\Seleciona.Designer.cs">
+      <DependentUpon>Seleciona.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Financeiro\Lancamento\Baixa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Financeiro\Lancamento\Baixa.Designer.cs">
+      <DependentUpon>Baixa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Financeiro\Lancamento\Edita.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Financeiro\Lancamento\Edita.Designer.cs">
+      <DependentUpon>Edita.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Financeiro\Lancamento\Email.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Financeiro\Lancamento\Email.Designer.cs">
+      <DependentUpon>Email.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Financeiro\Lancamento\Filtro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Financeiro\Lancamento\Filtro.Designer.cs">
+      <DependentUpon>Filtro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Financeiro\Lancamento\Lista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Financeiro\Lancamento\Lista.Designer.cs">
+      <DependentUpon>Lista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Financeiro\Lancamento\RenegociacaoEdita.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Financeiro\Lancamento\RenegociacaoEdita.Designer.cs">
+      <DependentUpon>RenegociacaoEdita.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Financeiro\Retorno\Edita.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Financeiro\Retorno\Edita.Designer.cs">
+      <DependentUpon>Edita.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Financeiro\Retorno\Lista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Financeiro\Retorno\Lista.Designer.cs">
+      <DependentUpon>Lista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Financeiro\Retorno\Log.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Financeiro\Retorno\Log.Designer.cs">
+      <DependentUpon>Log.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Marketing\Cupom\Edita.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Marketing\Cupom\Edita.Designer.cs">
+      <DependentUpon>Edita.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Marketing\Cupom\Lista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Marketing\Cupom\Lista.Designer.cs">
+      <DependentUpon>Lista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Marketing\Cupom\Parceria\Seleciona.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Marketing\Cupom\Parceria\Seleciona.Designer.cs">
+      <DependentUpon>Seleciona.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Marketing\Parceria\Convenio\Seleciona.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Marketing\Parceria\Convenio\Seleciona.Designer.cs">
+      <DependentUpon>Seleciona.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Marketing\Parceria\Edita.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Marketing\Parceria\Edita.Designer.cs">
+      <DependentUpon>Edita.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Marketing\Parceria\Lista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Marketing\Parceria\Lista.Designer.cs">
+      <DependentUpon>Lista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Movimentacoes\Agendamento\Agendamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Movimentacoes\Agendamento\Agendamento.Designer.cs">
+      <DependentUpon>Agendamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Movimentacoes\Agendamento\Confirmar\Confirmar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Movimentacoes\Agendamento\Confirmar\Confirmar.Designer.cs">
+      <DependentUpon>Confirmar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Movimentacoes\Agendamento\Cupons\SelecionaCupom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Movimentacoes\Agendamento\Cupons\SelecionaCupom.Designer.cs">
+      <DependentUpon>SelecionaCupom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Movimentacoes\Agendamento\CustomAppointmentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Movimentacoes\Agendamento\CustomAppointmentForm.Designer.cs">
+      <DependentUpon>CustomAppointmentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Movimentacoes\Agendamento\CustomAppointmentFormController.cs" />
+    <Compile Include="Movimentacoes\Agendamento\Faltantes\Faltantes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Movimentacoes\Agendamento\Faltantes\Faltantes.Designer.cs">
+      <DependentUpon>Faltantes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Movimentacoes\Atendimento\Clube\Lista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Movimentacoes\Atendimento\Clube\Lista.Designer.cs">
+      <DependentUpon>Lista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Movimentacoes\Atendimento\Edita.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Movimentacoes\Atendimento\Edita.Designer.cs">
+      <DependentUpon>Edita.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Movimentacoes\Atendimento\Lista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Movimentacoes\Atendimento\Lista.Designer.cs">
+      <DependentUpon>Lista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Movimentacoes\Atendimento\Modelos\Edita.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Movimentacoes\Atendimento\Modelos\Edita.Designer.cs">
+      <DependentUpon>Edita.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Movimentacoes\Atendimento\Modelos\Responsavel\Edita.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Movimentacoes\Atendimento\Modelos\Responsavel\Edita.Designer.cs">
+      <DependentUpon>Edita.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Movimentacoes\Atendimento\Modelos\Responsavel\Tipo\Seleciona.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Movimentacoes\Atendimento\Modelos\Responsavel\Tipo\Seleciona.Designer.cs">
+      <DependentUpon>Seleciona.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Movimentacoes\ConsultaOnline\ConsultaOnline.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Movimentacoes\ConsultaOnline\ConsultaOnline.Designer.cs">
+      <DependentUpon>ConsultaOnline.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Movimentacoes\Consulta\Detalhes\Detalhes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Movimentacoes\Consulta\Detalhes\Detalhes.Designer.cs">
+      <DependentUpon>Detalhes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Movimentacoes\Consulta\Filtro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Movimentacoes\Consulta\Filtro.Designer.cs">
+      <DependentUpon>Filtro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Movimentacoes\Entrega\EntregaPacote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Movimentacoes\Entrega\EntregaPacote.Designer.cs">
+      <DependentUpon>EntregaPacote.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Movimentacoes\PremiosOnline\Consulta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Movimentacoes\PremiosOnline\Consulta.Designer.cs">
+      <DependentUpon>Consulta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Movimentacoes\Sessao\Edita.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Movimentacoes\Sessao\Edita.Designer.cs">
+      <DependentUpon>Edita.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Movimentacoes\Sessao\Lista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Movimentacoes\Sessao\Lista.Designer.cs">
+      <DependentUpon>Lista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Movimentacoes\Sessao\Telas\FullViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Movimentacoes\Sessao\Telas\FullViewer.Designer.cs">
+      <DependentUpon>FullViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Movimentacoes\Sessao\Telas\Info.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Movimentacoes\Sessao\Telas\Info.Designer.cs">
+      <DependentUpon>Info.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Movimentacoes\Sessao\Telas\Imagem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Movimentacoes\Sessao\Telas\Imagem.Designer.cs">
+      <DependentUpon>Imagem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Movimentacoes\Venda\Busca\Lista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Movimentacoes\Venda\Busca\Lista.Designer.cs">
+      <DependentUpon>Lista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Movimentacoes\Venda\Documentacao\Caderno\SelecionaData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Movimentacoes\Venda\Documentacao\Caderno\SelecionaData.Designer.cs">
+      <DependentUpon>SelecionaData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Movimentacoes\Venda\Documentacao\Documentacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Movimentacoes\Venda\Documentacao\Documentacao.Designer.cs">
+      <DependentUpon>Documentacao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Movimentacoes\Venda\Documentacao\Entrada\Entrada.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Movimentacoes\Venda\Documentacao\Entrada\Entrada.Designer.cs">
+      <DependentUpon>Entrada.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Movimentacoes\Venda\Documentacao\Entrada\ModelEntrada.cs" />
+    <Compile Include="Movimentacoes\Venda\Documentacao\Tipo\Tipo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Movimentacoes\Venda\Documentacao\Tipo\Tipo.Designer.cs">
+      <DependentUpon>Tipo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Movimentacoes\Venda\Documentacao\Venda\ModelVenda.cs" />
+    <Compile Include="Movimentacoes\Venda\Documentacao\Venda\Venda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Movimentacoes\Venda\Documentacao\Venda\Venda.Designer.cs">
+      <DependentUpon>Venda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Movimentacoes\Venda\Envelope\Colecoes\BuscaColecao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Movimentacoes\Venda\Envelope\Colecoes\BuscaColecao.Designer.cs">
+      <DependentUpon>BuscaColecao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Movimentacoes\Venda\Envelope\Colecoes\Edita.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Movimentacoes\Venda\Envelope\Colecoes\Edita.Designer.cs">
+      <DependentUpon>Edita.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Movimentacoes\Venda\Envelope\Item\Efeito\Efeito.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Movimentacoes\Venda\Envelope\Item\Efeito\Efeito.Designer.cs">
+      <DependentUpon>Efeito.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Movimentacoes\Venda\Envelope\Item\ItemEnvelope.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Movimentacoes\Venda\Envelope\Item\ItemEnvelope.Designer.cs">
+      <DependentUpon>ItemEnvelope.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Movimentacoes\Venda\Envelope\Lista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Movimentacoes\Venda\Envelope\Lista.Designer.cs">
+      <DependentUpon>Lista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Movimentacoes\Venda\Envelope\Servico\BuscaServicos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Movimentacoes\Venda\Envelope\Servico\BuscaServicos.Designer.cs">
+      <DependentUpon>BuscaServicos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Movimentacoes\Venda\Financeiro\LancFinanceiro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Movimentacoes\Venda\Financeiro\LancFinanceiro.Designer.cs">
+      <DependentUpon>LancFinanceiro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Movimentacoes\Venda\Imagem\Imagem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Movimentacoes\Venda\Imagem\Imagem.Designer.cs">
+      <DependentUpon>Imagem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Movimentacoes\Venda\Info\Info.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Movimentacoes\Venda\Info\Info.Designer.cs">
+      <DependentUpon>Info.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Movimentacoes\Venda\PagSeguro\Confirmacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Movimentacoes\Venda\PagSeguro\Confirmacao.Designer.cs">
+      <DependentUpon>Confirmacao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Movimentacoes\Venda\Principal\Principal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Movimentacoes\Venda\Principal\Principal.Designer.cs">
+      <DependentUpon>Principal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Annotations.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Configuracoes\Seguranca\UsuarioGrupo\Edita.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuracoes\Seguranca\UsuarioGrupo\Edita.Designer.cs">
+      <DependentUpon>Edita.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configuracoes\Seguranca\UsuarioGrupo\Lista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuracoes\Seguranca\UsuarioGrupo\Lista.Designer.cs">
+      <DependentUpon>Lista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Rotinas\Backup\Backup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Rotinas\Backup\Backup.Designer.cs">
+      <DependentUpon>Backup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Rotinas\Backup\Restaurar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Rotinas\Backup\Restaurar.Designer.cs">
+      <DependentUpon>Restaurar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Rotinas\Comercial\ListCadernoSync.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Rotinas\Comercial\ListCadernoSync.Designer.cs">
+      <DependentUpon>ListCadernoSync.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Rotinas\Comercial\ModelSync.cs" />
+    <Compile Include="Rotinas\Desbloqueio\Desbloqueio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Rotinas\Desbloqueio\Desbloqueio.Designer.cs">
+      <DependentUpon>Desbloqueio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Rotinas\Liberacao\Conferencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Rotinas\Liberacao\Conferencia.Designer.cs">
+      <DependentUpon>Conferencia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Rotinas\Liberacao\Detalhes\DetalhesLiberacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Rotinas\Liberacao\Detalhes\DetalhesLiberacao.Designer.cs">
+      <DependentUpon>DetalhesLiberacao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Rotinas\Liberacao\Devolucao\MotivoDevolucao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Rotinas\Liberacao\Devolucao\MotivoDevolucao.Designer.cs">
+      <DependentUpon>MotivoDevolucao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Rotinas\Liberacao\Liberacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Rotinas\Liberacao\Liberacao.Designer.cs">
+      <DependentUpon>Liberacao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Rotinas\Liberacao\LiberacaoBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Rotinas\Liberacao\LiberacaoBase.Designer.cs">
+      <DependentUpon>LiberacaoBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Rotinas\Liberacao\Programadas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Rotinas\Liberacao\Programadas.Designer.cs">
+      <DependentUpon>Programadas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Rotinas\Marketing\DistribuicaoCupons\Parametros\DadosDistribuicao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Rotinas\Marketing\DistribuicaoCupons\Parametros\DadosDistribuicao.Designer.cs">
+      <DependentUpon>DadosDistribuicao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Rotinas\Marketing\DistribuicaoCupons\Redistribuicao\EnumTipoReditribuicao.cs" />
+    <Compile Include="Rotinas\Marketing\DistribuicaoCupons\Redistribuicao\Redistribuir.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Rotinas\Marketing\DistribuicaoCupons\Redistribuicao\Redistribuir.Designer.cs">
+      <DependentUpon>Redistribuir.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Rotinas\Marketing\DistribuicaoCupons\DistribuicaoCupons.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Rotinas\Marketing\DistribuicaoCupons\DistribuicaoCupons.Designer.cs">
+      <DependentUpon>DistribuicaoCupons.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Rotinas\Marketing\DistribuicaoFaltantes\DistribuicaoFaltante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Rotinas\Marketing\DistribuicaoFaltantes\DistribuicaoFaltante.Designer.cs">
+      <DependentUpon>DistribuicaoFaltante.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Rotinas\Marketing\DistribuicaoFaltantes\Parametros\DadosDistribuicao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Rotinas\Marketing\DistribuicaoFaltantes\Parametros\DadosDistribuicao.Designer.cs">
+      <DependentUpon>DadosDistribuicao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Rotinas\Marketing\DistribuicaoFaltantes\Redistribuicao\EnumTipoReditribuicao.cs" />
+    <Compile Include="Rotinas\Marketing\DistribuicaoFaltantes\Redistribuicao\Redistribuir.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Rotinas\Marketing\DistribuicaoFaltantes\Redistribuicao\Redistribuir.Designer.cs">
+      <DependentUpon>Redistribuir.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Rotinas\Marketing\Telemarketing\CupomView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Rotinas\Marketing\Telemarketing\CupomView.Designer.cs">
+      <DependentUpon>CupomView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Rotinas\Marketing\Telemarketing\Historico\HistoricoCupom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Rotinas\Marketing\Telemarketing\Historico\HistoricoCupom.Designer.cs">
+      <DependentUpon>HistoricoCupom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Rotinas\Marketing\Telemarketing\Lembrete\Edita.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Rotinas\Marketing\Telemarketing\Lembrete\Edita.Designer.cs">
+      <DependentUpon>Edita.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Rotinas\Marketing\Telemarketing\Lembrete\Lista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Rotinas\Marketing\Telemarketing\Lembrete\Lista.Designer.cs">
+      <DependentUpon>Lista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Rotinas\Marketing\Telemarketing\Lista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Rotinas\Marketing\Telemarketing\Lista.Designer.cs">
+      <DependentUpon>Lista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Suporte\CorrigeCupons\Formulario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Suporte\CorrigeCupons\Formulario.Designer.cs">
+      <DependentUpon>Formulario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Suporte\CorrigeCupons\Model.cs" />
+    <Compile Include="Suporte\DevolveVenda\Formulario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Suporte\DevolveVenda\Formulario.Designer.cs">
+      <DependentUpon>Formulario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Suporte\DevolveVenda\Model.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Base\FormBrowser.resx">
+      <DependentUpon>FormBrowser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Financeiro\Lancamento\Filtro.resx">
+      <DependentUpon>Filtro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Financeiro\Retorno\Log.resx">
+      <DependentUpon>Log.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movimentacoes\Venda\Documentacao\Caderno\SelecionaData.resx">
+      <DependentUpon>SelecionaData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movimentacoes\Venda\Documentacao\Entrada\Entrada.resx">
+      <DependentUpon>Entrada.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movimentacoes\Venda\Documentacao\Venda\Venda.resx">
+      <DependentUpon>Venda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movimentacoes\Venda\PagSeguro\Confirmacao.resx">
+      <DependentUpon>Confirmacao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rotinas\Comercial\ListCadernoSync.resx">
+      <DependentUpon>ListCadernoSync.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Suporte\DevolveVenda\Formulario.resx">
+      <DependentUpon>Formulario.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Resources\SplashKiss.jpg" />
+    <EmbeddedResource Include="Autenticacao\Contexto.resx">
+      <DependentUpon>Contexto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Base\FormEdita.resx">
+      <DependentUpon>FormEdita.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Base\FormFilterBase.resx">
+      <DependentUpon>FormFilterBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Base\FormFilterParam.resx">
+      <DependentUpon>FormFilterParam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Base\FormLista.resx">
+      <DependentUpon>FormLista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Base\FormSelecao.resx">
+      <DependentUpon>FormSelecao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Base\FormVendaBase.resx">
+      <DependentUpon>FormVendaBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cadastros\ClienteFornecedor\Lista.resx">
+      <DependentUpon>Lista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cadastros\ClienteFornecedor\Referencia.resx">
+      <DependentUpon>Referencia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cadastros\ClienteFornecedor\Wizard.resx">
+      <DependentUpon>Wizard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Canaan.Telas.Resource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Canaan.Telas.Resource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configuracoes\Geral\Filiais\Seleciona.resx">
+      <DependentUpon>Seleciona.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configuracoes\Integracao\Servicos\Edita.resx">
+      <DependentUpon>Edita.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configuracoes\Integracao\Servicos\Lista.resx">
+      <DependentUpon>Lista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configuracoes\Marketing\Agenda\Edita.resx">
+      <DependentUpon>Edita.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configuracoes\Geral\Cidade\Seleciona.resx">
+      <DependentUpon>Seleciona.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configuracoes\Geral\Filiais\Edita.resx">
+      <DependentUpon>Edita.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configuracoes\Geral\Filiais\Lista.resx">
+      <DependentUpon>Lista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configuracoes\Geral\GrupoEmpresa\Edita.resx">
+      <DependentUpon>Edita.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configuracoes\Geral\GrupoEmpresa\Lista.resx">
+      <DependentUpon>Lista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Autenticacao\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configuracoes\Pedido\Produto\Edita.resx">
+      <DependentUpon>Edita.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configuracoes\Pedido\Produto\Lista.resx">
+      <DependentUpon>Lista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configuracoes\Pedido\Produto\Servicos\Seleciona.resx">
+      <DependentUpon>Seleciona.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configuracoes\Pedido\Produto\Servicos\Servicos.resx">
+      <DependentUpon>Servicos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configuracoes\Pedido\Status\StatusServico.resx">
+      <DependentUpon>StatusServico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configuracoes\Pedido\Tabela\Edita.resx">
+      <DependentUpon>Edita.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configuracoes\Pedido\Tabela\Estudio\Seleciona.resx">
+      <DependentUpon>Seleciona.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configuracoes\Pedido\Tabela\Lista.resx">
+      <DependentUpon>Lista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configuracoes\Seguranca\UsuarioFilial\Edita.resx">
+      <DependentUpon>Edita.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configuracoes\Seguranca\UsuarioFilial\Lista.resx">
+      <DependentUpon>Lista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configuracoes\Seguranca\UsuarioGrupo\Lista.resx">
+      <DependentUpon>Lista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configuracoes\Seguranca\Usuario\ChangePassword.resx">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configuracoes\Seguranca\Usuario\Edita.resx">
+      <DependentUpon>Edita.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configuracoes\Seguranca\Usuario\Lista.resx">
+      <DependentUpon>Lista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configuracoes\Marketing\Convenio\Edita.resx">
+      <DependentUpon>Edita.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configuracoes\Marketing\Convenio\Lista.resx">
+      <DependentUpon>Lista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configuracoes\Marketing\Convenio\Tipo\Seleciona.resx">
+      <DependentUpon>Seleciona.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Financeiro\Agencia\Edita.resx">
+      <DependentUpon>Edita.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Financeiro\Agencia\Lista.resx">
+      <DependentUpon>Lista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Financeiro\Agencia\Seleciona.resx">
+      <DependentUpon>Seleciona.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Financeiro\Banco\Edita.resx">
+      <DependentUpon>Edita.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Financeiro\Banco\Lista.resx">
+      <DependentUpon>Lista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Financeiro\ContaCaixa\Edita.resx">
+      <DependentUpon>Edita.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Financeiro\ContaCaixa\Lista.resx">
+      <DependentUpon>Lista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Financeiro\ContaCaixa\Seleciona.resx">
+      <DependentUpon>Seleciona.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Financeiro\Conta\Edita.resx">
+      <DependentUpon>Edita.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Financeiro\Conta\Lista.resx">
+      <DependentUpon>Lista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Financeiro\Conta\Seleciona.resx">
+      <DependentUpon>Seleciona.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Financeiro\Lancamento\Baixa.resx">
+      <DependentUpon>Baixa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Financeiro\Lancamento\Edita.resx">
+      <DependentUpon>Edita.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Financeiro\Lancamento\Email.resx">
+      <DependentUpon>Email.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Financeiro\Lancamento\Lista.resx">
+      <DependentUpon>Lista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Financeiro\Lancamento\RenegociacaoEdita.resx">
+      <DependentUpon>RenegociacaoEdita.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Financeiro\Retorno\Edita.resx">
+      <DependentUpon>Edita.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Financeiro\Retorno\Lista.resx">
+      <DependentUpon>Lista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Marketing\Cupom\Edita.resx">
+      <DependentUpon>Edita.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Marketing\Cupom\Lista.resx">
+      <DependentUpon>Lista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Marketing\Parceria\Edita.resx">
+      <DependentUpon>Edita.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Marketing\Parceria\Lista.resx">
+      <DependentUpon>Lista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movimentacoes\Agendamento\Agendamento.resx">
+      <DependentUpon>Agendamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movimentacoes\Agendamento\Confirmar\Confirmar.resx">
+      <DependentUpon>Confirmar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movimentacoes\Agendamento\Cupons\SelecionaCupom.resx">
+      <DependentUpon>SelecionaCupom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movimentacoes\Agendamento\CustomAppointmentForm.resx">
+      <DependentUpon>CustomAppointmentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movimentacoes\Agendamento\Faltantes\Faltantes.resx">
+      <DependentUpon>Faltantes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movimentacoes\Atendimento\Clube\Lista.resx">
+      <DependentUpon>Lista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movimentacoes\Atendimento\Edita.resx">
+      <DependentUpon>Edita.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movimentacoes\Atendimento\Lista.resx">
+      <DependentUpon>Lista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movimentacoes\Atendimento\Modelos\Edita.resx">
+      <DependentUpon>Edita.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movimentacoes\Atendimento\Modelos\Responsavel\Edita.resx">
+      <DependentUpon>Edita.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movimentacoes\Atendimento\Modelos\Responsavel\Tipo\Seleciona.resx">
+      <DependentUpon>Seleciona.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movimentacoes\ConsultaOnline\ConsultaOnline.resx">
+      <DependentUpon>ConsultaOnline.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movimentacoes\Consulta\Detalhes\Detalhes.resx">
+      <DependentUpon>Detalhes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movimentacoes\Consulta\Filtro.resx">
+      <DependentUpon>Filtro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movimentacoes\Entrega\EntregaPacote.resx">
+      <DependentUpon>EntregaPacote.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movimentacoes\PremiosOnline\Consulta.resx">
+      <DependentUpon>Consulta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movimentacoes\Sessao\Edita.resx">
+      <DependentUpon>Edita.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movimentacoes\Sessao\Lista.resx">
+      <DependentUpon>Lista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movimentacoes\Sessao\Telas\FullViewer.resx">
+      <DependentUpon>FullViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movimentacoes\Sessao\Telas\Info.resx">
+      <DependentUpon>Info.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movimentacoes\Sessao\Telas\Imagem.resx">
+      <DependentUpon>Imagem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movimentacoes\Venda\Busca\Lista.resx">
+      <DependentUpon>Lista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movimentacoes\Venda\Documentacao\Documentacao.resx">
+      <DependentUpon>Documentacao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movimentacoes\Venda\Documentacao\Tipo\Tipo.resx">
+      <DependentUpon>Tipo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movimentacoes\Venda\Envelope\Colecoes\BuscaColecao.resx">
+      <DependentUpon>BuscaColecao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movimentacoes\Venda\Envelope\Colecoes\Edita.resx">
+      <DependentUpon>Edita.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movimentacoes\Venda\Envelope\Item\Efeito\Efeito.resx">
+      <DependentUpon>Efeito.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movimentacoes\Venda\Envelope\Item\ItemEnvelope.resx">
+      <DependentUpon>ItemEnvelope.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movimentacoes\Venda\Envelope\Lista.resx">
+      <DependentUpon>Lista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movimentacoes\Venda\Envelope\Servico\BuscaServicos.resx">
+      <DependentUpon>BuscaServicos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movimentacoes\Venda\Financeiro\LancFinanceiro.resx">
+      <DependentUpon>LancFinanceiro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movimentacoes\Venda\Imagem\Imagem.resx">
+      <DependentUpon>Imagem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movimentacoes\Venda\Info\Info.resx">
+      <DependentUpon>Info.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movimentacoes\Venda\Principal\Principal.resx">
+      <DependentUpon>Principal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configuracoes\Seguranca\UsuarioGrupo\Edita.resx">
+      <DependentUpon>Edita.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rotinas\Backup\Backup.resx">
+      <DependentUpon>Backup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rotinas\Backup\Restaurar.resx">
+      <DependentUpon>Restaurar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rotinas\Desbloqueio\Desbloqueio.resx">
+      <DependentUpon>Desbloqueio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rotinas\Liberacao\Conferencia.resx">
+      <DependentUpon>Conferencia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rotinas\Liberacao\Detalhes\DetalhesLiberacao.resx">
+      <DependentUpon>DetalhesLiberacao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rotinas\Liberacao\Devolucao\MotivoDevolucao.resx">
+      <DependentUpon>MotivoDevolucao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rotinas\Liberacao\Liberacao.resx">
+      <DependentUpon>Liberacao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rotinas\Liberacao\LiberacaoBase.resx">
+      <DependentUpon>LiberacaoBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rotinas\Liberacao\Programadas.resx">
+      <DependentUpon>Programadas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rotinas\Marketing\DistribuicaoCupons\Parametros\DadosDistribuicao.resx">
+      <DependentUpon>DadosDistribuicao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rotinas\Marketing\DistribuicaoCupons\Redistribuicao\Redistribuir.resx">
+      <DependentUpon>Redistribuir.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rotinas\Marketing\DistribuicaoCupons\DistribuicaoCupons.resx">
+      <DependentUpon>DistribuicaoCupons.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rotinas\Marketing\DistribuicaoFaltantes\DistribuicaoFaltante.resx">
+      <DependentUpon>DistribuicaoFaltante.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rotinas\Marketing\DistribuicaoFaltantes\Parametros\DadosDistribuicao.resx">
+      <DependentUpon>DadosDistribuicao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rotinas\Marketing\DistribuicaoFaltantes\Redistribuicao\Redistribuir.resx">
+      <DependentUpon>Redistribuir.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rotinas\Marketing\Telemarketing\CupomView.resx">
+      <DependentUpon>CupomView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rotinas\Marketing\Telemarketing\Historico\HistoricoCupom.resx">
+      <DependentUpon>HistoricoCupom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rotinas\Marketing\Telemarketing\Lembrete\Edita.resx">
+      <DependentUpon>Edita.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rotinas\Marketing\Telemarketing\Lembrete\Lista.resx">
+      <DependentUpon>Lista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rotinas\Marketing\Telemarketing\Lista.resx">
+      <DependentUpon>Lista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Suporte\CorrigeCupons\Formulario.resx">
+      <DependentUpon>Formulario.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\Canaan.Dados.Agencia.datasource" />
+    <None Include="Properties\DataSources\Canaan.Dados.Agenda.datasource" />
+    <None Include="Properties\DataSources\Canaan.Dados.Agendamento.datasource" />
+    <None Include="Properties\DataSources\Canaan.Dados.AgendamentoMov.datasource" />
+    <None Include="Properties\DataSources\Canaan.Dados.Album.datasource" />
+    <None Include="Properties\DataSources\Canaan.Dados.Atendimento.datasource" />
+    <None Include="Properties\DataSources\Canaan.Dados.AtendimentoHist.datasource" />
+    <None Include="Properties\DataSources\Canaan.Dados.AtendimentoModelo.datasource" />
+    <None Include="Properties\DataSources\Canaan.Dados.Banco.datasource" />
+    <None Include="Properties\DataSources\Canaan.Dados.CanaanModelContainer.datasource" />
+    <None Include="Properties\DataSources\Canaan.Dados.Cidade.datasource" />
+    <None Include="Properties\DataSources\Canaan.Dados.CliFor.datasource" />
+    <None Include="Properties\DataSources\Canaan.Dados.CliForReferencia.datasource" />
+    <None Include="Properties\DataSources\Canaan.Dados.Compra.datasource" />
+    <None Include="Properties\DataSources\Canaan.Dados.CompraItem.datasource" />
+    <None Include="Properties\DataSources\Canaan.Dados.CompraMov.datasource" />
+    <None Include="Properties\DataSources\Canaan.Dados.Conta.datasource" />
+    <None Include="Properties\DataSources\Canaan.Dados.ContaCaixa.datasource" />
+    <None Include="Properties\DataSources\Canaan.Dados.Convenio.datasource" />
+    <None Include="Properties\DataSources\Canaan.Dados.Cupom.datasource" />
+    <None Include="Properties\DataSources\Canaan.Dados.EfeitoDigital.datasource" />
+    <None Include="Properties\DataSources\Canaan.Dados.Estado.datasource" />
+    <None Include="Properties\DataSources\Canaan.Dados.Extrato.datasource" />
+    <None Include="Properties\DataSources\Canaan.Dados.Filial.datasource" />
+    <None Include="Properties\DataSources\Canaan.Dados.FormaEntrada.datasource" />
+    <None Include="Properties\DataSources\Canaan.Dados.FormaPgto.datasource" />
+    <None Include="Properties\DataSources\Canaan.Dados.Foto.datasource" />
+    <None Include="Properties\DataSources\Canaan.Dados.GrupoEmpresa.datasource" />
+    <None Include="Properties\DataSources\Canaan.Dados.Lancamento.datasource" />
+    <None Include="Properties\DataSources\Canaan.Dados.LancamentoHist.datasource" />
+    <None Include="Properties\DataSources\Canaan.Dados.LancamentoMov.datasource" />
+    <None Include="Properties\DataSources\Canaan.Dados.Modelo.datasource" />
+    <None Include="Properties\DataSources\Canaan.Dados.ModeloResp.datasource" />
+    <None Include="Properties\DataSources\Canaan.Dados.Moldura.datasource" />
+    <None Include="Properties\DataSources\Canaan.Dados.OrdemServico.datasource" />
+    <None Include="Properties\DataSources\Canaan.Dados.OrdemServicoItem.datasource" />
+    <None Include="Properties\DataSources\Canaan.Dados.OrdemServicoMov.datasource" />
+    <None Include="Properties\DataSources\Canaan.Dados.Pais.datasource" />
+    <None Include="Properties\DataSources\Canaan.Dados.Parceria.datasource" />
+    <None Include="Properties\DataSources\Canaan.Dados.Pedido.datasource" />
+    <None Include="Properties\DataSources\Canaan.Dados.PedidoLancamento.datasource" />
+    <None Include="Properties\DataSources\Canaan.Dados.PessoaFisica.datasource" />
+    <None Include="Properties\DataSources\Canaan.Dados.PessoaJuridica.datasource" />
+    <None Include="Properties\DataSources\Canaan.Dados.Produto.datasource" />
+    <None Include="Properties\DataSources\Canaan.Dados.ProdutoServico.datasource" />
+    <None Include="Properties\DataSources\Canaan.Dados.Servico.datasource" />
+    <None Include="Properties\DataSources\Canaan.Dados.Sessao.datasource" />
+    <None Include="Properties\DataSources\Canaan.Dados.Tabela.datasource" />
+    <None Include="Properties\DataSources\Canaan.Dados.TelemarketingAgenda.datasource" />
+    <None Include="Properties\DataSources\Canaan.Dados.TelemarketingMov.datasource" />
+    <None Include="Properties\DataSources\Canaan.Dados.TelemarketingStatus.datasource" />
+    <None Include="Properties\DataSources\Canaan.Dados.Usuario.datasource" />
+    <None Include="Properties\DataSources\Canaan.Dados.UsuarioFilial.datasource" />
+    <None Include="Properties\DataSources\Canaan.Dados.UsuarioGrupo.datasource" />
+    <None Include="Properties\DataSources\Canaan.Dados.Venda.datasource" />
+    <None Include="Properties\DataSources\Canaan.Dados.VendaFoto.datasource" />
+    <None Include="Properties\DataSources\Canaan.Dados.VendaItem.datasource" />
+    <None Include="Properties\DataSources\Canaan.Dados.VendaMov.datasource" />
+    <None Include="Properties\DataSources\Canaan.Lib.Convenio.datasource" />
+    <None Include="Properties\DataSources\Canaan.Telas.Movimentacoes.Venda.Imagem.Model.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Resources\action_add_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\action_Cancel_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\application_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow_back_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow_Down_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow_Forward_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Arrow_RedoRetry_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow_Sync_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Arrow_UndoRevertRestore_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow_Up_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bubble_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Building_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Calculator_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Camera_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\certificate_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clock_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\database_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dialog_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\document_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\enum_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\envelope_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Environment_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\filter_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flag_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flame_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\folder_Closed_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\folder_Open_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gear_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\globe_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\graph_highPerformanceComputingChart_5170_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\graph_performanceChart_5171_16x_LG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\grid_Data_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hammer_Builder_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\house_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\key_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\library_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LightBulb_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lightningBolt_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lock_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Loop_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\magnifier_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\manifest_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\masterpage_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\media_CD_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\method_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mobile_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Money_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Monitor_Screen_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\paperclip_5159_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pencil_005_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PickAxe_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\printer_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\procedure_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\process_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\properties_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\resource_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RSReport_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\scissors_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Security_Shields_Alert_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Security_Shields_Alert_16xLG_color.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\security_Shields_Blank_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Security_Shields_Complete_and_ok_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Security_Shields_Complete_and_ok_16xLG_color.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Security_Shields_Critical_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Security_Shields_Critical_16xLG_color.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\server_Local_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sigma_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StatusAnnotations_Alert_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StatusAnnotations_Alert_16xLG_color.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StatusAnnotations_Blocked_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StatusAnnotations_Blocked_16xLG_color.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StatusAnnotations_Complete_and_ok_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StatusAnnotations_Complete_and_ok_16xLG_color.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StatusAnnotations_Critical_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StatusAnnotations_Critical_16xLG_color.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StatusAnnotations_Help_and_inconclusive_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StatusAnnotations_Help_and_inconclusive_16xLG_color.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StatusAnnotations_Information_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StatusAnnotations_Information_16xLG_color.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StatusAnnotations_Play_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StatusAnnotations_Play_16xLG_color.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StatusAnnotations_Required_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StatusAnnotations_Required_16xLG_color.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StatusAnnotations_Stop_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StatusAnnotations_Stop_16xLG_color.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StatusAnnotations_Warning_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StatusAnnotations_Warning_16xLG_color.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VirtualEnvironment_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\CartaFoto\CartaFoto\CartaFoto.csproj">
+      <Project>{0ff52a41-082d-4932-9b8e-6b7a55272f06}</Project>
+      <Name>CartaFoto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Canaan.Cservice.Dados\Canaan.CService.Dados.csproj">
+      <Project>{3f570c6c-6db7-485d-8a19-89e05dd8824d}</Project>
+      <Name>Canaan.CService.Dados</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Canaan.CService.Lib\Canaan.CService.Lib.csproj">
+      <Project>{6779a99b-aaf6-45f2-ac59-eee8715f6e94}</Project>
+      <Name>Canaan.CService.Lib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Canaan.Dados\Canaan.Dados.csproj">
+      <Project>{369fe6a1-e2f8-4035-9631-7459616ffffc}</Project>
+      <Name>Canaan.Dados</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Canaan.Integracao.Lib\Canaan.Integracao.Lib.csproj">
+      <Project>{ab1fc390-34a4-4cd7-bc89-1f3946dbee1e}</Project>
+      <Name>Canaan.Integracao.Lib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Canaan.Lib\Canaan.Lib.csproj">
+      <Project>{b0cc386c-f0bd-489c-bb0b-05216d2d24ea}</Project>
+      <Name>Canaan.Lib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Canaan.PagSeguro\Canaan.PagSeguro.csproj">
+      <Project>{61ea7d57-be62-4012-aa2e-80e29a199f55}</Project>
+      <Name>Canaan.PagSeguro</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Canaan.Relatorios\Canaan.Relatorios.csproj">
+      <Project>{e2975146-b4dc-494c-b0b2-ff8a4afefa63}</Project>
+      <Name>Canaan.Relatorios</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\phone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Movimentacoes\Atendimento\Indicacoes\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tear_off_calendar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\end.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fast_forward.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pause.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\play.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rewind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\skip_to_start.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\redo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\undo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_list.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\money_envelope.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\money2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Splash.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Agendado.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Confirmado.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\faltante.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fotografado.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Canaan.ico" />
+    <None Include="Resources\SplashKika.jpg" />
+    <None Include="Resources\operadora-vivo.png" />
+    <None Include="Resources\operadora-tim.png" />
+    <None Include="Resources\operadora-oi.png" />
+    <None Include="Resources\operadora-claro.png" />
+    <None Include="Resources\blank.png" />
+    <None Include="Resources\atendido.jpg" />
+    <None Include="Resources\no_image_big.jpg" />
+    <None Include="Resources\no_image.jpg" />
+    <None Include="Resources\no-image-blog-one.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

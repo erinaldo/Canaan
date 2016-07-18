@@ -1,0 +1,291 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B0CC386C-F0BD-489C-BB0B-05216D2D24EA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Canaan.Lib</RootNamespace>
+    <AssemblyName>Canaan.Lib</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Boleto.Net">
+      <HintPath>..\packages\Boleto.Net.2.0.15\lib\net20\Boleto.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Kaliko.ImageLibrary, Version=1.2.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Biblioteca\Kaliko\Kaliko.ImageLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Agencia.cs" />
+    <Compile Include="Agenda.cs" />
+    <Compile Include="Agendamento.cs" />
+    <Compile Include="AgendamentoMov.cs" />
+    <Compile Include="Album.cs" />
+    <Compile Include="Atendimento.cs" />
+    <Compile Include="AtendimentoHist.cs" />
+    <Compile Include="AtendimentoModelo.cs" />
+    <Compile Include="Backup.cs" />
+    <Compile Include="BackupItem.cs" />
+    <Compile Include="Banco.cs" />
+    <Compile Include="Carta.cs" />
+    <Compile Include="Cidade.cs" />
+    <Compile Include="CliFor.cs" />
+    <Compile Include="CliForReferencia.cs" />
+    <Compile Include="Componentes\CComboFilter.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Componentes\CLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Componentes\CListBoxItem.cs" />
+    <Compile Include="Componentes\CRadioButtonTeleFilter.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Config.cs" />
+    <Compile Include="Conta.cs" />
+    <Compile Include="ContaCaixa.cs" />
+    <Compile Include="Convenio.cs" />
+    <Compile Include="Cupom.cs" />
+    <Compile Include="Efeito.cs" />
+    <Compile Include="Envio.cs" />
+    <Compile Include="EnvioPedido.cs" />
+    <Compile Include="Extrato.cs" />
+    <Compile Include="Filtro.cs" />
+    <Compile Include="FormaEntrada.cs" />
+    <Compile Include="FormaPgto.cs" />
+    <Compile Include="Foto.cs" />
+    <Compile Include="Indicacao.cs" />
+    <Compile Include="Lancamento.cs" />
+    <Compile Include="LancamentoMov.cs" />
+    <Compile Include="Modelo.cs" />
+    <Compile Include="ModeloResp.cs" />
+    <Compile Include="Model\Baixa.cs" />
+    <Compile Include="Model\EfeitoDigital.cs" />
+    <Compile Include="Model\Envio\EnumStatusEnvio.cs" />
+    <Compile Include="Model\Envio\EnvioModel.cs" />
+    <Compile Include="Model\Envio\OrdemServicoItemEnvioModel.cs" />
+    <Compile Include="Model\Envio\OrdemServicoEnvioModel.cs" />
+    <Compile Include="Model\Envio\SumaryOrdemServicoModel.cs" />
+    <Compile Include="Model\Envio\SumaryOrdemSevvicoItemModel.cs" />
+    <Compile Include="Model\Lancamento.cs" />
+    <Compile Include="Model\MotivoDevolucaoModel.cs" />
+    <Compile Include="Model\Produto.cs" />
+    <Compile Include="Model\ProdutoServico.cs" />
+    <Compile Include="Model\Retorno.cs" />
+    <Compile Include="Model\OrdermServico.cs" />
+    <Compile Include="Model\Servico.cs" />
+    <Compile Include="Model\SessaoBackup.cs" />
+    <Compile Include="Model\Venda.cs" />
+    <Compile Include="Model\VendaItem.cs" />
+    <Compile Include="Moldura.cs" />
+    <Compile Include="Motivo.cs" />
+    <Compile Include="MotivoDevolucao.cs" />
+    <Compile Include="OrdemServico.cs" />
+    <Compile Include="OrdemServicoItem.cs" />
+    <Compile Include="OrdemServicoMov.cs" />
+    <Compile Include="PessoaFisica.cs" />
+    <Compile Include="PessoaJuridica.cs" />
+    <Compile Include="Produto.cs" />
+    <Compile Include="ProdutoServico.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Retorno.cs" />
+    <Compile Include="Servico.cs" />
+    <Compile Include="Sessao.cs" />
+    <Compile Include="Tabela.cs" />
+    <Compile Include="TabelaFilial.cs" />
+    <Compile Include="TelemarketingAgenda.cs" />
+    <Compile Include="TelemarketingMov.cs" />
+    <Compile Include="TelemarketingStatus.cs" />
+    <Compile Include="Utilitarios\CBindingList.cs" />
+    <Compile Include="Utilitarios\Comum.cs" />
+    <Compile Include="Utilitarios\Criptografia.cs" />
+    <Compile Include="Utilitarios\Enums.cs" />
+    <Compile Include="Utilitarios\ImageUtility.cs" />
+    <Compile Include="Utilitarios\LinqExtension.cs" />
+    <Compile Include="Utilitarios\DynamicLibrary.cs" />
+    <Compile Include="Filial.cs" />
+    <Compile Include="Interfaces\IBase.cs" />
+    <Compile Include="GrupoEmpresa.cs" />
+    <Compile Include="Interfaces\IEnum.cs" />
+    <Compile Include="Utilitarios\FilterExpression.cs" />
+    <Compile Include="Utilitarios\FilterExpressionCollection.cs" />
+    <Compile Include="Utilitarios\MessageBoxUtilities.cs" />
+    <Compile Include="Parceria.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Session.cs" />
+    <Compile Include="Usuario.cs" />
+    <Compile Include="UsuarioFilial.cs" />
+    <Compile Include="UsuarioGrupo.cs" />
+    <Compile Include="Utilitarios\UtilityEnum.cs" />
+    <Compile Include="Utilitarios\Validacao.cs" />
+    <Compile Include="Venda.cs" />
+    <Compile Include="VendaFoto.cs" />
+    <Compile Include="VendaItem.cs" />
+    <Compile Include="VendaItemOrdemServico.cs" />
+    <Compile Include="VendaMov.cs" />
+    <Compile Include="Model\VendaMovModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Canaan.Dados\Canaan.Dados.csproj">
+      <Project>{369fe6a1-e2f8-4035-9631-7459616ffffc}</Project>
+      <Name>Canaan.Dados</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Attributes\" />
+    <Folder Include="Views\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Resources\up_minus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\up_plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\data_new.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\data_ok.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\data_replace.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\data_forbidden.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\data_unknown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flag_green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flag_red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flag_yellow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\document_ok.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\document_plain.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\document_stop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\document_out.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Security_Shields_Complete_and_ok_16xLG_color.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Security_Shields_Critical_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\money_envelope.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\money2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\no_image.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\no_image_big.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\enviado.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\aguardando.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\enviando.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\erro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\report.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

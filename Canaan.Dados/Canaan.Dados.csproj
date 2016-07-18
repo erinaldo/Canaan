@@ -1,0 +1,500 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{369FE6A1-E2F8-4035-9631-7459616FFFFC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Canaan.Dados</RootNamespace>
+    <AssemblyName>Canaan.Dados</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Agencia.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Agenda.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Agendamento.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AgendamentoMov.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AgendamentoStatus.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Album.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Atendimento.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AtendimentoHist.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AtendimentoModelo.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Attributes\FilterAttribute.cs" />
+    <Compile Include="Backup.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BackupItem.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Banco.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CanaanModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CanaanModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CanaanModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CanaanModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CanaanModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Carta.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Cidade.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CliFor.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CliForReferencia.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Compra.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CompraItem.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CompraMov.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Config.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Conta.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ContaCaixa.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Convenio.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Cupom.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CupomStatus.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EfeitoDigital.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EnumAgendamentoStatus.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EnumCadernoSyncAcao.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EnumClasseContabil.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EnumCliForEstadoCivil.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EnumCliForPessoa.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EnumCliForSexo.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EnumCliForTipo.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EnumCliForTipoRef.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EnumCobrancaTipo.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EnumContaTipo.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EnumConvenioTipo.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EnumCupomStatus.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EnumEnvioStatus.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EnumIndicacaoTipo.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EnumLancTipo.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EnumModeloTipoResp.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EnumMotivoDevolucao.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EnumOperadorLogico.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EnumOperadorRelacional.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EnumPgtoTipo.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EnumRelatorioTipo.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EnumRetornoLog.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EnumSessaoGenero.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EnumSessaoTipo.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EnumStatusCompra.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EnumStatusExtrato.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EnumStatusLanc.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EnumStatusServico.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EnumStatusVenda.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EnumTelemarketingStatus.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Envio.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EnvioImagem.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EnvioPedido.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EnvioStatus.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Estado.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Extrato.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Filial.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Filtro.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FormaEntrada.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FormaPgto.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Foto.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GrupoEmpresa.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Indicacao.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Lancamento.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LancamentoHist.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LancamentoMov.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Metadata\Atendimento.cs" />
+    <Compile Include="Metadata\Banco.cs" />
+    <Compile Include="Metadata\Cidade.cs" />
+    <Compile Include="Metadata\Agencia.cs" />
+    <Compile Include="Metadata\Album.cs" />
+    <Compile Include="Metadata\Agendamento.cs" />
+    <Compile Include="Metadata\OrdemServico.cs" />
+    <Compile Include="Metadata\Parceria.cs" />
+    <Compile Include="Metadata\EfeitoDigital.cs" />
+    <Compile Include="Metadata\Pedido.cs" />
+    <Compile Include="Metadata\Usuario.cs" />
+    <Compile Include="Metadata\Venda.cs" />
+    <Compile Include="Metadata\CliFor.cs" />
+    <Compile Include="Metadata\Conta.cs" />
+    <Compile Include="Metadata\ContaCaixa.cs" />
+    <Compile Include="Metadata\Convenio.cs" />
+    <Compile Include="Metadata\Lancamento.cs" />
+    <Compile Include="Metadata\LancamentoMov.cs" />
+    <Compile Include="Metadata\PessoaJuridica.cs" />
+    <Compile Include="Metadata\PessoaFisica.cs" />
+    <Compile Include="Metadata\Cupom.cs" />
+    <Compile Include="Metadata\Filtro.cs" />
+    <Compile Include="Metadata\GrupoEmpresa.cs" />
+    <Compile Include="Metadata\Filial.cs" />
+    <Compile Include="Modelo.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModeloResp.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Moldura.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Motivo.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MotivoDevolucao.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrdemServico.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrdemServicoItem.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrdemServicoMov.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrdemStatus.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pais.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Parametro.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Parceria.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pedido.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PedidoLancamento.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PessoaFisica.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PessoaJuridica.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Produto.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProdutoServico.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Renegociacao.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RenegociacaoItem.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Retorno.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RetornoLog.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Servico.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sessao.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Tabela.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TabelaFilial.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TelemarketingAgenda.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TelemarketingMov.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TelemarketingStatus.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Usuario.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UsuarioFilial.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UsuarioGrupo.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Venda.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VendaFoto.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VendaItem.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VendaItemOrdemServico.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VendaMov.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VendaStatus.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="CanaanModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>CanaanModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CanaanModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CanaanModel.edmx</DependentUpon>
+      <LastGenOutput>CanaanModel.Context.cs</LastGenOutput>
+    </None>
+    <None Include="CanaanModel.edmx.diagram">
+      <DependentUpon>CanaanModel.edmx</DependentUpon>
+    </None>
+    <None Include="CanaanModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CanaanModel.edmx</DependentUpon>
+      <LastGenOutput>CanaanModel.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CanaanModel.edmx.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

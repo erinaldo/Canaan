@@ -1,0 +1,1649 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E2975146-B4DC-494C-B0B2-FF8A4AFEFA63}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Canaan.Relatorios</RootNamespace>
+    <AssemblyName>Canaan.Relatorios</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Charts.v15.1.Core, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Office.v15.1.Core, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v15.1.Core, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v15.1.Core, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v15.1.Core, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Sparkline.v15.1.Core, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v15.1.Wizard, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v15.1.UI, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v15.1.Extensions, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="RM.Relatorios">
+      <HintPath>..\..\RM\RM.Relatorios\obj\Debug\RM.Relatorios.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Atendimento\AtendidosPeriodo\Model.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Atendimento\AtendidosPeriodo\Relatorio.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Relatorio.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Atendimento\AtendidosPeriodo\Viewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Atendimento\AtendidosPeriodo\Viewer.Designer.cs">
+      <DependentUpon>Viewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Atendimento\UsoImagem\Model.cs">
+      <DependentUpon>Model.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Atendimento\UsoImagem\Model.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Atendimento\UsoImagem\Relatorio.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Relatorio.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Atendimento\UsoImagem\Viewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Atendimento\UsoImagem\Viewer.Designer.cs">
+      <DependentUpon>Viewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Base\FiltroBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Base\FiltroBase.Designer.cs">
+      <DependentUpon>FiltroBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Base\FiltroModelo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Base\FiltroModelo.Designer.cs">
+      <DependentUpon>FiltroModelo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Base\FiltroPeriodo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Base\FiltroPeriodo.Designer.cs">
+      <DependentUpon>FiltroPeriodo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Base\FiltroUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Base\FiltroUsuario.Designer.cs">
+      <DependentUpon>FiltroUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Base\FiltroVenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Base\FiltroVenda.Designer.cs">
+      <DependentUpon>FiltroVenda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Base\Viewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Base\Viewer.Designer.cs">
+      <DependentUpon>Viewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Concurso\BabyShow\Model.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Concurso\BabyShow\Relatorio.cs">
+      <DependentUpon>Relatorio.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Concurso\BabyShow\Viewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Concurso\BabyShow\Viewer.Designer.cs">
+      <DependentUpon>Viewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Concurso\Garota\Model.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Concurso\Garota\Relatorio.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Relatorio.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Concurso\Garota\Viewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Concurso\Garota\Viewer.Designer.cs">
+      <DependentUpon>Viewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Concurso\Newborn\Model.cs">
+      <DependentUpon>Model.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Concurso\Newborn\Model.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Concurso\Newborn\Relatorio.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Relatorio.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Concurso\Newborn\Viewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Concurso\Newborn\Viewer.Designer.cs">
+      <DependentUpon>Viewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Concurso\TopMirim\Model.cs">
+      <DependentUpon>Model.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Concurso\TopMirim\Model.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Concurso\TopMirim\Relatorio.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Relatorio.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Concurso\TopMirim\Viewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Concurso\TopMirim\Viewer.Designer.cs">
+      <DependentUpon>Viewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fichas\Aditamento\Model.cs">
+      <DependentUpon>Model.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Fichas\Aditamento\Model.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Fichas\Aditamento\Relatorio.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Relatorio.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Fichas\Aditamento\Viewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fichas\Aditamento\Viewer.Designer.cs">
+      <DependentUpon>Viewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fichas\Atendimento\Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Fichas\Atendimento\Relatorio1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Relatorio.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Fichas\Atendimento\Viewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fichas\Atendimento\Viewer.Designer.cs">
+      <DependentUpon>Viewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fichas\Boleto\Model.cs">
+      <DependentUpon>Model.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Fichas\Boleto\Model.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Fichas\Boleto\Relatorio.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Relatorio.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Fichas\Boleto\Viewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fichas\Boleto\Viewer.Designer.cs">
+      <DependentUpon>Viewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fichas\ComprovanteEntrada\Model.cs">
+      <DependentUpon>Model.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Fichas\ComprovanteEntrada\Model.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Fichas\ComprovanteEntrada\Relatorio.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Relatorio.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Fichas\ComprovanteEntrada\Viewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fichas\ComprovanteEntrada\Viewer.Designer.cs">
+      <DependentUpon>Viewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fichas\Contrato\Model.cs">
+      <DependentUpon>Model.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Fichas\Contrato\Model.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Fichas\Contrato\Relatorio.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Relatorio.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Fichas\Contrato\Viewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fichas\Contrato\Viewer.Designer.cs">
+      <DependentUpon>Viewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fichas\ControlePgto\Carne.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Carne.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Fichas\ControlePgto\Model.cs">
+      <DependentUpon>Model.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Fichas\ControlePgto\Model.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Fichas\ControlePgto\Relatorio.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Relatorio.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Fichas\ControlePgto\Viewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fichas\ControlePgto\Viewer.Designer.cs">
+      <DependentUpon>Viewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fichas\Envelope\Model.cs">
+      <DependentUpon>Model.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Fichas\Envelope\Model.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Fichas\Envelope\Relatorio.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Relatorio.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Fichas\Envelope\Viewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fichas\Envelope\Viewer.Designer.cs">
+      <DependentUpon>Viewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fichas\Servicos\Model.cs">
+      <DependentUpon>Model.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Fichas\Servicos\Model.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Fichas\Servicos\Relatorio.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Relatorio.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Fichas\Servicos\Viewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fichas\Servicos\Viewer.Designer.cs">
+      <DependentUpon>Viewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fichas\Termo\Filtro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fichas\Termo\Filtro.Designer.cs">
+      <DependentUpon>Filtro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fichas\Termo\Model.cs">
+      <DependentUpon>Model.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Fichas\Termo\Model.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Fichas\Termo\Relatorio.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Relatorio.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Fichas\Termo\RelatorioOutros.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RelatorioOutros.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Fichas\Termo\Viewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fichas\Termo\Viewer.Designer.cs">
+      <DependentUpon>Viewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fichas\Troca\Model.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Fichas\Troca\Relatorio.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Relatorio.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Fichas\Troca\Viewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fichas\Troca\Viewer.Designer.cs">
+      <DependentUpon>Viewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Financeiro\Boleto\Itau\Model.cs">
+      <DependentUpon>Model.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Financeiro\Boleto\Itau\Model.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Financeiro\Boleto\Itau\Relatorio.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Relatorio.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Financeiro\Boleto\Itau\Viewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Financeiro\Boleto\Itau\Viewer.Designer.cs">
+      <DependentUpon>Viewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Financeiro\Lancamento\Receber\Filtro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Financeiro\Lancamento\Receber\Filtro.Designer.cs">
+      <DependentUpon>Filtro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Financeiro\Lancamento\Recebido\Filtro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Financeiro\Lancamento\Recebido\Filtro.Designer.cs">
+      <DependentUpon>Filtro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Financeiro\Lancamento\Shared\Model.cs">
+      <DependentUpon>Model.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Financeiro\Lancamento\Shared\Model.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Financeiro\Lancamento\Shared\Relatorio.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Relatorio.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Financeiro\Lancamento\Shared\Viewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Financeiro\Lancamento\Shared\Viewer.Designer.cs">
+      <DependentUpon>Viewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fotografados\FotogPeriodo\Model.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Fotografados\FotogPeriodo\Relatorio.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Relatorio.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Fotografados\FotogPeriodo\Viewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fotografados\FotogPeriodo\Viewer.Designer.cs">
+      <DependentUpon>Viewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fotografados\FotogXFuncionario\Filtro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fotografados\FotogXFuncionario\Filtro.Designer.cs">
+      <DependentUpon>Filtro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fotografados\FotogXFuncionario\Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Fotografados\FotogXFuncionario\Relatorio1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Relatorio.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Fotografados\FotogXFuncionario\Viewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fotografados\FotogXFuncionario\Viewer.Designer.cs">
+      <DependentUpon>Viewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fotografados\FotogXGenero\Filtro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fotografados\FotogXGenero\Filtro.Designer.cs">
+      <DependentUpon>Filtro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fotografados\FotogXGenero\Model.cs">
+      <DependentUpon>Model.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Fotografados\FotogXGenero\Model.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Fotografados\FotogXGenero\Relatorio.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Relatorio.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Fotografados\FotogXGenero\Viewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fotografados\FotogXGenero\Viewer.Designer.cs">
+      <DependentUpon>Viewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Marketing\AgendamentoDia\Filtro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Marketing\AgendamentoDia\Filtro.Designer.cs">
+      <DependentUpon>Filtro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Marketing\AgendamentoDia\Model.cs">
+      <DependentUpon>Model.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Marketing\AgendamentoDia\Model.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Marketing\AgendamentoDia\Relatorio.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Relatorio.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Marketing\AgendamentoDia\Viewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Marketing\AgendamentoDia\Viewer.Designer.cs">
+      <DependentUpon>Viewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Marketing\AgendamentoHora\Filtro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Marketing\AgendamentoHora\Filtro.Designer.cs">
+      <DependentUpon>Filtro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Marketing\AgendamentoHora\Model.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Marketing\AgendamentoHora\Relatorio.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Relatorio.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Marketing\AgendamentoHora\Viewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Marketing\AgendamentoHora\Viewer.Designer.cs">
+      <DependentUpon>Viewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Marketing\AgendamentoParceria\Filtro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Marketing\AgendamentoParceria\Filtro.Designer.cs">
+      <DependentUpon>Filtro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Marketing\AgendamentoParceria\Model.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Marketing\AgendamentoParceria\Relatorio.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Relatorio.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Marketing\AgendamentoParceria\Viewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Marketing\AgendamentoParceria\Viewer.Designer.cs">
+      <DependentUpon>Viewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Marketing\AgendamentoXFuncionario\Filtro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Marketing\AgendamentoXFuncionario\Filtro.Designer.cs">
+      <DependentUpon>Filtro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Marketing\AgendamentoXFuncionario\Model.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Marketing\AgendamentoXFuncionario\Relatorio.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Relatorio.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Marketing\AgendamentoXFuncionario\Viewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Marketing\AgendamentoXFuncionario\Viewer.Designer.cs">
+      <DependentUpon>Viewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Marketing\CupomFunc\Model.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Marketing\CupomFunc\Relatorio.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Relatorio.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Marketing\CupomFunc\Viewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Marketing\CupomFunc\Viewer.Designer.cs">
+      <DependentUpon>Viewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Marketing\ListaTele\Avulsas\Viewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Marketing\ListaTele\Avulsas\Viewer.Designer.cs">
+      <DependentUpon>Viewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Marketing\ListaTele\Cartas\CartaAniversariante.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CartaAniversariante.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Marketing\ListaTele\Cartas\CartaSPC.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CartaSPC.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Marketing\ListaTele\Avulsas\EtiquetaAvulsa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Marketing\ListaTele\Avulsas\EtiquetaAvulsa.Designer.cs">
+      <DependentUpon>EtiquetaAvulsa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Marketing\ListaTele\Etiquetas.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Etiquetas.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Marketing\ListaTele\Filtro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Marketing\ListaTele\Filtro.Designer.cs">
+      <DependentUpon>Filtro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Marketing\ListaTele\Model.cs">
+      <DependentUpon>Model.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Marketing\ListaTele\Model.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Marketing\ListaTele\Relatorio.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Relatorio.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Marketing\ListaTele\Viewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Marketing\ListaTele\Viewer.Designer.cs">
+      <DependentUpon>Viewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Marketing\Parceria\Auditoria\Filtro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Marketing\Parceria\Auditoria\Filtro.Designer.cs">
+      <DependentUpon>Filtro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Marketing\Parceria\Auditoria\ModelFiltro.cs" />
+    <Compile Include="Marketing\Parceria\Auditoria\ModelParceria.cs" />
+    <Compile Include="Marketing\Parceria\Auditoria\Relatorio.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Relatorio.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Marketing\Parceria\Auditoria\Viewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Marketing\Parceria\Auditoria\Viewer.Designer.cs">
+      <DependentUpon>Viewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Marketing\Parceria\IndicacoesXPeriodo\Filtro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Marketing\Parceria\IndicacoesXPeriodo\Filtro.Designer.cs">
+      <DependentUpon>Filtro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Marketing\Parceria\IndicacoesXPeriodo\Viewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Marketing\Parceria\IndicacoesXPeriodo\Viewer.Designer.cs">
+      <DependentUpon>Viewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Marketing\Parceria\ParceriaOnlineXPeriodo\Filtro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Marketing\Parceria\ParceriaOnlineXPeriodo\Filtro.Designer.cs">
+      <DependentUpon>Filtro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Marketing\Parceria\ParceriaOnlineXPeriodo\Relatorio.cs">
+      <DependentUpon>Relatorio.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Marketing\Parceria\ParceriaOnlineXPeriodo\Viewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Marketing\Parceria\ParceriaOnlineXPeriodo\Viewer.Designer.cs">
+      <DependentUpon>Viewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Marketing\Parceria\ParceriaOnlineXResultado\Filtro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Marketing\Parceria\ParceriaOnlineXResultado\Filtro.Designer.cs">
+      <DependentUpon>Filtro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Marketing\Parceria\ParceriaOnlineXResultado\Viewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Marketing\Parceria\ParceriaOnlineXResultado\Viewer.Designer.cs">
+      <DependentUpon>Viewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Marketing\Parceria\ParceriaXResultado\Model.cs">
+      <DependentUpon>Model.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Marketing\Parceria\ResumoMaterial\ModelParceria.cs" />
+    <Compile Include="Marketing\Parceria\ResumoMaterial\Relatorio.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Relatorio.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Marketing\Parceria\ResumoMaterial\Viewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Marketing\Parceria\ResumoMaterial\Viewer.Designer.cs">
+      <DependentUpon>Viewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Marketing\Parceria\ParceriaXPeriodo\Filtro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Marketing\Parceria\ParceriaXPeriodo\Filtro.Designer.cs">
+      <DependentUpon>Filtro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Marketing\Parceria\ParceriaXPeriodo\Viewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Marketing\Parceria\ParceriaXPeriodo\Viewer.Designer.cs">
+      <DependentUpon>Viewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Marketing\Parceria\ParceriaXResultado\Filtro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Marketing\Parceria\ParceriaXResultado\Filtro.Designer.cs">
+      <DependentUpon>Filtro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Marketing\Parceria\ParceriaXResultado\Model.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Marketing\Parceria\ParceriaXResultado\Relatorio.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Relatorio.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Marketing\Parceria\ParceriaXResultado\Viewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Marketing\Parceria\ParceriaXResultado\Viewer.Designer.cs">
+      <DependentUpon>Viewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Utilitarios\Comum.cs" />
+    <Compile Include="Venda\Devolvida\Filtro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Venda\Devolvida\Filtro.Designer.cs">
+      <DependentUpon>Filtro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Venda\Devolvida\Model.cs" />
+    <Compile Include="Venda\Programada\Relatorio.cs">
+      <DependentUpon>Relatorio.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Venda\Devolvida\Relatorio.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Relatorio.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Venda\Devolvida\Viewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Venda\Devolvida\Viewer.Designer.cs">
+      <DependentUpon>Viewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Venda\Liberacao\Filtro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Venda\Liberacao\Filtro.Designer.cs">
+      <DependentUpon>Filtro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Venda\Liberacao\Model.cs" />
+    <Compile Include="Venda\Liberacao\Relatorio.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Relatorio.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Venda\Liberacao\Viewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Venda\Liberacao\Viewer.Designer.cs">
+      <DependentUpon>Viewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Venda\Produtos\Filtro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Venda\Produtos\Filtro.Designer.cs">
+      <DependentUpon>Filtro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Venda\Produtos\Model.cs" />
+    <Compile Include="Venda\Produtos\ModelFiltro.cs" />
+    <Compile Include="Venda\Produtos\Relatorio.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Relatorio.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Venda\Produtos\Viewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Venda\Produtos\Viewer.Designer.cs">
+      <DependentUpon>Viewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Venda\Programada\Filtro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Venda\Programada\Filtro.Designer.cs">
+      <DependentUpon>Filtro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Venda\Programada\Model.cs" />
+    <Compile Include="Venda\Programada\Viewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Venda\Programada\Viewer.Designer.cs">
+      <DependentUpon>Viewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\Base\FiltroModeloViewModel.cs" />
+    <Compile Include="ViewModel\Marketing\Agendamento\AgendamentoViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\Marketing\ListaTele\ListaTeleViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Atendimento\AtendidosPeriodo\Model.xsc">
+      <DependentUpon>Model.xsd</DependentUpon>
+    </None>
+    <None Include="Atendimento\AtendidosPeriodo\Model.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Model.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Atendimento\AtendidosPeriodo\Model.xss">
+      <DependentUpon>Model.xsd</DependentUpon>
+    </None>
+    <None Include="Atendimento\UsoImagem\Model.xsc">
+      <DependentUpon>Model.xsd</DependentUpon>
+    </None>
+    <None Include="Atendimento\UsoImagem\Model.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Model.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Atendimento\UsoImagem\Model.xss">
+      <DependentUpon>Model.xsd</DependentUpon>
+    </None>
+    <None Include="Concurso\BabyShow\Model.xsc">
+      <DependentUpon>Model.xsd</DependentUpon>
+    </None>
+    <None Include="Concurso\BabyShow\Model.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Model.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Concurso\BabyShow\Model.xss">
+      <DependentUpon>Model.xsd</DependentUpon>
+    </None>
+    <None Include="Concurso\Garota\Model.xsc">
+      <DependentUpon>Model.xsd</DependentUpon>
+    </None>
+    <None Include="Concurso\Garota\Model.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Model.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Concurso\Garota\Model.xss">
+      <DependentUpon>Model.xsd</DependentUpon>
+    </None>
+    <None Include="Concurso\Newborn\Model.xsc">
+      <DependentUpon>Model.xsd</DependentUpon>
+    </None>
+    <None Include="Concurso\Newborn\Model.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Model.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Concurso\Newborn\Model.xss">
+      <DependentUpon>Model.xsd</DependentUpon>
+    </None>
+    <None Include="Concurso\TopMirim\Model.xsc">
+      <DependentUpon>Model.xsd</DependentUpon>
+    </None>
+    <None Include="Concurso\TopMirim\Model.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Model.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Concurso\TopMirim\Model.xss">
+      <DependentUpon>Model.xsd</DependentUpon>
+    </None>
+    <None Include="Fichas\Aditamento\Model.xsc">
+      <DependentUpon>Model.xsd</DependentUpon>
+    </None>
+    <None Include="Fichas\Aditamento\Model.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Model.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Fichas\Aditamento\Model.xss">
+      <DependentUpon>Model.xsd</DependentUpon>
+    </None>
+    <None Include="Fichas\Atendimento\Model.xsc">
+      <DependentUpon>Model.xsd</DependentUpon>
+    </None>
+    <None Include="Fichas\Atendimento\Model.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Fichas\Atendimento\Model.xss">
+      <DependentUpon>Model.xsd</DependentUpon>
+    </None>
+    <None Include="Fichas\Boleto\Model.xsc">
+      <DependentUpon>Model.xsd</DependentUpon>
+    </None>
+    <None Include="Fichas\Boleto\Model.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Model.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Fichas\Boleto\Model.xss">
+      <DependentUpon>Model.xsd</DependentUpon>
+    </None>
+    <None Include="Fichas\ComprovanteEntrada\Model.xsc">
+      <DependentUpon>Model.xsd</DependentUpon>
+    </None>
+    <None Include="Fichas\ComprovanteEntrada\Model.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Model.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Fichas\ComprovanteEntrada\Model.xss">
+      <DependentUpon>Model.xsd</DependentUpon>
+    </None>
+    <None Include="Fichas\Contrato\Model.xsc">
+      <DependentUpon>Model.xsd</DependentUpon>
+    </None>
+    <None Include="Fichas\Contrato\Model.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Model.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Fichas\Contrato\Model.xss">
+      <DependentUpon>Model.xsd</DependentUpon>
+    </None>
+    <None Include="Fichas\ControlePgto\Model.xsc">
+      <DependentUpon>Model.xsd</DependentUpon>
+    </None>
+    <None Include="Fichas\ControlePgto\Model.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Model.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Fichas\ControlePgto\Model.xss">
+      <DependentUpon>Model.xsd</DependentUpon>
+    </None>
+    <None Include="Fichas\Envelope\Model.xsc">
+      <DependentUpon>Model.xsd</DependentUpon>
+    </None>
+    <None Include="Fichas\Envelope\Model.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Model.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Fichas\Envelope\Model.xss">
+      <DependentUpon>Model.xsd</DependentUpon>
+    </None>
+    <None Include="Fichas\Servicos\Model.xsc">
+      <DependentUpon>Model.xsd</DependentUpon>
+    </None>
+    <None Include="Fichas\Servicos\Model.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Model.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Fichas\Servicos\Model.xss">
+      <DependentUpon>Model.xsd</DependentUpon>
+    </None>
+    <None Include="Fichas\Termo\Model.xsc">
+      <DependentUpon>Model.xsd</DependentUpon>
+    </None>
+    <None Include="Fichas\Termo\Model.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Model.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Fichas\Termo\Model.xss">
+      <DependentUpon>Model.xsd</DependentUpon>
+    </None>
+    <None Include="Fichas\Troca\Model.xsc">
+      <DependentUpon>Model.xsd</DependentUpon>
+    </None>
+    <None Include="Fichas\Troca\Model.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Model.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Fichas\Troca\Model.xss">
+      <DependentUpon>Model.xsd</DependentUpon>
+    </None>
+    <None Include="Financeiro\Boleto\Itau\Model.xsc">
+      <DependentUpon>Model.xsd</DependentUpon>
+    </None>
+    <None Include="Financeiro\Boleto\Itau\Model.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Model.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Financeiro\Boleto\Itau\Model.xss">
+      <DependentUpon>Model.xsd</DependentUpon>
+    </None>
+    <None Include="Financeiro\Lancamento\Shared\Model.xsc">
+      <DependentUpon>Model.xsd</DependentUpon>
+    </None>
+    <None Include="Financeiro\Lancamento\Shared\Model.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Model.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Financeiro\Lancamento\Shared\Model.xss">
+      <DependentUpon>Model.xsd</DependentUpon>
+    </None>
+    <None Include="Fotografados\FotogPeriodo\Model.xsc">
+      <DependentUpon>Model.xsd</DependentUpon>
+    </None>
+    <None Include="Fotografados\FotogPeriodo\Model.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Model.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Fotografados\FotogPeriodo\Model.xss">
+      <DependentUpon>Model.xsd</DependentUpon>
+    </None>
+    <None Include="Fotografados\FotogXFuncionario\Model.xsc">
+      <DependentUpon>Model.xsd</DependentUpon>
+    </None>
+    <None Include="Fotografados\FotogXFuncionario\Model.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Fotografados\FotogXFuncionario\Model.xss">
+      <DependentUpon>Model.xsd</DependentUpon>
+    </None>
+    <None Include="Fotografados\FotogXGenero\Model.xsc">
+      <DependentUpon>Model.xsd</DependentUpon>
+    </None>
+    <None Include="Fotografados\FotogXGenero\Model.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Model.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Fotografados\FotogXGenero\Model.xss">
+      <DependentUpon>Model.xsd</DependentUpon>
+    </None>
+    <None Include="Marketing\AgendamentoDia\Model.xsc">
+      <DependentUpon>Model.xsd</DependentUpon>
+    </None>
+    <None Include="Marketing\AgendamentoDia\Model.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Model.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Marketing\AgendamentoDia\Model.xss">
+      <DependentUpon>Model.xsd</DependentUpon>
+    </None>
+    <None Include="Marketing\AgendamentoHora\Model.xsc">
+      <DependentUpon>Model.xsd</DependentUpon>
+    </None>
+    <None Include="Marketing\AgendamentoHora\Model.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Model.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Marketing\AgendamentoHora\Model.xss">
+      <DependentUpon>Model.xsd</DependentUpon>
+    </None>
+    <None Include="Marketing\AgendamentoParceria\Model.xsc">
+      <DependentUpon>Model.xsd</DependentUpon>
+    </None>
+    <None Include="Marketing\AgendamentoParceria\Model.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Model.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Marketing\AgendamentoParceria\Model.xss">
+      <DependentUpon>Model.xsd</DependentUpon>
+    </None>
+    <None Include="Marketing\AgendamentoXFuncionario\Model.xsc">
+      <DependentUpon>Model.xsd</DependentUpon>
+    </None>
+    <None Include="Marketing\AgendamentoXFuncionario\Model.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Model.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Marketing\AgendamentoXFuncionario\Model.xss">
+      <DependentUpon>Model.xsd</DependentUpon>
+    </None>
+    <None Include="Marketing\CupomFunc\Model.xsc">
+      <DependentUpon>Model.xsd</DependentUpon>
+    </None>
+    <None Include="Marketing\CupomFunc\Model.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Model.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Marketing\CupomFunc\Model.xss">
+      <DependentUpon>Model.xsd</DependentUpon>
+    </None>
+    <None Include="Marketing\ListaTele\Model.xsc">
+      <DependentUpon>Model.xsd</DependentUpon>
+    </None>
+    <None Include="Marketing\ListaTele\Model.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Model.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Marketing\ListaTele\Model.xss">
+      <DependentUpon>Model.xsd</DependentUpon>
+    </None>
+    <None Include="Marketing\Parceria\ParceriaXResultado\Model.xsc">
+      <DependentUpon>Model.xsd</DependentUpon>
+    </None>
+    <None Include="Marketing\Parceria\ParceriaXResultado\Model.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Model.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Marketing\Parceria\ParceriaXResultado\Model.xss">
+      <DependentUpon>Model.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Canaan.Dados\Canaan.Dados.csproj">
+      <Project>{369fe6a1-e2f8-4035-9631-7459616ffffc}</Project>
+      <Name>Canaan.Dados</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Canaan.Lib\Canaan.Lib.csproj">
+      <Project>{b0cc386c-f0bd-489c-bb0b-05216d2d24ea}</Project>
+      <Name>Canaan.Lib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Atendimento\AtendidosPeriodo\Relatorio.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Relatorio.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Atendimento\AtendidosPeriodo\Viewer.resx">
+      <DependentUpon>Viewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Atendimento\UsoImagem\Relatorio.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Relatorio.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Atendimento\UsoImagem\Viewer.resx">
+      <DependentUpon>Viewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Base\FiltroBase.resx">
+      <DependentUpon>FiltroBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Base\FiltroModelo.resx">
+      <DependentUpon>FiltroModelo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Base\FiltroPeriodo.resx">
+      <DependentUpon>FiltroPeriodo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Base\FiltroUsuario.resx">
+      <DependentUpon>FiltroUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Base\FiltroVenda.resx">
+      <DependentUpon>FiltroVenda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Base\Viewer.resx">
+      <DependentUpon>Viewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Concurso\BabyShow\Relatorio.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Relatorio.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Concurso\BabyShow\Viewer.resx">
+      <DependentUpon>Viewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Concurso\Garota\Relatorio.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Relatorio.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Concurso\Garota\Viewer.resx">
+      <DependentUpon>Viewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Concurso\Newborn\Relatorio.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Relatorio.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Concurso\Newborn\Viewer.resx">
+      <DependentUpon>Viewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Concurso\TopMirim\Relatorio.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Relatorio.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Concurso\TopMirim\Viewer.resx">
+      <DependentUpon>Viewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fichas\Aditamento\Relatorio.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Relatorio.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fichas\Aditamento\Viewer.resx">
+      <DependentUpon>Viewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fichas\Atendimento\Relatorio.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Relatorio1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fichas\Atendimento\Viewer.resx">
+      <DependentUpon>Viewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fichas\Boleto\Relatorio.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Relatorio.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fichas\Boleto\Viewer.resx">
+      <DependentUpon>Viewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fichas\ComprovanteEntrada\Relatorio.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Relatorio.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fichas\ComprovanteEntrada\Viewer.resx">
+      <DependentUpon>Viewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fichas\Contrato\Relatorio.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Relatorio.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fichas\Contrato\Viewer.resx">
+      <DependentUpon>Viewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fichas\ControlePgto\Carne.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Carne.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fichas\ControlePgto\Relatorio.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Relatorio.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fichas\ControlePgto\Viewer.resx">
+      <DependentUpon>Viewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fichas\Envelope\Relatorio.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Relatorio.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fichas\Envelope\Viewer.resx">
+      <DependentUpon>Viewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fichas\Servicos\Relatorio.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Relatorio.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fichas\Servicos\Viewer.resx">
+      <DependentUpon>Viewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fichas\Termo\Filtro.resx">
+      <DependentUpon>Filtro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fichas\Termo\Relatorio.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Relatorio.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fichas\Termo\RelatorioOutros.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RelatorioOutros.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fichas\Termo\Viewer.resx">
+      <DependentUpon>Viewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fichas\Troca\Relatorio.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Relatorio.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fichas\Troca\Viewer.resx">
+      <DependentUpon>Viewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Financeiro\Boleto\Itau\Relatorio.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Relatorio.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Financeiro\Boleto\Itau\Viewer.resx">
+      <DependentUpon>Viewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Financeiro\Lancamento\Receber\Filtro.resx">
+      <DependentUpon>Filtro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Financeiro\Lancamento\Recebido\Filtro.resx">
+      <DependentUpon>Filtro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Financeiro\Lancamento\Shared\Relatorio.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Relatorio.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Financeiro\Lancamento\Shared\Viewer.resx">
+      <DependentUpon>Viewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fotografados\FotogPeriodo\Relatorio.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Relatorio.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fotografados\FotogPeriodo\Viewer.resx">
+      <DependentUpon>Viewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fotografados\FotogXFuncionario\Filtro.resx">
+      <DependentUpon>Filtro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fotografados\FotogXFuncionario\Relatorio.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Relatorio1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fotografados\FotogXFuncionario\Viewer.resx">
+      <DependentUpon>Viewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fotografados\FotogXGenero\Filtro.resx">
+      <DependentUpon>Filtro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fotografados\FotogXGenero\Relatorio.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Relatorio.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fotografados\FotogXGenero\Viewer.resx">
+      <DependentUpon>Viewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Marketing\AgendamentoDia\Filtro.resx">
+      <DependentUpon>Filtro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Marketing\AgendamentoDia\Relatorio.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Relatorio.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Marketing\AgendamentoDia\Viewer.resx">
+      <DependentUpon>Viewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Marketing\AgendamentoHora\Filtro.resx">
+      <DependentUpon>Filtro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Marketing\AgendamentoHora\Relatorio.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Relatorio.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Marketing\AgendamentoHora\Viewer.resx">
+      <DependentUpon>Viewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Marketing\AgendamentoParceria\Filtro.resx">
+      <DependentUpon>Filtro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Marketing\AgendamentoParceria\Relatorio.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Relatorio.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Marketing\AgendamentoParceria\Viewer.resx">
+      <DependentUpon>Viewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Marketing\AgendamentoXFuncionario\Filtro.resx">
+      <DependentUpon>Filtro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Marketing\AgendamentoXFuncionario\Relatorio.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Relatorio.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Marketing\AgendamentoXFuncionario\Viewer.resx">
+      <DependentUpon>Viewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Marketing\CupomFunc\Relatorio.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Relatorio.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Marketing\CupomFunc\Viewer.resx">
+      <DependentUpon>Viewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Marketing\ListaTele\Avulsas\Viewer.resx">
+      <DependentUpon>Viewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Marketing\ListaTele\Cartas\CartaAniversariante.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CartaAniversariante.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Marketing\ListaTele\Cartas\CartaSPC.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CartaSPC.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Marketing\ListaTele\Avulsas\EtiquetaAvulsa.resx">
+      <DependentUpon>EtiquetaAvulsa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Marketing\ListaTele\Etiquetas.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Etiquetas.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Marketing\ListaTele\Filtro.resx">
+      <DependentUpon>Filtro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Marketing\ListaTele\Relatorio.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Relatorio.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Marketing\ListaTele\Viewer.resx">
+      <DependentUpon>Viewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Marketing\Parceria\Auditoria\Filtro.resx">
+      <DependentUpon>Filtro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Marketing\Parceria\Auditoria\Relatorio.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Relatorio.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Marketing\Parceria\Auditoria\Viewer.resx">
+      <DependentUpon>Viewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Marketing\Parceria\IndicacoesXPeriodo\Filtro.resx">
+      <DependentUpon>Filtro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Marketing\Parceria\IndicacoesXPeriodo\Viewer.resx">
+      <DependentUpon>Viewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Marketing\Parceria\ParceriaOnlineXPeriodo\Filtro.resx">
+      <DependentUpon>Filtro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Marketing\Parceria\ParceriaOnlineXPeriodo\Relatorio.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Relatorio.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Marketing\Parceria\ParceriaOnlineXPeriodo\Viewer.resx">
+      <DependentUpon>Viewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Marketing\Parceria\ParceriaOnlineXResultado\Filtro.resx">
+      <DependentUpon>Filtro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Marketing\Parceria\ParceriaOnlineXResultado\Viewer.resx">
+      <DependentUpon>Viewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Marketing\Parceria\ResumoMaterial\Relatorio.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Relatorio.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Marketing\Parceria\ResumoMaterial\Viewer.resx">
+      <DependentUpon>Viewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Marketing\Parceria\ParceriaXPeriodo\Filtro.resx">
+      <DependentUpon>Filtro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Marketing\Parceria\ParceriaXPeriodo\Viewer.resx">
+      <DependentUpon>Viewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Marketing\Parceria\ParceriaXResultado\Filtro.resx">
+      <DependentUpon>Filtro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Marketing\Parceria\ParceriaXResultado\Relatorio.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Relatorio.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Marketing\Parceria\ParceriaXResultado\Viewer.resx">
+      <DependentUpon>Viewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Venda\Devolvida\Filtro.resx">
+      <DependentUpon>Filtro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Venda\Programada\Relatorio.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Relatorio.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Venda\Devolvida\Relatorio.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Relatorio.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Venda\Devolvida\Viewer.resx">
+      <DependentUpon>Viewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Venda\Liberacao\Filtro.resx">
+      <DependentUpon>Filtro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Venda\Liberacao\Relatorio.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Relatorio.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Venda\Liberacao\Viewer.resx">
+      <DependentUpon>Viewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Venda\Produtos\Filtro.resx">
+      <DependentUpon>Filtro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Venda\Produtos\Relatorio.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Relatorio.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Venda\Produtos\Viewer.resx">
+      <DependentUpon>Viewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Venda\Programada\Filtro.resx">
+      <DependentUpon>Filtro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Venda\Programada\Viewer.resx">
+      <DependentUpon>Viewer.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reportKiss.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\report.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Financeiro\ResumoCarteira\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reportKika.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
