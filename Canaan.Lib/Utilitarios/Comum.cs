@@ -27,6 +27,82 @@ namespace Canaan.Lib.Utilitarios
             return anos;
         }
 
+        public static string GetMes(int month)
+        {
+            var mes = month.ToString().PadLeft(2, '0');
+
+            var mesString = "";
+
+            switch (month)
+            {
+                case 1:
+                    mesString = "Janeiro";
+                    break;
+                case 2:
+                    mesString = "Fevereiro";
+                    break;
+                case 3:
+                    mesString = "Marco";
+                    break;
+                case 4:
+                    mesString = "Abril";
+                    break;
+                case 5:
+                    mesString = "Maio";
+                    break;
+                case 6:
+                    mesString = "Junho";
+                    break;
+                case 7:
+                    mesString = "Julho";
+                    break;
+                case 8:
+                    mesString = "Agosto";
+                    break;
+                case 9:
+                    mesString = "Setembro";
+                    break;
+                case 10:
+                    mesString = "Outubro";
+                    break;
+                case 11:
+                    mesString = "Novembro";
+                    break;
+                case 12:
+                    mesString = "Desembro";
+                    break;
+                default:
+                    mesString = "Indefinido";
+                    break;
+            }
+
+
+            return string.Format("{0} - {1}", mes, mesString);
+        }
+
+        public static string GetFolderName(string cliente)
+        {
+            var max = cliente.Length > 25 ? 25 : cliente.Length;
+            var str = cliente.Substring(0, max);
+
+            /** Troca os caracteres acentuados por não acentuados **/
+            string[] acentos = new string[] { "ç", "Ç", "á", "é", "í", "ó", "ú", "ý", "Á", "É", "Í", "Ó", "Ú", "Ý", "à", "è", "ì", "ò", "ù", "À", "È", "Ì", "Ò", "Ù", "ã", "õ", "ñ", "ä", "ë", "ï", "ö", "ü", "ÿ", "Ä", "Ë", "Ï", "Ö", "Ü", "Ã", "Õ", "Ñ", "â", "ê", "î", "ô", "û", "Â", "Ê", "Î", "Ô", "Û" };
+            string[] semAcento = new string[] { "c", "C", "a", "e", "i", "o", "u", "y", "A", "E", "I", "O", "U", "Y", "a", "e", "i", "o", "u", "A", "E", "I", "O", "U", "a", "o", "n", "a", "e", "i", "o", "u", "y", "A", "E", "I", "O", "U", "A", "O", "N", "a", "e", "i", "o", "u", "A", "E", "I", "O", "U" };
+            for (int i = 0; i < acentos.Length; i++)
+            {
+                str = str.Replace(acentos[i], semAcento[i]);
+            }
+
+            /** Troca os caracteres especiais da string por "" **/
+            string[] caracteresEspeciais = { "\\.", ",", ".", "-", ":", "\\(", "\\)", "ª", "\\|", "\\\\", "°", "[", "]", " " };
+            for (int i = 0; i < caracteresEspeciais.Length; i++)
+            {
+                str = str.Replace(caracteresEspeciais[i], "_");
+            }
+
+            return str.ToUpper();
+        }
+
         public static void SendEmail(string[] to, string assunto, string texto, string[] anexos)
         {
             try

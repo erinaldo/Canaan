@@ -172,11 +172,29 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Canaan.Telas.Resource.resx</DependentUpon>
     </Compile>
+    <Compile Include="Configuracoes\Geral\Configuracoes\Edita.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuracoes\Geral\Configuracoes\Edita.Designer.cs">
+      <DependentUpon>Edita.cs</DependentUpon>
+    </Compile>
     <Compile Include="Configuracoes\Geral\Filiais\Seleciona.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Configuracoes\Geral\Filiais\Seleciona.Designer.cs">
       <DependentUpon>Seleciona.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configuracoes\Geral\Pasta\Edita.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuracoes\Geral\Pasta\Edita.Designer.cs">
+      <DependentUpon>Edita.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configuracoes\Geral\Pasta\Lista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuracoes\Geral\Pasta\Lista.Designer.cs">
+      <DependentUpon>Lista.cs</DependentUpon>
     </Compile>
     <Compile Include="Configuracoes\Integracao\Servicos\Edita.cs">
       <SubType>Form</SubType>
@@ -607,6 +625,12 @@
     <Compile Include="Movimentacoes\Sessao\Lista.Designer.cs">
       <DependentUpon>Lista.cs</DependentUpon>
     </Compile>
+    <Compile Include="Movimentacoes\Sessao\Telas\FolderName.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Movimentacoes\Sessao\Telas\FolderName.Designer.cs">
+      <DependentUpon>FolderName.cs</DependentUpon>
+    </Compile>
     <Compile Include="Movimentacoes\Sessao\Telas\FullViewer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -905,6 +929,15 @@
     <EmbeddedResource Include="Base\FormBrowser.resx">
       <DependentUpon>FormBrowser.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Configuracoes\Geral\Configuracoes\Edita.resx">
+      <DependentUpon>Edita.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configuracoes\Geral\Pasta\Edita.resx">
+      <DependentUpon>Edita.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configuracoes\Geral\Pasta\Lista.resx">
+      <DependentUpon>Lista.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Financeiro\Lancamento\Filtro.resx">
       <DependentUpon>Filtro.cs</DependentUpon>
     </EmbeddedResource>
@@ -919,6 +952,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Laboratorio\Pendentes\Lista.resx">
       <DependentUpon>Lista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movimentacoes\Sessao\Telas\FolderName.resx">
+      <DependentUpon>FolderName.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Movimentacoes\Venda\Documentacao\Caderno\SelecionaData.resx">
       <DependentUpon>SelecionaData.cs</DependentUpon>

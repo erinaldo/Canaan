@@ -45,9 +45,9 @@ namespace Canaan.Telas.Movimentacoes.Sessao
             // 
             // statusStrip1
             // 
-            this.statusStrip1.Location = new System.Drawing.Point(0, 522);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 574);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(944, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(1218, 22);
             this.statusStrip1.TabIndex = 0;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -58,7 +58,7 @@ namespace Canaan.Telas.Movimentacoes.Sessao
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelControls.Location = new System.Drawing.Point(206, 0);
             this.panelControls.Name = "panelControls";
-            this.panelControls.Size = new System.Drawing.Size(738, 522);
+            this.panelControls.Size = new System.Drawing.Size(1012, 574);
             this.panelControls.TabIndex = 1;
             // 
             // panel2
@@ -67,7 +67,7 @@ namespace Canaan.Telas.Movimentacoes.Sessao
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(200, 522);
+            this.panel2.Size = new System.Drawing.Size(200, 574);
             this.panel2.TabIndex = 2;
             // 
             // navBarControl1
@@ -88,7 +88,7 @@ namespace Canaan.Telas.Movimentacoes.Sessao
             this.navBarControl1.OptionsNavPane.ShowOverflowPanel = false;
             this.navBarControl1.OptionsNavPane.ShowSplitter = false;
             this.navBarControl1.PaintStyleKind = DevExpress.XtraNavBar.NavBarViewKind.NavigationPane;
-            this.navBarControl1.Size = new System.Drawing.Size(200, 522);
+            this.navBarControl1.Size = new System.Drawing.Size(200, 574);
             this.navBarControl1.TabIndex = 0;
             this.navBarControl1.Text = "navBarControl1";
             this.navBarControl1.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarControl1_LinkClicked);
@@ -119,7 +119,7 @@ namespace Canaan.Telas.Movimentacoes.Sessao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(944, 544);
+            this.ClientSize = new System.Drawing.Size(1218, 596);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panelControls);
             this.Controls.Add(this.statusStrip1);

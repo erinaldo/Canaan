@@ -201,8 +201,8 @@ namespace Canaan.Telas.Movimentacoes.Venda.Imagem
 
         private void btBackup_Click(object sender, EventArgs e)
         {
-            var frm = new Restaurar(LibSessao.GetById(Model.IdSessaoAtual));
-            frm.ShowDialog();
+            //var frm = new Restaurar(LibSessao.GetById(Model.IdSessaoAtual));
+            //frm.ShowDialog();
 
             InitBinding();
         }

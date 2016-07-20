@@ -803,5 +803,17 @@ namespace Canaan.WinApp
         {
 
         }
+
+        private void configuraçõesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var frm = new Telas.Configuracoes.Geral.Configuracoes.Edita();
+            frm.ShowDialog();
+        }
+
+        private void pastasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var frm = new Telas.Configuracoes.Geral.Pasta.Lista();
+            frm.ShowDialog();
+        }
     }
 }

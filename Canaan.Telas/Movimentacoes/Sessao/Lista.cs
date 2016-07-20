@@ -123,7 +123,6 @@ namespace Canaan.Telas.Movimentacoes.Sessao
             Atendimentos = new List<Dados.Atendimento>();
         }
 
-
         #endregion
 
         #region METODOS

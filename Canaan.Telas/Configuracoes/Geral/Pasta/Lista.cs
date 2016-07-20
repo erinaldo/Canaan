@@ -1,37 +1,43 @@
-﻿using System;
+﻿using Canaan.Telas.Base;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
-using Canaan.Telas.Base;
 
-namespace Canaan.Telas.Configuracoes.Geral.GrupoEmpresa
+namespace Canaan.Telas.Configuracoes.Geral.Pasta
 {
     public partial class Lista : FormLista
     {
         //
         //PROPRIEDADES
-        Lib.GrupoEmpresa objLib;
-        List<Dados.GrupoEmpresa> objLista;
+        Lib.Pasta objLib;
+        List<Dados.Pasta> objLista;
 
         //
         //CONSTRUTORES
         public Lista()
         {
             //inicializa propriedades
-            objLib = new Lib.GrupoEmpresa();
-            objLista = objLib.GetByAtivo(true);
-            
+            objLib = new Lib.Pasta();
+            objLista = objLib.Get();
+
             //inicializa os componentes
             InitializeComponent();
 
             //inicializa o titulo
-            Text = "Listagem de Grupos de Empresa";
+            Text = "Listagem de Pastas";
         }
 
         //
         //EVENTOS
         private void Lista_Load(object sender, EventArgs e)
         {
-            CarregaActions();
+            //CarregaActions();
             CarregaGrid(objLib.CarregaGrid(objLista));
         }
 
@@ -44,7 +50,7 @@ namespace Canaan.Telas.Configuracoes.Geral.GrupoEmpresa
             frm.ShowDialog();
 
             //atualiza o grid
-            objLista = objLib.GetByAtivo(true);
+            objLista = objLib.Get();
             CarregaGrid(objLib.CarregaGrid(objLista));
         }
 
@@ -60,7 +66,7 @@ namespace Canaan.Telas.Configuracoes.Geral.GrupoEmpresa
                 frm.ShowDialog();
 
                 //atualiza o grid
-                objLista = objLib.GetByAtivo(true);
+                objLista = objLib.Get();
                 CarregaGrid(objLib.CarregaGrid(objLista));
             }
             else
@@ -87,7 +93,7 @@ namespace Canaan.Telas.Configuracoes.Geral.GrupoEmpresa
                         MessageBox.Show("Registro '" + deleted.Nome + "' excluido com sucesso");
 
                         //atualiza o grid
-                        objLista = objLib.GetByAtivo(true);
+                        objLista = objLib.Get();
                         CarregaGrid(objLib.CarregaGrid(objLista));
                     }
                 }
@@ -106,12 +112,11 @@ namespace Canaan.Telas.Configuracoes.Geral.GrupoEmpresa
 
         protected override void CarregaActions()
         {
-            btnActions.DropDownItems.Add(new ToolStripMenuItem("Filiais", null, new EventHandler(btnFiliais_Click)));
         }
 
         protected override void CarregaFiltros()
         {
-            
+
         }
 
 
@@ -119,16 +124,6 @@ namespace Canaan.Telas.Configuracoes.Geral.GrupoEmpresa
         //EVENTOS DAS ACTIONS
         private void btnFiliais_Click(object sender, EventArgs e)
         {
-            if (dataGrid.SelectedRows.Count > 0)
-            {
-                int id = int.Parse(dataGrid.SelectedRows[0].Cells[0].Value.ToString());
-                var frm = new Filiais.Lista(id);
-                frm.ShowDialog();
-            }
-            else 
-            {
-                MessageBox.Show("Nenhum registro selecionado");
-            }
         }
     }
 }

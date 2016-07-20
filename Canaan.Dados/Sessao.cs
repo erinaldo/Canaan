@@ -18,6 +18,7 @@ namespace Canaan.Dados
         {
             this.Foto = new HashSet<Foto>();
             this.BackupItem = new HashSet<BackupItem>();
+            this.SessaoPasta = new HashSet<SessaoPasta>();
         }
     
         public int IdSessao { get; set; }
@@ -33,10 +34,12 @@ namespace Canaan.Dados
         public System.TimeSpan TempoSessao { get; set; }
         public int QuantidadeFoto { get; set; }
         public decimal Tamanho { get; set; }
+        public string Pasta { get; set; }
     
         public virtual Atendimento Atendimento { get; set; }
         public virtual ICollection<Foto> Foto { get; set; }
         public virtual Usuario Usuario { get; set; }
         public virtual ICollection<BackupItem> BackupItem { get; set; }
+        public virtual ICollection<SessaoPasta> SessaoPasta { get; set; }
     }
 }

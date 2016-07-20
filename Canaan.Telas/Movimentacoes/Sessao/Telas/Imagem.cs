@@ -29,6 +29,14 @@ namespace Canaan.Telas.Movimentacoes.Sessao.Telas
             }
         }
 
+        public Lib.SessaoPasta LibSessaoPasta
+        {
+            get
+            {
+                return new Lib.SessaoPasta();
+            }
+        }
+
         public Lib.CliFor LibCLiente
         {
             get
@@ -37,24 +45,26 @@ namespace Canaan.Telas.Movimentacoes.Sessao.Telas
             }
         }
 
+        public Lib.Foto LibFoto
+        {
+            get
+            {
+                return new Lib.Foto();
+            }
+        }
+
+        public Lib.Config LibConfig
+        {
+            get
+            {
+                return new Lib.Config();
+            }
+        }
+
         private Dados.Sessao Sessao;
 
-        public Foto LibFoto
-        {
-            get
-            {
-                return new Foto();
-            }
-        }
-
-        public Config LibConfig
-        {
-            get
-            {
-                return new Config();
-            }
-        }
-
+        private Dados.SessaoPasta SessaoPasta { get; set; }
+        
         public Dados.Config Config { get; set; }
 
         public Session Session
@@ -67,11 +77,16 @@ namespace Canaan.Telas.Movimentacoes.Sessao.Telas
 
         public List<MemoryStream> Fotos { get; set; }
 
-        public Imagem(Dados.Sessao Sessao)
+        #endregion
+
+        #region CONSTRUTORES
+
+        public Imagem(Dados.Sessao Sessao, int idPasta)
         {
             // TODO: Complete member initialization
             this.Sessao = Sessao;
-            Config = LibConfig.GetByFilial(Session.Contexto.Filial.IdFilial);
+            this.SessaoPasta = LibSessaoPasta.GetById(idPasta);
+            this.Config = LibConfig.GetByFilial(Session.Contexto.Filial.IdFilial);
 
             InitializeComponent();
 
@@ -92,6 +107,7 @@ namespace Canaan.Telas.Movimentacoes.Sessao.Telas
 
         private void Imagem_Load(object sender, EventArgs e)
         {
+            AtualizaImagens(false);
             CarregaImagens();
         }
 
@@ -106,7 +122,7 @@ namespace Canaan.Telas.Movimentacoes.Sessao.Telas
                 {
                     var utility = new ImageUtility(progressBar, Worker, dialogFile, lbInfo);
                     utility.ConfiguraComponentes();
-                    utility.Upload(Sessao, false);
+                    utility.Upload(Sessao, SessaoPasta, false);
                 }
 
             }
@@ -206,7 +222,7 @@ namespace Canaan.Telas.Movimentacoes.Sessao.Telas
 
         private void btBackup_Click(object sender, EventArgs e)
         {
-            var frm = new Restaurar(Sessao);
+            var frm = new Restaurar(Sessao, SessaoPasta);
             frm.ShowDialog();
 
             CarregaImagens();
@@ -229,8 +245,21 @@ namespace Canaan.Telas.Movimentacoes.Sessao.Telas
                     {
                         LibFoto.Delete(item.IdFoto);
 
-                        var file = string.Format(@"\\{0}\{1}\{2}", Config.ServImagem, Config.Folder, item.Thumb);
-                        var fileCanaan = string.Format(@"\\{0}\{1}\{2}.canaan", Config.ServImagem, Config.Folder, item.Thumb.Split('.').FirstOrDefault());
+                        var thumb = string.Format(@"\\{0}\{1}\{2}", Config.ServImagem, Config.Folder, item.Thumb);
+                        var thumbCanaan = string.Format(@"\\{0}\{1}\{2}.canaan", Config.ServImagem, Config.Folder, item.Thumb.Split('.').FirstOrDefault());
+
+                        if (File.Exists(thumb))
+                        {
+                            File.Delete(thumb);
+                        }
+                        else if (File.Exists(thumbCanaan))
+                        {
+                            File.Delete(thumbCanaan);
+                        }
+
+
+                        var file = string.Format(@"\\{0}\{1}\{2}", Config.ServImagem, Config.Folder, item.Url);
+                        var fileCanaan = string.Format(@"\\{0}\{1}\{2}.canaan", Config.ServImagem, Config.Folder, item.Url.Split('.').FirstOrDefault());
 
                         if (File.Exists(file))
                         {
@@ -258,9 +287,115 @@ namespace Canaan.Telas.Movimentacoes.Sessao.Telas
         
         }
 
+        private void cartaFotoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var selectedImg = lstFotos.SelectedItems.Cast<CListViewItem>().FirstOrDefault();
+
+                if (selectedImg != null)
+                {
+                    //declara as variaveis
+                    Image imagem;
+                    var item = selectedImg.Item as Dados.Foto;
+                    var direBase = string.Format(@"\\{0}\{1}\{2}-{3}", Config.ServImagem, Config.Folder, Sessao.Atendimento.CodigoReduzido, Sessao.NumSessao);
+                    var file = string.Format(@"\\{0}\{1}\{2}", Config.ServImagem, Config.Folder, item.Url);
+                    var fileCanaan = string.Format(@"\\{0}\{1}\{2}.canaan", Config.ServImagem, Config.Folder, item.Url.Split('.').FirstOrDefault());
+                    var cliente = LibCLiente.GetCliByAtendimento(Sessao.IdAtendimento).FirstOrDefault();
+
+                    //carrega a imagem
+                    if (File.Exists(file))
+                    {
+                        imagem = Image.FromStream(new MemoryStream(CarregaImagem(file)));
+                    }
+                    else if (File.Exists(fileCanaan))
+                    {
+                        imagem = Image.FromStream(new MemoryStream(CarregaImagem(fileCanaan)));
+                    }
+                    else
+                    {
+                        imagem = Image.FromStream(new MemoryStream(ImageUtility.GetBytesFromResource(Resources.no_image_big)));
+                    }
+
+                    //mensagem de retorno
+                    MessageBoxUtilities.MessageWarning("Carta Foto criada com sucesso");
+                }
+                else
+                {
+                    MessageBoxUtilities.MessageWarning("Nenhuma imagem selecionada");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBoxUtilities.MessageError(null, ex);
+            }
+        }
+
+        private void toolStripButton5_Click(object sender, EventArgs e)
+        {
+            AtualizaImagens(true);
+            CarregaImagens();
+        }
+
         #endregion
 
         #region METODOS
+
+        public void AtualizaImagens(bool forceThumb)
+        {
+            var folder = string.Format(@"\\{0}\{1}\{2}", this.Config.ServImagem, this.Config.Folder, this.SessaoPasta.Caminho);
+            var files = System.IO.Directory.EnumerateFiles(folder);
+
+            foreach (var file in files)
+            {
+                var filename = file.Substring(file.LastIndexOf(@"\") + 1);
+                var thumb = string.Format(@"{0}\thumb\{1}", this.SessaoPasta.Caminho, filename);
+                var url = string.Format(@"{0}\{1}", this.SessaoPasta.Caminho, filename);
+
+                //verifica se existe no banco de dados
+                if (LibFoto.GetByURL(url).Count == 0)
+                {
+                    //insere no banco de dados
+                    var foto = new Dados.Foto();
+                    foto.IdSessao = this.Sessao.IdSessao;
+                    foto.IdSessaoPasta = this.SessaoPasta.IdSessaoPasta;
+                    foto.Nome = filename;
+                    foto.Url = url;
+                    foto.Hora = DateTime.Now;
+                    foto.Tamanho = 0;
+                    foto.MimeType = "image/jpeg";
+                    foto.Thumb = thumb;
+                    foto.IsAtivo = true;
+                    foto.IsSelected = false;
+
+                    LibFoto.Insert(foto);
+
+                    //cria o thumbnail para novas imagens
+                    try
+                    {
+                        var imagem = Image.FromFile(file);
+                        var thumbImage = Lib.Utilitarios.ImageUtility.GetThumbnail(imagem, 200, 200);
+                        thumbImage.Save(string.Format(@"{0}\thumb\{1}", folder, filename));
+                    }
+                    catch (Exception) { }
+                }
+
+                if (forceThumb)
+                {
+                    //recira todos os thumbs
+                    try
+                    {
+                        var imagem = Image.FromFile(file);
+                        var thumbImage = Lib.Utilitarios.ImageUtility.GetThumbnail(imagem, 200, 200);
+                        thumbImage.Save(string.Format(@"{0}\thumb\{1}", folder, filename));
+                    }
+                    catch (Exception) { }
+                }
+
+                
+            }
+        }
 
         public void AtualizaSessao()
         {
@@ -285,6 +420,9 @@ namespace Canaan.Telas.Movimentacoes.Sessao.Telas
 
         private void CarregaImagens()
         {
+            //titulo
+            tabPage1.Text = SessaoPasta.Nome;
+
             //Inicializa Fotos
             if (Fotos == null)
                 Fotos = new List<MemoryStream>();
@@ -297,10 +435,10 @@ namespace Canaan.Telas.Movimentacoes.Sessao.Telas
 
 
                 //Carrega lista de fotos
-                var listaFotos = LibFoto.GetBySessao(Sessao.IdSessao);
+                var listaFotos = LibFoto.GetBySessaoPasta(Sessao.IdSessao, SessaoPasta.IdSessaoPasta);
 
                 //verifica se é para sincronizar o caderno
-                var direBase = string.Format(@"\\{0}\{1}\{2}-{3}", Config.ServImagem, Config.Folder, Sessao.Atendimento.CodigoReduzido, Sessao.NumSessao);
+                var direBase = string.Format(@"\\{0}\{1}", Config.ServImagem, Config.Folder);
 
                 if (!Directory.Exists(direBase))
                 {
@@ -362,54 +500,10 @@ namespace Canaan.Telas.Movimentacoes.Sessao.Telas
             }
         }
 
+
         #endregion
 
         
-
-        private void cartaFotoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                var selectedImg = lstFotos.SelectedItems.Cast<CListViewItem>().FirstOrDefault();
-
-                if (selectedImg != null)
-                {
-                    //declara as variaveis
-                    Image imagem;
-                    var item = selectedImg.Item as Dados.Foto;
-                    var direBase = string.Format(@"\\{0}\{1}\{2}-{3}", Config.ServImagem, Config.Folder, Sessao.Atendimento.CodigoReduzido, Sessao.NumSessao);
-                    var file = string.Format(@"\\{0}\{1}\{2}", Config.ServImagem, Config.Folder, item.Url);
-                    var fileCanaan = string.Format(@"\\{0}\{1}\{2}.canaan", Config.ServImagem, Config.Folder, item.Url.Split('.').FirstOrDefault());
-                    var cliente = LibCLiente.GetCliByAtendimento(Sessao.IdAtendimento).FirstOrDefault();
-
-                    //carrega a imagem
-                    if (File.Exists(file))
-                    {
-                        imagem = Image.FromStream(new MemoryStream(CarregaImagem(file)));
-                    }
-                    else if (File.Exists(fileCanaan))
-                    {
-                        imagem = Image.FromStream(new MemoryStream(CarregaImagem(fileCanaan)));
-                    }
-                    else
-                    {
-                        imagem = Image.FromStream(new MemoryStream(ImageUtility.GetBytesFromResource(Resources.no_image_big)));
-                    }
-
-                    //mensagem de retorno
-                    MessageBoxUtilities.MessageWarning("Carta Foto criada com sucesso");
-                }
-                else
-                {
-                    MessageBoxUtilities.MessageWarning("Nenhuma imagem selecionada");
-                }
-
-            }
-            catch (Exception ex)
-            {
-                MessageBoxUtilities.MessageError(null, ex);
-            }
-        }
     }
 }
 

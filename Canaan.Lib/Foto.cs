@@ -41,6 +41,14 @@ namespace Canaan.Lib
             }
         }
 
+        public List<Dados.Foto> GetByURL(string url)
+        {
+            using (var conn = new Dados.CanaanModelContainer())
+            {
+                return conn.Foto.Where(a => a.Url == url).ToList();
+            }
+        }
+
         public List<Dados.Foto> Filter(string filtro, object[] parameters)
         {
             using (var conn = new Dados.CanaanModelContainer())
@@ -62,6 +70,14 @@ namespace Canaan.Lib
             using (var conn = new Dados.CanaanModelContainer())
             {
                 return conn.Foto.Include(a => a.Sessao).Where(a => a.IdSessao == idSessao).ToList();
+            }
+        }
+
+        public List<Dados.Foto> GetBySessaoPasta(int idSessao, int idSessaoPasta)
+        {
+            using (var conn = new Dados.CanaanModelContainer())
+            {
+                return conn.Foto.Include(a => a.Sessao).Where(a => a.IdSessao == idSessao && a.IdSessaoPasta == idSessaoPasta).ToList();
             }
         }
 

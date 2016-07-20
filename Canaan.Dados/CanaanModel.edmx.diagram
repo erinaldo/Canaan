@@ -42,6 +42,9 @@
         <EntityTypeShape EntityType="CanaanModel.EnvioImagem" Width="1.5" PointX="3" PointY="1.25" />
         <EntityTypeShape EntityType="CanaanModel.EnvioPedido" Width="1.5" PointX="0.75" PointY="1" />
         <AssociationConnector Association="CanaanModel.FK_EnvioImagem_EnvioPedido" />
+        <EntityTypeShape EntityType="CanaanModel.Pasta" Width="1.5" PointX="5.125" PointY="1.625" />
+        <EntityTypeShape EntityType="CanaanModel.SessaoPasta" Width="1.5" PointX="7.125" PointY="1.125" />
+        <AssociationConnector Association="CanaanModel.FK_SessaoPasta_SessaoPasta" />
         </Diagram>
       <Diagram DiagramId="d73f1821c95f4ab095d51b2543d7d911" Name="Views" ZoomLevel="67" >
         </Diagram>

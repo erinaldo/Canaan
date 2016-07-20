@@ -42,16 +42,16 @@ namespace Canaan.Telas.Movimentacoes.Sessao
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.btnFiltros = new System.Windows.Forms.ToolStripSplitButton();
             this.gridAtendimento = new System.Windows.Forms.DataGridView();
+            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AtendimentoGrid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Documento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.gridModelos = new System.Windows.Forms.DataGridView();
             this.Modelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Idade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.gridSessoes = new System.Windows.Forms.DataGridView();
-            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AtendimentoGrid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Documento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolstripActions.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridAtendimento)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -175,6 +175,44 @@ namespace Canaan.Telas.Movimentacoes.Sessao
             this.gridAtendimento.TabIndex = 2;
             this.gridAtendimento.SelectionChanged += new System.EventHandler(this.gridClientes_SelectionChanged);
             // 
+            // Codigo
+            // 
+            this.Codigo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Codigo.DataPropertyName = "Codigo";
+            this.Codigo.FillWeight = 20F;
+            this.Codigo.HeaderText = "Codigo";
+            this.Codigo.MinimumWidth = 120;
+            this.Codigo.Name = "Codigo";
+            this.Codigo.ReadOnly = true;
+            this.Codigo.Visible = false;
+            this.Codigo.Width = 120;
+            // 
+            // AtendimentoGrid
+            // 
+            this.AtendimentoGrid.DataPropertyName = "Atendimento";
+            this.AtendimentoGrid.FillWeight = 40F;
+            this.AtendimentoGrid.HeaderText = "Atendimento";
+            this.AtendimentoGrid.Name = "AtendimentoGrid";
+            this.AtendimentoGrid.ReadOnly = true;
+            // 
+            // Nome
+            // 
+            this.Nome.DataPropertyName = "Cliente";
+            this.Nome.FillWeight = 335.0254F;
+            this.Nome.HeaderText = "Nome";
+            this.Nome.MinimumWidth = 150;
+            this.Nome.Name = "Nome";
+            this.Nome.ReadOnly = true;
+            // 
+            // Documento
+            // 
+            this.Documento.DataPropertyName = "Data";
+            this.Documento.FillWeight = 40F;
+            this.Documento.HeaderText = "Data";
+            this.Documento.MinimumWidth = 100;
+            this.Documento.Name = "Documento";
+            this.Documento.ReadOnly = true;
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.gridModelos);
@@ -268,44 +306,6 @@ namespace Canaan.Telas.Movimentacoes.Sessao
             this.gridSessoes.TabIndex = 3;
             this.gridSessoes.SelectionChanged += new System.EventHandler(this.gridSessoes_SelectionChanged);
             this.gridSessoes.DoubleClick += new System.EventHandler(this.gridSessoes_DoubleClick);
-            // 
-            // Codigo
-            // 
-            this.Codigo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Codigo.DataPropertyName = "Codigo";
-            this.Codigo.FillWeight = 20F;
-            this.Codigo.HeaderText = "Codigo";
-            this.Codigo.MinimumWidth = 120;
-            this.Codigo.Name = "Codigo";
-            this.Codigo.ReadOnly = true;
-            this.Codigo.Visible = false;
-            this.Codigo.Width = 120;
-            // 
-            // AtendimentoGrid
-            // 
-            this.AtendimentoGrid.DataPropertyName = "Atendimento";
-            this.AtendimentoGrid.FillWeight = 40F;
-            this.AtendimentoGrid.HeaderText = "Atendimento";
-            this.AtendimentoGrid.Name = "AtendimentoGrid";
-            this.AtendimentoGrid.ReadOnly = true;
-            // 
-            // Nome
-            // 
-            this.Nome.DataPropertyName = "Cliente";
-            this.Nome.FillWeight = 335.0254F;
-            this.Nome.HeaderText = "Nome";
-            this.Nome.MinimumWidth = 150;
-            this.Nome.Name = "Nome";
-            this.Nome.ReadOnly = true;
-            // 
-            // Documento
-            // 
-            this.Documento.DataPropertyName = "Data";
-            this.Documento.FillWeight = 40F;
-            this.Documento.HeaderText = "Data";
-            this.Documento.MinimumWidth = 100;
-            this.Documento.Name = "Documento";
-            this.Documento.ReadOnly = true;
             // 
             // Lista
             // 

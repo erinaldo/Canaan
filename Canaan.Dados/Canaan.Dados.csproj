@@ -362,6 +362,9 @@
     <Compile Include="Parceria.cs">
       <DependentUpon>CanaanModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Pasta.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Pedido.cs">
       <DependentUpon>CanaanModel.tt</DependentUpon>
     </Compile>
@@ -397,6 +400,9 @@
       <DependentUpon>CanaanModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Sessao.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SessaoPasta.cs">
       <DependentUpon>CanaanModel.tt</DependentUpon>
     </Compile>
     <Compile Include="sysdiagrams.cs">

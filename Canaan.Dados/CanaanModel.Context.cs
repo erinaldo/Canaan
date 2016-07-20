@@ -102,5 +102,7 @@ namespace Canaan.Dados
         public DbSet<EnvioStatus> EnvioStatus { get; set; }
         public DbSet<EnvioImagem> EnvioImagem { get; set; }
         public DbSet<EnvioPedido> EnvioPedido { get; set; }
+        public DbSet<Pasta> Pasta { get; set; }
+        public DbSet<SessaoPasta> SessaoPasta { get; set; }
     }
 }

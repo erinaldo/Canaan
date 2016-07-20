@@ -4,6 +4,7 @@ using Canaan.Lib;
 using Canaan.Telas.Movimentacoes.Sessao.Telas;
 using DevExpress.XtraEditors;
 using DevExpress.XtraNavBar;
+using System.Linq;
 
 namespace Canaan.Telas.Movimentacoes.Sessao
 {
@@ -15,11 +16,27 @@ namespace Canaan.Telas.Movimentacoes.Sessao
 
         public Dados.Atendimento Atendimento { get; set; }
 
+        public Lib.Pasta LibPasta
+        {
+            get
+            {
+                return new Lib.Pasta();
+            }
+        }
+
         public Lib.Sessao LibSessao
         {
             get
             {
                 return new Lib.Sessao();
+            }
+        }
+
+        public Lib.SessaoPasta LibSessaoPasta
+        {
+            get
+            {
+                return new Lib.SessaoPasta();
             }
         }
 
@@ -70,6 +87,7 @@ namespace Canaan.Telas.Movimentacoes.Sessao
         private void Edita_Load(object sender, EventArgs e)
         {
             CarregaInfo();
+            CarregaPastas();
         }
 
         private void navBarControl1_LinkClicked(object sender, NavBarLinkEventArgs e)
@@ -86,7 +104,13 @@ namespace Canaan.Telas.Movimentacoes.Sessao
                 }
                 else
                 {
-                    CarregarImagem();
+
+                    if (e.Link.ItemName.Contains("folder"))
+                    {
+                        var id = int.Parse(e.Link.ItemName.Replace("folder_", string.Empty));
+
+                        CarregarImagem(id);
+                    }
                 }
             }
 
@@ -106,6 +130,7 @@ namespace Canaan.Telas.Movimentacoes.Sessao
 
             try
             {
+                //inicializa o objeto
                 Sessao = new Dados.Sessao
                 {
                     IdAtendimento = Atendimento.IdAtendimento,
@@ -116,12 +141,116 @@ namespace Canaan.Telas.Movimentacoes.Sessao
                     IsCriptografado = new Config().GetByFilial(Session.Contexto.IdFilial).IsCriptogradado
                 };
 
-                Sessao = LibSessao.Insert(Sessao);
+                //cria pastas da sessao
+                CriaPastasCliente();
+
+                if (!string.IsNullOrEmpty(this.Sessao.Pasta))
+                {
+                    //inclui no banco de dados
+                    Sessao = LibSessao.Insert(Sessao);
+
+                    //cria pastas pre definidas no sistema
+                    CriaPastasPadrao();
+                }
+                else
+                {
+                    MessageBox.Show("A pasta do cliente nao foi criada.\nA inclusão da sessão fotográfica foi cancelada");
+                    this.Close();
+                }
             }
             catch (Exception ex)
             {
                 MessageBoxUtilities.MessageError(null, ex);
             }
+        }
+
+        private void CriaPastasCliente()
+        {
+            //verifica se usa ano e mes
+            var config = new Lib.Config().Get().FirstOrDefault();
+            var caminho = string.Format(@"\\{0}\{1}", config.ServImagem, config.Folder);
+            
+            //verifica se usa pasta de ano
+            if (config.PastaUsaAno == true)
+            {
+                caminho = string.Format(@"{0}\{1}", caminho, Sessao.Data.Year.ToString());
+
+                if (!System.IO.Directory.Exists(caminho))
+                    System.IO.Directory.CreateDirectory(caminho);
+            }
+
+            //verifica se ja existe pasta do mes
+            if (config.PastaUsaMes == true)
+            {
+                caminho = string.Format(@"{0}\{1}", caminho, Lib.Utilitarios.Comum.GetMes(Sessao.Data.Month));
+                if (!System.IO.Directory.Exists(caminho))
+                    System.IO.Directory.CreateDirectory(caminho);
+            }
+
+            //verifica pasta cliente
+            var frm = new Telas.FolderName(caminho, Lib.Utilitarios.Comum.GetFolderName(this.Atendimento.CliFor.Nome));
+            frm.ShowDialog();
+
+            if (!string.IsNullOrEmpty(frm.Folder))
+            {
+                var server = string.Format(@"\\{0}\{1}\", config.ServImagem, config.Folder);
+                this.Sessao.Pasta = string.Format(@"{0}\{1}", frm.Caminho, frm.Folder).Replace(server, string.Empty);
+            }
+            else
+            {
+                this.Sessao.Pasta = string.Empty;
+            }
+        }
+
+        private void CriaPastasPadrao()
+        {
+            var config = new Lib.Config().Get().FirstOrDefault();
+            var server = string.Format(@"\\{0}\{1}", config.ServImagem, config.Folder);
+            var pastas = this.LibPasta.Get();
+
+            //faz loop criando as pastas padroes
+            if (!string.IsNullOrEmpty(this.Sessao.Pasta))
+            {
+                foreach (var item in pastas)
+                {
+                    
+                    var pasta = string.Format(@"{0}\{1}", this.Sessao.Pasta, item.Nome);
+
+                    //verifica se ja existe pagina criada
+                    if (!System.IO.Directory.Exists(string.Format(@"{0}\{1}", server, pasta)))
+                    {
+                        System.IO.Directory.CreateDirectory(string.Format(@"{0}\{1}", server, pasta));
+                        System.IO.Directory.CreateDirectory(string.Format(@"{0}\{1}\thumb", server, pasta));
+                    }
+
+                    //verifica se ja existe registro no banco de dados
+                    if (LibSessaoPasta.GetByNome(Sessao.IdSessao, item.Nome).Count == 0)
+                    {
+                        var sessaoPasta = new Dados.SessaoPasta();
+                        sessaoPasta.IdSessao = Sessao.IdSessao;
+                        sessaoPasta.Nome = item.Nome;
+                        sessaoPasta.Caminho = pasta;
+                        sessaoPasta.IsDefault = item.IsDefault;
+
+                        LibSessaoPasta.Insert(sessaoPasta);
+                    }
+                }
+            }
+        }
+
+        private void CarregaPastas()
+        {
+            var pastas = LibSessaoPasta.GetBySessao(this.Sessao.IdSessao);
+
+            foreach (var pasta in pastas)
+            {
+                var item = new NavBarItem();
+                item.Name = string.Format("folder_{0}", pasta.IdSessaoPasta);
+                item.Caption = pasta.Nome;
+
+                nvBar.ItemLinks.Add(item);
+            }
+            
         }
 
         private void CarregaInfo()
@@ -142,13 +271,13 @@ namespace Canaan.Telas.Movimentacoes.Sessao
             Focus();
         }
 
-        private void CarregarImagem()
+        private void CarregarImagem(int id)
         {
             //Limpa controles
             LimpaControles();
 
             ///Abre tela de informações
-            var frm = new Imagem(Sessao);
+            var frm = new Imagem(Sessao, id);
             frm.TopLevel = false;
 
             panelControls.Controls.Add(frm);

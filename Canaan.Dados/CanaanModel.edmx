@@ -279,6 +279,8 @@
           <Property Name="UsaManipulacao" Type="bit" />
           <Property Name="LocalHost" Type="nvarchar" MaxLength="200" />
           <Property Name="LocalFolder" Type="nvarchar" MaxLength="200" />
+          <Property Name="PastaUsaAno" Type="bit" />
+          <Property Name="PastaUsaMes" Type="bit" />
         </EntityType>
         <EntityType Name="Conta">
           <Key>
@@ -497,13 +499,15 @@
           </Key>
           <Property Name="IdFoto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="IdSessao" Type="int" Nullable="false" />
+          <Property Name="IdSessaoPasta" Type="int" />
           <Property Name="Nome" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="Url" Type="nvarchar" MaxLength="200" Nullable="false" />
           <Property Name="Hora" Type="datetime" Nullable="false" />
           <Property Name="Tamanho" Type="int" Nullable="false" />
           <Property Name="MimeType" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="IsAtivo" Type="bit" Nullable="false" />
           <Property Name="Thumb" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="IsAtivo" Type="bit" Nullable="false" />
+          <Property Name="IsSelected" Type="bit" />
         </EntityType>
         <EntityType Name="GrupoEmpresa">
           <Key>
@@ -723,6 +727,14 @@
           <Property Name="IdParceriaWeb" Type="int" />
           <Property Name="NomeConsultora" Type="varchar" MaxLength="200" />
         </EntityType>
+        <EntityType Name="Pasta">
+          <Key>
+            <PropertyRef Name="IdPasta" />
+          </Key>
+          <Property Name="IdPasta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nome" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="IsDefault" Type="bit" Nullable="false" />
+        </EntityType>
         <EntityType Name="Pedido">
           <Key>
             <PropertyRef Name="IdPedido" />
@@ -891,6 +903,18 @@
           <Property Name="TempoSessao" Type="time" Precision="7" Nullable="false" />
           <Property Name="QuantidadeFoto" Type="int" Nullable="false" />
           <Property Name="Tamanho" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Pasta" Type="varchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="SessaoPasta">
+          <Key>
+            <PropertyRef Name="IdSessaoPasta" />
+          </Key>
+          <Property Name="IdSessaoPasta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdSessao" Type="int" Nullable="false" />
+          <Property Name="IdPastaPai" Type="int" />
+          <Property Name="Nome" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="Caminho" Type="varchar" MaxLength="250" />
+          <Property Name="IsDefault" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -1725,6 +1749,20 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Foto_SessaoPasta">
+          <End Role="SessaoPasta" Type="Self.SessaoPasta" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Foto" Type="Self.Foto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SessaoPasta">
+              <PropertyRef Name="IdSessaoPasta" />
+            </Principal>
+            <Dependent Role="Foto">
+              <PropertyRef Name="IdSessaoPasta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_FotoOrdemServicoItem">
           <End Role="Foto" Type="Self.Foto" Multiplicity="1" />
           <End Role="OrdemServicoItem" Type="Self.OrdemServicoItem" Multiplicity="*" />
@@ -2281,6 +2319,32 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_SessaoPasta_Sessao">
+          <End Role="Sessao" Type="Self.Sessao" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="SessaoPasta" Type="Self.SessaoPasta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sessao">
+              <PropertyRef Name="IdSessao" />
+            </Principal>
+            <Dependent Role="SessaoPasta">
+              <PropertyRef Name="IdSessao" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SessaoPasta_SessaoPasta">
+          <End Role="SessaoPasta" Type="Self.SessaoPasta" Multiplicity="0..1" />
+          <End Role="SessaoPasta1" Type="Self.SessaoPasta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SessaoPasta">
+              <PropertyRef Name="IdSessaoPasta" />
+            </Principal>
+            <Dependent Role="SessaoPasta1">
+              <PropertyRef Name="IdPastaPai" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_TabelaFilial_Filial">
           <End Role="Filial" Type="Self.Filial" Multiplicity="1" />
           <End Role="TabelaFilial" Type="Self.TabelaFilial" Multiplicity="*" />
@@ -2693,6 +2757,7 @@
           <EntitySet Name="Pais" EntityType="Self.Pais" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Parametro" EntityType="Self.Parametro" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Parceria" EntityType="Self.Parceria" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Pasta" EntityType="Self.Pasta" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Pedido" EntityType="Self.Pedido" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Pedido_Compra" EntityType="Self.Pedido_Compra" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Pedido_Venda" EntityType="Self.Pedido_Venda" Schema="dbo" store:Type="Tables" />
@@ -2705,6 +2770,7 @@
           <EntitySet Name="RetornoLog" EntityType="Self.RetornoLog" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Servico" EntityType="Self.Servico" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Sessao" EntityType="Self.Sessao" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SessaoPasta" EntityType="Self.SessaoPasta" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tabela" EntityType="Self.Tabela" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TabelaFilial" EntityType="Self.TabelaFilial" Schema="dbo" store:Type="Tables" />
@@ -2935,6 +3001,10 @@
             <End Role="FormaPgto" EntitySet="FormaPgto" />
             <End Role="Pedido" EntitySet="Pedido" />
           </AssociationSet>
+          <AssociationSet Name="FK_Foto_SessaoPasta" Association="Self.FK_Foto_SessaoPasta">
+            <End Role="SessaoPasta" EntitySet="SessaoPasta" />
+            <End Role="Foto" EntitySet="Foto" />
+          </AssociationSet>
           <AssociationSet Name="FK_FotoOrdemServicoItem" Association="Self.FK_FotoOrdemServicoItem">
             <End Role="Foto" EntitySet="Foto" />
             <End Role="OrdemServicoItem" EntitySet="OrdemServicoItem" />
@@ -3106,6 +3176,14 @@
           <AssociationSet Name="FK_SessaoFoto" Association="Self.FK_SessaoFoto">
             <End Role="Sessao" EntitySet="Sessao" />
             <End Role="Foto" EntitySet="Foto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SessaoPasta_Sessao" Association="Self.FK_SessaoPasta_Sessao">
+            <End Role="Sessao" EntitySet="Sessao" />
+            <End Role="SessaoPasta" EntitySet="SessaoPasta" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SessaoPasta_SessaoPasta" Association="Self.FK_SessaoPasta_SessaoPasta">
+            <End Role="SessaoPasta" EntitySet="SessaoPasta" />
+            <End Role="SessaoPasta1" EntitySet="SessaoPasta" />
           </AssociationSet>
           <AssociationSet Name="FK_TabelaFilial_Filial" Association="Self.FK_TabelaFilial_Filial">
             <End Role="Filial" EntitySet="Filial" />
@@ -3797,6 +3875,20 @@
           <AssociationSet Name="FK_EnvioImagem_EnvioPedido" Association="CanaanModel.FK_EnvioImagem_EnvioPedido">
             <End Role="EnvioPedido" EntitySet="EnvioPedido" />
             <End Role="EnvioImagem" EntitySet="EnvioImagem" />
+          </AssociationSet>
+          <EntitySet Name="Pasta" EntityType="CanaanModel.Pasta" />
+          <EntitySet Name="SessaoPasta" EntityType="CanaanModel.SessaoPasta" />
+          <AssociationSet Name="FK_Foto_SessaoPasta" Association="CanaanModel.FK_Foto_SessaoPasta">
+            <End Role="SessaoPasta" EntitySet="SessaoPasta" />
+            <End Role="Foto" EntitySet="Foto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SessaoPasta_SessaoPasta" Association="CanaanModel.FK_SessaoPasta_SessaoPasta">
+            <End Role="SessaoPasta" EntitySet="SessaoPasta" />
+            <End Role="SessaoPasta1" EntitySet="SessaoPasta" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SessaoPasta_Sessao" Association="CanaanModel.FK_SessaoPasta_Sessao">
+            <End Role="Sessao" EntitySet="Sessao" />
+            <End Role="SessaoPasta" EntitySet="SessaoPasta" />
           </AssociationSet>
           </EntityContainer>
         <EntityType Name="GrupoEmpresa" Abstract="false">
@@ -5531,6 +5623,8 @@
           <Property Name="UsaManipulacao" Type="Boolean" />
           <Property Name="LocalHost" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="LocalFolder" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="PastaUsaAno" Type="Boolean" />
+          <Property Name="PastaUsaMes" Type="Boolean" />
         </EntityType>
         <Association Name="FK_Config_Filial">
           <End Type="CanaanModel.Filial" Role="Filial" Multiplicity="1">
@@ -5881,6 +5975,9 @@
           <NavigationProperty Name="VendaFoto" Relationship="CanaanModel.FK_FotoVendaFoto" FromRole="Foto" ToRole="VendaFoto" />
           <NavigationProperty Name="Sessao" Relationship="CanaanModel.FK_SessaoFoto" FromRole="Foto" ToRole="Sessao" />
           <NavigationProperty Name="OrdemServicoItem" Relationship="CanaanModel.FK_FotoOrdemServicoItem" FromRole="Foto" ToRole="OrdemServicoItem" />
+          <Property Name="IdSessaoPasta" Type="Int32" />
+          <Property Name="IsSelected" Type="Boolean" />
+          <NavigationProperty Name="SessaoPasta" Relationship="CanaanModel.FK_Foto_SessaoPasta" FromRole="Foto" ToRole="SessaoPasta" />
         </EntityType>
         <Association Name="FK_FotoVendaFoto">
           <End Type="CanaanModel.Foto" Role="Foto" Multiplicity="1" />
@@ -5915,6 +6012,8 @@
           <NavigationProperty Name="Usuario" Relationship="CanaanModel.FK_UsuarioSessao" FromRole="Sessao" ToRole="Usuario" />
           <NavigationProperty Name="BackupItem" Relationship="CanaanModel.FK_BackupItem_Sessao" FromRole="Sessao" ToRole="BackupItem" />
           <Property Name="Tamanho" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="Pasta" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="SessaoPasta" Relationship="CanaanModel.FK_SessaoPasta_Sessao" FromRole="Sessao" ToRole="SessaoPasta" />
         </EntityType>
         <Association Name="FK_AtendimentoSessao">
           <End Type="CanaanModel.Atendimento" Role="Atendimento" Multiplicity="1" />
@@ -6784,6 +6883,69 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="Pasta">
+          <Key>
+            <PropertyRef Name="IdPasta" />
+          </Key>
+          <Property Name="IdPasta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IsDefault" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SessaoPasta">
+          <Key>
+            <PropertyRef Name="IdSessaoPasta" />
+          </Key>
+          <Property Name="IdSessaoPasta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdPastaPai" Type="Int32" />
+          <Property Name="Nome" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="IsDefault" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Foto" Relationship="CanaanModel.FK_Foto_SessaoPasta" FromRole="SessaoPasta" ToRole="Foto" />
+          <NavigationProperty Name="SessaoPasta1" Relationship="CanaanModel.FK_SessaoPasta_SessaoPasta" FromRole="SessaoPasta" ToRole="SessaoPasta1" />
+          <NavigationProperty Name="SessaoPasta2" Relationship="CanaanModel.FK_SessaoPasta_SessaoPasta" FromRole="SessaoPasta1" ToRole="SessaoPasta" />
+          <Property Name="IdSessao" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Sessao" Relationship="CanaanModel.FK_SessaoPasta_Sessao" FromRole="SessaoPasta" ToRole="Sessao" />
+          <Property Name="Caminho" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <Association Name="FK_Foto_SessaoPasta">
+          <End Type="CanaanModel.SessaoPasta" Role="SessaoPasta" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="CanaanModel.Foto" Role="Foto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SessaoPasta">
+              <PropertyRef Name="IdSessaoPasta" />
+            </Principal>
+            <Dependent Role="Foto">
+              <PropertyRef Name="IdSessaoPasta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SessaoPasta_SessaoPasta">
+          <End Type="CanaanModel.SessaoPasta" Role="SessaoPasta" Multiplicity="0..1" />
+          <End Type="CanaanModel.SessaoPasta" Role="SessaoPasta1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SessaoPasta">
+              <PropertyRef Name="IdSessaoPasta" />
+            </Principal>
+            <Dependent Role="SessaoPasta1">
+              <PropertyRef Name="IdPastaPai" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SessaoPasta_Sessao">
+          <End Type="CanaanModel.Sessao" Role="Sessao" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="CanaanModel.SessaoPasta" Role="SessaoPasta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sessao">
+              <PropertyRef Name="IdSessao" />
+            </Principal>
+            <Dependent Role="SessaoPasta">
+              <PropertyRef Name="IdSessao" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -7494,6 +7656,8 @@
           <EntitySetMapping Name="Config">
             <EntityTypeMapping TypeName="CanaanModel.Config">
               <MappingFragment StoreEntitySet="Config">
+                <ScalarProperty Name="PastaUsaMes" ColumnName="PastaUsaMes" />
+                <ScalarProperty Name="PastaUsaAno" ColumnName="PastaUsaAno" />
                 <ScalarProperty Name="LocalFolder" ColumnName="LocalFolder" />
                 <ScalarProperty Name="LocalHost" ColumnName="LocalHost" />
                 <ScalarProperty Name="UsaManipulacao" ColumnName="UsaManipulacao" />
@@ -7610,6 +7774,8 @@
           <EntitySetMapping Name="Foto">
             <EntityTypeMapping TypeName="CanaanModel.Foto">
               <MappingFragment StoreEntitySet="Foto">
+                <ScalarProperty Name="IsSelected" ColumnName="IsSelected" />
+                <ScalarProperty Name="IdSessaoPasta" ColumnName="IdSessaoPasta" />
                 <ScalarProperty Name="Thumb" ColumnName="Thumb" />
                 <ScalarProperty Name="IsAtivo" ColumnName="IsAtivo" />
                 <ScalarProperty Name="MimeType" ColumnName="MimeType" />
@@ -7625,6 +7791,7 @@
           <EntitySetMapping Name="Sessao">
             <EntityTypeMapping TypeName="CanaanModel.Sessao">
               <MappingFragment StoreEntitySet="Sessao">
+                <ScalarProperty Name="Pasta" ColumnName="Pasta" />
                 <ScalarProperty Name="Tamanho" ColumnName="Tamanho" />
                 <ScalarProperty Name="QuantidadeFoto" ColumnName="QuantidadeFoto" />
                 <ScalarProperty Name="TempoSessao" ColumnName="TempoSessao" />
@@ -7886,6 +8053,27 @@
                 <ScalarProperty Name="Cliente" ColumnName="Cliente" />
                 <ScalarProperty Name="IdEnvio" ColumnName="IdEnvio" />
                 <ScalarProperty Name="IdEnvioPedido" ColumnName="IdEnvioPedido" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Pasta">
+            <EntityTypeMapping TypeName="CanaanModel.Pasta">
+              <MappingFragment StoreEntitySet="Pasta">
+                <ScalarProperty Name="IsDefault" ColumnName="IsDefault" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="IdPasta" ColumnName="IdPasta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SessaoPasta">
+            <EntityTypeMapping TypeName="CanaanModel.SessaoPasta">
+              <MappingFragment StoreEntitySet="SessaoPasta">
+                <ScalarProperty Name="Caminho" ColumnName="Caminho" />
+                <ScalarProperty Name="IdSessao" ColumnName="IdSessao" />
+                <ScalarProperty Name="IsDefault" ColumnName="IsDefault" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="IdPastaPai" ColumnName="IdPastaPai" />
+                <ScalarProperty Name="IdSessaoPasta" ColumnName="IdSessaoPasta" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

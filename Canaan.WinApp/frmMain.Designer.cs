@@ -93,18 +93,17 @@
             this.termoDeAditamentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.trocaDeTitularidadeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rotinasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mMarketing = new System.Windows.Forms.ToolStripMenuItem();
-            this.mTelemarketing = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
-            this.mRotinasDistCupons = new System.Windows.Forms.ToolStripMenuItem();
-            this.mRotinasDistFaltantes = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
             this.backupFotografadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
             this.conferênciaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mMarketingGeral = new System.Windows.Forms.ToolStripMenuItem();
             this.parceriasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cuponsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.mTelemarketing = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.mRotinasDistCupons = new System.Windows.Forms.ToolStripMenuItem();
+            this.mRotinasDistFaltantes = new System.Windows.Forms.ToolStripMenuItem();
             this.mFinanceiro = new System.Windows.Forms.ToolStripMenuItem();
             this.lançamentosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
@@ -113,6 +112,8 @@
             this.mConfigGeral = new System.Windows.Forms.ToolStripMenuItem();
             this.menuConf_Geral_GruposEmpresa = new System.Windows.Forms.ToolStripMenuItem();
             this.menuConf_Geral_Filiais = new System.Windows.Forms.ToolStripMenuItem();
+            this.configuraçõesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pastasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mConfigSeguranca = new System.Windows.Forms.ToolStripMenuItem();
             this.mConfigSegGrupos = new System.Windows.Forms.ToolStripMenuItem();
             this.mConfigSegUsuario = new System.Windows.Forms.ToolStripMenuItem();
@@ -644,56 +645,12 @@
             // rotinasToolStripMenuItem
             // 
             this.rotinasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mMarketing,
-            this.toolStripSeparator10,
             this.backupFotografadosToolStripMenuItem,
             this.toolStripSeparator11,
             this.conferênciaToolStripMenuItem});
             this.rotinasToolStripMenuItem.Name = "rotinasToolStripMenuItem";
             this.rotinasToolStripMenuItem.Size = new System.Drawing.Size(58, 20);
             this.rotinasToolStripMenuItem.Text = "Rotinas";
-            // 
-            // mMarketing
-            // 
-            this.mMarketing.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mTelemarketing,
-            this.toolStripSeparator5,
-            this.mRotinasDistCupons,
-            this.mRotinasDistFaltantes});
-            this.mMarketing.Name = "mMarketing";
-            this.mMarketing.Size = new System.Drawing.Size(186, 22);
-            this.mMarketing.Text = "Marketing";
-            // 
-            // mTelemarketing
-            // 
-            this.mTelemarketing.Name = "mTelemarketing";
-            this.mTelemarketing.Size = new System.Drawing.Size(203, 22);
-            this.mTelemarketing.Text = "Telemarketing";
-            this.mTelemarketing.Click += new System.EventHandler(this.telemarketingToolStripMenuItem_Click);
-            // 
-            // toolStripSeparator5
-            // 
-            this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(200, 6);
-            // 
-            // mRotinasDistCupons
-            // 
-            this.mRotinasDistCupons.Name = "mRotinasDistCupons";
-            this.mRotinasDistCupons.Size = new System.Drawing.Size(203, 22);
-            this.mRotinasDistCupons.Text = "Distribuição de Cupons";
-            this.mRotinasDistCupons.Click += new System.EventHandler(this.selecaoDeCuponsToolStripMenuItem_Click);
-            // 
-            // mRotinasDistFaltantes
-            // 
-            this.mRotinasDistFaltantes.Name = "mRotinasDistFaltantes";
-            this.mRotinasDistFaltantes.Size = new System.Drawing.Size(203, 22);
-            this.mRotinasDistFaltantes.Text = "Distribuição de Faltantes";
-            this.mRotinasDistFaltantes.Click += new System.EventHandler(this.distribuicaoDeFaltantesToolStripMenuItem_Click);
-            // 
-            // toolStripSeparator10
-            // 
-            this.toolStripSeparator10.Name = "toolStripSeparator10";
-            this.toolStripSeparator10.Size = new System.Drawing.Size(183, 6);
             // 
             // backupFotografadosToolStripMenuItem
             // 
@@ -718,7 +675,12 @@
             // 
             this.mMarketingGeral.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.parceriasToolStripMenuItem,
-            this.cuponsToolStripMenuItem});
+            this.cuponsToolStripMenuItem,
+            this.toolStripSeparator1,
+            this.mTelemarketing,
+            this.toolStripSeparator2,
+            this.mRotinasDistCupons,
+            this.mRotinasDistFaltantes});
             this.mMarketingGeral.Name = "mMarketingGeral";
             this.mMarketingGeral.Size = new System.Drawing.Size(73, 20);
             this.mMarketingGeral.Text = "Marketing";
@@ -726,16 +688,47 @@
             // parceriasToolStripMenuItem
             // 
             this.parceriasToolStripMenuItem.Name = "parceriasToolStripMenuItem";
-            this.parceriasToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
+            this.parceriasToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
             this.parceriasToolStripMenuItem.Text = "Parcerias";
             this.parceriasToolStripMenuItem.Click += new System.EventHandler(this.parceriasToolStripMenuItem_Click);
             // 
             // cuponsToolStripMenuItem
             // 
             this.cuponsToolStripMenuItem.Name = "cuponsToolStripMenuItem";
-            this.cuponsToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
+            this.cuponsToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
             this.cuponsToolStripMenuItem.Text = "Cupons";
             this.cuponsToolStripMenuItem.Click += new System.EventHandler(this.cuponsToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(200, 6);
+            // 
+            // mTelemarketing
+            // 
+            this.mTelemarketing.Name = "mTelemarketing";
+            this.mTelemarketing.Size = new System.Drawing.Size(203, 22);
+            this.mTelemarketing.Text = "Telemarketing";
+            this.mTelemarketing.Click += new System.EventHandler(this.telemarketingToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(200, 6);
+            // 
+            // mRotinasDistCupons
+            // 
+            this.mRotinasDistCupons.Name = "mRotinasDistCupons";
+            this.mRotinasDistCupons.Size = new System.Drawing.Size(203, 22);
+            this.mRotinasDistCupons.Text = "Distribuição de Cupons";
+            this.mRotinasDistCupons.Click += new System.EventHandler(this.selecaoDeCuponsToolStripMenuItem_Click);
+            // 
+            // mRotinasDistFaltantes
+            // 
+            this.mRotinasDistFaltantes.Name = "mRotinasDistFaltantes";
+            this.mRotinasDistFaltantes.Size = new System.Drawing.Size(203, 22);
+            this.mRotinasDistFaltantes.Text = "Distribuição de Faltantes";
+            this.mRotinasDistFaltantes.Click += new System.EventHandler(this.distribuicaoDeFaltantesToolStripMenuItem_Click);
             // 
             // mFinanceiro
             // 
@@ -783,7 +776,9 @@
             // 
             this.mConfigGeral.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuConf_Geral_GruposEmpresa,
-            this.menuConf_Geral_Filiais});
+            this.menuConf_Geral_Filiais,
+            this.configuraçõesToolStripMenuItem,
+            this.pastasToolStripMenuItem});
             this.mConfigGeral.Name = "mConfigGeral";
             this.mConfigGeral.Size = new System.Drawing.Size(152, 22);
             this.mConfigGeral.Text = "Geral";
@@ -801,6 +796,20 @@
             this.menuConf_Geral_Filiais.Size = new System.Drawing.Size(176, 22);
             this.menuConf_Geral_Filiais.Text = "Filiais";
             this.menuConf_Geral_Filiais.Click += new System.EventHandler(this.menuConf_Geral_Filiais_Click);
+            // 
+            // configuraçõesToolStripMenuItem
+            // 
+            this.configuraçõesToolStripMenuItem.Name = "configuraçõesToolStripMenuItem";
+            this.configuraçõesToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.configuraçõesToolStripMenuItem.Text = "Configurações";
+            this.configuraçõesToolStripMenuItem.Click += new System.EventHandler(this.configuraçõesToolStripMenuItem_Click);
+            // 
+            // pastasToolStripMenuItem
+            // 
+            this.pastasToolStripMenuItem.Name = "pastasToolStripMenuItem";
+            this.pastasToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.pastasToolStripMenuItem.Text = "Pastas";
+            this.pastasToolStripMenuItem.Click += new System.EventHandler(this.pastasToolStripMenuItem_Click);
             // 
             // mConfigSeguranca
             // 
@@ -899,14 +908,14 @@
             // tabelaToolStripMenuItem
             // 
             this.tabelaToolStripMenuItem.Name = "tabelaToolStripMenuItem";
-            this.tabelaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.tabelaToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.tabelaToolStripMenuItem.Text = "Serviços";
             this.tabelaToolStripMenuItem.Click += new System.EventHandler(this.tabelaToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(122, 22);
             this.toolStripMenuItem1.Text = "Produtos";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
@@ -1105,16 +1114,11 @@
         private System.Windows.Forms.ToolStripMenuItem movimentaçõesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mAgendamento;
         private System.Windows.Forms.ToolStripMenuItem rotinasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem mMarketing;
-        private System.Windows.Forms.ToolStripMenuItem mRotinasDistCupons;
         private System.Windows.Forms.ToolStripMenuItem mConfigFinanceiro;
         private System.Windows.Forms.ToolStripMenuItem bancosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem agenciasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem contasBancariasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem contasCaixaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem mTelemarketing;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
-        private System.Windows.Forms.ToolStripMenuItem mRotinasDistFaltantes;
         private System.Windows.Forms.ToolStripMenuItem mMarketingGeral;
         private System.Windows.Forms.ToolStripMenuItem parceriasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cuponsToolStripMenuItem;
@@ -1132,7 +1136,6 @@
         private System.Windows.Forms.ToolStripMenuItem agendamentoXHoraToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem agendamentoXDiaToolStripMenuItem1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator9;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator10;
         private System.Windows.Forms.ToolStripMenuItem listaDeTelemarketingToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem backupFotografadosToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator11;
@@ -1192,6 +1195,13 @@
         private System.Windows.Forms.ToolStripMenuItem pedidoAvulsoToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem envioDeImagensToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem configuraçõesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pastasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem mTelemarketing;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripMenuItem mRotinasDistCupons;
+        private System.Windows.Forms.ToolStripMenuItem mRotinasDistFaltantes;
     }
 }
 

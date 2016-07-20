@@ -46,6 +46,8 @@ namespace Canaan.Telas.Movimentacoes.Sessao.Telas
 
         public Dados.Sessao Sessao { get; set; }
 
+        public Dados.SessaoPasta SessaoPasta { get; set; }
+
         public Dados.Venda Venda { get; set; }
 
         public VendaFoto LibVendaFoto
@@ -237,7 +239,8 @@ namespace Canaan.Telas.Movimentacoes.Sessao.Telas
 
             try
             {
-                var direBase = string.Format(@"\\{0}\{1}\{2}-{3}", Config.ServImagem, Config.Folder, Sessao.Atendimento.CodigoReduzido, Sessao.NumSessao);
+                //var direBase = string.Format(@"\\{0}\{1}\{2}-{3}", Config.ServImagem, Config.Folder, Sessao.Atendimento.CodigoReduzido, Sessao.NumSessao);
+                var direBase = string.Format(@"\\{0}\{1}", Config.ServImagem, Config.Folder);
 
                 //nome da imagem
                 txtNome.Text = CurrentItem.Nome;
@@ -374,9 +377,6 @@ namespace Canaan.Telas.Movimentacoes.Sessao.Telas
         }
 
         #endregion
-
-        
-
     }
 
     public enum FullViewerType

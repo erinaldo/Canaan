@@ -38,14 +38,11 @@ namespace Canaan.Telas.Movimentacoes.Sessao.Telas
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this.btExcluirFoto = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnActions = new System.Windows.Forms.ToolStripSplitButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnFiltros = new System.Windows.Forms.ToolStripSplitButton();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.statusBar = new System.Windows.Forms.StatusStrip();
             this.progressBar = new System.Windows.Forms.ToolStripProgressBar();
             this.lbInfo = new System.Windows.Forms.ToolStripStatusLabel();
@@ -67,17 +64,14 @@ namespace Canaan.Telas.Movimentacoes.Sessao.Telas
             this.toolstripActions.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButton1,
             this.toolStripSeparator2,
+            this.toolStripButton5,
+            this.toolStripSeparator4,
             this.toolStripButton2,
             this.toolStripSeparator1,
             this.toolStripLabel1,
             this.toolStripButton3,
             this.toolStripButton4,
-            this.btExcluirFoto,
-            this.toolStripSeparator5,
-            this.btnActions,
-            this.toolStripSeparator4,
-            this.btnFiltros,
-            this.toolStripSeparator3});
+            this.btExcluirFoto});
             this.toolstripActions.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             this.toolstripActions.Location = new System.Drawing.Point(0, 0);
             this.toolstripActions.Name = "toolstripActions";
@@ -120,6 +114,16 @@ namespace Canaan.Telas.Movimentacoes.Sessao.Telas
             this.toolStripLabel1.Size = new System.Drawing.Size(110, 20);
             this.toolStripLabel1.Text = "Opções de Imagem";
             // 
+            // toolStripButton5
+            // 
+            this.toolStripButton5.Image = global::Canaan.Telas.Properties.Resources.Loop_16xLG;
+            this.toolStripButton5.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton5.Name = "toolStripButton5";
+            this.toolStripButton5.Size = new System.Drawing.Size(121, 20);
+            this.toolStripButton5.Text = "Atualizar Imagens";
+            this.toolStripButton5.Click += new System.EventHandler(this.toolStripButton5_Click);
+            // 
             // toolStripButton3
             // 
             this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -150,36 +154,10 @@ namespace Canaan.Telas.Movimentacoes.Sessao.Telas
             this.btExcluirFoto.Text = "toolStripButton5";
             this.btExcluirFoto.Click += new System.EventHandler(this.btExcluirFoto_Click);
             // 
-            // toolStripSeparator5
-            // 
-            this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 23);
-            // 
-            // btnActions
-            // 
-            this.btnActions.Image = global::Canaan.Telas.Properties.Resources.gear_16xLG;
-            this.btnActions.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnActions.Name = "btnActions";
-            this.btnActions.Size = new System.Drawing.Size(109, 20);
-            this.btnActions.Text = "Outras Ações";
-            // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
             this.toolStripSeparator4.Size = new System.Drawing.Size(6, 23);
-            // 
-            // btnFiltros
-            // 
-            this.btnFiltros.Image = global::Canaan.Telas.Properties.Resources.filter_16xLG;
-            this.btnFiltros.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnFiltros.Name = "btnFiltros";
-            this.btnFiltros.Size = new System.Drawing.Size(71, 20);
-            this.btnFiltros.Text = "Filtros";
-            // 
-            // toolStripSeparator3
-            // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 23);
             // 
             // statusBar
             // 
@@ -245,7 +223,7 @@ namespace Canaan.Telas.Movimentacoes.Sessao.Telas
             // imgList
             // 
             this.imgList.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
-            this.imgList.ImageSize = new System.Drawing.Size(100, 100);
+            this.imgList.ImageSize = new System.Drawing.Size(200, 200);
             this.imgList.TransparentColor = System.Drawing.Color.Transparent;
             // 
             // Imagem
@@ -279,17 +257,13 @@ namespace Canaan.Telas.Movimentacoes.Sessao.Telas
         protected ToolStrip toolstripActions;
         private ToolStripButton toolStripButton1;
         private ToolStripSeparator toolStripSeparator1;
-        protected ToolStripSplitButton btnActions;
         private ToolStripSeparator toolStripSeparator4;
-        protected ToolStripSplitButton btnFiltros;
         private ToolStripSeparator toolStripSeparator2;
         private ToolStripButton toolStripButton2;
-        private ToolStripSeparator toolStripSeparator3;
         private ToolStripLabel toolStripLabel1;
         private ToolStripButton toolStripButton3;
         private ToolStripButton toolStripButton4;
         private ToolStripButton btExcluirFoto;
-        private ToolStripSeparator toolStripSeparator5;
         private StatusStrip statusBar;
         private ToolStripProgressBar progressBar;
         private TabControl tabControl1;
@@ -299,5 +273,6 @@ namespace Canaan.Telas.Movimentacoes.Sessao.Telas
         private OpenFileDialog dialogFile;
         private ImageList imgList;
         private FolderBrowserDialog folderDialog;
+        private ToolStripButton toolStripButton5;
     }
 }

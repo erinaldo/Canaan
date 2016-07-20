@@ -32,6 +32,7 @@ namespace Canaan.Lib.Utilitarios
         private ToolStripLabel LbInfo;
         private Direction Direcao;
         private Dados.Sessao Sessao;
+        private Dados.SessaoPasta SessaoPasta;
 
         #endregion
 
@@ -41,7 +42,7 @@ namespace Canaan.Lib.Utilitarios
 
         public bool Backup { get; set; }
 
-        public Config LibConfig
+        public Lib.Config LibConfig
         {
             get
             {
@@ -51,7 +52,7 @@ namespace Canaan.Lib.Utilitarios
 
         public Dados.Config Config { get; set; }
 
-        public Session Session
+        public Lib.Session Session
         {
             get
             {
@@ -59,7 +60,7 @@ namespace Canaan.Lib.Utilitarios
             }
         }
 
-        public Foto LibFoto
+        public Lib.Foto LibFoto
         {
             get
             {
@@ -67,11 +68,19 @@ namespace Canaan.Lib.Utilitarios
             }
         }
 
-        public Sessao LibSessao
+        public Lib.Sessao LibSessao
         {
             get
             {
                 return new Sessao();
+            }
+        }
+
+        public Lib.SessaoPasta LibSessaoPasta
+        {
+            get
+            {
+                return new Lib.SessaoPasta();
             }
         }
 
@@ -254,13 +263,14 @@ namespace Canaan.Lib.Utilitarios
 
         }
 
-        public void Upload(Dados.Sessao sessao, bool backup)
+        public void Upload(Dados.Sessao sessao, Dados.SessaoPasta sessaoPasta, bool backup)
         {
             Backup = backup;
 
             try
             {
                 Sessao = sessao;
+                SessaoPasta = sessaoPasta;
 
                 //Remove outros eventos atribuidos
                 Worker.DoWork -= Worker_DoWorkRotateList;
@@ -400,7 +410,8 @@ namespace Canaan.Lib.Utilitarios
             var folder = Config.Folder;
 
             //Ex: \\Servcmaster\Fotografados\810\
-            var diretorio = string.Format(@"\\{0}\{1}\{2}-{3}", servidor, folder, idAtendimento, numSessao);
+            //var diretorio = string.Format(@"\\{0}\{1}\{2}-{3}", servidor, folder, idAtendimento, numSessao);
+            var diretorio = string.Format(@"\\{0}\{1}\{2}", servidor, folder, SessaoPasta.Caminho);
 
             //Ex: \\Servcmaster\Fotografados\810\1
             //var subdiretorio = Path.Combine(diretorio, numSessao);
@@ -449,8 +460,8 @@ namespace Canaan.Lib.Utilitarios
 
             //Prepara dados para salvar no banco
             var name = string.Format("{0}{1}", filename, extensao);
-            var url = string.Format(@"{0}-{1}\{2}{3}", Sessao.Atendimento.CodigoReduzido, Sessao.NumSessao, filename, extensao);
-            var urlthumb = string.Format(@"{0}-{1}\thumb\{2}{3}", Sessao.Atendimento.CodigoReduzido, Sessao.NumSessao, filename, extensao);
+            var url = string.Format(@"{0}\{1}{2}", SessaoPasta.Caminho, filename, extensao);
+            var urlthumb = string.Format(@"{0}\thumb\{1}{2}", SessaoPasta.Caminho, filename, extensao);
             var tamanho = GetTamanho(fullPathFile);
             var mime = GetMimeType(img);
             var hora = GetHoraImage(img);
@@ -463,6 +474,7 @@ namespace Canaan.Lib.Utilitarios
                     new Dados.Foto
                     {
                         IdSessao = Sessao.IdSessao,
+                        IdSessaoPasta = SessaoPasta.IdSessaoPasta,
                         Nome = Path.GetFileNameWithoutExtension(fullPathFile),
                         Url = url,
                         Tamanho = (int)tamanho,
@@ -517,7 +529,7 @@ namespace Canaan.Lib.Utilitarios
         {
             var imagem = new Kaliko.ImageLibrary.KalikoImage(img);
             imagem.BackgroundColor = Color.White;
-            return imagem.GetThumbnailImage(100, 100, Kaliko.ImageLibrary.ThumbnailMethod.Pad).Image;
+            return imagem.GetThumbnailImage(200, 200, Kaliko.ImageLibrary.ThumbnailMethod.Pad).Image;
         }
 
         private Image GetImagem(string filename)
@@ -552,6 +564,11 @@ namespace Canaan.Lib.Utilitarios
             imagem.Save(ms, codec, ep);
 
             return ms.ToArray();
+        }
+
+        public static Image GetFromPath(string filename)
+        {
+            return Image.FromFile(filename);
         }
 
         public static Bitmap GetFromURL(string url)

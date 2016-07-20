@@ -29,9 +29,12 @@ namespace Canaan.Dados
         public string MimeType { get; set; }
         public bool IsAtivo { get; set; }
         public string Thumb { get; set; }
+        public Nullable<int> IdSessaoPasta { get; set; }
+        public Nullable<bool> IsSelected { get; set; }
     
         public virtual ICollection<VendaFoto> VendaFoto { get; set; }
         public virtual Sessao Sessao { get; set; }
         public virtual ICollection<OrdemServicoItem> OrdemServicoItem { get; set; }
+        public virtual SessaoPasta SessaoPasta { get; set; }
     }
 }

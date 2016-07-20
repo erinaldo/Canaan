@@ -37,6 +37,8 @@ namespace Canaan.Dados
         public Nullable<bool> UsaManipulacao { get; set; }
         public string LocalHost { get; set; }
         public string LocalFolder { get; set; }
+        public Nullable<bool> PastaUsaAno { get; set; }
+        public Nullable<bool> PastaUsaMes { get; set; }
     
         public virtual Filial Filial { get; set; }
     }

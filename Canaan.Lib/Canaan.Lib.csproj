@@ -130,6 +130,7 @@
     <Compile Include="OrdemServico.cs" />
     <Compile Include="OrdemServicoItem.cs" />
     <Compile Include="OrdemServicoMov.cs" />
+    <Compile Include="Pasta.cs" />
     <Compile Include="PessoaFisica.cs" />
     <Compile Include="PessoaJuridica.cs" />
     <Compile Include="Produto.cs" />
@@ -147,6 +148,7 @@
     <Compile Include="Retorno.cs" />
     <Compile Include="Servico.cs" />
     <Compile Include="Sessao.cs" />
+    <Compile Include="SessaoPasta.cs" />
     <Compile Include="Tabela.cs" />
     <Compile Include="TabelaFilial.cs" />
     <Compile Include="TelemarketingAgenda.cs" />
