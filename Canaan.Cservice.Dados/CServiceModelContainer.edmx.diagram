@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f02c7f3715444c60908e616b8f11196e" Name="Diagram1" ZoomLevel="77">
+        <EntityTypeShape EntityType="CServicosModel.env_envelopes" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CServicosModel.env_status" Width="1.5" PointX="4.125" PointY="6" />
+        <AssociationConnector Association="CServicosModel.FK_env_envelopes_env_status" />
+        <EntityTypeShape EntityType="CServicosModel.env_envelopes_fotos" Width="2.125" PointX="0.5" PointY="8.875" />
+        <EntityTypeShape EntityType="CServicosModel.env_envelopes_mov" Width="2" PointX="4" PointY="2.75" IsExpanded="true" />
+        <AssociationConnector Association="CServicosModel.FK_env_envelopes_fotos_env_envelopes" />
+        <AssociationConnector Association="CServicosModel.FK_env_envelopes_mov_env_envelopes" />
+        <AssociationConnector Association="CServicosModel.FK_env_envelopes_mov_env_status" />
+        <EntityTypeShape EntityType="CServicosModel.env_studios" Width="1.5" PointX="4.25" PointY="0.5" />
+        <AssociationConnector Association="CServicosModel.FK_env_envelopes_env_studios" />
+        <EntityTypeShape EntityType="CServicosModel.env_laboratoristas" Width="2" PointX="7" PointY="6.625" />
+        <EntityTypeShape EntityType="CServicosModel.env_laboratoristas_envelopes" Width="2.375" PointX="7" PointY="3.375" />
+        <AssociationConnector Association="CServicosModel.FK_env_laboratoristas_envelopes_env_envelopes" />
+        <AssociationConnector Association="CServicosModel.FK_env_laboratoristas_envelopes_env_laboratoristas" />
+        <EntityTypeShape EntityType="CServicosModel.env_tamanhos" Width="1.5" PointX="4.125" PointY="8.875" />
+        <EntityTypeShape EntityType="CServicosModel.env_albuns" Width="1.5" PointX="6.875" PointY="1" />
+        <EntityTypeShape EntityType="CServicosModel.env_molduras" Width="1.5" PointX="6.375" PointY="10.25" />
+        <AssociationConnector Association="CServicosModel.FK_env_molduras_env_tamanhos" />
+        <EntityTypeShape EntityType="CServicosModel.env_usuarios" Width="1.5" PointX="10.625" PointY="13.25" />
+        <EntityTypeShape EntityType="CServicosModel.env_usuarios_grupos" Width="1.5" PointX="8.375" PointY="10.25" />
+        <AssociationConnector Association="CServicosModel.FK_env_envelopes_mov_env_usuarios" />
+        <AssociationConnector Association="CServicosModel.FK_env_usuarios_env_usuarios_grupos" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

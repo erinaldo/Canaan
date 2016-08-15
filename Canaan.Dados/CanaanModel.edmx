@@ -281,6 +281,7 @@
           <Property Name="LocalFolder" Type="nvarchar" MaxLength="200" />
           <Property Name="PastaUsaAno" Type="bit" />
           <Property Name="PastaUsaMes" Type="bit" />
+          <Property Name="UsaLiberacao" Type="bit" />
         </EntityType>
         <EntityType Name="Conta">
           <Key>
@@ -5625,6 +5626,7 @@
           <Property Name="LocalFolder" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="PastaUsaAno" Type="Boolean" />
           <Property Name="PastaUsaMes" Type="Boolean" />
+          <Property Name="UsaLiberacao" Type="Boolean" />
         </EntityType>
         <Association Name="FK_Config_Filial">
           <End Type="CanaanModel.Filial" Role="Filial" Multiplicity="1">
@@ -7656,6 +7658,7 @@
           <EntitySetMapping Name="Config">
             <EntityTypeMapping TypeName="CanaanModel.Config">
               <MappingFragment StoreEntitySet="Config">
+                <ScalarProperty Name="UsaLiberacao" ColumnName="UsaLiberacao" />
                 <ScalarProperty Name="PastaUsaMes" ColumnName="PastaUsaMes" />
                 <ScalarProperty Name="PastaUsaAno" ColumnName="PastaUsaAno" />
                 <ScalarProperty Name="LocalFolder" ColumnName="LocalFolder" />

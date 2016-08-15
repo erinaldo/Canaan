@@ -302,9 +302,14 @@ namespace Canaan.Telas.Movimentacoes.Venda.Documentacao
                             LibVenda.Update(Venda);
 
                             //abre tela de liberacao
-                            var frmLiberacao = new Rotinas.Liberacao.Detalhes.DetalhesLiberacao(Venda.IdPedido, false);
-                            frmLiberacao.ShowDialog();
+                            var config = this.LibConfig.GetByFilial(Venda.IdFilial);
 
+                            if (config.UsaLiberacao == false)
+                            {
+                                var frmLiberacao = new Rotinas.Liberacao.Detalhes.DetalhesLiberacao(Venda.IdPedido, false);
+                                frmLiberacao.ShowDialog();
+                            }
+                            
                             MessageBoxUtilities.MessageInfo(string.Format("Venda Finalizada como {0} ", tipo));
                             principal.Close();
                         }

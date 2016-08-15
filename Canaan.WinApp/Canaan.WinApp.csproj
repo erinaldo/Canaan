@@ -135,6 +135,10 @@
       <Project>{369fe6a1-e2f8-4035-9631-7459616ffffc}</Project>
       <Name>Canaan.Dados</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Canaan.Envio\Canaan.Envio.csproj">
+      <Project>{c74737cf-9837-4d88-868d-b740697a53ee}</Project>
+      <Name>Canaan.Envio</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Canaan.Lib\Canaan.Lib.csproj">
       <Project>{b0cc386c-f0bd-489c-bb0b-05216d2d24ea}</Project>
       <Name>Canaan.Lib</Name>

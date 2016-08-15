@@ -1655,6 +1655,14 @@
     <None Include="Resources\VirtualEnvironment_16xLG.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Canaan.Cservice.Dados\Canaan.CService.Dados.csproj">
+      <Project>{3f570c6c-6db7-485d-8a19-89e05dd8824d}</Project>
+      <Name>Canaan.CService.Dados</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Canaan.CService.Lib\Canaan.CService.Lib.csproj">
+      <Project>{6779a99b-aaf6-45f2-ac59-eee8715f6e94}</Project>
+      <Name>Canaan.CService.Lib</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Canaan.Dados\Canaan.Dados.csproj">
       <Project>{369fe6a1-e2f8-4035-9631-7459616ffffc}</Project>
       <Name>Canaan.Dados</Name>

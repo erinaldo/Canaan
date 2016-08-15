@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Model" targetNamespace="http://tempuri.org/Model.xsd" xmlns:mstns="http://tempuri.org/Model.xsd" xmlns="http://tempuri.org/Model.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="Model" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="Model" msprop:Generator_UserDSName="Model">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Envelope" msprop:Generator_TableClassName="EnvelopeDataTable" msprop:Generator_TableVarName="tableEnvelope" msprop:Generator_TablePropName="Envelope" msprop:Generator_RowDeletingName="EnvelopeRowDeleting" msprop:Generator_RowChangingName="EnvelopeRowChanging" msprop:Generator_RowEvHandlerName="EnvelopeRowChangeEventHandler" msprop:Generator_RowDeletedName="EnvelopeRowDeleted" msprop:Generator_UserTableName="Envelope" msprop:Generator_RowChangedName="EnvelopeRowChanged" msprop:Generator_RowEvArgName="EnvelopeRowChangeEvent" msprop:Generator_RowClassName="EnvelopeRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdEnvelope" msprop:Generator_ColumnVarNameInTable="columnIdEnvelope" msprop:Generator_ColumnPropNameInRow="IdEnvelope" msprop:Generator_ColumnPropNameInTable="IdEnvelopeColumn" msprop:Generator_UserColumnName="IdEnvelope" type="xs:int" />
+              <xs:element name="CodPacote" msprop:Generator_ColumnVarNameInTable="columnCodPacote" msprop:Generator_ColumnPropNameInRow="CodPacote" msprop:Generator_ColumnPropNameInTable="CodPacoteColumn" msprop:Generator_UserColumnName="CodPacote" type="xs:int" minOccurs="0" />
+              <xs:element name="CodSigi" msprop:Generator_ColumnVarNameInTable="columnCodSigi" msprop:Generator_ColumnPropNameInRow="CodSigi" msprop:Generator_ColumnPropNameInTable="CodSigiColumn" msprop:Generator_UserColumnName="CodSigi" type="xs:int" minOccurs="0" />
+              <xs:element name="Cliente" msprop:Generator_ColumnVarNameInTable="columnCliente" msprop:Generator_ColumnPropNameInRow="Cliente" msprop:Generator_ColumnPropNameInTable="ClienteColumn" msprop:Generator_UserColumnName="Cliente" type="xs:string" minOccurs="0" />
+              <xs:element name="Servico" msprop:Generator_ColumnVarNameInTable="columnServico" msprop:Generator_ColumnPropNameInRow="Servico" msprop:Generator_ColumnPropNameInTable="ServicoColumn" msprop:Generator_UserColumnName="Servico" type="xs:string" minOccurs="0" />
+              <xs:element name="Status" msprop:Generator_ColumnVarNameInTable="columnStatus" msprop:Generator_ColumnPropNameInRow="Status" msprop:Generator_ColumnPropNameInTable="StatusColumn" msprop:Generator_UserColumnName="Status" type="xs:string" minOccurs="0" />
+              <xs:element name="PrevisaoEntrega" msprop:Generator_ColumnVarNameInTable="columnPrevisaoEntrega" msprop:Generator_ColumnPropNameInRow="PrevisaoEntrega" msprop:Generator_ColumnPropNameInTable="PrevisaoEntregaColumn" msprop:Generator_UserColumnName="PrevisaoEntrega" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="PrevisaoStatus" msprop:Generator_ColumnVarNameInTable="columnPrevisaoStatus" msprop:Generator_ColumnPropNameInRow="PrevisaoStatus" msprop:Generator_ColumnPropNameInTable="PrevisaoStatusColumn" msprop:Generator_UserColumnName="PrevisaoStatus" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="AtrasoEntrega" msprop:Generator_ColumnVarNameInTable="columnAtrasoEntrega" msprop:Generator_ColumnPropNameInRow="AtrasoEntrega" msprop:Generator_ColumnPropNameInTable="AtrasoEntregaColumn" msprop:Generator_UserColumnName="AtrasoEntrega" type="xs:int" minOccurs="0" />
+              <xs:element name="AtrasoStatus" msprop:Generator_ColumnVarNameInTable="columnAtrasoStatus" msprop:Generator_ColumnPropNameInRow="AtrasoStatus" msprop:Generator_ColumnPropNameInTable="AtrasoStatusColumn" msprop:Generator_UserColumnName="AtrasoStatus" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="EnvelopeKey1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Envelope" />
+      <xs:field xpath="mstns:IdEnvelope" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

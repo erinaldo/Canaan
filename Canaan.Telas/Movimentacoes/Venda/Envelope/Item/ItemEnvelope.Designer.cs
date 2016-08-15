@@ -67,7 +67,6 @@ namespace Canaan.Telas.Movimentacoes.Venda.Envelope.Item
             this.cLabel11 = new Canaan.Lib.Componentes.CLabel();
             this.cLabel10 = new Canaan.Lib.Componentes.CLabel();
             this.cLabel9 = new Canaan.Lib.Componentes.CLabel();
-            this.cLabel8 = new Canaan.Lib.Componentes.CLabel();
             this.cLabel7 = new Canaan.Lib.Componentes.CLabel();
             this.picBox = new System.Windows.Forms.PictureBox();
             this.imgListVenda = new System.Windows.Forms.ImageList(this.components);
@@ -98,11 +97,11 @@ namespace Canaan.Telas.Movimentacoes.Venda.Envelope.Item
             // panel1
             // 
             this.panel1.Controls.Add(this.toolstripActions);
-            this.panel1.Size = new System.Drawing.Size(1190, 39);
+            this.panel1.Size = new System.Drawing.Size(1344, 39);
             // 
             // tabControl1
             // 
-            this.tabControl1.Size = new System.Drawing.Size(1164, 620);
+            this.tabControl1.Size = new System.Drawing.Size(1318, 619);
             // 
             // tabPage1
             // 
@@ -112,7 +111,7 @@ namespace Canaan.Telas.Movimentacoes.Venda.Envelope.Item
             this.tabPage1.Controls.Add(this.groupBox2);
             this.tabPage1.Controls.Add(this.groupBox4);
             this.tabPage1.Controls.Add(this.groupBox1);
-            this.tabPage1.Size = new System.Drawing.Size(1156, 594);
+            this.tabPage1.Size = new System.Drawing.Size(1310, 593);
             this.tabPage1.Text = "Dados do Envelope";
             // 
             // groupBox1
@@ -130,7 +129,7 @@ namespace Canaan.Telas.Movimentacoes.Venda.Envelope.Item
             this.groupBox1.Location = new System.Drawing.Point(13, 14);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(5);
-            this.groupBox1.Size = new System.Drawing.Size(533, 294);
+            this.groupBox1.Size = new System.Drawing.Size(640, 231);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Informações do Envelope";
@@ -140,14 +139,14 @@ namespace Canaan.Telas.Movimentacoes.Venda.Envelope.Item
             this.txtObservacao.Location = new System.Drawing.Point(94, 139);
             this.txtObservacao.Multiline = true;
             this.txtObservacao.Name = "txtObservacao";
-            this.txtObservacao.Size = new System.Drawing.Size(419, 78);
+            this.txtObservacao.Size = new System.Drawing.Size(538, 78);
             this.txtObservacao.TabIndex = 11;
             // 
             // txtNomeAbertura
             // 
             this.txtNomeAbertura.Location = new System.Drawing.Point(94, 112);
             this.txtNomeAbertura.Name = "txtNomeAbertura";
-            this.txtNomeAbertura.Size = new System.Drawing.Size(419, 20);
+            this.txtNomeAbertura.Size = new System.Drawing.Size(538, 20);
             this.txtNomeAbertura.TabIndex = 10;
             // 
             // cbMoldura
@@ -156,7 +155,7 @@ namespace Canaan.Telas.Movimentacoes.Venda.Envelope.Item
             this.cbMoldura.FormattingEnabled = true;
             this.cbMoldura.Location = new System.Drawing.Point(94, 82);
             this.cbMoldura.Name = "cbMoldura";
-            this.cbMoldura.Size = new System.Drawing.Size(419, 21);
+            this.cbMoldura.Size = new System.Drawing.Size(538, 21);
             this.cbMoldura.TabIndex = 8;
             // 
             // cbAlbum
@@ -165,7 +164,7 @@ namespace Canaan.Telas.Movimentacoes.Venda.Envelope.Item
             this.cbAlbum.FormattingEnabled = true;
             this.cbAlbum.Location = new System.Drawing.Point(94, 55);
             this.cbAlbum.Name = "cbAlbum";
-            this.cbAlbum.Size = new System.Drawing.Size(419, 21);
+            this.cbAlbum.Size = new System.Drawing.Size(538, 21);
             this.cbAlbum.TabIndex = 7;
             // 
             // lkLabelServico
@@ -233,10 +232,10 @@ namespace Canaan.Telas.Movimentacoes.Venda.Envelope.Item
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.lvImgVenda);
-            this.groupBox2.Location = new System.Drawing.Point(13, 314);
+            this.groupBox2.Location = new System.Drawing.Point(13, 251);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(5);
-            this.groupBox2.Size = new System.Drawing.Size(533, 259);
+            this.groupBox2.Size = new System.Drawing.Size(640, 312);
             this.groupBox2.TabIndex = 12;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Imagens da Venda";
@@ -248,7 +247,7 @@ namespace Canaan.Telas.Movimentacoes.Venda.Envelope.Item
             this.lvImgVenda.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lvImgVenda.Location = new System.Drawing.Point(5, 18);
             this.lvImgVenda.Name = "lvImgVenda";
-            this.lvImgVenda.Size = new System.Drawing.Size(523, 236);
+            this.lvImgVenda.Size = new System.Drawing.Size(630, 289);
             this.lvImgVenda.TabIndex = 0;
             this.lvImgVenda.UseCompatibleStateImageBehavior = false;
             this.lvImgVenda.ItemDrag += new System.Windows.Forms.ItemDragEventHandler(this.lvImgVenda_ItemDrag);
@@ -259,10 +258,10 @@ namespace Canaan.Telas.Movimentacoes.Venda.Envelope.Item
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.lvImgEnvelope);
-            this.groupBox3.Location = new System.Drawing.Point(552, 314);
+            this.groupBox3.Location = new System.Drawing.Point(660, 251);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(5);
-            this.groupBox3.Size = new System.Drawing.Size(584, 236);
+            this.groupBox3.Size = new System.Drawing.Size(640, 312);
             this.groupBox3.TabIndex = 13;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Imagens do Envelope";
@@ -274,7 +273,7 @@ namespace Canaan.Telas.Movimentacoes.Venda.Envelope.Item
             this.lvImgEnvelope.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lvImgEnvelope.Location = new System.Drawing.Point(5, 18);
             this.lvImgEnvelope.Name = "lvImgEnvelope";
-            this.lvImgEnvelope.Size = new System.Drawing.Size(574, 213);
+            this.lvImgEnvelope.Size = new System.Drawing.Size(630, 289);
             this.lvImgEnvelope.TabIndex = 0;
             this.lvImgEnvelope.UseCompatibleStateImageBehavior = false;
             this.lvImgEnvelope.ItemDrag += new System.Windows.Forms.ItemDragEventHandler(this.lvImgEnvelope_ItemDrag);
@@ -294,13 +293,12 @@ namespace Canaan.Telas.Movimentacoes.Venda.Envelope.Item
             this.groupBox4.Controls.Add(this.cLabel11);
             this.groupBox4.Controls.Add(this.cLabel10);
             this.groupBox4.Controls.Add(this.cLabel9);
-            this.groupBox4.Controls.Add(this.cLabel8);
             this.groupBox4.Controls.Add(this.cLabel7);
             this.groupBox4.Controls.Add(this.picBox);
-            this.groupBox4.Location = new System.Drawing.Point(552, 14);
+            this.groupBox4.Location = new System.Drawing.Point(659, 14);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(5);
-            this.groupBox4.Size = new System.Drawing.Size(584, 294);
+            this.groupBox4.Size = new System.Drawing.Size(640, 231);
             this.groupBox4.TabIndex = 14;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Imagens do Envelope";
@@ -314,7 +312,7 @@ namespace Canaan.Telas.Movimentacoes.Venda.Envelope.Item
             this.toolTipDeleteEfeito.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolTipDeleteEfeito.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButton3});
-            this.toolTipDeleteEfeito.Location = new System.Drawing.Point(260, 235);
+            this.toolTipDeleteEfeito.Location = new System.Drawing.Point(417, 165);
             this.toolTipDeleteEfeito.MoveFirstItem = null;
             this.toolTipDeleteEfeito.MoveLastItem = null;
             this.toolTipDeleteEfeito.MoveNextItem = null;
@@ -338,10 +336,10 @@ namespace Canaan.Telas.Movimentacoes.Venda.Envelope.Item
             // 
             // txtInfoImagem
             // 
-            this.txtInfoImagem.Location = new System.Drawing.Point(147, 84);
+            this.txtInfoImagem.Location = new System.Drawing.Point(164, 84);
             this.txtInfoImagem.Multiline = true;
             this.txtInfoImagem.Name = "txtInfoImagem";
-            this.txtInfoImagem.Size = new System.Drawing.Size(429, 84);
+            this.txtInfoImagem.Size = new System.Drawing.Size(468, 48);
             this.txtInfoImagem.TabIndex = 32;
             // 
             // toolStrip1
@@ -360,7 +358,7 @@ namespace Canaan.Telas.Movimentacoes.Venda.Envelope.Item
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Padding = new System.Windows.Forms.Padding(5);
             this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.toolStrip1.Size = new System.Drawing.Size(574, 33);
+            this.toolStrip1.Size = new System.Drawing.Size(630, 33);
             this.toolStrip1.TabIndex = 31;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -416,7 +414,7 @@ namespace Canaan.Telas.Movimentacoes.Venda.Envelope.Item
             // txtNomeImagem
             // 
             this.txtNomeImagem.AutoSize = true;
-            this.txtNomeImagem.Location = new System.Drawing.Point(139, 208);
+            this.txtNomeImagem.Location = new System.Drawing.Point(297, 142);
             this.txtNomeImagem.Name = "txtNomeImagem";
             this.txtNomeImagem.Padding = new System.Windows.Forms.Padding(5);
             this.txtNomeImagem.Size = new System.Drawing.Size(85, 23);
@@ -426,7 +424,7 @@ namespace Canaan.Telas.Movimentacoes.Venda.Envelope.Item
             // lkEfeito
             // 
             this.lkEfeito.AutoSize = true;
-            this.lkEfeito.Location = new System.Drawing.Point(144, 241);
+            this.lkEfeito.Location = new System.Drawing.Point(301, 171);
             this.lkEfeito.Name = "lkEfeito";
             this.lkEfeito.Size = new System.Drawing.Size(113, 13);
             this.lkEfeito.TabIndex = 28;
@@ -436,7 +434,7 @@ namespace Canaan.Telas.Movimentacoes.Venda.Envelope.Item
             // 
             // tbInfoQuant
             // 
-            this.tbInfoQuant.Location = new System.Drawing.Point(147, 267);
+            this.tbInfoQuant.Location = new System.Drawing.Point(304, 197);
             this.tbInfoQuant.Name = "tbInfoQuant";
             this.tbInfoQuant.Size = new System.Drawing.Size(67, 20);
             this.tbInfoQuant.TabIndex = 27;
@@ -444,7 +442,7 @@ namespace Canaan.Telas.Movimentacoes.Venda.Envelope.Item
             // cLabel11
             // 
             this.cLabel11.AutoSize = true;
-            this.cLabel11.Location = new System.Drawing.Point(8, 264);
+            this.cLabel11.Location = new System.Drawing.Point(165, 194);
             this.cLabel11.Name = "cLabel11";
             this.cLabel11.Padding = new System.Windows.Forms.Padding(5);
             this.cLabel11.Size = new System.Drawing.Size(72, 23);
@@ -454,7 +452,7 @@ namespace Canaan.Telas.Movimentacoes.Venda.Envelope.Item
             // cLabel10
             // 
             this.cLabel10.AutoSize = true;
-            this.cLabel10.Location = new System.Drawing.Point(7, 235);
+            this.cLabel10.Location = new System.Drawing.Point(164, 165);
             this.cLabel10.Name = "cLabel10";
             this.cLabel10.Padding = new System.Windows.Forms.Padding(5);
             this.cLabel10.Size = new System.Drawing.Size(76, 23);
@@ -464,28 +462,17 @@ namespace Canaan.Telas.Movimentacoes.Venda.Envelope.Item
             // cLabel9
             // 
             this.cLabel9.AutoSize = true;
-            this.cLabel9.Location = new System.Drawing.Point(6, 208);
+            this.cLabel9.Location = new System.Drawing.Point(164, 142);
             this.cLabel9.Name = "cLabel9";
             this.cLabel9.Padding = new System.Windows.Forms.Padding(5);
             this.cLabel9.Size = new System.Drawing.Size(100, 23);
             this.cLabel9.TabIndex = 15;
             this.cLabel9.Text = "Nome da Imagem";
             // 
-            // cLabel8
-            // 
-            this.cLabel8.AutoSize = true;
-            this.cLabel8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cLabel8.Location = new System.Drawing.Point(5, 183);
-            this.cLabel8.Name = "cLabel8";
-            this.cLabel8.Padding = new System.Windows.Forms.Padding(5);
-            this.cLabel8.Size = new System.Drawing.Size(151, 23);
-            this.cLabel8.TabIndex = 14;
-            this.cLabel8.Text = "Informações da Imagem";
-            // 
             // cLabel7
             // 
             this.cLabel7.AutoSize = true;
-            this.cLabel7.Location = new System.Drawing.Point(140, 58);
+            this.cLabel7.Location = new System.Drawing.Point(161, 58);
             this.cLabel7.Name = "cLabel7";
             this.cLabel7.Padding = new System.Windows.Forms.Padding(5);
             this.cLabel7.Size = new System.Drawing.Size(130, 23);
@@ -496,20 +483,21 @@ namespace Canaan.Telas.Movimentacoes.Venda.Envelope.Item
             // 
             this.picBox.Location = new System.Drawing.Point(8, 68);
             this.picBox.Name = "picBox";
-            this.picBox.Size = new System.Drawing.Size(100, 100);
+            this.picBox.Size = new System.Drawing.Size(150, 150);
+            this.picBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picBox.TabIndex = 0;
             this.picBox.TabStop = false;
             // 
             // imgListVenda
             // 
             this.imgListVenda.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
-            this.imgListVenda.ImageSize = new System.Drawing.Size(100, 100);
+            this.imgListVenda.ImageSize = new System.Drawing.Size(150, 150);
             this.imgListVenda.TransparentColor = System.Drawing.Color.Transparent;
             // 
             // imgListEnvelope
             // 
             this.imgListEnvelope.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
-            this.imgListEnvelope.ImageSize = new System.Drawing.Size(100, 100);
+            this.imgListEnvelope.ImageSize = new System.Drawing.Size(150, 150);
             this.imgListEnvelope.TransparentColor = System.Drawing.Color.Transparent;
             // 
             // toolstripActions
@@ -525,7 +513,7 @@ namespace Canaan.Telas.Movimentacoes.Venda.Envelope.Item
             this.toolstripActions.Location = new System.Drawing.Point(0, 0);
             this.toolstripActions.Name = "toolstripActions";
             this.toolstripActions.Padding = new System.Windows.Forms.Padding(5);
-            this.toolstripActions.Size = new System.Drawing.Size(1190, 33);
+            this.toolstripActions.Size = new System.Drawing.Size(1344, 33);
             this.toolstripActions.TabIndex = 2;
             this.toolstripActions.Text = "toolStrip1";
             // 
@@ -567,7 +555,7 @@ namespace Canaan.Telas.Movimentacoes.Venda.Envelope.Item
             // cLabel4
             // 
             this.cLabel4.AutoSize = true;
-            this.cLabel4.Location = new System.Drawing.Point(552, 553);
+            this.cLabel4.Location = new System.Drawing.Point(661, 566);
             this.cLabel4.Name = "cLabel4";
             this.cLabel4.Padding = new System.Windows.Forms.Padding(5);
             this.cLabel4.Size = new System.Drawing.Size(119, 23);
@@ -577,7 +565,7 @@ namespace Canaan.Telas.Movimentacoes.Venda.Envelope.Item
             // cQuantidade
             // 
             this.cQuantidade.AutoSize = true;
-            this.cQuantidade.Location = new System.Drawing.Point(664, 553);
+            this.cQuantidade.Location = new System.Drawing.Point(773, 566);
             this.cQuantidade.Name = "cQuantidade";
             this.cQuantidade.Padding = new System.Windows.Forms.Padding(5);
             this.cQuantidade.Size = new System.Drawing.Size(61, 23);
@@ -588,7 +576,7 @@ namespace Canaan.Telas.Movimentacoes.Venda.Envelope.Item
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1200, 687);
+            this.ClientSize = new System.Drawing.Size(1354, 686);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Location = new System.Drawing.Point(0, 0);
             this.MaximizeBox = false;
@@ -641,7 +629,6 @@ namespace Canaan.Telas.Movimentacoes.Venda.Envelope.Item
         private CLabel cLabel11;
         private CLabel cLabel10;
         private CLabel cLabel9;
-        private CLabel cLabel8;
         private NumericUpDown tbInfoQuant;
         private ComboBox cbAlbum;
         private LinkLabel lkEfeito;

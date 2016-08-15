@@ -608,7 +608,7 @@ namespace Canaan.WinApp
 
         private void conferênciaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var frm = new Telas.Rotinas.Liberacao.Conferencia();
+            var frm = new Telas.Rotinas.Liberacao.Liberacao();
             frm.ShowDialog();
         }
 
@@ -789,7 +789,9 @@ namespace Canaan.WinApp
 
         private void envioDeImagensToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var frm = new Telas.Laboratorio.Envio.Lista();
+            //var frm = new Telas.Laboratorio.Envio.Lista();
+            //frm.Show();
+            var frm = new Envio.Principal(this.Session.Contexto.IdFilial);
             frm.Show();
         }
 

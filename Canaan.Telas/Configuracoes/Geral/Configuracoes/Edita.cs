@@ -71,6 +71,7 @@ namespace Canaan.Telas.Configuracoes.Geral.Configuracoes
             localFolderTextBox.Text = this.Item.LocalFolder;
             IsCriptogradadoCheckBox.Checked = this.Item.IsCriptogradado;
             UsaManipulacaoCheckBox.Checked = this.Item.UsaManipulacao.GetValueOrDefault();
+            UsaLuberacaoCheckBox.Checked = this.Item.UsaLiberacao.GetValueOrDefault();
             pastaUsaAnoCheckBox.Checked = this.Item.PastaUsaAno.GetValueOrDefault();
             pastaUsaMesCheckBox.Checked = this.Item.PastaUsaMes.GetValueOrDefault();
 
@@ -108,6 +109,7 @@ namespace Canaan.Telas.Configuracoes.Geral.Configuracoes
             this.Item.LocalFolder = localFolderTextBox.Text;
             this.Item.IsCriptogradado = IsCriptogradadoCheckBox.Checked;
             this.Item.UsaManipulacao = UsaManipulacaoCheckBox.Checked;
+            this.Item.UsaLiberacao = UsaLuberacaoCheckBox.Checked;
             this.Item.PastaUsaAno = pastaUsaAnoCheckBox.Checked;
             this.Item.PastaUsaMes = pastaUsaMesCheckBox.Checked;
 

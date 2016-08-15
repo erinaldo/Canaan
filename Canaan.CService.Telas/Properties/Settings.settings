@@ -1,0 +1,21 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Canaan.CService.Telas.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Coligada" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">7</Value>
+    </Setting>
+    <Setting Name="Filial" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="Movimento" Type="System.String" Scope="User">
+      <Value Profile="(Default)">2.1.02</Value>
+    </Setting>
+    <Setting Name="Prazo" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">18</Value>
+    </Setting>
+    <Setting Name="SenhaAdmin" Type="System.String" Scope="User">
+      <Value Profile="(Default)">100682</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

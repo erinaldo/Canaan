@@ -187,18 +187,30 @@ namespace Canaan.Telas.Movimentacoes.Sessao
                     System.IO.Directory.CreateDirectory(caminho);
             }
 
-            //verifica pasta cliente
-            var frm = new Telas.FolderName(caminho, Lib.Utilitarios.Comum.GetFolderName(this.Atendimento.CliFor.Nome));
-            frm.ShowDialog();
-
-            if (!string.IsNullOrEmpty(frm.Folder))
+            // verifica se existe pasta personalizada
+            var pastas = new Lib.Pasta().Get();
+            if (pastas.Count == 0)
             {
                 var server = string.Format(@"\\{0}\{1}\", config.ServImagem, config.Folder);
-                this.Sessao.Pasta = string.Format(@"{0}\{1}", frm.Caminho, frm.Folder).Replace(server, string.Empty);
+                caminho = string.Format(@"{0}\{1}-{2}", caminho, this.Atendimento.CodigoReduzido, this.Sessao.NumSessao);
+
+                this.Sessao.Pasta = caminho.Replace(server, string.Empty);
             }
             else
             {
-                this.Sessao.Pasta = string.Empty;
+                //verifica pasta cliente
+                var frm = new Telas.FolderName(caminho, Lib.Utilitarios.Comum.GetFolderName(this.Atendimento.CliFor.Nome));
+                frm.ShowDialog();
+
+                if (!string.IsNullOrEmpty(frm.Folder))
+                {
+                    var server = string.Format(@"\\{0}\{1}\", config.ServImagem, config.Folder);
+                    this.Sessao.Pasta = string.Format(@"{0}\{1}", frm.Caminho, frm.Folder).Replace(server, string.Empty);
+                }
+                else
+                {
+                    this.Sessao.Pasta = string.Empty;
+                }
             }
         }
 
@@ -211,10 +223,10 @@ namespace Canaan.Telas.Movimentacoes.Sessao
             //faz loop criando as pastas padroes
             if (!string.IsNullOrEmpty(this.Sessao.Pasta))
             {
-                foreach (var item in pastas)
+                //pasta com codigo simples
+                if (pastas.Count == 0)
                 {
-                    
-                    var pasta = string.Format(@"{0}\{1}", this.Sessao.Pasta, item.Nome);
+                    var pasta = string.Format(@"{0}", this.Sessao.Pasta);
 
                     //verifica se ja existe pagina criada
                     if (!System.IO.Directory.Exists(string.Format(@"{0}\{1}", server, pasta)))
@@ -224,17 +236,45 @@ namespace Canaan.Telas.Movimentacoes.Sessao
                     }
 
                     //verifica se ja existe registro no banco de dados
-                    if (LibSessaoPasta.GetByNome(Sessao.IdSessao, item.Nome).Count == 0)
+                    if (LibSessaoPasta.GetByNome(Sessao.IdSessao, pasta).Count == 0)
                     {
                         var sessaoPasta = new Dados.SessaoPasta();
                         sessaoPasta.IdSessao = Sessao.IdSessao;
-                        sessaoPasta.Nome = item.Nome;
+                        sessaoPasta.Nome = pasta;
                         sessaoPasta.Caminho = pasta;
-                        sessaoPasta.IsDefault = item.IsDefault;
+                        sessaoPasta.IsDefault = true;
 
                         LibSessaoPasta.Insert(sessaoPasta);
                     }
                 }
+                else
+                {
+                    foreach (var item in pastas)
+                    {
+
+                        var pasta = string.Format(@"{0}\{1}", this.Sessao.Pasta, item.Nome);
+
+                        //verifica se ja existe pagina criada
+                        if (!System.IO.Directory.Exists(string.Format(@"{0}\{1}", server, pasta)))
+                        {
+                            System.IO.Directory.CreateDirectory(string.Format(@"{0}\{1}", server, pasta));
+                            System.IO.Directory.CreateDirectory(string.Format(@"{0}\{1}\thumb", server, pasta));
+                        }
+
+                        //verifica se ja existe registro no banco de dados
+                        if (LibSessaoPasta.GetByNome(Sessao.IdSessao, item.Nome).Count == 0)
+                        {
+                            var sessaoPasta = new Dados.SessaoPasta();
+                            sessaoPasta.IdSessao = Sessao.IdSessao;
+                            sessaoPasta.Nome = item.Nome;
+                            sessaoPasta.Caminho = pasta;
+                            sessaoPasta.IsDefault = item.IsDefault;
+
+                            LibSessaoPasta.Insert(sessaoPasta);
+                        }
+                    }
+                }
+                
             }
         }
 

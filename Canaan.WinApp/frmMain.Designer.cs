@@ -277,6 +277,7 @@
             // 
             // pedidosPendentesToolStripMenuItem
             // 
+            this.pedidosPendentesToolStripMenuItem.Enabled = false;
             this.pedidosPendentesToolStripMenuItem.Name = "pedidosPendentesToolStripMenuItem";
             this.pedidosPendentesToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
             this.pedidosPendentesToolStripMenuItem.Text = "Pedido de Venda";
@@ -284,6 +285,7 @@
             // 
             // pedidoAvulsoToolStripMenuItem
             // 
+            this.pedidoAvulsoToolStripMenuItem.Enabled = false;
             this.pedidoAvulsoToolStripMenuItem.Name = "pedidoAvulsoToolStripMenuItem";
             this.pedidoAvulsoToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
             this.pedidoAvulsoToolStripMenuItem.Text = "Pedido Avulso";
@@ -668,7 +670,7 @@
             // 
             this.conferênciaToolStripMenuItem.Name = "conferênciaToolStripMenuItem";
             this.conferênciaToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
-            this.conferênciaToolStripMenuItem.Text = "Conferência";
+            this.conferênciaToolStripMenuItem.Text = "Liberação de Pedidos";
             this.conferênciaToolStripMenuItem.Click += new System.EventHandler(this.conferênciaToolStripMenuItem_Click);
             // 
             // mMarketingGeral
@@ -780,7 +782,7 @@
             this.configuraçõesToolStripMenuItem,
             this.pastasToolStripMenuItem});
             this.mConfigGeral.Name = "mConfigGeral";
-            this.mConfigGeral.Size = new System.Drawing.Size(152, 22);
+            this.mConfigGeral.Size = new System.Drawing.Size(129, 22);
             this.mConfigGeral.Text = "Geral";
             // 
             // menuConf_Geral_GruposEmpresa
@@ -817,7 +819,7 @@
             this.mConfigSegGrupos,
             this.mConfigSegUsuario});
             this.mConfigSeguranca.Name = "mConfigSeguranca";
-            this.mConfigSeguranca.Size = new System.Drawing.Size(152, 22);
+            this.mConfigSeguranca.Size = new System.Drawing.Size(129, 22);
             this.mConfigSeguranca.Text = "Segurança";
             // 
             // mConfigSegGrupos
@@ -840,7 +842,7 @@
             this.convenioToolStripMenuItem,
             this.agendaToolStripMenuItem});
             this.mConfigMarketing.Name = "mConfigMarketing";
-            this.mConfigMarketing.Size = new System.Drawing.Size(152, 22);
+            this.mConfigMarketing.Size = new System.Drawing.Size(129, 22);
             this.mConfigMarketing.Text = "Marketing";
             // 
             // convenioToolStripMenuItem
@@ -865,7 +867,7 @@
             this.contasBancariasToolStripMenuItem,
             this.contasCaixaToolStripMenuItem});
             this.mConfigFinanceiro.Name = "mConfigFinanceiro";
-            this.mConfigFinanceiro.Size = new System.Drawing.Size(152, 22);
+            this.mConfigFinanceiro.Size = new System.Drawing.Size(129, 22);
             this.mConfigFinanceiro.Text = "Financeiro";
             // 
             // bancosToolStripMenuItem
@@ -902,7 +904,7 @@
             this.tabelaToolStripMenuItem,
             this.toolStripMenuItem1});
             this.mConfigPedido.Name = "mConfigPedido";
-            this.mConfigPedido.Size = new System.Drawing.Size(152, 22);
+            this.mConfigPedido.Size = new System.Drawing.Size(129, 22);
             this.mConfigPedido.Text = "Pedido";
             // 
             // tabelaToolStripMenuItem
@@ -926,7 +928,7 @@
             this.mConfiguracaoStatus,
             this.devolveVendaToolStripMenuItem});
             this.suporteToolStripMenuItem.Name = "suporteToolStripMenuItem";
-            this.suporteToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.suporteToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
             this.suporteToolStripMenuItem.Text = "Suporte";
             // 
             // corrigeCuponsDuplicadosToolStripMenuItem

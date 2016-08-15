@@ -14,6 +14,14 @@ namespace Canaan.Telas.Movimentacoes.ConsultaOnline
             }
         }
 
+        public CService.Lib.Envelope LibEnvelope
+        {
+            get
+            {
+                return new CService.Lib.Envelope();
+            }
+        }
+
         public ConsultaOnline()
         {
             InitializeComponent();
@@ -25,8 +33,8 @@ namespace Canaan.Telas.Movimentacoes.ConsultaOnline
             {
                 var config = LibConfig.GetByFilial(Session.Instance.Contexto.IdFilial);
                 var codigo = int.Parse(txtPacote.Text.Trim());
-                //var result = LibEnvelope.GetByAtendimento(codigo, config.CServiceId.GetValueOrDefault()); //9924-9229
-                //dataGrid.DataSource = result;
+                var result = LibEnvelope.GetByAtendimento(codigo, config.CServiceId.GetValueOrDefault()); //9924-9229
+                dataGrid.DataSource = result;
 
             }
             catch (Exception ex)

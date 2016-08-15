@@ -201,38 +201,43 @@ namespace Canaan.Lib
                 List<MemoryStream> Fotos = new List<MemoryStream>();
 
                 var Sessao = new Sessao().GetById(idSessao);
-                var direBase = string.Format(@"\\{0}\{1}\{2}-{3}", config.ServImagem, config.Folder, Sessao.Atendimento.CodigoReduzido, Sessao.NumSessao);
 
-                if (!Directory.Exists(direBase))
+                if (Sessao != null)
                 {
-                    Fotos = fotos.Select(a => new MemoryStream(Utilitarios.ImageUtility.GetBytesFromResource(Properties.Resources.no_image))).ToList();
-                    imgList.Images.AddRange(Fotos.Select(a => Image.FromStream(a)).ToArray());
-                }
-                else
-                {
+                    var direBase = string.Format(@"\\{0}\{1}\{2}-{3}", config.ServImagem, config.Folder, Sessao.Atendimento.CodigoReduzido, Sessao.NumSessao);
 
-                    foreach (var item in fotos)
+                    if (!Directory.Exists(direBase))
                     {
-                        var file = string.Format(@"\\{0}\{1}\{2}", config.ServImagem, config.Folder, item.Thumb);
-                        var fileCanaan = string.Format(@"\\{0}\{1}\{2}.canaan", config.ServImagem, config.Folder, item.Thumb.Split('.').FirstOrDefault());
-
-                        if (File.Exists(file))
-                        {
-                            Fotos.Add(new MemoryStream(Utilitarios.ImageUtility.VerificaCriptografia(item, file)));
-                        }
-                        else if (File.Exists(fileCanaan))
-                        {
-                            Fotos.Add(new MemoryStream(Utilitarios.ImageUtility.VerificaCriptografia(item, fileCanaan)));
-                        }
-                        else
-                        {
-                            Fotos.Add(new MemoryStream(Utilitarios.ImageUtility.GetBytesFromResource(Properties.Resources.no_image)));
-                        }
-
+                        Fotos = fotos.Select(a => new MemoryStream(Utilitarios.ImageUtility.GetBytesFromResource(Properties.Resources.no_image))).ToList();
+                        imgList.Images.AddRange(Fotos.Select(a => Image.FromStream(a)).ToArray());
                     }
+                    else
+                    {
 
-                    imgList.Images.AddRange(Fotos.Select(a => Image.FromStream(a)).ToArray());
+                        foreach (var item in fotos)
+                        {
+                            var file = string.Format(@"\\{0}\{1}\{2}", config.ServImagem, config.Folder, item.Thumb);
+                            var fileCanaan = string.Format(@"\\{0}\{1}\{2}.canaan", config.ServImagem, config.Folder, item.Thumb.Split('.').FirstOrDefault());
+
+                            if (File.Exists(file))
+                            {
+                                Fotos.Add(new MemoryStream(Utilitarios.ImageUtility.VerificaCriptografia(item, file)));
+                            }
+                            else if (File.Exists(fileCanaan))
+                            {
+                                Fotos.Add(new MemoryStream(Utilitarios.ImageUtility.VerificaCriptografia(item, fileCanaan)));
+                            }
+                            else
+                            {
+                                Fotos.Add(new MemoryStream(Utilitarios.ImageUtility.GetBytesFromResource(Properties.Resources.no_image)));
+                            }
+
+                        }
+
+                        imgList.Images.AddRange(Fotos.Select(a => Image.FromStream(a)).ToArray());
+                    }
                 }
+                
             }
             catch (Exception ex)
             {

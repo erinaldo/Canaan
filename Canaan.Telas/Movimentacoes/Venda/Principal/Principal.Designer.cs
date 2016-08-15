@@ -62,7 +62,7 @@ namespace Canaan.Telas.Movimentacoes.Venda.Principal
             this.navBarControl1.OptionsNavPane.ShowOverflowPanel = false;
             this.navBarControl1.OptionsNavPane.ShowSplitter = false;
             this.navBarControl1.PaintStyleKind = DevExpress.XtraNavBar.NavBarViewKind.NavigationPane;
-            this.navBarControl1.Size = new System.Drawing.Size(200, 661);
+            this.navBarControl1.Size = new System.Drawing.Size(200, 689);
             this.navBarControl1.TabIndex = 1;
             this.navBarControl1.Text = "navBarControl1";
             // 
@@ -116,14 +116,14 @@ namespace Canaan.Telas.Movimentacoes.Venda.Principal
             this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContainer.Location = new System.Drawing.Point(200, 0);
             this.panelContainer.Name = "panelContainer";
-            this.panelContainer.Size = new System.Drawing.Size(984, 661);
+            this.panelContainer.Size = new System.Drawing.Size(1100, 689);
             this.panelContainer.TabIndex = 2;
             // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1184, 661);
+            this.ClientSize = new System.Drawing.Size(1300, 689);
             this.Controls.Add(this.panelContainer);
             this.Controls.Add(this.navBarControl1);
             this.MaximizeBox = false;

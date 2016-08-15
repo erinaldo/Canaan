@@ -1,0 +1,1003 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="CServicosModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="env_albuns">
+          <Key>
+            <PropertyRef Name="id_album" />
+          </Key>
+          <Property Name="id_album" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nome" Type="varchar" MaxLength="50" />
+          <Property Name="valor" Type="money" />
+        </EntityType>
+        <EntityType Name="env_envelopes">
+          <Key>
+            <PropertyRef Name="id_envelope" />
+          </Key>
+          <Property Name="id_envelope" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_studio" Type="int" />
+          <Property Name="id_status" Type="int" />
+          <Property Name="cod_pacote" Type="int" />
+          <Property Name="cod_cliente" Type="int" />
+          <Property Name="cod_envelope" Type="int" />
+          <Property Name="cod_venda" Type="int" />
+          <Property Name="num_fotos" Type="int" />
+          <Property Name="data_venda" Type="datetime" />
+          <Property Name="data_envio" Type="datetime" />
+          <Property Name="data_prevista" Type="datetime" />
+          <Property Name="nome_cliente" Type="varchar" MaxLength="150" />
+          <Property Name="nome_vendedora" Type="varchar" MaxLength="100" />
+          <Property Name="nome_envio" Type="varchar" MaxLength="100" />
+          <Property Name="nome_abertura" Type="varchar" MaxLength="250" />
+          <Property Name="album" Type="varchar" MaxLength="50" />
+          <Property Name="moldura" Type="varchar" MaxLength="50" />
+          <Property Name="servico" Type="varchar" MaxLength="50" />
+          <Property Name="obs" Type="text" />
+          <Property Name="faturado" Type="bit" />
+          <Property Name="distribuido" Type="bit" />
+          <Property Name="data_status" Type="datetime" />
+          <Property Name="data_status_prevista" Type="datetime" />
+          <Property Name="expedicao" Type="bit" />
+          <Property Name="data_impressao" Type="datetime" />
+          <Property Name="is_manipulado" Type="bit" />
+          <Property Name="is_repeticao" Type="bit" />
+          <Property Name="data_manipulacao" Type="datetime" />
+        </EntityType>
+        <EntityType Name="env_envelopes_fotos">
+          <Key>
+            <PropertyRef Name="id_envelope_foto" />
+          </Key>
+          <Property Name="id_envelope_foto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_envelope" Type="int" />
+          <Property Name="cod_pacote" Type="int" />
+          <Property Name="quant" Type="int" />
+          <Property Name="nome_foto" Type="varchar" MaxLength="50" />
+          <Property Name="efeito_digital" Type="varchar" MaxLength="50" />
+          <Property Name="caminho_foto" Type="varchar" MaxLength="100" />
+          <Property Name="obs" Type="text" />
+        </EntityType>
+        <EntityType Name="env_envelopes_mov">
+          <Key>
+            <PropertyRef Name="id_envelope_mov" />
+          </Key>
+          <Property Name="id_envelope_mov" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_envelope" Type="int" />
+          <Property Name="id_status" Type="int" />
+          <Property Name="id_usuario" Type="int" />
+          <Property Name="data" Type="datetime" />
+        </EntityType>
+        <EntityType Name="env_laboratoristas">
+          <Key>
+            <PropertyRef Name="id_laboratorista" />
+          </Key>
+          <Property Name="id_laboratorista" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nome" Type="varchar" MaxLength="100" />
+          <Property Name="telefone" Type="varchar" MaxLength="25" />
+        </EntityType>
+        <EntityType Name="env_laboratoristas_envelopes">
+          <Key>
+            <PropertyRef Name="id_laboratorista_envelope" />
+          </Key>
+          <Property Name="id_laboratorista_envelope" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_laboratorista" Type="int" />
+          <Property Name="id_envelope" Type="int" />
+          <Property Name="data" Type="datetime" />
+          <Property Name="num_fotos" Type="int" />
+          <Property Name="pendente" Type="bit" />
+        </EntityType>
+        <EntityType Name="env_molduras">
+          <Key>
+            <PropertyRef Name="id_moldura" />
+          </Key>
+          <Property Name="id_moldura" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_tamanho" Type="int" />
+          <Property Name="nome" Type="varchar" MaxLength="50" />
+          <Property Name="valor" Type="money" />
+        </EntityType>
+        <EntityType Name="env_status">
+          <Key>
+            <PropertyRef Name="id_status" />
+          </Key>
+          <Property Name="id_status" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nome" Type="varchar" MaxLength="50" />
+          <Property Name="prazo" Type="int" />
+          <Property Name="pendencia_lab" Type="bit" />
+          <Property Name="comissaoTipo" Type="varchar" MaxLength="1" />
+          <Property Name="atrasoDesconto" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="exibir" Type="bit" />
+        </EntityType>
+        <EntityType Name="env_studios">
+          <Key>
+            <PropertyRef Name="id_studio" />
+          </Key>
+          <Property Name="id_studio" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_rota" Type="int" />
+          <Property Name="nome" Type="varchar" MaxLength="50" />
+          <Property Name="caminho" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="env_tamanhos">
+          <Key>
+            <PropertyRef Name="id_tamanho" />
+          </Key>
+          <Property Name="id_tamanho" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nome" Type="varchar" MaxLength="100" />
+          <Property Name="prazo" Type="int" />
+          <Property Name="valor" Type="money" />
+          <Property Name="perm_quant_fotos" Type="bit" />
+          <Property Name="perm_album" Type="bit" />
+          <Property Name="perm_moldura" Type="bit" />
+          <Property Name="perm_paspatur" Type="bit" />
+          <Property Name="valor_paspatur" Type="money" />
+          <Property Name="perm_sacola_branca" Type="bit" />
+          <Property Name="valor_sacola_branca" Type="money" />
+          <Property Name="perm_sacola_verde" Type="bit" />
+          <Property Name="valor_sacola_verde" Type="money" />
+          <Property Name="exibir_studio" Type="bit" />
+          <Property Name="comissaoTipo" Type="varchar" MaxLength="1" />
+          <Property Name="comissaoPeso" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="descontoTipo" Type="varchar" MaxLength="1" />
+          <Property Name="descontoPeso" Type="decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="env_usuarios">
+          <Key>
+            <PropertyRef Name="id_usuario" />
+          </Key>
+          <Property Name="id_usuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_usuario_grupo" Type="int" />
+          <Property Name="nome" Type="varchar" MaxLength="50" />
+          <Property Name="telefone" Type="varchar" MaxLength="25" />
+          <Property Name="username" Type="varchar" MaxLength="20" />
+          <Property Name="password" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="env_usuarios_grupos">
+          <Key>
+            <PropertyRef Name="id_usuario_grupo" />
+          </Key>
+          <Property Name="id_usuario_grupo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nome" Type="varchar" MaxLength="50" />
+          <Property Name="mov" Type="bit" />
+          <Property Name="mov_cadastro" Type="bit" />
+          <Property Name="mov_impressao" Type="bit" />
+          <Property Name="mov_consulta" Type="bit" />
+          <Property Name="mov_status" Type="bit" />
+          <Property Name="mov_log" Type="bit" />
+          <Property Name="mov_cad_vol" Type="bit" />
+          <Property Name="mov_consult_vol" Type="bit" />
+          <Property Name="mov_serv_lab" Type="bit" />
+          <Property Name="mov_ctrl_qual" Type="bit" />
+          <Property Name="mov_finaliza_ped" Type="bit" />
+          <Property Name="mov_quant_ped" Type="bit" />
+          <Property Name="rel" Type="bit" />
+          <Property Name="rel_env" Type="bit" />
+          <Property Name="rel_env_prev" Type="bit" />
+          <Property Name="rel_env_status" Type="bit" />
+          <Property Name="rel_env_rota" Type="bit" />
+          <Property Name="rel_lab" Type="bit" />
+          <Property Name="rel_print_env" Type="bit" />
+          <Property Name="rel_print_vol" Type="bit" />
+          <Property Name="rel_rota" Type="bit" />
+          <Property Name="rel_fatura" Type="bit" />
+          <Property Name="rel_fatura_virtual" Type="bit" />
+          <Property Name="rel_fatura_dif" Type="bit" />
+          <Property Name="config" Type="bit" />
+          <Property Name="config_grupos" Type="bit" />
+          <Property Name="config_user" Type="bit" />
+          <Property Name="config_rotas" Type="bit" />
+          <Property Name="config_studios" Type="bit" />
+          <Property Name="config_tamanho" Type="bit" />
+          <Property Name="config_status" Type="bit" />
+          <Property Name="config_lab" Type="bit" />
+          <Property Name="config_server" Type="bit" />
+          <Property Name="config_album" Type="bit" />
+          <Property Name="config_moldura" Type="bit" />
+          <Property Name="config_qualidade" Type="bit" />
+        </EntityType>
+        <Association Name="FK_env_envelopes_env_status">
+          <End Role="env_status" Type="Self.env_status" Multiplicity="0..1" />
+          <End Role="env_envelopes" Type="Self.env_envelopes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="env_status">
+              <PropertyRef Name="id_status" />
+            </Principal>
+            <Dependent Role="env_envelopes">
+              <PropertyRef Name="id_status" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_env_envelopes_env_studios">
+          <End Role="env_studios" Type="Self.env_studios" Multiplicity="0..1" />
+          <End Role="env_envelopes" Type="Self.env_envelopes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="env_studios">
+              <PropertyRef Name="id_studio" />
+            </Principal>
+            <Dependent Role="env_envelopes">
+              <PropertyRef Name="id_studio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_env_envelopes_fotos_env_envelopes">
+          <End Role="env_envelopes" Type="Self.env_envelopes" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="env_envelopes_fotos" Type="Self.env_envelopes_fotos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="env_envelopes">
+              <PropertyRef Name="id_envelope" />
+            </Principal>
+            <Dependent Role="env_envelopes_fotos">
+              <PropertyRef Name="id_envelope" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_env_envelopes_mov_env_envelopes">
+          <End Role="env_envelopes" Type="Self.env_envelopes" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="env_envelopes_mov" Type="Self.env_envelopes_mov" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="env_envelopes">
+              <PropertyRef Name="id_envelope" />
+            </Principal>
+            <Dependent Role="env_envelopes_mov">
+              <PropertyRef Name="id_envelope" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_env_envelopes_mov_env_status">
+          <End Role="env_status" Type="Self.env_status" Multiplicity="0..1" />
+          <End Role="env_envelopes_mov" Type="Self.env_envelopes_mov" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="env_status">
+              <PropertyRef Name="id_status" />
+            </Principal>
+            <Dependent Role="env_envelopes_mov">
+              <PropertyRef Name="id_status" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_env_envelopes_mov_env_usuarios">
+          <End Role="env_usuarios" Type="Self.env_usuarios" Multiplicity="0..1" />
+          <End Role="env_envelopes_mov" Type="Self.env_envelopes_mov" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="env_usuarios">
+              <PropertyRef Name="id_usuario" />
+            </Principal>
+            <Dependent Role="env_envelopes_mov">
+              <PropertyRef Name="id_usuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_env_laboratoristas_envelopes_env_envelopes">
+          <End Role="env_envelopes" Type="Self.env_envelopes" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="env_laboratoristas_envelopes" Type="Self.env_laboratoristas_envelopes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="env_envelopes">
+              <PropertyRef Name="id_envelope" />
+            </Principal>
+            <Dependent Role="env_laboratoristas_envelopes">
+              <PropertyRef Name="id_envelope" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_env_laboratoristas_envelopes_env_laboratoristas">
+          <End Role="env_laboratoristas" Type="Self.env_laboratoristas" Multiplicity="0..1" />
+          <End Role="env_laboratoristas_envelopes" Type="Self.env_laboratoristas_envelopes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="env_laboratoristas">
+              <PropertyRef Name="id_laboratorista" />
+            </Principal>
+            <Dependent Role="env_laboratoristas_envelopes">
+              <PropertyRef Name="id_laboratorista" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_env_molduras_env_tamanhos">
+          <End Role="env_tamanhos" Type="Self.env_tamanhos" Multiplicity="0..1" />
+          <End Role="env_molduras" Type="Self.env_molduras" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="env_tamanhos">
+              <PropertyRef Name="id_tamanho" />
+            </Principal>
+            <Dependent Role="env_molduras">
+              <PropertyRef Name="id_tamanho" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_env_usuarios_env_usuarios_grupos">
+          <End Role="env_usuarios_grupos" Type="Self.env_usuarios_grupos" Multiplicity="0..1" />
+          <End Role="env_usuarios" Type="Self.env_usuarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="env_usuarios_grupos">
+              <PropertyRef Name="id_usuario_grupo" />
+            </Principal>
+            <Dependent Role="env_usuarios">
+              <PropertyRef Name="id_usuario_grupo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CServicosModelStoreContainer">
+          <EntitySet Name="env_albuns" EntityType="Self.env_albuns" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="env_envelopes" EntityType="Self.env_envelopes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="env_envelopes_fotos" EntityType="Self.env_envelopes_fotos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="env_envelopes_mov" EntityType="Self.env_envelopes_mov" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="env_laboratoristas" EntityType="Self.env_laboratoristas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="env_laboratoristas_envelopes" EntityType="Self.env_laboratoristas_envelopes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="env_molduras" EntityType="Self.env_molduras" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="env_status" EntityType="Self.env_status" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="env_studios" EntityType="Self.env_studios" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="env_tamanhos" EntityType="Self.env_tamanhos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="env_usuarios" EntityType="Self.env_usuarios" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="env_usuarios_grupos" EntityType="Self.env_usuarios_grupos" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_env_envelopes_env_status" Association="Self.FK_env_envelopes_env_status">
+            <End Role="env_status" EntitySet="env_status" />
+            <End Role="env_envelopes" EntitySet="env_envelopes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_env_envelopes_env_studios" Association="Self.FK_env_envelopes_env_studios">
+            <End Role="env_studios" EntitySet="env_studios" />
+            <End Role="env_envelopes" EntitySet="env_envelopes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_env_envelopes_fotos_env_envelopes" Association="Self.FK_env_envelopes_fotos_env_envelopes">
+            <End Role="env_envelopes" EntitySet="env_envelopes" />
+            <End Role="env_envelopes_fotos" EntitySet="env_envelopes_fotos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_env_envelopes_mov_env_envelopes" Association="Self.FK_env_envelopes_mov_env_envelopes">
+            <End Role="env_envelopes" EntitySet="env_envelopes" />
+            <End Role="env_envelopes_mov" EntitySet="env_envelopes_mov" />
+          </AssociationSet>
+          <AssociationSet Name="FK_env_envelopes_mov_env_status" Association="Self.FK_env_envelopes_mov_env_status">
+            <End Role="env_status" EntitySet="env_status" />
+            <End Role="env_envelopes_mov" EntitySet="env_envelopes_mov" />
+          </AssociationSet>
+          <AssociationSet Name="FK_env_envelopes_mov_env_usuarios" Association="Self.FK_env_envelopes_mov_env_usuarios">
+            <End Role="env_usuarios" EntitySet="env_usuarios" />
+            <End Role="env_envelopes_mov" EntitySet="env_envelopes_mov" />
+          </AssociationSet>
+          <AssociationSet Name="FK_env_laboratoristas_envelopes_env_envelopes" Association="Self.FK_env_laboratoristas_envelopes_env_envelopes">
+            <End Role="env_envelopes" EntitySet="env_envelopes" />
+            <End Role="env_laboratoristas_envelopes" EntitySet="env_laboratoristas_envelopes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_env_laboratoristas_envelopes_env_laboratoristas" Association="Self.FK_env_laboratoristas_envelopes_env_laboratoristas">
+            <End Role="env_laboratoristas" EntitySet="env_laboratoristas" />
+            <End Role="env_laboratoristas_envelopes" EntitySet="env_laboratoristas_envelopes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_env_molduras_env_tamanhos" Association="Self.FK_env_molduras_env_tamanhos">
+            <End Role="env_tamanhos" EntitySet="env_tamanhos" />
+            <End Role="env_molduras" EntitySet="env_molduras" />
+          </AssociationSet>
+          <AssociationSet Name="FK_env_usuarios_env_usuarios_grupos" Association="Self.FK_env_usuarios_env_usuarios_grupos">
+            <End Role="env_usuarios_grupos" EntitySet="env_usuarios_grupos" />
+            <End Role="env_usuarios" EntitySet="env_usuarios" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CServicosModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="env_envelopes">
+          <Key>
+            <PropertyRef Name="id_envelope" />
+          </Key>
+          <Property Name="id_envelope" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_studio" Type="Int32" />
+          <Property Name="id_status" Type="Int32" />
+          <Property Name="cod_pacote" Type="Int32" />
+          <Property Name="cod_cliente" Type="Int32" />
+          <Property Name="cod_envelope" Type="Int32" />
+          <Property Name="cod_venda" Type="Int32" />
+          <Property Name="num_fotos" Type="Int32" />
+          <Property Name="data_venda" Type="DateTime" Precision="3" />
+          <Property Name="data_envio" Type="DateTime" Precision="3" />
+          <Property Name="data_prevista" Type="DateTime" Precision="3" />
+          <Property Name="nome_cliente" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="nome_vendedora" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="nome_envio" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="nome_abertura" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="album" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="moldura" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="servico" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="obs" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="faturado" Type="Boolean" />
+          <Property Name="distribuido" Type="Boolean" />
+          <Property Name="data_status" Type="DateTime" Precision="3" />
+          <Property Name="data_status_prevista" Type="DateTime" Precision="3" />
+          <Property Name="expedicao" Type="Boolean" />
+          <NavigationProperty Name="env_status" Relationship="CServicosModel.FK_env_envelopes_env_status" FromRole="env_envelopes" ToRole="env_status" />
+          <NavigationProperty Name="env_envelopes_fotos" Relationship="CServicosModel.FK_env_envelopes_fotos_env_envelopes" FromRole="env_envelopes" ToRole="env_envelopes_fotos" />
+          <NavigationProperty Name="env_envelopes_mov" Relationship="CServicosModel.FK_env_envelopes_mov_env_envelopes" FromRole="env_envelopes" ToRole="env_envelopes_mov" />
+          <NavigationProperty Name="env_studios" Relationship="CServicosModel.FK_env_envelopes_env_studios" FromRole="env_envelopes" ToRole="env_studios" />
+          <Property Name="data_impressao" Type="DateTime" Precision="3" />
+          <Property Name="is_manipulado" Type="Boolean" />
+          <Property Name="is_repeticao" Type="Boolean" />
+          <Property Name="data_manipulacao" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="env_laboratoristas_envelopes" Relationship="CServicosModel.FK_env_laboratoristas_envelopes_env_envelopes" FromRole="env_envelopes" ToRole="env_laboratoristas_envelopes" />
+          </EntityType>
+        <EntityContainer Name="CServicosEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="env_envelopes" EntityType="Self.env_envelopes" />
+          <EntitySet Name="env_status" EntityType="CServicosModel.env_status" />
+          <AssociationSet Name="FK_env_envelopes_env_status" Association="CServicosModel.FK_env_envelopes_env_status">
+            <End Role="env_status" EntitySet="env_status" />
+            <End Role="env_envelopes" EntitySet="env_envelopes" />
+          </AssociationSet>
+          <EntitySet Name="env_envelopes_fotos" EntityType="CServicosModel.env_envelopes_fotos" />
+          <EntitySet Name="env_envelopes_mov" EntityType="CServicosModel.env_envelopes_mov" />
+          <AssociationSet Name="FK_env_envelopes_fotos_env_envelopes" Association="CServicosModel.FK_env_envelopes_fotos_env_envelopes">
+            <End Role="env_envelopes" EntitySet="env_envelopes" />
+            <End Role="env_envelopes_fotos" EntitySet="env_envelopes_fotos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_env_envelopes_mov_env_envelopes" Association="CServicosModel.FK_env_envelopes_mov_env_envelopes">
+            <End Role="env_envelopes" EntitySet="env_envelopes" />
+            <End Role="env_envelopes_mov" EntitySet="env_envelopes_mov" />
+          </AssociationSet>
+          <AssociationSet Name="FK_env_envelopes_mov_env_status" Association="CServicosModel.FK_env_envelopes_mov_env_status">
+            <End Role="env_status" EntitySet="env_status" />
+            <End Role="env_envelopes_mov" EntitySet="env_envelopes_mov" />
+          </AssociationSet>
+          <EntitySet Name="env_studios" EntityType="CServicosModel.env_studios" />
+          <AssociationSet Name="FK_env_envelopes_env_studios" Association="CServicosModel.FK_env_envelopes_env_studios">
+            <End Role="env_studios" EntitySet="env_studios" />
+            <End Role="env_envelopes" EntitySet="env_envelopes" />
+          </AssociationSet>
+          <EntitySet Name="env_laboratoristas" EntityType="CServicosModel.env_laboratoristas" />
+          <EntitySet Name="env_laboratoristas_envelopes" EntityType="CServicosModel.env_laboratoristas_envelopes" />
+          <AssociationSet Name="FK_env_laboratoristas_envelopes_env_envelopes" Association="CServicosModel.FK_env_laboratoristas_envelopes_env_envelopes">
+            <End Role="env_envelopes" EntitySet="env_envelopes" />
+            <End Role="env_laboratoristas_envelopes" EntitySet="env_laboratoristas_envelopes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_env_laboratoristas_envelopes_env_laboratoristas" Association="CServicosModel.FK_env_laboratoristas_envelopes_env_laboratoristas">
+            <End Role="env_laboratoristas" EntitySet="env_laboratoristas" />
+            <End Role="env_laboratoristas_envelopes" EntitySet="env_laboratoristas_envelopes" />
+          </AssociationSet>
+          <EntitySet Name="env_tamanhos" EntityType="CServicosModel.env_tamanhos" />
+          <EntitySet Name="env_albuns" EntityType="CServicosModel.env_albuns" />
+          <EntitySet Name="env_molduras" EntityType="CServicosModel.env_molduras" />
+          <AssociationSet Name="FK_env_molduras_env_tamanhos" Association="CServicosModel.FK_env_molduras_env_tamanhos">
+            <End Role="env_tamanhos" EntitySet="env_tamanhos" />
+            <End Role="env_molduras" EntitySet="env_molduras" />
+          </AssociationSet>
+          <EntitySet Name="env_usuarios" EntityType="CServicosModel.env_usuarios" />
+          <EntitySet Name="env_usuarios_grupos" EntityType="CServicosModel.env_usuarios_grupos" />
+          <AssociationSet Name="FK_env_envelopes_mov_env_usuarios" Association="CServicosModel.FK_env_envelopes_mov_env_usuarios">
+            <End Role="env_usuarios" EntitySet="env_usuarios" />
+            <End Role="env_envelopes_mov" EntitySet="env_envelopes_mov" />
+          </AssociationSet>
+          <AssociationSet Name="FK_env_usuarios_env_usuarios_grupos" Association="CServicosModel.FK_env_usuarios_env_usuarios_grupos">
+            <End Role="env_usuarios_grupos" EntitySet="env_usuarios_grupos" />
+            <End Role="env_usuarios" EntitySet="env_usuarios" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="env_status">
+          <Key>
+            <PropertyRef Name="id_status" />
+          </Key>
+          <Property Name="id_status" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nome" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="prazo" Type="Int32" />
+          <Property Name="pendencia_lab" Type="Boolean" />
+          <Property Name="comissaoTipo" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="atrasoDesconto" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="exibir" Type="Boolean" />
+          <NavigationProperty Name="env_envelopes" Relationship="CServicosModel.FK_env_envelopes_env_status" FromRole="env_status" ToRole="env_envelopes" />
+          <NavigationProperty Name="env_envelopes_mov" Relationship="CServicosModel.FK_env_envelopes_mov_env_status" FromRole="env_status" ToRole="env_envelopes_mov" />
+        </EntityType>
+        <Association Name="FK_env_envelopes_env_status">
+          <End Type="CServicosModel.env_status" Role="env_status" Multiplicity="0..1" />
+          <End Type="CServicosModel.env_envelopes" Role="env_envelopes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="env_status">
+              <PropertyRef Name="id_status" />
+            </Principal>
+            <Dependent Role="env_envelopes">
+              <PropertyRef Name="id_status" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="env_envelopes_fotos">
+          <Key>
+            <PropertyRef Name="id_envelope_foto" />
+          </Key>
+          <Property Name="id_envelope_foto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_envelope" Type="Int32" />
+          <Property Name="cod_pacote" Type="Int32" />
+          <Property Name="quant" Type="Int32" />
+          <Property Name="nome_foto" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="efeito_digital" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="caminho_foto" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="obs" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="env_envelopes" Relationship="CServicosModel.FK_env_envelopes_fotos_env_envelopes" FromRole="env_envelopes_fotos" ToRole="env_envelopes" />
+        </EntityType>
+        <EntityType Name="env_envelopes_mov">
+          <Key>
+            <PropertyRef Name="id_envelope_mov" />
+          </Key>
+          <Property Name="id_envelope_mov" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_envelope" Type="Int32" />
+          <Property Name="id_status" Type="Int32" />
+          <Property Name="id_usuario" Type="Int32" />
+          <Property Name="data" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="env_envelopes" Relationship="CServicosModel.FK_env_envelopes_mov_env_envelopes" FromRole="env_envelopes_mov" ToRole="env_envelopes" />
+          <NavigationProperty Name="env_status" Relationship="CServicosModel.FK_env_envelopes_mov_env_status" FromRole="env_envelopes_mov" ToRole="env_status" />
+          <NavigationProperty Name="env_usuarios" Relationship="CServicosModel.FK_env_envelopes_mov_env_usuarios" FromRole="env_envelopes_mov" ToRole="env_usuarios" />
+        </EntityType>
+        <Association Name="FK_env_envelopes_fotos_env_envelopes">
+          <End Type="CServicosModel.env_envelopes" Role="env_envelopes" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="CServicosModel.env_envelopes_fotos" Role="env_envelopes_fotos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="env_envelopes">
+              <PropertyRef Name="id_envelope" />
+            </Principal>
+            <Dependent Role="env_envelopes_fotos">
+              <PropertyRef Name="id_envelope" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_env_envelopes_mov_env_envelopes">
+          <End Type="CServicosModel.env_envelopes" Role="env_envelopes" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="CServicosModel.env_envelopes_mov" Role="env_envelopes_mov" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="env_envelopes">
+              <PropertyRef Name="id_envelope" />
+            </Principal>
+            <Dependent Role="env_envelopes_mov">
+              <PropertyRef Name="id_envelope" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_env_envelopes_mov_env_status">
+          <End Type="CServicosModel.env_status" Role="env_status" Multiplicity="0..1" />
+          <End Type="CServicosModel.env_envelopes_mov" Role="env_envelopes_mov" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="env_status">
+              <PropertyRef Name="id_status" />
+            </Principal>
+            <Dependent Role="env_envelopes_mov">
+              <PropertyRef Name="id_status" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="env_studios">
+          <Key>
+            <PropertyRef Name="id_studio" />
+          </Key>
+          <Property Name="id_studio" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_rota" Type="Int32" />
+          <Property Name="nome" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="caminho" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="env_envelopes" Relationship="CServicosModel.FK_env_envelopes_env_studios" FromRole="env_studios" ToRole="env_envelopes" />
+        </EntityType>
+        <Association Name="FK_env_envelopes_env_studios">
+          <End Type="CServicosModel.env_studios" Role="env_studios" Multiplicity="0..1" />
+          <End Type="CServicosModel.env_envelopes" Role="env_envelopes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="env_studios">
+              <PropertyRef Name="id_studio" />
+            </Principal>
+            <Dependent Role="env_envelopes">
+              <PropertyRef Name="id_studio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="env_laboratoristas">
+          <Key>
+            <PropertyRef Name="id_laboratorista" />
+          </Key>
+          <Property Name="id_laboratorista" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nome" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="telefone" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="env_laboratoristas_envelopes" Relationship="CServicosModel.FK_env_laboratoristas_envelopes_env_laboratoristas" FromRole="env_laboratoristas" ToRole="env_laboratoristas_envelopes" />
+        </EntityType>
+        <EntityType Name="env_laboratoristas_envelopes">
+          <Key>
+            <PropertyRef Name="id_laboratorista_envelope" />
+          </Key>
+          <Property Name="id_laboratorista_envelope" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_laboratorista" Type="Int32" />
+          <Property Name="id_envelope" Type="Int32" />
+          <Property Name="data" Type="DateTime" Precision="3" />
+          <Property Name="num_fotos" Type="Int32" />
+          <Property Name="pendente" Type="Boolean" />
+          <NavigationProperty Name="env_envelopes" Relationship="CServicosModel.FK_env_laboratoristas_envelopes_env_envelopes" FromRole="env_laboratoristas_envelopes" ToRole="env_envelopes" />
+          <NavigationProperty Name="env_laboratoristas" Relationship="CServicosModel.FK_env_laboratoristas_envelopes_env_laboratoristas" FromRole="env_laboratoristas_envelopes" ToRole="env_laboratoristas" />
+        </EntityType>
+        <Association Name="FK_env_laboratoristas_envelopes_env_envelopes">
+          <End Type="CServicosModel.env_envelopes" Role="env_envelopes" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="CServicosModel.env_laboratoristas_envelopes" Role="env_laboratoristas_envelopes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="env_envelopes">
+              <PropertyRef Name="id_envelope" />
+            </Principal>
+            <Dependent Role="env_laboratoristas_envelopes">
+              <PropertyRef Name="id_envelope" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_env_laboratoristas_envelopes_env_laboratoristas">
+          <End Type="CServicosModel.env_laboratoristas" Role="env_laboratoristas" Multiplicity="0..1" />
+          <End Type="CServicosModel.env_laboratoristas_envelopes" Role="env_laboratoristas_envelopes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="env_laboratoristas">
+              <PropertyRef Name="id_laboratorista" />
+            </Principal>
+            <Dependent Role="env_laboratoristas_envelopes">
+              <PropertyRef Name="id_laboratorista" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="env_tamanhos">
+          <Key>
+            <PropertyRef Name="id_tamanho" />
+          </Key>
+          <Property Name="id_tamanho" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nome" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="prazo" Type="Int32" />
+          <Property Name="valor" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="perm_quant_fotos" Type="Boolean" />
+          <Property Name="perm_album" Type="Boolean" />
+          <Property Name="perm_moldura" Type="Boolean" />
+          <Property Name="perm_paspatur" Type="Boolean" />
+          <Property Name="valor_paspatur" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="perm_sacola_branca" Type="Boolean" />
+          <Property Name="valor_sacola_branca" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="perm_sacola_verde" Type="Boolean" />
+          <Property Name="valor_sacola_verde" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="exibir_studio" Type="Boolean" />
+          <Property Name="comissaoTipo" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="comissaoPeso" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="descontoTipo" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="descontoPeso" Type="Decimal" Precision="18" Scale="2" />
+          <NavigationProperty Name="env_molduras" Relationship="CServicosModel.FK_env_molduras_env_tamanhos" FromRole="env_tamanhos" ToRole="env_molduras" />
+        </EntityType>
+        <EntityType Name="env_albuns">
+          <Key>
+            <PropertyRef Name="id_album" />
+          </Key>
+          <Property Name="id_album" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nome" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="valor" Type="Decimal" Precision="19" Scale="4" />
+        </EntityType>
+        <EntityType Name="env_molduras">
+          <Key>
+            <PropertyRef Name="id_moldura" />
+          </Key>
+          <Property Name="id_moldura" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_tamanho" Type="Int32" />
+          <Property Name="nome" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="valor" Type="Decimal" Precision="19" Scale="4" />
+          <NavigationProperty Name="env_tamanhos" Relationship="CServicosModel.FK_env_molduras_env_tamanhos" FromRole="env_molduras" ToRole="env_tamanhos" />
+        </EntityType>
+        <Association Name="FK_env_molduras_env_tamanhos">
+          <End Type="CServicosModel.env_tamanhos" Role="env_tamanhos" Multiplicity="0..1" />
+          <End Type="CServicosModel.env_molduras" Role="env_molduras" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="env_tamanhos">
+              <PropertyRef Name="id_tamanho" />
+            </Principal>
+            <Dependent Role="env_molduras">
+              <PropertyRef Name="id_tamanho" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="env_usuarios">
+          <Key>
+            <PropertyRef Name="id_usuario" />
+          </Key>
+          <Property Name="id_usuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_usuario_grupo" Type="Int32" />
+          <Property Name="nome" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="telefone" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="username" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="password" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="env_envelopes_mov" Relationship="CServicosModel.FK_env_envelopes_mov_env_usuarios" FromRole="env_usuarios" ToRole="env_envelopes_mov" />
+          <NavigationProperty Name="env_usuarios_grupos" Relationship="CServicosModel.FK_env_usuarios_env_usuarios_grupos" FromRole="env_usuarios" ToRole="env_usuarios_grupos" />
+        </EntityType>
+        <EntityType Name="env_usuarios_grupos">
+          <Key>
+            <PropertyRef Name="id_usuario_grupo" />
+          </Key>
+          <Property Name="id_usuario_grupo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nome" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="mov" Type="Boolean" />
+          <Property Name="mov_cadastro" Type="Boolean" />
+          <Property Name="mov_impressao" Type="Boolean" />
+          <Property Name="mov_consulta" Type="Boolean" />
+          <Property Name="mov_status" Type="Boolean" />
+          <Property Name="mov_log" Type="Boolean" />
+          <Property Name="mov_cad_vol" Type="Boolean" />
+          <Property Name="mov_consult_vol" Type="Boolean" />
+          <Property Name="mov_serv_lab" Type="Boolean" />
+          <Property Name="mov_ctrl_qual" Type="Boolean" />
+          <Property Name="mov_finaliza_ped" Type="Boolean" />
+          <Property Name="mov_quant_ped" Type="Boolean" />
+          <Property Name="rel" Type="Boolean" />
+          <Property Name="rel_env" Type="Boolean" />
+          <Property Name="rel_env_prev" Type="Boolean" />
+          <Property Name="rel_env_status" Type="Boolean" />
+          <Property Name="rel_env_rota" Type="Boolean" />
+          <Property Name="rel_lab" Type="Boolean" />
+          <Property Name="rel_print_env" Type="Boolean" />
+          <Property Name="rel_print_vol" Type="Boolean" />
+          <Property Name="rel_rota" Type="Boolean" />
+          <Property Name="rel_fatura" Type="Boolean" />
+          <Property Name="rel_fatura_virtual" Type="Boolean" />
+          <Property Name="rel_fatura_dif" Type="Boolean" />
+          <Property Name="config" Type="Boolean" />
+          <Property Name="config_grupos" Type="Boolean" />
+          <Property Name="config_user" Type="Boolean" />
+          <Property Name="config_rotas" Type="Boolean" />
+          <Property Name="config_studios" Type="Boolean" />
+          <Property Name="config_tamanho" Type="Boolean" />
+          <Property Name="config_status" Type="Boolean" />
+          <Property Name="config_lab" Type="Boolean" />
+          <Property Name="config_server" Type="Boolean" />
+          <Property Name="config_album" Type="Boolean" />
+          <Property Name="config_moldura" Type="Boolean" />
+          <Property Name="config_qualidade" Type="Boolean" />
+          <NavigationProperty Name="env_usuarios" Relationship="CServicosModel.FK_env_usuarios_env_usuarios_grupos" FromRole="env_usuarios_grupos" ToRole="env_usuarios" />
+        </EntityType>
+        <Association Name="FK_env_envelopes_mov_env_usuarios">
+          <End Type="CServicosModel.env_usuarios" Role="env_usuarios" Multiplicity="0..1" />
+          <End Type="CServicosModel.env_envelopes_mov" Role="env_envelopes_mov" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="env_usuarios">
+              <PropertyRef Name="id_usuario" />
+            </Principal>
+            <Dependent Role="env_envelopes_mov">
+              <PropertyRef Name="id_usuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_env_usuarios_env_usuarios_grupos">
+          <End Type="CServicosModel.env_usuarios_grupos" Role="env_usuarios_grupos" Multiplicity="0..1" />
+          <End Type="CServicosModel.env_usuarios" Role="env_usuarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="env_usuarios_grupos">
+              <PropertyRef Name="id_usuario_grupo" />
+            </Principal>
+            <Dependent Role="env_usuarios">
+              <PropertyRef Name="id_usuario_grupo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CServicosModelStoreContainer" CdmEntityContainer="CServicosEntities">
+          <EntitySetMapping Name="env_envelopes">
+            <EntityTypeMapping TypeName="CServicosModel.env_envelopes">
+              <MappingFragment StoreEntitySet="env_envelopes">
+                <ScalarProperty Name="data_manipulacao" ColumnName="data_manipulacao" />
+                <ScalarProperty Name="is_repeticao" ColumnName="is_repeticao" />
+                <ScalarProperty Name="is_manipulado" ColumnName="is_manipulado" />
+                <ScalarProperty Name="data_impressao" ColumnName="data_impressao" />
+                <ScalarProperty Name="id_envelope" ColumnName="id_envelope" />
+                <ScalarProperty Name="id_studio" ColumnName="id_studio" />
+                <ScalarProperty Name="id_status" ColumnName="id_status" />
+                <ScalarProperty Name="cod_pacote" ColumnName="cod_pacote" />
+                <ScalarProperty Name="cod_cliente" ColumnName="cod_cliente" />
+                <ScalarProperty Name="cod_envelope" ColumnName="cod_envelope" />
+                <ScalarProperty Name="cod_venda" ColumnName="cod_venda" />
+                <ScalarProperty Name="num_fotos" ColumnName="num_fotos" />
+                <ScalarProperty Name="data_venda" ColumnName="data_venda" />
+                <ScalarProperty Name="data_envio" ColumnName="data_envio" />
+                <ScalarProperty Name="data_prevista" ColumnName="data_prevista" />
+                <ScalarProperty Name="nome_cliente" ColumnName="nome_cliente" />
+                <ScalarProperty Name="nome_vendedora" ColumnName="nome_vendedora" />
+                <ScalarProperty Name="nome_envio" ColumnName="nome_envio" />
+                <ScalarProperty Name="nome_abertura" ColumnName="nome_abertura" />
+                <ScalarProperty Name="album" ColumnName="album" />
+                <ScalarProperty Name="moldura" ColumnName="moldura" />
+                <ScalarProperty Name="servico" ColumnName="servico" />
+                <ScalarProperty Name="obs" ColumnName="obs" />
+                <ScalarProperty Name="faturado" ColumnName="faturado" />
+                <ScalarProperty Name="distribuido" ColumnName="distribuido" />
+                <ScalarProperty Name="data_status" ColumnName="data_status" />
+                <ScalarProperty Name="data_status_prevista" ColumnName="data_status_prevista" />
+                <ScalarProperty Name="expedicao" ColumnName="expedicao" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="env_status">
+            <EntityTypeMapping TypeName="CServicosModel.env_status">
+              <MappingFragment StoreEntitySet="env_status">
+                <ScalarProperty Name="exibir" ColumnName="exibir" />
+                <ScalarProperty Name="atrasoDesconto" ColumnName="atrasoDesconto" />
+                <ScalarProperty Name="comissaoTipo" ColumnName="comissaoTipo" />
+                <ScalarProperty Name="pendencia_lab" ColumnName="pendencia_lab" />
+                <ScalarProperty Name="prazo" ColumnName="prazo" />
+                <ScalarProperty Name="nome" ColumnName="nome" />
+                <ScalarProperty Name="id_status" ColumnName="id_status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="env_envelopes_fotos">
+            <EntityTypeMapping TypeName="CServicosModel.env_envelopes_fotos">
+              <MappingFragment StoreEntitySet="env_envelopes_fotos">
+                <ScalarProperty Name="obs" ColumnName="obs" />
+                <ScalarProperty Name="caminho_foto" ColumnName="caminho_foto" />
+                <ScalarProperty Name="efeito_digital" ColumnName="efeito_digital" />
+                <ScalarProperty Name="nome_foto" ColumnName="nome_foto" />
+                <ScalarProperty Name="quant" ColumnName="quant" />
+                <ScalarProperty Name="cod_pacote" ColumnName="cod_pacote" />
+                <ScalarProperty Name="id_envelope" ColumnName="id_envelope" />
+                <ScalarProperty Name="id_envelope_foto" ColumnName="id_envelope_foto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="env_envelopes_mov">
+            <EntityTypeMapping TypeName="CServicosModel.env_envelopes_mov">
+              <MappingFragment StoreEntitySet="env_envelopes_mov">
+                <ScalarProperty Name="data" ColumnName="data" />
+                <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
+                <ScalarProperty Name="id_status" ColumnName="id_status" />
+                <ScalarProperty Name="id_envelope" ColumnName="id_envelope" />
+                <ScalarProperty Name="id_envelope_mov" ColumnName="id_envelope_mov" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="env_studios">
+            <EntityTypeMapping TypeName="CServicosModel.env_studios">
+              <MappingFragment StoreEntitySet="env_studios">
+                <ScalarProperty Name="caminho" ColumnName="caminho" />
+                <ScalarProperty Name="nome" ColumnName="nome" />
+                <ScalarProperty Name="id_rota" ColumnName="id_rota" />
+                <ScalarProperty Name="id_studio" ColumnName="id_studio" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="env_laboratoristas">
+            <EntityTypeMapping TypeName="CServicosModel.env_laboratoristas">
+              <MappingFragment StoreEntitySet="env_laboratoristas">
+                <ScalarProperty Name="telefone" ColumnName="telefone" />
+                <ScalarProperty Name="nome" ColumnName="nome" />
+                <ScalarProperty Name="id_laboratorista" ColumnName="id_laboratorista" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="env_laboratoristas_envelopes">
+            <EntityTypeMapping TypeName="CServicosModel.env_laboratoristas_envelopes">
+              <MappingFragment StoreEntitySet="env_laboratoristas_envelopes">
+                <ScalarProperty Name="pendente" ColumnName="pendente" />
+                <ScalarProperty Name="num_fotos" ColumnName="num_fotos" />
+                <ScalarProperty Name="data" ColumnName="data" />
+                <ScalarProperty Name="id_envelope" ColumnName="id_envelope" />
+                <ScalarProperty Name="id_laboratorista" ColumnName="id_laboratorista" />
+                <ScalarProperty Name="id_laboratorista_envelope" ColumnName="id_laboratorista_envelope" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="env_tamanhos">
+            <EntityTypeMapping TypeName="CServicosModel.env_tamanhos">
+              <MappingFragment StoreEntitySet="env_tamanhos">
+                <ScalarProperty Name="descontoPeso" ColumnName="descontoPeso" />
+                <ScalarProperty Name="descontoTipo" ColumnName="descontoTipo" />
+                <ScalarProperty Name="comissaoPeso" ColumnName="comissaoPeso" />
+                <ScalarProperty Name="comissaoTipo" ColumnName="comissaoTipo" />
+                <ScalarProperty Name="exibir_studio" ColumnName="exibir_studio" />
+                <ScalarProperty Name="valor_sacola_verde" ColumnName="valor_sacola_verde" />
+                <ScalarProperty Name="perm_sacola_verde" ColumnName="perm_sacola_verde" />
+                <ScalarProperty Name="valor_sacola_branca" ColumnName="valor_sacola_branca" />
+                <ScalarProperty Name="perm_sacola_branca" ColumnName="perm_sacola_branca" />
+                <ScalarProperty Name="valor_paspatur" ColumnName="valor_paspatur" />
+                <ScalarProperty Name="perm_paspatur" ColumnName="perm_paspatur" />
+                <ScalarProperty Name="perm_moldura" ColumnName="perm_moldura" />
+                <ScalarProperty Name="perm_album" ColumnName="perm_album" />
+                <ScalarProperty Name="perm_quant_fotos" ColumnName="perm_quant_fotos" />
+                <ScalarProperty Name="valor" ColumnName="valor" />
+                <ScalarProperty Name="prazo" ColumnName="prazo" />
+                <ScalarProperty Name="nome" ColumnName="nome" />
+                <ScalarProperty Name="id_tamanho" ColumnName="id_tamanho" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="env_albuns">
+            <EntityTypeMapping TypeName="CServicosModel.env_albuns">
+              <MappingFragment StoreEntitySet="env_albuns">
+                <ScalarProperty Name="valor" ColumnName="valor" />
+                <ScalarProperty Name="nome" ColumnName="nome" />
+                <ScalarProperty Name="id_album" ColumnName="id_album" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="env_molduras">
+            <EntityTypeMapping TypeName="CServicosModel.env_molduras">
+              <MappingFragment StoreEntitySet="env_molduras">
+                <ScalarProperty Name="valor" ColumnName="valor" />
+                <ScalarProperty Name="nome" ColumnName="nome" />
+                <ScalarProperty Name="id_tamanho" ColumnName="id_tamanho" />
+                <ScalarProperty Name="id_moldura" ColumnName="id_moldura" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="env_usuarios">
+            <EntityTypeMapping TypeName="CServicosModel.env_usuarios">
+              <MappingFragment StoreEntitySet="env_usuarios">
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="telefone" ColumnName="telefone" />
+                <ScalarProperty Name="nome" ColumnName="nome" />
+                <ScalarProperty Name="id_usuario_grupo" ColumnName="id_usuario_grupo" />
+                <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="env_usuarios_grupos">
+            <EntityTypeMapping TypeName="CServicosModel.env_usuarios_grupos">
+              <MappingFragment StoreEntitySet="env_usuarios_grupos">
+                <ScalarProperty Name="config_qualidade" ColumnName="config_qualidade" />
+                <ScalarProperty Name="config_moldura" ColumnName="config_moldura" />
+                <ScalarProperty Name="config_album" ColumnName="config_album" />
+                <ScalarProperty Name="config_server" ColumnName="config_server" />
+                <ScalarProperty Name="config_lab" ColumnName="config_lab" />
+                <ScalarProperty Name="config_status" ColumnName="config_status" />
+                <ScalarProperty Name="config_tamanho" ColumnName="config_tamanho" />
+                <ScalarProperty Name="config_studios" ColumnName="config_studios" />
+                <ScalarProperty Name="config_rotas" ColumnName="config_rotas" />
+                <ScalarProperty Name="config_user" ColumnName="config_user" />
+                <ScalarProperty Name="config_grupos" ColumnName="config_grupos" />
+                <ScalarProperty Name="config" ColumnName="config" />
+                <ScalarProperty Name="rel_fatura_dif" ColumnName="rel_fatura_dif" />
+                <ScalarProperty Name="rel_fatura_virtual" ColumnName="rel_fatura_virtual" />
+                <ScalarProperty Name="rel_fatura" ColumnName="rel_fatura" />
+                <ScalarProperty Name="rel_rota" ColumnName="rel_rota" />
+                <ScalarProperty Name="rel_print_vol" ColumnName="rel_print_vol" />
+                <ScalarProperty Name="rel_print_env" ColumnName="rel_print_env" />
+                <ScalarProperty Name="rel_lab" ColumnName="rel_lab" />
+                <ScalarProperty Name="rel_env_rota" ColumnName="rel_env_rota" />
+                <ScalarProperty Name="rel_env_status" ColumnName="rel_env_status" />
+                <ScalarProperty Name="rel_env_prev" ColumnName="rel_env_prev" />
+                <ScalarProperty Name="rel_env" ColumnName="rel_env" />
+                <ScalarProperty Name="rel" ColumnName="rel" />
+                <ScalarProperty Name="mov_quant_ped" ColumnName="mov_quant_ped" />
+                <ScalarProperty Name="mov_finaliza_ped" ColumnName="mov_finaliza_ped" />
+                <ScalarProperty Name="mov_ctrl_qual" ColumnName="mov_ctrl_qual" />
+                <ScalarProperty Name="mov_serv_lab" ColumnName="mov_serv_lab" />
+                <ScalarProperty Name="mov_consult_vol" ColumnName="mov_consult_vol" />
+                <ScalarProperty Name="mov_cad_vol" ColumnName="mov_cad_vol" />
+                <ScalarProperty Name="mov_log" ColumnName="mov_log" />
+                <ScalarProperty Name="mov_status" ColumnName="mov_status" />
+                <ScalarProperty Name="mov_consulta" ColumnName="mov_consulta" />
+                <ScalarProperty Name="mov_impressao" ColumnName="mov_impressao" />
+                <ScalarProperty Name="mov_cadastro" ColumnName="mov_cadastro" />
+                <ScalarProperty Name="mov" ColumnName="mov" />
+                <ScalarProperty Name="nome" ColumnName="nome" />
+                <ScalarProperty Name="id_usuario_grupo" ColumnName="id_usuario_grupo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

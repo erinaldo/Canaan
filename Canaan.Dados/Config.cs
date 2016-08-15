@@ -39,6 +39,7 @@ namespace Canaan.Dados
         public string LocalFolder { get; set; }
         public Nullable<bool> PastaUsaAno { get; set; }
         public Nullable<bool> PastaUsaMes { get; set; }
+        public Nullable<bool> UsaLiberacao { get; set; }
     
         public virtual Filial Filial { get; set; }
     }

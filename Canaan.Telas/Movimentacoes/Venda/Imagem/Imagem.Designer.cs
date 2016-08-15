@@ -40,6 +40,8 @@ namespace Canaan.Telas.Movimentacoes.Venda.Imagem
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.cbSessoes = new System.Windows.Forms.ToolStripComboBox();
+            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
+            this.cbPastas = new System.Windows.Forms.ToolStripComboBox();
             this.imgListVenda = new System.Windows.Forms.ImageList(this.components);
             this.lvImagensVenda = new System.Windows.Forms.ListView();
             this.lvImagensSessao = new System.Windows.Forms.ListView();
@@ -54,6 +56,11 @@ namespace Canaan.Telas.Movimentacoes.Venda.Imagem
             // panel1
             // 
             this.panel1.Controls.Add(this.toolstripActions);
+            this.panel1.Size = new System.Drawing.Size(882, 39);
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Size = new System.Drawing.Size(856, 533);
             // 
             // tabPage1
             // 
@@ -61,12 +68,14 @@ namespace Canaan.Telas.Movimentacoes.Venda.Imagem
             this.tabPage1.Controls.Add(this.labelImagensVenda);
             this.tabPage1.Controls.Add(this.lvImagensSessao);
             this.tabPage1.Controls.Add(this.lvImagensVenda);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(10);
+            this.tabPage1.Size = new System.Drawing.Size(848, 507);
             this.tabPage1.Text = "Seleção de Imagens";
             // 
             // imgList
             // 
             this.imgList.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
-            this.imgList.ImageSize = new System.Drawing.Size(100, 100);
+            this.imgList.ImageSize = new System.Drawing.Size(200, 200);
             this.imgList.TransparentColor = System.Drawing.Color.Transparent;
             // 
             // toolstripActions
@@ -78,12 +87,14 @@ namespace Canaan.Telas.Movimentacoes.Venda.Imagem
             this.btBackup,
             this.toolStripSeparator1,
             this.toolStripLabel1,
-            this.cbSessoes});
+            this.cbSessoes,
+            this.toolStripLabel2,
+            this.cbPastas});
             this.toolstripActions.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             this.toolstripActions.Location = new System.Drawing.Point(0, 0);
             this.toolstripActions.Name = "toolstripActions";
             this.toolstripActions.Padding = new System.Windows.Forms.Padding(5);
-            this.toolstripActions.Size = new System.Drawing.Size(990, 33);
+            this.toolstripActions.Size = new System.Drawing.Size(882, 33);
             this.toolstripActions.TabIndex = 2;
             this.toolstripActions.Text = "toolStrip1";
             // 
@@ -129,10 +140,25 @@ namespace Canaan.Telas.Movimentacoes.Venda.Imagem
             this.cbSessoes.Size = new System.Drawing.Size(180, 23);
             this.cbSessoes.SelectedIndexChanged += new System.EventHandler(this.cbSessoes_SelectedIndexChanged);
             // 
+            // toolStripLabel2
+            // 
+            this.toolStripLabel2.Name = "toolStripLabel2";
+            this.toolStripLabel2.Size = new System.Drawing.Size(92, 20);
+            this.toolStripLabel2.Text = "Selecionar Pasta";
+            // 
+            // cbPastas
+            // 
+            this.cbPastas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbPastas.DropDownWidth = 180;
+            this.cbPastas.FlatStyle = System.Windows.Forms.FlatStyle.Standard;
+            this.cbPastas.Name = "cbPastas";
+            this.cbPastas.Size = new System.Drawing.Size(180, 23);
+            this.cbPastas.SelectedIndexChanged += new System.EventHandler(this.cbPastas_SelectedIndexChanged);
+            // 
             // imgListVenda
             // 
             this.imgListVenda.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
-            this.imgListVenda.ImageSize = new System.Drawing.Size(100, 100);
+            this.imgListVenda.ImageSize = new System.Drawing.Size(200, 200);
             this.imgListVenda.TransparentColor = System.Drawing.Color.Transparent;
             // 
             // lvImagensVenda
@@ -140,9 +166,10 @@ namespace Canaan.Telas.Movimentacoes.Venda.Imagem
             this.lvImagensVenda.AllowDrop = true;
             this.lvImagensVenda.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.lvImagensVenda.Location = new System.Drawing.Point(6, 22);
+            this.lvImagensVenda.LargeImageList = this.imgListVenda;
+            this.lvImagensVenda.Location = new System.Drawing.Point(13, 29);
             this.lvImagensVenda.Name = "lvImagensVenda";
-            this.lvImagensVenda.Size = new System.Drawing.Size(180, 479);
+            this.lvImagensVenda.Size = new System.Drawing.Size(272, 465);
             this.lvImagensVenda.TabIndex = 0;
             this.lvImagensVenda.UseCompatibleStateImageBehavior = false;
             this.lvImagensVenda.ItemDrag += new System.Windows.Forms.ItemDragEventHandler(this.lvImagensVenda_ItemDrag);
@@ -153,12 +180,13 @@ namespace Canaan.Telas.Movimentacoes.Venda.Imagem
             // lvImagensSessao
             // 
             this.lvImagensSessao.AllowDrop = true;
-            this.lvImagensSessao.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.lvImagensSessao.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lvImagensSessao.LargeImageList = this.imgList;
-            this.lvImagensSessao.Location = new System.Drawing.Point(207, 22);
+            this.lvImagensSessao.Location = new System.Drawing.Point(291, 29);
             this.lvImagensSessao.Name = "lvImagensSessao";
-            this.lvImagensSessao.Size = new System.Drawing.Size(726, 479);
+            this.lvImagensSessao.Size = new System.Drawing.Size(544, 465);
             this.lvImagensSessao.TabIndex = 1;
             this.lvImagensSessao.UseCompatibleStateImageBehavior = false;
             this.lvImagensSessao.ItemDrag += new System.Windows.Forms.ItemDragEventHandler(this.lvImagensSessao_ItemDrag);
@@ -170,7 +198,7 @@ namespace Canaan.Telas.Movimentacoes.Venda.Imagem
             // labelImagensVenda
             // 
             this.labelImagensVenda.AutoSize = true;
-            this.labelImagensVenda.Location = new System.Drawing.Point(6, 6);
+            this.labelImagensVenda.Location = new System.Drawing.Point(13, 10);
             this.labelImagensVenda.Name = "labelImagensVenda";
             this.labelImagensVenda.Size = new System.Drawing.Size(114, 13);
             this.labelImagensVenda.TabIndex = 2;
@@ -179,7 +207,7 @@ namespace Canaan.Telas.Movimentacoes.Venda.Imagem
             // labelImagensSessao
             // 
             this.labelImagensSessao.AutoSize = true;
-            this.labelImagensSessao.Location = new System.Drawing.Point(204, 6);
+            this.labelImagensSessao.Location = new System.Drawing.Point(288, 10);
             this.labelImagensSessao.Name = "labelImagensSessao";
             this.labelImagensSessao.Size = new System.Drawing.Size(100, 13);
             this.labelImagensSessao.TabIndex = 3;
@@ -189,7 +217,7 @@ namespace Canaan.Telas.Movimentacoes.Venda.Imagem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1000, 600);
+            this.ClientSize = new System.Drawing.Size(892, 600);
             this.Location = new System.Drawing.Point(0, 0);
             this.Name = "Imagem";
             this.Text = "FormImagem";
@@ -218,8 +246,9 @@ namespace Canaan.Telas.Movimentacoes.Venda.Imagem
         private Label labelImagensVenda;
         public ListView lvImagensSessao;
         public ListView lvImagensVenda;
+        private ToolStripLabel toolStripLabel2;
+        private ToolStripComboBox cbPastas;
         private ToolStripButton btBackup;
         private ToolStripSeparator toolStripSeparator1;
-
     }
 }

@@ -30,6 +30,8 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.pastaUsaMesCheckBox = new System.Windows.Forms.CheckBox();
+            this.pastaUsaAnoCheckBox = new System.Windows.Forms.CheckBox();
             this.UsaManipulacaoCheckBox = new System.Windows.Forms.CheckBox();
             this.IsCriptogradadoCheckBox = new System.Windows.Forms.CheckBox();
             this.localFolderTextBox = new System.Windows.Forms.TextBox();
@@ -75,8 +77,7 @@
             this.label16 = new System.Windows.Forms.Label();
             this.cServiceIdTextBox = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.pastaUsaAnoCheckBox = new System.Windows.Forms.CheckBox();
-            this.pastaUsaMesCheckBox = new System.Windows.Forms.CheckBox();
+            this.UsaLuberacaoCheckBox = new System.Windows.Forms.CheckBox();
             this.panelEdit.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -107,6 +108,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.UsaLuberacaoCheckBox);
             this.tabPage1.Controls.Add(this.pastaUsaMesCheckBox);
             this.tabPage1.Controls.Add(this.pastaUsaAnoCheckBox);
             this.tabPage1.Controls.Add(this.UsaManipulacaoCheckBox);
@@ -128,6 +130,26 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Informações Gerais";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // pastaUsaMesCheckBox
+            // 
+            this.pastaUsaMesCheckBox.AutoSize = true;
+            this.pastaUsaMesCheckBox.Location = new System.Drawing.Point(152, 231);
+            this.pastaUsaMesCheckBox.Name = "pastaUsaMesCheckBox";
+            this.pastaUsaMesCheckBox.Size = new System.Drawing.Size(111, 17);
+            this.pastaUsaMesCheckBox.TabIndex = 13;
+            this.pastaUsaMesCheckBox.Text = "Usa Pasta de Mês";
+            this.pastaUsaMesCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // pastaUsaAnoCheckBox
+            // 
+            this.pastaUsaAnoCheckBox.AutoSize = true;
+            this.pastaUsaAnoCheckBox.Location = new System.Drawing.Point(152, 208);
+            this.pastaUsaAnoCheckBox.Name = "pastaUsaAnoCheckBox";
+            this.pastaUsaAnoCheckBox.Size = new System.Drawing.Size(111, 17);
+            this.pastaUsaAnoCheckBox.TabIndex = 12;
+            this.pastaUsaAnoCheckBox.Text = "Usa Pasta de Ano";
+            this.pastaUsaAnoCheckBox.UseVisualStyleBackColor = true;
             // 
             // UsaManipulacaoCheckBox
             // 
@@ -397,7 +419,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(5);
-            this.tabPage4.Size = new System.Drawing.Size(392, 291);
+            this.tabPage4.Size = new System.Drawing.Size(454, 312);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Variáveis";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -534,25 +556,15 @@
             this.label15.TabIndex = 16;
             this.label15.Text = "Código CService";
             // 
-            // pastaUsaAnoCheckBox
+            // UsaLuberacaoCheckBox
             // 
-            this.pastaUsaAnoCheckBox.AutoSize = true;
-            this.pastaUsaAnoCheckBox.Location = new System.Drawing.Point(152, 208);
-            this.pastaUsaAnoCheckBox.Name = "pastaUsaAnoCheckBox";
-            this.pastaUsaAnoCheckBox.Size = new System.Drawing.Size(111, 17);
-            this.pastaUsaAnoCheckBox.TabIndex = 12;
-            this.pastaUsaAnoCheckBox.Text = "Usa Pasta de Ano";
-            this.pastaUsaAnoCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // pastaUsaMesCheckBox
-            // 
-            this.pastaUsaMesCheckBox.AutoSize = true;
-            this.pastaUsaMesCheckBox.Location = new System.Drawing.Point(152, 231);
-            this.pastaUsaMesCheckBox.Name = "pastaUsaMesCheckBox";
-            this.pastaUsaMesCheckBox.Size = new System.Drawing.Size(111, 17);
-            this.pastaUsaMesCheckBox.TabIndex = 13;
-            this.pastaUsaMesCheckBox.Text = "Usa Pasta de Mês";
-            this.pastaUsaMesCheckBox.UseVisualStyleBackColor = true;
+            this.UsaLuberacaoCheckBox.AutoSize = true;
+            this.UsaLuberacaoCheckBox.Location = new System.Drawing.Point(11, 254);
+            this.UsaLuberacaoCheckBox.Name = "UsaLuberacaoCheckBox";
+            this.UsaLuberacaoCheckBox.Size = new System.Drawing.Size(141, 17);
+            this.UsaLuberacaoCheckBox.TabIndex = 14;
+            this.UsaLuberacaoCheckBox.Text = "Usa Liberação de Venda";
+            this.UsaLuberacaoCheckBox.UseVisualStyleBackColor = true;
             // 
             // Edita
             // 
@@ -630,5 +642,6 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.CheckBox pastaUsaMesCheckBox;
         private System.Windows.Forms.CheckBox pastaUsaAnoCheckBox;
+        private System.Windows.Forms.CheckBox UsaLuberacaoCheckBox;
     }
 }

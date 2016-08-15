@@ -35,14 +35,14 @@ namespace Canaan.Telas.Movimentacoes.Sessao.Telas
             this.toolstripActions = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this.btExcluirFoto = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.statusBar = new System.Windows.Forms.StatusStrip();
             this.progressBar = new System.Windows.Forms.ToolStripProgressBar();
             this.lbInfo = new System.Windows.Forms.ToolStripStatusLabel();
@@ -76,7 +76,7 @@ namespace Canaan.Telas.Movimentacoes.Sessao.Telas
             this.toolstripActions.Location = new System.Drawing.Point(0, 0);
             this.toolstripActions.Name = "toolstripActions";
             this.toolstripActions.Padding = new System.Windows.Forms.Padding(5);
-            this.toolstripActions.Size = new System.Drawing.Size(719, 33);
+            this.toolstripActions.Size = new System.Drawing.Size(710, 33);
             this.toolstripActions.TabIndex = 3;
             this.toolstripActions.Text = "toolStrip1";
             // 
@@ -93,6 +93,21 @@ namespace Canaan.Telas.Movimentacoes.Sessao.Telas
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(6, 23);
+            // 
+            // toolStripButton5
+            // 
+            this.toolStripButton5.Image = global::Canaan.Telas.Properties.Resources.Loop_16xLG;
+            this.toolStripButton5.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton5.Name = "toolStripButton5";
+            this.toolStripButton5.Size = new System.Drawing.Size(121, 20);
+            this.toolStripButton5.Text = "Atualizar Imagens";
+            this.toolStripButton5.Click += new System.EventHandler(this.toolStripButton5_Click);
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 23);
             // 
             // toolStripButton2
             // 
@@ -113,16 +128,6 @@ namespace Canaan.Telas.Movimentacoes.Sessao.Telas
             this.toolStripLabel1.Name = "toolStripLabel1";
             this.toolStripLabel1.Size = new System.Drawing.Size(110, 20);
             this.toolStripLabel1.Text = "Opções de Imagem";
-            // 
-            // toolStripButton5
-            // 
-            this.toolStripButton5.Image = global::Canaan.Telas.Properties.Resources.Loop_16xLG;
-            this.toolStripButton5.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton5.Name = "toolStripButton5";
-            this.toolStripButton5.Size = new System.Drawing.Size(121, 20);
-            this.toolStripButton5.Text = "Atualizar Imagens";
-            this.toolStripButton5.Click += new System.EventHandler(this.toolStripButton5_Click);
             // 
             // toolStripButton3
             // 
@@ -154,11 +159,6 @@ namespace Canaan.Telas.Movimentacoes.Sessao.Telas
             this.btExcluirFoto.Text = "toolStripButton5";
             this.btExcluirFoto.Click += new System.EventHandler(this.btExcluirFoto_Click);
             // 
-            // toolStripSeparator4
-            // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 23);
-            // 
             // statusBar
             // 
             this.statusBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -166,7 +166,7 @@ namespace Canaan.Telas.Movimentacoes.Sessao.Telas
             this.lbInfo});
             this.statusBar.Location = new System.Drawing.Point(0, 444);
             this.statusBar.Name = "statusBar";
-            this.statusBar.Size = new System.Drawing.Size(719, 22);
+            this.statusBar.Size = new System.Drawing.Size(710, 22);
             this.statusBar.TabIndex = 5;
             this.statusBar.Text = "statusStrip1";
             // 
@@ -189,7 +189,7 @@ namespace Canaan.Telas.Movimentacoes.Sessao.Telas
             this.tabControl1.Location = new System.Drawing.Point(0, 33);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(719, 411);
+            this.tabControl1.Size = new System.Drawing.Size(710, 411);
             this.tabControl1.TabIndex = 6;
             // 
             // tabPage1
@@ -198,7 +198,7 @@ namespace Canaan.Telas.Movimentacoes.Sessao.Telas
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(711, 385);
+            this.tabPage1.Size = new System.Drawing.Size(702, 385);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Imagens da Sessão";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -209,7 +209,7 @@ namespace Canaan.Telas.Movimentacoes.Sessao.Telas
             this.lstFotos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lstFotos.Location = new System.Drawing.Point(3, 3);
             this.lstFotos.Name = "lstFotos";
-            this.lstFotos.Size = new System.Drawing.Size(705, 379);
+            this.lstFotos.Size = new System.Drawing.Size(696, 379);
             this.lstFotos.TabIndex = 5;
             this.lstFotos.UseCompatibleStateImageBehavior = false;
             this.lstFotos.DoubleClick += new System.EventHandler(this.lstFotos_DoubleClick);
@@ -230,7 +230,7 @@ namespace Canaan.Telas.Movimentacoes.Sessao.Telas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(719, 466);
+            this.ClientSize = new System.Drawing.Size(710, 466);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.statusBar);
             this.Controls.Add(this.toolstripActions);
