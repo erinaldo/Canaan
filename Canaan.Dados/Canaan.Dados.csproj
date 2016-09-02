@@ -269,6 +269,9 @@
     <Compile Include="Estado.cs">
       <DependentUpon>CanaanModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Evento.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Extrato.cs">
       <DependentUpon>CanaanModel.tt</DependentUpon>
     </Compile>
@@ -433,6 +436,9 @@
       <DependentUpon>CanaanModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Venda.cs">
+      <DependentUpon>CanaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VendaEvento.cs">
       <DependentUpon>CanaanModel.tt</DependentUpon>
     </Compile>
     <Compile Include="VendaFoto.cs">

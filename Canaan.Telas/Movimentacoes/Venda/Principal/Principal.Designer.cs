@@ -39,6 +39,7 @@ namespace Canaan.Telas.Movimentacoes.Venda.Principal
             this.lkMontaPedido = new DevExpress.XtraNavBar.NavBarItem();
             this.lkFinanceiro = new DevExpress.XtraNavBar.NavBarItem();
             this.lkDocumentacao = new DevExpress.XtraNavBar.NavBarItem();
+            this.lkEvento = new DevExpress.XtraNavBar.NavBarItem();
             this.panelContainer = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
             this.SuspendLayout();
@@ -53,6 +54,7 @@ namespace Canaan.Telas.Movimentacoes.Venda.Principal
             this.lkInfo,
             this.lkSelecaoImg,
             this.lkMontaPedido,
+            this.lkEvento,
             this.lkFinanceiro,
             this.lkDocumentacao});
             this.navBarControl1.Location = new System.Drawing.Point(0, 0);
@@ -76,6 +78,7 @@ namespace Canaan.Telas.Movimentacoes.Venda.Principal
             new DevExpress.XtraNavBar.NavBarItemLink(this.lkSelecaoImg),
             new DevExpress.XtraNavBar.NavBarItemLink(this.lkMontaPedido),
             new DevExpress.XtraNavBar.NavBarItemLink(this.lkFinanceiro),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.lkEvento),
             new DevExpress.XtraNavBar.NavBarItemLink(this.lkDocumentacao)});
             this.nvBar.Name = "nvBar";
             // 
@@ -100,16 +103,20 @@ namespace Canaan.Telas.Movimentacoes.Venda.Principal
             // lkFinanceiro
             // 
             this.lkFinanceiro.Caption = "Lançamentos Financeiros";
-            this.lkFinanceiro.Enabled = false;
             this.lkFinanceiro.Name = "lkFinanceiro";
             this.lkFinanceiro.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.lkInflizacao_LinkClicked);
             // 
             // lkDocumentacao
             // 
             this.lkDocumentacao.Caption = "Documentação / Finalização";
-            this.lkDocumentacao.Enabled = false;
             this.lkDocumentacao.Name = "lkDocumentacao";
             this.lkDocumentacao.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.lkDocumentacao_LinkClicked);
+            // 
+            // lkEvento
+            // 
+            this.lkEvento.Caption = "Eventos / Acompanhamento";
+            this.lkEvento.Name = "lkEvento";
+            this.lkEvento.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.lkEvento_LinkClicked);
             // 
             // panelContainer
             // 
@@ -148,5 +155,6 @@ namespace Canaan.Telas.Movimentacoes.Venda.Principal
         private Panel panelContainer;
         public NavBarItem lkDocumentacao;
         public NavBarItem lkFinanceiro;
+        private NavBarItem lkEvento;
     }
 }

@@ -1003,26 +1003,6 @@ namespace Canaan.Telas.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap SplashKika {
-            get {
-                object obj = ResourceManager.GetObject("SplashKika", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap SplashKiss {
-            get {
-                object obj = ResourceManager.GetObject("SplashKiss", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         public static System.Drawing.Bitmap StatusAnnotations_Alert_16xLG {
             get {
                 object obj = ResourceManager.GetObject("StatusAnnotations_Alert_16xLG", resourceCulture);

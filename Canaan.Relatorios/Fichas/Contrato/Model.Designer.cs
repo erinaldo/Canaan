@@ -984,6 +984,8 @@ namespace Canaan.Relatorios.Fichas.Contrato {
             
             private global::System.Data.DataColumn columnNomeCliFinanc;
             
+            private global::System.Data.DataColumn columnEmail;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public ClienteDataTable() {
@@ -1171,6 +1173,14 @@ namespace Canaan.Relatorios.Fichas.Contrato {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn EmailColumn {
+                get {
+                    return this.columnEmail;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1225,7 +1235,8 @@ namespace Canaan.Relatorios.Fichas.Contrato {
                         int IdCliente, 
                         int IdAtendimento, 
                         string IndicacaoDe, 
-                        string NomeCliFinanc) {
+                        string NomeCliFinanc, 
+                        string Email) {
                 ClienteRow rowClienteRow = ((ClienteRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Nome,
@@ -1246,7 +1257,8 @@ namespace Canaan.Relatorios.Fichas.Contrato {
                         IdCliente,
                         IdAtendimento,
                         IndicacaoDe,
-                        NomeCliFinanc};
+                        NomeCliFinanc,
+                        Email};
                 rowClienteRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowClienteRow);
                 return rowClienteRow;
@@ -1295,6 +1307,7 @@ namespace Canaan.Relatorios.Fichas.Contrato {
                 this.columnIdAtendimento = base.Columns["IdAtendimento"];
                 this.columnIndicacaoDe = base.Columns["IndicacaoDe"];
                 this.columnNomeCliFinanc = base.Columns["NomeCliFinanc"];
+                this.columnEmail = base.Columns["Email"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1338,6 +1351,8 @@ namespace Canaan.Relatorios.Fichas.Contrato {
                 base.Columns.Add(this.columnIndicacaoDe);
                 this.columnNomeCliFinanc = new global::System.Data.DataColumn("NomeCliFinanc", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNomeCliFinanc);
+                this.columnEmail = new global::System.Data.DataColumn("Email", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEmail);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnIdCliente}, true));
                 this.columnIdCliente.AllowDBNull = false;
@@ -1832,6 +1847,12 @@ namespace Canaan.Relatorios.Fichas.Contrato {
             
             private global::System.Data.DataColumn columnValorCrediario;
             
+            private global::System.Data.DataColumn columnEventos;
+            
+            private global::System.Data.DataColumn columnContrato;
+            
+            private global::System.Data.DataColumn columnServicos;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public VendaDataTable() {
@@ -1971,6 +1992,30 @@ namespace Canaan.Relatorios.Fichas.Contrato {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn EventosColumn {
+                get {
+                    return this.columnEventos;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ContratoColumn {
+                get {
+                    return this.columnContrato;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ServicosColumn {
+                get {
+                    return this.columnServicos;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2006,7 +2051,23 @@ namespace Canaan.Relatorios.Fichas.Contrato {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public VendaRow AddVendaRow(AtendimentoRow parentAtendimentoRowByAtendimento_Venda, string ValorBruto, string ValorEntrada, string DataEntrada, string ValorDesconto, string ValorAcressimo, string ValorTotal, string FormPagamento, string TotalParcelas, string EspacoParcelas, int IdVenda, decimal ValorCanaan, decimal ValorCrediario) {
+            public VendaRow AddVendaRow(
+                        AtendimentoRow parentAtendimentoRowByAtendimento_Venda, 
+                        string ValorBruto, 
+                        string ValorEntrada, 
+                        string DataEntrada, 
+                        string ValorDesconto, 
+                        string ValorAcressimo, 
+                        string ValorTotal, 
+                        string FormPagamento, 
+                        string TotalParcelas, 
+                        string EspacoParcelas, 
+                        int IdVenda, 
+                        decimal ValorCanaan, 
+                        decimal ValorCrediario, 
+                        string Eventos, 
+                        string Contrato, 
+                        string Servicos) {
                 VendaRow rowVendaRow = ((VendaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -2021,7 +2082,10 @@ namespace Canaan.Relatorios.Fichas.Contrato {
                         EspacoParcelas,
                         IdVenda,
                         ValorCanaan,
-                        ValorCrediario};
+                        ValorCrediario,
+                        Eventos,
+                        Contrato,
+                        Servicos};
                 if ((parentAtendimentoRowByAtendimento_Venda != null)) {
                     columnValuesArray[0] = parentAtendimentoRowByAtendimento_Venda[2];
                 }
@@ -2067,6 +2131,9 @@ namespace Canaan.Relatorios.Fichas.Contrato {
                 this.columnIdVenda = base.Columns["IdVenda"];
                 this.columnValorCanaan = base.Columns["ValorCanaan"];
                 this.columnValorCrediario = base.Columns["ValorCrediario"];
+                this.columnEventos = base.Columns["Eventos"];
+                this.columnContrato = base.Columns["Contrato"];
+                this.columnServicos = base.Columns["Servicos"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2098,6 +2165,12 @@ namespace Canaan.Relatorios.Fichas.Contrato {
                 base.Columns.Add(this.columnValorCanaan);
                 this.columnValorCrediario = new global::System.Data.DataColumn("ValorCrediario", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnValorCrediario);
+                this.columnEventos = new global::System.Data.DataColumn("Eventos", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEventos);
+                this.columnContrato = new global::System.Data.DataColumn("Contrato", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnContrato);
+                this.columnServicos = new global::System.Data.DataColumn("Servicos", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnServicos);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnIdVenda}, true));
                 this.columnIdVenda.AllowDBNull = false;
@@ -4436,6 +4509,22 @@ namespace Canaan.Relatorios.Fichas.Contrato {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Email {
+                get {
+                    try {
+                        return ((string)(this[this.tableCliente.EmailColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Email\' in table \'Cliente\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCliente.EmailColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsNomeNull() {
                 return this.IsNull(this.tableCliente.NomeColumn);
             }
@@ -4648,6 +4737,18 @@ namespace Canaan.Relatorios.Fichas.Contrato {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetNomeCliFinancNull() {
                 this[this.tableCliente.NomeCliFinancColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsEmailNull() {
+                return this.IsNull(this.tableCliente.EmailColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetEmailNull() {
+                this[this.tableCliente.EmailColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5058,6 +5159,54 @@ namespace Canaan.Relatorios.Fichas.Contrato {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Eventos {
+                get {
+                    try {
+                        return ((string)(this[this.tableVenda.EventosColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Eventos\' in table \'Venda\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableVenda.EventosColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Contrato {
+                get {
+                    try {
+                        return ((string)(this[this.tableVenda.ContratoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Contrato\' in table \'Venda\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableVenda.ContratoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Servicos {
+                get {
+                    try {
+                        return ((string)(this[this.tableVenda.ServicosColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Servicos\' in table \'Venda\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableVenda.ServicosColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public AtendimentoRow AtendimentoRow {
                 get {
                     return ((AtendimentoRow)(this.GetParentRow(this.Table.ParentRelations["Atendimento_Venda"])));
@@ -5209,6 +5358,42 @@ namespace Canaan.Relatorios.Fichas.Contrato {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetValorCrediarioNull() {
                 this[this.tableVenda.ValorCrediarioColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsEventosNull() {
+                return this.IsNull(this.tableVenda.EventosColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetEventosNull() {
+                this[this.tableVenda.EventosColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsContratoNull() {
+                return this.IsNull(this.tableVenda.ContratoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetContratoNull() {
+                this[this.tableVenda.ContratoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsServicosNull() {
+                return this.IsNull(this.tableVenda.ServicosColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetServicosNull() {
+                this[this.tableVenda.ServicosColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

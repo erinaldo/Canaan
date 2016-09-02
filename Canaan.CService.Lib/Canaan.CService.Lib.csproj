@@ -66,17 +66,17 @@
     <Compile Include="Usuario.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\RM\RM.Dados\RM.Dados.csproj">
-      <Project>{48ce4fd7-cff0-4bef-a4f2-794309fc0eb3}</Project>
-      <Name>RM.Dados</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\RM\RM.Lib\RM.Lib.csproj">
-      <Project>{bbb4febe-8007-47e5-902b-c4e7027681e0}</Project>
-      <Name>RM.Lib</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Canaan.Cservice.Dados\Canaan.CService.Dados.csproj">
       <Project>{3f570c6c-6db7-485d-8a19-89e05dd8824d}</Project>
       <Name>Canaan.CService.Dados</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RM.Dados\RM.Dados.csproj">
+      <Project>{48ce4fd7-cff0-4bef-a4f2-794309fc0eb3}</Project>
+      <Name>RM.Dados</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RM.Lib\RM.Lib.csproj">
+      <Project>{bbb4febe-8007-47e5-902b-c4e7027681e0}</Project>
+      <Name>RM.Lib</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -70,7 +70,7 @@ namespace Canaan.Telas.Financeiro.Lancamento
 
         private void InitForm() 
         {
-            filtroCodigo.Checked = true;
+            filtroCodigo.Checked = false;
             filtroNome.Checked = false;
             filtroCpf.Checked = false;
             filtroEmissao.Checked = false;
@@ -256,6 +256,13 @@ namespace Canaan.Telas.Financeiro.Lancamento
             }
 
             consulta = consulta.Where(a => status.Contains(a.Status));
+
+            //verifica caixa dia
+            if (filtroCodigo.Checked == false && filtroNome.Checked == false && filtroCodigo.Checked == false && filtroCpf.Checked == false && filtroEmissao.Checked == false && filtroVencimento.Checked == false && filtroBaixa.Checked == false)
+            {
+                var today = DateTime.Today;
+                consulta = consulta.Where(a => a.CliFor.Documento == "00000000000" && a.DataVencimento == today);
+            }
 
             //salva consulta na lista
             Lancamentos = consulta.ToList();

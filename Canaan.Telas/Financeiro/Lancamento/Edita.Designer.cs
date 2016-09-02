@@ -79,6 +79,12 @@ namespace Canaan.Telas.Financeiro.Lancamento
             this.label2 = new System.Windows.Forms.Label();
             this.dataEmissaoDateEdit = new DevExpress.XtraEditors.DateEdit();
             this.label1 = new System.Windows.Forms.Label();
+            this.xtraTabPage3 = new DevExpress.XtraTab.XtraTabPage();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.observacaoTextBox = new System.Windows.Forms.TextBox();
+            this.descricaoTextBox = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.xtraTabPage4 = new DevExpress.XtraTab.XtraTabPage();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.codigoBarrasTextEdit = new DevExpress.XtraEditors.TextEdit();
@@ -90,12 +96,6 @@ namespace Canaan.Telas.Financeiro.Lancamento
             this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
             this.contaCaixaLinkLabel = new System.Windows.Forms.LinkLabel();
             this.idContaCaixaTextEdit = new DevExpress.XtraEditors.TextEdit();
-            this.xtraTabPage3 = new DevExpress.XtraTab.XtraTabPage();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.descricaoTextBox = new System.Windows.Forms.TextBox();
-            this.observacaoTextBox = new System.Windows.Forms.TextBox();
             this.panelEdit.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
@@ -123,14 +123,14 @@ namespace Canaan.Telas.Financeiro.Lancamento
             ((System.ComponentModel.ISupportInitialize)(this.dataVencimentoDateEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataEmissaoDateEdit.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataEmissaoDateEdit.Properties)).BeginInit();
+            this.xtraTabPage3.SuspendLayout();
+            this.groupBox7.SuspendLayout();
             this.xtraTabPage4.SuspendLayout();
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.codigoBarrasTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ipteTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nossoNumeroTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.idContaCaixaTextEdit.Properties)).BeginInit();
-            this.xtraTabPage3.SuspendLayout();
-            this.groupBox7.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelEdit
@@ -354,7 +354,7 @@ namespace Canaan.Telas.Financeiro.Lancamento
             this.xtraTabPage2.Controls.Add(this.groupBox4);
             this.xtraTabPage2.Name = "xtraTabPage2";
             this.xtraTabPage2.Padding = new System.Windows.Forms.Padding(5);
-            this.xtraTabPage2.Size = new System.Drawing.Size(493, 322);
+            this.xtraTabPage2.Size = new System.Drawing.Size(456, 310);
             this.xtraTabPage2.Text = "Datas e Valores";
             // 
             // groupBox5
@@ -616,6 +616,63 @@ namespace Canaan.Telas.Financeiro.Lancamento
             this.label1.TabIndex = 0;
             this.label1.Text = "Data de Emissão";
             // 
+            // xtraTabPage3
+            // 
+            this.xtraTabPage3.Controls.Add(this.groupBox7);
+            this.xtraTabPage3.Name = "xtraTabPage3";
+            this.xtraTabPage3.Padding = new System.Windows.Forms.Padding(5);
+            this.xtraTabPage3.Size = new System.Drawing.Size(456, 310);
+            this.xtraTabPage3.Text = "Detalhes";
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox7.Controls.Add(this.observacaoTextBox);
+            this.groupBox7.Controls.Add(this.descricaoTextBox);
+            this.groupBox7.Controls.Add(this.label7);
+            this.groupBox7.Controls.Add(this.label8);
+            this.groupBox7.Location = new System.Drawing.Point(13, 8);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Padding = new System.Windows.Forms.Padding(5);
+            this.groupBox7.Size = new System.Drawing.Size(467, 306);
+            this.groupBox7.TabIndex = 1;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Informações Adicionais";
+            // 
+            // observacaoTextBox
+            // 
+            this.observacaoTextBox.Location = new System.Drawing.Point(8, 75);
+            this.observacaoTextBox.Multiline = true;
+            this.observacaoTextBox.Name = "observacaoTextBox";
+            this.observacaoTextBox.Size = new System.Drawing.Size(448, 223);
+            this.observacaoTextBox.TabIndex = 4;
+            // 
+            // descricaoTextBox
+            // 
+            this.descricaoTextBox.Location = new System.Drawing.Point(11, 35);
+            this.descricaoTextBox.Name = "descricaoTextBox";
+            this.descricaoTextBox.Size = new System.Drawing.Size(448, 21);
+            this.descricaoTextBox.TabIndex = 3;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(8, 59);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(70, 13);
+            this.label7.TabIndex = 2;
+            this.label7.Text = "Observações";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(8, 19);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(129, 13);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "Descrição do Lançamento";
+            // 
             // xtraTabPage4
             // 
             this.xtraTabPage4.Controls.Add(this.groupBox6);
@@ -640,7 +697,7 @@ namespace Canaan.Telas.Financeiro.Lancamento
             this.groupBox6.Location = new System.Drawing.Point(8, 8);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Padding = new System.Windows.Forms.Padding(5);
-            this.groupBox6.Size = new System.Drawing.Size(477, 306);
+            this.groupBox6.Size = new System.Drawing.Size(514, 306);
             this.groupBox6.TabIndex = 4;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Informações Bancárias";
@@ -720,63 +777,6 @@ namespace Canaan.Telas.Financeiro.Lancamento
             this.idContaCaixaTextEdit.Size = new System.Drawing.Size(59, 20);
             this.idContaCaixaTextEdit.TabIndex = 6;
             // 
-            // xtraTabPage3
-            // 
-            this.xtraTabPage3.Controls.Add(this.groupBox7);
-            this.xtraTabPage3.Name = "xtraTabPage3";
-            this.xtraTabPage3.Padding = new System.Windows.Forms.Padding(5);
-            this.xtraTabPage3.Size = new System.Drawing.Size(493, 322);
-            this.xtraTabPage3.Text = "Detalhes";
-            // 
-            // groupBox7
-            // 
-            this.groupBox7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox7.Controls.Add(this.observacaoTextBox);
-            this.groupBox7.Controls.Add(this.descricaoTextBox);
-            this.groupBox7.Controls.Add(this.label7);
-            this.groupBox7.Controls.Add(this.label8);
-            this.groupBox7.Location = new System.Drawing.Point(13, 8);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Padding = new System.Windows.Forms.Padding(5);
-            this.groupBox7.Size = new System.Drawing.Size(467, 306);
-            this.groupBox7.TabIndex = 1;
-            this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "Informações Adicionais";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(8, 59);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(70, 13);
-            this.label7.TabIndex = 2;
-            this.label7.Text = "Observações";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(8, 19);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(129, 13);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "Descrição do Lançamento";
-            // 
-            // descricaoTextBox
-            // 
-            this.descricaoTextBox.Location = new System.Drawing.Point(11, 35);
-            this.descricaoTextBox.Name = "descricaoTextBox";
-            this.descricaoTextBox.Size = new System.Drawing.Size(448, 21);
-            this.descricaoTextBox.TabIndex = 3;
-            // 
-            // observacaoTextBox
-            // 
-            this.observacaoTextBox.Location = new System.Drawing.Point(8, 75);
-            this.observacaoTextBox.Multiline = true;
-            this.observacaoTextBox.Name = "observacaoTextBox";
-            this.observacaoTextBox.Size = new System.Drawing.Size(448, 223);
-            this.observacaoTextBox.TabIndex = 4;
-            // 
             // Edita
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -817,6 +817,9 @@ namespace Canaan.Telas.Financeiro.Lancamento
             ((System.ComponentModel.ISupportInitialize)(this.dataVencimentoDateEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataEmissaoDateEdit.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataEmissaoDateEdit.Properties)).EndInit();
+            this.xtraTabPage3.ResumeLayout(false);
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
             this.xtraTabPage4.ResumeLayout(false);
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
@@ -824,9 +827,6 @@ namespace Canaan.Telas.Financeiro.Lancamento
             ((System.ComponentModel.ISupportInitialize)(this.ipteTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nossoNumeroTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.idContaCaixaTextEdit.Properties)).EndInit();
-            this.xtraTabPage3.ResumeLayout(false);
-            this.groupBox7.ResumeLayout(false);
-            this.groupBox7.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

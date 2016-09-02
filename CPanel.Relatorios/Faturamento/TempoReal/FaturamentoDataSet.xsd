@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="FaturamentoDataSet" targetNamespace="http://tempuri.org/FaturamentoDataSet.xsd" xmlns:mstns="http://tempuri.org/FaturamentoDataSet.xsd" xmlns="http://tempuri.org/FaturamentoDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="FaturamentoDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="FaturamentoDataSet" msprop:Generator_UserDSName="FaturamentoDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Faturamento" msprop:Generator_TableClassName="FaturamentoDataTable" msprop:Generator_TableVarName="tableFaturamento" msprop:Generator_TablePropName="Faturamento" msprop:Generator_RowDeletingName="FaturamentoRowDeleting" msprop:Generator_RowChangingName="FaturamentoRowChanging" msprop:Generator_RowEvHandlerName="FaturamentoRowChangeEventHandler" msprop:Generator_RowDeletedName="FaturamentoRowDeleted" msprop:Generator_UserTableName="Faturamento" msprop:Generator_RowChangedName="FaturamentoRowChanged" msprop:Generator_RowEvArgName="FaturamentoRowChangeEvent" msprop:Generator_RowClassName="FaturamentoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdFilial" msprop:Generator_ColumnVarNameInTable="columnIdFilial" msprop:Generator_ColumnPropNameInRow="IdFilial" msprop:Generator_ColumnPropNameInTable="IdFilialColumn" msprop:Generator_UserColumnName="IdFilial" type="xs:int" minOccurs="0" />
+              <xs:element name="Filial" msprop:Generator_ColumnVarNameInTable="columnFilial" msprop:Generator_ColumnPropNameInRow="Filial" msprop:Generator_ColumnPropNameInTable="FilialColumn" msprop:Generator_UserColumnName="Filial" type="xs:string" minOccurs="0" />
+              <xs:element name="Entrada" msprop:Generator_ColumnVarNameInTable="columnEntrada" msprop:Generator_ColumnPropNameInRow="Entrada" msprop:Generator_ColumnPropNameInTable="EntradaColumn" msprop:Generator_UserColumnName="Entrada" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Venda" msprop:Generator_ColumnVarNameInTable="columnVenda" msprop:Generator_ColumnPropNameInRow="Venda" msprop:Generator_ColumnPropNameInTable="VendaColumn" msprop:Generator_UserColumnName="Venda" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

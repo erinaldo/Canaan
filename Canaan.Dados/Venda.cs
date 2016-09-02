@@ -21,6 +21,7 @@ namespace Canaan.Dados
             this.VendaFoto = new HashSet<VendaFoto>();
             this.OrdemServico = new HashSet<OrdemServico>();
             this.Envio = new HashSet<Envio>();
+            this.VendaEvento = new HashSet<VendaEvento>();
         }
     
         public int IdAtendimento { get; set; }
@@ -44,6 +45,9 @@ namespace Canaan.Dados
         public Nullable<decimal> VendaCartao { get; set; }
         public Nullable<int> TipoVenda { get; set; }
         public Nullable<decimal> ValorCrediario { get; set; }
+        public string TipoEvento { get; set; }
+        public string NomeModelo { get; set; }
+        public string EventoEspecificacao { get; set; }
     
         public virtual Atendimento Atendimento { get; set; }
         public virtual ICollection<VendaItem> VendaItem { get; set; }
@@ -54,5 +58,6 @@ namespace Canaan.Dados
         public virtual VendaStatus VendaStatus { get; set; }
         public virtual Usuario Usuario { get; set; }
         public virtual ICollection<Envio> Envio { get; set; }
+        public virtual ICollection<VendaEvento> VendaEvento { get; set; }
     }
 }

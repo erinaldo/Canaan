@@ -178,6 +178,18 @@
     <Compile Include="Configuracoes\Geral\Configuracoes\Edita.Designer.cs">
       <DependentUpon>Edita.cs</DependentUpon>
     </Compile>
+    <Compile Include="Configuracoes\Geral\Eventos\Edita.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuracoes\Geral\Eventos\Edita.Designer.cs">
+      <DependentUpon>Edita.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configuracoes\Geral\Eventos\Lista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuracoes\Geral\Eventos\Lista.Designer.cs">
+      <DependentUpon>Lista.cs</DependentUpon>
+    </Compile>
     <Compile Include="Configuracoes\Geral\Filiais\Seleciona.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -723,6 +735,18 @@
     <Compile Include="Movimentacoes\Venda\Envelope\Servico\BuscaServicos.Designer.cs">
       <DependentUpon>BuscaServicos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Movimentacoes\Venda\Evento\Edita.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Movimentacoes\Venda\Evento\Edita.Designer.cs">
+      <DependentUpon>Edita.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Movimentacoes\Venda\Evento\Lista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Movimentacoes\Venda\Evento\Lista.Designer.cs">
+      <DependentUpon>Lista.cs</DependentUpon>
+    </Compile>
     <Compile Include="Movimentacoes\Venda\Financeiro\LancFinanceiro.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -932,6 +956,12 @@
     <EmbeddedResource Include="Configuracoes\Geral\Configuracoes\Edita.resx">
       <DependentUpon>Edita.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Configuracoes\Geral\Eventos\Edita.resx">
+      <DependentUpon>Edita.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configuracoes\Geral\Eventos\Lista.resx">
+      <DependentUpon>Lista.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Configuracoes\Geral\Pasta\Edita.resx">
       <DependentUpon>Edita.cs</DependentUpon>
     </EmbeddedResource>
@@ -964,6 +994,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Movimentacoes\Venda\Documentacao\Venda\Venda.resx">
       <DependentUpon>Venda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movimentacoes\Venda\Evento\Edita.resx">
+      <DependentUpon>Edita.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movimentacoes\Venda\Evento\Lista.resx">
+      <DependentUpon>Lista.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Suporte\DevolveVenda\Formulario.resx">
       <DependentUpon>Formulario.cs</DependentUpon>

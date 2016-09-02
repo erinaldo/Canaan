@@ -1,0 +1,724 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A71E3340-C689-4ABE-A1BF-F025B4885E88}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RM.Relatorios</RootNamespace>
+    <AssemblyName>RM.Relatorios</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="EntityFramework">
+      <HintPath>..\..\Canaan\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\..\Canaan\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Cobranca\UltimaParcela\dsReport.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsReport.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranca\UltimaParcela\frmFiltro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cobranca\UltimaParcela\frmFiltro.Designer.cs">
+      <DependentUpon>frmFiltro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranca\UltimaParcela\frmReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cobranca\UltimaParcela\frmReport.Designer.cs">
+      <DependentUpon>frmReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranca\UltimaParcela\relAnalitico.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>relAnalitico.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Cobranca\UltimaParcela\relEtiqueta.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>relEtiqueta.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Entradas\Recebimento\Relatorio.cs">
+      <DependentUpon>Relatorio.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Entradas\ComissaoVendedora\Relatorio.cs">
+      <DependentUpon>Relatorio.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Entradas\ComissaoGerente\Filtro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Entradas\ComissaoGerente\Filtro.Designer.cs">
+      <DependentUpon>Filtro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entradas\ComissaoGerente\Relatorio.cs">
+      <DependentUpon>Relatorio.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Entradas\ComissaoGerente\Resultado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Entradas\ComissaoGerente\Resultado.Designer.cs">
+      <DependentUpon>Resultado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entradas\ComissaoVendedora\Filtro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Entradas\ComissaoVendedora\Filtro.Designer.cs">
+      <DependentUpon>Filtro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entradas\ComissaoVendedora\Model.cs" />
+    <Compile Include="Entradas\ComissaoVendedora\Resultado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Entradas\ComissaoVendedora\Resultado.Designer.cs">
+      <DependentUpon>Resultado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entradas\ParcialVendedora\Relatorio.cs">
+      <DependentUpon>Relatorio.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Entradas\ParcialGerente\Filtro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Entradas\ParcialGerente\Filtro.Designer.cs">
+      <DependentUpon>Filtro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entradas\ParcialGerente\Model.cs" />
+    <Compile Include="Entradas\ParcialGerente\Relatorio.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Relatorio.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Entradas\ParcialGerente\Resultado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Entradas\ParcialGerente\Resultado.Designer.cs">
+      <DependentUpon>Resultado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entradas\ParcialVendedora\Filtro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Entradas\ParcialVendedora\Filtro.Designer.cs">
+      <DependentUpon>Filtro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entradas\ParcialVendedora\Model.cs" />
+    <Compile Include="Entradas\ParcialVendedora\Resultado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Entradas\ParcialVendedora\Resultado.Designer.cs">
+      <DependentUpon>Resultado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entradas\ComissaoGerente\Model.cs" />
+    <Compile Include="Entradas\Recebimento\Filtro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Entradas\Recebimento\Filtro.Designer.cs">
+      <DependentUpon>Filtro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entradas\Recebimento\Model.cs" />
+    <Compile Include="Entradas\Recebimento\Resultado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Entradas\Recebimento\Resultado.Designer.cs">
+      <DependentUpon>Resultado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Faturamento\Previsao\Filtro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Faturamento\Previsao\Filtro.Designer.cs">
+      <DependentUpon>Filtro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Faturamento\Previsao\Model.cs" />
+    <Compile Include="Faturamento\Previsao\Relatorio.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Relatorio.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Faturamento\Previsao\Resultado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Faturamento\Previsao\Resultado.Designer.cs">
+      <DependentUpon>Resultado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Faturamento\Vendedora\Filtro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Faturamento\Vendedora\Filtro.Designer.cs">
+      <DependentUpon>Filtro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Faturamento\Vendedora\Model.cs" />
+    <Compile Include="Faturamento\Vendedora\Relatorio.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Relatorio.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Faturamento\Vendedora\Resultado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Faturamento\Vendedora\Resultado.Designer.cs">
+      <DependentUpon>Resultado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Financeiro\FluxoCaixa\dsReport.cs">
+      <DependentUpon>dsReport.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Financeiro\FluxoCaixa\dsReport.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsReport.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Financeiro\FluxoCaixa\frmFiltro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Financeiro\FluxoCaixa\frmFiltro.Designer.cs">
+      <DependentUpon>frmFiltro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Financeiro\FluxoCaixa\frmReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Financeiro\FluxoCaixa\frmReport.Designer.cs">
+      <DependentUpon>frmReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Financeiro\FluxoCaixa\relReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>relReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Financeiro\VendasQuitadas\dsReport.cs">
+      <DependentUpon>dsReport.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Financeiro\VendasQuitadas\dsReport.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsReport.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Financeiro\VendasQuitadas\frmFiltro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Financeiro\VendasQuitadas\frmFiltro.Designer.cs">
+      <DependentUpon>frmFiltro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Financeiro\VendasQuitadas\frmReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Financeiro\VendasQuitadas\frmReport.Designer.cs">
+      <DependentUpon>frmReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Financeiro\VendasQuitadas\relReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>relReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Programadas\Carta\Filtro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Programadas\Carta\Filtro.Designer.cs">
+      <DependentUpon>Filtro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Programadas\Carta\Model.cs" />
+    <Compile Include="Programadas\Carta\RelatorioCarta.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RelatorioCarta.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Programadas\Carta\RelatorioEtiqueta.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RelatorioEtiqueta.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Programadas\Carta\RelatorioEtiqueta2.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RelatorioEtiqueta2.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Programadas\Carta\Resultado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Programadas\Carta\Resultado.Designer.cs">
+      <DependentUpon>Resultado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Programadas\Cobranca\Filtro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Programadas\Cobranca\Filtro.Designer.cs">
+      <DependentUpon>Filtro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Programadas\Cobranca\Model.cs" />
+    <Compile Include="Programadas\Cobranca\Relatorio.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Relatorio.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Programadas\Cobranca\Resultado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Programadas\Cobranca\Resultado.Designer.cs">
+      <DependentUpon>Resultado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Programadas\Comparativo\Filtro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Programadas\Comparativo\Filtro.Designer.cs">
+      <DependentUpon>Filtro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Programadas\Comparativo\Model.cs" />
+    <Compile Include="Programadas\Comparativo\Relatorio.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Relatorio.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Programadas\Comparativo\Resultado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Programadas\Comparativo\Resultado.Designer.cs">
+      <DependentUpon>Resultado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Programadas\Previsao\Filtro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Programadas\Previsao\Filtro.Designer.cs">
+      <DependentUpon>Filtro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Programadas\Previsao\Model.cs" />
+    <Compile Include="Programadas\Previsao\Relatorio.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Relatorio.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Programadas\Previsao\Resultado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Programadas\Previsao\Resultado.Designer.cs">
+      <DependentUpon>Resultado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Vendas\Caderno\Filtro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vendas\Caderno\Filtro.Designer.cs">
+      <DependentUpon>Filtro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vendas\Caderno\Model.cs" />
+    <Compile Include="Vendas\Caderno\Relatorio.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Relatorio.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Vendas\Caderno\Resultado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vendas\Caderno\Resultado.Designer.cs">
+      <DependentUpon>Resultado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vendas\Diario\Filtro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vendas\Diario\Filtro.Designer.cs">
+      <DependentUpon>Filtro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vendas\Diario\Model.cs" />
+    <Compile Include="Vendas\Diario\Relatorio.cs">
+      <DependentUpon>Relatorio.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Vendas\Diario\Resultado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vendas\Diario\Resultado.Designer.cs">
+      <DependentUpon>Resultado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vendas\RankingServicos\Filtro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vendas\RankingServicos\Filtro.Designer.cs">
+      <DependentUpon>Filtro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vendas\RankingServicos\Model.cs" />
+    <Compile Include="Vendas\RankingServicos\Relatorio.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Relatorio.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Vendas\RankingServicos\Resultado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vendas\RankingServicos\Resultado.Designer.cs">
+      <DependentUpon>Resultado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vendas\VendasAVista\dsReport.cs">
+      <DependentUpon>dsReport.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Vendas\VendasAVista\dsReport.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsReport.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Vendas\VendasAVista\frmFiltro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vendas\VendasAVista\frmFiltro.Designer.cs">
+      <DependentUpon>frmFiltro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vendas\VendasAVista\frmReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vendas\VendasAVista\frmReport.Designer.cs">
+      <DependentUpon>frmReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vendas\VendasAVista\relReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>relReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="Cobranca\UltimaParcela\dsReport.xsc">
+      <DependentUpon>dsReport.xsd</DependentUpon>
+    </None>
+    <None Include="Cobranca\UltimaParcela\dsReport.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsReport.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Cobranca\UltimaParcela\dsReport.xss">
+      <DependentUpon>dsReport.xsd</DependentUpon>
+    </None>
+    <None Include="Financeiro\FluxoCaixa\dsReport.xsc">
+      <DependentUpon>dsReport.xsd</DependentUpon>
+    </None>
+    <None Include="Financeiro\FluxoCaixa\dsReport.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsReport.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Financeiro\FluxoCaixa\dsReport.xss">
+      <DependentUpon>dsReport.xsd</DependentUpon>
+    </None>
+    <None Include="Financeiro\VendasQuitadas\dsReport.xsc">
+      <DependentUpon>dsReport.xsd</DependentUpon>
+    </None>
+    <None Include="Financeiro\VendasQuitadas\dsReport.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsReport.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Financeiro\VendasQuitadas\dsReport.xss">
+      <DependentUpon>dsReport.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Vendas\VendasAVista\dsReport.xsc">
+      <DependentUpon>dsReport.xsd</DependentUpon>
+    </None>
+    <None Include="Vendas\VendasAVista\dsReport.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsReport.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Vendas\VendasAVista\dsReport.xss">
+      <DependentUpon>dsReport.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Cobranca\UltimaParcela\frmFiltro.resx">
+      <DependentUpon>frmFiltro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cobranca\UltimaParcela\frmReport.resx">
+      <DependentUpon>frmReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cobranca\UltimaParcela\relAnalitico.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>relAnalitico.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cobranca\UltimaParcela\relEtiqueta.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>relEtiqueta.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Entradas\Recebimento\Relatorio.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Relatorio.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Entradas\ComissaoVendedora\Relatorio.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Relatorio.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Entradas\ComissaoGerente\Filtro.resx">
+      <DependentUpon>Filtro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Entradas\ComissaoGerente\Relatorio.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Relatorio.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Entradas\ComissaoGerente\Resultado.resx">
+      <DependentUpon>Resultado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Entradas\ComissaoVendedora\Filtro.resx">
+      <DependentUpon>Filtro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Entradas\ComissaoVendedora\Resultado.resx">
+      <DependentUpon>Resultado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Entradas\ParcialVendedora\Relatorio.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Relatorio.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Entradas\ParcialGerente\Filtro.resx">
+      <DependentUpon>Filtro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Entradas\ParcialGerente\Relatorio.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Relatorio.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Entradas\ParcialGerente\Resultado.resx">
+      <DependentUpon>Resultado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Entradas\ParcialVendedora\Filtro.resx">
+      <DependentUpon>Filtro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Entradas\ParcialVendedora\Resultado.resx">
+      <DependentUpon>Resultado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Entradas\Recebimento\Filtro.resx">
+      <DependentUpon>Filtro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Entradas\Recebimento\Resultado.resx">
+      <DependentUpon>Resultado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Faturamento\Previsao\Filtro.resx">
+      <DependentUpon>Filtro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Faturamento\Previsao\Relatorio.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Relatorio.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Faturamento\Previsao\Resultado.resx">
+      <DependentUpon>Resultado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Faturamento\Vendedora\Filtro.resx">
+      <DependentUpon>Filtro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Faturamento\Vendedora\Relatorio.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Relatorio.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Faturamento\Vendedora\Resultado.resx">
+      <DependentUpon>Resultado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Financeiro\FluxoCaixa\frmFiltro.resx">
+      <DependentUpon>frmFiltro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Financeiro\FluxoCaixa\frmReport.resx">
+      <DependentUpon>frmReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Financeiro\FluxoCaixa\relReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>relReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Financeiro\VendasQuitadas\frmFiltro.resx">
+      <DependentUpon>frmFiltro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Financeiro\VendasQuitadas\frmReport.resx">
+      <DependentUpon>frmReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Financeiro\VendasQuitadas\relReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>relReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Programadas\Carta\Filtro.resx">
+      <DependentUpon>Filtro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Programadas\Carta\RelatorioCarta.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RelatorioCarta.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Programadas\Carta\RelatorioEtiqueta.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RelatorioEtiqueta.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Programadas\Carta\RelatorioEtiqueta2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RelatorioEtiqueta2.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Programadas\Carta\Resultado.resx">
+      <DependentUpon>Resultado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Programadas\Cobranca\Filtro.resx">
+      <DependentUpon>Filtro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Programadas\Cobranca\Relatorio.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Relatorio.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Programadas\Cobranca\Resultado.resx">
+      <DependentUpon>Resultado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Programadas\Comparativo\Filtro.resx">
+      <DependentUpon>Filtro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Programadas\Comparativo\Relatorio.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Relatorio.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Programadas\Comparativo\Resultado.resx">
+      <DependentUpon>Resultado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Programadas\Previsao\Filtro.resx">
+      <DependentUpon>Filtro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Programadas\Previsao\Relatorio.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Relatorio.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Programadas\Previsao\Resultado.resx">
+      <DependentUpon>Resultado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vendas\Caderno\Filtro.resx">
+      <DependentUpon>Filtro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vendas\Caderno\Relatorio.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Relatorio.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vendas\Caderno\Resultado.resx">
+      <DependentUpon>Resultado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vendas\Diario\Filtro.resx">
+      <DependentUpon>Filtro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vendas\Diario\Relatorio.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Relatorio.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vendas\Diario\Resultado.resx">
+      <DependentUpon>Resultado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vendas\RankingServicos\Filtro.resx">
+      <DependentUpon>Filtro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vendas\RankingServicos\Relatorio.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Relatorio.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vendas\RankingServicos\Resultado.resx">
+      <DependentUpon>Resultado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vendas\VendasAVista\frmFiltro.resx">
+      <DependentUpon>frmFiltro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vendas\VendasAVista\frmReport.resx">
+      <DependentUpon>frmReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vendas\VendasAVista\relReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>relReport.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\CPanel\Biblioteca\CPanel.Dados\CPanel.Dados.csproj">
+      <Project>{361a8c7a-f62b-4fdb-a4dd-f916955f58dd}</Project>
+      <Name>CPanel.Dados</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CPanel\Biblioteca\CPanel.Lib\CPanel.Lib.csproj">
+      <Project>{514b8987-5352-4a2a-b42c-de27e0750308}</Project>
+      <Name>CPanel.Lib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RM.Dados\RM.Dados.csproj">
+      <Project>{48ce4fd7-cff0-4bef-a4f2-794309fc0eb3}</Project>
+      <Name>RM.Dados</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RM.Lib\RM.Lib.csproj">
+      <Project>{bbb4febe-8007-47e5-902b-c4e7027681e0}</Project>
+      <Name>RM.Lib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Programadas\Atraso\" />
+    <Folder Include="Vendas\VendasXVendedora\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

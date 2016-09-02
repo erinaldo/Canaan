@@ -817,5 +817,17 @@ namespace Canaan.WinApp
             var frm = new Telas.Configuracoes.Geral.Pasta.Lista();
             frm.ShowDialog();
         }
+
+        private void eventosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var frm = new Telas.Configuracoes.Geral.Eventos.Lista();
+            frm.ShowDialog();
+        }
+
+        private void atendimentosToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            var frm = new Telas.Movimentacoes.Atendimento.Lista();
+            frm.ShowDialog();
+        }
     }
 }

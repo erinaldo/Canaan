@@ -46,6 +46,7 @@
               <xs:element name="IdAtendimento" msprop:Generator_ColumnVarNameInTable="columnIdAtendimento" msprop:Generator_ColumnPropNameInRow="IdAtendimento" msprop:Generator_ColumnPropNameInTable="IdAtendimentoColumn" msprop:Generator_UserColumnName="IdAtendimento" type="xs:int" minOccurs="0" />
               <xs:element name="IndicacaoDe" msprop:Generator_ColumnVarNameInTable="columnIndicacaoDe" msprop:Generator_ColumnPropNameInRow="IndicacaoDe" msprop:Generator_ColumnPropNameInTable="IndicacaoDeColumn" msprop:Generator_UserColumnName="IndicacaoDe" type="xs:string" minOccurs="0" />
               <xs:element name="NomeCliFinanc" msprop:Generator_ColumnVarNameInTable="columnNomeCliFinanc" msprop:Generator_ColumnPropNameInRow="NomeCliFinanc" msprop:Generator_ColumnPropNameInTable="NomeCliFinancColumn" msprop:Generator_UserColumnName="NomeCliFinanc" type="xs:string" minOccurs="0" />
+              <xs:element name="Email" msprop:Generator_ColumnVarNameInTable="columnEmail" msprop:Generator_ColumnPropNameInRow="Email" msprop:Generator_ColumnPropNameInTable="EmailColumn" msprop:Generator_UserColumnName="Email" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -77,6 +78,9 @@
               <xs:element name="IdVenda" msprop:Generator_ColumnVarNameInTable="columnIdVenda" msprop:Generator_ColumnPropNameInRow="IdVenda" msprop:Generator_ColumnPropNameInTable="IdVendaColumn" msprop:Generator_UserColumnName="IdVenda" type="xs:int" />
               <xs:element name="ValorCanaan" msprop:Generator_ColumnVarNameInTable="columnValorCanaan" msprop:Generator_ColumnPropNameInRow="ValorCanaan" msprop:Generator_ColumnPropNameInTable="ValorCanaanColumn" msprop:Generator_UserColumnName="ValorCanaan" type="xs:decimal" minOccurs="0" />
               <xs:element name="ValorCrediario" msprop:Generator_ColumnVarNameInTable="columnValorCrediario" msprop:Generator_ColumnPropNameInRow="ValorCrediario" msprop:Generator_ColumnPropNameInTable="ValorCrediarioColumn" msprop:Generator_UserColumnName="ValorCrediario" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Eventos" msprop:Generator_ColumnVarNameInTable="columnEventos" msprop:Generator_ColumnPropNameInRow="Eventos" msprop:Generator_ColumnPropNameInTable="EventosColumn" msprop:Generator_UserColumnName="Eventos" type="xs:string" minOccurs="0" />
+              <xs:element name="Contrato" msprop:Generator_ColumnVarNameInTable="columnContrato" msprop:Generator_ColumnPropNameInRow="Contrato" msprop:Generator_ColumnPropNameInTable="ContratoColumn" msprop:Generator_UserColumnName="Contrato" type="xs:string" minOccurs="0" />
+              <xs:element name="Servicos" msprop:Generator_ColumnVarNameInTable="columnServicos" msprop:Generator_ColumnPropNameInRow="Servicos" msprop:Generator_ColumnPropNameInTable="ServicosColumn" msprop:Generator_UserColumnName="Servicos" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8fde5eacddc64cf1a7678395a637198c" Name="Diagram1" ZoomLevel="75">
+        <EntityTypeShape EntityType="CorporeModel.FCFO" Width="1.5" PointX="3" PointY="6.375" IsExpanded="false" />
+        <EntityTypeShape EntityType="CorporeModel.FCFOCOMPL" Width="1.5" PointX="5.25" PointY="6.375" IsExpanded="false" />
+        <EntityTypeShape EntityType="CorporeModel.FLANCOMPL" Width="1.5" PointX="12" PointY="5.625" IsExpanded="false" />
+        <EntityTypeShape EntityType="CorporeModel.FTB1" Width="1.5" PointX="5.25" PointY="4.875" IsExpanded="false" />
+        <EntityTypeShape EntityType="CorporeModel.GCOLIGADA" Width="1.5" PointX="0.75" PointY="7.375" IsExpanded="false" />
+        <EntityTypeShape EntityType="CorporeModel.GFILIAL" Width="1.5" PointX="3" PointY="4.375" IsExpanded="false" />
+        <EntityTypeShape EntityType="CorporeModel.TMOV" Width="1.5" PointX="7.5" PointY="6.5" IsExpanded="false" />
+        <EntityTypeShape EntityType="CorporeModel.TMOVCOMPL" Width="1.5" PointX="10.125" PointY="8.375" IsExpanded="false" />
+        <AssociationConnector Association="CorporeModel.FKFCFO_GCOLIGADA" ManuallyRouted="false" />
+        <AssociationConnector Association="CorporeModel.FKFCFOCOMPL_FCFO" ManuallyRouted="false" />
+        <AssociationConnector Association="CorporeModel.FKTMOV_FCFO" ManuallyRouted="false" />
+        <AssociationConnector Association="CorporeModel.FKTMOV_FCFONATUREZA" ManuallyRouted="false" />
+        <AssociationConnector Association="CorporeModel.FKTMOV_FCFOORIGEM" ManuallyRouted="false" />
+        <AssociationConnector Association="CorporeModel.FKTMOV_FCFOTRANSF" ManuallyRouted="false" />
+        <AssociationConnector Association="CorporeModel.FKFTB1_GFILIAL" ManuallyRouted="false" />
+        <AssociationConnector Association="CorporeModel.FKTMOV_FTB1" ManuallyRouted="false" />
+        <AssociationConnector Association="CorporeModel.FKGFILIAL_GCOLIGADA" ManuallyRouted="false" />
+        <AssociationConnector Association="CorporeModel.FKTMOV_GFIL" ManuallyRouted="false" />
+        <AssociationConnector Association="CorporeModel.FKTMOV_GFILDEST" ManuallyRouted="false" />
+        <AssociationConnector Association="CorporeModel.FKTMOV_TMOVFLUXUS" ManuallyRouted="false" />
+        <AssociationConnector Association="CorporeModel.FKTMOV_TMOVPEDDESDOBRADO" ManuallyRouted="false" />
+        <AssociationConnector Association="CorporeModel.FKTMOV_TMOVRELAC" ManuallyRouted="false" />
+        <AssociationConnector Association="CorporeModel.FKTMOVCOMPL_TMOV" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="CorporeModel.TVEN" Width="1.5" PointX="5.25" PointY="2.875" IsExpanded="false" />
+        <AssociationConnector Association="CorporeModel.FKFCFO_TVEN" />
+        <AssociationConnector Association="CorporeModel.FKTVEN_GCOL" />
+        <AssociationConnector Association="CorporeModel.FKTVEN_GFIL" />
+        <AssociationConnector Association="CorporeModel.FKTMOV_TVEN1" />
+        <AssociationConnector Association="CorporeModel.FKTMOV_TVEN2" />
+        <AssociationConnector Association="CorporeModel.FKTMOV_TVEN3" />
+        <AssociationConnector Association="CorporeModel.FKTMOV_TVEN4" />
+        <EntityTypeShape EntityType="CorporeModel.FCONTA" Width="1.5" PointX="3" PointY="7.875" IsExpanded="false" />
+        <AssociationConnector Association="CorporeModel.FKFCONTA_GCOLIGADA" />
+        <EntityTypeShape EntityType="CorporeModel.TPRD" Width="1.5" PointX="3.75" PointY="1.5" IsExpanded="false" />
+        <EntityTypeShape EntityType="CorporeModel.TPRD_1140" Width="1.5" PointX="5.75" PointY="1.5" IsExpanded="false" />
+        <EntityTypeShape EntityType="CorporeModel.TPRODUTO" Width="1.5" PointX="7.5" PointY="4.5" IsExpanded="false" />
+        <AssociationConnector Association="CorporeModel.FKFTB1_GCOLIGADA" ManuallyRouted="false" >
+        </AssociationConnector>
+        <AssociationConnector Association="CorporeModel.FKTPRD_PRDRELAC" />
+        <EntityTypeShape EntityType="CorporeModel.GETD" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="CorporeModel.GMUNICIPIO" Width="1.5" PointX="0.75" PointY="6" IsExpanded="false" />
+        <EntityTypeShape EntityType="CorporeModel.GPAIS" Width="1.5" PointX="1.5" PointY="0.75" IsExpanded="false" />
+        <AssociationConnector Association="CorporeModel.FKFCFO_GETD" />
+        <AssociationConnector Association="CorporeModel.FKFCFO_GETDENT" />
+        <AssociationConnector Association="CorporeModel.FKFCFO_GETDPGT" />
+        <AssociationConnector Association="CorporeModel.FKFCFO_GPAIS" />
+        <AssociationConnector Association="CorporeModel.FKFCFO_GPAISENTREGA" />
+        <AssociationConnector Association="CorporeModel.FKFCFO_GPAISPGTO" />
+        <AssociationConnector Association="CorporeModel.FKGETD_GPAIS" />
+        <AssociationConnector Association="CorporeModel.FKGFILIAL_GETD" />
+        <AssociationConnector Association="CorporeModel.FKGMUNICIPIO_GETD" />
+        <AssociationConnector Association="CorporeModel.FKTMOV_GETDPLACA" />
+        <AssociationConnector Association="CorporeModel.FKGFILIAL_GMUNICIPIO" />
+        <AssociationConnector Association="CorporeModel.FKGFILIAL_GPAIS" />
+        <AssociationConnector Association="CorporeModel.FKTMOV_GMUNICIPIO" />
+        <EntityTypeShape EntityType="CorporeModel.DTIPOBAIRRO" Width="1.5" PointX="0.75" PointY="2.625" IsExpanded="false" />
+        <EntityTypeShape EntityType="CorporeModel.DTIPORUA" Width="1.5" PointX="0.75" PointY="4.875" IsExpanded="false" />
+        <AssociationConnector Association="CorporeModel.FKFCFO_DTIPOBAIRRO" />
+        <AssociationConnector Association="CorporeModel.FKFCFO_DTIPOBAIRROENTREGA" />
+        <AssociationConnector Association="CorporeModel.FKFCFO_DTIPOBAIRROPGTO" />
+        <AssociationConnector Association="CorporeModel.FKGFILIAL_DTIPOBAIRRO" />
+        <AssociationConnector Association="CorporeModel.FKFCFO_DTIPORUA" />
+        <AssociationConnector Association="CorporeModel.FKFCFO_DTIPORUAENTREGA" />
+        <AssociationConnector Association="CorporeModel.FKFCFO_DTIPORUAPGTO" />
+        <AssociationConnector Association="CorporeModel.FKGFILIAL_DTIPORUA" />
+        <EntityTypeShape EntityType="CorporeModel.TCPG" Width="1.5" PointX="3" PointY="10.25" IsExpanded="false" />
+        <AssociationConnector Association="CorporeModel.FKTCPG_GCOL" />
+        <AssociationConnector Association="CorporeModel.FKTMOV_TCPG" />
+        <EntityTypeShape EntityType="CorporeModel.FLAN" Width="1.5" PointX="9.75" PointY="4.5" IsExpanded="false" />
+        <AssociationConnector Association="CorporeModel.FKFLAN_FCFO" />
+        <AssociationConnector Association="CorporeModel.FKFLAN_FCFOORIGEM" />
+        <AssociationConnector Association="CorporeModel.FKFLAN_FLANADIANTAMENTO" />
+        <AssociationConnector Association="CorporeModel.FKFLAN_FLANDEVOLUCAO" />
+        <AssociationConnector Association="CorporeModel.FKFLAN_FLANNOTACRED" />
+        <AssociationConnector Association="CorporeModel.FKFLAN_FTB1" />
+        <AssociationConnector Association="CorporeModel.FKFLAN_GCOLCFO" />
+        <AssociationConnector Association="CorporeModel.FKFLAN_GCOLIGADA" />
+        <AssociationConnector Association="CorporeModel.FKFLAN_TMOV" />
+        <AssociationConnector Association="CorporeModel.FKFLAN_TVEN" />
+        <AssociationConnector Association="CorporeModel.FKFLANCOMPL_FLAN" />
+        <AssociationConnector Association="CorporeModel.FLAN_GFILIAL" />
+        <EntityTypeShape EntityType="CorporeModel.FXCX" Width="1.5" PointX="12" PointY="4.25" IsExpanded="false" />
+        <AssociationConnector Association="CorporeModel.FKFLAN_FXCX" />
+        <AssociationConnector Association="CorporeModel.FKFXCX_FLAN" />
+        <AssociationConnector Association="CorporeModel.FKFXCX_FTB1FLX" />
+        <AssociationConnector Association="CorporeModel.FKFXCX_FXCXCPMF" />
+        <AssociationConnector Association="CorporeModel.FKFXCX_FXCXTRANSF" />
+        <AssociationConnector Association="CorporeModel.FKFXCX_GCOLIGADA" />
+        <AssociationConnector Association="CorporeModel.FKXCX_GFILCUST" />
+        <AssociationConnector Association="CorporeModel.FXCX_GFILIAL" />
+        <EntityTypeShape EntityType="CorporeModel.FCXA" Width="1.5" PointX="5.25" PointY="8.125" IsExpanded="false" />
+        <AssociationConnector Association="CorporeModel.FKFCXA_FCONTA" />
+        <AssociationConnector Association="CorporeModel.FKFCXA_FCOLPROP" />
+        <AssociationConnector Association="CorporeModel.FKFCXA_GFILIAL" />
+        <AssociationConnector Association="CorporeModel.FKFLAN_FCXA" />
+        <AssociationConnector Association="CorporeModel.FKFXCX_FCXA" />
+        <AssociationConnector Association="CorporeModel.FKTMOV_FCXA" />
+        <EntityTypeShape EntityType="CorporeModel.TITMMOV" Width="1.5" PointX="9.75" PointY="6.5" IsExpanded="false" />
+        <AssociationConnector Association="CorporeModel.FKTITMMOV_FTB1" />
+        <AssociationConnector Association="CorporeModel.FKTITMMOV_GFILIAL" />
+        <AssociationConnector Association="CorporeModel.FKTITMMOV_GMUNICIPIO" />
+        <AssociationConnector Association="CorporeModel.FKTITMMOV_TCPG" />
+        <AssociationConnector Association="CorporeModel.FKTITMMOV_TMOV" />
+        <AssociationConnector Association="CorporeModel.FKTITMMOV_TPRD" />
+        <AssociationConnector Association="CorporeModel.FKTITMMOV_TVEN" />
+        <AssociationConnector Association="CorporeModel.FKTITMMOVKIT_TPRD" />
+        <EntityTypeShape EntityType="CorporeModel.TITMMOVCOMPL" Width="1.5" PointX="12" PointY="7.5" IsExpanded="false" />
+        <AssociationConnector Association="CorporeModel.FKTITMMOVCOMPL_TMOV" />
+        <EntityTypeShape EntityType="CorporeModel.TPRDCOMPL" Width="1.5" PointX="9.75" PointY="2.5" IsExpanded="false" />
+        <AssociationConnector Association="CorporeModel.FKTPRDCOMPL_TPRD" />
+        <EntityTypeShape EntityType="CorporeModel.GCONSIST" Width="1.5" PointX="5.25" PointY="11.875" IsExpanded="false" />
+        <EntityTypeShape EntityType="CorporeModel.GDINAM" Width="1.5" PointX="3" PointY="11.875" IsExpanded="false" />
+        <AssociationConnector Association="CorporeModel.FKGDINAM_GCOLIGADA" />
+        <AssociationConnector Association="CorporeModel.FKGCONSIST_GDINAM" />
+        <EntityTypeShape EntityType="CorporeModel.FLANACORDO" Width="1.5" PointX="8.25" PointY="0.625" IsExpanded="false" />
+        <AssociationConnector Association="CorporeModel.FKFLANACORDO_FLAN" />
+        <EntityTypeShape EntityType="CorporeModel.FACORDO" Width="1.5" PointX="8.25" PointY="10.125" IsExpanded="false" />
+        <EntityTypeShape EntityType="CorporeModel.FACORDOREL" Width="1.5" PointX="6.5" PointY="9" IsExpanded="false" />
+        <AssociationConnector Association="CorporeModel.FKFACORDO_FCFO" />
+        <AssociationConnector Association="CorporeModel.FKFACORDO_GCOLIGADA" />
+        <AssociationConnector Association="CorporeModel.FKFACORDOREL_FACORDO" />
+        <AssociationConnector Association="CorporeModel.FKFLANACORDO_FACORDO" />
+        <AssociationConnector Association="CorporeModel.FKFACORDOREL_FLAN" />
+        <EntityTypeShape EntityType="CorporeModel.FLANRATCCU" Width="1.5" PointX="13.625" PointY="2.625" IsExpanded="false" />
+        <AssociationConnector Association="CorporeModel.FKLANRATCCU_FLAN" />
+        <EntityTypeShape EntityType="CorporeModel.GCCUSTO" Width="1.5" PointX="3" PointY="13.5" IsExpanded="false" />
+        <AssociationConnector Association="CorporeModel.FKFLAN_GCCUSTO" />
+        <AssociationConnector Association="CorporeModel.FKLANRATCCU_FCCU" />
+        <AssociationConnector Association="CorporeModel.FKFTB1_GCCUSTO" />
+        <AssociationConnector Association="CorporeModel.FKFXCX_GCCUSTO" />
+        <AssociationConnector Association="CorporeModel.FKGCCUSTO" />
+        <AssociationConnector Association="CorporeModel.FKTITMMOV_GCCU" />
+        <AssociationConnector Association="CorporeModel.FKTMOV_GCCU" />
+        <AssociationConnector Association="CorporeModel.FKTMOV_GCCUDEST" />
+        <EntityTypeShape EntityType="CorporeModel.PEVENTO" Width="1.5" PointX="7.625" PointY="17.875" IsExpanded="false" />
+        <EntityTypeShape EntityType="CorporeModel.PFFINANC" Width="1.5" PointX="7.625" PointY="19.125" IsExpanded="false" />
+        <EntityTypeShape EntityType="CorporeModel.PFUNC" Width="1.5" PointX="11.25" PointY="10" IsExpanded="false" />
+        <EntityTypeShape EntityType="CorporeModel.PPESSOA" Width="1.5" PointX="5.125" PointY="16.25" IsExpanded="false" />
+        <AssociationConnector Association="CorporeModel.FKPFUNC_FCFO" />
+        <AssociationConnector Association="CorporeModel.FKPEVENTO_GCOLIGADA" />
+        <AssociationConnector Association="CorporeModel.FKPPESSOA_GETDCT" />
+        <AssociationConnector Association="CorporeModel.FKPPESSOA_GETDNT" />
+        <AssociationConnector Association="CorporeModel.FKPPESSOA_GETDRG" />
+        <AssociationConnector Association="CorporeModel.FKPFUNC_GFILIAL" />
+        <AssociationConnector Association="CorporeModel.FKPPESSOA_GMUNICIPIO" />
+        <AssociationConnector Association="CorporeModel.FKPEVENTO_PEVENTO" />
+        <AssociationConnector Association="CorporeModel.FKPEVENTO_PEVENTOINSUF" />
+        <AssociationConnector Association="CorporeModel.FKPFFINANC_PEVENTO" />
+        <AssociationConnector Association="CorporeModel.FKPFUNC_PEVENTO" />
+        <AssociationConnector Association="CorporeModel.FKPFUNC_PPESSOA" />
+        <AssociationConnector Association="CorporeModel.FKTMOV_PFUNC" />
+        <AssociationConnector Association="CorporeModel.FKTTIMMOV_PFUNC" />
+        <AssociationConnector Association="CorporeModel.FKTVEN_PPESSOA" />
+        <EntityTypeShape EntityType="CorporeModel.PFUNCAO" Width="1.5" PointX="3" PointY="18.125" />
+        <AssociationConnector Association="CorporeModel.FKPFUNCAO_GCOLIGADA" />
+        <AssociationConnector Association="CorporeModel.FKPFUNC_PFUNCAO" />
+        <EntityTypeShape EntityType="CorporeModel.TPRODUTODEF" Width="1.5" PointX="16.75" PointY="0.75" />
+        <AssociationConnector Association="CorporeModel.FKTPRDDEF_TCPG" />
+        <AssociationConnector Association="CorporeModel.FKTPRDDEF_TPRD" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

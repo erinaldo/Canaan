@@ -34,6 +34,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -49,6 +50,14 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Canaan.Dados\Canaan.Dados.csproj">
+      <Project>{369fe6a1-e2f8-4035-9631-7459616ffffc}</Project>
+      <Name>Canaan.Dados</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Canaan.Lib\Canaan.Lib.csproj">
+      <Project>{b0cc386c-f0bd-489c-bb0b-05216d2d24ea}</Project>
+      <Name>Canaan.Lib</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Canaan.Servicos\Canaan.Servicos.csproj">
       <Project>{221ce654-1a02-4b58-b887-a439b3c4dacb}</Project>
       <Name>Canaan.Servicos</Name>

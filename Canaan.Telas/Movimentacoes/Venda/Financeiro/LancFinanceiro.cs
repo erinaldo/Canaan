@@ -573,8 +573,6 @@ namespace Canaan.Telas.Movimentacoes.Venda.Financeiro
         }
 
         #endregion
-
-        
     }
 
     public class Model : INotifyPropertyChanged

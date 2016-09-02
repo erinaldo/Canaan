@@ -111,6 +111,14 @@ namespace Canaan.Telas.Movimentacoes.Venda.Principal
             }
         }
 
+        public Evento.Lista FormEvento
+        {
+            get
+            {
+                return new Evento.Lista(Venda, this);
+            }
+        }
+
         #endregion
 
         #endregion
@@ -190,6 +198,13 @@ namespace Canaan.Telas.Movimentacoes.Venda.Principal
             CarregaForm(FormDocumentacao);
         }
 
+        private void lkEvento_LinkClicked(object sender, NavBarLinkEventArgs e)
+        {
+            //Atualiza venda automaticamente
+            LibVenda.Update(Venda);
+            CarregaForm(FormEvento);
+        }
+
 
 
         #endregion
@@ -229,5 +244,7 @@ namespace Canaan.Telas.Movimentacoes.Venda.Principal
             Dispose();
             GC.Collect();
         }
+
+        
     }
 }

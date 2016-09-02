@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Model" targetNamespace="http://tempuri.org/Model.xsd" xmlns:mstns="http://tempuri.org/Model.xsd" xmlns="http://tempuri.org/Model.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="Model" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="Model" msprop:Generator_UserDSName="Model">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Filial" msprop:Generator_TableClassName="FilialDataTable" msprop:Generator_TableVarName="tableFilial" msprop:Generator_TablePropName="Filial" msprop:Generator_RowDeletingName="FilialRowDeleting" msprop:Generator_RowChangingName="FilialRowChanging" msprop:Generator_RowEvHandlerName="FilialRowChangeEventHandler" msprop:Generator_RowDeletedName="FilialRowDeleted" msprop:Generator_UserTableName="Filial" msprop:Generator_RowChangedName="FilialRowChanged" msprop:Generator_RowEvArgName="FilialRowChangeEvent" msprop:Generator_RowClassName="FilialRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdFilial" msprop:Generator_ColumnVarNameInTable="columnIdFilial" msprop:Generator_ColumnPropNameInRow="IdFilial" msprop:Generator_ColumnPropNameInTable="IdFilialColumn" msprop:Generator_UserColumnName="IdFilial" type="xs:int" />
+              <xs:element name="Nome" msprop:Generator_ColumnVarNameInTable="columnNome" msprop:Generator_ColumnPropNameInRow="Nome" msprop:Generator_ColumnPropNameInTable="NomeColumn" msprop:Generator_UserColumnName="Nome" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Lancamento" msprop:Generator_TableClassName="LancamentoDataTable" msprop:Generator_TableVarName="tableLancamento" msprop:Generator_TablePropName="Lancamento" msprop:Generator_RowDeletingName="LancamentoRowDeleting" msprop:Generator_RowChangingName="LancamentoRowChanging" msprop:Generator_RowEvHandlerName="LancamentoRowChangeEventHandler" msprop:Generator_RowDeletedName="LancamentoRowDeleted" msprop:Generator_UserTableName="Lancamento" msprop:Generator_RowChangedName="LancamentoRowChanged" msprop:Generator_RowEvArgName="LancamentoRowChangeEvent" msprop:Generator_RowClassName="LancamentoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdLancamento" msprop:Generator_ColumnVarNameInTable="columnIdLancamento" msprop:Generator_ColumnPropNameInRow="IdLancamento" msprop:Generator_ColumnPropNameInTable="IdLancamentoColumn" msprop:Generator_UserColumnName="IdLancamento" type="xs:int" />
+              <xs:element name="IdFilial" msprop:Generator_ColumnVarNameInTable="columnIdFilial" msprop:Generator_ColumnPropNameInRow="IdFilial" msprop:Generator_ColumnPropNameInTable="IdFilialColumn" msprop:Generator_UserColumnName="IdFilial" type="xs:int" minOccurs="0" />
+              <xs:element name="Data" msprop:Generator_ColumnVarNameInTable="columnData" msprop:Generator_ColumnPropNameInRow="Data" msprop:Generator_ColumnPropNameInTable="DataColumn" msprop:Generator_UserColumnName="Data" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="FatDinheiro" msprop:Generator_ColumnVarNameInTable="columnFatDinheiro" msprop:Generator_ColumnPropNameInRow="FatDinheiro" msprop:Generator_ColumnPropNameInTable="FatDinheiroColumn" msprop:Generator_UserColumnName="FatDinheiro" type="xs:decimal" minOccurs="0" />
+              <xs:element name="FatCartao" msprop:Generator_ColumnVarNameInTable="columnFatCartao" msprop:Generator_ColumnPropNameInRow="FatCartao" msprop:Generator_ColumnPropNameInTable="FatCartaoColumn" msprop:Generator_UserColumnName="FatCartao" type="xs:decimal" minOccurs="0" />
+              <xs:element name="FatPrazo" msprop:Generator_ColumnVarNameInTable="columnFatPrazo" msprop:Generator_ColumnPropNameInRow="FatPrazo" msprop:Generator_ColumnPropNameInTable="FatPrazoColumn" msprop:Generator_UserColumnName="FatPrazo" type="xs:decimal" minOccurs="0" />
+              <xs:element name="FatBruto" msprop:Generator_ColumnVarNameInTable="columnFatBruto" msprop:Generator_ColumnPropNameInRow="FatBruto" msprop:Generator_ColumnPropNameInTable="FatBrutoColumn" msprop:Generator_UserColumnName="FatBruto" type="xs:decimal" minOccurs="0" />
+              <xs:element name="FatLiquido" msprop:Generator_ColumnVarNameInTable="columnFatLiquido" msprop:Generator_ColumnPropNameInRow="FatLiquido" msprop:Generator_ColumnPropNameInTable="FatLiquidoColumn" msprop:Generator_UserColumnName="FatLiquido" type="xs:decimal" minOccurs="0" />
+              <xs:element name="EntradaDinheiro" msprop:Generator_ColumnVarNameInTable="columnEntradaDinheiro" msprop:Generator_ColumnPropNameInRow="EntradaDinheiro" msprop:Generator_ColumnPropNameInTable="EntradaDinheiroColumn" msprop:Generator_UserColumnName="EntradaDinheiro" type="xs:decimal" minOccurs="0" />
+              <xs:element name="EntradaCartao" msprop:Generator_ColumnVarNameInTable="columnEntradaCartao" msprop:Generator_ColumnPropNameInRow="EntradaCartao" msprop:Generator_ColumnPropNameInTable="EntradaCartaoColumn" msprop:Generator_UserColumnName="EntradaCartao" type="xs:decimal" minOccurs="0" />
+              <xs:element name="EntradaTotal" msprop:Generator_ColumnVarNameInTable="columnEntradaTotal" msprop:Generator_ColumnPropNameInRow="EntradaTotal" msprop:Generator_ColumnPropNameInTable="EntradaTotalColumn" msprop:Generator_UserColumnName="EntradaTotal" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Recebimento" msprop:Generator_ColumnVarNameInTable="columnRecebimento" msprop:Generator_ColumnPropNameInRow="Recebimento" msprop:Generator_ColumnPropNameInTable="RecebimentoColumn" msprop:Generator_UserColumnName="Recebimento" type="xs:decimal" minOccurs="0" />
+              <xs:element name="FluxoCaixa" msprop:Generator_ColumnVarNameInTable="columnFluxoCaixa" msprop:Generator_ColumnPropNameInRow="FluxoCaixa" msprop:Generator_ColumnPropNameInTable="FluxoCaixaColumn" msprop:Generator_UserColumnName="FluxoCaixa" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Fotografados" msprop:Generator_ColumnVarNameInTable="columnFotografados" msprop:Generator_ColumnPropNameInRow="Fotografados" msprop:Generator_ColumnPropNameInTable="FotografadosColumn" msprop:Generator_UserColumnName="Fotografados" type="xs:int" minOccurs="0" />
+              <xs:element name="Vendas" msprop:Generator_ColumnVarNameInTable="columnVendas" msprop:Generator_ColumnPropNameInRow="Vendas" msprop:Generator_ColumnPropNameInTable="VendasColumn" msprop:Generator_UserColumnName="Vendas" type="xs:int" minOccurs="0" />
+              <xs:element name="Brindes" msprop:Generator_ColumnVarNameInTable="columnBrindes" msprop:Generator_ColumnPropNameInRow="Brindes" msprop:Generator_ColumnPropNameInTable="BrindesColumn" msprop:Generator_UserColumnName="Brindes" type="xs:int" minOccurs="0" />
+              <xs:element name="Programadas" msprop:Generator_ColumnVarNameInTable="columnProgramadas" msprop:Generator_ColumnPropNameInRow="Programadas" msprop:Generator_ColumnPropNameInTable="ProgramadasColumn" msprop:Generator_UserColumnName="Programadas" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="FilialKey1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Filial" />
+      <xs:field xpath="mstns:IdFilial" />
+    </xs:unique>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Lancamento" />
+      <xs:field xpath="mstns:IdLancamento" />
+    </xs:unique>
+  </xs:element>
+  <xs:annotation>
+    <xs:appinfo>
+      <msdata:Relationship name="Filial_Lancamento" msdata:parent="Filial" msdata:child="Lancamento" msdata:parentkey="IdFilial" msdata:childkey="IdFilial" msprop:Generator_UserChildTable="Lancamento" msprop:Generator_ChildPropName="GetLancamentoRows" msprop:Generator_UserRelationName="Filial_Lancamento" msprop:Generator_ParentPropName="FilialRow" msprop:Generator_RelationVarName="relationFilial_Lancamento" msprop:Generator_UserParentTable="Filial" />
+    </xs:appinfo>
+  </xs:annotation>
+</xs:schema>

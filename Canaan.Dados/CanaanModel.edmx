@@ -282,6 +282,8 @@
           <Property Name="PastaUsaAno" Type="bit" />
           <Property Name="PastaUsaMes" Type="bit" />
           <Property Name="UsaLiberacao" Type="bit" />
+          <Property Name="TextoEvento" Type="text" />
+          <Property Name="TextoContrato" Type="text" />
         </EntityType>
         <EntityType Name="Conta">
           <Key>
@@ -425,6 +427,15 @@
           <Property Name="IdPais" Type="int" Nullable="false" />
           <Property Name="Nome" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="Abreviatura" Type="nvarchar" MaxLength="5" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Evento">
+          <Key>
+            <PropertyRef Name="IdEvento" />
+          </Key>
+          <Property Name="IdEvento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdParceria" Type="int" Nullable="false" />
+          <Property Name="Nome" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="Descricao" Type="text" />
         </EntityType>
         <EntityType Name="Extrato">
           <Key>
@@ -789,6 +800,9 @@
           <Property Name="VendaCartao" Type="decimal" Precision="18" Scale="2" />
           <Property Name="VendaDinheiro" Type="decimal" Precision="18" Scale="2" />
           <Property Name="ValorCrediario" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="TipoEvento" Type="varchar" MaxLength="250" />
+          <Property Name="NomeModelo" Type="varchar" MaxLength="250" />
+          <Property Name="EventoEspecificacao" Type="text" />
         </EntityType>
         <EntityType Name="PedidoLancamento">
           <Key>
@@ -1011,6 +1025,17 @@
           <Property Name="IsProducao" Type="bit" Nullable="false" />
           <Property Name="IsMarketing" Type="bit" Nullable="false" />
           <Property Name="IsAtivo" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="VendaEvento">
+          <Key>
+            <PropertyRef Name="IdVendaEvento" />
+          </Key>
+          <Property Name="IdVendaEvento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdPedido" Type="int" Nullable="false" />
+          <Property Name="IdEvento" Type="int" Nullable="false" />
+          <Property Name="DataInicio" Type="datetime" Nullable="false" />
+          <Property Name="DataFim" Type="datetime" Nullable="false" />
+          <Property Name="Descricao" Type="text" />
         </EntityType>
         <EntityType Name="VendaFoto">
           <Key>
@@ -1625,6 +1650,20 @@
             </Principal>
             <Dependent Role="Cidade">
               <PropertyRef Name="IdEstado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Evento_Parceria">
+          <End Role="Parceria" Type="Self.Parceria" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Evento" Type="Self.Evento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Parceria">
+              <PropertyRef Name="IdParceria" />
+            </Principal>
+            <Dependent Role="Evento">
+              <PropertyRef Name="IdParceria" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -2614,6 +2653,34 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_VendaEvento_Evento">
+          <End Role="Evento" Type="Self.Evento" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="VendaEvento" Type="Self.VendaEvento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Evento">
+              <PropertyRef Name="IdEvento" />
+            </Principal>
+            <Dependent Role="VendaEvento">
+              <PropertyRef Name="IdEvento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VendaEvento_VendaEvento">
+          <End Role="Pedido_Venda" Type="Self.Pedido_Venda" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="VendaEvento" Type="Self.VendaEvento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pedido_Venda">
+              <PropertyRef Name="IdPedido" />
+            </Principal>
+            <Dependent Role="VendaEvento">
+              <PropertyRef Name="IdPedido" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_VendaItemOrdemServico_OrdemServico">
           <End Role="OrdemServico" Type="Self.OrdemServico" Multiplicity="1">
             <OnDelete Action="Cascade" />
@@ -2735,6 +2802,7 @@
           <EntitySet Name="EnvioPedido" EntityType="Self.EnvioPedido" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="EnvioStatus" EntityType="Self.EnvioStatus" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Estado" EntityType="Self.Estado" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Evento" EntityType="Self.Evento" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Extrato" EntityType="Self.Extrato" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Filial" EntityType="Self.Filial" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Filtro" EntityType="Self.Filtro" Schema="dbo" store:Type="Tables" />
@@ -2781,6 +2849,7 @@
           <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UsuarioFilial" EntityType="Self.UsuarioFilial" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UsuarioGrupo" EntityType="Self.UsuarioGrupo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="VendaEvento" EntityType="Self.VendaEvento" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="VendaFoto" EntityType="Self.VendaFoto" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="VendaItem" EntityType="Self.VendaItem" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="VendaItemOrdemServico" EntityType="Self.VendaItemOrdemServico" Schema="dbo" store:Type="Tables" />
@@ -2961,6 +3030,10 @@
           <AssociationSet Name="FK_EstadoCidade" Association="Self.FK_EstadoCidade">
             <End Role="Estado" EntitySet="Estado" />
             <End Role="Cidade" EntitySet="Cidade" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Evento_Parceria" Association="Self.FK_Evento_Parceria">
+            <End Role="Parceria" EntitySet="Parceria" />
+            <End Role="Evento" EntitySet="Evento" />
           </AssociationSet>
           <AssociationSet Name="FK_FilialAgenda" Association="Self.FK_FilialAgenda">
             <End Role="Filial" EntitySet="Filial" />
@@ -3273,6 +3346,14 @@
           <AssociationSet Name="FK_Venda_inherits_Pedido" Association="Self.FK_Venda_inherits_Pedido">
             <End Role="Pedido" EntitySet="Pedido" />
             <End Role="Pedido_Venda" EntitySet="Pedido_Venda" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VendaEvento_Evento" Association="Self.FK_VendaEvento_Evento">
+            <End Role="Evento" EntitySet="Evento" />
+            <End Role="VendaEvento" EntitySet="VendaEvento" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VendaEvento_VendaEvento" Association="Self.FK_VendaEvento_VendaEvento">
+            <End Role="Pedido_Venda" EntitySet="Pedido_Venda" />
+            <End Role="VendaEvento" EntitySet="VendaEvento" />
           </AssociationSet>
           <AssociationSet Name="FK_VendaItemOrdemServico_OrdemServico" Association="Self.FK_VendaItemOrdemServico_OrdemServico">
             <End Role="OrdemServico" EntitySet="OrdemServico" />
@@ -3891,6 +3972,20 @@
             <End Role="Sessao" EntitySet="Sessao" />
             <End Role="SessaoPasta" EntitySet="SessaoPasta" />
           </AssociationSet>
+          <EntitySet Name="Evento" EntityType="CanaanModel.Evento" />
+          <EntitySet Name="VendaEvento" EntityType="CanaanModel.VendaEvento" />
+          <AssociationSet Name="FK_Evento_Parceria" Association="CanaanModel.FK_Evento_Parceria">
+            <End Role="Parceria" EntitySet="Parceria" />
+            <End Role="Evento" EntitySet="Evento" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VendaEvento_Evento" Association="CanaanModel.FK_VendaEvento_Evento">
+            <End Role="Evento" EntitySet="Evento" />
+            <End Role="VendaEvento" EntitySet="VendaEvento" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VendaEvento_VendaEvento" Association="CanaanModel.FK_VendaEvento_VendaEvento">
+            <End Role="Venda" EntitySet="Pedido" />
+            <End Role="VendaEvento" EntitySet="VendaEvento" />
+          </AssociationSet>
           </EntityContainer>
         <EntityType Name="GrupoEmpresa" Abstract="false">
           <Key>
@@ -4192,6 +4287,10 @@
           <Property Name="VendaCartao" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="TipoVenda" Type="Int32" />
           <Property Name="ValorCrediario" Type="Decimal" Precision="18" Scale="2" />
+          <NavigationProperty Name="VendaEvento" Relationship="CanaanModel.FK_VendaEvento_VendaEvento" FromRole="Venda" ToRole="VendaEvento" />
+          <Property Name="TipoEvento" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="NomeModelo" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="EventoEspecificacao" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
         <Association Name="FilialPedido">
           <End Type="CanaanModel.Filial" Role="Filial" Multiplicity="1" />
@@ -4398,6 +4497,7 @@
           <Property Name="IdConsultora" Type="Int32" />
           <Property Name="IdParceriaWeb" Type="Int32" />
           <Property Name="NomeConsultora" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Evento" Relationship="CanaanModel.FK_Evento_Parceria" FromRole="Parceria" ToRole="Evento" />
         </EntityType>
         <Association Name="ConvenioParceria">
           <End Type="CanaanModel.Convenio" Role="Convenio" Multiplicity="1" />
@@ -5627,6 +5727,8 @@
           <Property Name="PastaUsaAno" Type="Boolean" />
           <Property Name="PastaUsaMes" Type="Boolean" />
           <Property Name="UsaLiberacao" Type="Boolean" />
+          <Property Name="TextoEvento" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="TextoContrato" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
         <Association Name="FK_Config_Filial">
           <End Type="CanaanModel.Filial" Role="Filial" Multiplicity="1">
@@ -6948,6 +7050,72 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="Evento">
+          <Key>
+            <PropertyRef Name="IdEvento" />
+          </Key>
+          <Property Name="IdEvento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdParceria" Type="Int32" Nullable="false" />
+          <Property Name="Nome" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Descricao" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Parceria" Relationship="CanaanModel.FK_Evento_Parceria" FromRole="Evento" ToRole="Parceria" />
+          <NavigationProperty Name="VendaEvento" Relationship="CanaanModel.FK_VendaEvento_Evento" FromRole="Evento" ToRole="VendaEvento" />
+        </EntityType>
+        <EntityType Name="VendaEvento">
+          <Key>
+            <PropertyRef Name="IdVendaEvento" />
+          </Key>
+          <Property Name="IdVendaEvento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdPedido" Type="Int32" Nullable="false" />
+          <Property Name="IdEvento" Type="Int32" Nullable="false" />
+          <Property Name="DataInicio" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DataFim" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Descricao" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Evento" Relationship="CanaanModel.FK_VendaEvento_Evento" FromRole="VendaEvento" ToRole="Evento" />
+          <NavigationProperty Name="Venda" Relationship="CanaanModel.FK_VendaEvento_VendaEvento" FromRole="VendaEvento" ToRole="Venda" />
+        </EntityType>
+        <Association Name="FK_Evento_Parceria">
+          <End Type="CanaanModel.Parceria" Role="Parceria" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="CanaanModel.Evento" Role="Evento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Parceria">
+              <PropertyRef Name="IdParceria" />
+            </Principal>
+            <Dependent Role="Evento">
+              <PropertyRef Name="IdParceria" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VendaEvento_Evento">
+          <End Type="CanaanModel.Evento" Role="Evento" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="CanaanModel.VendaEvento" Role="VendaEvento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Evento">
+              <PropertyRef Name="IdEvento" />
+            </Principal>
+            <Dependent Role="VendaEvento">
+              <PropertyRef Name="IdEvento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VendaEvento_VendaEvento">
+          <End Type="CanaanModel.Venda" Role="Venda" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="CanaanModel.VendaEvento" Role="VendaEvento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Venda">
+              <PropertyRef Name="IdPedido" />
+            </Principal>
+            <Dependent Role="VendaEvento">
+              <PropertyRef Name="IdPedido" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -7120,7 +7288,10 @@
       </EntityTypeMapping>
       <EntityTypeMapping TypeName="IsTypeOf(CanaanModel.Venda)">
         <MappingFragment StoreEntitySet="Pedido_Venda">
-          <ScalarProperty Name="ValorCrediario" ColumnName="ValorCrediario" />
+          <ScalarProperty Name="EventoEspecificacao" ColumnName="EventoEspecificacao" />
+                <ScalarProperty Name="NomeModelo" ColumnName="NomeModelo" />
+                <ScalarProperty Name="TipoEvento" ColumnName="TipoEvento" />
+                <ScalarProperty Name="ValorCrediario" ColumnName="ValorCrediario" />
                 <ScalarProperty Name="TipoVenda" ColumnName="TipoVenda" />
                 <ScalarProperty Name="VendaCartao" ColumnName="VendaCartao" />
                 <ScalarProperty Name="VendaDinheiro" ColumnName="VendaDinheiro" />
@@ -7658,6 +7829,8 @@
           <EntitySetMapping Name="Config">
             <EntityTypeMapping TypeName="CanaanModel.Config">
               <MappingFragment StoreEntitySet="Config">
+                <ScalarProperty Name="TextoContrato" ColumnName="TextoContrato" />
+                <ScalarProperty Name="TextoEvento" ColumnName="TextoEvento" />
                 <ScalarProperty Name="UsaLiberacao" ColumnName="UsaLiberacao" />
                 <ScalarProperty Name="PastaUsaMes" ColumnName="PastaUsaMes" />
                 <ScalarProperty Name="PastaUsaAno" ColumnName="PastaUsaAno" />
@@ -8077,6 +8250,28 @@
                 <ScalarProperty Name="Nome" ColumnName="Nome" />
                 <ScalarProperty Name="IdPastaPai" ColumnName="IdPastaPai" />
                 <ScalarProperty Name="IdSessaoPasta" ColumnName="IdSessaoPasta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Evento">
+            <EntityTypeMapping TypeName="CanaanModel.Evento">
+              <MappingFragment StoreEntitySet="Evento">
+                <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="IdParceria" ColumnName="IdParceria" />
+                <ScalarProperty Name="IdEvento" ColumnName="IdEvento" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VendaEvento">
+            <EntityTypeMapping TypeName="CanaanModel.VendaEvento">
+              <MappingFragment StoreEntitySet="VendaEvento">
+                <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+                <ScalarProperty Name="DataFim" ColumnName="DataFim" />
+                <ScalarProperty Name="DataInicio" ColumnName="DataInicio" />
+                <ScalarProperty Name="IdEvento" ColumnName="IdEvento" />
+                <ScalarProperty Name="IdPedido" ColumnName="IdPedido" />
+                <ScalarProperty Name="IdVendaEvento" ColumnName="IdVendaEvento" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

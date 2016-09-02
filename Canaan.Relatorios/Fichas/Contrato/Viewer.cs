@@ -41,8 +41,7 @@ namespace Canaan.Relatorios.Fichas.Contrato
                 var indicacao = conn.Indicacao.FirstOrDefault(a => a.IdCupom == cupom.IdCupom);
                 var empresa = conn.Filial.FirstOrDefault(a => a.IdFilial == Lib.Session.Instance.Contexto.IdFilial);
                 var libIndicacao = new Lib.Indicacao();
-
-
+                var libVendaEvento = new Lib.VendaEvento();
 
                 var rowAtendimento = Dataset.Atendimento.NewAtendimentoRow();
                 var rowCliente = Dataset.Cliente.NewClienteRow();
@@ -81,6 +80,7 @@ namespace Canaan.Relatorios.Fichas.Contrato
                 rowCliente.IdAtendimento = venda.IdAtendimento;
                 rowCliente.IndicacaoDe = indicacao == null ? string.Empty : indicacao.Atendimento.CliFor.Nome;
                 rowCliente.NomeCliFinanc = venda.Atendimento.CliFor.Nome;
+                rowCliente.Email = venda.Atendimento.CliFor.Email;
 
                 Dataset.Cliente.AddClienteRow(rowCliente);
 
@@ -190,6 +190,28 @@ namespace Canaan.Relatorios.Fichas.Contrato
                     Dataset.Indicacoes.AddIndicacoesRow(rowIndicacao);
                 }
 
+                //eventos
+                var eventos = libVendaEvento.GetByVenda(venda.IdPedido);
+                var txtEvento = "";
+                txtEvento += string.Format("Tipo de Evento: {0}", venda.TipoEvento);
+                txtEvento += Environment.NewLine;
+                txtEvento += string.Format("Nome: {0}", venda.NomeModelo);
+                txtEvento += Environment.NewLine;
+
+                foreach (var evento in eventos)
+                {
+                    txtEvento += string.Format("{0}:", evento.Evento.Nome);
+                    txtEvento += Environment.NewLine;
+                    txtEvento += string.Format("Data: {0}", evento.DataInicio.ToShortDateString());
+                    txtEvento += Environment.NewLine;
+                    txtEvento += string.Format("{0}", evento.Descricao);
+                    txtEvento += Environment.NewLine;
+                    txtEvento += Environment.NewLine;
+                }
+
+                rowVenda.Eventos = txtEvento;
+                rowVenda.Contrato = new Lib.Config().GetByFilial(Lib.Session.Instance.Contexto.IdFilial).TextoContrato;
+                rowVenda.Servicos = venda.EventoEspecificacao;
             }
         }
 

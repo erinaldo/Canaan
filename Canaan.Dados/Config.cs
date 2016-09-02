@@ -40,6 +40,8 @@ namespace Canaan.Dados
         public Nullable<bool> PastaUsaAno { get; set; }
         public Nullable<bool> PastaUsaMes { get; set; }
         public Nullable<bool> UsaLiberacao { get; set; }
+        public string TextoEvento { get; set; }
+        public string TextoContrato { get; set; }
     
         public virtual Filial Filial { get; set; }
     }

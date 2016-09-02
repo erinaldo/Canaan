@@ -212,7 +212,7 @@ namespace Canaan.Telas.Financeiro.Lancamento
                 idFilialTextEdit.Text = Session.Contexto.Filial.IdFilial.ToString();
                 filialLinkLabel.Text = Session.Contexto.Filial.NomeFantasia;
                 
-                tipoComboBox.SelectedIndex = 0;
+                tipoComboBox.SelectedIndex = 1;
                 statusComboBox.SelectedItem = EnumStatusLanc.EmAberto;
                 classeContabilComboBox.SelectedIndex = 0;
                 isEntradaCheckEdit.Checked = false;
@@ -233,8 +233,8 @@ namespace Canaan.Telas.Financeiro.Lancamento
                 valorLiquidoLabelControl.Text = string.Format("{0:c}", 0);
 
                 //banco
-                idContaCaixaTextEdit.Text = null;
-                contaCaixaLinkLabel.Text = "Selecione uma conta caixa";
+                idContaCaixaTextEdit.Text = new Lib.ContaCaixa().GetByFilial(Lib.Session.Instance.Contexto.IdFilial)[0].IdContaCaixa.ToString();
+                contaCaixaLinkLabel.Text = new Lib.ContaCaixa().GetByFilial(Lib.Session.Instance.Contexto.IdFilial)[0].Nome;
                 nossoNumeroTextEdit.Text = null;
                 ipteTextEdit.Text = null;
                 codigoBarrasTextEdit.Text = null;

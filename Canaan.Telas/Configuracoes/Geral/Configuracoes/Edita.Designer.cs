@@ -30,6 +30,7 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.UsaLuberacaoCheckBox = new System.Windows.Forms.CheckBox();
             this.pastaUsaMesCheckBox = new System.Windows.Forms.CheckBox();
             this.pastaUsaAnoCheckBox = new System.Windows.Forms.CheckBox();
             this.UsaManipulacaoCheckBox = new System.Windows.Forms.CheckBox();
@@ -77,7 +78,10 @@
             this.label16 = new System.Windows.Forms.Label();
             this.cServiceIdTextBox = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.UsaLuberacaoCheckBox = new System.Windows.Forms.CheckBox();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.eventoTextBox = new System.Windows.Forms.TextBox();
+            this.contratoTextBox = new System.Windows.Forms.TextBox();
             this.panelEdit.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -85,12 +89,14 @@
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.tabPage5.SuspendLayout();
+            this.tabPage6.SuspendLayout();
+            this.tabPage7.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelEdit
             // 
             this.panelEdit.Controls.Add(this.tabControl1);
-            this.panelEdit.Size = new System.Drawing.Size(420, 337);
+            this.panelEdit.Size = new System.Drawing.Size(745, 381);
             // 
             // tabControl1
             // 
@@ -99,11 +105,13 @@
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage5);
+            this.tabControl1.Controls.Add(this.tabPage6);
+            this.tabControl1.Controls.Add(this.tabPage7);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(10, 10);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(400, 317);
+            this.tabControl1.Size = new System.Drawing.Size(725, 361);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -126,10 +134,20 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(5);
-            this.tabPage1.Size = new System.Drawing.Size(392, 291);
+            this.tabPage1.Size = new System.Drawing.Size(717, 335);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Informações Gerais";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // UsaLuberacaoCheckBox
+            // 
+            this.UsaLuberacaoCheckBox.AutoSize = true;
+            this.UsaLuberacaoCheckBox.Location = new System.Drawing.Point(11, 254);
+            this.UsaLuberacaoCheckBox.Name = "UsaLuberacaoCheckBox";
+            this.UsaLuberacaoCheckBox.Size = new System.Drawing.Size(141, 17);
+            this.UsaLuberacaoCheckBox.TabIndex = 14;
+            this.UsaLuberacaoCheckBox.Text = "Usa Liberação de Venda";
+            this.UsaLuberacaoCheckBox.UseVisualStyleBackColor = true;
             // 
             // pastaUsaMesCheckBox
             // 
@@ -268,7 +286,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(5);
-            this.tabPage2.Size = new System.Drawing.Size(454, 312);
+            this.tabPage2.Size = new System.Drawing.Size(717, 335);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Laboratório";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -363,7 +381,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(5);
-            this.tabPage3.Size = new System.Drawing.Size(454, 312);
+            this.tabPage3.Size = new System.Drawing.Size(717, 335);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Financeiro";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -419,7 +437,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(5);
-            this.tabPage4.Size = new System.Drawing.Size(454, 312);
+            this.tabPage4.Size = new System.Drawing.Size(717, 335);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Variáveis";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -471,7 +489,7 @@
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(5);
-            this.tabPage5.Size = new System.Drawing.Size(454, 312);
+            this.tabPage5.Size = new System.Drawing.Size(717, 335);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Integração";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -556,21 +574,51 @@
             this.label15.TabIndex = 16;
             this.label15.Text = "Código CService";
             // 
-            // UsaLuberacaoCheckBox
+            // tabPage6
             // 
-            this.UsaLuberacaoCheckBox.AutoSize = true;
-            this.UsaLuberacaoCheckBox.Location = new System.Drawing.Point(11, 254);
-            this.UsaLuberacaoCheckBox.Name = "UsaLuberacaoCheckBox";
-            this.UsaLuberacaoCheckBox.Size = new System.Drawing.Size(141, 17);
-            this.UsaLuberacaoCheckBox.TabIndex = 14;
-            this.UsaLuberacaoCheckBox.Text = "Usa Liberação de Venda";
-            this.UsaLuberacaoCheckBox.UseVisualStyleBackColor = true;
+            this.tabPage6.Controls.Add(this.eventoTextBox);
+            this.tabPage6.Location = new System.Drawing.Point(4, 22);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage6.Size = new System.Drawing.Size(717, 335);
+            this.tabPage6.TabIndex = 5;
+            this.tabPage6.Text = "Especificação do Evento";
+            this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // tabPage7
+            // 
+            this.tabPage7.Controls.Add(this.contratoTextBox);
+            this.tabPage7.Location = new System.Drawing.Point(4, 22);
+            this.tabPage7.Name = "tabPage7";
+            this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage7.Size = new System.Drawing.Size(717, 335);
+            this.tabPage7.TabIndex = 6;
+            this.tabPage7.Text = "Contrato";
+            this.tabPage7.UseVisualStyleBackColor = true;
+            // 
+            // eventoTextBox
+            // 
+            this.eventoTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.eventoTextBox.Location = new System.Drawing.Point(3, 3);
+            this.eventoTextBox.Multiline = true;
+            this.eventoTextBox.Name = "eventoTextBox";
+            this.eventoTextBox.Size = new System.Drawing.Size(711, 329);
+            this.eventoTextBox.TabIndex = 0;
+            // 
+            // contratoTextBox
+            // 
+            this.contratoTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.contratoTextBox.Location = new System.Drawing.Point(3, 3);
+            this.contratoTextBox.Multiline = true;
+            this.contratoTextBox.Name = "contratoTextBox";
+            this.contratoTextBox.Size = new System.Drawing.Size(711, 329);
+            this.contratoTextBox.TabIndex = 1;
             // 
             // Edita
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(420, 370);
+            this.ClientSize = new System.Drawing.Size(745, 414);
             this.Name = "Edita";
             this.Text = "Configurações Gerais";
             this.Load += new System.EventHandler(this.Edita_Load);
@@ -586,6 +634,10 @@
             this.tabPage4.PerformLayout();
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
+            this.tabPage6.ResumeLayout(false);
+            this.tabPage6.PerformLayout();
+            this.tabPage7.ResumeLayout(false);
+            this.tabPage7.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -643,5 +695,9 @@
         private System.Windows.Forms.CheckBox pastaUsaMesCheckBox;
         private System.Windows.Forms.CheckBox pastaUsaAnoCheckBox;
         private System.Windows.Forms.CheckBox UsaLuberacaoCheckBox;
+        private System.Windows.Forms.TabPage tabPage6;
+        private System.Windows.Forms.TextBox eventoTextBox;
+        private System.Windows.Forms.TabPage tabPage7;
+        private System.Windows.Forms.TextBox contratoTextBox;
     }
 }

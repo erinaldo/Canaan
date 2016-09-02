@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Model" targetNamespace="http://tempuri.org/Model.xsd" xmlns:mstns="http://tempuri.org/Model.xsd" xmlns="http://tempuri.org/Model.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="Model" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="Model" msprop:Generator_UserDSName="Model">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Meta" msprop:Generator_TableClassName="MetaDataTable" msprop:Generator_TableVarName="tableMeta" msprop:Generator_TablePropName="Meta" msprop:Generator_RowDeletingName="MetaRowDeleting" msprop:Generator_RowChangingName="MetaRowChanging" msprop:Generator_RowEvHandlerName="MetaRowChangeEventHandler" msprop:Generator_RowDeletedName="MetaRowDeleted" msprop:Generator_UserTableName="Meta" msprop:Generator_RowChangedName="MetaRowChanged" msprop:Generator_RowEvArgName="MetaRowChangeEvent" msprop:Generator_RowClassName="MetaRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdMeta" msprop:Generator_ColumnVarNameInTable="columnIdMeta" msprop:Generator_ColumnPropNameInRow="IdMeta" msprop:Generator_ColumnPropNameInTable="IdMetaColumn" msprop:Generator_UserColumnName="IdMeta" type="xs:int" />
+              <xs:element name="Studio" msprop:Generator_ColumnVarNameInTable="columnStudio" msprop:Generator_ColumnPropNameInRow="Studio" msprop:Generator_ColumnPropNameInTable="StudioColumn" msprop:Generator_UserColumnName="Studio" type="xs:string" minOccurs="0" />
+              <xs:element name="Mes" msprop:Generator_ColumnVarNameInTable="columnMes" msprop:Generator_ColumnPropNameInRow="Mes" msprop:Generator_ColumnPropNameInTable="MesColumn" msprop:Generator_UserColumnName="Mes" type="xs:int" minOccurs="0" />
+              <xs:element name="Ano" msprop:Generator_ColumnVarNameInTable="columnAno" msprop:Generator_ColumnPropNameInRow="Ano" msprop:Generator_ColumnPropNameInTable="AnoColumn" msprop:Generator_UserColumnName="Ano" type="xs:int" minOccurs="0" />
+              <xs:element name="Dias" msprop:Generator_ColumnVarNameInTable="columnDias" msprop:Generator_ColumnPropNameInRow="Dias" msprop:Generator_ColumnPropNameInTable="DiasColumn" msprop:Generator_UserColumnName="Dias" type="xs:int" minOccurs="0" />
+              <xs:element name="Fotografado" msprop:Generator_ColumnVarNameInTable="columnFotografado" msprop:Generator_ColumnPropNameInRow="Fotografado" msprop:Generator_ColumnPropNameInTable="FotografadoColumn" msprop:Generator_UserColumnName="Fotografado" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Conversao" msprop:Generator_ColumnVarNameInTable="columnConversao" msprop:Generator_ColumnPropNameInRow="Conversao" msprop:Generator_ColumnPropNameInTable="ConversaoColumn" msprop:Generator_UserColumnName="Conversao" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Ticket" msprop:Generator_ColumnVarNameInTable="columnTicket" msprop:Generator_ColumnPropNameInRow="Ticket" msprop:Generator_ColumnPropNameInTable="TicketColumn" msprop:Generator_UserColumnName="Ticket" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Faturamento" msprop:Generator_ColumnVarNameInTable="columnFaturamento" msprop:Generator_ColumnPropNameInRow="Faturamento" msprop:Generator_ColumnPropNameInTable="FaturamentoColumn" msprop:Generator_UserColumnName="Faturamento" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Fluxo" msprop:Generator_ColumnVarNameInTable="columnFluxo" msprop:Generator_ColumnPropNameInRow="Fluxo" msprop:Generator_ColumnPropNameInTable="FluxoColumn" msprop:Generator_UserColumnName="Fluxo" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Entrada" msprop:Generator_ColumnVarNameInTable="columnEntrada" msprop:Generator_ColumnPropNameInRow="Entrada" msprop:Generator_ColumnPropNameInTable="EntradaColumn" msprop:Generator_UserColumnName="Entrada" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Recebimento" msprop:Generator_ColumnVarNameInTable="columnRecebimento" msprop:Generator_ColumnPropNameInRow="Recebimento" msprop:Generator_ColumnPropNameInTable="RecebimentoColumn" msprop:Generator_UserColumnName="Recebimento" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Fotografado" msprop:Generator_TableClassName="FotografadoDataTable" msprop:Generator_TableVarName="tableFotografado" msprop:Generator_TablePropName="Fotografado" msprop:Generator_RowDeletingName="FotografadoRowDeleting" msprop:Generator_RowChangingName="FotografadoRowChanging" msprop:Generator_RowEvHandlerName="FotografadoRowChangeEventHandler" msprop:Generator_RowDeletedName="FotografadoRowDeleted" msprop:Generator_UserTableName="Fotografado" msprop:Generator_RowChangedName="FotografadoRowChanged" msprop:Generator_RowEvArgName="FotografadoRowChangeEvent" msprop:Generator_RowClassName="FotografadoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdFotografado" msprop:Generator_ColumnVarNameInTable="columnIdFotografado" msprop:Generator_ColumnPropNameInRow="IdFotografado" msprop:Generator_ColumnPropNameInTable="IdFotografadoColumn" msprop:Generator_UserColumnName="IdFotografado" type="xs:int" />
+              <xs:element name="IdMeta" msprop:Generator_ColumnVarNameInTable="columnIdMeta" msprop:Generator_ColumnPropNameInRow="IdMeta" msprop:Generator_ColumnPropNameInTable="IdMetaColumn" msprop:Generator_UserColumnName="IdMeta" type="xs:int" minOccurs="0" />
+              <xs:element name="DiaInicio" msprop:Generator_ColumnVarNameInTable="columnDiaInicio" msprop:Generator_ColumnPropNameInRow="DiaInicio" msprop:Generator_ColumnPropNameInTable="DiaInicioColumn" msprop:Generator_UserColumnName="DiaInicio" type="xs:int" minOccurs="0" />
+              <xs:element name="DiaFim" msprop:Generator_ColumnVarNameInTable="columnDiaFim" msprop:Generator_ColumnPropNameInRow="DiaFim" msprop:Generator_ColumnPropNameInTable="DiaFimColumn" msprop:Generator_UserColumnName="DiaFim" type="xs:int" minOccurs="0" />
+              <xs:element name="MetaDiaria" msprop:Generator_ColumnVarNameInTable="columnMetaDiaria" msprop:Generator_ColumnPropNameInRow="MetaDiaria" msprop:Generator_ColumnPropNameInTable="MetaDiariaColumn" msprop:Generator_UserColumnName="MetaDiaria" type="xs:decimal" minOccurs="0" />
+              <xs:element name="MetaSemana" msprop:Generator_ColumnVarNameInTable="columnMetaSemana" msprop:Generator_ColumnPropNameInRow="MetaSemana" msprop:Generator_ColumnPropNameInTable="MetaSemanaColumn" msprop:Generator_UserColumnName="MetaSemana" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Alcancado" msprop:Generator_ColumnVarNameInTable="columnAlcancado" msprop:Generator_ColumnPropNameInRow="Alcancado" msprop:Generator_ColumnPropNameInTable="AlcancadoColumn" msprop:Generator_UserColumnName="Alcancado" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Produtividade" msprop:Generator_ColumnVarNameInTable="columnProdutividade" msprop:Generator_ColumnPropNameInRow="Produtividade" msprop:Generator_ColumnPropNameInTable="ProdutividadeColumn" msprop:Generator_UserColumnName="Produtividade" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Faturamento" msprop:Generator_TableClassName="FaturamentoDataTable" msprop:Generator_TableVarName="tableFaturamento" msprop:Generator_TablePropName="Faturamento" msprop:Generator_RowDeletingName="FaturamentoRowDeleting" msprop:Generator_RowChangingName="FaturamentoRowChanging" msprop:Generator_RowEvHandlerName="FaturamentoRowChangeEventHandler" msprop:Generator_RowDeletedName="FaturamentoRowDeleted" msprop:Generator_UserTableName="Faturamento" msprop:Generator_RowChangedName="FaturamentoRowChanged" msprop:Generator_RowEvArgName="FaturamentoRowChangeEvent" msprop:Generator_RowClassName="FaturamentoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdFaturamento" msdata:Caption="IdFotog" msprop:Generator_ColumnVarNameInTable="columnIdFaturamento" msprop:Generator_ColumnPropNameInRow="IdFaturamento" msprop:Generator_ColumnPropNameInTable="IdFaturamentoColumn" msprop:Generator_UserColumnName="IdFaturamento" type="xs:int" />
+              <xs:element name="IdMeta" msprop:Generator_ColumnVarNameInTable="columnIdMeta" msprop:Generator_ColumnPropNameInRow="IdMeta" msprop:Generator_ColumnPropNameInTable="IdMetaColumn" msprop:Generator_UserColumnName="IdMeta" type="xs:int" minOccurs="0" />
+              <xs:element name="DiaInicio" msprop:Generator_ColumnVarNameInTable="columnDiaInicio" msprop:Generator_ColumnPropNameInRow="DiaInicio" msprop:Generator_ColumnPropNameInTable="DiaInicioColumn" msprop:Generator_UserColumnName="DiaInicio" type="xs:int" minOccurs="0" />
+              <xs:element name="DiaFim" msprop:Generator_ColumnVarNameInTable="columnDiaFim" msprop:Generator_ColumnPropNameInRow="DiaFim" msprop:Generator_ColumnPropNameInTable="DiaFimColumn" msprop:Generator_UserColumnName="DiaFim" type="xs:int" minOccurs="0" />
+              <xs:element name="Meta" msdata:Caption="MetaDiaria" msprop:Generator_ColumnVarNameInTable="columnMeta" msprop:Generator_ColumnPropNameInRow="Meta" msprop:Generator_ColumnPropNameInTable="MetaColumn" msprop:Generator_UserColumnName="Meta" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Percentual" msdata:Caption="MetaSemana" msprop:Generator_ColumnVarNameInTable="columnPercentual" msprop:Generator_ColumnPropNameInRow="Percentual" msprop:Generator_ColumnPropNameInTable="PercentualColumn" msprop:Generator_UserColumnName="Percentual" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Alcancado" msprop:Generator_ColumnVarNameInTable="columnAlcancado" msprop:Generator_ColumnPropNameInRow="Alcancado" msprop:Generator_ColumnPropNameInTable="AlcancadoColumn" msprop:Generator_UserColumnName="Alcancado" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Produtividade" msprop:Generator_ColumnVarNameInTable="columnProdutividade" msprop:Generator_ColumnPropNameInRow="Produtividade" msprop:Generator_ColumnPropNameInTable="ProdutividadeColumn" msprop:Generator_UserColumnName="Produtividade" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Entrada" msprop:Generator_TableClassName="EntradaDataTable" msprop:Generator_TableVarName="tableEntrada" msprop:Generator_TablePropName="Entrada" msprop:Generator_RowDeletingName="EntradaRowDeleting" msprop:Generator_RowChangingName="EntradaRowChanging" msprop:Generator_RowEvHandlerName="EntradaRowChangeEventHandler" msprop:Generator_RowDeletedName="EntradaRowDeleted" msprop:Generator_UserTableName="Entrada" msprop:Generator_RowChangedName="EntradaRowChanged" msprop:Generator_RowEvArgName="EntradaRowChangeEvent" msprop:Generator_RowClassName="EntradaRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdEntrada" msdata:Caption="IdFotog" msprop:Generator_ColumnVarNameInTable="columnIdEntrada" msprop:Generator_ColumnPropNameInRow="IdEntrada" msprop:Generator_ColumnPropNameInTable="IdEntradaColumn" msprop:Generator_UserColumnName="IdEntrada" type="xs:int" />
+              <xs:element name="IdMeta" msprop:Generator_ColumnVarNameInTable="columnIdMeta" msprop:Generator_ColumnPropNameInRow="IdMeta" msprop:Generator_ColumnPropNameInTable="IdMetaColumn" msprop:Generator_UserColumnName="IdMeta" type="xs:int" minOccurs="0" />
+              <xs:element name="DiaInicio" msprop:Generator_ColumnVarNameInTable="columnDiaInicio" msprop:Generator_ColumnPropNameInRow="DiaInicio" msprop:Generator_ColumnPropNameInTable="DiaInicioColumn" msprop:Generator_UserColumnName="DiaInicio" type="xs:int" minOccurs="0" />
+              <xs:element name="DiaFim" msprop:Generator_ColumnVarNameInTable="columnDiaFim" msprop:Generator_ColumnPropNameInRow="DiaFim" msprop:Generator_ColumnPropNameInTable="DiaFimColumn" msprop:Generator_UserColumnName="DiaFim" type="xs:int" minOccurs="0" />
+              <xs:element name="Meta" msdata:Caption="MetaDiaria" msprop:Generator_ColumnVarNameInTable="columnMeta" msprop:Generator_ColumnPropNameInRow="Meta" msprop:Generator_ColumnPropNameInTable="MetaColumn" msprop:Generator_UserColumnName="Meta" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Percentual" msdata:Caption="MetaSemana" msprop:Generator_ColumnVarNameInTable="columnPercentual" msprop:Generator_ColumnPropNameInRow="Percentual" msprop:Generator_ColumnPropNameInTable="PercentualColumn" msprop:Generator_UserColumnName="Percentual" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Alcancado" msprop:Generator_ColumnVarNameInTable="columnAlcancado" msprop:Generator_ColumnPropNameInRow="Alcancado" msprop:Generator_ColumnPropNameInTable="AlcancadoColumn" msprop:Generator_UserColumnName="Alcancado" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Produtividade" msprop:Generator_ColumnVarNameInTable="columnProdutividade" msprop:Generator_ColumnPropNameInRow="Produtividade" msprop:Generator_ColumnPropNameInTable="ProdutividadeColumn" msprop:Generator_UserColumnName="Produtividade" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Fluxo" msprop:Generator_TableClassName="FluxoDataTable" msprop:Generator_TableVarName="tableFluxo" msprop:Generator_TablePropName="Fluxo" msprop:Generator_RowDeletingName="FluxoRowDeleting" msprop:Generator_RowChangingName="FluxoRowChanging" msprop:Generator_RowEvHandlerName="FluxoRowChangeEventHandler" msprop:Generator_RowDeletedName="FluxoRowDeleted" msprop:Generator_UserTableName="Fluxo" msprop:Generator_RowChangedName="FluxoRowChanged" msprop:Generator_RowEvArgName="FluxoRowChangeEvent" msprop:Generator_RowClassName="FluxoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdFluxo" msdata:Caption="IdFotog" msprop:Generator_ColumnVarNameInTable="columnIdFluxo" msprop:Generator_ColumnPropNameInRow="IdFluxo" msprop:Generator_ColumnPropNameInTable="IdFluxoColumn" msprop:Generator_UserColumnName="IdFluxo" type="xs:int" />
+              <xs:element name="IdMeta" msprop:Generator_ColumnVarNameInTable="columnIdMeta" msprop:Generator_ColumnPropNameInRow="IdMeta" msprop:Generator_ColumnPropNameInTable="IdMetaColumn" msprop:Generator_UserColumnName="IdMeta" type="xs:int" minOccurs="0" />
+              <xs:element name="DiaInicio" msprop:Generator_ColumnVarNameInTable="columnDiaInicio" msprop:Generator_ColumnPropNameInRow="DiaInicio" msprop:Generator_ColumnPropNameInTable="DiaInicioColumn" msprop:Generator_UserColumnName="DiaInicio" type="xs:int" minOccurs="0" />
+              <xs:element name="DiaFim" msprop:Generator_ColumnVarNameInTable="columnDiaFim" msprop:Generator_ColumnPropNameInRow="DiaFim" msprop:Generator_ColumnPropNameInTable="DiaFimColumn" msprop:Generator_UserColumnName="DiaFim" type="xs:int" minOccurs="0" />
+              <xs:element name="Meta" msdata:Caption="MetaDiaria" msprop:Generator_ColumnVarNameInTable="columnMeta" msprop:Generator_ColumnPropNameInRow="Meta" msprop:Generator_ColumnPropNameInTable="MetaColumn" msprop:Generator_UserColumnName="Meta" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Percentual" msdata:Caption="MetaSemana" msprop:Generator_ColumnVarNameInTable="columnPercentual" msprop:Generator_ColumnPropNameInRow="Percentual" msprop:Generator_ColumnPropNameInTable="PercentualColumn" msprop:Generator_UserColumnName="Percentual" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Alcancado" msprop:Generator_ColumnVarNameInTable="columnAlcancado" msprop:Generator_ColumnPropNameInRow="Alcancado" msprop:Generator_ColumnPropNameInTable="AlcancadoColumn" msprop:Generator_UserColumnName="Alcancado" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Produtividade" msprop:Generator_ColumnVarNameInTable="columnProdutividade" msprop:Generator_ColumnPropNameInRow="Produtividade" msprop:Generator_ColumnPropNameInTable="ProdutividadeColumn" msprop:Generator_UserColumnName="Produtividade" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Recebimento" msprop:Generator_TableClassName="RecebimentoDataTable" msprop:Generator_TableVarName="tableRecebimento" msprop:Generator_TablePropName="Recebimento" msprop:Generator_RowDeletingName="RecebimentoRowDeleting" msprop:Generator_RowChangingName="RecebimentoRowChanging" msprop:Generator_RowEvHandlerName="RecebimentoRowChangeEventHandler" msprop:Generator_RowDeletedName="RecebimentoRowDeleted" msprop:Generator_UserTableName="Recebimento" msprop:Generator_RowChangedName="RecebimentoRowChanged" msprop:Generator_RowEvArgName="RecebimentoRowChangeEvent" msprop:Generator_RowClassName="RecebimentoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdRecebimento" msdata:Caption="IdFotog" msprop:Generator_ColumnVarNameInTable="columnIdRecebimento" msprop:Generator_ColumnPropNameInRow="IdRecebimento" msprop:Generator_ColumnPropNameInTable="IdRecebimentoColumn" msprop:Generator_UserColumnName="IdRecebimento" type="xs:int" />
+              <xs:element name="IdMeta" msprop:Generator_ColumnVarNameInTable="columnIdMeta" msprop:Generator_ColumnPropNameInRow="IdMeta" msprop:Generator_ColumnPropNameInTable="IdMetaColumn" msprop:Generator_UserColumnName="IdMeta" type="xs:int" minOccurs="0" />
+              <xs:element name="DiaInicio" msprop:Generator_ColumnVarNameInTable="columnDiaInicio" msprop:Generator_ColumnPropNameInRow="DiaInicio" msprop:Generator_ColumnPropNameInTable="DiaInicioColumn" msprop:Generator_UserColumnName="DiaInicio" type="xs:int" minOccurs="0" />
+              <xs:element name="DiaFim" msprop:Generator_ColumnVarNameInTable="columnDiaFim" msprop:Generator_ColumnPropNameInRow="DiaFim" msprop:Generator_ColumnPropNameInTable="DiaFimColumn" msprop:Generator_UserColumnName="DiaFim" type="xs:int" minOccurs="0" />
+              <xs:element name="Meta" msdata:Caption="MetaDiaria" msprop:Generator_ColumnVarNameInTable="columnMeta" msprop:Generator_ColumnPropNameInRow="Meta" msprop:Generator_ColumnPropNameInTable="MetaColumn" msprop:Generator_UserColumnName="Meta" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Percentual" msdata:Caption="MetaSemana" msprop:Generator_ColumnVarNameInTable="columnPercentual" msprop:Generator_ColumnPropNameInRow="Percentual" msprop:Generator_ColumnPropNameInTable="PercentualColumn" msprop:Generator_UserColumnName="Percentual" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Alcancado" msprop:Generator_ColumnVarNameInTable="columnAlcancado" msprop:Generator_ColumnPropNameInRow="Alcancado" msprop:Generator_ColumnPropNameInTable="AlcancadoColumn" msprop:Generator_UserColumnName="Alcancado" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Produtividade" msprop:Generator_ColumnVarNameInTable="columnProdutividade" msprop:Generator_ColumnPropNameInRow="Produtividade" msprop:Generator_ColumnPropNameInTable="ProdutividadeColumn" msprop:Generator_UserColumnName="Produtividade" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Meta" />
+      <xs:field xpath="mstns:IdMeta" />
+    </xs:unique>
+    <xs:unique name="Fotografado_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Fotografado" />
+      <xs:field xpath="mstns:IdFotografado" />
+    </xs:unique>
+    <xs:unique name="Faturamento_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Faturamento" />
+      <xs:field xpath="mstns:IdFaturamento" />
+    </xs:unique>
+    <xs:unique name="Entrada_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Entrada" />
+      <xs:field xpath="mstns:IdEntrada" />
+    </xs:unique>
+    <xs:unique name="Fluxo_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Fluxo" />
+      <xs:field xpath="mstns:IdFluxo" />
+    </xs:unique>
+    <xs:unique name="Recebimento_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Recebimento" />
+      <xs:field xpath="mstns:IdRecebimento" />
+    </xs:unique>
+  </xs:element>
+  <xs:annotation>
+    <xs:appinfo>
+      <msdata:Relationship name="Meta_Fotografados" msdata:parent="Meta" msdata:child="Fotografado" msdata:parentkey="IdMeta" msdata:childkey="IdMeta" msprop:Generator_UserChildTable="Fotografado" msprop:Generator_ChildPropName="GetFotografadoRows" msprop:Generator_UserRelationName="Meta_Fotografados" msprop:Generator_ParentPropName="MetaRow" msprop:Generator_RelationVarName="relationMeta_Fotografados" msprop:Generator_UserParentTable="Meta" />
+      <msdata:Relationship name="Meta_Faturamento" msdata:parent="Meta" msdata:child="Faturamento" msdata:parentkey="IdMeta" msdata:childkey="IdMeta" msprop:Generator_UserChildTable="Faturamento" msprop:Generator_ChildPropName="GetFaturamentoRows" msprop:Generator_UserRelationName="Meta_Faturamento" msprop:Generator_ParentPropName="MetaRow" msprop:Generator_RelationVarName="relationMeta_Faturamento" msprop:Generator_UserParentTable="Meta" />
+      <msdata:Relationship name="Meta_Entrada" msdata:parent="Meta" msdata:child="Entrada" msdata:parentkey="IdMeta" msdata:childkey="IdMeta" msprop:Generator_UserChildTable="Entrada" msprop:Generator_ChildPropName="GetEntradaRows" msprop:Generator_UserRelationName="Meta_Entrada" msprop:Generator_ParentPropName="MetaRow" msprop:Generator_RelationVarName="relationMeta_Entrada" msprop:Generator_UserParentTable="Meta" />
+      <msdata:Relationship name="Meta_Fluxo" msdata:parent="Meta" msdata:child="Fluxo" msdata:parentkey="IdMeta" msdata:childkey="IdMeta" msprop:Generator_UserChildTable="Fluxo" msprop:Generator_ChildPropName="GetFluxoRows" msprop:Generator_UserRelationName="Meta_Fluxo" msprop:Generator_ParentPropName="MetaRow" msprop:Generator_RelationVarName="relationMeta_Fluxo" msprop:Generator_UserParentTable="Meta" />
+      <msdata:Relationship name="Meta_Recebimento" msdata:parent="Meta" msdata:child="Recebimento" msdata:parentkey="IdMeta" msdata:childkey="IdMeta" msprop:Generator_UserChildTable="Recebimento" msprop:Generator_ChildPropName="GetRecebimentoRows" msprop:Generator_UserRelationName="Meta_Recebimento" msprop:Generator_ParentPropName="MetaRow" msprop:Generator_RelationVarName="relationMeta_Recebimento" msprop:Generator_UserParentTable="Meta" />
+    </xs:appinfo>
+  </xs:annotation>
+</xs:schema>

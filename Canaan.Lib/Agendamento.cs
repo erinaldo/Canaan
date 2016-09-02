@@ -19,6 +19,16 @@ namespace Canaan.Lib
             }
         }
 
+        public Dados.Agendamento GetByVendaEvento(int idVendaEvento)
+        {
+            using (var conn = new Dados.CanaanModelContainer())
+            {
+                return conn.Agendamento
+                           .Include(a => a.Cupom)
+                           .FirstOrDefault(a => a.Cupom.IdCupomWeb == idVendaEvento);
+            }
+        }
+
         public List<Dados.Agendamento> GetByNome(string nome)
         {
             throw new NotImplementedException();

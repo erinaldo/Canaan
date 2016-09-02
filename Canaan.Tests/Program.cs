@@ -1,6 +1,7 @@
 ﻿using Canaan.Servicos.Laboratorio.Services;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,7 +13,12 @@ namespace Canaan.Tests
         static void Main(string[] args)
         {
             //GetList();
-            GetItem(3);
+            //GetItem(3);
+            
+            var imagem = File.ReadAllBytes(@"C:\Users\jobvi\Pictures\DSC_003801.canaan");
+            var decrypt = Canaan.Lib.Utilitarios.Criptografia.Descriptografa(imagem);
+
+            File.WriteAllBytes(@"C:\Users\jobvi\Pictures\DSC_003801.jpg", imagem);
         }
 
         public static void GetList()

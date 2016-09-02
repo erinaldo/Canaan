@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="7ed0a3911b714e4798ed1863b19a1b75" Name="Diagram1" ShowGrid="false" ZoomLevel="71">
+        <EntityTypeShape EntityType="CPanelModel.cadernos" Width="1.75" PointX="17.875" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CPanelModel.cadernos_devolucoes" Width="1.875" PointX="23.125" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CPanelModel.cadernos_devolucoes_motivos" Width="2.375" PointX="23.125" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CPanelModel.cadernos_liberacoes" Width="1.875" PointX="21" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="CPanelModel.cadernos_liberacoes_tipos" Width="2.125" PointX="17.625" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="CPanelModel.filiais" Width="1.5" PointX="15.5" PointY="4.375" IsExpanded="true" />
+        <AssociationConnector Association="CPanelModel.FK_cadernos_filiais" ManuallyRouted="false" />
+        <AssociationConnector Association="CPanelModel.FK_cadernos_devolucoes_cadernos_devolucoes_motivos" ManuallyRouted="false" />
+        <AssociationConnector Association="CPanelModel.FK_cadernos_liberacoes_cadernos_liberacoes_tipos" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="CPanelModel.cadernos_vendas" Width="2.25" PointX="20.375" PointY="3.5" />
+        <AssociationConnector Association="CPanelModel.FK_cadernos_vendas_cadernos" />
+        <AssociationConnector Association="CPanelModel.FK_cadernos_devolucoes_cadernos_vendas" />
+        <AssociationConnector Association="CPanelModel.FK_cadernos_liberacoes_cadernos_vendas" />
+        <EntityTypeShape EntityType="CPanelModel.filiais_natureza" Width="1.5" PointX="13.125" PointY="2.375" />
+        <EntityTypeShape EntityType="CPanelModel.filiais_tipo" Width="1.5" PointX="15.5" PointY="2.125" />
+        <AssociationConnector Association="CPanelModel.FK_filiais_filiais_natureza" />
+        <AssociationConnector Association="CPanelModel.FK_filiais_filiais_tipo" />
+        <EntityTypeShape EntityType="CPanelModel.periodos" Width="1.5" PointX="12.125" PointY="8" />
+        <EntityTypeShape EntityType="CPanelModel.periodos_feriados" Width="1.5" PointX="15.125" PointY="9.875" />
+        <EntityTypeShape EntityType="CPanelModel.periodos_objetivos" Width="1.5" PointX="18.25" PointY="12" />
+        <EntityTypeShape EntityType="CPanelModel.periodos_semanas" Width="1.5" PointX="9.5" PointY="10.625" />
+        <AssociationConnector Association="CPanelModel.FK_periodos_filiais" />
+        <AssociationConnector Association="CPanelModel.FK_periodos_feriados_periodos" />
+        <AssociationConnector Association="CPanelModel.FK_periodos_objetivos_periodos" />
+        <AssociationConnector Association="CPanelModel.FK_periodos_semanas_periodos" />
+        <EntityTypeShape EntityType="CPanelModel.usuarios" Width="1.5" PointX="8.75" PointY="1.75" />
+        <EntityTypeShape EntityType="CPanelModel.usuarios_grupos" Width="1.5" PointX="5.375" PointY="0.5" />
+        <AssociationConnector Association="CPanelModel.FK_usuarios_usuarios_grupos" />
+        <EntityTypeShape EntityType="CPanelModel.setores" Width="1.5" PointX="13.25" PointY="4.875" />
+        <AssociationConnector Association="CPanelModel.FK_filiais_setores" />
+        <EntityTypeShape EntityType="CPanelModel.lancamentos" Width="1.5" PointX="6.125" PointY="6.875" />
+        <AssociationConnector Association="CPanelModel.FK_lancamentos_filiais" />
+        <AssociationConnector Association="CPanelModel.FK_lancamentos_periodos" />
+        <AssociationConnector Association="CPanelModel.FK_lancamentos_periodos_semanas" />
+        <AssociationConnector Association="CPanelModel.FK_lancamentos_usuarios" />
+        <EntityTypeShape EntityType="CPanelModel.meses" Width="1.5" PointX="11.25" PointY="0.5" />
+        <EntityTypeShape EntityType="CPanelModel.metas_entradas" Width="1.5" PointX="23.75" PointY="2.75" />
+        <EntityTypeShape EntityType="CPanelModel.metas_faturamento" Width="1.5" PointX="20.75" PointY="14.625" />
+        <EntityTypeShape EntityType="CPanelModel.metas_fluxo" Width="1.5" PointX="23.75" PointY="16.75" />
+        <EntityTypeShape EntityType="CPanelModel.metas_fotografados" Width="1.5" PointX="23.75" PointY="12.75" />
+        <EntityTypeShape EntityType="CPanelModel.metas_recebimento" Width="1.5" PointX="17.75" PointY="0.75" />
+        <AssociationConnector Association="CPanelModel.FK_metas_entradas_filiais" />
+        <AssociationConnector Association="CPanelModel.FK_metas_faturamento_filiais" />
+        <AssociationConnector Association="CPanelModel.FK_metas_fluxo_filiais" />
+        <AssociationConnector Association="CPanelModel.FK_metas_fotografados_filiais" />
+        <AssociationConnector Association="CPanelModel.FK_metas_recebimento_filiais" />
+        <AssociationConnector Association="CPanelModel.FK_metas_entradas_periodos" />
+        <AssociationConnector Association="CPanelModel.FK_metas_entradas_periodos_semanas" />
+        <AssociationConnector Association="CPanelModel.FK_metas_faturamento_periodos" />
+        <AssociationConnector Association="CPanelModel.FK_metas_faturamento_periodos_semanas" />
+        <AssociationConnector Association="CPanelModel.FK_metas_fluxo_periodos" />
+        <AssociationConnector Association="CPanelModel.FK_metas_fluxo_periodos_semanas" />
+        <AssociationConnector Association="CPanelModel.FK_metas_fotografados_periodos" />
+        <AssociationConnector Association="CPanelModel.FK_metas_fotografados_periodos_semanas" />
+        <AssociationConnector Association="CPanelModel.FK_metas_recebimento_periodos" />
+        <AssociationConnector Association="CPanelModel.FK_metas_recebimento_periodos_semanas" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

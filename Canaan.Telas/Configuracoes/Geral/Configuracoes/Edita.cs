@@ -97,6 +97,10 @@ namespace Canaan.Telas.Configuracoes.Geral.Configuracoes
             cMarketingIdTextBox.Text = this.Item.CMarketingId.ToString();
             rmColigadaTextBox.Text = this.Item.RMColigada.ToString();
             rmFilialTextBox.Text = this.Item.RMFilial.ToString();
+
+            //textos
+            eventoTextBox.Text = this.Item.TextoEvento;
+            contratoTextBox.Text = this.Item.TextoContrato;
         }
 
         protected override void CarregaItem()
@@ -135,6 +139,10 @@ namespace Canaan.Telas.Configuracoes.Geral.Configuracoes
             this.Item.CMarketingId = int.Parse(cMarketingIdTextBox.Text);
             this.Item.RMColigada = int.Parse(rmColigadaTextBox.Text);
             this.Item.RMFilial = int.Parse(rmFilialTextBox.Text);
+
+            //texto
+            this.Item.TextoEvento = eventoTextBox.Text;
+            this.Item.TextoContrato = contratoTextBox.Text;
         }
 
         protected override void Editar()

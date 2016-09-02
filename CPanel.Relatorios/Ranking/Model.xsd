@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Model" targetNamespace="http://tempuri.org/Model.xsd" xmlns:mstns="http://tempuri.org/Model.xsd" xmlns="http://tempuri.org/Model.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="Model" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="Model" msprop:Generator_UserDSName="Model">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Ranking" msprop:Generator_TableClassName="RankingDataTable" msprop:Generator_TableVarName="tableRanking" msprop:Generator_TablePropName="Ranking" msprop:Generator_RowDeletingName="RankingRowDeleting" msprop:Generator_RowChangingName="RankingRowChanging" msprop:Generator_RowEvHandlerName="RankingRowChangeEventHandler" msprop:Generator_RowDeletedName="RankingRowDeleted" msprop:Generator_UserTableName="Ranking" msprop:Generator_RowChangedName="RankingRowChanged" msprop:Generator_RowEvArgName="RankingRowChangeEvent" msprop:Generator_RowClassName="RankingRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdRanking" msprop:Generator_ColumnVarNameInTable="columnIdRanking" msprop:Generator_ColumnPropNameInRow="IdRanking" msprop:Generator_ColumnPropNameInTable="IdRankingColumn" msprop:Generator_UserColumnName="IdRanking" type="xs:int" />
+              <xs:element name="Tipo" msprop:Generator_ColumnVarNameInTable="columnTipo" msprop:Generator_ColumnPropNameInRow="Tipo" msprop:Generator_ColumnPropNameInTable="TipoColumn" msprop:Generator_UserColumnName="Tipo" type="xs:string" minOccurs="0" />
+              <xs:element name="Mes" msprop:Generator_ColumnVarNameInTable="columnMes" msprop:Generator_ColumnPropNameInRow="Mes" msprop:Generator_ColumnPropNameInTable="MesColumn" msprop:Generator_UserColumnName="Mes" type="xs:int" minOccurs="0" />
+              <xs:element name="Ano" msprop:Generator_ColumnVarNameInTable="columnAno" msprop:Generator_ColumnPropNameInRow="Ano" msprop:Generator_ColumnPropNameInTable="AnoColumn" msprop:Generator_UserColumnName="Ano" type="xs:int" minOccurs="0" />
+              <xs:element name="DiaInicio" msprop:Generator_ColumnVarNameInTable="columnDiaInicio" msprop:Generator_ColumnPropNameInRow="DiaInicio" msprop:Generator_ColumnPropNameInTable="DiaInicioColumn" msprop:Generator_UserColumnName="DiaInicio" type="xs:int" minOccurs="0" />
+              <xs:element name="DiaFim" msprop:Generator_ColumnVarNameInTable="columnDiaFim" msprop:Generator_ColumnPropNameInRow="DiaFim" msprop:Generator_ColumnPropNameInTable="DiaFimColumn" msprop:Generator_UserColumnName="DiaFim" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Faturamento" msprop:Generator_TableClassName="FaturamentoDataTable" msprop:Generator_TableVarName="tableFaturamento" msprop:Generator_TablePropName="Faturamento" msprop:Generator_RowDeletingName="FaturamentoRowDeleting" msprop:Generator_RowChangingName="FaturamentoRowChanging" msprop:Generator_RowEvHandlerName="FaturamentoRowChangeEventHandler" msprop:Generator_RowDeletedName="FaturamentoRowDeleted" msprop:Generator_UserTableName="Faturamento" msprop:Generator_RowChangedName="FaturamentoRowChanged" msprop:Generator_RowEvArgName="FaturamentoRowChangeEvent" msprop:Generator_RowClassName="FaturamentoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdFat" msprop:Generator_ColumnVarNameInTable="columnIdFat" msprop:Generator_ColumnPropNameInRow="IdFat" msprop:Generator_ColumnPropNameInTable="IdFatColumn" msprop:Generator_UserColumnName="IdFat" type="xs:int" />
+              <xs:element name="IdRanking" msprop:Generator_ColumnVarNameInTable="columnIdRanking" msprop:Generator_ColumnPropNameInRow="IdRanking" msprop:Generator_ColumnPropNameInTable="IdRankingColumn" msprop:Generator_UserColumnName="IdRanking" type="xs:int" minOccurs="0" />
+              <xs:element name="Filial" msprop:Generator_ColumnVarNameInTable="columnFilial" msprop:Generator_ColumnPropNameInRow="Filial" msprop:Generator_ColumnPropNameInTable="FilialColumn" msprop:Generator_UserColumnName="Filial" type="xs:string" minOccurs="0" />
+              <xs:element name="Meta" msprop:Generator_ColumnVarNameInTable="columnMeta" msprop:Generator_ColumnPropNameInRow="Meta" msprop:Generator_ColumnPropNameInTable="MetaColumn" msprop:Generator_UserColumnName="Meta" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Realizado" msprop:Generator_ColumnVarNameInTable="columnRealizado" msprop:Generator_ColumnPropNameInRow="Realizado" msprop:Generator_ColumnPropNameInTable="RealizadoColumn" msprop:Generator_UserColumnName="Realizado" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Produtividade" msprop:Generator_ColumnVarNameInTable="columnProdutividade" msprop:Generator_ColumnPropNameInRow="Produtividade" msprop:Generator_ColumnPropNameInTable="ProdutividadeColumn" msprop:Generator_UserColumnName="Produtividade" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Fotografados" msprop:Generator_TableClassName="FotografadosDataTable" msprop:Generator_TableVarName="tableFotografados" msprop:Generator_TablePropName="Fotografados" msprop:Generator_RowDeletingName="FotografadosRowDeleting" msprop:Generator_RowChangingName="FotografadosRowChanging" msprop:Generator_RowEvHandlerName="FotografadosRowChangeEventHandler" msprop:Generator_RowDeletedName="FotografadosRowDeleted" msprop:Generator_UserTableName="Fotografados" msprop:Generator_RowChangedName="FotografadosRowChanged" msprop:Generator_RowEvArgName="FotografadosRowChangeEvent" msprop:Generator_RowClassName="FotografadosRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdFotog" msdata:Caption="IdFat" msprop:Generator_ColumnVarNameInTable="columnIdFotog" msprop:Generator_ColumnPropNameInRow="IdFotog" msprop:Generator_ColumnPropNameInTable="IdFotogColumn" msprop:Generator_UserColumnName="IdFotog" type="xs:int" />
+              <xs:element name="IdRanking" msprop:Generator_ColumnVarNameInTable="columnIdRanking" msprop:Generator_ColumnPropNameInRow="IdRanking" msprop:Generator_ColumnPropNameInTable="IdRankingColumn" msprop:Generator_UserColumnName="IdRanking" type="xs:int" minOccurs="0" />
+              <xs:element name="Filial" msprop:Generator_ColumnVarNameInTable="columnFilial" msprop:Generator_ColumnPropNameInRow="Filial" msprop:Generator_ColumnPropNameInTable="FilialColumn" msprop:Generator_UserColumnName="Filial" type="xs:string" minOccurs="0" />
+              <xs:element name="Meta" msprop:Generator_ColumnVarNameInTable="columnMeta" msprop:Generator_ColumnPropNameInRow="Meta" msprop:Generator_ColumnPropNameInTable="MetaColumn" msprop:Generator_UserColumnName="Meta" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Realizado" msprop:Generator_ColumnVarNameInTable="columnRealizado" msprop:Generator_ColumnPropNameInRow="Realizado" msprop:Generator_ColumnPropNameInTable="RealizadoColumn" msprop:Generator_UserColumnName="Realizado" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Produtividade" msprop:Generator_ColumnVarNameInTable="columnProdutividade" msprop:Generator_ColumnPropNameInRow="Produtividade" msprop:Generator_ColumnPropNameInTable="ProdutividadeColumn" msprop:Generator_UserColumnName="Produtividade" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Entradas" msprop:Generator_TableClassName="EntradasDataTable" msprop:Generator_TableVarName="tableEntradas" msprop:Generator_TablePropName="Entradas" msprop:Generator_RowDeletingName="EntradasRowDeleting" msprop:Generator_RowChangingName="EntradasRowChanging" msprop:Generator_RowEvHandlerName="EntradasRowChangeEventHandler" msprop:Generator_RowDeletedName="EntradasRowDeleted" msprop:Generator_UserTableName="Entradas" msprop:Generator_RowChangedName="EntradasRowChanged" msprop:Generator_RowEvArgName="EntradasRowChangeEvent" msprop:Generator_RowClassName="EntradasRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdEntrada" msdata:Caption="IdFat" msprop:Generator_ColumnVarNameInTable="columnIdEntrada" msprop:Generator_ColumnPropNameInRow="IdEntrada" msprop:Generator_ColumnPropNameInTable="IdEntradaColumn" msprop:Generator_UserColumnName="IdEntrada" type="xs:int" />
+              <xs:element name="IdRanking" msprop:Generator_ColumnVarNameInTable="columnIdRanking" msprop:Generator_ColumnPropNameInRow="IdRanking" msprop:Generator_ColumnPropNameInTable="IdRankingColumn" msprop:Generator_UserColumnName="IdRanking" type="xs:int" minOccurs="0" />
+              <xs:element name="Filial" msprop:Generator_ColumnVarNameInTable="columnFilial" msprop:Generator_ColumnPropNameInRow="Filial" msprop:Generator_ColumnPropNameInTable="FilialColumn" msprop:Generator_UserColumnName="Filial" type="xs:string" minOccurs="0" />
+              <xs:element name="Meta" msprop:Generator_ColumnVarNameInTable="columnMeta" msprop:Generator_ColumnPropNameInRow="Meta" msprop:Generator_ColumnPropNameInTable="MetaColumn" msprop:Generator_UserColumnName="Meta" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Realizado" msprop:Generator_ColumnVarNameInTable="columnRealizado" msprop:Generator_ColumnPropNameInRow="Realizado" msprop:Generator_ColumnPropNameInTable="RealizadoColumn" msprop:Generator_UserColumnName="Realizado" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Produtividade" msprop:Generator_ColumnVarNameInTable="columnProdutividade" msprop:Generator_ColumnPropNameInRow="Produtividade" msprop:Generator_ColumnPropNameInTable="ProdutividadeColumn" msprop:Generator_UserColumnName="Produtividade" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Fluxo" msprop:Generator_TableClassName="FluxoDataTable" msprop:Generator_TableVarName="tableFluxo" msprop:Generator_TablePropName="Fluxo" msprop:Generator_RowDeletingName="FluxoRowDeleting" msprop:Generator_RowChangingName="FluxoRowChanging" msprop:Generator_RowEvHandlerName="FluxoRowChangeEventHandler" msprop:Generator_RowDeletedName="FluxoRowDeleted" msprop:Generator_UserTableName="Fluxo" msprop:Generator_RowChangedName="FluxoRowChanged" msprop:Generator_RowEvArgName="FluxoRowChangeEvent" msprop:Generator_RowClassName="FluxoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdFluxo" msdata:Caption="IdFat" msprop:Generator_ColumnVarNameInTable="columnIdFluxo" msprop:Generator_ColumnPropNameInRow="IdFluxo" msprop:Generator_ColumnPropNameInTable="IdFluxoColumn" msprop:Generator_UserColumnName="IdFluxo" type="xs:int" />
+              <xs:element name="IdRanking" msprop:Generator_ColumnVarNameInTable="columnIdRanking" msprop:Generator_ColumnPropNameInRow="IdRanking" msprop:Generator_ColumnPropNameInTable="IdRankingColumn" msprop:Generator_UserColumnName="IdRanking" type="xs:int" minOccurs="0" />
+              <xs:element name="Filial" msprop:Generator_ColumnVarNameInTable="columnFilial" msprop:Generator_ColumnPropNameInRow="Filial" msprop:Generator_ColumnPropNameInTable="FilialColumn" msprop:Generator_UserColumnName="Filial" type="xs:string" minOccurs="0" />
+              <xs:element name="Meta" msprop:Generator_ColumnVarNameInTable="columnMeta" msprop:Generator_ColumnPropNameInRow="Meta" msprop:Generator_ColumnPropNameInTable="MetaColumn" msprop:Generator_UserColumnName="Meta" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Realizado" msprop:Generator_ColumnVarNameInTable="columnRealizado" msprop:Generator_ColumnPropNameInRow="Realizado" msprop:Generator_ColumnPropNameInTable="RealizadoColumn" msprop:Generator_UserColumnName="Realizado" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Produtividade" msprop:Generator_ColumnVarNameInTable="columnProdutividade" msprop:Generator_ColumnPropNameInRow="Produtividade" msprop:Generator_ColumnPropNameInTable="ProdutividadeColumn" msprop:Generator_UserColumnName="Produtividade" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Recebimento" msprop:Generator_TableClassName="RecebimentoDataTable" msprop:Generator_TableVarName="tableRecebimento" msprop:Generator_TablePropName="Recebimento" msprop:Generator_RowDeletingName="RecebimentoRowDeleting" msprop:Generator_RowChangingName="RecebimentoRowChanging" msprop:Generator_RowEvHandlerName="RecebimentoRowChangeEventHandler" msprop:Generator_RowDeletedName="RecebimentoRowDeleted" msprop:Generator_UserTableName="Recebimento" msprop:Generator_RowChangedName="RecebimentoRowChanged" msprop:Generator_RowEvArgName="RecebimentoRowChangeEvent" msprop:Generator_RowClassName="RecebimentoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdReceb" msdata:Caption="IdFat" msprop:Generator_ColumnVarNameInTable="columnIdReceb" msprop:Generator_ColumnPropNameInRow="IdReceb" msprop:Generator_ColumnPropNameInTable="IdRecebColumn" msprop:Generator_UserColumnName="IdReceb" type="xs:int" />
+              <xs:element name="IdRanking" msprop:Generator_ColumnVarNameInTable="columnIdRanking" msprop:Generator_ColumnPropNameInRow="IdRanking" msprop:Generator_ColumnPropNameInTable="IdRankingColumn" msprop:Generator_UserColumnName="IdRanking" type="xs:int" minOccurs="0" />
+              <xs:element name="Filial" msprop:Generator_ColumnVarNameInTable="columnFilial" msprop:Generator_ColumnPropNameInRow="Filial" msprop:Generator_ColumnPropNameInTable="FilialColumn" msprop:Generator_UserColumnName="Filial" type="xs:string" minOccurs="0" />
+              <xs:element name="Meta" msprop:Generator_ColumnVarNameInTable="columnMeta" msprop:Generator_ColumnPropNameInRow="Meta" msprop:Generator_ColumnPropNameInTable="MetaColumn" msprop:Generator_UserColumnName="Meta" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Realizado" msprop:Generator_ColumnVarNameInTable="columnRealizado" msprop:Generator_ColumnPropNameInRow="Realizado" msprop:Generator_ColumnPropNameInTable="RealizadoColumn" msprop:Generator_UserColumnName="Realizado" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Produtividade" msprop:Generator_ColumnVarNameInTable="columnProdutividade" msprop:Generator_ColumnPropNameInRow="Produtividade" msprop:Generator_ColumnPropNameInTable="ProdutividadeColumn" msprop:Generator_UserColumnName="Produtividade" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Ranking" />
+      <xs:field xpath="mstns:IdRanking" />
+    </xs:unique>
+    <xs:unique name="Faturamento_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Faturamento" />
+      <xs:field xpath="mstns:IdFat" />
+    </xs:unique>
+    <xs:unique name="Fotografados_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Fotografados" />
+      <xs:field xpath="mstns:IdFotog" />
+    </xs:unique>
+    <xs:unique name="Entradas_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Entradas" />
+      <xs:field xpath="mstns:IdEntrada" />
+    </xs:unique>
+    <xs:unique name="Fluxo_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Fluxo" />
+      <xs:field xpath="mstns:IdFluxo" />
+    </xs:unique>
+    <xs:unique name="Recebimento_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Recebimento" />
+      <xs:field xpath="mstns:IdReceb" />
+    </xs:unique>
+  </xs:element>
+  <xs:annotation>
+    <xs:appinfo>
+      <msdata:Relationship name="Ranking_Faturamento" msdata:parent="Ranking" msdata:child="Faturamento" msdata:parentkey="IdRanking" msdata:childkey="IdRanking" msprop:Generator_UserChildTable="Faturamento" msprop:Generator_ChildPropName="GetFaturamentoRows" msprop:Generator_UserRelationName="Ranking_Faturamento" msprop:Generator_ParentPropName="RankingRow" msprop:Generator_RelationVarName="relationRanking_Faturamento" msprop:Generator_UserParentTable="Ranking" />
+      <msdata:Relationship name="Ranking_Fotografados" msdata:parent="Ranking" msdata:child="Fotografados" msdata:parentkey="IdRanking" msdata:childkey="IdRanking" msprop:Generator_UserChildTable="Fotografados" msprop:Generator_ChildPropName="GetFotografadosRows" msprop:Generator_UserRelationName="Ranking_Fotografados" msprop:Generator_ParentPropName="RankingRow" msprop:Generator_RelationVarName="relationRanking_Fotografados" msprop:Generator_UserParentTable="Ranking" />
+      <msdata:Relationship name="Ranking_Entradas" msdata:parent="Ranking" msdata:child="Entradas" msdata:parentkey="IdRanking" msdata:childkey="IdRanking" msprop:Generator_UserChildTable="Entradas" msprop:Generator_ChildPropName="GetEntradasRows" msprop:Generator_UserRelationName="Ranking_Entradas" msprop:Generator_ParentPropName="RankingRow" msprop:Generator_RelationVarName="relationRanking_Entradas" msprop:Generator_UserParentTable="Ranking" />
+      <msdata:Relationship name="Ranking_Fluxo" msdata:parent="Ranking" msdata:child="Fluxo" msdata:parentkey="IdRanking" msdata:childkey="IdRanking" msprop:Generator_UserChildTable="Fluxo" msprop:Generator_ChildPropName="GetFluxoRows" msprop:Generator_UserRelationName="Ranking_Fluxo" msprop:Generator_ParentPropName="RankingRow" msprop:Generator_RelationVarName="relationRanking_Fluxo" msprop:Generator_UserParentTable="Ranking" />
+      <msdata:Relationship name="Ranking_Recebimento" msdata:parent="Ranking" msdata:child="Recebimento" msdata:parentkey="IdRanking" msdata:childkey="IdRanking" msprop:Generator_UserChildTable="Recebimento" msprop:Generator_ChildPropName="GetRecebimentoRows" msprop:Generator_UserRelationName="Ranking_Recebimento" msprop:Generator_ParentPropName="RankingRow" msprop:Generator_RelationVarName="relationRanking_Recebimento" msprop:Generator_UserParentTable="Ranking" />
+    </xs:appinfo>
+  </xs:annotation>
+</xs:schema>

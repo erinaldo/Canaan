@@ -17,6 +17,7 @@ namespace Canaan.Dados
         public Parceria()
         {
             this.Cupom = new HashSet<Cupom>();
+            this.Evento = new HashSet<Evento>();
         }
     
         public int IdParceria { get; set; }
@@ -40,5 +41,6 @@ namespace Canaan.Dados
         public virtual Convenio Convenio { get; set; }
         public virtual Filial Filial { get; set; }
         public virtual ICollection<Cupom> Cupom { get; set; }
+        public virtual ICollection<Evento> Evento { get; set; }
     }
 }

@@ -120,6 +120,7 @@ namespace Canaan.Telas.Movimentacoes.Venda.Documentacao
             frm.ShowDialog();
 
             FinalizaVenda(frm.TipoVenda);
+            CriaAgendamento();
         }
 
         private void btAditamento_Click(object sender, EventArgs e)
@@ -356,6 +357,93 @@ namespace Canaan.Telas.Movimentacoes.Venda.Documentacao
                 //salva atualizacao do lancamento
                 LibLancamento.Update(item);
             }
+        }
+
+        private void CriaAgendamento()
+        {
+            var vendaEventos = new Lib.VendaEvento().GetByVenda(this.Venda.IdPedido);
+
+            if (vendaEventos.Count > 0)
+            {
+                var msg = "Deseja incluir os Eventos / Acompanhamentos na agenda?";
+                if (MessageBox.Show(msg, "Confirmação", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    var agenda = new Lib.Agenda().GetByFilial(true, this.Venda.IdFilial);
+
+                    foreach (var item in vendaEventos)
+                    {
+                        var vendaEvento = new Lib.VendaEvento().GetById(item.IdVendaEvento);
+                        var agendamento = new Lib.Agendamento().GetByVendaEvento(item.IdVendaEvento);
+
+                        //verifica se agendamento ja existe
+                        if (agendamento == null)
+                        {
+                            NovoAgendamento(agenda, vendaEvento);
+                        }
+                        else
+                        {
+                            AlteraAgendamento(agendamento, vendaEvento);
+                        }
+                    }
+
+                    MessageBox.Show("Agendamentos atualizados com sucesso");
+                }
+            }
+        }
+
+        private Dados.Agendamento NovoAgendamento(Dados.Agenda agenda, Dados.VendaEvento vendaEvento)
+        {
+            //cria o cupom
+            var cupom = new Dados.Cupom
+            {
+                IdParceria = vendaEvento.Evento.IdParceria,
+                IdUsuario = Lib.Session.Instance.Usuario.IdUsuario,
+                Data = DateTime.Now,
+                DataPreenchimento = DateTime.Now,
+                Status = EnumCupomStatus.Agendado,
+                Nome = this.Venda.CliFor.Nome,
+                Telefone = this.Venda.CliFor.Telefone,
+                Celular = this.Venda.CliFor.Celular,
+                Email = this.Venda.CliFor.Email,
+                Obs = vendaEvento.Descricao,
+                IsAtivo = true,
+                UltimaUtilizacao = DateTime.Now,
+                IsAgendado = true,
+                DataAgendado = DateTime.Now,
+                IsDescartado = false,
+                IsLembrete = false,
+                IdCupomWeb = vendaEvento.IdVendaEvento
+            };
+            cupom = new Lib.Cupom().Insert(cupom);
+
+            //cria o agendamento
+            var agendamento = new Dados.Agendamento
+            {
+                Cupom = cupom,
+                IdAgenda = agenda.IdAgenda,
+                Status = EnumAgendamentoStatus.Agendado,
+                Inicio = vendaEvento.DataInicio,
+                Termino = vendaEvento.DataFim,
+                Observacao = vendaEvento.Descricao,
+                Modelo = this.Venda.CliFor.Nome,
+                IdUsuario = Lib.Session.Instance.Usuario.IdUsuario
+            };
+            agendamento = new Lib.Agendamento().Insert(agendamento);
+
+            return agendamento;
+        }
+
+        private Dados.Agendamento AlteraAgendamento(Dados.Agendamento agendamento, Dados.VendaEvento vendaEvento)
+        {
+            agendamento.Status = EnumAgendamentoStatus.Agendado;
+            agendamento.Inicio = vendaEvento.DataInicio;
+            agendamento.Termino = vendaEvento.DataFim;
+            agendamento.Observacao = vendaEvento.Descricao;
+            agendamento.Modelo = this.Venda.CliFor.Nome;
+
+            agendamento = new Lib.Agendamento().Update(agendamento);
+
+            return agendamento;
         }
 
         #endregion

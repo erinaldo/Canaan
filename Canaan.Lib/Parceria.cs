@@ -46,6 +46,17 @@ namespace Canaan.Lib
             }
         }
 
+        public List<Dados.Parceria> GetByFilial(int idFilial)
+        {
+            using (Dados.CanaanModelContainer conn = new Dados.CanaanModelContainer())
+            {
+                return conn.Parceria.Include(a => a.Filial)
+                                    .Include(a => a.Convenio)
+                                    .Where(a => a.IdFilial == idFilial && a.IsAtivo == true)
+                                    .ToList();
+            }
+        }
+
         public Dados.Parceria GetById(int id)
         {
             using (Dados.CanaanModelContainer conn = new Dados.CanaanModelContainer())

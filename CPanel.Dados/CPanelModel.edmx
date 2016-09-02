@@ -1,0 +1,2273 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="CPanelModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="cadernos">
+          <Key>
+            <PropertyRef Name="id_caderno" />
+          </Key>
+          <Property Name="id_caderno" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_filial" Type="int" Nullable="false" />
+          <Property Name="data" Type="datetime" Nullable="false" />
+          <Property Name="entrada_dinheiro" Type="money" Nullable="false" />
+          <Property Name="entrada_cartao" Type="money" Nullable="false" />
+          <Property Name="entrada_depositada" Type="money" Nullable="false" />
+          <Property Name="entrada_total" Type="money" Nullable="false" />
+          <Property Name="venda_prazo" Type="money" Nullable="false" />
+          <Property Name="venda_dinheiro" Type="money" Nullable="false" />
+          <Property Name="venda_cartao" Type="money" Nullable="false" />
+          <Property Name="venda_total" Type="money" Nullable="false" />
+          <Property Name="devolvida_valor" Type="money" Nullable="false" />
+          <Property Name="devolvida_qtde" Type="int" Nullable="false" />
+          <Property Name="programada_valor" Type="money" Nullable="false" />
+          <Property Name="programada_qtde" Type="int" Nullable="false" />
+          <Property Name="autorizada_valor" Type="money" Nullable="false" />
+          <Property Name="autorizada_qtde" Type="int" Nullable="false" />
+          <Property Name="fotografados" Type="int" Nullable="false" />
+          <Property Name="brinde" Type="int" Nullable="false" />
+          <Property Name="liberada_escrit" Type="bit" Nullable="false" />
+          <Property Name="liberada_gerente" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="cadernos_devolucoes">
+          <Key>
+            <PropertyRef Name="id_devolvida" />
+          </Key>
+          <Property Name="id_devolvida" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_venda" Type="int" Nullable="false" />
+          <Property Name="id_motivo" Type="int" Nullable="false" />
+          <Property Name="observacao" Type="text" Nullable="false" />
+        </EntityType>
+        <EntityType Name="cadernos_devolucoes_motivos">
+          <Key>
+            <PropertyRef Name="id_motivo" />
+          </Key>
+          <Property Name="id_motivo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="descricao" Type="varchar" MaxLength="150" Nullable="false" />
+        </EntityType>
+        <EntityType Name="cadernos_liberacoes">
+          <Key>
+            <PropertyRef Name="id_liberacao" />
+          </Key>
+          <Property Name="id_liberacao" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_venda" Type="int" Nullable="false" />
+          <Property Name="id_tipo" Type="int" Nullable="false" />
+          <Property Name="desconto" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="observacao" Type="text" Nullable="false" />
+        </EntityType>
+        <EntityType Name="cadernos_liberacoes_tipos">
+          <Key>
+            <PropertyRef Name="id_tipo" />
+          </Key>
+          <Property Name="id_tipo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="descricao" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="cadernos_vendas">
+          <Key>
+            <PropertyRef Name="id_venda" />
+          </Key>
+          <Property Name="id_venda" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_caderno" Type="int" Nullable="false" />
+          <Property Name="cod_cmaster" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="cod_rm" Type="varchar" MaxLength="50" />
+          <Property Name="vendedora" Type="varchar" MaxLength="150" />
+          <Property Name="nome_cliente" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="entrada_dinheiro" Type="money" Nullable="false" />
+          <Property Name="entrada_cartao" Type="money" Nullable="false" />
+          <Property Name="entrada_depositada" Type="money" Nullable="false" />
+          <Property Name="entrada_depositada_data" Type="date" />
+          <Property Name="venda_dinheiro" Type="money" Nullable="false" />
+          <Property Name="venda_cartao" Type="money" Nullable="false" />
+          <Property Name="venda_prazo" Type="money" Nullable="false" />
+          <Property Name="venda_total" Type="money" Nullable="false" />
+          <Property Name="is_programada" Type="bit" Nullable="false" />
+          <Property Name="is_devolvida" Type="bit" Nullable="false" />
+          <Property Name="is_autorizada" Type="bit" Nullable="false" />
+          <Property Name="cod_venda" Type="varchar" MaxLength="50" />
+          <Property Name="is_cortesia" Type="bit" />
+          <Property Name="is_acompanhamento" Type="bit" />
+        </EntityType>
+        <EntityType Name="filiais">
+          <Key>
+            <PropertyRef Name="id_filial" />
+          </Key>
+          <Property Name="id_filial" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_filial_natureza" Type="int" />
+          <Property Name="id_filial_tipo" Type="int" />
+          <Property Name="id_setor" Type="int" />
+          <Property Name="nome" Type="varchar" MaxLength="100" />
+          <Property Name="ativo" Type="bit" />
+          <Property Name="rm_coligada" Type="int" />
+          <Property Name="rm_filial" Type="int" />
+          <Property Name="rm_fantasia" Type="varchar" MaxLength="50" />
+          <Property Name="rm_custo" Type="varchar" MaxLength="50" />
+          <Property Name="rm_cpc" Type="varchar" MaxLength="50" />
+          <Property Name="spc" Type="varchar" MaxLength="50" />
+          <Property Name="spc_consulta" Type="int" />
+          <Property Name="spc_senha" Type="varchar" MaxLength="50" />
+          <Property Name="cep_padrao" Type="varchar" MaxLength="50" />
+          <Property Name="cservice_id" Type="int" />
+        </EntityType>
+        <EntityType Name="filiais_natureza">
+          <Key>
+            <PropertyRef Name="id_filial_natureza" />
+          </Key>
+          <Property Name="id_filial_natureza" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nome" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="filiais_tipo">
+          <Key>
+            <PropertyRef Name="id_filial_tipo" />
+          </Key>
+          <Property Name="id_filial_tipo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nome" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="lancamentos">
+          <Key>
+            <PropertyRef Name="id_lancamento" />
+          </Key>
+          <Property Name="id_lancamento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_usuario" Type="int" />
+          <Property Name="id_filial" Type="int" />
+          <Property Name="id_periodo" Type="int" />
+          <Property Name="id_periodo_semana" Type="int" />
+          <Property Name="data" Type="datetime" />
+          <Property Name="dia" Type="int" />
+          <Property Name="venda_entradas" Type="money" />
+          <Property Name="venda_entrada_cartao" Type="money" />
+          <Property Name="venda_entrada_depositada" Type="money" />
+          <Property Name="venda_prazo" Type="money" />
+          <Property Name="venda_vista" Type="money" />
+          <Property Name="venda_vista_cartao" Type="money" />
+          <Property Name="venda_devolvidas" Type="money" />
+          <Property Name="faturamento" Type="money" />
+          <Property Name="faturamento_bruto" Type="money" />
+          <Property Name="comissao" Type="money" />
+          <Property Name="recebimento" Type="money" />
+          <Property Name="recebimento_rm" Type="money" />
+          <Property Name="recebimento_caixa" Type="money" />
+          <Property Name="fluxo_caixa" Type="money" />
+          <Property Name="ponto_equilibrio" Type="money" />
+          <Property Name="fotografados" Type="int" />
+          <Property Name="fotografados_media" Type="int" />
+          <Property Name="fotografados_acumulo" Type="int" />
+          <Property Name="condicional" Type="int" />
+          <Property Name="condicional_acumulo" Type="int" />
+          <Property Name="condicional_media" Type="int" />
+          <Property Name="vendas" Type="int" />
+          <Property Name="vendas_acumulo" Type="int" />
+          <Property Name="vendas_media" Type="int" />
+          <Property Name="vendas_perc" Type="decimal" Precision="8" Scale="2" />
+          <Property Name="brindes" Type="int" />
+          <Property Name="bloqueado" Type="bit" />
+          <Property Name="atendidos" Type="int" />
+        </EntityType>
+        <EntityType Name="meses">
+          <Key>
+            <PropertyRef Name="mes" />
+          </Key>
+          <Property Name="mes" Type="int" Nullable="false" />
+          <Property Name="descricao" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="metas_entradas">
+          <Key>
+            <PropertyRef Name="id_meta_entrada" />
+          </Key>
+          <Property Name="id_meta_entrada" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_filial" Type="int" />
+          <Property Name="id_periodo" Type="int" />
+          <Property Name="id_periodo_semana" Type="int" />
+          <Property Name="valor_meta" Type="money" />
+          <Property Name="valor_alcancado" Type="money" />
+          <Property Name="perc_meta" Type="decimal" Precision="8" Scale="2" />
+          <Property Name="perc_alcancado" Type="decimal" Precision="8" Scale="2" />
+        </EntityType>
+        <EntityType Name="metas_faturamento">
+          <Key>
+            <PropertyRef Name="id_meta_faturamento" />
+          </Key>
+          <Property Name="id_meta_faturamento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_filial" Type="int" />
+          <Property Name="id_periodo" Type="int" />
+          <Property Name="id_periodo_semana" Type="int" />
+          <Property Name="perc_meta" Type="decimal" Precision="8" Scale="2" />
+          <Property Name="valor_meta" Type="money" />
+          <Property Name="perc_alcancado" Type="decimal" Precision="8" Scale="2" />
+          <Property Name="valor_alcancado" Type="money" />
+          <Property Name="valor_estrelas" Type="money" />
+        </EntityType>
+        <EntityType Name="metas_fluxo">
+          <Key>
+            <PropertyRef Name="id_meta_fluxo" />
+          </Key>
+          <Property Name="id_meta_fluxo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_filial" Type="int" />
+          <Property Name="id_periodo" Type="int" />
+          <Property Name="id_periodo_semana" Type="int" />
+          <Property Name="valor_meta" Type="money" />
+          <Property Name="valor_alcancado" Type="money" />
+          <Property Name="perc_meta" Type="decimal" Precision="8" Scale="2" />
+          <Property Name="perc_alcancado" Type="decimal" Precision="8" Scale="2" />
+        </EntityType>
+        <EntityType Name="metas_fotografados">
+          <Key>
+            <PropertyRef Name="id_meta_fotografado" />
+          </Key>
+          <Property Name="id_meta_fotografado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_filial" Type="int" />
+          <Property Name="id_periodo" Type="int" />
+          <Property Name="id_periodo_semana" Type="int" />
+          <Property Name="meta_diaria" Type="int" />
+          <Property Name="meta_semanal" Type="int" />
+          <Property Name="total_alcancado" Type="int" />
+          <Property Name="perc_alcancado" Type="decimal" Precision="8" Scale="2" />
+        </EntityType>
+        <EntityType Name="metas_recebimento">
+          <Key>
+            <PropertyRef Name="id_meta_recebimento" />
+          </Key>
+          <Property Name="id_meta_recebimento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_filial" Type="int" />
+          <Property Name="id_periodo" Type="int" />
+          <Property Name="id_periodo_semana" Type="int" />
+          <Property Name="valor_meta" Type="money" />
+          <Property Name="valor_alcancado" Type="money" />
+          <Property Name="perc_meta" Type="decimal" Precision="8" Scale="2" />
+          <Property Name="perc_alcancado" Type="decimal" Precision="8" Scale="2" />
+        </EntityType>
+        <EntityType Name="periodos">
+          <Key>
+            <PropertyRef Name="id_periodo" />
+          </Key>
+          <Property Name="id_periodo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_filial" Type="int" />
+          <Property Name="ano" Type="int" />
+          <Property Name="mes" Type="int" />
+          <Property Name="data_inicio" Type="datetime" />
+          <Property Name="data_fim" Type="datetime" />
+          <Property Name="dias" Type="int" />
+        </EntityType>
+        <EntityType Name="periodos_feriados">
+          <Key>
+            <PropertyRef Name="id_periodo_feriado" />
+          </Key>
+          <Property Name="id_periodo_feriado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_periodo" Type="int" />
+          <Property Name="data" Type="datetime" />
+          <Property Name="descricao" Type="varchar" MaxLength="150" />
+          <Property Name="aberto" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="periodos_objetivos">
+          <Key>
+            <PropertyRef Name="id_periodo_objetivo" />
+          </Key>
+          <Property Name="id_periodo_objetivo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_periodo" Type="int" />
+          <Property Name="obj_fotografar" Type="int" />
+          <Property Name="obj_vender" Type="int" />
+          <Property Name="obj_preco_medio" Type="money" />
+          <Property Name="obj_condicional" Type="int" />
+          <Property Name="media_fotografar" Type="decimal" Precision="8" Scale="2" />
+          <Property Name="media_vender" Type="decimal" Precision="8" Scale="2" />
+          <Property Name="media_preco_medio" Type="decimal" Precision="8" Scale="2" />
+          <Property Name="media_condicional" Type="decimal" Precision="8" Scale="2" />
+          <Property Name="dif_fotografar" Type="decimal" Precision="8" Scale="2" />
+          <Property Name="dif_vender" Type="decimal" Precision="8" Scale="2" />
+          <Property Name="dif_preco_medio" Type="decimal" Precision="8" Scale="2" />
+          <Property Name="dif_condicional" Type="decimal" Precision="8" Scale="2" />
+          <Property Name="meta_faturamento" Type="money" />
+          <Property Name="meta_fluxo" Type="money" />
+          <Property Name="meta_estrelas" Type="money" />
+          <Property Name="meta_estrelas_perc" Type="decimal" Precision="8" Scale="2" />
+          <Property Name="meta_entrada" Type="money" />
+          <Property Name="meta_recebimento" Type="money" />
+        </EntityType>
+        <EntityType Name="periodos_semanas">
+          <Key>
+            <PropertyRef Name="id_periodo_semana" />
+          </Key>
+          <Property Name="id_periodo_semana" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_periodo" Type="int" />
+          <Property Name="data_inicio" Type="datetime" />
+          <Property Name="data_fim" Type="datetime" />
+          <Property Name="num_dias" Type="int" />
+          <Property Name="participacao" Type="decimal" Precision="5" Scale="2" />
+          <Property Name="participacao_financ" Type="decimal" Precision="5" Scale="2" />
+        </EntityType>
+        <EntityType Name="setores">
+          <Key>
+            <PropertyRef Name="id_setor" />
+          </Key>
+          <Property Name="id_setor" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nome" Type="varchar" MaxLength="50" />
+          <Property Name="responsavel" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="usuarios">
+          <Key>
+            <PropertyRef Name="id_usuario" />
+          </Key>
+          <Property Name="id_usuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_usuario_grupo" Type="int" />
+          <Property Name="nome" Type="varchar" MaxLength="100" />
+          <Property Name="email" Type="varchar" MaxLength="100" />
+          <Property Name="telefone" Type="varchar" MaxLength="50" />
+          <Property Name="username" Type="varchar" MaxLength="50" />
+          <Property Name="password" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="usuarios_grupos">
+          <Key>
+            <PropertyRef Name="id_usuario_grupo" />
+          </Key>
+          <Property Name="id_usuario_grupo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nome" Type="varchar" MaxLength="50" />
+          <Property Name="lanc_periodo" Type="bit" />
+          <Property Name="lanc_lancamento" Type="bit" />
+          <Property Name="lanc_checklist" Type="bit" />
+          <Property Name="rel_lanc" Type="bit" />
+          <Property Name="rel_metas" Type="bit" />
+          <Property Name="rel_ranking" Type="bit" />
+          <Property Name="rel_perfil_rede" Type="bit" />
+          <Property Name="rel_perfil_indiv" Type="bit" />
+          <Property Name="rel_perfil_franquia" Type="bit" />
+          <Property Name="rel_checklist" Type="bit" />
+          <Property Name="rel_checklist_branco" Type="bit" />
+          <Property Name="config_filiais" Type="bit" />
+          <Property Name="config_setores" Type="bit" />
+          <Property Name="config_usuarios" Type="bit" />
+          <Property Name="config_usuarios_grupos" Type="bit" />
+          <Property Name="config_checklist_tipo" Type="bit" />
+          <Property Name="config_checklist_cat" Type="bit" />
+          <Property Name="config_checklist_item" Type="bit" />
+        </EntityType>
+        <Association Name="FK_cadernos_devolucoes_cadernos_devolucoes_motivos">
+          <End Role="cadernos_devolucoes_motivos" Type="Self.cadernos_devolucoes_motivos" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="cadernos_devolucoes" Type="Self.cadernos_devolucoes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cadernos_devolucoes_motivos">
+              <PropertyRef Name="id_motivo" />
+            </Principal>
+            <Dependent Role="cadernos_devolucoes">
+              <PropertyRef Name="id_motivo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_cadernos_devolucoes_cadernos_vendas">
+          <End Role="cadernos_vendas" Type="Self.cadernos_vendas" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="cadernos_devolucoes" Type="Self.cadernos_devolucoes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cadernos_vendas">
+              <PropertyRef Name="id_venda" />
+            </Principal>
+            <Dependent Role="cadernos_devolucoes">
+              <PropertyRef Name="id_venda" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_cadernos_filiais">
+          <End Role="filiais" Type="Self.filiais" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="cadernos" Type="Self.cadernos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="filiais">
+              <PropertyRef Name="id_filial" />
+            </Principal>
+            <Dependent Role="cadernos">
+              <PropertyRef Name="id_filial" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_cadernos_liberacoes_cadernos_liberacoes_tipos">
+          <End Role="cadernos_liberacoes_tipos" Type="Self.cadernos_liberacoes_tipos" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="cadernos_liberacoes" Type="Self.cadernos_liberacoes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cadernos_liberacoes_tipos">
+              <PropertyRef Name="id_tipo" />
+            </Principal>
+            <Dependent Role="cadernos_liberacoes">
+              <PropertyRef Name="id_tipo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_cadernos_liberacoes_cadernos_vendas">
+          <End Role="cadernos_vendas" Type="Self.cadernos_vendas" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="cadernos_liberacoes" Type="Self.cadernos_liberacoes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cadernos_vendas">
+              <PropertyRef Name="id_venda" />
+            </Principal>
+            <Dependent Role="cadernos_liberacoes">
+              <PropertyRef Name="id_venda" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_cadernos_vendas_cadernos">
+          <End Role="cadernos" Type="Self.cadernos" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="cadernos_vendas" Type="Self.cadernos_vendas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cadernos">
+              <PropertyRef Name="id_caderno" />
+            </Principal>
+            <Dependent Role="cadernos_vendas">
+              <PropertyRef Name="id_caderno" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_filiais_filiais_natureza">
+          <End Role="filiais_natureza" Type="Self.filiais_natureza" Multiplicity="0..1" />
+          <End Role="filiais" Type="Self.filiais" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="filiais_natureza">
+              <PropertyRef Name="id_filial_natureza" />
+            </Principal>
+            <Dependent Role="filiais">
+              <PropertyRef Name="id_filial_natureza" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_filiais_filiais_tipo">
+          <End Role="filiais_tipo" Type="Self.filiais_tipo" Multiplicity="0..1" />
+          <End Role="filiais" Type="Self.filiais" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="filiais_tipo">
+              <PropertyRef Name="id_filial_tipo" />
+            </Principal>
+            <Dependent Role="filiais">
+              <PropertyRef Name="id_filial_tipo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_filiais_setores">
+          <End Role="setores" Type="Self.setores" Multiplicity="0..1" />
+          <End Role="filiais" Type="Self.filiais" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="setores">
+              <PropertyRef Name="id_setor" />
+            </Principal>
+            <Dependent Role="filiais">
+              <PropertyRef Name="id_setor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_lancamentos_filiais">
+          <End Role="filiais" Type="Self.filiais" Multiplicity="0..1" />
+          <End Role="lancamentos" Type="Self.lancamentos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="filiais">
+              <PropertyRef Name="id_filial" />
+            </Principal>
+            <Dependent Role="lancamentos">
+              <PropertyRef Name="id_filial" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_lancamentos_periodos">
+          <End Role="periodos" Type="Self.periodos" Multiplicity="0..1" />
+          <End Role="lancamentos" Type="Self.lancamentos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="periodos">
+              <PropertyRef Name="id_periodo" />
+            </Principal>
+            <Dependent Role="lancamentos">
+              <PropertyRef Name="id_periodo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_lancamentos_periodos_semanas">
+          <End Role="periodos_semanas" Type="Self.periodos_semanas" Multiplicity="0..1" />
+          <End Role="lancamentos" Type="Self.lancamentos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="periodos_semanas">
+              <PropertyRef Name="id_periodo_semana" />
+            </Principal>
+            <Dependent Role="lancamentos">
+              <PropertyRef Name="id_periodo_semana" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_lancamentos_usuarios">
+          <End Role="usuarios" Type="Self.usuarios" Multiplicity="0..1" />
+          <End Role="lancamentos" Type="Self.lancamentos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuarios">
+              <PropertyRef Name="id_usuario" />
+            </Principal>
+            <Dependent Role="lancamentos">
+              <PropertyRef Name="id_usuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_metas_entradas_filiais">
+          <End Role="filiais" Type="Self.filiais" Multiplicity="0..1" />
+          <End Role="metas_entradas" Type="Self.metas_entradas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="filiais">
+              <PropertyRef Name="id_filial" />
+            </Principal>
+            <Dependent Role="metas_entradas">
+              <PropertyRef Name="id_filial" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_metas_entradas_periodos">
+          <End Role="periodos" Type="Self.periodos" Multiplicity="0..1" />
+          <End Role="metas_entradas" Type="Self.metas_entradas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="periodos">
+              <PropertyRef Name="id_periodo" />
+            </Principal>
+            <Dependent Role="metas_entradas">
+              <PropertyRef Name="id_periodo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_metas_entradas_periodos_semanas">
+          <End Role="periodos_semanas" Type="Self.periodos_semanas" Multiplicity="0..1" />
+          <End Role="metas_entradas" Type="Self.metas_entradas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="periodos_semanas">
+              <PropertyRef Name="id_periodo_semana" />
+            </Principal>
+            <Dependent Role="metas_entradas">
+              <PropertyRef Name="id_periodo_semana" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_metas_faturamento_filiais">
+          <End Role="filiais" Type="Self.filiais" Multiplicity="0..1" />
+          <End Role="metas_faturamento" Type="Self.metas_faturamento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="filiais">
+              <PropertyRef Name="id_filial" />
+            </Principal>
+            <Dependent Role="metas_faturamento">
+              <PropertyRef Name="id_filial" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_metas_faturamento_periodos">
+          <End Role="periodos" Type="Self.periodos" Multiplicity="0..1" />
+          <End Role="metas_faturamento" Type="Self.metas_faturamento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="periodos">
+              <PropertyRef Name="id_periodo" />
+            </Principal>
+            <Dependent Role="metas_faturamento">
+              <PropertyRef Name="id_periodo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_metas_faturamento_periodos_semanas">
+          <End Role="periodos_semanas" Type="Self.periodos_semanas" Multiplicity="0..1" />
+          <End Role="metas_faturamento" Type="Self.metas_faturamento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="periodos_semanas">
+              <PropertyRef Name="id_periodo_semana" />
+            </Principal>
+            <Dependent Role="metas_faturamento">
+              <PropertyRef Name="id_periodo_semana" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_metas_fluxo_filiais">
+          <End Role="filiais" Type="Self.filiais" Multiplicity="0..1" />
+          <End Role="metas_fluxo" Type="Self.metas_fluxo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="filiais">
+              <PropertyRef Name="id_filial" />
+            </Principal>
+            <Dependent Role="metas_fluxo">
+              <PropertyRef Name="id_filial" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_metas_fluxo_periodos">
+          <End Role="periodos" Type="Self.periodos" Multiplicity="0..1" />
+          <End Role="metas_fluxo" Type="Self.metas_fluxo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="periodos">
+              <PropertyRef Name="id_periodo" />
+            </Principal>
+            <Dependent Role="metas_fluxo">
+              <PropertyRef Name="id_periodo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_metas_fluxo_periodos_semanas">
+          <End Role="periodos_semanas" Type="Self.periodos_semanas" Multiplicity="0..1" />
+          <End Role="metas_fluxo" Type="Self.metas_fluxo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="periodos_semanas">
+              <PropertyRef Name="id_periodo_semana" />
+            </Principal>
+            <Dependent Role="metas_fluxo">
+              <PropertyRef Name="id_periodo_semana" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_metas_fotografados_filiais">
+          <End Role="filiais" Type="Self.filiais" Multiplicity="0..1" />
+          <End Role="metas_fotografados" Type="Self.metas_fotografados" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="filiais">
+              <PropertyRef Name="id_filial" />
+            </Principal>
+            <Dependent Role="metas_fotografados">
+              <PropertyRef Name="id_filial" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_metas_fotografados_periodos">
+          <End Role="periodos" Type="Self.periodos" Multiplicity="0..1" />
+          <End Role="metas_fotografados" Type="Self.metas_fotografados" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="periodos">
+              <PropertyRef Name="id_periodo" />
+            </Principal>
+            <Dependent Role="metas_fotografados">
+              <PropertyRef Name="id_periodo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_metas_fotografados_periodos_semanas">
+          <End Role="periodos_semanas" Type="Self.periodos_semanas" Multiplicity="0..1" />
+          <End Role="metas_fotografados" Type="Self.metas_fotografados" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="periodos_semanas">
+              <PropertyRef Name="id_periodo_semana" />
+            </Principal>
+            <Dependent Role="metas_fotografados">
+              <PropertyRef Name="id_periodo_semana" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_metas_recebimento_filiais">
+          <End Role="filiais" Type="Self.filiais" Multiplicity="0..1" />
+          <End Role="metas_recebimento" Type="Self.metas_recebimento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="filiais">
+              <PropertyRef Name="id_filial" />
+            </Principal>
+            <Dependent Role="metas_recebimento">
+              <PropertyRef Name="id_filial" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_metas_recebimento_periodos">
+          <End Role="periodos" Type="Self.periodos" Multiplicity="0..1" />
+          <End Role="metas_recebimento" Type="Self.metas_recebimento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="periodos">
+              <PropertyRef Name="id_periodo" />
+            </Principal>
+            <Dependent Role="metas_recebimento">
+              <PropertyRef Name="id_periodo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_metas_recebimento_periodos_semanas">
+          <End Role="periodos_semanas" Type="Self.periodos_semanas" Multiplicity="0..1" />
+          <End Role="metas_recebimento" Type="Self.metas_recebimento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="periodos_semanas">
+              <PropertyRef Name="id_periodo_semana" />
+            </Principal>
+            <Dependent Role="metas_recebimento">
+              <PropertyRef Name="id_periodo_semana" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_periodos_feriados_periodos">
+          <End Role="periodos" Type="Self.periodos" Multiplicity="0..1" />
+          <End Role="periodos_feriados" Type="Self.periodos_feriados" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="periodos">
+              <PropertyRef Name="id_periodo" />
+            </Principal>
+            <Dependent Role="periodos_feriados">
+              <PropertyRef Name="id_periodo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_periodos_filiais">
+          <End Role="filiais" Type="Self.filiais" Multiplicity="0..1" />
+          <End Role="periodos" Type="Self.periodos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="filiais">
+              <PropertyRef Name="id_filial" />
+            </Principal>
+            <Dependent Role="periodos">
+              <PropertyRef Name="id_filial" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_periodos_objetivos_periodos">
+          <End Role="periodos" Type="Self.periodos" Multiplicity="0..1" />
+          <End Role="periodos_objetivos" Type="Self.periodos_objetivos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="periodos">
+              <PropertyRef Name="id_periodo" />
+            </Principal>
+            <Dependent Role="periodos_objetivos">
+              <PropertyRef Name="id_periodo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_periodos_semanas_periodos">
+          <End Role="periodos" Type="Self.periodos" Multiplicity="0..1" />
+          <End Role="periodos_semanas" Type="Self.periodos_semanas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="periodos">
+              <PropertyRef Name="id_periodo" />
+            </Principal>
+            <Dependent Role="periodos_semanas">
+              <PropertyRef Name="id_periodo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_usuarios_usuarios_grupos">
+          <End Role="usuarios_grupos" Type="Self.usuarios_grupos" Multiplicity="0..1" />
+          <End Role="usuarios" Type="Self.usuarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuarios_grupos">
+              <PropertyRef Name="id_usuario_grupo" />
+            </Principal>
+            <Dependent Role="usuarios">
+              <PropertyRef Name="id_usuario_grupo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CPanelModelStoreContainer">
+          <EntitySet Name="cadernos" EntityType="Self.cadernos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="cadernos_devolucoes" EntityType="Self.cadernos_devolucoes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="cadernos_devolucoes_motivos" EntityType="Self.cadernos_devolucoes_motivos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="cadernos_liberacoes" EntityType="Self.cadernos_liberacoes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="cadernos_liberacoes_tipos" EntityType="Self.cadernos_liberacoes_tipos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="cadernos_vendas" EntityType="Self.cadernos_vendas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="filiais" EntityType="Self.filiais" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="filiais_natureza" EntityType="Self.filiais_natureza" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="filiais_tipo" EntityType="Self.filiais_tipo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="lancamentos" EntityType="Self.lancamentos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="meses" EntityType="Self.meses" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="metas_entradas" EntityType="Self.metas_entradas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="metas_faturamento" EntityType="Self.metas_faturamento" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="metas_fluxo" EntityType="Self.metas_fluxo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="metas_fotografados" EntityType="Self.metas_fotografados" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="metas_recebimento" EntityType="Self.metas_recebimento" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="periodos" EntityType="Self.periodos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="periodos_feriados" EntityType="Self.periodos_feriados" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="periodos_objetivos" EntityType="Self.periodos_objetivos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="periodos_semanas" EntityType="Self.periodos_semanas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="setores" EntityType="Self.setores" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="usuarios" EntityType="Self.usuarios" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="usuarios_grupos" EntityType="Self.usuarios_grupos" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_cadernos_devolucoes_cadernos_devolucoes_motivos" Association="Self.FK_cadernos_devolucoes_cadernos_devolucoes_motivos">
+            <End Role="cadernos_devolucoes_motivos" EntitySet="cadernos_devolucoes_motivos" />
+            <End Role="cadernos_devolucoes" EntitySet="cadernos_devolucoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_cadernos_devolucoes_cadernos_vendas" Association="Self.FK_cadernos_devolucoes_cadernos_vendas">
+            <End Role="cadernos_vendas" EntitySet="cadernos_vendas" />
+            <End Role="cadernos_devolucoes" EntitySet="cadernos_devolucoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_cadernos_filiais" Association="Self.FK_cadernos_filiais">
+            <End Role="filiais" EntitySet="filiais" />
+            <End Role="cadernos" EntitySet="cadernos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_cadernos_liberacoes_cadernos_liberacoes_tipos" Association="Self.FK_cadernos_liberacoes_cadernos_liberacoes_tipos">
+            <End Role="cadernos_liberacoes_tipos" EntitySet="cadernos_liberacoes_tipos" />
+            <End Role="cadernos_liberacoes" EntitySet="cadernos_liberacoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_cadernos_liberacoes_cadernos_vendas" Association="Self.FK_cadernos_liberacoes_cadernos_vendas">
+            <End Role="cadernos_vendas" EntitySet="cadernos_vendas" />
+            <End Role="cadernos_liberacoes" EntitySet="cadernos_liberacoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_cadernos_vendas_cadernos" Association="Self.FK_cadernos_vendas_cadernos">
+            <End Role="cadernos" EntitySet="cadernos" />
+            <End Role="cadernos_vendas" EntitySet="cadernos_vendas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_filiais_filiais_natureza" Association="Self.FK_filiais_filiais_natureza">
+            <End Role="filiais_natureza" EntitySet="filiais_natureza" />
+            <End Role="filiais" EntitySet="filiais" />
+          </AssociationSet>
+          <AssociationSet Name="FK_filiais_filiais_tipo" Association="Self.FK_filiais_filiais_tipo">
+            <End Role="filiais_tipo" EntitySet="filiais_tipo" />
+            <End Role="filiais" EntitySet="filiais" />
+          </AssociationSet>
+          <AssociationSet Name="FK_filiais_setores" Association="Self.FK_filiais_setores">
+            <End Role="setores" EntitySet="setores" />
+            <End Role="filiais" EntitySet="filiais" />
+          </AssociationSet>
+          <AssociationSet Name="FK_lancamentos_filiais" Association="Self.FK_lancamentos_filiais">
+            <End Role="filiais" EntitySet="filiais" />
+            <End Role="lancamentos" EntitySet="lancamentos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_lancamentos_periodos" Association="Self.FK_lancamentos_periodos">
+            <End Role="periodos" EntitySet="periodos" />
+            <End Role="lancamentos" EntitySet="lancamentos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_lancamentos_periodos_semanas" Association="Self.FK_lancamentos_periodos_semanas">
+            <End Role="periodos_semanas" EntitySet="periodos_semanas" />
+            <End Role="lancamentos" EntitySet="lancamentos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_lancamentos_usuarios" Association="Self.FK_lancamentos_usuarios">
+            <End Role="usuarios" EntitySet="usuarios" />
+            <End Role="lancamentos" EntitySet="lancamentos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_metas_entradas_filiais" Association="Self.FK_metas_entradas_filiais">
+            <End Role="filiais" EntitySet="filiais" />
+            <End Role="metas_entradas" EntitySet="metas_entradas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_metas_entradas_periodos" Association="Self.FK_metas_entradas_periodos">
+            <End Role="periodos" EntitySet="periodos" />
+            <End Role="metas_entradas" EntitySet="metas_entradas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_metas_entradas_periodos_semanas" Association="Self.FK_metas_entradas_periodos_semanas">
+            <End Role="periodos_semanas" EntitySet="periodos_semanas" />
+            <End Role="metas_entradas" EntitySet="metas_entradas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_metas_faturamento_filiais" Association="Self.FK_metas_faturamento_filiais">
+            <End Role="filiais" EntitySet="filiais" />
+            <End Role="metas_faturamento" EntitySet="metas_faturamento" />
+          </AssociationSet>
+          <AssociationSet Name="FK_metas_faturamento_periodos" Association="Self.FK_metas_faturamento_periodos">
+            <End Role="periodos" EntitySet="periodos" />
+            <End Role="metas_faturamento" EntitySet="metas_faturamento" />
+          </AssociationSet>
+          <AssociationSet Name="FK_metas_faturamento_periodos_semanas" Association="Self.FK_metas_faturamento_periodos_semanas">
+            <End Role="periodos_semanas" EntitySet="periodos_semanas" />
+            <End Role="metas_faturamento" EntitySet="metas_faturamento" />
+          </AssociationSet>
+          <AssociationSet Name="FK_metas_fluxo_filiais" Association="Self.FK_metas_fluxo_filiais">
+            <End Role="filiais" EntitySet="filiais" />
+            <End Role="metas_fluxo" EntitySet="metas_fluxo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_metas_fluxo_periodos" Association="Self.FK_metas_fluxo_periodos">
+            <End Role="periodos" EntitySet="periodos" />
+            <End Role="metas_fluxo" EntitySet="metas_fluxo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_metas_fluxo_periodos_semanas" Association="Self.FK_metas_fluxo_periodos_semanas">
+            <End Role="periodos_semanas" EntitySet="periodos_semanas" />
+            <End Role="metas_fluxo" EntitySet="metas_fluxo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_metas_fotografados_filiais" Association="Self.FK_metas_fotografados_filiais">
+            <End Role="filiais" EntitySet="filiais" />
+            <End Role="metas_fotografados" EntitySet="metas_fotografados" />
+          </AssociationSet>
+          <AssociationSet Name="FK_metas_fotografados_periodos" Association="Self.FK_metas_fotografados_periodos">
+            <End Role="periodos" EntitySet="periodos" />
+            <End Role="metas_fotografados" EntitySet="metas_fotografados" />
+          </AssociationSet>
+          <AssociationSet Name="FK_metas_fotografados_periodos_semanas" Association="Self.FK_metas_fotografados_periodos_semanas">
+            <End Role="periodos_semanas" EntitySet="periodos_semanas" />
+            <End Role="metas_fotografados" EntitySet="metas_fotografados" />
+          </AssociationSet>
+          <AssociationSet Name="FK_metas_recebimento_filiais" Association="Self.FK_metas_recebimento_filiais">
+            <End Role="filiais" EntitySet="filiais" />
+            <End Role="metas_recebimento" EntitySet="metas_recebimento" />
+          </AssociationSet>
+          <AssociationSet Name="FK_metas_recebimento_periodos" Association="Self.FK_metas_recebimento_periodos">
+            <End Role="periodos" EntitySet="periodos" />
+            <End Role="metas_recebimento" EntitySet="metas_recebimento" />
+          </AssociationSet>
+          <AssociationSet Name="FK_metas_recebimento_periodos_semanas" Association="Self.FK_metas_recebimento_periodos_semanas">
+            <End Role="periodos_semanas" EntitySet="periodos_semanas" />
+            <End Role="metas_recebimento" EntitySet="metas_recebimento" />
+          </AssociationSet>
+          <AssociationSet Name="FK_periodos_feriados_periodos" Association="Self.FK_periodos_feriados_periodos">
+            <End Role="periodos" EntitySet="periodos" />
+            <End Role="periodos_feriados" EntitySet="periodos_feriados" />
+          </AssociationSet>
+          <AssociationSet Name="FK_periodos_filiais" Association="Self.FK_periodos_filiais">
+            <End Role="filiais" EntitySet="filiais" />
+            <End Role="periodos" EntitySet="periodos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_periodos_objetivos_periodos" Association="Self.FK_periodos_objetivos_periodos">
+            <End Role="periodos" EntitySet="periodos" />
+            <End Role="periodos_objetivos" EntitySet="periodos_objetivos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_periodos_semanas_periodos" Association="Self.FK_periodos_semanas_periodos">
+            <End Role="periodos" EntitySet="periodos" />
+            <End Role="periodos_semanas" EntitySet="periodos_semanas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_usuarios_usuarios_grupos" Association="Self.FK_usuarios_usuarios_grupos">
+            <End Role="usuarios_grupos" EntitySet="usuarios_grupos" />
+            <End Role="usuarios" EntitySet="usuarios" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CPanelModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="CPanelEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="cadernos" EntityType="CPanelModel.cadernos" />
+          <EntitySet Name="cadernos_devolucoes" EntityType="CPanelModel.cadernos_devolucoes" />
+          <EntitySet Name="cadernos_devolucoes_motivos" EntityType="CPanelModel.cadernos_devolucoes_motivos" />
+          <EntitySet Name="cadernos_liberacoes" EntityType="CPanelModel.cadernos_liberacoes" />
+          <EntitySet Name="cadernos_liberacoes_tipos" EntityType="CPanelModel.cadernos_liberacoes_tipos" />
+          <EntitySet Name="filiais" EntityType="CPanelModel.filiais" />
+          <AssociationSet Name="FK_cadernos_filiais" Association="CPanelModel.FK_cadernos_filiais">
+            <End Role="filiais" EntitySet="filiais" />
+            <End Role="cadernos" EntitySet="cadernos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_cadernos_devolucoes_cadernos_devolucoes_motivos" Association="CPanelModel.FK_cadernos_devolucoes_cadernos_devolucoes_motivos">
+            <End Role="cadernos_devolucoes_motivos" EntitySet="cadernos_devolucoes_motivos" />
+            <End Role="cadernos_devolucoes" EntitySet="cadernos_devolucoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_cadernos_liberacoes_cadernos_liberacoes_tipos" Association="CPanelModel.FK_cadernos_liberacoes_cadernos_liberacoes_tipos">
+            <End Role="cadernos_liberacoes_tipos" EntitySet="cadernos_liberacoes_tipos" />
+            <End Role="cadernos_liberacoes" EntitySet="cadernos_liberacoes" />
+          </AssociationSet>
+          <EntitySet Name="cadernos_vendas" EntityType="CPanelModel.cadernos_vendas" />
+          <AssociationSet Name="FK_cadernos_vendas_cadernos" Association="CPanelModel.FK_cadernos_vendas_cadernos">
+            <End Role="cadernos" EntitySet="cadernos" />
+            <End Role="cadernos_vendas" EntitySet="cadernos_vendas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_cadernos_devolucoes_cadernos_vendas" Association="CPanelModel.FK_cadernos_devolucoes_cadernos_vendas">
+            <End Role="cadernos_vendas" EntitySet="cadernos_vendas" />
+            <End Role="cadernos_devolucoes" EntitySet="cadernos_devolucoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_cadernos_liberacoes_cadernos_vendas" Association="CPanelModel.FK_cadernos_liberacoes_cadernos_vendas">
+            <End Role="cadernos_vendas" EntitySet="cadernos_vendas" />
+            <End Role="cadernos_liberacoes" EntitySet="cadernos_liberacoes" />
+          </AssociationSet>
+          <EntitySet Name="filiais_natureza" EntityType="CPanelModel.filiais_natureza" />
+          <EntitySet Name="filiais_tipo" EntityType="CPanelModel.filiais_tipo" />
+          <AssociationSet Name="FK_filiais_filiais_natureza" Association="CPanelModel.FK_filiais_filiais_natureza">
+            <End Role="filiais_natureza" EntitySet="filiais_natureza" />
+            <End Role="filiais" EntitySet="filiais" />
+          </AssociationSet>
+          <AssociationSet Name="FK_filiais_filiais_tipo" Association="CPanelModel.FK_filiais_filiais_tipo">
+            <End Role="filiais_tipo" EntitySet="filiais_tipo" />
+            <End Role="filiais" EntitySet="filiais" />
+          </AssociationSet>
+          <EntitySet Name="periodos" EntityType="CPanelModel.periodos" />
+          <EntitySet Name="periodos_feriados" EntityType="CPanelModel.periodos_feriados" />
+          <EntitySet Name="periodos_objetivos" EntityType="CPanelModel.periodos_objetivos" />
+          <EntitySet Name="periodos_semanas" EntityType="CPanelModel.periodos_semanas" />
+          <AssociationSet Name="FK_periodos_filiais" Association="CPanelModel.FK_periodos_filiais">
+            <End Role="filiais" EntitySet="filiais" />
+            <End Role="periodos" EntitySet="periodos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_periodos_feriados_periodos" Association="CPanelModel.FK_periodos_feriados_periodos">
+            <End Role="periodos" EntitySet="periodos" />
+            <End Role="periodos_feriados" EntitySet="periodos_feriados" />
+          </AssociationSet>
+          <AssociationSet Name="FK_periodos_objetivos_periodos" Association="CPanelModel.FK_periodos_objetivos_periodos">
+            <End Role="periodos" EntitySet="periodos" />
+            <End Role="periodos_objetivos" EntitySet="periodos_objetivos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_periodos_semanas_periodos" Association="CPanelModel.FK_periodos_semanas_periodos">
+            <End Role="periodos" EntitySet="periodos" />
+            <End Role="periodos_semanas" EntitySet="periodos_semanas" />
+          </AssociationSet>
+          <EntitySet Name="usuarios" EntityType="CPanelModel.usuarios" />
+          <EntitySet Name="usuarios_grupos" EntityType="CPanelModel.usuarios_grupos" />
+          <AssociationSet Name="FK_usuarios_usuarios_grupos" Association="CPanelModel.FK_usuarios_usuarios_grupos">
+            <End Role="usuarios_grupos" EntitySet="usuarios_grupos" />
+            <End Role="usuarios" EntitySet="usuarios" />
+          </AssociationSet>
+          <EntitySet Name="setores" EntityType="CPanelModel.setores" />
+          <AssociationSet Name="FK_filiais_setores" Association="CPanelModel.FK_filiais_setores">
+            <End Role="setores" EntitySet="setores" />
+            <End Role="filiais" EntitySet="filiais" />
+          </AssociationSet>
+          <EntitySet Name="lancamentos" EntityType="CPanelModel.lancamentos" />
+          <AssociationSet Name="FK_lancamentos_filiais" Association="CPanelModel.FK_lancamentos_filiais">
+            <End Role="filiais" EntitySet="filiais" />
+            <End Role="lancamentos" EntitySet="lancamentos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_lancamentos_periodos" Association="CPanelModel.FK_lancamentos_periodos">
+            <End Role="periodos" EntitySet="periodos" />
+            <End Role="lancamentos" EntitySet="lancamentos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_lancamentos_periodos_semanas" Association="CPanelModel.FK_lancamentos_periodos_semanas">
+            <End Role="periodos_semanas" EntitySet="periodos_semanas" />
+            <End Role="lancamentos" EntitySet="lancamentos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_lancamentos_usuarios" Association="CPanelModel.FK_lancamentos_usuarios">
+            <End Role="usuarios" EntitySet="usuarios" />
+            <End Role="lancamentos" EntitySet="lancamentos" />
+          </AssociationSet>
+          <EntitySet Name="meses" EntityType="CPanelModel.meses" />
+          <EntitySet Name="metas_entradas" EntityType="CPanelModel.metas_entradas" />
+          <EntitySet Name="metas_faturamento" EntityType="CPanelModel.metas_faturamento" />
+          <EntitySet Name="metas_fluxo" EntityType="CPanelModel.metas_fluxo" />
+          <EntitySet Name="metas_fotografados" EntityType="CPanelModel.metas_fotografados" />
+          <EntitySet Name="metas_recebimento" EntityType="CPanelModel.metas_recebimento" />
+          <AssociationSet Name="FK_metas_entradas_filiais" Association="CPanelModel.FK_metas_entradas_filiais">
+            <End Role="filiais" EntitySet="filiais" />
+            <End Role="metas_entradas" EntitySet="metas_entradas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_metas_faturamento_filiais" Association="CPanelModel.FK_metas_faturamento_filiais">
+            <End Role="filiais" EntitySet="filiais" />
+            <End Role="metas_faturamento" EntitySet="metas_faturamento" />
+          </AssociationSet>
+          <AssociationSet Name="FK_metas_fluxo_filiais" Association="CPanelModel.FK_metas_fluxo_filiais">
+            <End Role="filiais" EntitySet="filiais" />
+            <End Role="metas_fluxo" EntitySet="metas_fluxo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_metas_fotografados_filiais" Association="CPanelModel.FK_metas_fotografados_filiais">
+            <End Role="filiais" EntitySet="filiais" />
+            <End Role="metas_fotografados" EntitySet="metas_fotografados" />
+          </AssociationSet>
+          <AssociationSet Name="FK_metas_recebimento_filiais" Association="CPanelModel.FK_metas_recebimento_filiais">
+            <End Role="filiais" EntitySet="filiais" />
+            <End Role="metas_recebimento" EntitySet="metas_recebimento" />
+          </AssociationSet>
+          <AssociationSet Name="FK_metas_entradas_periodos" Association="CPanelModel.FK_metas_entradas_periodos">
+            <End Role="periodos" EntitySet="periodos" />
+            <End Role="metas_entradas" EntitySet="metas_entradas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_metas_entradas_periodos_semanas" Association="CPanelModel.FK_metas_entradas_periodos_semanas">
+            <End Role="periodos_semanas" EntitySet="periodos_semanas" />
+            <End Role="metas_entradas" EntitySet="metas_entradas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_metas_faturamento_periodos" Association="CPanelModel.FK_metas_faturamento_periodos">
+            <End Role="periodos" EntitySet="periodos" />
+            <End Role="metas_faturamento" EntitySet="metas_faturamento" />
+          </AssociationSet>
+          <AssociationSet Name="FK_metas_faturamento_periodos_semanas" Association="CPanelModel.FK_metas_faturamento_periodos_semanas">
+            <End Role="periodos_semanas" EntitySet="periodos_semanas" />
+            <End Role="metas_faturamento" EntitySet="metas_faturamento" />
+          </AssociationSet>
+          <AssociationSet Name="FK_metas_fluxo_periodos" Association="CPanelModel.FK_metas_fluxo_periodos">
+            <End Role="periodos" EntitySet="periodos" />
+            <End Role="metas_fluxo" EntitySet="metas_fluxo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_metas_fluxo_periodos_semanas" Association="CPanelModel.FK_metas_fluxo_periodos_semanas">
+            <End Role="periodos_semanas" EntitySet="periodos_semanas" />
+            <End Role="metas_fluxo" EntitySet="metas_fluxo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_metas_fotografados_periodos" Association="CPanelModel.FK_metas_fotografados_periodos">
+            <End Role="periodos" EntitySet="periodos" />
+            <End Role="metas_fotografados" EntitySet="metas_fotografados" />
+          </AssociationSet>
+          <AssociationSet Name="FK_metas_fotografados_periodos_semanas" Association="CPanelModel.FK_metas_fotografados_periodos_semanas">
+            <End Role="periodos_semanas" EntitySet="periodos_semanas" />
+            <End Role="metas_fotografados" EntitySet="metas_fotografados" />
+          </AssociationSet>
+          <AssociationSet Name="FK_metas_recebimento_periodos" Association="CPanelModel.FK_metas_recebimento_periodos">
+            <End Role="periodos" EntitySet="periodos" />
+            <End Role="metas_recebimento" EntitySet="metas_recebimento" />
+          </AssociationSet>
+          <AssociationSet Name="FK_metas_recebimento_periodos_semanas" Association="CPanelModel.FK_metas_recebimento_periodos_semanas">
+            <End Role="periodos_semanas" EntitySet="periodos_semanas" />
+            <End Role="metas_recebimento" EntitySet="metas_recebimento" />
+          </AssociationSet>
+          </EntityContainer>
+        <EntityType Name="cadernos">
+          <Key>
+            <PropertyRef Name="id_caderno" />
+          </Key>
+          <Property Name="id_caderno" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="id_filial" Type="Int32" Nullable="false" />
+          <Property Name="data" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="entrada_dinheiro" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="entrada_cartao" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="entrada_total" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="venda_prazo" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="venda_dinheiro" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="venda_cartao" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="venda_total" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="devolvida_valor" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="devolvida_qtde" Type="Int32" Nullable="false" />
+          <Property Name="programada_valor" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="programada_qtde" Type="Int32" Nullable="false" />
+          <Property Name="autorizada_valor" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="autorizada_qtde" Type="Int32" Nullable="false" />
+          <Property Name="fotografados" Type="Int32" Nullable="false" />
+          <Property Name="brinde" Type="Int32" Nullable="false" />
+          <Property Name="liberada_escrit" Type="Boolean" Nullable="false" />
+          <Property Name="liberada_gerente" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="filiais" Relationship="CPanelModel.FK_cadernos_filiais" FromRole="cadernos" ToRole="filiais" />
+          <NavigationProperty Name="cadernos_vendas" Relationship="CPanelModel.FK_cadernos_vendas_cadernos" FromRole="cadernos" ToRole="cadernos_vendas" />
+          <Property Type="Decimal" Name="entrada_depositada" Nullable="false" Precision="19" Scale="4" />
+        </EntityType>
+        <EntityType Name="cadernos_devolucoes">
+          <Key>
+            <PropertyRef Name="id_devolvida" />
+          </Key>
+          <Property Name="id_devolvida" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="id_venda" Type="Int32" Nullable="false" />
+          <Property Name="id_motivo" Type="Int32" Nullable="false" />
+          <Property Name="observacao" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="cadernos_devolucoes_motivos" Relationship="CPanelModel.FK_cadernos_devolucoes_cadernos_devolucoes_motivos" FromRole="cadernos_devolucoes" ToRole="cadernos_devolucoes_motivos" />
+          <NavigationProperty Name="cadernos_vendas" Relationship="CPanelModel.FK_cadernos_devolucoes_cadernos_vendas" FromRole="cadernos_devolucoes" ToRole="cadernos_vendas" />
+        </EntityType>
+        <EntityType Name="cadernos_devolucoes_motivos">
+          <Key>
+            <PropertyRef Name="id_motivo" />
+          </Key>
+          <Property Name="id_motivo" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="descricao" Type="String" Nullable="false" MaxLength="150" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="cadernos_devolucoes" Relationship="CPanelModel.FK_cadernos_devolucoes_cadernos_devolucoes_motivos" FromRole="cadernos_devolucoes_motivos" ToRole="cadernos_devolucoes" />
+        </EntityType>
+        <EntityType Name="cadernos_liberacoes">
+          <Key>
+            <PropertyRef Name="id_liberacao" />
+          </Key>
+          <Property Name="id_liberacao" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="id_venda" Type="Int32" Nullable="false" />
+          <Property Name="id_tipo" Type="Int32" Nullable="false" />
+          <Property Name="desconto" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="observacao" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="cadernos_liberacoes_tipos" Relationship="CPanelModel.FK_cadernos_liberacoes_cadernos_liberacoes_tipos" FromRole="cadernos_liberacoes" ToRole="cadernos_liberacoes_tipos" />
+          <NavigationProperty Name="cadernos_vendas" Relationship="CPanelModel.FK_cadernos_liberacoes_cadernos_vendas" FromRole="cadernos_liberacoes" ToRole="cadernos_vendas" />
+        </EntityType>
+        <EntityType Name="cadernos_liberacoes_tipos">
+          <Key>
+            <PropertyRef Name="id_tipo" />
+          </Key>
+          <Property Name="id_tipo" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="descricao" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="cadernos_liberacoes" Relationship="CPanelModel.FK_cadernos_liberacoes_cadernos_liberacoes_tipos" FromRole="cadernos_liberacoes_tipos" ToRole="cadernos_liberacoes" />
+        </EntityType>
+        <EntityType Name="filiais">
+          <Key>
+            <PropertyRef Name="id_filial" />
+          </Key>
+          <Property Name="id_filial" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="id_filial_natureza" Type="Int32" />
+          <Property Name="id_filial_tipo" Type="Int32" />
+          <Property Name="id_setor" Type="Int32" />
+          <Property Name="nome" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="ativo" Type="Boolean" />
+          <Property Name="rm_coligada" Type="Int32" />
+          <Property Name="rm_filial" Type="Int32" />
+          <Property Name="rm_fantasia" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="rm_custo" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="rm_cpc" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="cadernos" Relationship="CPanelModel.FK_cadernos_filiais" FromRole="filiais" ToRole="cadernos" />
+          <Property Type="String" Name="spc" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="CPanelModel.SpcTipoConsulta" Name="spc_consulta" />
+          <Property Type="String" Name="spc_senha" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="cep_padrao" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="filiais_natureza" Relationship="CPanelModel.FK_filiais_filiais_natureza" FromRole="filiais" ToRole="filiais_natureza" />
+          <NavigationProperty Name="filiais_tipo" Relationship="CPanelModel.FK_filiais_filiais_tipo" FromRole="filiais" ToRole="filiais_tipo" />
+          <NavigationProperty Name="periodos" Relationship="CPanelModel.FK_periodos_filiais" FromRole="filiais" ToRole="periodos" />
+          <NavigationProperty Name="setores" Relationship="CPanelModel.FK_filiais_setores" FromRole="filiais" ToRole="setores" />
+          <NavigationProperty Name="lancamentos" Relationship="CPanelModel.FK_lancamentos_filiais" FromRole="filiais" ToRole="lancamentos" />
+          <Property Name="cservice_id" Type="Int32" />
+          <NavigationProperty Name="metas_entradas" Relationship="CPanelModel.FK_metas_entradas_filiais" FromRole="filiais" ToRole="metas_entradas" />
+          <NavigationProperty Name="metas_faturamento" Relationship="CPanelModel.FK_metas_faturamento_filiais" FromRole="filiais" ToRole="metas_faturamento" />
+          <NavigationProperty Name="metas_fluxo" Relationship="CPanelModel.FK_metas_fluxo_filiais" FromRole="filiais" ToRole="metas_fluxo" />
+          <NavigationProperty Name="metas_fotografados" Relationship="CPanelModel.FK_metas_fotografados_filiais" FromRole="filiais" ToRole="metas_fotografados" />
+          <NavigationProperty Name="metas_recebimento" Relationship="CPanelModel.FK_metas_recebimento_filiais" FromRole="filiais" ToRole="metas_recebimento" />
+        </EntityType>
+        <Association Name="FK_cadernos_filiais">
+          <End Role="filiais" Type="CPanelModel.filiais" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="cadernos" Type="CPanelModel.cadernos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="filiais">
+              <PropertyRef Name="id_filial" />
+            </Principal>
+            <Dependent Role="cadernos">
+              <PropertyRef Name="id_filial" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_cadernos_devolucoes_cadernos_devolucoes_motivos">
+          <End Role="cadernos_devolucoes_motivos" Type="CPanelModel.cadernos_devolucoes_motivos" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="cadernos_devolucoes" Type="CPanelModel.cadernos_devolucoes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cadernos_devolucoes_motivos">
+              <PropertyRef Name="id_motivo" />
+            </Principal>
+            <Dependent Role="cadernos_devolucoes">
+              <PropertyRef Name="id_motivo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_cadernos_liberacoes_cadernos_liberacoes_tipos">
+          <End Role="cadernos_liberacoes_tipos" Type="CPanelModel.cadernos_liberacoes_tipos" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="cadernos_liberacoes" Type="CPanelModel.cadernos_liberacoes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cadernos_liberacoes_tipos">
+              <PropertyRef Name="id_tipo" />
+            </Principal>
+            <Dependent Role="cadernos_liberacoes">
+              <PropertyRef Name="id_tipo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="cadernos_vendas">
+          <Key>
+            <PropertyRef Name="id_venda" />
+          </Key>
+          <Property Type="Int32" Name="id_venda" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="id_caderno" Nullable="false" />
+          <Property Type="String" Name="cod_cmaster" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="cod_rm" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="nome_cliente" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="entrada_dinheiro" Nullable="false" Precision="19" Scale="4" />
+          <Property Type="Decimal" Name="entrada_cartao" Nullable="false" Precision="19" Scale="4" />
+          <Property Type="Decimal" Name="entrada_depositada" Nullable="false" Precision="19" Scale="4" />
+          <Property Type="DateTime" Name="entrada_depositada_data" Precision="0" />
+          <Property Type="Decimal" Name="venda_dinheiro" Nullable="false" Precision="19" Scale="4" />
+          <Property Type="Decimal" Name="venda_cartao" Nullable="false" Precision="19" Scale="4" />
+          <Property Type="Decimal" Name="venda_prazo" Nullable="false" Precision="19" Scale="4" />
+          <Property Type="Decimal" Name="venda_total" Nullable="false" Precision="19" Scale="4" />
+          <Property Type="Boolean" Name="is_programada" Nullable="false" />
+          <Property Type="Boolean" Name="is_devolvida" Nullable="false" />
+          <Property Type="Boolean" Name="is_autorizada" Nullable="false" />
+          <NavigationProperty Name="cadernos" Relationship="CPanelModel.FK_cadernos_vendas_cadernos" FromRole="cadernos_vendas" ToRole="cadernos" />
+          <NavigationProperty Name="cadernos_devolucoes" Relationship="CPanelModel.FK_cadernos_devolucoes_cadernos_vendas" FromRole="cadernos_vendas" ToRole="cadernos_devolucoes" />
+          <NavigationProperty Name="cadernos_liberacoes" Relationship="CPanelModel.FK_cadernos_liberacoes_cadernos_vendas" FromRole="cadernos_vendas" ToRole="cadernos_liberacoes" />
+          <Property Type="String" Name="vendedora" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="cod_venda" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="is_cortesia" Type="Boolean" />
+          <Property Name="is_acompanhamento" Type="Boolean" />
+        </EntityType>
+        <Association Name="FK_cadernos_vendas_cadernos">
+          <End Type="CPanelModel.cadernos" Role="cadernos" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="CPanelModel.cadernos_vendas" Role="cadernos_vendas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cadernos">
+              <PropertyRef Name="id_caderno" />
+            </Principal>
+            <Dependent Role="cadernos_vendas">
+              <PropertyRef Name="id_caderno" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_cadernos_devolucoes_cadernos_vendas">
+          <End Type="CPanelModel.cadernos_vendas" Role="cadernos_vendas" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="CPanelModel.cadernos_devolucoes" Role="cadernos_devolucoes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cadernos_vendas">
+              <PropertyRef Name="id_venda" />
+            </Principal>
+            <Dependent Role="cadernos_devolucoes">
+              <PropertyRef Name="id_venda" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_cadernos_liberacoes_cadernos_vendas">
+          <End Type="CPanelModel.cadernos_vendas" Role="cadernos_vendas" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="CPanelModel.cadernos_liberacoes" Role="cadernos_liberacoes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cadernos_vendas">
+              <PropertyRef Name="id_venda" />
+            </Principal>
+            <Dependent Role="cadernos_liberacoes">
+              <PropertyRef Name="id_venda" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EnumType Name="SpcTipoConsulta">
+          <Member Name="Padrao" Value="1" />
+          <Member Name="UsaProgramada" Value="2" />
+          <Member Name="Tranferido" Value="3" />
+        </EnumType>
+        <EntityType Name="filiais_natureza">
+          <Key>
+            <PropertyRef Name="id_filial_natureza" />
+          </Key>
+          <Property Name="id_filial_natureza" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nome" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="filiais" Relationship="CPanelModel.FK_filiais_filiais_natureza" FromRole="filiais_natureza" ToRole="filiais" />
+        </EntityType>
+        <EntityType Name="filiais_tipo">
+          <Key>
+            <PropertyRef Name="id_filial_tipo" />
+          </Key>
+          <Property Name="id_filial_tipo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nome" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="filiais" Relationship="CPanelModel.FK_filiais_filiais_tipo" FromRole="filiais_tipo" ToRole="filiais" />
+        </EntityType>
+        <Association Name="FK_filiais_filiais_natureza">
+          <End Type="CPanelModel.filiais_natureza" Role="filiais_natureza" Multiplicity="0..1" />
+          <End Type="CPanelModel.filiais" Role="filiais" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="filiais_natureza">
+              <PropertyRef Name="id_filial_natureza" />
+            </Principal>
+            <Dependent Role="filiais">
+              <PropertyRef Name="id_filial_natureza" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_filiais_filiais_tipo">
+          <End Type="CPanelModel.filiais_tipo" Role="filiais_tipo" Multiplicity="0..1" />
+          <End Type="CPanelModel.filiais" Role="filiais" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="filiais_tipo">
+              <PropertyRef Name="id_filial_tipo" />
+            </Principal>
+            <Dependent Role="filiais">
+              <PropertyRef Name="id_filial_tipo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="periodos">
+          <Key>
+            <PropertyRef Name="id_periodo" />
+          </Key>
+          <Property Name="id_periodo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_filial" Type="Int32" />
+          <Property Name="ano" Type="Int32" />
+          <Property Name="mes" Type="Int32" />
+          <Property Name="data_inicio" Type="DateTime" Precision="3" />
+          <Property Name="data_fim" Type="DateTime" Precision="3" />
+          <Property Name="dias" Type="Int32" />
+          <NavigationProperty Name="filiais" Relationship="CPanelModel.FK_periodos_filiais" FromRole="periodos" ToRole="filiais" />
+          <NavigationProperty Name="periodos_feriados" Relationship="CPanelModel.FK_periodos_feriados_periodos" FromRole="periodos" ToRole="periodos_feriados" />
+          <NavigationProperty Name="periodos_objetivos" Relationship="CPanelModel.FK_periodos_objetivos_periodos" FromRole="periodos" ToRole="periodos_objetivos" />
+          <NavigationProperty Name="periodos_semanas" Relationship="CPanelModel.FK_periodos_semanas_periodos" FromRole="periodos" ToRole="periodos_semanas" />
+          <NavigationProperty Name="lancamentos" Relationship="CPanelModel.FK_lancamentos_periodos" FromRole="periodos" ToRole="lancamentos" />
+          <NavigationProperty Name="metas_entradas" Relationship="CPanelModel.FK_metas_entradas_periodos" FromRole="periodos" ToRole="metas_entradas" />
+          <NavigationProperty Name="metas_faturamento" Relationship="CPanelModel.FK_metas_faturamento_periodos" FromRole="periodos" ToRole="metas_faturamento" />
+          <NavigationProperty Name="metas_fluxo" Relationship="CPanelModel.FK_metas_fluxo_periodos" FromRole="periodos" ToRole="metas_fluxo" />
+          <NavigationProperty Name="metas_fotografados" Relationship="CPanelModel.FK_metas_fotografados_periodos" FromRole="periodos" ToRole="metas_fotografados" />
+          <NavigationProperty Name="metas_recebimento" Relationship="CPanelModel.FK_metas_recebimento_periodos" FromRole="periodos" ToRole="metas_recebimento" />
+        </EntityType>
+        <EntityType Name="periodos_feriados">
+          <Key>
+            <PropertyRef Name="id_periodo_feriado" />
+          </Key>
+          <Property Name="id_periodo_feriado" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_periodo" Type="Int32" />
+          <Property Name="data" Type="DateTime" Precision="3" />
+          <Property Name="descricao" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="aberto" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="periodos" Relationship="CPanelModel.FK_periodos_feriados_periodos" FromRole="periodos_feriados" ToRole="periodos" />
+        </EntityType>
+        <EntityType Name="periodos_objetivos">
+          <Key>
+            <PropertyRef Name="id_periodo_objetivo" />
+          </Key>
+          <Property Name="id_periodo_objetivo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_periodo" Type="Int32" />
+          <Property Name="obj_fotografar" Type="Int32" />
+          <Property Name="obj_vender" Type="Int32" />
+          <Property Name="obj_preco_medio" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="obj_condicional" Type="Int32" />
+          <Property Name="media_fotografar" Type="Decimal" Precision="8" Scale="2" />
+          <Property Name="media_vender" Type="Decimal" Precision="8" Scale="2" />
+          <Property Name="media_preco_medio" Type="Decimal" Precision="8" Scale="2" />
+          <Property Name="media_condicional" Type="Decimal" Precision="8" Scale="2" />
+          <Property Name="dif_fotografar" Type="Decimal" Precision="8" Scale="2" />
+          <Property Name="dif_vender" Type="Decimal" Precision="8" Scale="2" />
+          <Property Name="dif_preco_medio" Type="Decimal" Precision="8" Scale="2" />
+          <Property Name="dif_condicional" Type="Decimal" Precision="8" Scale="2" />
+          <Property Name="meta_faturamento" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="meta_fluxo" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="meta_estrelas" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="meta_estrelas_perc" Type="Decimal" Precision="8" Scale="2" />
+          <Property Name="meta_entrada" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="meta_recebimento" Type="Decimal" Precision="19" Scale="4" />
+          <NavigationProperty Name="periodos" Relationship="CPanelModel.FK_periodos_objetivos_periodos" FromRole="periodos_objetivos" ToRole="periodos" />
+        </EntityType>
+        <EntityType Name="periodos_semanas">
+          <Key>
+            <PropertyRef Name="id_periodo_semana" />
+          </Key>
+          <Property Name="id_periodo_semana" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_periodo" Type="Int32" />
+          <Property Name="data_inicio" Type="DateTime" Precision="3" />
+          <Property Name="data_fim" Type="DateTime" Precision="3" />
+          <Property Name="num_dias" Type="Int32" />
+          <Property Name="participacao" Type="Decimal" Precision="5" Scale="2" />
+          <Property Name="participacao_financ" Type="Decimal" Precision="5" Scale="2" />
+          <NavigationProperty Name="periodos" Relationship="CPanelModel.FK_periodos_semanas_periodos" FromRole="periodos_semanas" ToRole="periodos" />
+          <NavigationProperty Name="lancamentos" Relationship="CPanelModel.FK_lancamentos_periodos_semanas" FromRole="periodos_semanas" ToRole="lancamentos" />
+          <NavigationProperty Name="metas_entradas" Relationship="CPanelModel.FK_metas_entradas_periodos_semanas" FromRole="periodos_semanas" ToRole="metas_entradas" />
+          <NavigationProperty Name="metas_faturamento" Relationship="CPanelModel.FK_metas_faturamento_periodos_semanas" FromRole="periodos_semanas" ToRole="metas_faturamento" />
+          <NavigationProperty Name="metas_fluxo" Relationship="CPanelModel.FK_metas_fluxo_periodos_semanas" FromRole="periodos_semanas" ToRole="metas_fluxo" />
+          <NavigationProperty Name="metas_fotografados" Relationship="CPanelModel.FK_metas_fotografados_periodos_semanas" FromRole="periodos_semanas" ToRole="metas_fotografados" />
+          <NavigationProperty Name="metas_recebimento" Relationship="CPanelModel.FK_metas_recebimento_periodos_semanas" FromRole="periodos_semanas" ToRole="metas_recebimento" />
+        </EntityType>
+        <Association Name="FK_periodos_filiais">
+          <End Type="CPanelModel.filiais" Role="filiais" Multiplicity="0..1" />
+          <End Type="CPanelModel.periodos" Role="periodos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="filiais">
+              <PropertyRef Name="id_filial" />
+            </Principal>
+            <Dependent Role="periodos">
+              <PropertyRef Name="id_filial" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_periodos_feriados_periodos">
+          <End Type="CPanelModel.periodos" Role="periodos" Multiplicity="0..1" />
+          <End Type="CPanelModel.periodos_feriados" Role="periodos_feriados" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="periodos">
+              <PropertyRef Name="id_periodo" />
+            </Principal>
+            <Dependent Role="periodos_feriados">
+              <PropertyRef Name="id_periodo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_periodos_objetivos_periodos">
+          <End Type="CPanelModel.periodos" Role="periodos" Multiplicity="0..1" />
+          <End Type="CPanelModel.periodos_objetivos" Role="periodos_objetivos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="periodos">
+              <PropertyRef Name="id_periodo" />
+            </Principal>
+            <Dependent Role="periodos_objetivos">
+              <PropertyRef Name="id_periodo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_periodos_semanas_periodos">
+          <End Type="CPanelModel.periodos" Role="periodos" Multiplicity="0..1" />
+          <End Type="CPanelModel.periodos_semanas" Role="periodos_semanas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="periodos">
+              <PropertyRef Name="id_periodo" />
+            </Principal>
+            <Dependent Role="periodos_semanas">
+              <PropertyRef Name="id_periodo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="usuarios">
+          <Key>
+            <PropertyRef Name="id_usuario" />
+          </Key>
+          <Property Name="id_usuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_usuario_grupo" Type="Int32" />
+          <Property Name="nome" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="telefone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="usuarios_grupos" Relationship="CPanelModel.FK_usuarios_usuarios_grupos" FromRole="usuarios" ToRole="usuarios_grupos" />
+          <NavigationProperty Name="lancamentos" Relationship="CPanelModel.FK_lancamentos_usuarios" FromRole="usuarios" ToRole="lancamentos" />
+        </EntityType>
+        <EntityType Name="usuarios_grupos">
+          <Key>
+            <PropertyRef Name="id_usuario_grupo" />
+          </Key>
+          <Property Name="id_usuario_grupo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nome" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="lanc_periodo" Type="Boolean" />
+          <Property Name="lanc_lancamento" Type="Boolean" />
+          <Property Name="lanc_checklist" Type="Boolean" />
+          <Property Name="rel_lanc" Type="Boolean" />
+          <Property Name="rel_metas" Type="Boolean" />
+          <Property Name="rel_ranking" Type="Boolean" />
+          <Property Name="rel_perfil_rede" Type="Boolean" />
+          <Property Name="rel_perfil_indiv" Type="Boolean" />
+          <Property Name="rel_perfil_franquia" Type="Boolean" />
+          <Property Name="rel_checklist" Type="Boolean" />
+          <Property Name="rel_checklist_branco" Type="Boolean" />
+          <Property Name="config_filiais" Type="Boolean" />
+          <Property Name="config_setores" Type="Boolean" />
+          <Property Name="config_usuarios" Type="Boolean" />
+          <Property Name="config_usuarios_grupos" Type="Boolean" />
+          <Property Name="config_checklist_tipo" Type="Boolean" />
+          <Property Name="config_checklist_cat" Type="Boolean" />
+          <Property Name="config_checklist_item" Type="Boolean" />
+          <NavigationProperty Name="usuarios" Relationship="CPanelModel.FK_usuarios_usuarios_grupos" FromRole="usuarios_grupos" ToRole="usuarios" />
+        </EntityType>
+        <Association Name="FK_usuarios_usuarios_grupos">
+          <End Type="CPanelModel.usuarios_grupos" Role="usuarios_grupos" Multiplicity="0..1" />
+          <End Type="CPanelModel.usuarios" Role="usuarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuarios_grupos">
+              <PropertyRef Name="id_usuario_grupo" />
+            </Principal>
+            <Dependent Role="usuarios">
+              <PropertyRef Name="id_usuario_grupo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="setores">
+          <Key>
+            <PropertyRef Name="id_setor" />
+          </Key>
+          <Property Name="id_setor" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nome" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="responsavel" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="filiais" Relationship="CPanelModel.FK_filiais_setores" FromRole="setores" ToRole="filiais" />
+        </EntityType>
+        <Association Name="FK_filiais_setores">
+          <End Type="CPanelModel.setores" Role="setores" Multiplicity="0..1" />
+          <End Type="CPanelModel.filiais" Role="filiais" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="setores">
+              <PropertyRef Name="id_setor" />
+            </Principal>
+            <Dependent Role="filiais">
+              <PropertyRef Name="id_setor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="lancamentos">
+          <Key>
+            <PropertyRef Name="id_lancamento" />
+          </Key>
+          <Property Name="id_lancamento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_usuario" Type="Int32" />
+          <Property Name="id_filial" Type="Int32" />
+          <Property Name="id_periodo" Type="Int32" />
+          <Property Name="id_periodo_semana" Type="Int32" />
+          <Property Name="data" Type="DateTime" Precision="3" />
+          <Property Name="dia" Type="Int32" />
+          <Property Name="venda_entradas" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="venda_entrada_cartao" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="venda_entrada_depositada" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="venda_prazo" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="venda_vista" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="venda_vista_cartao" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="venda_devolvidas" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="faturamento" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="faturamento_bruto" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="comissao" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="recebimento" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="recebimento_rm" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="recebimento_caixa" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="fluxo_caixa" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="ponto_equilibrio" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="fotografados" Type="Int32" />
+          <Property Name="fotografados_media" Type="Int32" />
+          <Property Name="fotografados_acumulo" Type="Int32" />
+          <Property Name="condicional" Type="Int32" />
+          <Property Name="condicional_acumulo" Type="Int32" />
+          <Property Name="condicional_media" Type="Int32" />
+          <Property Name="vendas" Type="Int32" />
+          <Property Name="vendas_acumulo" Type="Int32" />
+          <Property Name="vendas_media" Type="Int32" />
+          <Property Name="vendas_perc" Type="Decimal" Precision="8" Scale="2" />
+          <Property Name="brindes" Type="Int32" />
+          <Property Name="bloqueado" Type="Boolean" />
+          <Property Name="atendidos" Type="Int32" />
+          <NavigationProperty Name="filiais" Relationship="CPanelModel.FK_lancamentos_filiais" FromRole="lancamentos" ToRole="filiais" />
+          <NavigationProperty Name="periodos" Relationship="CPanelModel.FK_lancamentos_periodos" FromRole="lancamentos" ToRole="periodos" />
+          <NavigationProperty Name="periodos_semanas" Relationship="CPanelModel.FK_lancamentos_periodos_semanas" FromRole="lancamentos" ToRole="periodos_semanas" />
+          <NavigationProperty Name="usuarios" Relationship="CPanelModel.FK_lancamentos_usuarios" FromRole="lancamentos" ToRole="usuarios" />
+        </EntityType>
+        <Association Name="FK_lancamentos_filiais">
+          <End Type="CPanelModel.filiais" Role="filiais" Multiplicity="0..1" />
+          <End Type="CPanelModel.lancamentos" Role="lancamentos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="filiais">
+              <PropertyRef Name="id_filial" />
+            </Principal>
+            <Dependent Role="lancamentos">
+              <PropertyRef Name="id_filial" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_lancamentos_periodos">
+          <End Type="CPanelModel.periodos" Role="periodos" Multiplicity="0..1" />
+          <End Type="CPanelModel.lancamentos" Role="lancamentos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="periodos">
+              <PropertyRef Name="id_periodo" />
+            </Principal>
+            <Dependent Role="lancamentos">
+              <PropertyRef Name="id_periodo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_lancamentos_periodos_semanas">
+          <End Type="CPanelModel.periodos_semanas" Role="periodos_semanas" Multiplicity="0..1" />
+          <End Type="CPanelModel.lancamentos" Role="lancamentos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="periodos_semanas">
+              <PropertyRef Name="id_periodo_semana" />
+            </Principal>
+            <Dependent Role="lancamentos">
+              <PropertyRef Name="id_periodo_semana" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_lancamentos_usuarios">
+          <End Type="CPanelModel.usuarios" Role="usuarios" Multiplicity="0..1" />
+          <End Type="CPanelModel.lancamentos" Role="lancamentos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuarios">
+              <PropertyRef Name="id_usuario" />
+            </Principal>
+            <Dependent Role="lancamentos">
+              <PropertyRef Name="id_usuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="meses">
+          <Key>
+            <PropertyRef Name="mes" />
+          </Key>
+          <Property Name="mes" Type="Int32" Nullable="false" />
+          <Property Name="descricao" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="metas_entradas">
+          <Key>
+            <PropertyRef Name="id_meta_entrada" />
+          </Key>
+          <Property Name="id_meta_entrada" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_filial" Type="Int32" />
+          <Property Name="id_periodo" Type="Int32" />
+          <Property Name="id_periodo_semana" Type="Int32" />
+          <Property Name="valor_meta" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="valor_alcancado" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="perc_meta" Type="Decimal" Precision="8" Scale="2" />
+          <Property Name="perc_alcancado" Type="Decimal" Precision="8" Scale="2" />
+          <NavigationProperty Name="filiais" Relationship="CPanelModel.FK_metas_entradas_filiais" FromRole="metas_entradas" ToRole="filiais" />
+          <NavigationProperty Name="periodos" Relationship="CPanelModel.FK_metas_entradas_periodos" FromRole="metas_entradas" ToRole="periodos" />
+          <NavigationProperty Name="periodos_semanas" Relationship="CPanelModel.FK_metas_entradas_periodos_semanas" FromRole="metas_entradas" ToRole="periodos_semanas" />
+        </EntityType>
+        <EntityType Name="metas_faturamento">
+          <Key>
+            <PropertyRef Name="id_meta_faturamento" />
+          </Key>
+          <Property Name="id_meta_faturamento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_filial" Type="Int32" />
+          <Property Name="id_periodo" Type="Int32" />
+          <Property Name="id_periodo_semana" Type="Int32" />
+          <Property Name="perc_meta" Type="Decimal" Precision="8" Scale="2" />
+          <Property Name="valor_meta" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="perc_alcancado" Type="Decimal" Precision="8" Scale="2" />
+          <Property Name="valor_alcancado" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="valor_estrelas" Type="Decimal" Precision="19" Scale="4" />
+          <NavigationProperty Name="filiais" Relationship="CPanelModel.FK_metas_faturamento_filiais" FromRole="metas_faturamento" ToRole="filiais" />
+          <NavigationProperty Name="periodos" Relationship="CPanelModel.FK_metas_faturamento_periodos" FromRole="metas_faturamento" ToRole="periodos" />
+          <NavigationProperty Name="periodos_semanas" Relationship="CPanelModel.FK_metas_faturamento_periodos_semanas" FromRole="metas_faturamento" ToRole="periodos_semanas" />
+        </EntityType>
+        <EntityType Name="metas_fluxo">
+          <Key>
+            <PropertyRef Name="id_meta_fluxo" />
+          </Key>
+          <Property Name="id_meta_fluxo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_filial" Type="Int32" />
+          <Property Name="id_periodo" Type="Int32" />
+          <Property Name="id_periodo_semana" Type="Int32" />
+          <Property Name="valor_meta" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="valor_alcancado" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="perc_meta" Type="Decimal" Precision="8" Scale="2" />
+          <Property Name="perc_alcancado" Type="Decimal" Precision="8" Scale="2" />
+          <NavigationProperty Name="filiais" Relationship="CPanelModel.FK_metas_fluxo_filiais" FromRole="metas_fluxo" ToRole="filiais" />
+          <NavigationProperty Name="periodos" Relationship="CPanelModel.FK_metas_fluxo_periodos" FromRole="metas_fluxo" ToRole="periodos" />
+          <NavigationProperty Name="periodos_semanas" Relationship="CPanelModel.FK_metas_fluxo_periodos_semanas" FromRole="metas_fluxo" ToRole="periodos_semanas" />
+        </EntityType>
+        <EntityType Name="metas_fotografados">
+          <Key>
+            <PropertyRef Name="id_meta_fotografado" />
+          </Key>
+          <Property Name="id_meta_fotografado" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_filial" Type="Int32" />
+          <Property Name="id_periodo" Type="Int32" />
+          <Property Name="id_periodo_semana" Type="Int32" />
+          <Property Name="meta_diaria" Type="Int32" />
+          <Property Name="meta_semanal" Type="Int32" />
+          <Property Name="total_alcancado" Type="Int32" />
+          <Property Name="perc_alcancado" Type="Decimal" Precision="8" Scale="2" />
+          <NavigationProperty Name="filiais" Relationship="CPanelModel.FK_metas_fotografados_filiais" FromRole="metas_fotografados" ToRole="filiais" />
+          <NavigationProperty Name="periodos" Relationship="CPanelModel.FK_metas_fotografados_periodos" FromRole="metas_fotografados" ToRole="periodos" />
+          <NavigationProperty Name="periodos_semanas" Relationship="CPanelModel.FK_metas_fotografados_periodos_semanas" FromRole="metas_fotografados" ToRole="periodos_semanas" />
+        </EntityType>
+        <EntityType Name="metas_recebimento">
+          <Key>
+            <PropertyRef Name="id_meta_recebimento" />
+          </Key>
+          <Property Name="id_meta_recebimento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_filial" Type="Int32" />
+          <Property Name="id_periodo" Type="Int32" />
+          <Property Name="id_periodo_semana" Type="Int32" />
+          <Property Name="valor_meta" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="valor_alcancado" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="perc_meta" Type="Decimal" Precision="8" Scale="2" />
+          <Property Name="perc_alcancado" Type="Decimal" Precision="8" Scale="2" />
+          <NavigationProperty Name="filiais" Relationship="CPanelModel.FK_metas_recebimento_filiais" FromRole="metas_recebimento" ToRole="filiais" />
+          <NavigationProperty Name="periodos" Relationship="CPanelModel.FK_metas_recebimento_periodos" FromRole="metas_recebimento" ToRole="periodos" />
+          <NavigationProperty Name="periodos_semanas" Relationship="CPanelModel.FK_metas_recebimento_periodos_semanas" FromRole="metas_recebimento" ToRole="periodos_semanas" />
+        </EntityType>
+        <Association Name="FK_metas_entradas_filiais">
+          <End Type="CPanelModel.filiais" Role="filiais" Multiplicity="0..1" />
+          <End Type="CPanelModel.metas_entradas" Role="metas_entradas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="filiais">
+              <PropertyRef Name="id_filial" />
+            </Principal>
+            <Dependent Role="metas_entradas">
+              <PropertyRef Name="id_filial" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_metas_faturamento_filiais">
+          <End Type="CPanelModel.filiais" Role="filiais" Multiplicity="0..1" />
+          <End Type="CPanelModel.metas_faturamento" Role="metas_faturamento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="filiais">
+              <PropertyRef Name="id_filial" />
+            </Principal>
+            <Dependent Role="metas_faturamento">
+              <PropertyRef Name="id_filial" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_metas_fluxo_filiais">
+          <End Type="CPanelModel.filiais" Role="filiais" Multiplicity="0..1" />
+          <End Type="CPanelModel.metas_fluxo" Role="metas_fluxo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="filiais">
+              <PropertyRef Name="id_filial" />
+            </Principal>
+            <Dependent Role="metas_fluxo">
+              <PropertyRef Name="id_filial" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_metas_fotografados_filiais">
+          <End Type="CPanelModel.filiais" Role="filiais" Multiplicity="0..1" />
+          <End Type="CPanelModel.metas_fotografados" Role="metas_fotografados" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="filiais">
+              <PropertyRef Name="id_filial" />
+            </Principal>
+            <Dependent Role="metas_fotografados">
+              <PropertyRef Name="id_filial" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_metas_recebimento_filiais">
+          <End Type="CPanelModel.filiais" Role="filiais" Multiplicity="0..1" />
+          <End Type="CPanelModel.metas_recebimento" Role="metas_recebimento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="filiais">
+              <PropertyRef Name="id_filial" />
+            </Principal>
+            <Dependent Role="metas_recebimento">
+              <PropertyRef Name="id_filial" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_metas_entradas_periodos">
+          <End Type="CPanelModel.periodos" Role="periodos" Multiplicity="0..1" />
+          <End Type="CPanelModel.metas_entradas" Role="metas_entradas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="periodos">
+              <PropertyRef Name="id_periodo" />
+            </Principal>
+            <Dependent Role="metas_entradas">
+              <PropertyRef Name="id_periodo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_metas_entradas_periodos_semanas">
+          <End Type="CPanelModel.periodos_semanas" Role="periodos_semanas" Multiplicity="0..1" />
+          <End Type="CPanelModel.metas_entradas" Role="metas_entradas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="periodos_semanas">
+              <PropertyRef Name="id_periodo_semana" />
+            </Principal>
+            <Dependent Role="metas_entradas">
+              <PropertyRef Name="id_periodo_semana" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_metas_faturamento_periodos">
+          <End Type="CPanelModel.periodos" Role="periodos" Multiplicity="0..1" />
+          <End Type="CPanelModel.metas_faturamento" Role="metas_faturamento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="periodos">
+              <PropertyRef Name="id_periodo" />
+            </Principal>
+            <Dependent Role="metas_faturamento">
+              <PropertyRef Name="id_periodo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_metas_faturamento_periodos_semanas">
+          <End Type="CPanelModel.periodos_semanas" Role="periodos_semanas" Multiplicity="0..1" />
+          <End Type="CPanelModel.metas_faturamento" Role="metas_faturamento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="periodos_semanas">
+              <PropertyRef Name="id_periodo_semana" />
+            </Principal>
+            <Dependent Role="metas_faturamento">
+              <PropertyRef Name="id_periodo_semana" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_metas_fluxo_periodos">
+          <End Type="CPanelModel.periodos" Role="periodos" Multiplicity="0..1" />
+          <End Type="CPanelModel.metas_fluxo" Role="metas_fluxo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="periodos">
+              <PropertyRef Name="id_periodo" />
+            </Principal>
+            <Dependent Role="metas_fluxo">
+              <PropertyRef Name="id_periodo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_metas_fluxo_periodos_semanas">
+          <End Type="CPanelModel.periodos_semanas" Role="periodos_semanas" Multiplicity="0..1" />
+          <End Type="CPanelModel.metas_fluxo" Role="metas_fluxo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="periodos_semanas">
+              <PropertyRef Name="id_periodo_semana" />
+            </Principal>
+            <Dependent Role="metas_fluxo">
+              <PropertyRef Name="id_periodo_semana" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_metas_fotografados_periodos">
+          <End Type="CPanelModel.periodos" Role="periodos" Multiplicity="0..1" />
+          <End Type="CPanelModel.metas_fotografados" Role="metas_fotografados" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="periodos">
+              <PropertyRef Name="id_periodo" />
+            </Principal>
+            <Dependent Role="metas_fotografados">
+              <PropertyRef Name="id_periodo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_metas_fotografados_periodos_semanas">
+          <End Type="CPanelModel.periodos_semanas" Role="periodos_semanas" Multiplicity="0..1" />
+          <End Type="CPanelModel.metas_fotografados" Role="metas_fotografados" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="periodos_semanas">
+              <PropertyRef Name="id_periodo_semana" />
+            </Principal>
+            <Dependent Role="metas_fotografados">
+              <PropertyRef Name="id_periodo_semana" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_metas_recebimento_periodos">
+          <End Type="CPanelModel.periodos" Role="periodos" Multiplicity="0..1" />
+          <End Type="CPanelModel.metas_recebimento" Role="metas_recebimento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="periodos">
+              <PropertyRef Name="id_periodo" />
+            </Principal>
+            <Dependent Role="metas_recebimento">
+              <PropertyRef Name="id_periodo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_metas_recebimento_periodos_semanas">
+          <End Type="CPanelModel.periodos_semanas" Role="periodos_semanas" Multiplicity="0..1" />
+          <End Type="CPanelModel.metas_recebimento" Role="metas_recebimento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="periodos_semanas">
+              <PropertyRef Name="id_periodo_semana" />
+            </Principal>
+            <Dependent Role="metas_recebimento">
+              <PropertyRef Name="id_periodo_semana" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CPanelModelStoreContainer" CdmEntityContainer="CPanelEntities">
+          <EntitySetMapping Name="cadernos">
+            <EntityTypeMapping TypeName="CPanelModel.cadernos">
+              <MappingFragment StoreEntitySet="cadernos">
+                <ScalarProperty Name="entrada_depositada" ColumnName="entrada_depositada" />
+                <ScalarProperty Name="id_caderno" ColumnName="id_caderno" />
+                <ScalarProperty Name="id_filial" ColumnName="id_filial" />
+                <ScalarProperty Name="data" ColumnName="data" />
+                <ScalarProperty Name="entrada_dinheiro" ColumnName="entrada_dinheiro" />
+                <ScalarProperty Name="entrada_cartao" ColumnName="entrada_cartao" />
+                <ScalarProperty Name="entrada_total" ColumnName="entrada_total" />
+                <ScalarProperty Name="venda_prazo" ColumnName="venda_prazo" />
+                <ScalarProperty Name="venda_dinheiro" ColumnName="venda_dinheiro" />
+                <ScalarProperty Name="venda_cartao" ColumnName="venda_cartao" />
+                <ScalarProperty Name="venda_total" ColumnName="venda_total" />
+                <ScalarProperty Name="devolvida_valor" ColumnName="devolvida_valor" />
+                <ScalarProperty Name="devolvida_qtde" ColumnName="devolvida_qtde" />
+                <ScalarProperty Name="programada_valor" ColumnName="programada_valor" />
+                <ScalarProperty Name="programada_qtde" ColumnName="programada_qtde" />
+                <ScalarProperty Name="autorizada_valor" ColumnName="autorizada_valor" />
+                <ScalarProperty Name="autorizada_qtde" ColumnName="autorizada_qtde" />
+                <ScalarProperty Name="fotografados" ColumnName="fotografados" />
+                <ScalarProperty Name="brinde" ColumnName="brinde" />
+                <ScalarProperty Name="liberada_escrit" ColumnName="liberada_escrit" />
+                <ScalarProperty Name="liberada_gerente" ColumnName="liberada_gerente" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cadernos_devolucoes">
+            <EntityTypeMapping TypeName="CPanelModel.cadernos_devolucoes">
+              <MappingFragment StoreEntitySet="cadernos_devolucoes">
+                <ScalarProperty Name="id_devolvida" ColumnName="id_devolvida" />
+                <ScalarProperty Name="id_venda" ColumnName="id_venda" />
+                <ScalarProperty Name="id_motivo" ColumnName="id_motivo" />
+                <ScalarProperty Name="observacao" ColumnName="observacao" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cadernos_devolucoes_motivos">
+            <EntityTypeMapping TypeName="CPanelModel.cadernos_devolucoes_motivos">
+              <MappingFragment StoreEntitySet="cadernos_devolucoes_motivos">
+                <ScalarProperty Name="id_motivo" ColumnName="id_motivo" />
+                <ScalarProperty Name="descricao" ColumnName="descricao" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cadernos_liberacoes">
+            <EntityTypeMapping TypeName="CPanelModel.cadernos_liberacoes">
+              <MappingFragment StoreEntitySet="cadernos_liberacoes">
+                <ScalarProperty Name="id_liberacao" ColumnName="id_liberacao" />
+                <ScalarProperty Name="id_venda" ColumnName="id_venda" />
+                <ScalarProperty Name="id_tipo" ColumnName="id_tipo" />
+                <ScalarProperty Name="desconto" ColumnName="desconto" />
+                <ScalarProperty Name="observacao" ColumnName="observacao" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cadernos_liberacoes_tipos">
+            <EntityTypeMapping TypeName="CPanelModel.cadernos_liberacoes_tipos">
+              <MappingFragment StoreEntitySet="cadernos_liberacoes_tipos">
+                <ScalarProperty Name="id_tipo" ColumnName="id_tipo" />
+                <ScalarProperty Name="descricao" ColumnName="descricao" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="filiais">
+            <EntityTypeMapping TypeName="CPanelModel.filiais">
+              <MappingFragment StoreEntitySet="filiais">
+                <ScalarProperty Name="cservice_id" ColumnName="cservice_id" />
+                <ScalarProperty Name="cep_padrao" ColumnName="cep_padrao" />
+                <ScalarProperty Name="spc_senha" ColumnName="spc_senha" />
+                <ScalarProperty Name="spc_consulta" ColumnName="spc_consulta" />
+                <ScalarProperty Name="spc" ColumnName="spc" />
+                <ScalarProperty Name="id_filial" ColumnName="id_filial" />
+                <ScalarProperty Name="id_filial_natureza" ColumnName="id_filial_natureza" />
+                <ScalarProperty Name="id_filial_tipo" ColumnName="id_filial_tipo" />
+                <ScalarProperty Name="id_setor" ColumnName="id_setor" />
+                <ScalarProperty Name="nome" ColumnName="nome" />
+                <ScalarProperty Name="ativo" ColumnName="ativo" />
+                <ScalarProperty Name="rm_coligada" ColumnName="rm_coligada" />
+                <ScalarProperty Name="rm_filial" ColumnName="rm_filial" />
+                <ScalarProperty Name="rm_fantasia" ColumnName="rm_fantasia" />
+                <ScalarProperty Name="rm_custo" ColumnName="rm_custo" />
+                <ScalarProperty Name="rm_cpc" ColumnName="rm_cpc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cadernos_vendas">
+            <EntityTypeMapping TypeName="CPanelModel.cadernos_vendas">
+              <MappingFragment StoreEntitySet="cadernos_vendas">
+                <ScalarProperty Name="is_acompanhamento" ColumnName="is_acompanhamento" />
+                <ScalarProperty Name="is_cortesia" ColumnName="is_cortesia" />
+                <ScalarProperty Name="cod_venda" ColumnName="cod_venda" />
+                <ScalarProperty Name="vendedora" ColumnName="vendedora" />
+                <ScalarProperty Name="is_autorizada" ColumnName="is_autorizada" />
+                <ScalarProperty Name="is_devolvida" ColumnName="is_devolvida" />
+                <ScalarProperty Name="is_programada" ColumnName="is_programada" />
+                <ScalarProperty Name="venda_total" ColumnName="venda_total" />
+                <ScalarProperty Name="venda_prazo" ColumnName="venda_prazo" />
+                <ScalarProperty Name="venda_cartao" ColumnName="venda_cartao" />
+                <ScalarProperty Name="venda_dinheiro" ColumnName="venda_dinheiro" />
+                <ScalarProperty Name="entrada_depositada_data" ColumnName="entrada_depositada_data" />
+                <ScalarProperty Name="entrada_depositada" ColumnName="entrada_depositada" />
+                <ScalarProperty Name="entrada_cartao" ColumnName="entrada_cartao" />
+                <ScalarProperty Name="entrada_dinheiro" ColumnName="entrada_dinheiro" />
+                <ScalarProperty Name="nome_cliente" ColumnName="nome_cliente" />
+                <ScalarProperty Name="cod_rm" ColumnName="cod_rm" />
+                <ScalarProperty Name="cod_cmaster" ColumnName="cod_cmaster" />
+                <ScalarProperty Name="id_caderno" ColumnName="id_caderno" />
+                <ScalarProperty Name="id_venda" ColumnName="id_venda" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="filiais_natureza">
+            <EntityTypeMapping TypeName="CPanelModel.filiais_natureza">
+              <MappingFragment StoreEntitySet="filiais_natureza">
+                <ScalarProperty Name="nome" ColumnName="nome" />
+                <ScalarProperty Name="id_filial_natureza" ColumnName="id_filial_natureza" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="filiais_tipo">
+            <EntityTypeMapping TypeName="CPanelModel.filiais_tipo">
+              <MappingFragment StoreEntitySet="filiais_tipo">
+                <ScalarProperty Name="nome" ColumnName="nome" />
+                <ScalarProperty Name="id_filial_tipo" ColumnName="id_filial_tipo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="periodos">
+            <EntityTypeMapping TypeName="CPanelModel.periodos">
+              <MappingFragment StoreEntitySet="periodos">
+                <ScalarProperty Name="dias" ColumnName="dias" />
+                <ScalarProperty Name="data_fim" ColumnName="data_fim" />
+                <ScalarProperty Name="data_inicio" ColumnName="data_inicio" />
+                <ScalarProperty Name="mes" ColumnName="mes" />
+                <ScalarProperty Name="ano" ColumnName="ano" />
+                <ScalarProperty Name="id_filial" ColumnName="id_filial" />
+                <ScalarProperty Name="id_periodo" ColumnName="id_periodo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="periodos_feriados">
+            <EntityTypeMapping TypeName="CPanelModel.periodos_feriados">
+              <MappingFragment StoreEntitySet="periodos_feriados">
+                <ScalarProperty Name="aberto" ColumnName="aberto" />
+                <ScalarProperty Name="descricao" ColumnName="descricao" />
+                <ScalarProperty Name="data" ColumnName="data" />
+                <ScalarProperty Name="id_periodo" ColumnName="id_periodo" />
+                <ScalarProperty Name="id_periodo_feriado" ColumnName="id_periodo_feriado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="periodos_objetivos">
+            <EntityTypeMapping TypeName="CPanelModel.periodos_objetivos">
+              <MappingFragment StoreEntitySet="periodos_objetivos">
+                <ScalarProperty Name="meta_recebimento" ColumnName="meta_recebimento" />
+                <ScalarProperty Name="meta_entrada" ColumnName="meta_entrada" />
+                <ScalarProperty Name="meta_estrelas_perc" ColumnName="meta_estrelas_perc" />
+                <ScalarProperty Name="meta_estrelas" ColumnName="meta_estrelas" />
+                <ScalarProperty Name="meta_fluxo" ColumnName="meta_fluxo" />
+                <ScalarProperty Name="meta_faturamento" ColumnName="meta_faturamento" />
+                <ScalarProperty Name="dif_condicional" ColumnName="dif_condicional" />
+                <ScalarProperty Name="dif_preco_medio" ColumnName="dif_preco_medio" />
+                <ScalarProperty Name="dif_vender" ColumnName="dif_vender" />
+                <ScalarProperty Name="dif_fotografar" ColumnName="dif_fotografar" />
+                <ScalarProperty Name="media_condicional" ColumnName="media_condicional" />
+                <ScalarProperty Name="media_preco_medio" ColumnName="media_preco_medio" />
+                <ScalarProperty Name="media_vender" ColumnName="media_vender" />
+                <ScalarProperty Name="media_fotografar" ColumnName="media_fotografar" />
+                <ScalarProperty Name="obj_condicional" ColumnName="obj_condicional" />
+                <ScalarProperty Name="obj_preco_medio" ColumnName="obj_preco_medio" />
+                <ScalarProperty Name="obj_vender" ColumnName="obj_vender" />
+                <ScalarProperty Name="obj_fotografar" ColumnName="obj_fotografar" />
+                <ScalarProperty Name="id_periodo" ColumnName="id_periodo" />
+                <ScalarProperty Name="id_periodo_objetivo" ColumnName="id_periodo_objetivo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="periodos_semanas">
+            <EntityTypeMapping TypeName="CPanelModel.periodos_semanas">
+              <MappingFragment StoreEntitySet="periodos_semanas">
+                <ScalarProperty Name="participacao_financ" ColumnName="participacao_financ" />
+                <ScalarProperty Name="participacao" ColumnName="participacao" />
+                <ScalarProperty Name="num_dias" ColumnName="num_dias" />
+                <ScalarProperty Name="data_fim" ColumnName="data_fim" />
+                <ScalarProperty Name="data_inicio" ColumnName="data_inicio" />
+                <ScalarProperty Name="id_periodo" ColumnName="id_periodo" />
+                <ScalarProperty Name="id_periodo_semana" ColumnName="id_periodo_semana" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="usuarios">
+            <EntityTypeMapping TypeName="CPanelModel.usuarios">
+              <MappingFragment StoreEntitySet="usuarios">
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="telefone" ColumnName="telefone" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="nome" ColumnName="nome" />
+                <ScalarProperty Name="id_usuario_grupo" ColumnName="id_usuario_grupo" />
+                <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="usuarios_grupos">
+            <EntityTypeMapping TypeName="CPanelModel.usuarios_grupos">
+              <MappingFragment StoreEntitySet="usuarios_grupos">
+                <ScalarProperty Name="config_checklist_item" ColumnName="config_checklist_item" />
+                <ScalarProperty Name="config_checklist_cat" ColumnName="config_checklist_cat" />
+                <ScalarProperty Name="config_checklist_tipo" ColumnName="config_checklist_tipo" />
+                <ScalarProperty Name="config_usuarios_grupos" ColumnName="config_usuarios_grupos" />
+                <ScalarProperty Name="config_usuarios" ColumnName="config_usuarios" />
+                <ScalarProperty Name="config_setores" ColumnName="config_setores" />
+                <ScalarProperty Name="config_filiais" ColumnName="config_filiais" />
+                <ScalarProperty Name="rel_checklist_branco" ColumnName="rel_checklist_branco" />
+                <ScalarProperty Name="rel_checklist" ColumnName="rel_checklist" />
+                <ScalarProperty Name="rel_perfil_franquia" ColumnName="rel_perfil_franquia" />
+                <ScalarProperty Name="rel_perfil_indiv" ColumnName="rel_perfil_indiv" />
+                <ScalarProperty Name="rel_perfil_rede" ColumnName="rel_perfil_rede" />
+                <ScalarProperty Name="rel_ranking" ColumnName="rel_ranking" />
+                <ScalarProperty Name="rel_metas" ColumnName="rel_metas" />
+                <ScalarProperty Name="rel_lanc" ColumnName="rel_lanc" />
+                <ScalarProperty Name="lanc_checklist" ColumnName="lanc_checklist" />
+                <ScalarProperty Name="lanc_lancamento" ColumnName="lanc_lancamento" />
+                <ScalarProperty Name="lanc_periodo" ColumnName="lanc_periodo" />
+                <ScalarProperty Name="nome" ColumnName="nome" />
+                <ScalarProperty Name="id_usuario_grupo" ColumnName="id_usuario_grupo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="setores">
+            <EntityTypeMapping TypeName="CPanelModel.setores">
+              <MappingFragment StoreEntitySet="setores">
+                <ScalarProperty Name="responsavel" ColumnName="responsavel" />
+                <ScalarProperty Name="nome" ColumnName="nome" />
+                <ScalarProperty Name="id_setor" ColumnName="id_setor" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="lancamentos">
+            <EntityTypeMapping TypeName="CPanelModel.lancamentos">
+              <MappingFragment StoreEntitySet="lancamentos">
+                <ScalarProperty Name="atendidos" ColumnName="atendidos" />
+                <ScalarProperty Name="bloqueado" ColumnName="bloqueado" />
+                <ScalarProperty Name="brindes" ColumnName="brindes" />
+                <ScalarProperty Name="vendas_perc" ColumnName="vendas_perc" />
+                <ScalarProperty Name="vendas_media" ColumnName="vendas_media" />
+                <ScalarProperty Name="vendas_acumulo" ColumnName="vendas_acumulo" />
+                <ScalarProperty Name="vendas" ColumnName="vendas" />
+                <ScalarProperty Name="condicional_media" ColumnName="condicional_media" />
+                <ScalarProperty Name="condicional_acumulo" ColumnName="condicional_acumulo" />
+                <ScalarProperty Name="condicional" ColumnName="condicional" />
+                <ScalarProperty Name="fotografados_acumulo" ColumnName="fotografados_acumulo" />
+                <ScalarProperty Name="fotografados_media" ColumnName="fotografados_media" />
+                <ScalarProperty Name="fotografados" ColumnName="fotografados" />
+                <ScalarProperty Name="ponto_equilibrio" ColumnName="ponto_equilibrio" />
+                <ScalarProperty Name="fluxo_caixa" ColumnName="fluxo_caixa" />
+                <ScalarProperty Name="recebimento_caixa" ColumnName="recebimento_caixa" />
+                <ScalarProperty Name="recebimento_rm" ColumnName="recebimento_rm" />
+                <ScalarProperty Name="recebimento" ColumnName="recebimento" />
+                <ScalarProperty Name="comissao" ColumnName="comissao" />
+                <ScalarProperty Name="faturamento_bruto" ColumnName="faturamento_bruto" />
+                <ScalarProperty Name="faturamento" ColumnName="faturamento" />
+                <ScalarProperty Name="venda_devolvidas" ColumnName="venda_devolvidas" />
+                <ScalarProperty Name="venda_vista_cartao" ColumnName="venda_vista_cartao" />
+                <ScalarProperty Name="venda_vista" ColumnName="venda_vista" />
+                <ScalarProperty Name="venda_prazo" ColumnName="venda_prazo" />
+                <ScalarProperty Name="venda_entrada_depositada" ColumnName="venda_entrada_depositada" />
+                <ScalarProperty Name="venda_entrada_cartao" ColumnName="venda_entrada_cartao" />
+                <ScalarProperty Name="venda_entradas" ColumnName="venda_entradas" />
+                <ScalarProperty Name="dia" ColumnName="dia" />
+                <ScalarProperty Name="data" ColumnName="data" />
+                <ScalarProperty Name="id_periodo_semana" ColumnName="id_periodo_semana" />
+                <ScalarProperty Name="id_periodo" ColumnName="id_periodo" />
+                <ScalarProperty Name="id_filial" ColumnName="id_filial" />
+                <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
+                <ScalarProperty Name="id_lancamento" ColumnName="id_lancamento" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="meses">
+            <EntityTypeMapping TypeName="CPanelModel.meses">
+              <MappingFragment StoreEntitySet="meses">
+                <ScalarProperty Name="descricao" ColumnName="descricao" />
+                <ScalarProperty Name="mes" ColumnName="mes" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="metas_entradas">
+            <EntityTypeMapping TypeName="CPanelModel.metas_entradas">
+              <MappingFragment StoreEntitySet="metas_entradas">
+                <ScalarProperty Name="perc_alcancado" ColumnName="perc_alcancado" />
+                <ScalarProperty Name="perc_meta" ColumnName="perc_meta" />
+                <ScalarProperty Name="valor_alcancado" ColumnName="valor_alcancado" />
+                <ScalarProperty Name="valor_meta" ColumnName="valor_meta" />
+                <ScalarProperty Name="id_periodo_semana" ColumnName="id_periodo_semana" />
+                <ScalarProperty Name="id_periodo" ColumnName="id_periodo" />
+                <ScalarProperty Name="id_filial" ColumnName="id_filial" />
+                <ScalarProperty Name="id_meta_entrada" ColumnName="id_meta_entrada" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="metas_faturamento">
+            <EntityTypeMapping TypeName="CPanelModel.metas_faturamento">
+              <MappingFragment StoreEntitySet="metas_faturamento">
+                <ScalarProperty Name="valor_estrelas" ColumnName="valor_estrelas" />
+                <ScalarProperty Name="valor_alcancado" ColumnName="valor_alcancado" />
+                <ScalarProperty Name="perc_alcancado" ColumnName="perc_alcancado" />
+                <ScalarProperty Name="valor_meta" ColumnName="valor_meta" />
+                <ScalarProperty Name="perc_meta" ColumnName="perc_meta" />
+                <ScalarProperty Name="id_periodo_semana" ColumnName="id_periodo_semana" />
+                <ScalarProperty Name="id_periodo" ColumnName="id_periodo" />
+                <ScalarProperty Name="id_filial" ColumnName="id_filial" />
+                <ScalarProperty Name="id_meta_faturamento" ColumnName="id_meta_faturamento" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="metas_fluxo">
+            <EntityTypeMapping TypeName="CPanelModel.metas_fluxo">
+              <MappingFragment StoreEntitySet="metas_fluxo">
+                <ScalarProperty Name="perc_alcancado" ColumnName="perc_alcancado" />
+                <ScalarProperty Name="perc_meta" ColumnName="perc_meta" />
+                <ScalarProperty Name="valor_alcancado" ColumnName="valor_alcancado" />
+                <ScalarProperty Name="valor_meta" ColumnName="valor_meta" />
+                <ScalarProperty Name="id_periodo_semana" ColumnName="id_periodo_semana" />
+                <ScalarProperty Name="id_periodo" ColumnName="id_periodo" />
+                <ScalarProperty Name="id_filial" ColumnName="id_filial" />
+                <ScalarProperty Name="id_meta_fluxo" ColumnName="id_meta_fluxo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="metas_fotografados">
+            <EntityTypeMapping TypeName="CPanelModel.metas_fotografados">
+              <MappingFragment StoreEntitySet="metas_fotografados">
+                <ScalarProperty Name="perc_alcancado" ColumnName="perc_alcancado" />
+                <ScalarProperty Name="total_alcancado" ColumnName="total_alcancado" />
+                <ScalarProperty Name="meta_semanal" ColumnName="meta_semanal" />
+                <ScalarProperty Name="meta_diaria" ColumnName="meta_diaria" />
+                <ScalarProperty Name="id_periodo_semana" ColumnName="id_periodo_semana" />
+                <ScalarProperty Name="id_periodo" ColumnName="id_periodo" />
+                <ScalarProperty Name="id_filial" ColumnName="id_filial" />
+                <ScalarProperty Name="id_meta_fotografado" ColumnName="id_meta_fotografado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="metas_recebimento">
+            <EntityTypeMapping TypeName="CPanelModel.metas_recebimento">
+              <MappingFragment StoreEntitySet="metas_recebimento">
+                <ScalarProperty Name="perc_alcancado" ColumnName="perc_alcancado" />
+                <ScalarProperty Name="perc_meta" ColumnName="perc_meta" />
+                <ScalarProperty Name="valor_alcancado" ColumnName="valor_alcancado" />
+                <ScalarProperty Name="valor_meta" ColumnName="valor_meta" />
+                <ScalarProperty Name="id_periodo_semana" ColumnName="id_periodo_semana" />
+                <ScalarProperty Name="id_periodo" ColumnName="id_periodo" />
+                <ScalarProperty Name="id_filial" ColumnName="id_filial" />
+                <ScalarProperty Name="id_meta_recebimento" ColumnName="id_meta_recebimento" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="UseLegacyProvider" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

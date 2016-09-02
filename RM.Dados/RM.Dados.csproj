@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{48CE4FD7-CFF0-4BEF-A4F2-794309FC0EB3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RM.Dados</RootNamespace>
+    <AssemblyName>RM.Dados</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\..\Canaan\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\..\Canaan\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CorporeModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CorporeModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CorporeModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CorporeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CorporeModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CorporeModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DTIPOBAIRRO.cs">
+      <DependentUpon>CorporeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DTIPORUA.cs">
+      <DependentUpon>CorporeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FACORDO.cs">
+      <DependentUpon>CorporeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FACORDOREL.cs">
+      <DependentUpon>CorporeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FCFO.cs">
+      <DependentUpon>CorporeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FCFOCOMPL.cs">
+      <DependentUpon>CorporeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FCONTA.cs">
+      <DependentUpon>CorporeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FCXA.cs">
+      <DependentUpon>CorporeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FLAN.cs">
+      <DependentUpon>CorporeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FLANACORDO.cs">
+      <DependentUpon>CorporeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FLANCOMPL.cs">
+      <DependentUpon>CorporeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FLANRATCCU.cs">
+      <DependentUpon>CorporeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FTB1.cs">
+      <DependentUpon>CorporeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FXCX.cs">
+      <DependentUpon>CorporeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GCCUSTO.cs">
+      <DependentUpon>CorporeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GCOLIGADA.cs">
+      <DependentUpon>CorporeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GCONSIST.cs">
+      <DependentUpon>CorporeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GDINAM.cs">
+      <DependentUpon>CorporeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GETD.cs">
+      <DependentUpon>CorporeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GFILIAL.cs">
+      <DependentUpon>CorporeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GMUNICIPIO.cs">
+      <DependentUpon>CorporeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GPAIS.cs">
+      <DependentUpon>CorporeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PEVENTO.cs">
+      <DependentUpon>CorporeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PFFINANC.cs">
+      <DependentUpon>CorporeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PFUNC.cs">
+      <DependentUpon>CorporeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PFUNCAO.cs">
+      <DependentUpon>CorporeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PPESSOA.cs">
+      <DependentUpon>CorporeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TCPG.cs">
+      <DependentUpon>CorporeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TITMMOV.cs">
+      <DependentUpon>CorporeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TITMMOVCOMPL.cs">
+      <DependentUpon>CorporeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TMOV.cs">
+      <DependentUpon>CorporeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TMOVCOMPL.cs">
+      <DependentUpon>CorporeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TPRD.cs">
+      <DependentUpon>CorporeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TPRDCOMPL.cs">
+      <DependentUpon>CorporeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TPRD_1140.cs">
+      <DependentUpon>CorporeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TPRODUTO.cs">
+      <DependentUpon>CorporeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TPRODUTODEF.cs">
+      <DependentUpon>CorporeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TVEN.cs">
+      <DependentUpon>CorporeModel.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="CorporeModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>CorporeModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CorporeModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CorporeModel.edmx</DependentUpon>
+      <LastGenOutput>CorporeModel.Context.cs</LastGenOutput>
+    </None>
+    <None Include="CorporeModel.edmx.diagram">
+      <DependentUpon>CorporeModel.edmx</DependentUpon>
+    </None>
+    <None Include="CorporeModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CorporeModel.edmx</DependentUpon>
+      <LastGenOutput>CorporeModel.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

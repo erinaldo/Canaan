@@ -224,7 +224,7 @@ namespace Canaan.Telas.Movimentacoes.Atendimento.Modelos
                 lkCidade.Text = Atendimento.CliFor.Cidade.Nome;
 
                 Modelo.Sexo = Cliente as PessoaFisica != null ? (int)((PessoaFisica)Cliente).Sexo : (int)EnumCliForSexo.Masculino;
-                Modelo.Nascimento = Cliente as PessoaFisica != null ? ((PessoaFisica)Cliente).Nascimento : DateTime.MinValue;
+                Modelo.Nascimento = Cliente as PessoaFisica != null ? ((PessoaFisica)Cliente).Nascimento : DateTime.Today;
                 Modelo.Cpf = Cliente.Documento;
                 Modelo.Rg = Cliente as PessoaFisica != null ? ((PessoaFisica)Cliente).Rg : null;
                 Modelo.Email = Atendimento.CliFor.Email;

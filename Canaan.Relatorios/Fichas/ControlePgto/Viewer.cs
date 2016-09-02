@@ -63,7 +63,7 @@ namespace Canaan.Relatorios.Fichas.ControlePgto
             try
             {
                 //configura o relatorio
-                Relatorio report = new Relatorio();
+                Carne report = new Carne();
 
                 //carrega dados
                 report.SetDataSource(DataSet);
@@ -82,12 +82,14 @@ namespace Canaan.Relatorios.Fichas.ControlePgto
         {
             using (Dados.CanaanModelContainer conn = new Dados.CanaanModelContainer())
             {
+                var atual = 1;
                 var venda = conn.Pedido.OfType<Dados.Venda>().FirstOrDefault(a => a.IdPedido == IdVenda);
                 var filial = new Lib.Filial().GetById(Lib.Session.Instance.Contexto.IdFilial);
                 var cidade = new Lib.Cidade().GetById(filial.IdCidade);
+                var lancamentos = venda.Lancamento.Where(a => a.DataVencimento > a.DataEmissao).OrderBy(a => a.DataVencimento);
 
                 //Fichas
-                foreach (var item in venda.Lancamento.Where(a => a.DataVencimento > a.DataEmissao).OrderBy(a => a.DataVencimento))
+                foreach (var item in lancamentos)
                 {
                     var rowLanc = DataSet.Lancamento.NewLancamentoRow();
                     rowLanc.IdLancamento = item.IdLancamento;
@@ -101,9 +103,15 @@ namespace Canaan.Relatorios.Fichas.ControlePgto
                     rowLanc.NomeFantasia = filial.NomeFantasia;
                     rowLanc.Cidade = cidade.Nome;
                     rowLanc.ValorCrediario = venda.ValorCrediario.GetValueOrDefault();
-                    rowLanc.ValorCanaan = venda.ValorLiquido.GetValueOrDefault() - venda.ValorCrediario.GetValueOrDefault();
+                    rowLanc.ValorCanaan = venda.ValorLiquido.GetValueOrDefault();
+                    rowLanc.CountAtual = atual;
+                    rowLanc.CountTotal = lancamentos.Count();
+                    rowLanc.CodVenda = venda.IdPedido;
+                    rowLanc.CodLancamento = item.IdLancamento;
                     
                     DataSet.Lancamento.AddLancamentoRow(rowLanc);
+
+                    atual++;
                 }
             }
         }

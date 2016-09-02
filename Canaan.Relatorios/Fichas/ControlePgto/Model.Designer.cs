@@ -303,6 +303,14 @@ namespace Canaan.Relatorios.Fichas.ControlePgto {
             
             private global::System.Data.DataColumn columnValorCanaan;
             
+            private global::System.Data.DataColumn columnCountAtual;
+            
+            private global::System.Data.DataColumn columnCountTotal;
+            
+            private global::System.Data.DataColumn columnCodVenda;
+            
+            private global::System.Data.DataColumn columnCodLancamento;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public LancamentoDataTable() {
@@ -434,6 +442,38 @@ namespace Canaan.Relatorios.Fichas.ControlePgto {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CountAtualColumn {
+                get {
+                    return this.columnCountAtual;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CountTotalColumn {
+                get {
+                    return this.columnCountTotal;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CodVendaColumn {
+                get {
+                    return this.columnCodVenda;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CodLancamentoColumn {
+                get {
+                    return this.columnCodLancamento;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -469,7 +509,23 @@ namespace Canaan.Relatorios.Fichas.ControlePgto {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public LancamentoRow AddLancamentoRow(int IdLancamento, int CodCMaster, string Nome, string Cpf, System.DateTime DataCompra, System.DateTime DataVencimento, decimal Valor, byte[] Logo, string NomeFantasia, string Cidade, decimal ValorCrediario, decimal ValorCanaan) {
+            public LancamentoRow AddLancamentoRow(
+                        int IdLancamento, 
+                        int CodCMaster, 
+                        string Nome, 
+                        string Cpf, 
+                        System.DateTime DataCompra, 
+                        System.DateTime DataVencimento, 
+                        decimal Valor, 
+                        byte[] Logo, 
+                        string NomeFantasia, 
+                        string Cidade, 
+                        decimal ValorCrediario, 
+                        decimal ValorCanaan, 
+                        int CountAtual, 
+                        int CountTotal, 
+                        int CodVenda, 
+                        int CodLancamento) {
                 LancamentoRow rowLancamentoRow = ((LancamentoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         IdLancamento,
@@ -483,7 +539,11 @@ namespace Canaan.Relatorios.Fichas.ControlePgto {
                         NomeFantasia,
                         Cidade,
                         ValorCrediario,
-                        ValorCanaan};
+                        ValorCanaan,
+                        CountAtual,
+                        CountTotal,
+                        CodVenda,
+                        CodLancamento};
                 rowLancamentoRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowLancamentoRow);
                 return rowLancamentoRow;
@@ -518,6 +578,10 @@ namespace Canaan.Relatorios.Fichas.ControlePgto {
                 this.columnCidade = base.Columns["Cidade"];
                 this.columnValorCrediario = base.Columns["ValorCrediario"];
                 this.columnValorCanaan = base.Columns["ValorCanaan"];
+                this.columnCountAtual = base.Columns["CountAtual"];
+                this.columnCountTotal = base.Columns["CountTotal"];
+                this.columnCodVenda = base.Columns["CodVenda"];
+                this.columnCodLancamento = base.Columns["CodLancamento"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -547,6 +611,14 @@ namespace Canaan.Relatorios.Fichas.ControlePgto {
                 base.Columns.Add(this.columnValorCrediario);
                 this.columnValorCanaan = new global::System.Data.DataColumn("ValorCanaan", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnValorCanaan);
+                this.columnCountAtual = new global::System.Data.DataColumn("CountAtual", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCountAtual);
+                this.columnCountTotal = new global::System.Data.DataColumn("CountTotal", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCountTotal);
+                this.columnCodVenda = new global::System.Data.DataColumn("CodVenda", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCodVenda);
+                this.columnCodLancamento = new global::System.Data.DataColumn("CodLancamento", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCodLancamento);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("LancamentoKey1", new global::System.Data.DataColumn[] {
                                 this.columnIdLancamento}, false));
                 this.columnIdLancamento.Unique = true;
@@ -884,6 +956,70 @@ namespace Canaan.Relatorios.Fichas.ControlePgto {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int CountAtual {
+                get {
+                    try {
+                        return ((int)(this[this.tableLancamento.CountAtualColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CountAtual\' in table \'Lancamento\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableLancamento.CountAtualColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int CountTotal {
+                get {
+                    try {
+                        return ((int)(this[this.tableLancamento.CountTotalColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CountTotal\' in table \'Lancamento\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableLancamento.CountTotalColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int CodVenda {
+                get {
+                    try {
+                        return ((int)(this[this.tableLancamento.CodVendaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CodVenda\' in table \'Lancamento\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableLancamento.CodVendaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int CodLancamento {
+                get {
+                    try {
+                        return ((int)(this[this.tableLancamento.CodLancamentoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CodLancamento\' in table \'Lancamento\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableLancamento.CodLancamentoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsIdLancamentoNull() {
                 return this.IsNull(this.tableLancamento.IdLancamentoColumn);
             }
@@ -1024,6 +1160,54 @@ namespace Canaan.Relatorios.Fichas.ControlePgto {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetValorCanaanNull() {
                 this[this.tableLancamento.ValorCanaanColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCountAtualNull() {
+                return this.IsNull(this.tableLancamento.CountAtualColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCountAtualNull() {
+                this[this.tableLancamento.CountAtualColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCountTotalNull() {
+                return this.IsNull(this.tableLancamento.CountTotalColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCountTotalNull() {
+                this[this.tableLancamento.CountTotalColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCodVendaNull() {
+                return this.IsNull(this.tableLancamento.CodVendaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCodVendaNull() {
+                this[this.tableLancamento.CodVendaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCodLancamentoNull() {
+                return this.IsNull(this.tableLancamento.CodLancamentoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCodLancamentoNull() {
+                this[this.tableLancamento.CodLancamentoColumn] = global::System.Convert.DBNull;
             }
         }
         

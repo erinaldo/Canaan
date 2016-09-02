@@ -30,6 +30,7 @@ namespace Canaan.Lib.Utilitarios
 
             return encryptedData;
         }
+
         public static byte[] Descriptografa(byte[] criptoData)
         {
             MemoryStream ms = new MemoryStream();

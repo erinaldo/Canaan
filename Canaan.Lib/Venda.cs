@@ -83,6 +83,7 @@ namespace Canaan.Lib
                                     .Include(a => a.Atendimento.Agendamento.Cupom)
                                     .Include(a => a.Atendimento.Agendamento.Cupom.Parceria)
                                     .Include(a => a.Atendimento.Agendamento.Cupom.Parceria.Convenio)
+                                    .Include(a => a.VendaEvento)
                                     .Include(a => a.FormaEntrada)
                                     .Include(a => a.FormaPgto)
                                     .Include(a => a.Usuario)
@@ -307,6 +308,11 @@ namespace Canaan.Lib
                     updated.ValorAcrescimo = item.ValorAcrescimo;
                     updated.ValorLiquido = item.ValorLiquido;
                     updated.IsAtivo = item.IsAtivo;
+
+                    //evento
+                    updated.TipoEvento = item.TipoEvento;
+                    updated.NomeModelo = item.NomeModelo;
+                    updated.EventoEspecificacao = item.EventoEspecificacao;
 
 
 

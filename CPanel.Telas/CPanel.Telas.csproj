@@ -1,0 +1,218 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{44559B5C-2B7C-4A2C-A753-15C0C38A034C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CPanel.Telas</RootNamespace>
+    <AssemblyName>CPanel.Telas</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v15.1.Core, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Sparkline.v15.1.Core, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraEditors.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Canaan\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Canaan\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Caderno\frmDevolucao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Caderno\frmDevolucao.Designer.cs">
+      <DependentUpon>frmDevolucao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Caderno\frmEdita.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Caderno\frmEdita.Designer.cs">
+      <DependentUpon>frmEdita.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Caderno\frmLiberacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Caderno\frmLiberacao.Designer.cs">
+      <DependentUpon>frmLiberacao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Caderno\frmLista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Caderno\frmLista.Designer.cs">
+      <DependentUpon>frmLista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Caderno\frmNovo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Caderno\frmNovo.Designer.cs">
+      <DependentUpon>frmNovo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Caderno\frmVenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Caderno\frmVenda.Designer.cs">
+      <DependentUpon>frmVenda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lancamento\Edita.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lancamento\Edita.Designer.cs">
+      <DependentUpon>Edita.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lancamento\Lista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lancamento\Lista.Designer.cs">
+      <DependentUpon>Lista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lancamento\ViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Caderno\frmDevolucao.resx">
+      <DependentUpon>frmDevolucao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Caderno\frmEdita.resx">
+      <DependentUpon>frmEdita.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Caderno\frmLiberacao.resx">
+      <DependentUpon>frmLiberacao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Caderno\frmLista.resx">
+      <DependentUpon>frmLista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Caderno\frmNovo.resx">
+      <DependentUpon>frmNovo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Caderno\frmVenda.resx">
+      <DependentUpon>frmVenda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lancamento\Edita.resx">
+      <DependentUpon>Edita.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lancamento\Lista.resx">
+      <DependentUpon>Lista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Resources\New document.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Notes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Apply.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Print.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RM.Telas\RM.Telas.csproj">
+      <Project>{7cf3d058-f504-41b9-8cf9-f59d7cb577c5}</Project>
+      <Name>RM.Telas</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CPanel.Dados\CPanel.Dados.csproj">
+      <Project>{361a8c7a-f62b-4fdb-a4dd-f916955f58dd}</Project>
+      <Name>CPanel.Dados</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CPanel.Lib\CPanel.Lib.csproj">
+      <Project>{514b8987-5352-4a2a-b42c-de27e0750308}</Project>
+      <Name>CPanel.Lib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CPanel.Relatorios\CPanel.Relatorios.csproj">
+      <Project>{479cf917-4788-4e0b-a1ff-6a49027ba763}</Project>
+      <Name>CPanel.Relatorios</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RM.Dados\RM.Dados.csproj">
+      <Project>{48ce4fd7-cff0-4bef-a4f2-794309fc0eb3}</Project>
+      <Name>RM.Dados</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RM.Lib\RM.Lib.csproj">
+      <Project>{bbb4febe-8007-47e5-902b-c4e7027681e0}</Project>
+      <Name>RM.Lib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Green tag.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Blue tag.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Red tag.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

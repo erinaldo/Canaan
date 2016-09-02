@@ -155,12 +155,15 @@ namespace Canaan.Telas.Financeiro.Lancamento
             Edita frm = new Edita();
             frm.ShowDialog();
 
+            ExecutarFiltro();
+            Sumario();
+
             //inclui lancamento na lista e recarrega o grid
-            if (frm.Lancamento != null)
-            {
-                //Lancamentos.Add(frm.Lancamento);
-                CarregaGrid();
-            }
+            //if (frm.Lancamento != null)
+            //{
+            //    //Lancamentos.Add(frm.Lancamento);
+            //    CarregaGrid();
+            //}
         }
 
         private void EditaLancamento() 

@@ -88,6 +88,10 @@ namespace Canaan.Lib
                     updated.RMColigada = item.RMColigada;
                     updated.RMFilial = item.RMFilial;
 
+                    //textos
+                    updated.TextoEvento = item.TextoEvento;
+                    updated.TextoContrato = item.TextoContrato;
+
                     //valida e salva
                     if (Validacao.IsValid(conn))
                     {

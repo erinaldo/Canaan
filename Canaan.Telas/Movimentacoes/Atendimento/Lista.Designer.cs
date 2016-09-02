@@ -39,7 +39,6 @@ namespace Canaan.Telas.Movimentacoes.Atendimento
             this.ClientSize = new System.Drawing.Size(838, 423);
             this.Name = "Lista";
             this.Text = "Lista";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Lista_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

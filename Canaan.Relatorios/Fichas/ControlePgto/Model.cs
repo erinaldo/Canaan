@@ -1,6 +1,8 @@
-﻿namespace Canaan.Relatorios.Fichas.ControlePgto {
-    
-    
-    public partial class Model {
+﻿namespace Canaan.Relatorios.Fichas.ControlePgto
+{
+
+
+    public partial class Model
+    {
     }
 }
