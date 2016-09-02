@@ -689,11 +689,11 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\CPanel\Biblioteca\CPanel.Dados\CPanel.Dados.csproj">
+    <ProjectReference Include="..\CPanel.Dados\CPanel.Dados.csproj">
       <Project>{361a8c7a-f62b-4fdb-a4dd-f916955f58dd}</Project>
       <Name>CPanel.Dados</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\CPanel\Biblioteca\CPanel.Lib\CPanel.Lib.csproj">
+    <ProjectReference Include="..\CPanel.Lib\CPanel.Lib.csproj">
       <Project>{514b8987-5352-4a2a-b42c-de27e0750308}</Project>
       <Name>CPanel.Lib</Name>
     </ProjectReference>

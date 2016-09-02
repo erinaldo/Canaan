@@ -695,7 +695,7 @@ namespace Canaan.Telas.Properties {
         /// </summary>
         public static System.Drawing.Bitmap operadora_claro {
             get {
-                object obj = ResourceManager.GetObject("operadora-claro", resourceCulture);
+                object obj = ResourceManager.GetObject("operadora_claro", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -705,7 +705,7 @@ namespace Canaan.Telas.Properties {
         /// </summary>
         public static System.Drawing.Bitmap operadora_oi {
             get {
-                object obj = ResourceManager.GetObject("operadora-oi", resourceCulture);
+                object obj = ResourceManager.GetObject("operadora_oi", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -715,7 +715,7 @@ namespace Canaan.Telas.Properties {
         /// </summary>
         public static System.Drawing.Bitmap operadora_tim {
             get {
-                object obj = ResourceManager.GetObject("operadora-tim", resourceCulture);
+                object obj = ResourceManager.GetObject("operadora_tim", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -725,7 +725,7 @@ namespace Canaan.Telas.Properties {
         /// </summary>
         public static System.Drawing.Bitmap operadora_vivo {
             get {
-                object obj = ResourceManager.GetObject("operadora-vivo", resourceCulture);
+                object obj = ResourceManager.GetObject("operadora_vivo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

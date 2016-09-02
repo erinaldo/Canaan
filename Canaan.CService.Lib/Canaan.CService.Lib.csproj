@@ -66,6 +66,10 @@
     <Compile Include="Usuario.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\Canaan.Cservice.Dados\Canaan.CService.Dados.csproj">
       <Project>{3f570c6c-6db7-485d-8a19-89e05dd8824d}</Project>
       <Name>Canaan.CService.Dados</Name>
@@ -78,10 +82,6 @@
       <Project>{bbb4febe-8007-47e5-902b-c4e7027681e0}</Project>
       <Name>RM.Lib</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

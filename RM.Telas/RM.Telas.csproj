@@ -34,17 +34,19 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Boleto.Net">
-      <HintPath>..\..\Canaan\Canaan.Lib\bin\Debug\Boleto.Net.dll</HintPath>
-    </Reference>
-    <Reference Include="Canaan.Lib">
-      <HintPath>..\..\Canaan\Canaan.Lib\bin\Debug\Canaan.Lib.dll</HintPath>
+    <Reference Include="Boleto.Net, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Boleto.Net.2.1.0.264\lib\Boleto.Net.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="EntityFramework">
       <HintPath>..\..\Canaan\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer">
       <HintPath>..\..\Canaan\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="NReco.PdfGenerator, Version=1.1.12.0, Culture=neutral, PublicKeyToken=231663d50a41b451, processorArchitecture=MSIL">
+      <HintPath>..\packages\Boleto.Net.2.1.0.264\lib\NReco.PdfGenerator.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -194,32 +196,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\AceJundiai\AceJundiai\AceJundiai.csproj">
-      <Project>{3a874072-cefe-4f35-ace8-456716a76bad}</Project>
-      <Name>AceJundiai</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\CPanel\Biblioteca\CPanel.Dados\CPanel.Dados.csproj">
-      <Project>{361a8c7a-f62b-4fdb-a4dd-f916955f58dd}</Project>
-      <Name>CPanel.Dados</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\CPanel\Biblioteca\CPanel.Lib\CPanel.Lib.csproj">
-      <Project>{514b8987-5352-4a2a-b42c-de27e0750308}</Project>
-      <Name>CPanel.Lib</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\RM.Dados\RM.Dados.csproj">
-      <Project>{48ce4fd7-cff0-4bef-a4f2-794309fc0eb3}</Project>
-      <Name>RM.Dados</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\RM.Lib\RM.Lib.csproj">
-      <Project>{bbb4febe-8007-47e5-902b-c4e7027681e0}</Project>
-      <Name>RM.Lib</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\RM.Relatorios\RM.Relatorios.csproj">
-      <Project>{a71e3340-c689-4abe-a1bf-f025b4885e88}</Project>
-      <Name>RM.Relatorios</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
     <None Include="Resources\filter_16xLG.png" />
@@ -273,6 +249,40 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\save_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AceJundiai\AceJundiai.csproj">
+      <Project>{3a874072-cefe-4f35-ace8-456716a76bad}</Project>
+      <Name>AceJundiai</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Canaan.Dados\Canaan.Dados.csproj">
+      <Project>{369fe6a1-e2f8-4035-9631-7459616ffffc}</Project>
+      <Name>Canaan.Dados</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Canaan.Lib\Canaan.Lib.csproj">
+      <Project>{b0cc386c-f0bd-489c-bb0b-05216d2d24ea}</Project>
+      <Name>Canaan.Lib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CPanel.Dados\CPanel.Dados.csproj">
+      <Project>{361a8c7a-f62b-4fdb-a4dd-f916955f58dd}</Project>
+      <Name>CPanel.Dados</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CPanel.Lib\CPanel.Lib.csproj">
+      <Project>{514b8987-5352-4a2a-b42c-de27e0750308}</Project>
+      <Name>CPanel.Lib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RM.Dados\RM.Dados.csproj">
+      <Project>{48ce4fd7-cff0-4bef-a4f2-794309fc0eb3}</Project>
+      <Name>RM.Dados</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RM.Lib\RM.Lib.csproj">
+      <Project>{bbb4febe-8007-47e5-902b-c4e7027681e0}</Project>
+      <Name>RM.Lib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RM.Relatorios\RM.Relatorios.csproj">
+      <Project>{a71e3340-c689-4abe-a1bf-f025b4885e88}</Project>
+      <Name>RM.Relatorios</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

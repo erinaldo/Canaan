@@ -192,6 +192,9 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\Canaan.Cservice.Dados\Canaan.CService.Dados.csproj">
       <Project>{3f570c6c-6db7-485d-8a19-89e05dd8824d}</Project>
       <Name>Canaan.CService.Dados</Name>
@@ -201,10 +204,6 @@
       <Name>Canaan.CService.Lib</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
-  </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

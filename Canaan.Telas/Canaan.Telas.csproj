@@ -1691,6 +1691,12 @@
     <None Include="Resources\VirtualEnvironment_16xLG.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\save_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\phone.png" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\Canaan.Cservice.Dados\Canaan.CService.Dados.csproj">
       <Project>{3f570c6c-6db7-485d-8a19-89e05dd8824d}</Project>
       <Name>Canaan.CService.Dados</Name>
@@ -1716,13 +1722,6 @@
       <Name>Canaan.Servicos</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\save_16xLG.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\phone.png" />
-  </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\tear_off_calendar.png" />
   </ItemGroup>

@@ -160,24 +160,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Canaan.Cservice.Dados\Canaan.CService.Dados.csproj">
-      <Project>{3f570c6c-6db7-485d-8a19-89e05dd8824d}</Project>
-      <Name>Canaan.CService.Dados</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Canaan.CService.Lib\Canaan.CService.Lib.csproj">
-      <Project>{6779a99b-aaf6-45f2-ac59-eee8715f6e94}</Project>
-      <Name>Canaan.CService.Lib</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\RM.Dados\RM.Dados.csproj">
-      <Project>{48ce4fd7-cff0-4bef-a4f2-794309fc0eb3}</Project>
-      <Name>RM.Dados</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\RM.Telas\RM.Telas.csproj">
-      <Project>{7cf3d058-f504-41b9-8cf9-f59d7cb577c5}</Project>
-      <Name>RM.Telas</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\action_add_16xLG.png" />
   </ItemGroup>
   <ItemGroup>
@@ -494,6 +476,28 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Integracao\Envelope\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Canaan.Cservice.Dados\Canaan.CService.Dados.csproj">
+      <Project>{3f570c6c-6db7-485d-8a19-89e05dd8824d}</Project>
+      <Name>Canaan.CService.Dados</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Canaan.CService.Lib\Canaan.CService.Lib.csproj">
+      <Project>{6779a99b-aaf6-45f2-ac59-eee8715f6e94}</Project>
+      <Name>Canaan.CService.Lib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Canaan.CService.Relatorios\Canaan.CService.Relatorios.csproj">
+      <Project>{f0dfe656-153b-477d-86c9-8f869fd3e967}</Project>
+      <Name>Canaan.CService.Relatorios</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RM.Dados\RM.Dados.csproj">
+      <Project>{48ce4fd7-cff0-4bef-a4f2-794309fc0eb3}</Project>
+      <Name>RM.Dados</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RM.Telas\RM.Telas.csproj">
+      <Project>{7cf3d058-f504-41b9-8cf9-f59d7cb577c5}</Project>
+      <Name>RM.Telas</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
