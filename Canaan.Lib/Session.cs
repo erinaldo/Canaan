@@ -10,7 +10,7 @@ namespace Canaan.Lib
     {
         public Dados.Usuario Usuario { get; set; }
         public Dados.UsuarioFilial Contexto { get; set; }
-        public string LogoReport { get; set; }
+        public byte[] LogoReport { get; set; }
 
         private static Session instance;
         

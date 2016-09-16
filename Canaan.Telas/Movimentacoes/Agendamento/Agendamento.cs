@@ -617,8 +617,8 @@ namespace Canaan.Telas.Movimentacoes.Agendamento
             DateTime dayStart = interval.Start;
             DateTime agora = DateTime.Now;
 
-            if (dayStart < agora)
-                return false;
+            //if (dayStart < agora)
+            //    return false;
 
             //Verifica se a data selecionada esta entre o WorkTime
             if (dayStart.TimeOfDay >= WorkTime.Start && dayStart.TimeOfDay <= WorkTime.End)
@@ -783,6 +783,7 @@ namespace Canaan.Telas.Movimentacoes.Agendamento
             {
                 var idagendamento = int.Parse(customField.ToString());
                 var agendamento = LibAgendamento.GetById(idagendamento);
+
                 if (agendamento != null)
                 {
                     if (MessageBoxUtilities.MessageQuestion("Deseja deletar este agendamento?") == DialogResult.Yes)
@@ -801,8 +802,8 @@ namespace Canaan.Telas.Movimentacoes.Agendamento
                             var cupom = LibCupom.GetById(agendamento.IdCupom);
 
                             //descarta o cupom
-                            cupom = LibCupom.DescartaCupom(cupom);
-                            LibCupom.Update(cupom);
+                            //cupom = LibCupom.DescartaCupom(cupom);
+                            //LibCupom.Update(cupom);
 
                             MessageBoxUtilities.MessageInfo("Agendamento deletado com sucesso");
                         }

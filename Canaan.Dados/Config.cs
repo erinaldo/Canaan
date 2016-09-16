@@ -42,6 +42,9 @@ namespace Canaan.Dados
         public Nullable<bool> UsaLiberacao { get; set; }
         public string TextoEvento { get; set; }
         public string TextoContrato { get; set; }
+        public Nullable<bool> UsaAtendimentoAutomatico { get; set; }
+        public byte[] Logomarca { get; set; }
+        public Nullable<bool> UsaBaixaEntrada { get; set; }
     
         public virtual Filial Filial { get; set; }
     }

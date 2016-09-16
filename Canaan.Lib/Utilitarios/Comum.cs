@@ -228,7 +228,7 @@ namespace Canaan.Lib.Utilitarios
             var result = double.TryParse(cnpj, out number);
 
             if (result)
-                return string.Format("{0:(##)####-####}", number);
+                return Convert.ToUInt64(cnpj).ToString(@"00\.000\.000\/0000\-00");
             else
                 return cnpj;
         }

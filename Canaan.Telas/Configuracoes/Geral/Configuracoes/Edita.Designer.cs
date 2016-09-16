@@ -30,6 +30,10 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btnAlteraLogo = new System.Windows.Forms.Button();
+            this.label20 = new System.Windows.Forms.Label();
+            this.logomarcaPictureBox = new System.Windows.Forms.PictureBox();
+            this.usaAtendimentoCheckBox = new System.Windows.Forms.CheckBox();
             this.UsaLuberacaoCheckBox = new System.Windows.Forms.CheckBox();
             this.pastaUsaMesCheckBox = new System.Windows.Forms.CheckBox();
             this.pastaUsaAnoCheckBox = new System.Windows.Forms.CheckBox();
@@ -79,12 +83,14 @@
             this.cServiceIdTextBox = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.tabPage6 = new System.Windows.Forms.TabPage();
-            this.tabPage7 = new System.Windows.Forms.TabPage();
             this.eventoTextBox = new System.Windows.Forms.TextBox();
+            this.tabPage7 = new System.Windows.Forms.TabPage();
             this.contratoTextBox = new System.Windows.Forms.TextBox();
+            this.usaBaixaEntradaCheckBox = new System.Windows.Forms.CheckBox();
             this.panelEdit.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.logomarcaPictureBox)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
@@ -116,6 +122,10 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.btnAlteraLogo);
+            this.tabPage1.Controls.Add(this.label20);
+            this.tabPage1.Controls.Add(this.logomarcaPictureBox);
+            this.tabPage1.Controls.Add(this.usaAtendimentoCheckBox);
             this.tabPage1.Controls.Add(this.UsaLuberacaoCheckBox);
             this.tabPage1.Controls.Add(this.pastaUsaMesCheckBox);
             this.tabPage1.Controls.Add(this.pastaUsaAnoCheckBox);
@@ -139,6 +149,44 @@
             this.tabPage1.Text = "Informações Gerais";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // btnAlteraLogo
+            // 
+            this.btnAlteraLogo.Location = new System.Drawing.Point(634, 179);
+            this.btnAlteraLogo.Name = "btnAlteraLogo";
+            this.btnAlteraLogo.Size = new System.Drawing.Size(75, 23);
+            this.btnAlteraLogo.TabIndex = 18;
+            this.btnAlteraLogo.Text = "Alterar Logomarca";
+            this.btnAlteraLogo.UseVisualStyleBackColor = true;
+            this.btnAlteraLogo.Click += new System.EventHandler(this.btnAlteraLogo_Click);
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(387, 5);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(59, 13);
+            this.label20.TabIndex = 17;
+            this.label20.Text = "Logomarca";
+            // 
+            // logomarcaPictureBox
+            // 
+            this.logomarcaPictureBox.Location = new System.Drawing.Point(390, 21);
+            this.logomarcaPictureBox.Name = "logomarcaPictureBox";
+            this.logomarcaPictureBox.Size = new System.Drawing.Size(319, 152);
+            this.logomarcaPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.logomarcaPictureBox.TabIndex = 16;
+            this.logomarcaPictureBox.TabStop = false;
+            // 
+            // usaAtendimentoCheckBox
+            // 
+            this.usaAtendimentoCheckBox.AutoSize = true;
+            this.usaAtendimentoCheckBox.Location = new System.Drawing.Point(11, 277);
+            this.usaAtendimentoCheckBox.Name = "usaAtendimentoCheckBox";
+            this.usaAtendimentoCheckBox.Size = new System.Drawing.Size(140, 17);
+            this.usaAtendimentoCheckBox.TabIndex = 15;
+            this.usaAtendimentoCheckBox.Text = "Usa Atendimento Direto";
+            this.usaAtendimentoCheckBox.UseVisualStyleBackColor = true;
+            // 
             // UsaLuberacaoCheckBox
             // 
             this.UsaLuberacaoCheckBox.AutoSize = true;
@@ -152,7 +200,7 @@
             // pastaUsaMesCheckBox
             // 
             this.pastaUsaMesCheckBox.AutoSize = true;
-            this.pastaUsaMesCheckBox.Location = new System.Drawing.Point(152, 231);
+            this.pastaUsaMesCheckBox.Location = new System.Drawing.Point(203, 231);
             this.pastaUsaMesCheckBox.Name = "pastaUsaMesCheckBox";
             this.pastaUsaMesCheckBox.Size = new System.Drawing.Size(111, 17);
             this.pastaUsaMesCheckBox.TabIndex = 13;
@@ -162,7 +210,7 @@
             // pastaUsaAnoCheckBox
             // 
             this.pastaUsaAnoCheckBox.AutoSize = true;
-            this.pastaUsaAnoCheckBox.Location = new System.Drawing.Point(152, 208);
+            this.pastaUsaAnoCheckBox.Location = new System.Drawing.Point(203, 208);
             this.pastaUsaAnoCheckBox.Name = "pastaUsaAnoCheckBox";
             this.pastaUsaAnoCheckBox.Size = new System.Drawing.Size(111, 17);
             this.pastaUsaAnoCheckBox.TabIndex = 12;
@@ -373,6 +421,7 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.usaBaixaEntradaCheckBox);
             this.tabPage3.Controls.Add(this.usaFinanceiroCheckBox);
             this.tabPage3.Controls.Add(this.multaTextBox);
             this.tabPage3.Controls.Add(this.label12);
@@ -391,9 +440,9 @@
             this.usaFinanceiroCheckBox.AutoSize = true;
             this.usaFinanceiroCheckBox.Location = new System.Drawing.Point(11, 88);
             this.usaFinanceiroCheckBox.Name = "usaFinanceiroCheckBox";
-            this.usaFinanceiroCheckBox.Size = new System.Drawing.Size(96, 17);
+            this.usaFinanceiroCheckBox.Size = new System.Drawing.Size(77, 17);
             this.usaFinanceiroCheckBox.TabIndex = 16;
-            this.usaFinanceiroCheckBox.Text = "Usa Financeiro";
+            this.usaFinanceiroCheckBox.Text = "Usa Boleto";
             this.usaFinanceiroCheckBox.UseVisualStyleBackColor = true;
             // 
             // multaTextBox
@@ -437,7 +486,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(5);
-            this.tabPage4.Size = new System.Drawing.Size(717, 335);
+            this.tabPage4.Size = new System.Drawing.Size(454, 312);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Variáveis";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -489,7 +538,7 @@
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(5);
-            this.tabPage5.Size = new System.Drawing.Size(717, 335);
+            this.tabPage5.Size = new System.Drawing.Size(454, 312);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Integração";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -580,21 +629,10 @@
             this.tabPage6.Location = new System.Drawing.Point(4, 22);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(717, 335);
+            this.tabPage6.Size = new System.Drawing.Size(454, 312);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "Especificação do Evento";
             this.tabPage6.UseVisualStyleBackColor = true;
-            // 
-            // tabPage7
-            // 
-            this.tabPage7.Controls.Add(this.contratoTextBox);
-            this.tabPage7.Location = new System.Drawing.Point(4, 22);
-            this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage7.Size = new System.Drawing.Size(717, 335);
-            this.tabPage7.TabIndex = 6;
-            this.tabPage7.Text = "Contrato";
-            this.tabPage7.UseVisualStyleBackColor = true;
             // 
             // eventoTextBox
             // 
@@ -602,8 +640,19 @@
             this.eventoTextBox.Location = new System.Drawing.Point(3, 3);
             this.eventoTextBox.Multiline = true;
             this.eventoTextBox.Name = "eventoTextBox";
-            this.eventoTextBox.Size = new System.Drawing.Size(711, 329);
+            this.eventoTextBox.Size = new System.Drawing.Size(448, 306);
             this.eventoTextBox.TabIndex = 0;
+            // 
+            // tabPage7
+            // 
+            this.tabPage7.Controls.Add(this.contratoTextBox);
+            this.tabPage7.Location = new System.Drawing.Point(4, 22);
+            this.tabPage7.Name = "tabPage7";
+            this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage7.Size = new System.Drawing.Size(454, 312);
+            this.tabPage7.TabIndex = 6;
+            this.tabPage7.Text = "Contrato";
+            this.tabPage7.UseVisualStyleBackColor = true;
             // 
             // contratoTextBox
             // 
@@ -611,8 +660,18 @@
             this.contratoTextBox.Location = new System.Drawing.Point(3, 3);
             this.contratoTextBox.Multiline = true;
             this.contratoTextBox.Name = "contratoTextBox";
-            this.contratoTextBox.Size = new System.Drawing.Size(711, 329);
+            this.contratoTextBox.Size = new System.Drawing.Size(448, 306);
             this.contratoTextBox.TabIndex = 1;
+            // 
+            // usaBaixaEntradaCheckBox
+            // 
+            this.usaBaixaEntradaCheckBox.AutoSize = true;
+            this.usaBaixaEntradaCheckBox.Location = new System.Drawing.Point(11, 111);
+            this.usaBaixaEntradaCheckBox.Name = "usaBaixaEntradaCheckBox";
+            this.usaBaixaEntradaCheckBox.Size = new System.Drawing.Size(148, 17);
+            this.usaBaixaEntradaCheckBox.TabIndex = 17;
+            this.usaBaixaEntradaCheckBox.Text = "Baixa Entrada Ao Faturar";
+            this.usaBaixaEntradaCheckBox.UseVisualStyleBackColor = true;
             // 
             // Edita
             // 
@@ -626,6 +685,7 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.logomarcaPictureBox)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
@@ -699,5 +759,10 @@
         private System.Windows.Forms.TextBox eventoTextBox;
         private System.Windows.Forms.TabPage tabPage7;
         private System.Windows.Forms.TextBox contratoTextBox;
+        private System.Windows.Forms.CheckBox usaAtendimentoCheckBox;
+        private System.Windows.Forms.Button btnAlteraLogo;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.PictureBox logomarcaPictureBox;
+        private System.Windows.Forms.CheckBox usaBaixaEntradaCheckBox;
     }
 }

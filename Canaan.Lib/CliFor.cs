@@ -75,6 +75,13 @@ namespace Canaan.Lib
 
                         //atualiza lista de referencias
                         UpdateReferencias(item.CliForReferencia.ToList(), item.IdCliFor);
+
+                        //verifica se o atendimento automatico esta habilitado e cria o atendimento
+                        var config = new Config();
+                        if (config.GetByFilial(Session.Instance.Contexto.IdFilial).UsaAtendimentoAutomatico == true)
+                        {
+                            CriaAtendimento(item);
+                        }
                     }
                     else
                     {
@@ -187,6 +194,52 @@ namespace Canaan.Lib
                     refLib.Update(item);
             }
 
+        }
+
+        public void CriaAtendimento(Dados.CliFor item)
+        {
+            //cadastra o cupom
+            var cupom = new Dados.Cupom();
+            cupom.IdParceria = new Lib.Parceria().GetByTipoConvenioAndFilial(Session.Instance.Contexto.IdFilial, Dados.EnumConvenioTipo.Direto).IdParceria;
+            cupom.IdUsuario = Session.Instance.Contexto.IdUsuario;
+            cupom.Data = DateTime.Today;
+            cupom.DataPreenchimento = DateTime.Today;
+            cupom.Status = Dados.EnumCupomStatus.Atendido;
+            cupom.Nome = item.Nome;
+            cupom.Endereco = item.Endereco;
+            cupom.Telefone = item.Telefone;
+            cupom.Celular = item.Celular;
+            cupom.Email = item.Email;
+            cupom.IsAtivo = true;
+            cupom.IsAgendado = true;
+            cupom.DataAgendado = DateTime.Now;
+
+            cupom = new Lib.Cupom().Insert(cupom);
+
+            //cadastra o agendamento
+            var agendamento = new Dados.Agendamento();
+            var inicio = DateTime.Now;
+            agendamento.IdCupom = cupom.IdCupom;
+            agendamento.IdAgenda = new Lib.Agenda().GetByFilial(true, Session.Instance.Contexto.IdFilial).IdAgenda;
+            agendamento.IdUsuario = Session.Instance.Contexto.IdUsuario;
+            agendamento.Status = Dados.EnumAgendamentoStatus.Atendido;
+            agendamento.Inicio = new DateTime(inicio.Year, inicio.Month, inicio.Day, inicio.Hour, 0, 0);
+            agendamento.Termino = new DateTime(inicio.Year, inicio.Month, inicio.Day, inicio.Hour, 30, 0);
+            agendamento.NumConfirmacao = 1;
+
+            agendamento = new Lib.Agendamento().Insert(agendamento);
+
+            //cadastra o atendimento
+            var atendimento = new Dados.Atendimento();
+            atendimento.IdFilial = Session.Instance.Contexto.IdFilial;
+            atendimento.IdCliFor = item.IdCliFor;
+            atendimento.IdAgendamento = agendamento.IdAgendamento;
+            atendimento.IdUsuario = Session.Instance.Usuario.IdUsuario;
+            atendimento.Data = DateTime.Today;
+            atendimento.IsAtivo = true;
+            atendimento.IsConfirmado = true;
+
+            atendimento = new Lib.Atendimento().Insert(atendimento);
         }
 
         public List<Dados.CliFor> Filter(string filtro, object[] parameters)

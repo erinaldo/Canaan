@@ -227,11 +227,11 @@ namespace Canaan.Lib
 
                     //Salva movimentação
                     //SalvaMovimentacaoTele(item, item.IdStatusTele.GetValueOrDefault());
-                    //var verifica = VerificaCondicao(item);
-                    //if (verifica != null)
-                    //{
-                    //    item = UpdateCondicao(item, verifica.GetValueOrDefault());
-                    //}
+                    var verifica = VerificaCondicao(item);
+                    if (verifica != null)
+                    {
+                        item = UpdateCondicao(item, verifica.GetValueOrDefault());
+                    }
 
                     //retorna
                     return GetById(item.IdCupom);
@@ -301,12 +301,12 @@ namespace Canaan.Lib
                             conn.SaveChanges();
 
                             //verifica condicao do telefone
-                            //var verifica = VerificaCondicao(item);
+                            var verifica = VerificaCondicao(item);
 
-                            //if (verifica != null)
-                            //{
-                            //    item = UpdateCondicao(item, verifica.GetValueOrDefault());
-                            //}
+                            if (verifica != null)
+                            {
+                                item = UpdateCondicao(item, verifica.GetValueOrDefault());
+                            }
 
                             //Salvar Movimentação
                             if (salvarMovimentacao)

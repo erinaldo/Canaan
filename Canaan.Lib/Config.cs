@@ -62,8 +62,13 @@ namespace Canaan.Lib
                     updated.LocalFolder = item.LocalFolder;
                     updated.IsCriptogradado = item.IsCriptogradado;
                     updated.UsaManipulacao = item.UsaManipulacao;
+                    updated.UsaLiberacao = item.UsaLiberacao;
                     updated.PastaUsaAno = item.PastaUsaAno;
                     updated.PastaUsaMes = item.PastaUsaMes;
+                    updated.Logomarca = item.Logomarca;
+
+                    //atualiza imagem da sessao
+                    Session.Instance.LogoReport = item.Logomarca;
 
                     //laboratorio
                     updated.FtpHost = item.FtpHost;
@@ -76,6 +81,8 @@ namespace Canaan.Lib
                     updated.Financ_Juros = item.Financ_Juros;
                     updated.Financ_Multa = item.Financ_Multa;
                     updated.UsaFinanceiro = item.UsaFinanceiro;
+                    updated.UsaAtendimentoAutomatico = item.UsaAtendimentoAutomatico;
+                    updated.UsaBaixaEntrada = item.UsaBaixaEntrada;
 
                     //variaveis
                     updated.CurrentAtendimento = item.CurrentAtendimento;

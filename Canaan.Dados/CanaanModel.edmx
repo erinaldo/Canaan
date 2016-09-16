@@ -284,6 +284,9 @@
           <Property Name="UsaLiberacao" Type="bit" />
           <Property Name="TextoEvento" Type="text" />
           <Property Name="TextoContrato" Type="text" />
+          <Property Name="UsaAtendimentoAutomatico" Type="bit" />
+          <Property Name="Logomarca" Type="image" />
+          <Property Name="UsaBaixaEntrada" Type="bit" />
         </EntityType>
         <EntityType Name="Conta">
           <Key>
@@ -5729,6 +5732,9 @@
           <Property Name="UsaLiberacao" Type="Boolean" />
           <Property Name="TextoEvento" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="TextoContrato" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="UsaAtendimentoAutomatico" Type="Boolean" />
+          <Property Name="Logomarca" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="UsaBaixaEntrada" Type="Boolean" />
         </EntityType>
         <Association Name="FK_Config_Filial">
           <End Type="CanaanModel.Filial" Role="Filial" Multiplicity="1">
@@ -7829,6 +7835,9 @@
           <EntitySetMapping Name="Config">
             <EntityTypeMapping TypeName="CanaanModel.Config">
               <MappingFragment StoreEntitySet="Config">
+                <ScalarProperty Name="UsaBaixaEntrada" ColumnName="UsaBaixaEntrada" />
+                <ScalarProperty Name="Logomarca" ColumnName="Logomarca" />
+                <ScalarProperty Name="UsaAtendimentoAutomatico" ColumnName="UsaAtendimentoAutomatico" />
                 <ScalarProperty Name="TextoContrato" ColumnName="TextoContrato" />
                 <ScalarProperty Name="TextoEvento" ColumnName="TextoEvento" />
                 <ScalarProperty Name="UsaLiberacao" ColumnName="UsaLiberacao" />

@@ -11,7 +11,8 @@ namespace Canaan.Relatorios.Utilitarios
     {
         public static byte[] GetLogoReport() 
         {
-            return Lib.Utilitarios.ImageUtility.GetBytes((Bitmap)Properties.Resources.ResourceManager.GetObject(Lib.Session.Instance.LogoReport));
+            //return Lib.Utilitarios.ImageUtility.GetBytes((Bitmap)Properties.Resources.ResourceManager.GetObject(Lib.Session.Instance.LogoReport));
+            return Lib.Session.Instance.LogoReport;
         }
     }
 }

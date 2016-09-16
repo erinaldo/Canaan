@@ -134,9 +134,6 @@ namespace Canaan.WinApp
             {
                 if (Lib.Session.Instance != null && Lib.Session.Instance.Usuario != null)
                 {
-                    //carrega informacao da logo da empresa
-                    Lib.Session.Instance.LogoReport = Properties.Settings.Default.ReportLogo;
-
                     //carrega filiais do usuario
                     var userFiliais = new Lib.UsuarioFilial().GetByUsuario(Lib.Session.Instance.Usuario.IdUsuario);
 
@@ -148,6 +145,9 @@ namespace Canaan.WinApp
                         {
                             //carrega sessao com filial unica
                             Lib.Session.Instance.Contexto = userFiliais.FirstOrDefault();
+
+                            //carrega informacao da logo da empresa
+                            Lib.Session.Instance.LogoReport = new Lib.Config().GetByFilial(userFiliais.FirstOrDefault().IdFilial).Logomarca;
                         }
                         else
                         {

@@ -35,15 +35,6 @@ namespace Canaan.Telas.Movimentacoes.Venda.Envelope
             this.toolstripActions = new System.Windows.Forms.ToolStrip();
             this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnInsert = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnEdit = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnDelete = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnActions = new System.Windows.Forms.ToolStripSplitButton();
-            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnFiltros = new System.Windows.Forms.ToolStripSplitButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridProduto = new System.Windows.Forms.DataGridView();
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,6 +48,12 @@ namespace Canaan.Telas.Movimentacoes.Venda.Envelope
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.btExcluirProduto = new System.Windows.Forms.ToolStripButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigator2 = new System.Windows.Forms.BindingNavigator(this.components);
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
@@ -74,6 +71,8 @@ namespace Canaan.Telas.Movimentacoes.Venda.Envelope
             ((System.ComponentModel.ISupportInitialize)(this.toolstripActionsProduto)).BeginInit();
             this.toolstripActionsProduto.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
+            this.bindingNavigator1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator2)).BeginInit();
             this.bindingNavigator2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagridEnvelope)).BeginInit();
@@ -99,16 +98,7 @@ namespace Canaan.Telas.Movimentacoes.Venda.Envelope
             this.toolstripActions.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolstripActions.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButton6,
-            this.toolStripSeparator8,
-            this.btnInsert,
-            this.toolStripSeparator1,
-            this.btnEdit,
-            this.toolStripSeparator2,
-            this.btnDelete,
-            this.toolStripSeparator5,
-            this.btnActions,
-            this.toolStripSeparator4,
-            this.btnFiltros});
+            this.toolStripSeparator8});
             this.toolstripActions.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             this.toolstripActions.Location = new System.Drawing.Point(0, 0);
             this.toolstripActions.Name = "toolstripActions";
@@ -122,7 +112,7 @@ namespace Canaan.Telas.Movimentacoes.Venda.Envelope
             this.toolStripButton6.Image = global::Canaan.Telas.Properties.Resources.save_16xLG;
             this.toolStripButton6.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton6.Name = "toolStripButton6";
-            this.toolStripButton6.Size = new System.Drawing.Size(94, 20);
+            this.toolStripButton6.Size = new System.Drawing.Size(93, 20);
             this.toolStripButton6.Text = "Salvar Venda";
             this.toolStripButton6.Click += new System.EventHandler(this.btSalvarVenda_Click);
             // 
@@ -130,69 +120,6 @@ namespace Canaan.Telas.Movimentacoes.Venda.Envelope
             // 
             this.toolStripSeparator8.Name = "toolStripSeparator8";
             this.toolStripSeparator8.Size = new System.Drawing.Size(6, 23);
-            // 
-            // btnInsert
-            // 
-            this.btnInsert.Image = global::Canaan.Telas.Properties.Resources.action_add_16xLG;
-            this.btnInsert.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnInsert.Name = "btnInsert";
-            this.btnInsert.Size = new System.Drawing.Size(107, 20);
-            this.btnInsert.Text = "Novo Envelope";
-            this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 23);
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Image = global::Canaan.Telas.Properties.Resources.folder_Open_16xLG;
-            this.btnEdit.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(108, 20);
-            this.btnEdit.Text = "Editar Envelope";
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 23);
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Image = global::Canaan.Telas.Properties.Resources.action_Cancel_16xLG;
-            this.btnDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(112, 20);
-            this.btnDelete.Text = "Excluir Envelope";
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
-            // toolStripSeparator5
-            // 
-            this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 23);
-            // 
-            // btnActions
-            // 
-            this.btnActions.Image = global::Canaan.Telas.Properties.Resources.gear_16xLG;
-            this.btnActions.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnActions.Name = "btnActions";
-            this.btnActions.Size = new System.Drawing.Size(109, 20);
-            this.btnActions.Text = "Outras Ações";
-            // 
-            // toolStripSeparator4
-            // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 23);
-            // 
-            // btnFiltros
-            // 
-            this.btnFiltros.Image = global::Canaan.Telas.Properties.Resources.filter_16xLG;
-            this.btnFiltros.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnFiltros.Name = "btnFiltros";
-            this.btnFiltros.Size = new System.Drawing.Size(71, 20);
-            this.btnFiltros.Text = "Filtros";
             // 
             // groupBox1
             // 
@@ -203,7 +130,7 @@ namespace Canaan.Telas.Movimentacoes.Venda.Envelope
             this.groupBox1.Location = new System.Drawing.Point(6, 17);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(5);
-            this.groupBox1.Size = new System.Drawing.Size(405, 370);
+            this.groupBox1.Size = new System.Drawing.Size(459, 370);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Produtos Selecionados";
@@ -214,9 +141,6 @@ namespace Canaan.Telas.Movimentacoes.Venda.Envelope
             this.dataGridProduto.AllowUserToDeleteRows = false;
             this.dataGridProduto.AllowUserToResizeColumns = false;
             this.dataGridProduto.AllowUserToResizeRows = false;
-            this.dataGridProduto.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridProduto.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridProduto.BackgroundColor = System.Drawing.Color.White;
             this.dataGridProduto.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -292,7 +216,7 @@ namespace Canaan.Telas.Movimentacoes.Venda.Envelope
             this.toolstripActionsProduto.MovePreviousItem = null;
             this.toolstripActionsProduto.Name = "toolstripActionsProduto";
             this.toolstripActionsProduto.PositionItem = null;
-            this.toolstripActionsProduto.Size = new System.Drawing.Size(395, 25);
+            this.toolstripActionsProduto.Size = new System.Drawing.Size(449, 25);
             this.toolstripActionsProduto.TabIndex = 3;
             this.toolstripActionsProduto.Text = "toolstripActionsProduto";
             // 
@@ -338,14 +262,75 @@ namespace Canaan.Telas.Movimentacoes.Venda.Envelope
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Controls.Add(this.bindingNavigator1);
             this.groupBox2.Controls.Add(this.bindingNavigator2);
             this.groupBox2.Controls.Add(this.datagridEnvelope);
-            this.groupBox2.Location = new System.Drawing.Point(417, 17);
+            this.groupBox2.Location = new System.Drawing.Point(471, 17);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(533, 370);
+            this.groupBox2.Size = new System.Drawing.Size(479, 370);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Envelopes";
+            // 
+            // bindingNavigator1
+            // 
+            this.bindingNavigator1.AddNewItem = null;
+            this.bindingNavigator1.CountItem = null;
+            this.bindingNavigator1.DeleteItem = null;
+            this.bindingNavigator1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.bindingNavigator1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton1,
+            this.toolStripSeparator9,
+            this.toolStripButton2,
+            this.toolStripSeparator10,
+            this.toolStripButton3});
+            this.bindingNavigator1.Location = new System.Drawing.Point(3, 16);
+            this.bindingNavigator1.MoveFirstItem = null;
+            this.bindingNavigator1.MoveLastItem = null;
+            this.bindingNavigator1.MoveNextItem = null;
+            this.bindingNavigator1.MovePreviousItem = null;
+            this.bindingNavigator1.Name = "bindingNavigator1";
+            this.bindingNavigator1.PositionItem = null;
+            this.bindingNavigator1.Size = new System.Drawing.Size(473, 25);
+            this.bindingNavigator1.TabIndex = 0;
+            this.bindingNavigator1.Text = "bindingNavigator1";
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.Image = global::Canaan.Telas.Properties.Resources.action_add_16xLG;
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(107, 22);
+            this.toolStripButton1.Text = "Novo Envelope";
+            this.toolStripButton1.Click += new System.EventHandler(this.btnInsert_Click);
+            // 
+            // toolStripSeparator9
+            // 
+            this.toolStripSeparator9.Name = "toolStripSeparator9";
+            this.toolStripSeparator9.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.Image = global::Canaan.Telas.Properties.Resources.folder_Open_16xLG;
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(108, 22);
+            this.toolStripButton2.Text = "Editar Envelope";
+            this.toolStripButton2.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // toolStripSeparator10
+            // 
+            this.toolStripSeparator10.Name = "toolStripSeparator10";
+            this.toolStripSeparator10.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripButton3
+            // 
+            this.toolStripButton3.Image = global::Canaan.Telas.Properties.Resources.action_Cancel_16xLG;
+            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton3.Name = "toolStripButton3";
+            this.toolStripButton3.Size = new System.Drawing.Size(112, 22);
+            this.toolStripButton3.Text = "Excluir Envelope";
+            this.toolStripButton3.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // bindingNavigator2
             // 
@@ -366,7 +351,7 @@ namespace Canaan.Telas.Movimentacoes.Venda.Envelope
             this.bindingNavigator2.Name = "bindingNavigator2";
             this.bindingNavigator2.PositionItem = null;
             this.bindingNavigator2.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.bindingNavigator2.Size = new System.Drawing.Size(527, 25);
+            this.bindingNavigator2.Size = new System.Drawing.Size(473, 25);
             this.bindingNavigator2.TabIndex = 3;
             this.bindingNavigator2.Text = "bindingNavigator2";
             // 
@@ -397,8 +382,7 @@ namespace Canaan.Telas.Movimentacoes.Venda.Envelope
             this.datagridEnvelope.AllowUserToDeleteRows = false;
             this.datagridEnvelope.AllowUserToResizeColumns = false;
             this.datagridEnvelope.AllowUserToResizeRows = false;
-            this.datagridEnvelope.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.datagridEnvelope.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.datagridEnvelope.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.datagridEnvelope.BackgroundColor = System.Drawing.Color.White;
@@ -408,7 +392,7 @@ namespace Canaan.Telas.Movimentacoes.Venda.Envelope
             this.Cod,
             this.Serviço,
             this.Status});
-            this.datagridEnvelope.Location = new System.Drawing.Point(6, 16);
+            this.datagridEnvelope.Location = new System.Drawing.Point(6, 44);
             this.datagridEnvelope.MultiSelect = false;
             this.datagridEnvelope.Name = "datagridEnvelope";
             this.datagridEnvelope.ReadOnly = true;
@@ -419,8 +403,8 @@ namespace Canaan.Telas.Movimentacoes.Venda.Envelope
             this.datagridEnvelope.ShowCellToolTips = false;
             this.datagridEnvelope.ShowEditingIcon = false;
             this.datagridEnvelope.ShowRowErrors = false;
-            this.datagridEnvelope.Size = new System.Drawing.Size(524, 323);
-            this.datagridEnvelope.TabIndex = 2;
+            this.datagridEnvelope.Size = new System.Drawing.Size(467, 295);
+            this.datagridEnvelope.TabIndex = 5;
             this.datagridEnvelope.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.datagridEnvelope_DataBindingComplete);
             this.datagridEnvelope.SelectionChanged += new System.EventHandler(this.datagridEnvelope_SelectionChanged);
             this.datagridEnvelope.DoubleClick += new System.EventHandler(this.datagridEnvelope_DoubleClick);
@@ -476,6 +460,9 @@ namespace Canaan.Telas.Movimentacoes.Venda.Envelope
             this.toolstripActionsProduto.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
+            this.bindingNavigator1.ResumeLayout(false);
+            this.bindingNavigator1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator2)).EndInit();
             this.bindingNavigator2.ResumeLayout(false);
             this.bindingNavigator2.PerformLayout();
@@ -487,15 +474,6 @@ namespace Canaan.Telas.Movimentacoes.Venda.Envelope
         #endregion
 
         protected ToolStrip toolstripActions;
-        protected ToolStripButton btnInsert;
-        private ToolStripSeparator toolStripSeparator1;
-        protected ToolStripButton btnEdit;
-        private ToolStripSeparator toolStripSeparator2;
-        protected ToolStripButton btnDelete;
-        protected ToolStripSplitButton btnActions;
-        private ToolStripSeparator toolStripSeparator4;
-        protected ToolStripSplitButton btnFiltros;
-        private ToolStripSeparator toolStripSeparator5;
         private GroupBox groupBox1;
         private GroupBox groupBox2;
         protected DataGridView datagridEnvelope;
@@ -519,5 +497,11 @@ namespace Canaan.Telas.Movimentacoes.Venda.Envelope
         private DataGridViewImageColumn Status;
         private ToolStripButton toolStripButton6;
         private ToolStripSeparator toolStripSeparator8;
+        private BindingNavigator bindingNavigator1;
+        protected ToolStripButton toolStripButton1;
+        private ToolStripSeparator toolStripSeparator9;
+        protected ToolStripButton toolStripButton2;
+        private ToolStripSeparator toolStripSeparator10;
+        protected ToolStripButton toolStripButton3;
     }
 }

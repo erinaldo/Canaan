@@ -18,6 +18,8 @@ namespace Canaan.Telas.Configuracoes.Geral.Configuracoes
         //PROPRIEDADES
         public Config objLib { get; set; }
         private Dados.Config Item { get; set; }
+        public bool UpdateImage { get; set; }
+
 
         //
         //CONSTRUTORES
@@ -27,6 +29,7 @@ namespace Canaan.Telas.Configuracoes.Geral.Configuracoes
             IsNovo = false;
             objLib = new Config();
             Item = objLib.Get().FirstOrDefault();
+            UpdateImage = false;
 
             //carrega os componentes
             InitializeComponent();
@@ -40,6 +43,20 @@ namespace Canaan.Telas.Configuracoes.Geral.Configuracoes
 
             CarregaFiliais();
             CarregaForm();
+        }
+
+        private void btnAlteraLogo_Click(object sender, EventArgs e)
+        {
+            var dialog = new OpenFileDialog();
+
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                if (!string.IsNullOrEmpty(dialog.FileName))
+                {
+                    logomarcaPictureBox.Image = Lib.Utilitarios.ImageUtility.GetFromPath(dialog.FileName);
+                    this.UpdateImage = true;
+                }
+            }
         }
 
         //
@@ -75,6 +92,11 @@ namespace Canaan.Telas.Configuracoes.Geral.Configuracoes
             pastaUsaAnoCheckBox.Checked = this.Item.PastaUsaAno.GetValueOrDefault();
             pastaUsaMesCheckBox.Checked = this.Item.PastaUsaMes.GetValueOrDefault();
 
+            if (this.Item.Logomarca != null)
+                logomarcaPictureBox.Image = Lib.Utilitarios.ImageUtility.GetFromBytes(this.Item.Logomarca);
+            else
+                logomarcaPictureBox.Image = Properties.Resources.no_image;
+
             //laboratorio
             ftpHostTextBox.Text = this.Item.FtpHost;
             ftpUserTextBox.Text = this.Item.FtpUser;
@@ -86,6 +108,8 @@ namespace Canaan.Telas.Configuracoes.Geral.Configuracoes
             jurosTextBox.Text = this.Item.Financ_Juros.ToString();
             multaTextBox.Text = this.Item.Financ_Multa.ToString();
             usaFinanceiroCheckBox.Checked = this.Item.UsaFinanceiro.GetValueOrDefault();
+            usaAtendimentoCheckBox.Checked = this.Item.UsaAtendimentoAutomatico.GetValueOrDefault();
+            usaBaixaEntradaCheckBox.Checked = this.Item.UsaBaixaEntrada.GetValueOrDefault();
 
             //variaveis
             currentAtendimentoTextBox.Text = this.Item.CurrentAtendimento.ToString();
@@ -117,6 +141,9 @@ namespace Canaan.Telas.Configuracoes.Geral.Configuracoes
             this.Item.PastaUsaAno = pastaUsaAnoCheckBox.Checked;
             this.Item.PastaUsaMes = pastaUsaMesCheckBox.Checked;
 
+            if(this.UpdateImage)
+                this.Item.Logomarca = Lib.Utilitarios.ImageUtility.GetBytes(logomarcaPictureBox.Image);
+
             //laboratorio
             this.Item.FtpHost = ftpHostTextBox.Text;
             this.Item.FtpUser = ftpUserTextBox.Text;
@@ -128,6 +155,8 @@ namespace Canaan.Telas.Configuracoes.Geral.Configuracoes
             this.Item.Financ_Juros = decimal.Parse(jurosTextBox.Text);
             this.Item.Financ_Multa = decimal.Parse(multaTextBox.Text);
             this.Item.UsaFinanceiro = usaFinanceiroCheckBox.Checked;
+            this.Item.UsaAtendimentoAutomatico = usaAtendimentoCheckBox.Checked;
+            this.Item.UsaBaixaEntrada = usaBaixaEntradaCheckBox.Checked;
 
             //variaveis
             this.Item.CurrentAtendimento = int.Parse(currentAtendimentoTextBox.Text);
@@ -164,5 +193,7 @@ namespace Canaan.Telas.Configuracoes.Geral.Configuracoes
                 MessageBox.Show(ex.Message);
             }
         }
+
+        
     }
 }

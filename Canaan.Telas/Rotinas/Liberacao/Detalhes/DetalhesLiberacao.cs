@@ -418,6 +418,12 @@ namespace Canaan.Telas.Rotinas.Liberacao.Detalhes
                 //Adiciona No envio
                 LibEnvio.Insert(Venda);
 
+                //verifica se efetua a baixa da entrada
+                if (config.UsaBaixaEntrada == true)
+                {
+                    BaixaEntrada();
+                }
+
                 //panelActions.Enabled = false;
                 this.Close();
             }
@@ -521,6 +527,14 @@ namespace Canaan.Telas.Rotinas.Liberacao.Detalhes
                 LibLancamento.Update(item);
             }
 
+        }
+
+        private void BaixaEntrada()
+        {
+            var lancamentos = LibLancamento.GetByPedido(Venda.IdPedido).Where(a => a.ClasseContabil == EnumClasseContabil.Entrada);
+
+            var frm = new Financeiro.Lancamento.Baixa(lancamentos.Select(a => a.IdLancamento).ToArray());
+            frm.ShowDialog();
         }
 
         private void UpdateServicos()

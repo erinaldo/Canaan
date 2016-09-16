@@ -150,6 +150,7 @@ namespace Canaan.Relatorios.Fichas.Contrato
                 }
 
                 //Produtos
+                var produtosText = "";
                 foreach (var item in venda.VendaItem)
                 {
                     var rowProdutos = Dataset.Produtos.NewProdutosRow();
@@ -159,9 +160,12 @@ namespace Canaan.Relatorios.Fichas.Contrato
                     rowProdutos.Nome = item.Produto.Nome;
                     rowProdutos.Descricao = item.Produto.Descricao;
                     Dataset.Produtos.AddProdutosRow(rowProdutos);
+
+                    produtosText += string.Format("{0}\n", item.Produto.Nome);
                 }
 
                 //Servicos
+                var servicosText = "";
                 foreach (var item in venda.OrdemServico)
                 {
                     var rowServicos = Dataset.Servicos.NewServicosRow();
@@ -171,6 +175,8 @@ namespace Canaan.Relatorios.Fichas.Contrato
                     rowServicos.Nome = item.Servico.Nome;
                     rowServicos.Fotos = item.OrdemServicoItem.Count;
                     Dataset.Servicos.AddServicosRow(rowServicos);
+
+                    servicosText += string.Format("{0} - {1} fotos\n", item.Servico.Nome, item.OrdemServicoItem.Count.ToString());
                 }
 
                 //indicacoes
@@ -193,10 +199,20 @@ namespace Canaan.Relatorios.Fichas.Contrato
                 //eventos
                 var eventos = libVendaEvento.GetByVenda(venda.IdPedido);
                 var txtEvento = "";
-                txtEvento += string.Format("Tipo de Evento: {0}", venda.TipoEvento);
-                txtEvento += Environment.NewLine;
-                txtEvento += string.Format("Nome: {0}", venda.NomeModelo);
-                txtEvento += Environment.NewLine;
+
+                if (!string.IsNullOrEmpty(venda.TipoEvento) && !string.IsNullOrEmpty(venda.NomeModelo))
+                {
+                    txtEvento += string.Format("Tipo de Evento: {0}", venda.TipoEvento);
+                    txtEvento += Environment.NewLine;
+                    txtEvento += string.Format("Nome: {0}", venda.NomeModelo);
+                    txtEvento += Environment.NewLine;
+                }
+                else
+                {
+                    txtEvento += produtosText;
+                }
+                
+                
 
                 foreach (var evento in eventos)
                 {
@@ -211,7 +227,16 @@ namespace Canaan.Relatorios.Fichas.Contrato
 
                 rowVenda.Eventos = txtEvento;
                 rowVenda.Contrato = new Lib.Config().GetByFilial(Lib.Session.Instance.Contexto.IdFilial).TextoContrato;
-                rowVenda.Servicos = venda.EventoEspecificacao;
+
+                if (!string.IsNullOrEmpty(venda.EventoEspecificacao))
+                {
+                    rowVenda.Servicos = venda.EventoEspecificacao;
+                }
+                else
+                {
+                    rowVenda.Servicos = servicosText;
+                }
+                
             }
         }
 

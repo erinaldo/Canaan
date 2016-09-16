@@ -688,6 +688,9 @@ namespace Canaan.Telas.Cadastros.ClienteFornecedor
                         break;
                 }
             }
+
+            //verifica se usa atendimento automativo
+
         }
 
         //

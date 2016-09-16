@@ -360,12 +360,6 @@ namespace Canaan.Lib.Utilitarios
             Worker.ReportProgress((int)Acao.Finalizado, string.Empty);
         }
 
-        /// <summary>
-        /// Rotaciona um unico item
-        /// </summary>
-        /// <param name="img"></param>
-        /// <param name="sessao"></param>
-        /// <param name="direcao"></param>
         public void rotacionar(Dados.Foto img, Dados.Sessao sessao, Direction direcao)
         {
             Sessao = sessao;
@@ -554,6 +548,70 @@ namespace Canaan.Lib.Utilitarios
             return File.ReadAllBytes(filename);
         }
 
+        private void CriarDiretorio(string diretorio)
+        {
+            try
+            {
+                if (!Directory.Exists(diretorio))
+                    Directory.CreateDirectory(diretorio);
+            }
+            catch (Exception ex)
+            {
+                Worker.ReportProgress((int)Acao.Error, ex.Message + diretorio);
+            }
+        }
+
+        private bool CalculaEspaco(string[] files)
+        {
+            var totalArq = files.Sum(a => new FileInfo(a).Length);
+            var freeSpace = GetFreeSpace();
+            return freeSpace > ulong.Parse(totalArq.ToString());
+        }
+
+        private ulong GetFreeSpace()
+        {
+
+            ulong FreeBytesAvailable;
+            ulong TotalNumberOfBytes;
+            ulong TotalNumberOfFreeBytes;
+            string diretorio = string.Format(@"\\{0}\{1}", Config.ServImagem, Config.Folder);
+
+            bool success = GetDiskFreeSpaceEx(diretorio, out FreeBytesAvailable, out TotalNumberOfBytes, out TotalNumberOfFreeBytes);
+
+            if (!success)
+                Worker.ReportProgress((int)Acao.Error, string.Format("O caminho {0} não foi encontrado. Entre em contato com o Administrador.", diretorio));
+
+            return FreeBytesAvailable;
+
+
+        }
+
+        private void AtualizaAgendamento(Dados.Sessao Sessao)
+        {
+            var agendamento = LibAgendamento.GetById(Sessao.Atendimento.Agendamento.IdAgendamento);
+            agendamento.Status = Dados.EnumAgendamentoStatus.Fotografado;
+            LibAgendamento.Update(agendamento);
+        }
+
+        private void AdicionaMovimentacaoAgendamento(Dados.Sessao Sessao)
+        {
+            var agendamento = LibAgendamento.GetById(Sessao.Atendimento.Agendamento.IdAgendamento);
+            LibAgendamentoMov.Insert(new Dados.AgendamentoMov
+            {
+                IdAgendamento = agendamento.IdAgendamento,
+                IdUsuario = Session.Instance.Usuario.IdUsuario,
+                Status = Dados.EnumAgendamentoStatus.Fotografado,
+                Data = DateTime.Today,
+                Hora = DateTime.Now.TimeOfDay
+            });
+        }
+
+       
+
+        #endregion
+
+        #region STATIC METHODS
+        
         public static byte[] GetBytes(Image imagem)
         {
             var codec = ImageCodecInfo.GetImageEncoders().Where(a => a.MimeType == "image/jpeg").FirstOrDefault();
@@ -564,6 +622,14 @@ namespace Canaan.Lib.Utilitarios
             imagem.Save(ms, codec, ep);
 
             return ms.ToArray();
+        }
+
+        public static Image GetFromBytes(byte[] byteArray)
+        {
+            using (var ms = new MemoryStream(byteArray))
+            {
+                return Image.FromStream(ms);
+            }
         }
 
         public static Image GetFromPath(string filename)
@@ -614,31 +680,19 @@ namespace Canaan.Lib.Utilitarios
             return imagem.GetThumbnailImage(width, height, Kaliko.ImageLibrary.ThumbnailMethod.Pad).Image;
         }
 
-        /// <summary>
-        /// Cria diretorios
-        /// </summary>
-        /// <param name="diretorio"></param>
-        private void CriarDiretorio(string diretorio)
+        public static byte[] GetBytesFromResource(Image img)
         {
-            try
+            byte[] byteArray = new byte[0];
+            using (MemoryStream stream = new MemoryStream())
             {
-                if (!Directory.Exists(diretorio))
-                    Directory.CreateDirectory(diretorio);
+                img.Save(stream, ImageFormat.Png);
+                stream.Close();
+
+                byteArray = stream.ToArray();
             }
-            catch (Exception ex)
-            {
-                Worker.ReportProgress((int)Acao.Error, ex.Message + diretorio);
-            }
+            return byteArray;
         }
 
-        /// <summary>
-        /// Verifica se existe algum arquivo com o mesmo nome
-        /// </summary>
-        /// <param name="path"></param>
-        /// <param name="filename"></param>
-        /// <param name="extensao"></param>
-        /// <param name="count"></param>
-        /// <returns></returns>
         public static string VerificaExiste(string path, string filename, string extensao, int count = 0)
         {
             bool existe = true;
@@ -661,73 +715,6 @@ namespace Canaan.Lib.Utilitarios
             }
 
             return filename;
-        }
-
-        /// <summary>
-        /// Calcula espaço a ser utilizado para armazenar as imagens selecionadas
-        /// </summary>
-        /// <param name="files"></param>
-        /// <returns></returns>
-        private bool CalculaEspaco(string[] files)
-        {
-            var totalArq = files.Sum(a => new FileInfo(a).Length);
-            var freeSpace = GetFreeSpace();
-            return freeSpace > ulong.Parse(totalArq.ToString());
-        }
-
-        /// <summary>
-        /// Retorna espaço livre da rede
-        /// </summary>
-        /// <returns></returns>
-        private ulong GetFreeSpace()
-        {
-
-            ulong FreeBytesAvailable;
-            ulong TotalNumberOfBytes;
-            ulong TotalNumberOfFreeBytes;
-            string diretorio = string.Format(@"\\{0}\{1}", Config.ServImagem, Config.Folder);
-
-            bool success = GetDiskFreeSpaceEx(diretorio, out FreeBytesAvailable, out TotalNumberOfBytes, out TotalNumberOfFreeBytes);
-
-            if (!success)
-                Worker.ReportProgress((int)Acao.Error, string.Format("O caminho {0} não foi encontrado. Entre em contato com o Administrador.", diretorio));
-
-            return FreeBytesAvailable;
-
-
-        }
-
-        private void AtualizaAgendamento(Dados.Sessao Sessao)
-        {
-            var agendamento = LibAgendamento.GetById(Sessao.Atendimento.Agendamento.IdAgendamento);
-            agendamento.Status = Dados.EnumAgendamentoStatus.Fotografado;
-            LibAgendamento.Update(agendamento);
-        }
-
-        private void AdicionaMovimentacaoAgendamento(Dados.Sessao Sessao)
-        {
-            var agendamento = LibAgendamento.GetById(Sessao.Atendimento.Agendamento.IdAgendamento);
-            LibAgendamentoMov.Insert(new Dados.AgendamentoMov
-            {
-                IdAgendamento = agendamento.IdAgendamento,
-                IdUsuario = Session.Instance.Usuario.IdUsuario,
-                Status = Dados.EnumAgendamentoStatus.Fotografado,
-                Data = DateTime.Today,
-                Hora = DateTime.Now.TimeOfDay
-            });
-        }
-
-        public static byte[] GetBytesFromResource(Image img)
-        {
-            byte[] byteArray = new byte[0];
-            using (MemoryStream stream = new MemoryStream())
-            {
-                img.Save(stream, ImageFormat.Png);
-                stream.Close();
-
-                byteArray = stream.ToArray();
-            }
-            return byteArray;
         }
 
         public static byte[] VerificaCriptografia(Dados.Foto item, string file)

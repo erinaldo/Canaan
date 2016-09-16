@@ -132,8 +132,8 @@ namespace Canaan.Telas.Suporte.CorrigeCupons
 
             foreach (var item in Modelo)
             {
-                //var cupom = libCupom.GetById(item.IdCupom);
-                //libCupom.UpdateCondicao(cupom, item.Status);
+                var cupom = libCupom.GetById(item.IdCupom);
+                libCupom.UpdateCondicao(cupom, item.Status);
 
                 i++;
                 workerExecuta.ReportProgress(i, item);

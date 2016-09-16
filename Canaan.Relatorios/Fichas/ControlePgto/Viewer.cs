@@ -86,7 +86,7 @@ namespace Canaan.Relatorios.Fichas.ControlePgto
                 var venda = conn.Pedido.OfType<Dados.Venda>().FirstOrDefault(a => a.IdPedido == IdVenda);
                 var filial = new Lib.Filial().GetById(Lib.Session.Instance.Contexto.IdFilial);
                 var cidade = new Lib.Cidade().GetById(filial.IdCidade);
-                var lancamentos = venda.Lancamento.Where(a => a.DataVencimento > a.DataEmissao).OrderBy(a => a.DataVencimento);
+                var lancamentos = venda.Lancamento.OrderBy(a => a.DataVencimento);
 
                 //Fichas
                 foreach (var item in lancamentos)

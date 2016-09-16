@@ -155,6 +155,7 @@ namespace Canaan.Telas.Rotinas.Liberacao.Detalhes
             this.Data = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelActions = new System.Windows.Forms.Panel();
             this.btLiberar = new System.Windows.Forms.Button();
+            this.btnDevolver = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator2)).BeginInit();
@@ -1517,6 +1518,7 @@ namespace Canaan.Telas.Rotinas.Liberacao.Detalhes
             // 
             // panelActions
             // 
+            this.panelActions.Controls.Add(this.btnDevolver);
             this.panelActions.Controls.Add(this.btLiberar);
             this.panelActions.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelActions.Enabled = false;
@@ -1534,6 +1536,16 @@ namespace Canaan.Telas.Rotinas.Liberacao.Detalhes
             this.btLiberar.Text = "Finalizar Venda";
             this.btLiberar.UseVisualStyleBackColor = true;
             this.btLiberar.Click += new System.EventHandler(this.btLiberar_Click);
+            // 
+            // btnDevolver
+            // 
+            this.btnDevolver.Location = new System.Drawing.Point(791, 8);
+            this.btnDevolver.Name = "btnDevolver";
+            this.btnDevolver.Size = new System.Drawing.Size(130, 35);
+            this.btnDevolver.TabIndex = 2;
+            this.btnDevolver.Text = "Devolve Venda";
+            this.btnDevolver.UseVisualStyleBackColor = true;
+            this.btnDevolver.Click += new System.EventHandler(this.BtDevolver_Click);
             // 
             // DetalhesLiberacao
             // 
@@ -1710,5 +1722,6 @@ namespace Canaan.Telas.Rotinas.Liberacao.Detalhes
         private DataGridViewTextBoxColumn Motivo;
         private DataGridViewTextBoxColumn Observacao;
         private CLabel lbEmancipado;
+        private Button btnDevolver;
     }
 }
