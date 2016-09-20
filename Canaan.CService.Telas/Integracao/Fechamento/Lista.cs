@@ -139,8 +139,12 @@ namespace Canaan.CService.Telas.Integracao.Fechamento
                 objMessage.To.Add("jobvitral@gmail.com");
                 objMessage.To.Add("alessandro@canaanfotos.com.br");
                 objMessage.To.Add("admilson@canaanfotos.com.br");
-                objMessage.To.Add("karine@canaanalbuns.com.br");
+                //objMessage.To.Add("karine@canaanalbuns.com.br");
                 objMessage.To.Add("atendimento@canaanalbuns.com.br");
+                objMessage.To.Add("wagner@canaanalbuns.com.br");
+                objMessage.To.Add("gizele@canaanalbuns.com.br");
+                objMessage.To.Add("frederck@canaanalbuns.com.br");
+                objMessage.To.Add("alfredo@canaanalbuns.com.br");
 
                 //informações das mensagens
                 objMessage.Subject = "Encadernação Entrada de Produção";
