@@ -200,7 +200,39 @@ namespace Canaan.Telas.Movimentacoes.Venda.Busca
             }
             else
             {
-                MessageBoxUtilities.MessageWarning("Nenhum registro selecionado.");
+                //MessageBoxUtilities.MessageWarning("Nenhum registro selecionado.");
+
+                //abre o cadastro de cliente
+                var frmCliente = new Telas.Cadastros.ClienteFornecedor.Wizard();
+                frmCliente.ShowDialog();
+
+                if (frmCliente.CliFor != null)
+                {
+                    //carrega atendimentos do cliente
+                    var clifor = frmCliente.CliFor;
+                    var atendimentos = LibAtendimento.GetByCliFor(clifor.IdCliFor);
+
+                    //cliente selecionado
+                    if (atendimentos.Count > 0)
+                    {
+                        ddlTipoBusca.SelectedIndex = 0;
+                        tbBusca.Text = atendimentos.FirstOrDefault().CodigoReduzido.ToString();
+
+                        BuscaClientes();
+                        CarregaGridAtendimentos();
+
+                        //seleciona o atendimento e carrega as vendas
+                        dgvAtendimentos.Rows[0].Selected = true;
+                        CarregaVendas();
+
+                        Atendimento = LibAtendimento.GetById(SelectedAtend);
+                        AddNewVenda();
+                    }
+                    else
+                    {
+                        MessageBoxUtilities.MessageWarning("Nenhum registro selecionado.");
+                    }
+                }
             }
         }
 
@@ -376,7 +408,12 @@ namespace Canaan.Telas.Movimentacoes.Venda.Busca
                 }
                 else
                 {
-                    LibAtendimento.Delete(CurrentVenda);
+                    if (MessageBox.Show("Tem certeza que deseja exlcuir a venda?", "Cancelamento de Venda", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        LibVenda.Delete(CurrentVenda);
+                        CarregaVendas();
+                    }
+                    
                 }
             }
             catch (Exception ex)

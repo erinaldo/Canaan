@@ -829,5 +829,11 @@ namespace Canaan.WinApp
             var frm = new Telas.Movimentacoes.Atendimento.Lista();
             frm.ShowDialog();
         }
+
+        private void vendaXPeriodoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var frm = new Relatorios.Venda.Periodo.Filtro();
+            frm.ShowDialog();
+        }
     }
 }

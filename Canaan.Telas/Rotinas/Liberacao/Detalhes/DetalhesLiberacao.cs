@@ -533,8 +533,11 @@ namespace Canaan.Telas.Rotinas.Liberacao.Detalhes
         {
             var lancamentos = LibLancamento.GetByPedido(Venda.IdPedido).Where(a => a.ClasseContabil == EnumClasseContabil.Entrada);
 
-            var frm = new Financeiro.Lancamento.Baixa(lancamentos.Select(a => a.IdLancamento).ToArray());
-            frm.ShowDialog();
+            if (lancamentos.Count() > 0)
+            {
+                var frm = new Financeiro.Lancamento.Baixa(lancamentos.Select(a => a.IdLancamento).ToArray());
+                frm.ShowDialog();
+            }
         }
 
         private void UpdateServicos()

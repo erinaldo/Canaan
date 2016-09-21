@@ -64,7 +64,7 @@ namespace Canaan.Telas.Cadastros.ClienteFornecedor
         #region "EVENTOS"
         private void Wizard_Load(object sender, EventArgs e)
         {
-
+            clienteDataGridView.AutoGenerateColumns = false;
         }
 
         private void btnVerificaDocumento_Click(object sender, EventArgs e)
@@ -759,6 +759,43 @@ namespace Canaan.Telas.Cadastros.ClienteFornecedor
         private void wizardCliFor_CancelClick(object sender, CancelEventArgs e)
         {
             CliFor = null;
+        }
+
+        private void btnVerificaNome_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(nomeTextEdit.Text))
+            {
+                ListaCliFor = new Lib.CliFor().GetByNome(nomeTextEdit.Text);
+                clienteDataGridView.DataSource = ListaCliFor;
+            }
+            else
+            {
+                MessageBox.Show("Nenhum nome informado");
+            }
+        }
+
+        private void clienteDataGridView_DoubleClick(object sender, EventArgs e)
+        {
+            if (clienteDataGridView.SelectedRows.Count > 0)
+            {
+                IsNew = false;
+                var id = (int)clienteDataGridView.SelectedRows[0].Cells[0].Value;
+                var selecionado = ListaCliFor.FirstOrDefault(a => a.IdCliFor == id);
+
+                if (selecionado is PessoaFisica)
+                {
+                    //PessoaFisica = lista.FirstOrDefault() as Dados.PessoaFisica;
+                    CliFor = selecionado as PessoaFisica;
+                }
+                else
+                {
+                    //PessoaJuridica = lista.FirstOrDefault() as Dados.PessoaJuridica;
+                    CliFor = selecionado as Dados.PessoaJuridica;
+                }
+
+                //vai para a pagina de cadastro
+                wizardCliFor.SetNextPage();
+            }
         }
     }
 }

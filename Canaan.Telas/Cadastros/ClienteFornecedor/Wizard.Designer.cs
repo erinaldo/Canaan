@@ -42,6 +42,11 @@ namespace Canaan.Telas.Cadastros.ClienteFornecedor
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.tipoClienteRadioGroup = new DevExpress.XtraEditors.RadioGroup();
             this.pageDocumento = new DevExpress.XtraWizard.WizardPage();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.clienteDataGridView = new System.Windows.Forms.DataGridView();
+            this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
+            this.btnVerificaNome = new DevExpress.XtraEditors.SimpleButton();
+            this.nomeTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.documentoGroupControl = new DevExpress.XtraEditors.GroupControl();
             this.btnVerificaDocumento = new DevExpress.XtraEditors.SimpleButton();
             this.documentoTextEdit = new DevExpress.XtraEditors.TextEdit();
@@ -121,6 +126,9 @@ namespace Canaan.Telas.Cadastros.ClienteFornecedor
             this.btnRefEdita = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.btnRefDelete = new System.Windows.Forms.ToolStripButton();
+            this.IdCliFor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NomeCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Documento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.wizardCliFor)).BeginInit();
             this.wizardCliFor.SuspendLayout();
             this.pageTipo.SuspendLayout();
@@ -131,6 +139,11 @@ namespace Canaan.Telas.Cadastros.ClienteFornecedor
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tipoClienteRadioGroup.Properties)).BeginInit();
             this.pageDocumento.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.clienteDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
+            this.groupControl3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nomeTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentoGroupControl)).BeginInit();
             this.documentoGroupControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.documentoTextEdit.Properties)).BeginInit();
@@ -260,12 +273,79 @@ namespace Canaan.Telas.Cadastros.ClienteFornecedor
             // 
             // pageDocumento
             // 
+            this.pageDocumento.Controls.Add(this.panel1);
             this.pageDocumento.Controls.Add(this.documentoGroupControl);
             this.pageDocumento.DescriptionText = "";
             this.pageDocumento.Name = "pageDocumento";
             this.pageDocumento.Padding = new System.Windows.Forms.Padding(5);
             this.pageDocumento.Size = new System.Drawing.Size(448, 307);
             this.pageDocumento.Text = "Verificando Documento do Cliente / Fornecedor";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.clienteDataGridView);
+            this.panel1.Controls.Add(this.groupControl3);
+            this.panel1.Location = new System.Drawing.Point(5, 76);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(438, 223);
+            this.panel1.TabIndex = 1;
+            // 
+            // clienteDataGridView
+            // 
+            this.clienteDataGridView.AllowUserToAddRows = false;
+            this.clienteDataGridView.AllowUserToDeleteRows = false;
+            this.clienteDataGridView.AllowUserToResizeColumns = false;
+            this.clienteDataGridView.AllowUserToResizeRows = false;
+            this.clienteDataGridView.BackgroundColor = System.Drawing.Color.White;
+            this.clienteDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.clienteDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.clienteDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IdCliFor,
+            this.NomeCliente,
+            this.Documento});
+            this.clienteDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.clienteDataGridView.Location = new System.Drawing.Point(0, 65);
+            this.clienteDataGridView.MultiSelect = false;
+            this.clienteDataGridView.Name = "clienteDataGridView";
+            this.clienteDataGridView.ReadOnly = true;
+            this.clienteDataGridView.RowHeadersVisible = false;
+            this.clienteDataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.clienteDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.clienteDataGridView.ShowCellErrors = false;
+            this.clienteDataGridView.ShowCellToolTips = false;
+            this.clienteDataGridView.ShowEditingIcon = false;
+            this.clienteDataGridView.ShowRowErrors = false;
+            this.clienteDataGridView.Size = new System.Drawing.Size(438, 158);
+            this.clienteDataGridView.TabIndex = 2;
+            this.clienteDataGridView.DoubleClick += new System.EventHandler(this.clienteDataGridView_DoubleClick);
+            // 
+            // groupControl3
+            // 
+            this.groupControl3.Controls.Add(this.btnVerificaNome);
+            this.groupControl3.Controls.Add(this.nomeTextEdit);
+            this.groupControl3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupControl3.Location = new System.Drawing.Point(0, 0);
+            this.groupControl3.Name = "groupControl3";
+            this.groupControl3.Size = new System.Drawing.Size(438, 65);
+            this.groupControl3.TabIndex = 1;
+            this.groupControl3.Text = "Consulta Por Nome";
+            // 
+            // btnVerificaNome
+            // 
+            this.btnVerificaNome.Location = new System.Drawing.Point(358, 24);
+            this.btnVerificaNome.Name = "btnVerificaNome";
+            this.btnVerificaNome.Size = new System.Drawing.Size(75, 23);
+            this.btnVerificaNome.TabIndex = 1;
+            this.btnVerificaNome.Text = "Consultar";
+            this.btnVerificaNome.Click += new System.EventHandler(this.btnVerificaNome_Click);
+            // 
+            // nomeTextEdit
+            // 
+            this.nomeTextEdit.Location = new System.Drawing.Point(5, 26);
+            this.nomeTextEdit.Name = "nomeTextEdit";
+            this.nomeTextEdit.Properties.Mask.SaveLiteral = false;
+            this.nomeTextEdit.Size = new System.Drawing.Size(347, 20);
+            this.nomeTextEdit.TabIndex = 0;
             // 
             // documentoGroupControl
             // 
@@ -274,9 +354,9 @@ namespace Canaan.Telas.Cadastros.ClienteFornecedor
             this.documentoGroupControl.Dock = System.Windows.Forms.DockStyle.Top;
             this.documentoGroupControl.Location = new System.Drawing.Point(5, 5);
             this.documentoGroupControl.Name = "documentoGroupControl";
-            this.documentoGroupControl.Size = new System.Drawing.Size(438, 59);
+            this.documentoGroupControl.Size = new System.Drawing.Size(438, 65);
             this.documentoGroupControl.TabIndex = 0;
-            this.documentoGroupControl.Text = "Consulta Registro";
+            this.documentoGroupControl.Text = "Consulta Por CPF";
             // 
             // btnVerificaDocumento
             // 
@@ -994,6 +1074,30 @@ namespace Canaan.Telas.Cadastros.ClienteFornecedor
             this.btnRefDelete.Size = new System.Drawing.Size(141, 22);
             this.btnRefDelete.Text = "Remover Selecionado";
             // 
+            // IdCliFor
+            // 
+            this.IdCliFor.DataPropertyName = "IdCliFor";
+            this.IdCliFor.HeaderText = "Codigo";
+            this.IdCliFor.Name = "IdCliFor";
+            this.IdCliFor.ReadOnly = true;
+            this.IdCliFor.Visible = false;
+            // 
+            // NomeCliente
+            // 
+            this.NomeCliente.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.NomeCliente.DataPropertyName = "Nome";
+            this.NomeCliente.HeaderText = "Nome";
+            this.NomeCliente.Name = "NomeCliente";
+            this.NomeCliente.ReadOnly = true;
+            // 
+            // Documento
+            // 
+            this.Documento.DataPropertyName = "Documento";
+            this.Documento.HeaderText = "Documento";
+            this.Documento.Name = "Documento";
+            this.Documento.ReadOnly = true;
+            this.Documento.Width = 120;
+            // 
             // Wizard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1018,6 +1122,11 @@ namespace Canaan.Telas.Cadastros.ClienteFornecedor
             this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tipoClienteRadioGroup.Properties)).EndInit();
             this.pageDocumento.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.clienteDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
+            this.groupControl3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.nomeTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentoGroupControl)).EndInit();
             this.documentoGroupControl.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.documentoTextEdit.Properties)).EndInit();
@@ -1082,9 +1191,6 @@ namespace Canaan.Telas.Cadastros.ClienteFornecedor
         private RadioGroup tipoPessoaRadioGroup;
         private GroupControl groupControl1;
         private RadioGroup tipoClienteRadioGroup;
-        private GroupControl documentoGroupControl;
-        private TextEdit documentoTextEdit;
-        private SimpleButton btnVerificaDocumento;
         private WizardPage pageCadastro;
         private XtraTabControl cadastroTabControl;
         private XtraTabPage tabPessoaFisica;
@@ -1160,5 +1266,16 @@ namespace Canaan.Telas.Cadastros.ClienteFornecedor
         private DataGridViewTextBoxColumn Telefone;
         private DataGridViewTextBoxColumn Celular;
         private CheckEdit ckEmancipado;
+        private Panel panel1;
+        private GroupControl documentoGroupControl;
+        private SimpleButton btnVerificaDocumento;
+        private TextEdit documentoTextEdit;
+        private DataGridView clienteDataGridView;
+        private GroupControl groupControl3;
+        private SimpleButton btnVerificaNome;
+        private TextEdit nomeTextEdit;
+        private DataGridViewTextBoxColumn IdCliFor;
+        private DataGridViewTextBoxColumn NomeCliente;
+        private DataGridViewTextBoxColumn Documento;
     }
 }

@@ -849,6 +849,25 @@
       <DependentUpon>Filtro.cs</DependentUpon>
     </Compile>
     <Compile Include="Venda\Devolvida\Model.cs" />
+    <Compile Include="Venda\Periodo\Filtro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Venda\Periodo\Filtro.Designer.cs">
+      <DependentUpon>Filtro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Venda\Periodo\Model.cs" />
+    <Compile Include="Venda\Periodo\Relatorio.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Relatorio.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Venda\Periodo\Viewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Venda\Periodo\Viewer.Designer.cs">
+      <DependentUpon>Viewer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Venda\Programada\Relatorio.cs">
       <DependentUpon>Relatorio.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -1584,6 +1603,16 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Venda\Devolvida\Filtro.resx">
       <DependentUpon>Filtro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Venda\Periodo\Filtro.resx">
+      <DependentUpon>Filtro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Venda\Periodo\Relatorio.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Relatorio.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Venda\Periodo\Viewer.resx">
+      <DependentUpon>Viewer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Venda\Programada\Relatorio.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

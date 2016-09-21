@@ -143,7 +143,8 @@ namespace Canaan.Lib
                 return conn.Pedido.OfType<Dados.Venda>().Include(a => a.Atendimento)
                                                         .Include(a => a.CliFor)
                                                         .Where(a => a.IdAtendimento == idAtendimento &&
-                                                               a.IdFilial == idFilial).ToList();
+                                                               a.IdFilial == idFilial &&
+                                                               a.IsAtivo == true).ToList();
             }
         }
 
@@ -345,7 +346,17 @@ namespace Canaan.Lib
 
         public Dados.Venda Delete(int id)
         {
-            throw new NotImplementedException();
+            using (var conn = new Dados.CanaanModelContainer())
+            {
+                //exclui referencias da venda
+                var venda = conn.Pedido.OfType<Dados.Venda>().FirstOrDefault(a => a.IdPedido == id);
+                venda.Status = Dados.EnumStatusVenda.Cancelado;
+                venda.IsAtivo = false;
+
+                conn.SaveChanges();
+
+                return venda;
+            }
         }
 
         #endregion

@@ -148,6 +148,7 @@
             this.alterarSenhaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.mainPanel = new System.Windows.Forms.Panel();
+            this.vendaXPeriodoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mainMenu.SuspendLayout();
             this.mainStatusStrip.SuspendLayout();
             this.mainToolStrip.SuspendLayout();
@@ -478,6 +479,7 @@
             this.comercialToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.atendidosXPeriodoToolStripMenuItem,
             this.vendasXProdutoToolStripMenuItem,
+            this.vendaXPeriodoToolStripMenuItem,
             this.toolStripSeparator23,
             this.pacotesParaLiberaçãoToolStripMenuItem,
             this.vendasDevolvidasToolStripMenuItem,
@@ -1083,6 +1085,13 @@
             this.mainPanel.Size = new System.Drawing.Size(1219, 654);
             this.mainPanel.TabIndex = 3;
             // 
+            // vendaXPeriodoToolStripMenuItem
+            // 
+            this.vendaXPeriodoToolStripMenuItem.Name = "vendaXPeriodoToolStripMenuItem";
+            this.vendaXPeriodoToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
+            this.vendaXPeriodoToolStripMenuItem.Text = "Vendas x Periodo";
+            this.vendaXPeriodoToolStripMenuItem.Click += new System.EventHandler(this.vendaXPeriodoToolStripMenuItem_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1234,6 +1243,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripMenuItem eventosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem atendimentosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem vendaXPeriodoToolStripMenuItem;
     }
 }
 
