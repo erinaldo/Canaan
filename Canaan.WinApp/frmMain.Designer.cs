@@ -72,6 +72,7 @@
             this.comercialToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.atendidosXPeriodoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vendasXProdutoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.vendaXPeriodoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator23 = new System.Windows.Forms.ToolStripSeparator();
             this.pacotesParaLiberaçãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vendasDevolvidasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -148,7 +149,6 @@
             this.alterarSenhaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.mainPanel = new System.Windows.Forms.Panel();
-            this.vendaXPeriodoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mainMenu.SuspendLayout();
             this.mainStatusStrip.SuspendLayout();
             this.mainToolStrip.SuspendLayout();
@@ -254,12 +254,14 @@
             this.recebimentoDeProdutoToolStripMenuItem.Name = "recebimentoDeProdutoToolStripMenuItem";
             this.recebimentoDeProdutoToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
             this.recebimentoDeProdutoToolStripMenuItem.Text = "Recebimento de Produto";
+            this.recebimentoDeProdutoToolStripMenuItem.Click += new System.EventHandler(this.recebimentoDeProdutoToolStripMenuItem_Click);
             // 
             // entregaDeProdutoToolStripMenuItem
             // 
             this.entregaDeProdutoToolStripMenuItem.Name = "entregaDeProdutoToolStripMenuItem";
             this.entregaDeProdutoToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
             this.entregaDeProdutoToolStripMenuItem.Text = "Entrega de Produto";
+            this.entregaDeProdutoToolStripMenuItem.Click += new System.EventHandler(this.entregaDeProdutoToolStripMenuItem_Click);
             // 
             // cadastrosToolStripMenuItem
             // 
@@ -501,6 +503,13 @@
             this.vendasXProdutoToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
             this.vendasXProdutoToolStripMenuItem.Text = "Vendas x Produto";
             this.vendasXProdutoToolStripMenuItem.Click += new System.EventHandler(this.vendasXProdutoToolStripMenuItem_Click);
+            // 
+            // vendaXPeriodoToolStripMenuItem
+            // 
+            this.vendaXPeriodoToolStripMenuItem.Name = "vendaXPeriodoToolStripMenuItem";
+            this.vendaXPeriodoToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
+            this.vendaXPeriodoToolStripMenuItem.Text = "Vendas x Periodo";
+            this.vendaXPeriodoToolStripMenuItem.Click += new System.EventHandler(this.vendaXPeriodoToolStripMenuItem_Click);
             // 
             // toolStripSeparator23
             // 
@@ -1084,13 +1093,6 @@
             this.mainPanel.Name = "mainPanel";
             this.mainPanel.Size = new System.Drawing.Size(1219, 654);
             this.mainPanel.TabIndex = 3;
-            // 
-            // vendaXPeriodoToolStripMenuItem
-            // 
-            this.vendaXPeriodoToolStripMenuItem.Name = "vendaXPeriodoToolStripMenuItem";
-            this.vendaXPeriodoToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
-            this.vendaXPeriodoToolStripMenuItem.Text = "Vendas x Periodo";
-            this.vendaXPeriodoToolStripMenuItem.Click += new System.EventHandler(this.vendaXPeriodoToolStripMenuItem_Click);
             // 
             // frmMain
             // 
