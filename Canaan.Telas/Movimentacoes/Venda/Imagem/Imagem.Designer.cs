@@ -36,6 +36,10 @@ namespace Canaan.Telas.Movimentacoes.Venda.Imagem
             this.toolstripActions = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.btAddSelecionada = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.btDeleteSelecionada = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.btBackup = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
@@ -56,11 +60,11 @@ namespace Canaan.Telas.Movimentacoes.Venda.Imagem
             // panel1
             // 
             this.panel1.Controls.Add(this.toolstripActions);
-            this.panel1.Size = new System.Drawing.Size(882, 39);
+            this.panel1.Size = new System.Drawing.Size(1277, 39);
             // 
             // tabControl1
             // 
-            this.tabControl1.Size = new System.Drawing.Size(856, 533);
+            this.tabControl1.Size = new System.Drawing.Size(1251, 533);
             // 
             // tabPage1
             // 
@@ -69,7 +73,7 @@ namespace Canaan.Telas.Movimentacoes.Venda.Imagem
             this.tabPage1.Controls.Add(this.lvImagensSessao);
             this.tabPage1.Controls.Add(this.lvImagensVenda);
             this.tabPage1.Padding = new System.Windows.Forms.Padding(10);
-            this.tabPage1.Size = new System.Drawing.Size(848, 507);
+            this.tabPage1.Size = new System.Drawing.Size(1243, 507);
             this.tabPage1.Text = "Seleção de Imagens";
             // 
             // imgList
@@ -84,6 +88,10 @@ namespace Canaan.Telas.Movimentacoes.Venda.Imagem
             this.toolstripActions.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButton1,
             this.toolStripSeparator5,
+            this.btAddSelecionada,
+            this.toolStripSeparator2,
+            this.btDeleteSelecionada,
+            this.toolStripSeparator3,
             this.btBackup,
             this.toolStripSeparator1,
             this.toolStripLabel1,
@@ -94,7 +102,7 @@ namespace Canaan.Telas.Movimentacoes.Venda.Imagem
             this.toolstripActions.Location = new System.Drawing.Point(0, 0);
             this.toolstripActions.Name = "toolstripActions";
             this.toolstripActions.Padding = new System.Windows.Forms.Padding(5);
-            this.toolstripActions.Size = new System.Drawing.Size(882, 33);
+            this.toolstripActions.Size = new System.Drawing.Size(1277, 33);
             this.toolstripActions.TabIndex = 2;
             this.toolstripActions.Text = "toolStrip1";
             // 
@@ -111,6 +119,34 @@ namespace Canaan.Telas.Movimentacoes.Venda.Imagem
             // 
             this.toolStripSeparator5.Name = "toolStripSeparator5";
             this.toolStripSeparator5.Size = new System.Drawing.Size(6, 23);
+            // 
+            // btAddSelecionada
+            // 
+            this.btAddSelecionada.Image = global::Canaan.Telas.Properties.Resources.action_add_16xLG;
+            this.btAddSelecionada.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btAddSelecionada.Name = "btAddSelecionada";
+            this.btAddSelecionada.Size = new System.Drawing.Size(78, 20);
+            this.btAddSelecionada.Text = "Adicionar";
+            this.btAddSelecionada.Click += new System.EventHandler(this.btAddSelecionada_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 23);
+            // 
+            // btDeleteSelecionada
+            // 
+            this.btDeleteSelecionada.Image = global::Canaan.Telas.Properties.Resources.action_Cancel_16xLG;
+            this.btDeleteSelecionada.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btDeleteSelecionada.Name = "btDeleteSelecionada";
+            this.btDeleteSelecionada.Size = new System.Drawing.Size(74, 20);
+            this.btDeleteSelecionada.Text = "Remover";
+            this.btDeleteSelecionada.Click += new System.EventHandler(this.btDeleteSelecionada_Click);
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 23);
             // 
             // btBackup
             // 
@@ -186,7 +222,7 @@ namespace Canaan.Telas.Movimentacoes.Venda.Imagem
             this.lvImagensSessao.LargeImageList = this.imgList;
             this.lvImagensSessao.Location = new System.Drawing.Point(291, 29);
             this.lvImagensSessao.Name = "lvImagensSessao";
-            this.lvImagensSessao.Size = new System.Drawing.Size(544, 465);
+            this.lvImagensSessao.Size = new System.Drawing.Size(939, 465);
             this.lvImagensSessao.TabIndex = 1;
             this.lvImagensSessao.UseCompatibleStateImageBehavior = false;
             this.lvImagensSessao.ItemDrag += new System.Windows.Forms.ItemDragEventHandler(this.lvImagensSessao_ItemDrag);
@@ -217,7 +253,7 @@ namespace Canaan.Telas.Movimentacoes.Venda.Imagem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(892, 600);
+            this.ClientSize = new System.Drawing.Size(1287, 600);
             this.Location = new System.Drawing.Point(0, 0);
             this.Name = "Imagem";
             this.Text = "FormImagem";
@@ -250,5 +286,9 @@ namespace Canaan.Telas.Movimentacoes.Venda.Imagem
         private ToolStripComboBox cbPastas;
         private ToolStripButton btBackup;
         private ToolStripSeparator toolStripSeparator1;
+        private ToolStripButton btAddSelecionada;
+        private ToolStripSeparator toolStripSeparator2;
+        private ToolStripButton btDeleteSelecionada;
+        private ToolStripSeparator toolStripSeparator3;
     }
 }

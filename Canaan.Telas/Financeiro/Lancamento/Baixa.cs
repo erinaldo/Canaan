@@ -196,6 +196,8 @@ namespace Canaan.Telas.Financeiro.Lancamento
                         UpdateLancamentos();
 
                         //imprime recibo
+                        var recibo = new Relatorios.Financeiro.Recibo.Viewer(Extrato.IdExtrato);
+                        recibo.ShowDialog();
 
                         //fecha a janela
                         Close();

@@ -143,6 +143,7 @@ namespace Canaan.Telas.Movimentacoes.Sessao
             this.btnFiltros.Name = "btnFiltros";
             this.btnFiltros.Size = new System.Drawing.Size(71, 20);
             this.btnFiltros.Text = "Filtros";
+            this.btnFiltros.ButtonClick += new System.EventHandler(this.btnFiltros_ButtonClick);
             // 
             // gridAtendimento
             // 

@@ -125,17 +125,38 @@ namespace Canaan.Relatorios.Venda.Periodo
             CarregaDados();
 
             //carrega o relatorio
-            var report = new Relatorio();
-            var txtData = (TextObject)report.ReportDefinition.Sections["Section2"].ReportObjects["txtData"];
+            if (this.Agrupado == false)
+            {
+                var report = new Relatorio();
 
-            txtData.Text = string.Format("{0} - {1} / {2}", Filial.NomeFantasia, DataInicio.ToShortDateString(), DataFim.ToShortDateString());
+                var txtData = (TextObject)report.ReportDefinition.Sections["Section2"].ReportObjects["txtData"];
 
-            //carrega dados
-            report.SetDataSource(Lista);
+                txtData.Text = string.Format("{0} - {1} / {2}", Filial.NomeFantasia, DataInicio.ToShortDateString(), DataFim.ToShortDateString());
 
-            //carrega o report viewer
-            crystalReportViewer1.ReportSource = report;
-            crystalReportViewer1.Zoom(100);
+                //carrega dados
+                report.SetDataSource(Lista);
+
+                //carrega o report viewer
+                crystalReportViewer1.ReportSource = report;
+                crystalReportViewer1.Zoom(100);
+            }
+            else
+            {
+                var report = new RelatorioAgrupado();
+
+                var txtData = (TextObject)report.ReportDefinition.Sections["Section2"].ReportObjects["txtData"];
+
+                txtData.Text = string.Format("{0} - {1} / {2}", Filial.NomeFantasia, DataInicio.ToShortDateString(), DataFim.ToShortDateString());
+
+                //carrega dados
+                report.SetDataSource(Lista);
+
+                //carrega o report viewer
+                crystalReportViewer1.ReportSource = report;
+                crystalReportViewer1.Zoom(100);
+            }
+
+            
         }
 
         #endregion

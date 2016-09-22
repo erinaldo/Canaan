@@ -169,6 +169,14 @@
     <Content Include="Configuration\PagSeguroConfig.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\pencil_005_16xLG.png" />
+    <None Include="Resources\manifest_16xLG.png" />
+    <None Include="Resources\process_16xLG.png" />
+    <None Include="Resources\document_16xLG.png" />
+    <None Include="Resources\Calculator_16xLG.png" />
+    <None Include="Resources\Camera_16xLG.png" />
+    <None Include="Resources\tear_off_calendar.png" />
+    <None Include="Resources\Money_16xLG.png" />
     <None Include="Resources\reportKika.jpg" />
     <None Include="Resources\fundoKika.jpg" />
     <None Include="Resources\reportKiss.jpg" />

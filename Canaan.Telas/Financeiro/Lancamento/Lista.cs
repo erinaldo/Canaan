@@ -96,7 +96,7 @@ namespace Canaan.Telas.Financeiro.Lancamento
 
         private void btnFaturasRecibo_Click(object sender, EventArgs e)
         {
-
+            PrintRecibo();
         }
 
         private void btnFiltro_Click(object sender, EventArgs e)
@@ -456,6 +456,31 @@ namespace Canaan.Telas.Financeiro.Lancamento
                 {
                     MessageBoxUtilities.MessageInfo("Nenhum lançamento selecionado");
                 }
+            }
+        }
+
+
+        private void PrintRecibo()
+        {
+            if (lancDataGridView.SelectedRows.Count > 0)
+            {
+                //abre tela de atualização
+                var id = (int)lancDataGridView.SelectedRows[0].Cells["Codigo"].Value;
+                var lanc = LibLancamento.GetById(id);
+
+                if (lanc.IdExtrato != null)
+                {
+                    var frm = new Relatorios.Financeiro.Recibo.Viewer(lanc.IdExtrato.GetValueOrDefault());
+                    frm.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Nenhum recibo para o lancamento selecionado");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Nenhum registro selecionado");
             }
         }
 

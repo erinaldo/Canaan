@@ -353,46 +353,48 @@ namespace Canaan.Telas.Movimentacoes.Sessao.Telas
                 var thumb = string.Format(@"{0}\thumb\{1}", this.SessaoPasta.Caminho, filename);
                 var url = string.Format(@"{0}\{1}", this.SessaoPasta.Caminho, filename);
 
-                //verifica se existe no banco de dados
-                if (LibFoto.GetByURL(url).Count == 0)
+                if (file.ToLower().Contains(".db") == false)
                 {
-                    //insere no banco de dados
-                    var foto = new Dados.Foto();
-                    foto.IdSessao = this.Sessao.IdSessao;
-                    foto.IdSessaoPasta = this.SessaoPasta.IdSessaoPasta;
-                    foto.Nome = filename;
-                    foto.Url = url;
-                    foto.Hora = DateTime.Now;
-                    foto.Tamanho = 0;
-                    foto.MimeType = "image/jpeg";
-                    foto.Thumb = thumb;
-                    foto.IsAtivo = true;
-                    foto.IsSelected = false;
-
-                    LibFoto.Insert(foto);
-
-                    //cria o thumbnail para novas imagens
-                    try
+                    //verifica se existe no banco de dados
+                    if (LibFoto.GetByURL(url).Count == 0)
                     {
-                        var imagem = Image.FromFile(file);
-                        var thumbImage = Lib.Utilitarios.ImageUtility.GetThumbnail(imagem, 200, 200);
-                        thumbImage.Save(string.Format(@"{0}\thumb\{1}", folder, filename));
-                    }
-                    catch (Exception) { }
-                }
+                        //insere no banco de dados
+                        var foto = new Dados.Foto();
+                        foto.IdSessao = this.Sessao.IdSessao;
+                        foto.IdSessaoPasta = this.SessaoPasta.IdSessaoPasta;
+                        foto.Nome = filename;
+                        foto.Url = url;
+                        foto.Hora = DateTime.Now;
+                        foto.Tamanho = 0;
+                        foto.MimeType = "image/jpeg";
+                        foto.Thumb = thumb;
+                        foto.IsAtivo = true;
+                        foto.IsSelected = false;
 
-                if (forceThumb)
-                {
-                    //recira todos os thumbs
-                    try
+                        LibFoto.Insert(foto);
+
+                        //cria o thumbnail para novas imagens
+                        try
+                        {
+                            var imagem = Image.FromFile(file);
+                            var thumbImage = Lib.Utilitarios.ImageUtility.GetThumbnail(imagem, 200, 200);
+                            thumbImage.Save(string.Format(@"{0}\thumb\{1}", folder, filename));
+                        }
+                        catch (Exception) { }
+                    }
+
+                    if (forceThumb)
                     {
-                        var imagem = Image.FromFile(file);
-                        var thumbImage = Lib.Utilitarios.ImageUtility.GetThumbnail(imagem, 200, 200);
-                        thumbImage.Save(string.Format(@"{0}\thumb\{1}", folder, filename));
+                        //recira todos os thumbs
+                        try
+                        {
+                            var imagem = Image.FromFile(file);
+                            var thumbImage = Lib.Utilitarios.ImageUtility.GetThumbnail(imagem, 200, 200);
+                            thumbImage.Save(string.Format(@"{0}\thumb\{1}", folder, filename));
+                        }
+                        catch (Exception) { }
                     }
-                    catch (Exception) { }
                 }
-
                 
             }
         }
@@ -420,9 +422,6 @@ namespace Canaan.Telas.Movimentacoes.Sessao.Telas
 
         private void CarregaImagens()
         {
-            //titulo
-            tabPage1.Text = SessaoPasta.Nome;
-
             //Inicializa Fotos
             if (Fotos == null)
                 Fotos = new List<MemoryStream>();
@@ -436,6 +435,9 @@ namespace Canaan.Telas.Movimentacoes.Sessao.Telas
 
                 //Carrega lista de fotos
                 var listaFotos = LibFoto.GetBySessaoPasta(Sessao.IdSessao, SessaoPasta.IdSessaoPasta);
+
+                //titulo
+                tabPage1.Text = string.Format("{0} - {1} imagens", SessaoPasta.Nome, listaFotos.Count);
 
                 //verifica se é para sincronizar o caderno
                 var direBase = string.Format(@"\\{0}\{1}", Config.ServImagem, Config.Folder);

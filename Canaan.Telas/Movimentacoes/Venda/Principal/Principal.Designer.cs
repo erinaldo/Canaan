@@ -38,8 +38,8 @@ namespace Canaan.Telas.Movimentacoes.Venda.Principal
             this.lkSelecaoImg = new DevExpress.XtraNavBar.NavBarItem();
             this.lkMontaPedido = new DevExpress.XtraNavBar.NavBarItem();
             this.lkFinanceiro = new DevExpress.XtraNavBar.NavBarItem();
-            this.lkDocumentacao = new DevExpress.XtraNavBar.NavBarItem();
             this.lkEvento = new DevExpress.XtraNavBar.NavBarItem();
+            this.lkDocumentacao = new DevExpress.XtraNavBar.NavBarItem();
             this.panelContainer = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
             this.SuspendLayout();
@@ -84,7 +84,7 @@ namespace Canaan.Telas.Movimentacoes.Venda.Principal
             // 
             // lkInfo
             // 
-            this.lkInfo.Caption = "Informações do Atendimento";
+            this.lkInfo.Caption = "Cadastro";
             this.lkInfo.Name = "lkInfo";
             this.lkInfo.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.lkInfo_LinkClicked);
             // 
@@ -102,21 +102,21 @@ namespace Canaan.Telas.Movimentacoes.Venda.Principal
             // 
             // lkFinanceiro
             // 
-            this.lkFinanceiro.Caption = "Lançamentos Financeiros";
+            this.lkFinanceiro.Caption = "Forma de Pagamento";
             this.lkFinanceiro.Name = "lkFinanceiro";
             this.lkFinanceiro.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.lkInflizacao_LinkClicked);
+            // 
+            // lkEvento
+            // 
+            this.lkEvento.Caption = "Detatlhes do Contrato";
+            this.lkEvento.Name = "lkEvento";
+            this.lkEvento.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.lkEvento_LinkClicked);
             // 
             // lkDocumentacao
             // 
             this.lkDocumentacao.Caption = "Documentação / Finalização";
             this.lkDocumentacao.Name = "lkDocumentacao";
             this.lkDocumentacao.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.lkDocumentacao_LinkClicked);
-            // 
-            // lkEvento
-            // 
-            this.lkEvento.Caption = "Eventos / Acompanhamento";
-            this.lkEvento.Name = "lkEvento";
-            this.lkEvento.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.lkEvento_LinkClicked);
             // 
             // panelContainer
             // 

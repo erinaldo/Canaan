@@ -42,11 +42,12 @@ namespace Canaan.Telas.Movimentacoes.Sessao.Telas
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
             this.tsSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.btAddSelecionada = new System.Windows.Forms.ToolStripButton();
             this.btAddVenda = new System.Windows.Forms.ToolStripButton();
-            this.timer = new System.Windows.Forms.Timer(this.components);
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.txtNome = new System.Windows.Forms.ToolStripLabel();
+            this.timer = new System.Windows.Forms.Timer(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.bNavigator)).BeginInit();
             this.bNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -69,6 +70,7 @@ namespace Canaan.Telas.Movimentacoes.Sessao.Telas
             this.toolStripButton3,
             this.toolStripButton5,
             this.tsSeparator,
+            this.btAddSelecionada,
             this.btAddVenda,
             this.toolStripSeparator2,
             this.txtNome});
@@ -164,15 +166,36 @@ namespace Canaan.Telas.Movimentacoes.Sessao.Telas
             this.tsSeparator.Name = "tsSeparator";
             this.tsSeparator.Size = new System.Drawing.Size(6, 33);
             // 
+            // btAddSelecionada
+            // 
+            this.btAddSelecionada.Image = global::Canaan.Telas.Properties.Resources.add_list;
+            this.btAddSelecionada.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btAddSelecionada.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btAddSelecionada.Name = "btAddSelecionada";
+            this.btAddSelecionada.Size = new System.Drawing.Size(169, 30);
+            this.btAddSelecionada.Text = "Adiciona as Selecionadas";
+            this.btAddSelecionada.Click += new System.EventHandler(this.btAddSelecionada_Click);
+            // 
             // btAddVenda
             // 
-            this.btAddVenda.Image = global::Canaan.Telas.Properties.Resources.delete;
+            this.btAddVenda.Image = global::Canaan.Telas.Properties.Resources.add_list;
             this.btAddVenda.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btAddVenda.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btAddVenda.Name = "btAddVenda";
-            this.btAddVenda.Size = new System.Drawing.Size(133, 30);
+            this.btAddVenda.Size = new System.Drawing.Size(132, 30);
             this.btAddVenda.Text = "Adicionar à Venda";
             this.btAddVenda.Click += new System.EventHandler(this.tsAddVenda_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 33);
+            // 
+            // txtNome
+            // 
+            this.txtNome.Name = "txtNome";
+            this.txtNome.Size = new System.Drawing.Size(103, 30);
+            this.txtNome.Text = "Nome da Imagem";
             // 
             // timer
             // 
@@ -188,17 +211,6 @@ namespace Canaan.Telas.Movimentacoes.Sessao.Telas
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 33);
-            // 
-            // txtNome
-            // 
-            this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(103, 30);
-            this.txtNome.Text = "Nome da Imagem";
             // 
             // FullViewer
             // 
@@ -241,5 +253,6 @@ namespace Canaan.Telas.Movimentacoes.Sessao.Telas
         private ToolStripButton btAddVenda;
         private ToolStripSeparator toolStripSeparator2;
         private ToolStripLabel txtNome;
+        private ToolStripButton btAddSelecionada;
     }
 }

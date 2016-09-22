@@ -835,5 +835,62 @@ namespace Canaan.WinApp
             var frm = new Relatorios.Venda.Periodo.Filtro();
             frm.ShowDialog();
         }
+
+
+
+
+
+
+        
+
+        private void agendaToolStripButton_Click(object sender, EventArgs e)
+        {
+            var frm = new Telas.Movimentacoes.Agendamento.Agendamento();
+            frm.ShowDialog();
+        }
+
+        private void sessaoToolStripButton_Click(object sender, EventArgs e)
+        {
+            var frm = new Telas.Movimentacoes.Sessao.Lista();
+            frm.ShowDialog();
+        }
+
+        private void retiradaToolStripButton1_Click(object sender, EventArgs e)
+        {
+            var frm = new Telas.Financeiro.Balcao.Compra();
+            frm.ShowDialog();
+        }
+
+        private void contratoToolStripButton_Click(object sender, EventArgs e)
+        {
+            var frm = new Telas.Movimentacoes.Venda.Busca.Lista();
+            frm.ShowDialog();
+        }
+
+        private void caixaToolStripButton_Click(object sender, EventArgs e)
+        {
+            Telas.Financeiro.Lancamento.Lista frm = new Telas.Financeiro.Lancamento.Lista();
+            frm.ShowDialog();
+        }
+
+        private void clientesToolStripButton_Click(object sender, EventArgs e)
+        {
+            var frm = new Telas.Cadastros.ClienteFornecedor.Lista();
+            frm.ShowDialog();
+        }
+
+        private void produtosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var tabela = new Lib.Tabela().GetByStatus(true).FirstOrDefault();
+            var frm = new Telas.Configuracoes.Pedido.Produto.Lista(tabela);
+
+            frm.ShowDialog();
+        }
+
+        private void vendaToolStripButton_Click(object sender, EventArgs e)
+        {
+            var frm = new Telas.Financeiro.Balcao.Venda();
+            frm.ShowDialog();
+        }
     }
 }

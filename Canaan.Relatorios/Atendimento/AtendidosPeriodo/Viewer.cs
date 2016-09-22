@@ -56,15 +56,16 @@ namespace Canaan.Relatorios.Atendimento.AtendidosPeriodo
         private void CarregaDados()
         {
             //recupera dados do banco
+            var libSessao = new Lib.Sessao();
             var atend = new Lib.Venda()
-                               .GetAtendidosByPeriodo(DataInicio.Date, DataFim.Date.AddDays(1), Session.Contexto.IdFilial)
+                               .GetAtendidosByPeriodo(DataInicio.Date, DataFim.Date, Session.Contexto.IdFilial)
                                .Select(a => new
                                {
                                    IdAtendimento = a.IdAtendimento,
                                    CodPacote = a.Atendimento.CodigoReduzido,
                                    Cliente = a.CliFor.Nome,
                                    Data = a.Data.ToShortDateString(),
-                                   Sessao = new Lib.Sessao().GetByCliente(a.IdCliFor).LastOrDefault().Data.ToShortDateString()  //a.Atendimento.Sessao.LastOrDefault().Data.ToShortDateString()
+                                   Sessao = libSessao.GetByCliente(a.IdCliFor).Count > 0 ? libSessao.GetByCliente(a.IdCliFor).LastOrDefault().Data.ToShortDateString() : ""  //a.Atendimento.Sessao.LastOrDefault().Data.ToShortDateString()
                                })
                                .Distinct()
                                .ToList();
@@ -77,7 +78,7 @@ namespace Canaan.Relatorios.Atendimento.AtendidosPeriodo
                 row.Cliente = item.Cliente;
                 row.Data = item.Data;
                 row.Sessao = item.Sessao;
-                row.Logo = Utilitarios.Comum.GetLogoReport();
+                row.Logo = Session.LogoReport;
 
                 DataSetAtend.Atendidos.AddAtendidosRow(row);
             }

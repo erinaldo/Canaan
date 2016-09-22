@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Canaan.Dados;
 using Canaan.Lib.Utilitarios;
 using CrystalDecisions.CrystalReports.Engine;
+using System.Data.Entity;
 
 namespace Canaan.Relatorios.Venda.Produtos
 {
@@ -131,7 +132,7 @@ namespace Canaan.Relatorios.Venda.Produtos
         {
             using (var conn = new Dados.CanaanModelContainer())
             {
-                var result = conn.VendaItem.Where(a => a.Venda.DataVenda >= _filtro.DataInicial && a.Venda.DataVenda <= _filtro.DataFinal && a.Produto.Nome == prod);
+                var result = conn.VendaItem.Where(a => DbFunctions.TruncateTime(a.Venda.DataVenda) >= _filtro.DataInicial.Date && DbFunctions.TruncateTime(a.Venda.DataVenda) <= _filtro.DataFinal.Date && a.Produto.Nome == prod);
 
                 switch (tipo)
                 {
@@ -154,7 +155,7 @@ namespace Canaan.Relatorios.Venda.Produtos
         {
             using (var conn = new Dados.CanaanModelContainer())
             {
-                var result = conn.VendaItem.Where(a => a.Venda.DataVenda >= _filtro.DataInicial && a.Venda.DataVenda <= _filtro.DataFinal && a.Produto.Nome == prod);
+                var result = conn.VendaItem.Where(a => DbFunctions.TruncateTime(a.Venda.DataVenda) >= _filtro.DataInicial.Date && DbFunctions.TruncateTime(a.Venda.DataVenda) <= _filtro.DataFinal.Date && a.Produto.Nome == prod);
 
                 switch (tipo)
                 {

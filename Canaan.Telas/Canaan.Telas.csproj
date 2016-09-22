@@ -376,6 +376,18 @@
     <Compile Include="Financeiro\Agencia\Seleciona.Designer.cs">
       <DependentUpon>Seleciona.cs</DependentUpon>
     </Compile>
+    <Compile Include="Financeiro\Balcao\Compra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Financeiro\Balcao\Compra.Designer.cs">
+      <DependentUpon>Compra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Financeiro\Balcao\Venda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Financeiro\Balcao\Venda.Designer.cs">
+      <DependentUpon>Venda.cs</DependentUpon>
+    </Compile>
     <Compile Include="Financeiro\Banco\Edita.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -967,6 +979,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Configuracoes\Geral\Pasta\Lista.resx">
       <DependentUpon>Lista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Financeiro\Balcao\Compra.resx">
+      <DependentUpon>Compra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Financeiro\Balcao\Venda.resx">
+      <DependentUpon>Venda.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Financeiro\Lancamento\Filtro.resx">
       <DependentUpon>Filtro.cs</DependentUpon>
@@ -1824,6 +1842,7 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

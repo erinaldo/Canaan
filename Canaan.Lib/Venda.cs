@@ -115,8 +115,8 @@ namespace Canaan.Lib
                            .Include(a => a.Atendimento)
                            .Include(a => a.Atendimento.Sessao)
                            .Include(a => a.CliFor)
-                           .Where(a => a.Data >= pInicio &&
-                                       a.Data <= pFim &&
+                           .Where(a => DbFunctions.TruncateTime(a.Data) >= pInicio &&
+                                       DbFunctions.TruncateTime(a.Data) <= pFim &&
                                        a.IdFilial == pFilial &&
                                        a.VendaItem.Count > 0 &&
                                        Atendidos.Contains(a.Status) &&
@@ -236,7 +236,7 @@ namespace Canaan.Lib
                     }
 
                     //retorna
-                    return GetById(item.IdAtendimento);
+                    return GetById(item.IdPedido);
                 }
             }
             catch (Exception ex)

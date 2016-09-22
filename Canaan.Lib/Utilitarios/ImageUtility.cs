@@ -1,4 +1,5 @@
 ﻿using Canaan.Lib.Componentes;
+using Goheer.EXIF;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -372,8 +373,8 @@ namespace Canaan.Lib.Utilitarios
 
         private void rotacionarUnique(Direction direcao)
         {
-            var pathImage = string.Format(@"\\{0}\{1}", Config.ServImagem, Imagem.Url);
-            var paththumb = string.Format(@"\\{0}\{1}", Config.ServImagem, Imagem.Thumb);
+            var pathImage = string.Format(@"\\{0}\{1}\{2}", Config.ServImagem, Config.Folder, Imagem.Url);
+            var paththumb = string.Format(@"\\{0}\{1}\{2}", Config.ServImagem, Config.Folder, Imagem.Thumb);
 
             var thumb = Image.FromStream(new MemoryStream(File.ReadAllBytes(paththumb)));
             var image = Image.FromStream(new MemoryStream(File.ReadAllBytes(pathImage)));
@@ -389,8 +390,21 @@ namespace Canaan.Lib.Utilitarios
                 thumb.RotateFlip(RotateFlipType.Rotate90FlipNone);
             }
 
-            image.Save(pathImage);
-            thumb.Save(paththumb);
+            if (Imagem.Sessao.IsCriptografado)
+            {
+                //cria a imagem criptografada
+                byte[] imagemCripto = Criptografia.Criptografa(GetBytes(image));
+                File.WriteAllBytes(pathImage, imagemCripto);
+
+                //cria o thumb criptografado
+                byte[] thumbCripto = Criptografia.Criptografa(GetBytes(thumb));
+                File.WriteAllBytes(paththumb, thumbCripto);
+            }
+            else
+            {
+                image.Save(pathImage);
+                thumb.Save(paththumb);
+            }
         }
 
         private void Upload(string filename, string extensao, string caminho)
@@ -446,11 +460,50 @@ namespace Canaan.Lib.Utilitarios
 
 
             //Salva Imagens
+            RotateFlipType flip = RotateFlipType.RotateNoneFlipNone;
+
             if (!File.Exists(fullPathFile))
-                img.Save(fullPathFile);
+            {
+                var bmp = new Bitmap(caminho);
+                var exif = new EXIFextractor(ref bmp, "n");
+
+                if (exif["Orientation"] != null)
+                {
+                    flip = OrientationToFlipType(exif["Orientation"].ToString());
+
+                    if (flip != RotateFlipType.RotateNoneFlipNone) // Se a orientação já está correta
+                    {
+                        bmp.RotateFlip(flip);
+                        exif.setTag(0x112, "1");
+                       
+                    }
+                }
+
+                bmp.Save(fullPathFile, ImageFormat.Jpeg);
+                //img.Save(fullPathFile);
+
+                //cria o thumb
+
+            }
+
+
+            //verifica se as imagens precisam ser giradas
+
+
+            //cria o thumb
+            img = GetImagem(caminho);
+            thumbFile = CreateThumbnail(img);
+            
 
             if (!File.Exists(fullPathThumbFile))
+            {
+                if (flip != RotateFlipType.RotateNoneFlipNone) // Se a orientação já está correta
+                {
+                    thumbFile.RotateFlip(flip);
+                }
                 thumbFile.Save(fullPathThumbFile);
+            }
+                
 
             //Prepara dados para salvar no banco
             var name = string.Format("{0}{1}", filename, extensao);
@@ -606,12 +659,51 @@ namespace Canaan.Lib.Utilitarios
             });
         }
 
-       
+
 
         #endregion
 
         #region STATIC METHODS
-        
+
+        private static RotateFlipType OrientationToFlipType(string orientation)
+        {
+            var result = RotateFlipType.Rotate180FlipNone;
+
+            switch (int.Parse(orientation))
+            {
+                case 1:
+                    result = RotateFlipType.RotateNoneFlipNone;
+                    break;
+                case 2:
+                    result = RotateFlipType.RotateNoneFlipX;
+                    break;
+                case 3:
+                    result = RotateFlipType.Rotate180FlipNone;
+                    break;
+                case 4:
+                    result = RotateFlipType.Rotate180FlipX;
+                    break;
+                case 5:
+                    result = RotateFlipType.Rotate90FlipX;
+                    break;
+                case 6:
+                    result = RotateFlipType.Rotate90FlipNone;
+                    break;
+                case 7:
+                    result = RotateFlipType.Rotate270FlipX;
+                    break;
+                case 8:
+                    result = RotateFlipType.Rotate270FlipNone;
+                    break;
+                default:
+                    result = RotateFlipType.RotateNoneFlipNone;
+                    break;
+            }
+
+            return result;
+
+        }
+
         public static byte[] GetBytes(Image imagem)
         {
             var codec = ImageCodecInfo.GetImageEncoders().Where(a => a.MimeType == "image/jpeg").FirstOrDefault();

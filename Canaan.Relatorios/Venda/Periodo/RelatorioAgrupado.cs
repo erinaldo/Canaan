@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Canaan.Relatorios.Fichas.Envelope {
+namespace Canaan.Relatorios.Venda.Periodo {
     using System;
     using System.ComponentModel;
     using CrystalDecisions.Shared;
@@ -16,14 +16,14 @@ namespace Canaan.Relatorios.Fichas.Envelope {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class Relatorio : ReportClass {
+    public class RelatorioAgrupado : ReportClass {
         
-        public Relatorio() {
+        public RelatorioAgrupado() {
         }
         
         public override string ResourceName {
             get {
-                return "Relatorio.rpt";
+                return "RelatorioAgrupado.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace Canaan.Relatorios.Fichas.Envelope {
         
         public override string FullResourceName {
             get {
-                return "Canaan.Relatorios.Fichas.Envelope.Relatorio.rpt";
+                return "Canaan.Relatorios.Venda.Periodo.RelatorioAgrupado.rpt";
             }
             set {
                 // Do nothing
@@ -66,7 +66,7 @@ namespace Canaan.Relatorios.Fichas.Envelope {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section3 {
+        public CrystalDecisions.CrystalReports.Engine.Section GroupHeaderSection1 {
             get {
                 return this.ReportDefinition.Sections[2];
             }
@@ -74,7 +74,7 @@ namespace Canaan.Relatorios.Fichas.Envelope {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section DetailSection2 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section3 {
             get {
                 return this.ReportDefinition.Sections[3];
             }
@@ -82,7 +82,7 @@ namespace Canaan.Relatorios.Fichas.Envelope {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section DetailSection1 {
+        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection1 {
             get {
                 return this.ReportDefinition.Sections[4];
             }
@@ -90,7 +90,7 @@ namespace Canaan.Relatorios.Fichas.Envelope {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section DetailSection4 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
             get {
                 return this.ReportDefinition.Sections[5];
             }
@@ -98,25 +98,17 @@ namespace Canaan.Relatorios.Fichas.Envelope {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
-            get {
-                return this.ReportDefinition.Sections[6];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
         public CrystalDecisions.CrystalReports.Engine.Section Section5 {
             get {
-                return this.ReportDefinition.Sections[7];
+                return this.ReportDefinition.Sections[6];
             }
         }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedRelatorio : Component, ICachedReport {
+    public class CachedRelatorioAgrupado : Component, ICachedReport {
         
-        public CachedRelatorio() {
+        public CachedRelatorioAgrupado() {
         }
         
         [Browsable(false)]
@@ -153,7 +145,7 @@ namespace Canaan.Relatorios.Fichas.Envelope {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            Relatorio rpt = new Relatorio();
+            RelatorioAgrupado rpt = new RelatorioAgrupado();
             rpt.Site = this.Site;
             return rpt;
         }

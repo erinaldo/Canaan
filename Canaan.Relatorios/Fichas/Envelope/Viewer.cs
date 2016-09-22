@@ -69,6 +69,13 @@ namespace Canaan.Relatorios.Fichas.Envelope
                 rowAtendimento.CodigoReduzido = venda.Atendimento.CodigoReduzido;
                 rowAtendimento.Logo = Utilitarios.Comum.GetLogoReport();
 
+                //imagens selecionadas
+                rowAtendimento.Imagens = "";
+                foreach (var item in venda.VendaFoto.OrderBy(a => a.Foto.Nome))
+                {
+                    rowAtendimento.Imagens += string.Format("{0} - ", item.Foto.Nome);
+                }
+
 
                 //Cliente
                 var cliente = venda.Atendimento.CliFor as Dados.PessoaFisica;
@@ -82,7 +89,7 @@ namespace Canaan.Relatorios.Fichas.Envelope
                 rowCliente.Telefone =  Lib.Utilitarios.Comum.FormataTelefone(venda.Atendimento.CliFor.Telefone);
                 rowCliente.EstadoCivil = cliente == null ? string.Empty : cliente.EstadoCivil.ToString();
                 rowCliente.Conjuje = cliente == null ? string.Empty : cliente.Conjuge;
-                rowCliente.Filiacao = cliente == null ? string.Empty : string.Format("{0} - {1}", cliente.NomeMae, cliente.NomeMae);
+                rowCliente.Filiacao = cliente == null ? string.Empty : string.Format("{0} - {1}", cliente.NomeMae, cliente.NomePai);
                 rowCliente.Sexo = cliente.Sexo.ToString();
                 rowCliente.CPF = Lib.Utilitarios.Comum.FormataCpf(venda.Atendimento.CliFor.Documento);
                 rowCliente.Cidade = venda.Atendimento.CliFor.Cidade.Nome;
@@ -139,6 +146,8 @@ namespace Canaan.Relatorios.Fichas.Envelope
 
                     Dataset.ReferenciaPessoal.AddReferenciaPessoalRow(rowPessoal);
                 }
+
+                
             }
         }
 

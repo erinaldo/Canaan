@@ -129,13 +129,16 @@ namespace Canaan.Telas.Movimentacoes.Sessao
 
         private void CarregaLista()
         {
-            if (Atendimentos != null)
-                Atendimentos.Clear();
+            if (FilterExpression != null)
+            {
+                if (Atendimentos != null)
+                    Atendimentos.Clear();
 
-            var expressao = FilterExpression.BuildExpression();
+                var expressao = FilterExpression.BuildExpression();
 
-            Atendimentos = LibAtendimento.Filter(expressao, Parametros);
-
+                Atendimentos = LibAtendimento.Filter(expressao, Parametros);
+            }
+            
             //CarregaGrid(LibCliFor.CarregaGridClientes(Clientes.GroupBy(a => a.CliFor).Select(a => a.FirstOrDefault()).ToList()));
             CarregaGrid(LibAtendimento.CarregaGrid(Atendimentos));
         }
@@ -327,7 +330,32 @@ namespace Canaan.Telas.Movimentacoes.Sessao
             {
                 if (gridAtendimento.SelectedRows.Count <= 0)
                 {
-                    MessageBoxUtilities.MessageWarning("Nenhum Cliente selecionado");
+                    var frmCliente = new Canaan.Telas.Cadastros.ClienteFornecedor.Wizard();
+                    frmCliente.ShowDialog();
+
+                    if (frmCliente.CliFor != null)
+                    {
+                        //carrega atendimentos do cliente
+                        var clifor = frmCliente.CliFor;
+                        Atendimentos = LibAtendimento.GetByCliFor(clifor.IdCliFor);
+
+                        CarregaGrid(LibAtendimento.CarregaGrid(Atendimentos));
+
+                        //cliente selecionado
+                        if (Atendimentos.Count > 0)
+                        {
+                            Atendimento = LibAtendimento.GetById(Atendimentos.FirstOrDefault().IdAtendimento);
+                            var frmSessao = new Edita(Atendimento);
+                            frmSessao.ShowDialog();
+
+                            CarregaLista();
+                        }
+                        else
+                        {
+                            MessageBoxUtilities.MessageWarning("Nenhum registro selecionado.");
+                        }
+                    }
+
                 }
                 else
                 {
@@ -481,5 +509,10 @@ namespace Canaan.Telas.Movimentacoes.Sessao
         }
 
         #endregion
+
+        private void btnFiltros_ButtonClick(object sender, EventArgs e)
+        {
+
+        }
     }
 }

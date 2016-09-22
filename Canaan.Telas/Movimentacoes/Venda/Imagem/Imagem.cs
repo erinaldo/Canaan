@@ -118,6 +118,8 @@ namespace Canaan.Telas.Movimentacoes.Venda.Imagem
 
         private void Imagem_Load(object sender, EventArgs e)
         {
+            VerificaPastaSelecionada();
+
             InitModel();
             InitComboPastas();
             InitComboSessoes();
@@ -147,9 +149,6 @@ namespace Canaan.Telas.Movimentacoes.Venda.Imagem
                 var id = int.Parse(cbPastas.ComboBox.SelectedValue.ToString());
                 this.PastaAtual = this.Pastas.FirstOrDefault(a => a.IdSessaoPasta == id);
 
-                //altera texto do label
-                labelImagensSessao.Text = string.Format("Sessão {0} - Pasta - {1}", this.PastaAtual.IdSessao, this.PastaAtual.Nome);
-
                 //carrega imagens
                 CarregaImagens();
             }
@@ -169,9 +168,7 @@ namespace Canaan.Telas.Movimentacoes.Venda.Imagem
         private void lvImagensSelecionadas_DoubleClick(object sender, EventArgs e)
         {
             OpenFull(TypeFullOpen.FotosVenda);
-        }
-
-        
+        }     
 
         private void btnInsert_Click(object sender, EventArgs e)
         {
@@ -200,7 +197,14 @@ namespace Canaan.Telas.Movimentacoes.Venda.Imagem
                     try
                     {
                         var foto = item.Item as Dados.Foto;
+
+                        //remove da venda
                         LibVendaFoto.Delete(foto.IdFoto, Venda.IdPedido);
+
+                        //deleta das selecionadas
+                        RemoveSelecionada(foto);
+
+                        //remove do listview
                         item.Remove();
 
                         //Atualiza Sessao Model
@@ -220,7 +224,7 @@ namespace Canaan.Telas.Movimentacoes.Venda.Imagem
                 //InitBinding();
             }
         }
-
+        
 
         //DragDrop Imagens Venda
 
@@ -247,6 +251,9 @@ namespace Canaan.Telas.Movimentacoes.Venda.Imagem
                         IdFoto = foto.IdFoto,
                         IdPedido = Venda.IdPedido
                     });
+
+                    //insere na pasta de selecionadas
+                    InsereSelecionada(foto);
                 }
 
                 CarregaImagens();
@@ -269,6 +276,72 @@ namespace Canaan.Telas.Movimentacoes.Venda.Imagem
             //frm.ShowDialog();
 
             InitBinding();
+        }
+
+
+
+        private void btAddSelecionada_Click(object sender, EventArgs e)
+        {
+            if (lvImagensSessao.SelectedItems.Count > 0)
+            {
+                foreach (CListViewItem item in lvImagensSessao.SelectedItems)
+                {
+                    var foto = item.Item as Dados.Foto;
+
+                    LibVendaFoto.Insert(new Dados.VendaFoto
+                    {
+                        IdFoto = foto.IdFoto,
+                        IdPedido = Venda.IdPedido
+                    });
+
+                    //insere na pasta de selecionadas
+                    InsereSelecionada(foto);
+                }
+
+                CarregaImagens();
+                CarregaSelecionadas();
+
+                ////Atualiza Componente
+                //Model.UpdateListas(Venda.IdPedido);
+                //InitBinding();
+            }
+        }
+
+        private void btDeleteSelecionada_Click(object sender, EventArgs e)
+        {
+            if (lvImagensVenda.SelectedItems.Count > 0)
+            {
+                foreach (CListViewItem item in lvImagensVenda.SelectedItems)
+                {
+                    try
+                    {
+                        var foto = item.Item as Dados.Foto;
+
+                        //remove da venda
+                        LibVendaFoto.Delete(foto.IdFoto, Venda.IdPedido);
+
+                        //deleta das selecionadas
+                        RemoveSelecionada(foto);
+
+                        //remove do listview
+                        item.Remove();
+
+                        //Atualiza Sessao Model
+                        //Model.IdSessaoAtual = foto.IdSessao;
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+
+                CarregaImagens();
+                CarregaSelecionadas();
+
+                ////Atualiza Componente
+                //Model.UpdateListas(Venda.IdPedido);
+                //InitBinding();
+            }
         }
 
         #endregion
@@ -295,17 +368,6 @@ namespace Canaan.Telas.Movimentacoes.Venda.Imagem
             //BindingListView(Model.FotosSelecionadas, imgListVenda, Config, lvImagensVenda);
             //labelImagensVenda.Text = string.Format("Imagens da Sessão ({0})", lvImagensVenda.Items.Count);
         }
-
-        //private void BindingListView(BindingList<Dados.Foto> fotos, ImageList imgList, Dados.Config config, ListView listView)
-        //{
-        //    LibFoto.CarregaImagensVenda(fotos, imgList, config, Model.IdSessaoAtual);
-
-        //    listView.Clear();
-        //    listView.Items.AddRange(fotos.Select((a, i) => new CListViewItem(a, a.Nome, i)).ToArray());
-        //    listView.LargeImageList = imgList;
-        //    listView.Refresh();
-        //    listView.EndUpdate();
-        //}
 
         private void InitComboSessoes()
         {
@@ -334,7 +396,7 @@ namespace Canaan.Telas.Movimentacoes.Venda.Imagem
                 lvImagensSessao.Items.Clear();
 
                 //Carrega lista de fotos
-                var listaFotos = LibFoto.GetBySessaoPasta(this.PastaAtual.IdSessao, this.PastaAtual.IdSessaoPasta);
+                var listaFotos = LibFoto.GetBySessaoPasta(this.PastaAtual.IdSessao, this.PastaAtual.IdSessaoPasta).OrderBy(a => a.Nome).ToList();
 
                 //remove imagens da venda
                 var listaVenda = LibFoto.GetByVenda(this.Venda.IdPedido);
@@ -390,6 +452,9 @@ namespace Canaan.Telas.Movimentacoes.Venda.Imagem
                     lvImagensSessao.Refresh();
                     lvImagensSessao.EndUpdate();
                 }
+
+                //altera texto do label
+                labelImagensSessao.Text = string.Format("Sessão {0} - Pasta - {1} - {2} imagens", this.PastaAtual.IdSessao, this.PastaAtual.Nome, listaFotos.Count);
             }
             catch (Exception ex)
             {
@@ -411,6 +476,9 @@ namespace Canaan.Telas.Movimentacoes.Venda.Imagem
 
                 //Carrega lista de fotos
                 var listaFotos = LibFoto.GetByVenda(this.Venda.IdPedido);
+
+                //muda o texto
+                labelImagensVenda.Text = string.Format("Selecionadas - {0} imagens", listaFotos.Count);
 
                 //verifica se é para sincronizar o caderno
                 var direBase = string.Format(@"\\{0}\{1}", Config.ServImagem, Config.Folder);
@@ -534,6 +602,95 @@ namespace Canaan.Telas.Movimentacoes.Venda.Imagem
                 lvImagensSessao.AllowDrop = false;
             }
         }
+
+        private void RemoveSelecionada(Dados.Foto foto)
+        {
+            //marca como selecionada
+            foto.IsSelected = false;
+            LibFoto.Update(foto);
+
+            //faz copia da imagem
+            var pastaSelecionada = new Lib.SessaoPasta().GetBySessao(foto.IdSessao).FirstOrDefault(a => a.Nome == "Selecionadas");
+
+            if (pastaSelecionada != null)
+            {
+                var currentFolder = new Lib.SessaoPasta().GetById(foto.IdSessaoPasta.GetValueOrDefault());
+
+                if (currentFolder != null)
+                {
+                    var dirBase = string.Format(@"\\{0}\{1}", Config.ServImagem, Config.Folder);
+                    var filePath = foto.Url.Replace(currentFolder.Nome, pastaSelecionada.Nome);
+                    var thumbPath = foto.Thumb.Replace(currentFolder.Nome, pastaSelecionada.Nome);
+
+                    //copia imagem e thumb fisicamente
+                    System.IO.File.Delete(string.Format(@"{0}\{1}", dirBase, filePath));
+                    System.IO.File.Delete(string.Format(@"{0}\{1}", dirBase, thumbPath));
+
+                    //cria o registro da imagem
+                    var fotoselecionada = LibFoto.GetBySessaoPasta(pastaSelecionada.IdSessao, pastaSelecionada.IdSessaoPasta).FirstOrDefault(a => a.Url == filePath);
+
+                    LibFoto.Delete(fotoselecionada.IdFoto);
+                }
+
+            }
+        }
+
+        private void InsereSelecionada(Dados.Foto foto)
+        {
+            //marca como selecionada
+            foto.IsSelected = true;
+            LibFoto.Update(foto);
+
+            //faz copia da imagem
+            var pastaSelecionada = new Lib.SessaoPasta().GetBySessao(foto.IdSessao).FirstOrDefault(a => a.Nome == "Selecionadas");
+            if (pastaSelecionada != null)
+            {
+                var currentFolder = new Lib.SessaoPasta().GetById(foto.IdSessaoPasta.GetValueOrDefault());
+                if (currentFolder != null)
+                {
+                    var dirBase = string.Format(@"\\{0}\{1}", Config.ServImagem, Config.Folder);
+                    var filePath = foto.Url.Replace(currentFolder.Nome, pastaSelecionada.Nome);
+                    var thumbPath = foto.Thumb.Replace(currentFolder.Nome, pastaSelecionada.Nome);
+
+                    //copia imagem e thumb fisicamente
+                    System.IO.File.Copy(string.Format(@"{0}\{1}", dirBase, foto.Url), string.Format(@"{0}\{1}", dirBase, filePath));
+                    System.IO.File.Copy(string.Format(@"{0}\{1}", dirBase, foto.Thumb), string.Format(@"{0}\{1}", dirBase, thumbPath));
+
+                    //cria o registro da imagem
+                    var selecionada = new Dados.Foto();
+                    selecionada.IdSessao = foto.IdSessao;
+                    selecionada.IdSessaoPasta = pastaSelecionada.IdSessaoPasta;
+                    selecionada.Nome = foto.Nome;
+                    selecionada.Url = filePath;
+                    selecionada.Thumb = thumbPath;
+                    selecionada.Hora = foto.Hora;
+                    selecionada.Tamanho = foto.Tamanho;
+                    selecionada.MimeType = foto.MimeType;
+                    selecionada.IsAtivo = foto.IsAtivo;
+                    selecionada.IsSelected = foto.IsSelected;
+
+                    LibFoto.Insert(selecionada);
+                }
+
+            }
+        }
+
+        private void VerificaPastaSelecionada()
+        {
+            var folder = new Lib.Pasta().GetByNome("Selecionadas").FirstOrDefault();
+
+            if (folder != null)
+            {
+                //some com as imagens selecionadas
+                labelImagensVenda.Visible = false;
+                lvImagensVenda.Visible = false;
+
+                labelImagensSessao.Left = labelImagensVenda.Left;
+                lvImagensSessao.Left = lvImagensVenda.Left;
+                lvImagensSessao.Width = lvImagensSessao.Width + lvImagensVenda.Width;
+            }
+        }
+
 
         #endregion
 

@@ -28,29 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolstripActions = new System.Windows.Forms.ToolStrip();
+            this.btnSalvar = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.btnAdicionar = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.btnEditar = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.btnExcluir = new System.Windows.Forms.ToolStripButton();
             this.eventosDataGridView = new System.Windows.Forms.DataGridView();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.btnSalvar = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Evento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DataInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DataFim = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tipoEventoTextBox = new System.Windows.Forms.TextBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.eventoEspecificacaoTextBox = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.nomeModeloTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.eventoEspecificacaoTextBox = new System.Windows.Forms.TextBox();
+            this.tipoEventoTextBox = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -88,6 +88,21 @@
             this.toolstripActions.Size = new System.Drawing.Size(990, 33);
             this.toolstripActions.TabIndex = 3;
             this.toolstripActions.Text = "toolStrip1";
+            // 
+            // btnSalvar
+            // 
+            this.btnSalvar.Image = global::Canaan.Telas.Properties.Resources.save_16xLG;
+            this.btnSalvar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnSalvar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(116, 20);
+            this.btnSalvar.Text = "Salvar Alterações";
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 23);
             // 
             // btnAdicionar
             // 
@@ -159,54 +174,6 @@
             this.eventosDataGridView.TabIndex = 0;
             this.eventosDataGridView.DoubleClick += new System.EventHandler(this.eventosDataGridView_DoubleClick);
             // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.eventoEspecificacaoTextBox);
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.nomeModeloTextBox);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.tipoEventoTextBox);
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(3, 213);
-            this.panel2.Name = "panel2";
-            this.panel2.Padding = new System.Windows.Forms.Padding(5);
-            this.panel2.Size = new System.Drawing.Size(950, 291);
-            this.panel2.TabIndex = 1;
-            // 
-            // btnSalvar
-            // 
-            this.btnSalvar.Image = global::Canaan.Telas.Properties.Resources.save_16xLG;
-            this.btnSalvar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btnSalvar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(116, 20);
-            this.btnSalvar.Text = "Salvar Alterações";
-            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
-            // 
-            // toolStripSeparator3
-            // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 23);
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.eventosDataGridView);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(3, 3);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(950, 210);
-            this.panel3.TabIndex = 2;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(8, 5);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(80, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Tipo de Evento";
-            // 
             // Codigo
             // 
             this.Codigo.DataPropertyName = "Codigo";
@@ -226,9 +193,9 @@
             // DataInicio
             // 
             this.DataInicio.DataPropertyName = "DataInicio";
-            dataGridViewCellStyle3.Format = "g";
-            dataGridViewCellStyle3.NullValue = null;
-            this.DataInicio.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Format = "g";
+            dataGridViewCellStyle1.NullValue = null;
+            this.DataInicio.DefaultCellStyle = dataGridViewCellStyle1;
             this.DataInicio.HeaderText = "Data Inicial";
             this.DataInicio.Name = "DataInicio";
             this.DataInicio.ReadOnly = true;
@@ -237,20 +204,45 @@
             // DataFim
             // 
             this.DataFim.DataPropertyName = "DataFim";
-            dataGridViewCellStyle4.Format = "g";
-            dataGridViewCellStyle4.NullValue = null;
-            this.DataFim.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Format = "g";
+            dataGridViewCellStyle2.NullValue = null;
+            this.DataFim.DefaultCellStyle = dataGridViewCellStyle2;
             this.DataFim.HeaderText = "Data Final";
             this.DataFim.Name = "DataFim";
             this.DataFim.ReadOnly = true;
             this.DataFim.Width = 150;
             // 
-            // tipoEventoTextBox
+            // panel2
             // 
-            this.tipoEventoTextBox.Location = new System.Drawing.Point(11, 21);
-            this.tipoEventoTextBox.Name = "tipoEventoTextBox";
-            this.tipoEventoTextBox.Size = new System.Drawing.Size(322, 20);
-            this.tipoEventoTextBox.TabIndex = 1;
+            this.panel2.Controls.Add(this.eventoEspecificacaoTextBox);
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.nomeModeloTextBox);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.tipoEventoTextBox);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(3, 213);
+            this.panel2.Name = "panel2";
+            this.panel2.Padding = new System.Windows.Forms.Padding(5);
+            this.panel2.Size = new System.Drawing.Size(950, 291);
+            this.panel2.TabIndex = 1;
+            // 
+            // eventoEspecificacaoTextBox
+            // 
+            this.eventoEspecificacaoTextBox.Location = new System.Drawing.Point(11, 60);
+            this.eventoEspecificacaoTextBox.Multiline = true;
+            this.eventoEspecificacaoTextBox.Name = "eventoEspecificacaoTextBox";
+            this.eventoEspecificacaoTextBox.Size = new System.Drawing.Size(650, 223);
+            this.eventoEspecificacaoTextBox.TabIndex = 5;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(8, 44);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(104, 13);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Serviços  / Produtos";
             // 
             // nomeModeloTextBox
             // 
@@ -264,26 +256,34 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(336, 5);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(174, 13);
+            this.label2.Size = new System.Drawing.Size(98, 13);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Nome dos Noivos / Aniversariantes";
+            this.label2.Text = "Nome dos Modelos";
             // 
-            // label3
+            // tipoEventoTextBox
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(8, 44);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(80, 13);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Tipo de Evento";
+            this.tipoEventoTextBox.Location = new System.Drawing.Point(11, 21);
+            this.tipoEventoTextBox.Name = "tipoEventoTextBox";
+            this.tipoEventoTextBox.Size = new System.Drawing.Size(322, 20);
+            this.tipoEventoTextBox.TabIndex = 1;
             // 
-            // eventoEspecificacaoTextBox
+            // label1
             // 
-            this.eventoEspecificacaoTextBox.Location = new System.Drawing.Point(11, 60);
-            this.eventoEspecificacaoTextBox.Multiline = true;
-            this.eventoEspecificacaoTextBox.Name = "eventoEspecificacaoTextBox";
-            this.eventoEspecificacaoTextBox.Size = new System.Drawing.Size(650, 223);
-            this.eventoEspecificacaoTextBox.TabIndex = 5;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(8, 5);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(86, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Tipo de Contrato";
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.eventosDataGridView);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(3, 3);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(950, 210);
+            this.panel3.TabIndex = 2;
             // 
             // Lista
             // 

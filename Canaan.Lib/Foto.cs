@@ -131,6 +131,7 @@ namespace Canaan.Lib
                     updated.MimeType = item.MimeType;
                     updated.IsAtivo = item.IsAtivo;
                     updated.Hora = item.Hora;
+                    updated.IsSelected = item.IsSelected;
 
                     conn.SaveChanges();
 
