@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Data.Entity;
 using System.Text.RegularExpressions;
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace RM.Telas.Ferramentas.Pherfil.Remessa
 {
@@ -41,7 +42,6 @@ namespace RM.Telas.Ferramentas.Pherfil.Remessa
                            .Where(a => a.PAGREC == 1 &&
                                        a.STATUSLAN == 0 &&
                                        a.CODTB1FLX != classeContabil &&
-                                       a.CODTB1FLX != "2.028" &&
                                        a.CODCOLIGADA == coligada &&
                                        a.CODFILIAL == filial &&
                                        a.DATAVENCIMENTO < dataConsulta &&
@@ -193,6 +193,132 @@ namespace RM.Telas.Ferramentas.Pherfil.Remessa
 
         public void ExportaLista(List<Model> lista, string filename)
         {
+            Excel.Application excelApp = null;
+            Excel.Workbook wkbk;
+            Excel.Worksheet sheet;
+
+            try
+            {
+                // Inicializa Excel e cria um workbook and worksheet.
+                excelApp = new Excel.Application();
+                wkbk = excelApp.Workbooks.Add();
+                sheet = wkbk.Sheets.Add() as Excel.Worksheet;
+                sheet.Name = "Remessa Pherfil";
+
+                //inicializa o contados
+                int i = 1;
+
+                //cria titulos
+                sheet.Cells[i, 1] = "COD_CREDOR";
+                sheet.Cells[i, 2] = "COD_OPER";
+                sheet.Cells[i, 3] = "CPF_CNPJ";
+                sheet.Cells[i, 4] = "NOME_DEV";
+                sheet.Cells[i, 5] = "END_DEV";
+                sheet.Cells[i, 6] = "COMPLEMENTO_DEV";
+                sheet.Cells[i, 7] = "BAIRRO_DEV";
+                sheet.Cells[i, 8] = "CIDADE_DEV";
+                sheet.Cells[i, 9] = "UF_DEV";
+                sheet.Cells[i, 10] = "CEP_DEV";
+                sheet.Cells[i, 11] = "FONE_DEV";
+                sheet.Cells[i, 12] = "FONE2_DEV";
+                sheet.Cells[i, 13] = "EMPRESA_COML";
+                sheet.Cells[i, 14] = "END_COML";
+                sheet.Cells[i, 15] = "COMPLEMENTO_COML";
+                sheet.Cells[i, 16] = "BAIRRO_COML";
+                sheet.Cells[i, 17] = "CIDADE_COML";
+                sheet.Cells[i, 18] = "UF_COML";
+                sheet.Cells[i, 19] = "CEP_COML";
+                sheet.Cells[i, 20] = "FONE_COML";
+                sheet.Cells[i, 21] = "FONE2_COML";
+                sheet.Cells[i, 22] = "TIPO_CONTRATO";
+                sheet.Cells[i, 23] = "FILIAL";
+                sheet.Cells[i, 24] = "CONTRATO";
+                sheet.Cells[i, 25] = "COMPLEMENTO_CONTRATO";
+                sheet.Cells[i, 26] = "VENCIMENTO";
+                sheet.Cells[i, 27] = "VALOR";
+                sheet.Cells[i, 28] = "PLANO";
+                sheet.Cells[i, 29] = "PARCELA";
+                sheet.Cells[i, 30] = "DTBORDERO";
+                sheet.Cells[i, 31] = "CODFILIAL";
+                sheet.Cells[i, 32] = "COMLPARCELAS";
+                sheet.Cells[i, 33] = "FILIALPARADISTRIBUICAO";
+                sheet.Cells[i, 34] = "OBSTITULO";
+                sheet.Cells[i, 35] = "OBSDEVEDOR";
+                sheet.Cells[i, 36] = "URL";
+                sheet.Cells[i, 37] = "SEXO_PES";
+                sheet.Cells[i, 38] = "ESTADO_CIVIL";
+                sheet.Cells[i, 39] = "DTNASCIMENTO";
+                sheet.Cells[i, 40] = "VCTO_INICIAL_TIT";
+                sheet.Cells[i, 41] = "NUMERO_BORD_TIT";
+                sheet.Cells[i, 42] = "COMISS_PARC";
+                sheet.Cells[i, 43] = "RG";
+                sheet.Cells[i, 44] = "MOEDA";
+                sheet.Cells[i, 45] = "INDICE";
+
+                i++;
+
+                //carrega registros no arquivo
+                foreach (var item in lista)
+                {
+                    sheet.Cells[i, 1] = item.CodCredor;
+                    sheet.Cells[i, 2] = item.CodOper;
+                    sheet.Cells[i, 3] = item.Cpf;
+                    sheet.Cells[i, 4] = item.Nome;
+                    sheet.Cells[i, 5] = item.EndRua;
+                    sheet.Cells[i, 6] = item.EndCompl;
+                    sheet.Cells[i, 7] = item.EndBairro;
+                    sheet.Cells[i, 8] = item.EndCidade;
+                    sheet.Cells[i, 9] = item.EndUf;
+                    sheet.Cells[i, 10] = item.EndCep;
+                    sheet.Cells[i, 11] = item.Fone1;
+                    sheet.Cells[i, 12] = item.Fone2;
+                    sheet.Cells[i, 22] = item.TipoContrato;
+                    sheet.Cells[i, 23] = item.Filial;
+                    sheet.Cells[i, 24] = item.Contrato;
+                    sheet.Cells[i, 26] = item.Vencimento.ToOADate();
+                    sheet.Cells[i, 27] = decimal.Round(item.Valor, 2);
+                    sheet.Cells[i, 28] = item.Plano;
+                    sheet.Cells[i, 29] = item.Parcela;
+                    sheet.Cells[i, 32] = item.ParcelaCompl;
+                    sheet.Cells[i, 38] = item.EstadoCivil;
+                    if (item.DataNasc != null)
+                        sheet.Cells[i, 39] = item.DataNasc.Value.ToOADate();
+                    sheet.Cells[i, 40] = item.DataVenda.ToOADate();
+                    sheet.Cells[i, 43] = item.Rg;
+                    sheet.Cells[i, 44] = item.Moeda;
+                    sheet.Cells[i, 45] = item.Indice;
+
+                    //sheet.get_Range(sheet.Cells[i, 26], sheet.Cells[i, 26]).NumberFormat = "dd/MM/yyyy";
+                    //sheet.get_Range(sheet.Cells[i, 39], sheet.Cells[i, 39]).NumberFormat = "dd/MM/yyyy";
+                    //sheet.get_Range(sheet.Cells[i, 40], sheet.Cells[i, 40]).NumberFormat = "dd/MM/yyyy";
+
+                    i++;
+
+                }
+
+                sheet.Columns[26].NumberFormat = "dd/mm/aaaa";
+                sheet.Columns[39].NumberFormat = "dd/mm/aaaa";
+                sheet.Columns[40].NumberFormat = "dd/mm/aaaa";
+
+
+                //desabilita alertas
+                excelApp.DisplayAlerts = false;
+
+                //salva arquivo
+                wkbk.SaveAs(filename);
+            }
+            catch
+            {
+            }
+            finally
+            {
+                sheet = null;
+                wkbk = null;
+
+                // Close Excel.
+                excelApp.Quit();
+                excelApp = null;
+            }
         }
 
         private string FormataFone(string p)

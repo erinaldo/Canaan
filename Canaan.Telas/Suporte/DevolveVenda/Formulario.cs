@@ -42,6 +42,14 @@ namespace Canaan.Telas.Suporte.DevolveVenda
             InitializeComponent();
         }
 
+        public Formulario(int codigoReduzido)
+        {
+            InitializeComponent();
+
+            codigoTextBox.Text = codigoReduzido.ToString();
+            CarregaLista();
+        }
+
         #endregion
 
         #region EVENTOS
@@ -117,14 +125,20 @@ namespace Canaan.Telas.Suporte.DevolveVenda
         {
             if (Selecionado != null)
             {
-                if (MessageBoxUtilities.MessageQuestion("Tem certeza que deseja devolver o pedido?") == DialogResult.Yes) 
+                if (MessageBoxUtilities.MessageQuestion("Tem certeza que deseja cancelar o pedido?") == DialogResult.Yes) 
                 {
                     try
                     {
+                        //devolve a venda e cancela os lancamentos
                         DevolveVendaEstudio();
 
-                        MessageBox.Show("Venda devolvida com sucesso");
+                        //imprime o relatorio de cancelamento
+                        CarregaRelatorio();
 
+                        //mensagem de retorno
+                        MessageBox.Show("Venda cancelada com sucesso");
+
+                        //recarrega a lista
                         CarregaLista();
                     }
                     catch (Exception ex)
@@ -143,6 +157,7 @@ namespace Canaan.Telas.Suporte.DevolveVenda
         {
             var libVenda = new Venda();
             var libEnvio = new Envio();
+            var libLancamentos = new Canaan.Lib.Lancamento();
 
             //carrega a venda
             var venda = libVenda.GetById(Selecionado.IdPedido);
@@ -156,10 +171,28 @@ namespace Canaan.Telas.Suporte.DevolveVenda
             venda.DataLiberacao = null;
             venda.IsDevolvida = true;
             venda.DataDevolucao = DateTime.Now;
-            venda.Status = EnumStatusVenda.Devolvido;
+            venda.Status = EnumStatusVenda.Cancelado;
 
-            //salva no banco
             libVenda.Update(venda);
+
+            //cancela lancamentos lancamentos
+            var lancamentos = libLancamentos.GetByPedido(Selecionado.IdPedido);
+            foreach (var item in lancamentos)
+            {
+                if (item.Status != EnumStatusLanc.Baixado)
+                {
+                    item.Status = EnumStatusLanc.Cancelado;
+
+                    libLancamentos.Update(item);
+                }
+            }
+            
+        }
+
+        private void CarregaRelatorio()
+        {
+            var frm = new Relatorios.Fichas.Cancelamento.Viewer(Selecionado.IdPedido);
+            frm.ShowDialog();
         }
         
         #endregion        

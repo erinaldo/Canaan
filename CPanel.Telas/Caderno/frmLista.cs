@@ -83,6 +83,14 @@ namespace CPanel.Telas.Caderno
             FechaCaderno();
         }
 
+        private void filiaisComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (this.IsAdmin)
+            {
+                this.Filial = Lib.Filiais.GetById((int)filiaisComboBox.SelectedValue);
+            }
+        }
+
         #endregion
 
         #region METODOS
@@ -112,7 +120,7 @@ namespace CPanel.Telas.Caderno
             filiaisComboBox.DataSource = Lib.Filiais.Get();
 
             //verifica se tem filial selecionada
-            if (Filial != null) 
+            if (IsAdmin == false)
             {
                 filiaisComboBox.Enabled = false;
                 filiaisComboBox.SelectedValue = Filial.id_filial;
@@ -203,11 +211,12 @@ namespace CPanel.Telas.Caderno
             }
         }
 
+
+
+
+
         #endregion
 
         
-
-        
-
     }
 }

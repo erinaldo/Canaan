@@ -15,7 +15,18 @@ namespace Canaan.Lib
 
         public List<Dados.VendaFoto> GetByNome(string nome)
         {
-            throw new NotImplementedException();
+            using (var conn = new Dados.CanaanModelContainer())
+            {
+                return conn.VendaFoto.Where(a => a.Foto.Nome == nome).ToList();
+            }
+        }
+
+        public Dados.VendaFoto GetByNome(string nome, int idPedido)
+        {
+            using (var conn = new Dados.CanaanModelContainer())
+            {
+                return conn.VendaFoto.FirstOrDefault(a => a.Foto.Nome == nome && a.IdPedido == idPedido);
+            }
         }
 
         public List<Dados.VendaFoto> Filter(string filtro, object[] parameters)

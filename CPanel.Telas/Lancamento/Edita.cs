@@ -62,6 +62,8 @@ namespace CPanel.Telas.Lancamento
         {
             this.recebimentoRM.EditValue = this.Lancamento.recebimento_rm.GetValueOrDefault();
             this.recebimentoCaixa.EditValue = this.Lancamento.recebimento_caixa.GetValueOrDefault();
+            this.recebimentoCartao.EditValue = this.Lancamento.recebimento_cartao.GetValueOrDefault();
+            this.recebimentoPherfil.EditValue = this.Lancamento.recebimento_pherfil.GetValueOrDefault();
             this.recebimentoTotal.EditValue = this.Lancamento.recebimento.GetValueOrDefault();
         }
 
@@ -104,10 +106,10 @@ namespace CPanel.Telas.Lancamento
             try
             {
                 var entDinheiro = (decimal)this.entradaDinheiro.EditValue;
-                var entCartao = (decimal)this.entradaCartao.EditValue;
+                var entCartao = (decimal)this.entradaCartao.EditValue - ((decimal)this.entradaCartao.EditValue * 5 / 100);
                 var entDepos = (decimal)this.entradaDepositada.EditValue;
                 var vendVista = (decimal)this.vendaDinheiro.EditValue;
-                var vendCartao = (decimal)this.vendaCartao.EditValue;
+                var vendCartao = (decimal)this.vendaCartao.EditValue - ((decimal)this.vendaCartao.EditValue * 20 / 100);
 
                 entradaTotal.EditValue = entDinheiro + entCartao + vendVista + vendCartao - entDepos;
             }
@@ -123,8 +125,10 @@ namespace CPanel.Telas.Lancamento
             {
                 var recebRM = Decimal.Parse(this.recebimentoRM.EditValue.ToString());
                 var recebCaixa = Decimal.Parse(this.recebimentoCaixa.EditValue.ToString());
+                var recebPherfil = Decimal.Parse(this.recebimentoPherfil.EditValue.ToString());
+                var recebCartao = Decimal.Parse(this.recebimentoCartao.EditValue.ToString()) - (Decimal.Parse(this.recebimentoCartao.EditValue.ToString()) * 5 / 100);
 
-                recebimentoTotal.EditValue = recebRM + recebCaixa;
+                recebimentoTotal.EditValue = recebRM + recebCaixa + recebPherfil + recebCartao;
             }
             catch (Exception)
             {
@@ -172,14 +176,16 @@ namespace CPanel.Telas.Lancamento
             try
             {
                 var entDinheiro = Decimal.Parse(this.entradaDinheiro.EditValue.ToString());
-                var entCartao = Decimal.Parse(this.entradaCartao.EditValue.ToString());
+                var entCartao = Decimal.Parse(this.entradaCartao.EditValue.ToString()) - (Decimal.Parse(this.entradaCartao.EditValue.ToString()) * 5 / 100);
                 var entDepos = Decimal.Parse(this.entradaDepositada.EditValue.ToString());
                 var vendVista = Decimal.Parse(this.vendaDinheiro.EditValue.ToString());
-                var vendCartao = Decimal.Parse(this.vendaCartao.EditValue.ToString());
+                var vendCartao = Decimal.Parse(this.vendaCartao.EditValue.ToString()) - (Decimal.Parse(this.vendaCartao.EditValue.ToString()) * 20 / 100);
                 var recebRM = Decimal.Parse(this.recebimentoRM.EditValue.ToString());
                 var recebCaixa = Decimal.Parse(this.recebimentoCaixa.EditValue.ToString());
+                var recebPherfil = Decimal.Parse(this.recebimentoPherfil.EditValue.ToString());
+                var recebCartao = Decimal.Parse(this.recebimentoCartao.EditValue.ToString()) - (Decimal.Parse(this.recebimentoCartao.EditValue.ToString()) * 5 / 100);
 
-                fluxoCaixa.EditValue = entDinheiro + entCartao + vendVista + vendCartao + recebRM + recebCaixa - entDepos;
+                fluxoCaixa.EditValue = entDinheiro + entCartao + vendVista + vendCartao + recebRM + recebCaixa + recebPherfil + recebCartao - entDepos;
             }
             catch (Exception)
             {
@@ -204,6 +210,8 @@ namespace CPanel.Telas.Lancamento
                 Lancamento.recebimento = (decimal)recebimentoTotal.EditValue;
                 Lancamento.recebimento_rm = (decimal)recebimentoRM.EditValue;
                 Lancamento.recebimento_caixa = (decimal)recebimentoCaixa.EditValue;
+                Lancamento.recebimento_pherfil = (decimal)recebimentoPherfil.EditValue;
+                Lancamento.recebimento_cartao = (decimal)recebimentoCartao.EditValue;
                 Lancamento.fluxo_caixa = (decimal)fluxoCaixa.EditValue;
                 Lancamento.fotografados = (int)quantFotografados.EditValue;
                 Lancamento.condicional = (int)quantProgramadas.EditValue;
@@ -313,6 +321,23 @@ namespace CPanel.Telas.Lancamento
             CalculaSumario();
         }
 
+        private void recebimentoCartao_EditValueChanged(object sender, EventArgs e)
+        {
+            CalculaSumario();
+        }
+
+        private void recebimentoPherfil_EditValueChanged(object sender, EventArgs e)
+        {
+            CalculaSumario();
+        }
+
+        private void recebimentoTotal_EditValueChanged(object sender, EventArgs e)
+        {
+            CalculaSumario();
+        }
+
         #endregion
+
+
     }
 }

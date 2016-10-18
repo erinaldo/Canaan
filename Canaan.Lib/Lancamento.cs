@@ -339,80 +339,81 @@ namespace Canaan.Lib
 
         public Dados.Lancamento Update(Dados.Lancamento item, bool refazIntegracao = false)
         {
-            if (item.Status == Dados.EnumStatusLanc.Cancelado && item.IdPedido != null)
+            //if (item.Status == Dados.EnumStatusLanc.Cancelado && item.IdPedido != null)
+            //{
+            //    throw new Exception("Lançamentos originados do modulo de COMPRA/VENDA não podem ser cancelados no módulo financeiro.");
+            //}
+            //else
+            //{
+
+            //}
+            try
             {
-                throw new Exception("Lançamentos originados do modulo de COMPRA/VENDA não podem ser cancelados no módulo financeiro.");
-            }
-            else
-            {
-                try
+                using (Dados.CanaanModelContainer conn = new Dados.CanaanModelContainer())
                 {
-                    using (Dados.CanaanModelContainer conn = new Dados.CanaanModelContainer())
+                    //recupera item do banco
+                    var updated = conn.Lancamento.FirstOrDefault(a => a.IdLancamento == item.IdLancamento);
+                    var updateMov = false;
+
+                    //verifica se houve alteração no status
+                    if (updated.Status != item.Status)
                     {
-                        //recupera item do banco
-                        var updated = conn.Lancamento.FirstOrDefault(a => a.IdLancamento == item.IdLancamento);
-                        var updateMov = false;
-
-                        //verifica se houve alteração no status
-                        if (updated.Status != item.Status)
-                        {
-                            updateMov = true;
-                        }
-
-                        //atualiza dados
-                        updated.IdCliFor = item.IdCliFor;
-                        updated.IdFilial = item.IdFilial;
-                        updated.IdContaCaixa = item.IdContaCaixa;
-                        updated.IdPedido = item.IdPedido;
-                        updated.IdExtrato = item.IdExtrato;
-                        updated.Tipo = item.Tipo;
-                        updated.Status = item.Status;
-                        updated.ClasseContabil = item.ClasseContabil;
-                        updated.IsEntrada = item.IsEntrada;
-
-                        updated.DataEmissao = item.DataEmissao;
-                        updated.DataVencimento = item.DataVencimento;
-                        updated.DataBaixa = item.DataBaixa;
-                        updated.DataAgendamento = item.DataAgendamento;
-
-                        updated.ValorOriginal = item.ValorOriginal;
-                        updated.ValorJuros = item.ValorJuros;
-                        updated.ValorMulta = item.ValorMulta;
-                        updated.ValorDesconto = item.ValorDesconto;
-                        updated.ValorAcrescimo = item.ValorAcrescimo;
-                        updated.ValorLiquido = item.ValorLiquido;
-                        updated.ValorBaixado = item.ValorBaixado;
-
-                        //valida e salva
-                        if (Validacao.IsValid(conn))
-                        {
-                            //salva alteracoes
-                            conn.SaveChanges();
-
-                            //atualiza a integracao
-                            if (refazIntegracao)
-                                UpdateIntegracao(updated);
-
-                            //insere movimentação de status
-                            if (updateMov)
-                            {
-                                //movimentacao de status
-                                InsertMov(updated);
-                            }
-                        }
-                        else
-                        {
-                            throw new Exception(Validacao.GetErrors(conn));
-                        }
-
-                        //retorna
-                        return GetById(updated.IdLancamento);
+                        updateMov = true;
                     }
+
+                    //atualiza dados
+                    updated.IdCliFor = item.IdCliFor;
+                    updated.IdFilial = item.IdFilial;
+                    updated.IdContaCaixa = item.IdContaCaixa;
+                    updated.IdPedido = item.IdPedido;
+                    updated.IdExtrato = item.IdExtrato;
+                    updated.Tipo = item.Tipo;
+                    updated.Status = item.Status;
+                    updated.ClasseContabil = item.ClasseContabil;
+                    updated.IsEntrada = item.IsEntrada;
+
+                    updated.DataEmissao = item.DataEmissao;
+                    updated.DataVencimento = item.DataVencimento;
+                    updated.DataBaixa = item.DataBaixa;
+                    updated.DataAgendamento = item.DataAgendamento;
+
+                    updated.ValorOriginal = item.ValorOriginal;
+                    updated.ValorJuros = item.ValorJuros;
+                    updated.ValorMulta = item.ValorMulta;
+                    updated.ValorDesconto = item.ValorDesconto;
+                    updated.ValorAcrescimo = item.ValorAcrescimo;
+                    updated.ValorLiquido = item.ValorLiquido;
+                    updated.ValorBaixado = item.ValorBaixado;
+
+                    //valida e salva
+                    if (Validacao.IsValid(conn))
+                    {
+                        //salva alteracoes
+                        conn.SaveChanges();
+
+                        //atualiza a integracao
+                        if (refazIntegracao)
+                            UpdateIntegracao(updated);
+
+                        //insere movimentação de status
+                        if (updateMov)
+                        {
+                            //movimentacao de status
+                            InsertMov(updated);
+                        }
+                    }
+                    else
+                    {
+                        throw new Exception(Validacao.GetErrors(conn));
+                    }
+
+                    //retorna
+                    return GetById(updated.IdLancamento);
                 }
-                catch (Exception ex)
-                {
-                    throw new Exception(ex.Message);
-                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
             }
 
         }

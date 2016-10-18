@@ -81,6 +81,7 @@ namespace Canaan.Telas.Movimentacoes.Agendamento
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             this.listFiltros = new DevExpress.XtraBars.BarSubItem();
             this.bLinkContainerItem = new DevExpress.XtraBars.BarLinkContainerItem();
+            this.btDescartar = new DevExpress.XtraBars.BarButtonItem();
             this.homeRibbonPage1 = new DevExpress.XtraScheduler.UI.HomeRibbonPage();
             this.appointmentRibbonPageGroup1 = new DevExpress.XtraScheduler.UI.AppointmentRibbonPageGroup();
             this.recepcao = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -88,6 +89,7 @@ namespace Canaan.Telas.Movimentacoes.Agendamento
             this.arrangeRibbonPageGroup1 = new DevExpress.XtraScheduler.UI.ArrangeRibbonPageGroup();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.repositoryItemComboBox1 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
             this.repositoryItemComboBox2 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
@@ -107,8 +109,6 @@ namespace Canaan.Telas.Movimentacoes.Agendamento
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dateNavigator = new DevExpress.XtraScheduler.DateNavigator();
-            this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.btDescartar = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.schedulerBarController1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDuration1)).BeginInit();
@@ -347,6 +347,7 @@ namespace Canaan.Telas.Movimentacoes.Agendamento
             this.repositoryItemDuration1.AutoHeight = false;
             this.repositoryItemDuration1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemDuration1.DisabledStateText = null;
             this.repositoryItemDuration1.Name = "repositoryItemDuration1";
             this.repositoryItemDuration1.NullValuePromptShowForEmptyValue = true;
             this.repositoryItemDuration1.ShowEmptyItem = true;
@@ -357,7 +358,7 @@ namespace Canaan.Telas.Movimentacoes.Agendamento
             this.scheduler.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.scheduler.Dock = System.Windows.Forms.DockStyle.Fill;
             this.scheduler.DragDropMode = DevExpress.XtraScheduler.DragDropMode.Manual;
-            this.scheduler.Location = new System.Drawing.Point(200, 142);
+            this.scheduler.Location = new System.Drawing.Point(200, 141);
             this.scheduler.MenuManager = this.toolBar;
             this.scheduler.Name = "scheduler";
             this.scheduler.OptionsCustomization.AllowAppointmentConflicts = DevExpress.XtraScheduler.AppointmentConflictsMode.Custom;
@@ -370,7 +371,7 @@ namespace Canaan.Telas.Movimentacoes.Agendamento
             this.scheduler.OptionsCustomization.AllowInplaceEditor = DevExpress.XtraScheduler.UsedAppointmentType.None;
             this.scheduler.OptionsView.NavigationButtons.NextCaption = "Próximo Cupom";
             this.scheduler.OptionsView.NavigationButtons.PrevCaption = "Cupom Anterior";
-            this.scheduler.Size = new System.Drawing.Size(758, 472);
+            this.scheduler.Size = new System.Drawing.Size(758, 473);
             this.scheduler.Start = new System.DateTime(2013, 10, 7, 0, 0, 0, 0);
             this.scheduler.TabIndex = 5;
             this.scheduler.Text = "schedulerControl1";
@@ -447,7 +448,7 @@ namespace Canaan.Telas.Movimentacoes.Agendamento
             this.repositoryItemComboBox2,
             this.repositoryItemComboBox3});
             this.toolBar.ShowToolbarCustomizeItem = false;
-            this.toolBar.Size = new System.Drawing.Size(958, 142);
+            this.toolBar.Size = new System.Drawing.Size(958, 141);
             this.toolBar.Toolbar.ShowCustomizeItem = false;
             // 
             // barButtonItem1
@@ -515,6 +516,15 @@ namespace Canaan.Telas.Movimentacoes.Agendamento
             this.bLinkContainerItem.Id = 66;
             this.bLinkContainerItem.Name = "bLinkContainerItem";
             // 
+            // btDescartar
+            // 
+            this.btDescartar.Caption = "Excluir Agendamento";
+            this.btDescartar.Glyph = ((System.Drawing.Image)(resources.GetObject("btDescartar.Glyph")));
+            this.btDescartar.Id = 68;
+            this.btDescartar.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btDescartar.LargeGlyph")));
+            this.btDescartar.Name = "btDescartar";
+            this.btDescartar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btDescartar_ItemClick);
+            // 
             // homeRibbonPage1
             // 
             this.homeRibbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -569,6 +579,12 @@ namespace Canaan.Telas.Movimentacoes.Agendamento
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             this.ribbonPageGroup2.Text = "Visualização";
             // 
+            // ribbonPageGroup4
+            // 
+            this.ribbonPageGroup4.ItemLinks.Add(this.btDescartar);
+            this.ribbonPageGroup4.Name = "ribbonPageGroup4";
+            this.ribbonPageGroup4.Text = "Telemarketing";
+            // 
             // ribbonPageGroup3
             // 
             this.ribbonPageGroup3.ItemLinks.Add(this.listFiltros);
@@ -607,9 +623,9 @@ namespace Canaan.Telas.Movimentacoes.Agendamento
             this.panel2.Controls.Add(this.panel1);
             this.panel2.Controls.Add(this.dateNavigator);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(0, 142);
+            this.panel2.Location = new System.Drawing.Point(0, 141);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(200, 472);
+            this.panel2.Size = new System.Drawing.Size(200, 473);
             this.panel2.TabIndex = 4;
             // 
             // panel1
@@ -736,6 +752,7 @@ namespace Canaan.Telas.Movimentacoes.Agendamento
             // 
             // dateNavigator
             // 
+            this.dateNavigator.HighlightTodayCell = DevExpress.Utils.DefaultBoolean.Default;
             this.dateNavigator.HotDate = null;
             this.dateNavigator.Location = new System.Drawing.Point(3, 0);
             this.dateNavigator.Multiselect = false;
@@ -745,21 +762,6 @@ namespace Canaan.Telas.Movimentacoes.Agendamento
             this.dateNavigator.Size = new System.Drawing.Size(194, 175);
             this.dateNavigator.TabIndex = 0;
             this.dateNavigator.Click += new System.EventHandler(this.dateNavigator_Click);
-            // 
-            // ribbonPageGroup4
-            // 
-            this.ribbonPageGroup4.ItemLinks.Add(this.btDescartar);
-            this.ribbonPageGroup4.Name = "ribbonPageGroup4";
-            this.ribbonPageGroup4.Text = "Telemarketing";
-            // 
-            // btDescartar
-            // 
-            this.btDescartar.Caption = "Descartar Cupom";
-            this.btDescartar.Glyph = ((System.Drawing.Image)(resources.GetObject("btDescartar.Glyph")));
-            this.btDescartar.Id = 68;
-            this.btDescartar.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btDescartar.LargeGlyph")));
-            this.btDescartar.Name = "btDescartar";
-            this.btDescartar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btDescartar_ItemClick);
             // 
             // Agendamento
             // 
@@ -793,6 +795,7 @@ namespace Canaan.Telas.Movimentacoes.Agendamento
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateNavigator)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

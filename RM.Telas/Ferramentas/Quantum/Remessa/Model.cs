@@ -120,7 +120,7 @@ namespace RM.Telas.Ferramentas.Quantum.Remessa
                     
                     //marca como bloqueado / desbloqueado
                     lanc.NUMBLOQUEIOS = numBloqueio;
-                    lanc.CODTB1FLX = "2.026";
+                    lanc.CODTB1FLX = "2.027";
                     lanc.FLANCOMPL.PERCQUANTUM = comissao;
                 }
 

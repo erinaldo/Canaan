@@ -221,7 +221,7 @@ namespace Canaan.CService.Telas.Integracao.Fechamento
 
             foreach (var item in pedido.Itens)
             {
-                itens += item.Produto + "<br>";
+                itens += item.Produto + " ("+ string.Format("{0:c}", item.ValorTotal) +")" + "<br>";
             }
 
             return itens;

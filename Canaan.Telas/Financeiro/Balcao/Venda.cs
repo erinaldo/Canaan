@@ -170,5 +170,17 @@ namespace Canaan.Telas.Financeiro.Balcao
         }
 
         #endregion
+
+        private void lbCliente_Click(object sender, EventArgs e)
+        {
+            var frm = new Cadastros.ClienteFornecedor.Wizard();
+            frm.ShowDialog();
+
+            if (frm.CliFor != null)
+            {
+                this.CliFor = frm.CliFor;
+                this.lbCliente.Text = frm.CliFor.Nome;
+            }
+        }
     }
 }

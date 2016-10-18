@@ -24,6 +24,7 @@ namespace Canaan.WinApp
             SkinManager.EnableFormSkins();
             UserLookAndFeel.Default.SetSkinStyle("Office 2013 Blue");
             Application.Run(new frmMain());
+
         }
     }
 }

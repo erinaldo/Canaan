@@ -309,39 +309,64 @@ namespace Canaan.Telas.Movimentacoes.Venda.Imagem
 
         private void btDeleteSelecionada_Click(object sender, EventArgs e)
         {
-            if (lvImagensVenda.SelectedItems.Count > 0)
+            if (PastaAtual.Nome == "Selecionadas")
             {
-                foreach (CListViewItem item in lvImagensVenda.SelectedItems)
+                if (lvImagensSessao.SelectedItems.Count > 0)
                 {
-                    try
+                    foreach (CListViewItem item in lvImagensSessao.SelectedItems)
                     {
-                        var foto = item.Item as Dados.Foto;
+                        try
+                        {
+                            var foto = item.Item as Dados.Foto;
 
-                        //remove da venda
-                        LibVendaFoto.Delete(foto.IdFoto, Venda.IdPedido);
+                            //deleta das selecionadas
+                            RemoveSelecionada(foto);
 
-                        //deleta das selecionadas
-                        RemoveSelecionada(foto);
+                            //peda a foto relativa a selecionada
+                            var fotoselecionada = LibVendaFoto.GetByNome(foto.Nome, Venda.IdPedido);
+                            LibVendaFoto.Delete(fotoselecionada.IdFoto, fotoselecionada.IdPedido);
 
-                        //remove do listview
-                        item.Remove();
-
-                        //Atualiza Sessao Model
-                        //Model.IdSessaoAtual = foto.IdSessao;
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message);
+                            //remove do listview
+                            item.Remove();
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                        }
                     }
                 }
-
-                CarregaImagens();
-                CarregaSelecionadas();
-
-                ////Atualiza Componente
-                //Model.UpdateListas(Venda.IdPedido);
-                //InitBinding();
             }
+            else
+            {
+                if (lvImagensVenda.SelectedItems.Count > 0)
+                {
+                    foreach (CListViewItem item in lvImagensVenda.SelectedItems)
+                    {
+                        try
+                        {
+                            var foto = item.Item as Dados.Foto;
+
+                            //remove da venda
+                            LibVendaFoto.Delete(foto.IdFoto, Venda.IdPedido);
+
+                            //deleta das selecionadas
+                            RemoveSelecionada(foto);
+
+                            //remove do listview
+                            item.Remove();
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                        }
+                    }
+                    
+                }
+            }
+
+            CarregaImagens();
+            CarregaSelecionadas();
+
         }
 
         #endregion

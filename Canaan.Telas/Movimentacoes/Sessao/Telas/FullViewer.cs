@@ -99,9 +99,16 @@ namespace Canaan.Telas.Movimentacoes.Sessao.Telas
             InitializeComponent();
         }
 
-        private void CarregaFotosVenda()
+        private void CarregaFotosVenda(string pasta = "")
         {
+
             FotosVenda = LibFoto.GetByVenda(Venda.IdPedido);
+            if (pasta == "Selecionadas")
+                FotosVenda.Remove(CurrentItem);
+
+            if (FotosVenda.Count == 0)
+                this.Close();
+
         }
 
 
@@ -218,11 +225,30 @@ namespace Canaan.Telas.Movimentacoes.Sessao.Telas
                 //deleta das selecionadas
                 RemoveSelecionada();
 
-                //deleta da venda
-                LibVendaFoto.Delete(CurrentItem.IdFoto, Venda.IdPedido);
+                var pasta = new Lib.SessaoPasta().GetById(CurrentItem.IdSessaoPasta.GetValueOrDefault());
+                if (pasta != null)
+                {
+                    if (pasta.Nome == "Selecionadas")
+                    {
+                        var fotoSelecionada = LibVendaFoto.GetByNome(CurrentItem.Nome, Venda.IdPedido);
+                        LibVendaFoto.Delete(fotoSelecionada.IdFoto, fotoSelecionada.IdPedido);
+
+                        //remove da lista
+                        Lista.Remove(CurrentItem);
+                        Proximo();
+                        Anterior();
+                    }
+                    else
+                    {
+                        //deleta da venda
+                        LibVendaFoto.Delete(CurrentItem.IdFoto, Venda.IdPedido);
+                    }
+                }
+
+                
 
                 //Atualiza Lista de Botão de Remove/Add foto à venda.
-                CarregaFotosVenda();
+                CarregaFotosVenda(pasta.Nome);
                 IsVenda();
 
                 //MessageBoxUtilities.MessageInfo(string.Format("Imagem {0} removida da venda com sucesso", CurrentItem.Nome));
@@ -375,6 +401,18 @@ namespace Canaan.Telas.Movimentacoes.Sessao.Telas
                 ImageBtAddAndRemoveVenda = Resources.add_list;
                 TextBtAddAndRemoveVenda = "Adicionar as Selecionadas";
                 FotoIsVenda = false;
+            }
+
+            //verifica se é pasta selecionadas
+            var pasta = new Lib.SessaoPasta().GetById(CurrentItem.IdSessaoPasta.GetValueOrDefault());
+            if (pasta != null)
+            {
+                if (pasta.Nome == "Selecionadas")
+                {
+                    ImageBtAddAndRemoveVenda = Resources.delete;
+                    TextBtAddAndRemoveVenda = "Remover das Selecionadas";
+                    FotoIsVenda = true;
+                }
             }
 
             btAddVenda.Image = ImageBtAddAndRemoveVenda;

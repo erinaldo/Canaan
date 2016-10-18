@@ -282,6 +282,19 @@
     <Compile Include="Fichas\Boleto\Viewer.Designer.cs">
       <DependentUpon>Viewer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Fichas\Cancelamento\Model.cs" />
+    <Compile Include="Fichas\Cancelamento\Relatorio.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Relatorio.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Fichas\Cancelamento\Viewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fichas\Cancelamento\Viewer.Designer.cs">
+      <DependentUpon>Viewer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Fichas\ComprovanteEntrada\Model.cs">
       <DependentUpon>Model.xsd</DependentUpon>
     </Compile>
@@ -1376,6 +1389,13 @@
       <LastGenOutput>Relatorio.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Fichas\Boleto\Viewer.resx">
+      <DependentUpon>Viewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fichas\Cancelamento\Relatorio.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Relatorio.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fichas\Cancelamento\Viewer.resx">
       <DependentUpon>Viewer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Fichas\ComprovanteEntrada\Relatorio.rpt">

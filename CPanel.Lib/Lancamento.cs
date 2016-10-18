@@ -144,6 +144,8 @@ namespace CPanel.Lib
                 update.recebimento = lanc.recebimento;
                 update.recebimento_rm = lanc.recebimento_rm;
                 update.recebimento_caixa = lanc.recebimento_caixa;
+                update.recebimento_cartao = lanc.recebimento_cartao;
+                update.recebimento_pherfil = lanc.recebimento_pherfil;
                 update.fluxo_caixa = lanc.fluxo_caixa;
                 update.ponto_equilibrio = (lanc.faturamento + lanc.fluxo_caixa) / 2;
                 update.fotografados = lanc.fotografados;

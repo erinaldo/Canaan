@@ -574,8 +574,15 @@ namespace Canaan.Lib
         {
             using (var conn = new Dados.CanaanModelContainer())
             {
+                var tamanho = tel.Length;
+                if (tamanho > 8)
+                {
+                    var indice = tamanho - 8;
+                    tel = tel.Substring(indice);
+                }
+
                 //return conn.Cupom.Include(a => a.Parceria).Where(a => (a.Telefone == tel || a.Celular == tel) && a.Status == Dados.EnumCupomStatus.EmAberto).ToList();
-                return conn.Cupom.Include(a => a.Parceria).Where(a => (a.Telefone == tel || a.Celular == tel)).ToList();
+                return conn.Cupom.Include(a => a.Parceria).Where(a => (a.Telefone.Contains(tel) || a.Celular.Contains(tel))).ToList();
             }
         }
 
@@ -757,6 +764,8 @@ namespace Canaan.Lib
                 Codigo = a.IdCupom,
                 Nome = a.Nome,
                 DataPreenchimento = a.DataPreenchimento,
+                Telefone = a.Telefone,
+                Celular = a.Celular,
                 Parceria = a.Parceria.Nome,
                 Usuario = a.Usuario.Nome,
                 Data = a.TelemarketingMov.OrderByDescending(b => b.IdTelemarketingMov).FirstOrDefault() == null ? DateTime.Today : a.TelemarketingMov.OrderByDescending(b => b.IdTelemarketingMov).FirstOrDefault().Data,

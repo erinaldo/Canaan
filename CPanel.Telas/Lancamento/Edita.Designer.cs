@@ -49,6 +49,10 @@
             this.entradaDinheiro = new DevExpress.XtraEditors.TextEdit();
             this.label2 = new System.Windows.Forms.Label();
             this.groupRecebimento = new System.Windows.Forms.GroupBox();
+            this.recebimentoCartao = new DevExpress.XtraEditors.TextEdit();
+            this.label24 = new System.Windows.Forms.Label();
+            this.recebimentoPherfil = new DevExpress.XtraEditors.TextEdit();
+            this.label21 = new System.Windows.Forms.Label();
             this.recebimentoTotal = new DevExpress.XtraEditors.TextEdit();
             this.label9 = new System.Windows.Forms.Label();
             this.recebimentoRM = new DevExpress.XtraEditors.TextEdit();
@@ -91,6 +95,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.entradaCartao.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.entradaDinheiro.Properties)).BeginInit();
             this.groupRecebimento.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.recebimentoCartao.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.recebimentoPherfil.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.recebimentoTotal.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.recebimentoRM.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.recebimentoCaixa.Properties)).BeginInit();
@@ -235,7 +241,7 @@
             this.groupEntradas.Location = new System.Drawing.Point(12, 121);
             this.groupEntradas.Name = "groupEntradas";
             this.groupEntradas.Padding = new System.Windows.Forms.Padding(5);
-            this.groupEntradas.Size = new System.Drawing.Size(291, 135);
+            this.groupEntradas.Size = new System.Drawing.Size(291, 156);
             this.groupEntradas.TabIndex = 2;
             this.groupEntradas.TabStop = false;
             this.groupEntradas.Text = "Entradas";
@@ -243,7 +249,7 @@
             // entradaTotal
             // 
             this.entradaTotal.Enabled = false;
-            this.entradaTotal.Location = new System.Drawing.Point(127, 99);
+            this.entradaTotal.Location = new System.Drawing.Point(127, 121);
             this.entradaTotal.Name = "entradaTotal";
             this.entradaTotal.Properties.Mask.EditMask = "c";
             this.entradaTotal.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
@@ -253,7 +259,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(8, 102);
+            this.label8.Location = new System.Drawing.Point(8, 124);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(94, 13);
             this.label8.TabIndex = 6;
@@ -318,6 +324,10 @@
             // 
             // groupRecebimento
             // 
+            this.groupRecebimento.Controls.Add(this.recebimentoCartao);
+            this.groupRecebimento.Controls.Add(this.label24);
+            this.groupRecebimento.Controls.Add(this.recebimentoPherfil);
+            this.groupRecebimento.Controls.Add(this.label21);
             this.groupRecebimento.Controls.Add(this.recebimentoTotal);
             this.groupRecebimento.Controls.Add(this.label9);
             this.groupRecebimento.Controls.Add(this.recebimentoRM);
@@ -327,25 +337,64 @@
             this.groupRecebimento.Location = new System.Drawing.Point(309, 121);
             this.groupRecebimento.Name = "groupRecebimento";
             this.groupRecebimento.Padding = new System.Windows.Forms.Padding(5);
-            this.groupRecebimento.Size = new System.Drawing.Size(291, 135);
+            this.groupRecebimento.Size = new System.Drawing.Size(291, 156);
             this.groupRecebimento.TabIndex = 3;
             this.groupRecebimento.TabStop = false;
             this.groupRecebimento.Text = "Recebimento";
             // 
+            // recebimentoCartao
+            // 
+            this.recebimentoCartao.Location = new System.Drawing.Point(127, 47);
+            this.recebimentoCartao.Name = "recebimentoCartao";
+            this.recebimentoCartao.Properties.Mask.EditMask = "c";
+            this.recebimentoCartao.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.recebimentoCartao.Size = new System.Drawing.Size(143, 20);
+            this.recebimentoCartao.TabIndex = 9;
+            this.recebimentoCartao.EditValueChanged += new System.EventHandler(this.recebimentoCartao_EditValueChanged);
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(8, 50);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(107, 13);
+            this.label24.TabIndex = 16;
+            this.label24.Text = "Recebimento Cartão:";
+            // 
+            // recebimentoPherfil
+            // 
+            this.recebimentoPherfil.Location = new System.Drawing.Point(127, 99);
+            this.recebimentoPherfil.Name = "recebimentoPherfil";
+            this.recebimentoPherfil.Properties.Mask.EditMask = "c";
+            this.recebimentoPherfil.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.recebimentoPherfil.Size = new System.Drawing.Size(143, 20);
+            this.recebimentoPherfil.TabIndex = 11;
+            this.recebimentoPherfil.EditValueChanged += new System.EventHandler(this.recebimentoPherfil_EditValueChanged);
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(8, 102);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(105, 13);
+            this.label21.TabIndex = 14;
+            this.label21.Text = "Recebimento Pherfil:";
+            // 
             // recebimentoTotal
             // 
             this.recebimentoTotal.Enabled = false;
-            this.recebimentoTotal.Location = new System.Drawing.Point(127, 99);
+            this.recebimentoTotal.Location = new System.Drawing.Point(127, 125);
             this.recebimentoTotal.Name = "recebimentoTotal";
             this.recebimentoTotal.Properties.Mask.EditMask = "c";
             this.recebimentoTotal.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.recebimentoTotal.Size = new System.Drawing.Size(143, 20);
-            this.recebimentoTotal.TabIndex = 13;
+            this.recebimentoTotal.TabIndex = 12;
+            this.recebimentoTotal.EditValueChanged += new System.EventHandler(this.recebimentoTotal_EditValueChanged);
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(8, 102);
+            this.label9.Location = new System.Drawing.Point(8, 128);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(112, 13);
             this.label9.TabIndex = 12;
@@ -353,41 +402,41 @@
             // 
             // recebimentoRM
             // 
-            this.recebimentoRM.Location = new System.Drawing.Point(127, 21);
+            this.recebimentoRM.Location = new System.Drawing.Point(127, 73);
             this.recebimentoRM.Name = "recebimentoRM";
             this.recebimentoRM.Properties.Mask.EditMask = "c";
             this.recebimentoRM.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.recebimentoRM.Size = new System.Drawing.Size(143, 20);
-            this.recebimentoRM.TabIndex = 9;
+            this.recebimentoRM.TabIndex = 10;
             this.recebimentoRM.EditValueChanged += new System.EventHandler(this.recebimentoRM_EditValueChanged);
             // 
             // recebimentoCaixa
             // 
-            this.recebimentoCaixa.Location = new System.Drawing.Point(127, 47);
+            this.recebimentoCaixa.Location = new System.Drawing.Point(127, 21);
             this.recebimentoCaixa.Name = "recebimentoCaixa";
             this.recebimentoCaixa.Properties.Mask.EditMask = "c";
             this.recebimentoCaixa.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.recebimentoCaixa.Size = new System.Drawing.Size(143, 20);
-            this.recebimentoCaixa.TabIndex = 11;
+            this.recebimentoCaixa.TabIndex = 8;
             this.recebimentoCaixa.EditValueChanged += new System.EventHandler(this.recebimentoCaixa_EditValueChanged);
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(8, 24);
+            this.label11.Location = new System.Drawing.Point(8, 76);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(93, 13);
+            this.label11.Size = new System.Drawing.Size(106, 13);
             this.label11.TabIndex = 8;
-            this.label11.Text = "Recebimento RM:";
+            this.label11.Text = "Recebimento Boleto:";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(8, 50);
+            this.label10.Location = new System.Drawing.Point(8, 24);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(102, 13);
+            this.label10.Size = new System.Drawing.Size(115, 13);
             this.label10.TabIndex = 10;
-            this.label10.Text = "Recebimento Caixa:";
+            this.label10.Text = "Recebimento Dinheiro:";
             // 
             // groupVendas
             // 
@@ -399,7 +448,7 @@
             this.groupVendas.Controls.Add(this.label13);
             this.groupVendas.Controls.Add(this.vendaDinheiro);
             this.groupVendas.Controls.Add(this.label14);
-            this.groupVendas.Location = new System.Drawing.Point(12, 262);
+            this.groupVendas.Location = new System.Drawing.Point(12, 283);
             this.groupVendas.Name = "groupVendas";
             this.groupVendas.Padding = new System.Windows.Forms.Padding(5);
             this.groupVendas.Size = new System.Drawing.Size(291, 135);
@@ -414,7 +463,7 @@
             this.vendaDevolvida.Properties.Mask.EditMask = "c";
             this.vendaDevolvida.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.vendaDevolvida.Size = new System.Drawing.Size(143, 20);
-            this.vendaDevolvida.TabIndex = 7;
+            this.vendaDevolvida.TabIndex = 16;
             this.vendaDevolvida.EditValueChanged += new System.EventHandler(this.vendaDevolvida_EditValueChanged);
             // 
             // label3
@@ -433,7 +482,7 @@
             this.vendaPrazo.Properties.Mask.EditMask = "c";
             this.vendaPrazo.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.vendaPrazo.Size = new System.Drawing.Size(143, 20);
-            this.vendaPrazo.TabIndex = 5;
+            this.vendaPrazo.TabIndex = 15;
             this.vendaPrazo.EditValueChanged += new System.EventHandler(this.vendaPrazo_EditValueChanged);
             // 
             // label12
@@ -452,7 +501,7 @@
             this.vendaCartao.Properties.Mask.EditMask = "c";
             this.vendaCartao.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.vendaCartao.Size = new System.Drawing.Size(143, 20);
-            this.vendaCartao.TabIndex = 3;
+            this.vendaCartao.TabIndex = 14;
             this.vendaCartao.EditValueChanged += new System.EventHandler(this.vendaCartao_EditValueChanged);
             // 
             // label13
@@ -471,7 +520,7 @@
             this.vendaDinheiro.Properties.Mask.EditMask = "c";
             this.vendaDinheiro.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.vendaDinheiro.Size = new System.Drawing.Size(143, 20);
-            this.vendaDinheiro.TabIndex = 1;
+            this.vendaDinheiro.TabIndex = 13;
             this.vendaDinheiro.EditValueChanged += new System.EventHandler(this.vendaDinheiro_EditValueChanged);
             // 
             // label14
@@ -491,7 +540,7 @@
             this.groupResumo.Controls.Add(this.label17);
             this.groupResumo.Controls.Add(this.faturamentoLiquido);
             this.groupResumo.Controls.Add(this.label18);
-            this.groupResumo.Location = new System.Drawing.Point(309, 262);
+            this.groupResumo.Location = new System.Drawing.Point(309, 283);
             this.groupResumo.Name = "groupResumo";
             this.groupResumo.Padding = new System.Windows.Forms.Padding(5);
             this.groupResumo.Size = new System.Drawing.Size(291, 135);
@@ -507,7 +556,7 @@
             this.fluxoCaixa.Properties.Mask.EditMask = "c";
             this.fluxoCaixa.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.fluxoCaixa.Size = new System.Drawing.Size(143, 20);
-            this.fluxoCaixa.TabIndex = 7;
+            this.fluxoCaixa.TabIndex = 19;
             // 
             // label15
             // 
@@ -526,7 +575,7 @@
             this.faturamentoBruto.Properties.Mask.EditMask = "c";
             this.faturamentoBruto.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.faturamentoBruto.Size = new System.Drawing.Size(143, 20);
-            this.faturamentoBruto.TabIndex = 3;
+            this.faturamentoBruto.TabIndex = 18;
             // 
             // label17
             // 
@@ -545,7 +594,7 @@
             this.faturamentoLiquido.Properties.Mask.EditMask = "c";
             this.faturamentoLiquido.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.faturamentoLiquido.Size = new System.Drawing.Size(143, 20);
-            this.faturamentoLiquido.TabIndex = 1;
+            this.faturamentoLiquido.TabIndex = 17;
             // 
             // label18
             // 
@@ -568,7 +617,7 @@
             this.groupOutras.Controls.Add(this.label19);
             this.groupOutras.Controls.Add(this.quantFotografados);
             this.groupOutras.Controls.Add(this.label16);
-            this.groupOutras.Location = new System.Drawing.Point(12, 403);
+            this.groupOutras.Location = new System.Drawing.Point(12, 424);
             this.groupOutras.Name = "groupOutras";
             this.groupOutras.Padding = new System.Windows.Forms.Padding(5);
             this.groupOutras.Size = new System.Drawing.Size(588, 103);
@@ -583,7 +632,7 @@
             this.quantAtendidos.Properties.Mask.EditMask = "n0";
             this.quantAtendidos.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.quantAtendidos.Size = new System.Drawing.Size(143, 20);
-            this.quantAtendidos.TabIndex = 15;
+            this.quantAtendidos.TabIndex = 24;
             // 
             // label22
             // 
@@ -601,7 +650,7 @@
             this.quantBrindes.Properties.Mask.EditMask = "n0";
             this.quantBrindes.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.quantBrindes.Size = new System.Drawing.Size(143, 20);
-            this.quantBrindes.TabIndex = 13;
+            this.quantBrindes.TabIndex = 23;
             // 
             // label23
             // 
@@ -619,7 +668,7 @@
             this.quantVendas.Properties.Mask.EditMask = "n0";
             this.quantVendas.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.quantVendas.Size = new System.Drawing.Size(143, 20);
-            this.quantVendas.TabIndex = 11;
+            this.quantVendas.TabIndex = 22;
             // 
             // label20
             // 
@@ -637,7 +686,7 @@
             this.quantProgramadas.Properties.Mask.EditMask = "n0";
             this.quantProgramadas.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.quantProgramadas.Size = new System.Drawing.Size(143, 20);
-            this.quantProgramadas.TabIndex = 9;
+            this.quantProgramadas.TabIndex = 21;
             // 
             // label19
             // 
@@ -655,7 +704,7 @@
             this.quantFotografados.Properties.Mask.EditMask = "n0";
             this.quantFotografados.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.quantFotografados.Size = new System.Drawing.Size(143, 20);
-            this.quantFotografados.TabIndex = 7;
+            this.quantFotografados.TabIndex = 20;
             // 
             // label16
             // 
@@ -669,7 +718,7 @@
             // bloqueadoCheckBox
             // 
             this.bloqueadoCheckBox.AutoSize = true;
-            this.bloqueadoCheckBox.Location = new System.Drawing.Point(12, 518);
+            this.bloqueadoCheckBox.Location = new System.Drawing.Point(12, 539);
             this.bloqueadoCheckBox.Name = "bloqueadoCheckBox";
             this.bloqueadoCheckBox.Size = new System.Drawing.Size(139, 17);
             this.bloqueadoCheckBox.TabIndex = 10;
@@ -681,7 +730,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(615, 550);
+            this.ClientSize = new System.Drawing.Size(615, 569);
             this.Controls.Add(this.bloqueadoCheckBox);
             this.Controls.Add(this.groupOutras);
             this.Controls.Add(this.groupResumo);
@@ -709,6 +758,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.entradaDinheiro.Properties)).EndInit();
             this.groupRecebimento.ResumeLayout(false);
             this.groupRecebimento.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.recebimentoCartao.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.recebimentoPherfil.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.recebimentoTotal.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.recebimentoRM.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.recebimentoCaixa.Properties)).EndInit();
@@ -792,5 +843,9 @@
         private DevExpress.XtraEditors.TextEdit quantFotografados;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.CheckBox bloqueadoCheckBox;
+        private DevExpress.XtraEditors.TextEdit recebimentoPherfil;
+        private System.Windows.Forms.Label label21;
+        private DevExpress.XtraEditors.TextEdit recebimentoCartao;
+        private System.Windows.Forms.Label label24;
     }
 }

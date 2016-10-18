@@ -6918,6 +6918,7 @@
           <Member Name="Venda_ComprovanteEntrada" />
           <Member Name="Concurso_BabyShow" />
           <Member Name="Concurso_Newborn" />
+          <Member Name="Venda_Cancelamento" />
         </EnumType>
         <EnumType Name="EnumCadernoSyncAcao">
           <Member Name="I" Value="1" />

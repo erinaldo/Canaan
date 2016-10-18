@@ -175,6 +175,10 @@ namespace Canaan.Relatorios.Base
                     var frmCompEntrada = new Relatorios.Fichas.ComprovanteEntrada.Viewer(CurrentVenda);
                     frmCompEntrada.Show();
                     break;
+                case Canaan.Dados.EnumRelatorioTipo.Venda_Cancelamento:
+                    var frmCancelamento = new Relatorios.Fichas.Cancelamento.Viewer(CurrentVenda);
+                    frmCancelamento.Show();
+                    break;
                 default:
                     break;
             }

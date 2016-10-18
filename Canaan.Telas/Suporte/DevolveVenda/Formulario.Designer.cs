@@ -69,8 +69,8 @@ namespace Canaan.Telas.Suporte.DevolveVenda
             this.btnExecuta.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnExecuta.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnExecuta.Name = "btnExecuta";
-            this.btnExecuta.Size = new System.Drawing.Size(119, 22);
-            this.btnExecuta.Text = "Efetua Devolução";
+            this.btnExecuta.Size = new System.Drawing.Size(140, 22);
+            this.btnExecuta.Text = "Efetua Cancelamento";
             this.btnExecuta.Click += new System.EventHandler(this.btnExecuta_Click);
             // 
             // groupBox1
@@ -204,7 +204,7 @@ namespace Canaan.Telas.Suporte.DevolveVenda
             this.MinimizeBox = false;
             this.Name = "Formulario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Devolução de Venda";
+            this.Text = "Cancelamento de Venda";
             this.Load += new System.EventHandler(this.Formulario_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();

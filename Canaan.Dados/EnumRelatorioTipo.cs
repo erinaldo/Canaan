@@ -30,6 +30,7 @@ namespace Canaan.Dados
         Venda_ControlePagamento = 14,
         Venda_ComprovanteEntrada = 15,
         Concurso_BabyShow = 16,
-        Concurso_Newborn = 17
+        Concurso_Newborn = 17,
+        Venda_Cancelamento = 18
     }
 }

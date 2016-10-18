@@ -223,8 +223,8 @@ namespace Canaan.Lib
             agendamento.IdAgenda = new Lib.Agenda().GetByFilial(true, Session.Instance.Contexto.IdFilial).IdAgenda;
             agendamento.IdUsuario = Session.Instance.Contexto.IdUsuario;
             agendamento.Status = Dados.EnumAgendamentoStatus.Atendido;
-            agendamento.Inicio = new DateTime(inicio.Year, inicio.Month, inicio.Day, inicio.Hour, 0, 0);
-            agendamento.Termino = new DateTime(inicio.Year, inicio.Month, inicio.Day, inicio.Hour, 30, 0);
+            agendamento.Inicio = new DateTime(1980, inicio.Month, inicio.Day, inicio.Hour, 0, 0);
+            agendamento.Termino = new DateTime(1980, inicio.Month, inicio.Day, inicio.Hour, 30, 0);
             agendamento.NumConfirmacao = 1;
 
             agendamento = new Lib.Agendamento().Insert(agendamento);

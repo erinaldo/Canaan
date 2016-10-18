@@ -148,6 +148,8 @@
           <Property Name="recebimento" Type="money" />
           <Property Name="recebimento_rm" Type="money" />
           <Property Name="recebimento_caixa" Type="money" />
+          <Property Name="recebimento_pherfil" Type="money" />
+          <Property Name="recebimento_cartao" Type="money" />
           <Property Name="fluxo_caixa" Type="money" />
           <Property Name="ponto_equilibrio" Type="money" />
           <Property Name="fotografados" Type="int" />
@@ -1565,6 +1567,8 @@
           <NavigationProperty Name="periodos" Relationship="CPanelModel.FK_lancamentos_periodos" FromRole="lancamentos" ToRole="periodos" />
           <NavigationProperty Name="periodos_semanas" Relationship="CPanelModel.FK_lancamentos_periodos_semanas" FromRole="lancamentos" ToRole="periodos_semanas" />
           <NavigationProperty Name="usuarios" Relationship="CPanelModel.FK_lancamentos_usuarios" FromRole="lancamentos" ToRole="usuarios" />
+          <Property Name="recebimento_pherfil" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="recebimento_cartao" Type="Decimal" Precision="19" Scale="4" />
         </EntityType>
         <Association Name="FK_lancamentos_filiais">
           <End Type="CPanelModel.filiais" Role="filiais" Multiplicity="0..1" />
@@ -2130,6 +2134,8 @@
           <EntitySetMapping Name="lancamentos">
             <EntityTypeMapping TypeName="CPanelModel.lancamentos">
               <MappingFragment StoreEntitySet="lancamentos">
+                <ScalarProperty Name="recebimento_cartao" ColumnName="recebimento_cartao" />
+                <ScalarProperty Name="recebimento_pherfil" ColumnName="recebimento_pherfil" />
                 <ScalarProperty Name="atendidos" ColumnName="atendidos" />
                 <ScalarProperty Name="bloqueado" ColumnName="bloqueado" />
                 <ScalarProperty Name="brindes" ColumnName="brindes" />

@@ -30,15 +30,15 @@
         {
             this.salvarButton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.produtosComboBox = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.quantTextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.valorTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.dataDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.lbCliente = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.quantTextBox = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.produtosComboBox = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.valorTextEdit.Properties)).BeginInit();
             this.SuspendLayout();
@@ -72,6 +72,33 @@
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Informações da Venda";
+            // 
+            // produtosComboBox
+            // 
+            this.produtosComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.produtosComboBox.FormattingEnabled = true;
+            this.produtosComboBox.Location = new System.Drawing.Point(6, 63);
+            this.produtosComboBox.Name = "produtosComboBox";
+            this.produtosComboBox.Size = new System.Drawing.Size(322, 21);
+            this.produtosComboBox.TabIndex = 9;
+            this.produtosComboBox.SelectedIndexChanged += new System.EventHandler(this.produtosComboBox_SelectedIndexChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(119, 87);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(62, 13);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Quantidade";
+            // 
+            // quantTextBox
+            // 
+            this.quantTextBox.Location = new System.Drawing.Point(122, 103);
+            this.quantTextBox.Name = "quantTextBox";
+            this.quantTextBox.Size = new System.Drawing.Size(75, 20);
+            this.quantTextBox.TabIndex = 7;
+            this.quantTextBox.TextChanged += new System.EventHandler(this.quantTextBox_TextChanged);
             // 
             // label3
             // 
@@ -111,6 +138,7 @@
             // lbCliente
             // 
             this.lbCliente.AutoSize = true;
+            this.lbCliente.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbCliente.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.lbCliente.Location = new System.Drawing.Point(6, 18);
@@ -119,6 +147,7 @@
             this.lbCliente.Size = new System.Drawing.Size(100, 23);
             this.lbCliente.TabIndex = 2;
             this.lbCliente.Text = "Nome do Cliente";
+            this.lbCliente.Click += new System.EventHandler(this.lbCliente_Click);
             // 
             // label1
             // 
@@ -128,33 +157,6 @@
             this.label1.Size = new System.Drawing.Size(115, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Descrição da Despesa";
-            // 
-            // quantTextBox
-            // 
-            this.quantTextBox.Location = new System.Drawing.Point(122, 103);
-            this.quantTextBox.Name = "quantTextBox";
-            this.quantTextBox.Size = new System.Drawing.Size(75, 20);
-            this.quantTextBox.TabIndex = 7;
-            this.quantTextBox.TextChanged += new System.EventHandler(this.quantTextBox_TextChanged);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(119, 87);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(62, 13);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Quantidade";
-            // 
-            // produtosComboBox
-            // 
-            this.produtosComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.produtosComboBox.FormattingEnabled = true;
-            this.produtosComboBox.Location = new System.Drawing.Point(6, 63);
-            this.produtosComboBox.Name = "produtosComboBox";
-            this.produtosComboBox.Size = new System.Drawing.Size(322, 21);
-            this.produtosComboBox.TabIndex = 9;
-            this.produtosComboBox.SelectedIndexChanged += new System.EventHandler(this.produtosComboBox_SelectedIndexChanged);
             // 
             // Venda
             // 

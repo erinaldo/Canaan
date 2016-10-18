@@ -269,6 +269,7 @@
             this.filiaisComboBox.Name = "filiaisComboBox";
             this.filiaisComboBox.Size = new System.Drawing.Size(234, 21);
             this.filiaisComboBox.TabIndex = 1;
+            this.filiaisComboBox.SelectedIndexChanged += new System.EventHandler(this.filiaisComboBox_SelectedIndexChanged);
             // 
             // label1
             // 

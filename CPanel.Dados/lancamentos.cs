@@ -49,6 +49,8 @@ namespace CPanel.Dados
         public Nullable<int> brindes { get; set; }
         public Nullable<bool> bloqueado { get; set; }
         public Nullable<int> atendidos { get; set; }
+        public Nullable<decimal> recebimento_pherfil { get; set; }
+        public Nullable<decimal> recebimento_cartao { get; set; }
     
         public virtual filiais filiais { get; set; }
         public virtual periodos periodos { get; set; }

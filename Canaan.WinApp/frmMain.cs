@@ -892,5 +892,17 @@ namespace Canaan.WinApp
             var frm = new Telas.Financeiro.Balcao.Venda();
             frm.ShowDialog();
         }
+
+        private void cancelamentoDeContratoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var frm = new Relatorios.Base.FiltroVenda(EnumRelatorioTipo.Venda_Cancelamento);
+            frm.ShowDialog();
+        }
+
+        private void administrativoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var frm = new Telas.Suporte.DevolveVenda.Formulario();
+            frm.ShowDialog();
+        }
     }
 }

@@ -148,6 +148,7 @@
     <EmbeddedResource Include="Lancamento\Lista.resx">
       <DependentUpon>Lista.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -201,10 +202,6 @@
     <ProjectReference Include="..\RM.Lib\RM.Lib.csproj">
       <Project>{bbb4febe-8007-47e5-902b-c4e7027681e0}</Project>
       <Name>RM.Lib</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\RM.Telas\RM.Telas.csproj">
-      <Project>{7cf3d058-f504-41b9-8cf9-f59d7cb577c5}</Project>
-      <Name>RM.Telas</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

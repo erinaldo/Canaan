@@ -555,8 +555,8 @@ namespace Canaan.Telas.Movimentacoes.Agendamento
                     if (MessageBoxUtilities.MessageQuestion(string.Format("Deseja descartar o cupom no nome de: {0}", cupom.Nome)) == DialogResult.Yes)
                     {
                         //descarta o cupom
-                        cupom = LibCupom.DescartaCupom(cupom);
-                        LibCupom.Update(cupom);
+                        //cupom = LibCupom.DescartaCupom(cupom);
+                        //LibCupom.Update(cupom);
 
                         //deleta os agendamentos
                         LibAgendamento.Delete(idAgendamento);

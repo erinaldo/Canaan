@@ -35,7 +35,7 @@ namespace Canaan.Telas.Financeiro.Balcao
 
         private void Compra_Load(object sender, EventArgs e)
         {
-
+            ConfiguraForm();
         }
         
         private void salvarButton_Click(object sender, EventArgs e)
