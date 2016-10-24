@@ -577,6 +577,12 @@
     <Compile Include="Movimentacoes\Agendamento\Faltantes\Faltantes.Designer.cs">
       <DependentUpon>Faltantes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Movimentacoes\Agendamento\Status\Lista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Movimentacoes\Agendamento\Status\Lista.Designer.cs">
+      <DependentUpon>Lista.cs</DependentUpon>
+    </Compile>
     <Compile Include="Movimentacoes\Atendimento\Clube\Lista.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -999,6 +1005,9 @@
       <DependentUpon>Edita.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Laboratorio\Pendentes\Lista.resx">
+      <DependentUpon>Lista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movimentacoes\Agendamento\Status\Lista.resx">
       <DependentUpon>Lista.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Movimentacoes\Sessao\Telas\FolderName.resx">

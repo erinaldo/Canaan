@@ -65,7 +65,7 @@ namespace Canaan.Telas.Base
             this.toolstripActions.Location = new System.Drawing.Point(0, 0);
             this.toolstripActions.Name = "toolstripActions";
             this.toolstripActions.Padding = new System.Windows.Forms.Padding(5);
-            this.toolstripActions.Size = new System.Drawing.Size(702, 33);
+            this.toolstripActions.Size = new System.Drawing.Size(1011, 33);
             this.toolstripActions.TabIndex = 0;
             this.toolstripActions.Text = "toolStrip1";
             // 
@@ -138,7 +138,7 @@ namespace Canaan.Telas.Base
             this.panelGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelGrid.Location = new System.Drawing.Point(0, 33);
             this.panelGrid.Name = "panelGrid";
-            this.panelGrid.Size = new System.Drawing.Size(702, 319);
+            this.panelGrid.Size = new System.Drawing.Size(1011, 543);
             this.panelGrid.TabIndex = 1;
             // 
             // dataGrid
@@ -153,7 +153,6 @@ namespace Canaan.Telas.Base
             this.dataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGrid.Location = new System.Drawing.Point(0, 0);
-            this.dataGrid.MultiSelect = false;
             this.dataGrid.Name = "dataGrid";
             this.dataGrid.ReadOnly = true;
             this.dataGrid.RowHeadersVisible = false;
@@ -163,7 +162,7 @@ namespace Canaan.Telas.Base
             this.dataGrid.ShowCellToolTips = false;
             this.dataGrid.ShowEditingIcon = false;
             this.dataGrid.ShowRowErrors = false;
-            this.dataGrid.Size = new System.Drawing.Size(702, 319);
+            this.dataGrid.Size = new System.Drawing.Size(1011, 543);
             this.dataGrid.TabIndex = 0;
             this.dataGrid.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGrid_DataBindingComplete);
             this.dataGrid.DoubleClick += new System.EventHandler(this.dataGrid_DoubleClick);
@@ -172,7 +171,7 @@ namespace Canaan.Telas.Base
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(702, 352);
+            this.ClientSize = new System.Drawing.Size(1011, 576);
             this.Controls.Add(this.panelGrid);
             this.Controls.Add(this.toolstripActions);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;

@@ -389,6 +389,45 @@ namespace Canaan.Telas.Movimentacoes.Agendamento
             CarregaDados(LibAgendamento.Get(Session.Contexto.IdFilial));
         }
 
+        private void btStatus_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (scheduler.SelectedAppointments.Count > 0)
+            {
+                var result = scheduler.SelectedAppointments[0];
+                var idAgendamento = int.Parse(result.CustomFields["IdAgendamento"].ToString());
+
+                var frm = new Status.Lista();
+                frm.ShowDialog();
+
+                if (frm.StatusAgendamento != null)
+                {
+                    var agendamento = LibAgendamento.GetById(idAgendamento);
+
+                    //altera o status do agendamento
+                    agendamento.Status = frm.StatusAgendamento.Value;
+                    LibAgendamento.Update(agendamento);
+
+                    //salva a movimentacao
+                    var LibAgedamentoMov = new Lib.AgendamentoMov();
+                    LibAgedamentoMov.Insert(new Dados.AgendamentoMov
+                    {
+                        IdAgendamento = agendamento.IdAgendamento,
+                        IdUsuario = Session.Usuario.IdUsuario,
+                        Status = frm.StatusAgendamento.Value,
+                        Data = DateTime.Today,
+                        Hora = DateTime.Now.TimeOfDay
+                    });
+
+
+                    CarregaDados(LibAgendamento.Get(Session.Contexto.IdFilial));
+                }
+            }
+            else
+            {
+                MessageBoxUtilities.MessageWarning("Nenhum Agendamento Selecionado");
+            }
+        }
+
         private void ckFaltante_DownChanged(object sender, ItemClickEventArgs e)
         {
             if (ckFaltante.Checked)
@@ -828,6 +867,7 @@ namespace Canaan.Telas.Movimentacoes.Agendamento
 
         #endregion
 
+        
     }
 }
 

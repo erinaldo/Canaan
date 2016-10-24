@@ -37,6 +37,8 @@ namespace Canaan.CService.Telas.Integracao.Fechamento
         public string Produto { get; set; }
         public decimal ValorUnitario { get; set; }
         public decimal ValorTotal { get; set; }
+        public string TipoPedido { get; set; }
+        public string DescTipoPedido { get; set; }
 
         public PedidoProducaoItem()
         {

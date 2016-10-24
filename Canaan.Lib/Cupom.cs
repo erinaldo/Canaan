@@ -769,6 +769,7 @@ namespace Canaan.Lib
                 Parceria = a.Parceria.Nome,
                 Usuario = a.Usuario.Nome,
                 Data = a.TelemarketingMov.OrderByDescending(b => b.IdTelemarketingMov).FirstOrDefault() == null ? DateTime.Today : a.TelemarketingMov.OrderByDescending(b => b.IdTelemarketingMov).FirstOrDefault().Data,
+                Observacao = a.Obs,
                 Status = (Dados.EnumCupomStatus)a.Status
             }).ToList();
         }

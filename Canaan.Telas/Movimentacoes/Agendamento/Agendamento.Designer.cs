@@ -109,6 +109,7 @@ namespace Canaan.Telas.Movimentacoes.Agendamento
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dateNavigator = new DevExpress.XtraScheduler.DateNavigator();
+            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.schedulerBarController1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDuration1)).BeginInit();
@@ -371,7 +372,7 @@ namespace Canaan.Telas.Movimentacoes.Agendamento
             this.scheduler.OptionsCustomization.AllowInplaceEditor = DevExpress.XtraScheduler.UsedAppointmentType.None;
             this.scheduler.OptionsView.NavigationButtons.NextCaption = "Próximo Cupom";
             this.scheduler.OptionsView.NavigationButtons.PrevCaption = "Cupom Anterior";
-            this.scheduler.Size = new System.Drawing.Size(758, 473);
+            this.scheduler.Size = new System.Drawing.Size(918, 473);
             this.scheduler.Start = new System.DateTime(2013, 10, 7, 0, 0, 0, 0);
             this.scheduler.TabIndex = 5;
             this.scheduler.Text = "schedulerControl1";
@@ -435,9 +436,10 @@ namespace Canaan.Telas.Movimentacoes.Agendamento
             this.barButtonItem3,
             this.listFiltros,
             this.bLinkContainerItem,
-            this.btDescartar});
+            this.btDescartar,
+            this.barButtonItem4});
             this.toolBar.Location = new System.Drawing.Point(0, 0);
-            this.toolBar.MaxItemId = 69;
+            this.toolBar.MaxItemId = 70;
             this.toolBar.Name = "toolBar";
             this.toolBar.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.homeRibbonPage1});
@@ -448,7 +450,7 @@ namespace Canaan.Telas.Movimentacoes.Agendamento
             this.repositoryItemComboBox2,
             this.repositoryItemComboBox3});
             this.toolBar.ShowToolbarCustomizeItem = false;
-            this.toolBar.Size = new System.Drawing.Size(958, 141);
+            this.toolBar.Size = new System.Drawing.Size(1118, 141);
             this.toolBar.Toolbar.ShowCustomizeItem = false;
             // 
             // barButtonItem1
@@ -569,6 +571,7 @@ namespace Canaan.Telas.Movimentacoes.Agendamento
             // 
             this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem1);
             this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem2);
+            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem4);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.Text = "Status";
             // 
@@ -763,11 +766,20 @@ namespace Canaan.Telas.Movimentacoes.Agendamento
             this.dateNavigator.TabIndex = 0;
             this.dateNavigator.Click += new System.EventHandler(this.dateNavigator_Click);
             // 
+            // barButtonItem4
+            // 
+            this.barButtonItem4.Caption = "Status";
+            this.barButtonItem4.Glyph = global::Canaan.Telas.Properties.Resources.pencil_005_16xLG;
+            this.barButtonItem4.Id = 69;
+            this.barButtonItem4.LargeGlyph = global::Canaan.Telas.Properties.Resources.pencil_005_16xLG;
+            this.barButtonItem4.Name = "barButtonItem4";
+            this.barButtonItem4.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btStatus_ItemClick);
+            // 
             // Agendamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(958, 614);
+            this.ClientSize = new System.Drawing.Size(1118, 614);
             this.Controls.Add(this.scheduler);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.toolBar);
@@ -870,6 +882,6 @@ namespace Canaan.Telas.Movimentacoes.Agendamento
         private PictureBox pictureBox5;
         private BarButtonItem btDescartar;
         private RibbonPageGroup ribbonPageGroup4;
-
+        private BarButtonItem barButtonItem4;
     }
 }
