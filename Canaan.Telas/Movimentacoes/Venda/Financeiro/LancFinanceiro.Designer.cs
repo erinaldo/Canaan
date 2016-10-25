@@ -36,6 +36,9 @@ namespace Canaan.Telas.Movimentacoes.Venda.Financeiro
         {
             this.components = new System.ComponentModel.Container();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtValorCrediario = new System.Windows.Forms.TextBox();
+            this.cLabel14 = new Canaan.Lib.Componentes.CLabel();
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -83,13 +86,11 @@ namespace Canaan.Telas.Movimentacoes.Venda.Financeiro
             this.btnActions = new System.Windows.Forms.ToolStripSplitButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.btnFiltros = new System.Windows.Forms.ToolStripSplitButton();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtValorCrediario = new System.Windows.Forms.TextBox();
-            this.cLabel14 = new Canaan.Lib.Componentes.CLabel();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
             this.gbFinanciamento.SuspendLayout();
@@ -99,7 +100,6 @@ namespace Canaan.Telas.Movimentacoes.Venda.Financeiro
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagrid)).BeginInit();
             this.toolstripActions.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -114,7 +114,7 @@ namespace Canaan.Telas.Movimentacoes.Venda.Financeiro
             // 
             this.tabPage1.Controls.Add(this.panel2);
             this.tabPage1.Size = new System.Drawing.Size(956, 551);
-            this.tabPage1.Text = "Dados Financeiros da Venda";
+            this.tabPage1.Text = "Forma de Pagamento";
             // 
             // panel2
             // 
@@ -128,6 +128,37 @@ namespace Canaan.Telas.Movimentacoes.Venda.Financeiro
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(950, 545);
             this.panel2.TabIndex = 0;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.txtValorCrediario);
+            this.groupBox1.Controls.Add(this.cLabel14);
+            this.groupBox1.Location = new System.Drawing.Point(482, 154);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(5);
+            this.groupBox1.Size = new System.Drawing.Size(460, 111);
+            this.groupBox1.TabIndex = 21;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Dados da Aprovação de Crédito";
+            // 
+            // txtValorCrediario
+            // 
+            this.txtValorCrediario.Location = new System.Drawing.Point(130, 22);
+            this.txtValorCrediario.Name = "txtValorCrediario";
+            this.txtValorCrediario.Size = new System.Drawing.Size(166, 20);
+            this.txtValorCrediario.TabIndex = 19;
+            this.txtValorCrediario.Leave += new System.EventHandler(this.txtValorCrediario_Leave);
+            // 
+            // cLabel14
+            // 
+            this.cLabel14.AutoSize = true;
+            this.cLabel14.Location = new System.Drawing.Point(11, 22);
+            this.cLabel14.Name = "cLabel14";
+            this.cLabel14.Padding = new System.Windows.Forms.Padding(5);
+            this.cLabel14.Size = new System.Drawing.Size(90, 23);
+            this.cLabel14.TabIndex = 16;
+            this.cLabel14.Text = "Valor Aprovado";
             // 
             // bindingNavigator1
             // 
@@ -222,8 +253,6 @@ namespace Canaan.Telas.Movimentacoes.Venda.Financeiro
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dtInicioEntrada.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dtInicioEntrada.Properties.CalendarTimeProperties.CloseUpKey = new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.F4);
-            this.dtInicioEntrada.Properties.CalendarTimeProperties.PopupBorderStyle = DevExpress.XtraEditors.Controls.PopupBorderStyles.Default;
             this.dtInicioEntrada.Size = new System.Drawing.Size(166, 20);
             this.dtInicioEntrada.TabIndex = 15;
             // 
@@ -614,37 +643,6 @@ namespace Canaan.Telas.Movimentacoes.Venda.Financeiro
             this.btnFiltros.Size = new System.Drawing.Size(71, 20);
             this.btnFiltros.Text = "Filtros";
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.txtValorCrediario);
-            this.groupBox1.Controls.Add(this.cLabel14);
-            this.groupBox1.Location = new System.Drawing.Point(482, 154);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(5);
-            this.groupBox1.Size = new System.Drawing.Size(460, 111);
-            this.groupBox1.TabIndex = 21;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Dados da Aprovação de Crédito";
-            // 
-            // txtValorCrediario
-            // 
-            this.txtValorCrediario.Location = new System.Drawing.Point(130, 22);
-            this.txtValorCrediario.Name = "txtValorCrediario";
-            this.txtValorCrediario.Size = new System.Drawing.Size(166, 20);
-            this.txtValorCrediario.TabIndex = 19;
-            this.txtValorCrediario.Leave += new System.EventHandler(this.txtValorCrediario_Leave);
-            // 
-            // cLabel14
-            // 
-            this.cLabel14.AutoSize = true;
-            this.cLabel14.Location = new System.Drawing.Point(11, 22);
-            this.cLabel14.Name = "cLabel14";
-            this.cLabel14.Padding = new System.Windows.Forms.Padding(5);
-            this.cLabel14.Size = new System.Drawing.Size(90, 23);
-            this.cLabel14.TabIndex = 16;
-            this.cLabel14.Text = "Valor Aprovado";
-            // 
             // LancFinanceiro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -660,6 +658,8 @@ namespace Canaan.Telas.Movimentacoes.Venda.Financeiro
             this.tabPage1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
             this.bindingNavigator1.ResumeLayout(false);
             this.bindingNavigator1.PerformLayout();
@@ -673,8 +673,6 @@ namespace Canaan.Telas.Movimentacoes.Venda.Financeiro
             ((System.ComponentModel.ISupportInitialize)(this.datagrid)).EndInit();
             this.toolstripActions.ResumeLayout(false);
             this.toolstripActions.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }

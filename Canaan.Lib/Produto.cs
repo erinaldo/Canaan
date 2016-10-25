@@ -150,7 +150,7 @@ namespace Canaan.Lib
         {
             using (var conn = new Dados.CanaanModelContainer())
             {
-                return conn.Produto.Include(a => a.Tabela).Where(a => a.IdTabela == idTabela).ToList();
+                return conn.Produto.Include(a => a.Tabela).Where(a => a.IdTabela == idTabela && a.IsAtivo == true).OrderBy(a => a.Nome).ToList();
             }
         }
 

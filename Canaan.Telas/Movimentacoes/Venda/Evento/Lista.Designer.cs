@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolstripActions = new System.Windows.Forms.ToolStrip();
             this.btnSalvar = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
@@ -39,10 +38,6 @@
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.btnExcluir = new System.Windows.Forms.ToolStripButton();
             this.eventosDataGridView = new System.Windows.Forms.DataGridView();
-            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Evento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DataInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DataFim = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.eventoEspecificacaoTextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -51,6 +46,9 @@
             this.tipoEventoTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Evento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -68,7 +66,7 @@
             // 
             this.tabPage1.Controls.Add(this.panel3);
             this.tabPage1.Controls.Add(this.panel2);
-            this.tabPage1.Text = "Eventos / Acompanhamentos";
+            this.tabPage1.Text = "Detalhes do Contrato";
             // 
             // toolstripActions
             // 
@@ -156,8 +154,7 @@
             this.eventosDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Codigo,
             this.Evento,
-            this.DataInicio,
-            this.DataFim});
+            this.Descricao});
             this.eventosDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.eventosDataGridView.Location = new System.Drawing.Point(0, 0);
             this.eventosDataGridView.MultiSelect = false;
@@ -173,44 +170,6 @@
             this.eventosDataGridView.Size = new System.Drawing.Size(950, 210);
             this.eventosDataGridView.TabIndex = 0;
             this.eventosDataGridView.DoubleClick += new System.EventHandler(this.eventosDataGridView_DoubleClick);
-            // 
-            // Codigo
-            // 
-            this.Codigo.DataPropertyName = "Codigo";
-            this.Codigo.HeaderText = "Codigo";
-            this.Codigo.Name = "Codigo";
-            this.Codigo.ReadOnly = true;
-            this.Codigo.Visible = false;
-            // 
-            // Evento
-            // 
-            this.Evento.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Evento.DataPropertyName = "Evento";
-            this.Evento.HeaderText = "Tipo de Compromisso";
-            this.Evento.Name = "Evento";
-            this.Evento.ReadOnly = true;
-            // 
-            // DataInicio
-            // 
-            this.DataInicio.DataPropertyName = "DataInicio";
-            dataGridViewCellStyle1.Format = "g";
-            dataGridViewCellStyle1.NullValue = null;
-            this.DataInicio.DefaultCellStyle = dataGridViewCellStyle1;
-            this.DataInicio.HeaderText = "Data Inicial";
-            this.DataInicio.Name = "DataInicio";
-            this.DataInicio.ReadOnly = true;
-            this.DataInicio.Width = 150;
-            // 
-            // DataFim
-            // 
-            this.DataFim.DataPropertyName = "DataFim";
-            dataGridViewCellStyle2.Format = "g";
-            dataGridViewCellStyle2.NullValue = null;
-            this.DataFim.DefaultCellStyle = dataGridViewCellStyle2;
-            this.DataFim.HeaderText = "Data Final";
-            this.DataFim.Name = "DataFim";
-            this.DataFim.ReadOnly = true;
-            this.DataFim.Width = 150;
             // 
             // panel2
             // 
@@ -285,6 +244,33 @@
             this.panel3.Size = new System.Drawing.Size(950, 210);
             this.panel3.TabIndex = 2;
             // 
+            // Codigo
+            // 
+            this.Codigo.DataPropertyName = "Codigo";
+            this.Codigo.HeaderText = "Codigo";
+            this.Codigo.Name = "Codigo";
+            this.Codigo.ReadOnly = true;
+            this.Codigo.Visible = false;
+            // 
+            // Evento
+            // 
+            this.Evento.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Evento.DataPropertyName = "Evento";
+            this.Evento.HeaderText = "Tipo de Compromisso";
+            this.Evento.Name = "Evento";
+            this.Evento.ReadOnly = true;
+            // 
+            // Descricao
+            // 
+            this.Descricao.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Descricao.DataPropertyName = "Descricao";
+            dataGridViewCellStyle1.Format = "g";
+            dataGridViewCellStyle1.NullValue = null;
+            this.Descricao.DefaultCellStyle = dataGridViewCellStyle1;
+            this.Descricao.HeaderText = "Descrição";
+            this.Descricao.Name = "Descricao";
+            this.Descricao.ReadOnly = true;
+            // 
             // Lista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -320,10 +306,6 @@
         private System.Windows.Forms.ToolStripButton btnSalvar;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Evento;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DataInicio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DataFim;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox eventoEspecificacaoTextBox;
         private System.Windows.Forms.Label label3;
@@ -331,5 +313,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox tipoEventoTextBox;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Evento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descricao;
     }
 }

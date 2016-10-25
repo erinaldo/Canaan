@@ -96,7 +96,7 @@ namespace Canaan.Telas.Movimentacoes.Venda.Principal
             // 
             // lkMontaPedido
             // 
-            this.lkMontaPedido.Caption = "Montagem do Pedido";
+            this.lkMontaPedido.Caption = "Seleção dos Produtos";
             this.lkMontaPedido.Name = "lkMontaPedido";
             this.lkMontaPedido.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.lkMontaPedido_LinkClicked);
             // 

@@ -79,8 +79,8 @@
         <AssociationConnector Association="CanaanModel.FK_AgendamentoMov_AgendamentoStatus" />
       </Diagram>
       <Diagram DiagramId="d06e7b8fe96349e6bd4ea40ffa11d9f8" Name="Pedido" ZoomLevel="92" >
-        <EntityTypeShape EntityType="CanaanModel.Tabela" Width="1.5" PointX="12.625" PointY="12.75" FillColor="255, 128, 0" />
-        <EntityTypeShape EntityType="CanaanModel.Produto" Width="1.5" PointX="14.875" PointY="13.75" FillColor="255, 128, 0" />
+        <EntityTypeShape EntityType="CanaanModel.Tabela" Width="1.5" PointX="11.875" PointY="12.625" FillColor="255, 128, 0" />
+        <EntityTypeShape EntityType="CanaanModel.Produto" Width="1.5" PointX="14.75" PointY="14" FillColor="255, 128, 0" />
         <AssociationConnector Association="CanaanModel.TabelaProduto" />
         <EntityTypeShape EntityType="CanaanModel.VendaItem" Width="1.5" PointX="16.125" PointY="6.375" FillColor="255, 128, 0" />
         <AssociationConnector Association="CanaanModel.ProdutoVendaItem" />

@@ -67,6 +67,16 @@ namespace Canaan.Telas.Movimentacoes.Venda.Envelope.Colecoes
             Model.Tabela = LibTabela.GetByFilial(Session.Contexto.IdFilial);
             Model.Quantidade = 1;
 
+            if (Model.Tabela != null)
+            {
+                var produtos = LibProduto.GetByTabela(Model.Tabela.IdTabela);
+                Model.Colecoes = new BindingList<Lib.Model.Produto>(LibProduto.CarregaGridModel(produtos));
+            }
+            else
+            {
+                MessageBoxUtilities.MessageWarning("Nenhuma tabela selecionada");
+            }
+
         }
 
         private void CalculaValores()

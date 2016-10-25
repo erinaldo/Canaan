@@ -165,7 +165,6 @@ namespace Canaan.Telas.Movimentacoes.Agendamento
             this.gpCupom.Controls.Add(this.nomeLabel);
             this.gpCupom.Controls.Add(this.nomeTextBox);
             this.gpCupom.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gpCupom.Enabled = false;
             this.gpCupom.Location = new System.Drawing.Point(3, 3);
             this.gpCupom.Name = "gpCupom";
             this.gpCupom.Size = new System.Drawing.Size(440, 356);

@@ -62,6 +62,8 @@ namespace Canaan.Telas.Movimentacoes.Venda.Envelope
             this.Cod = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Serviço = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Status = new System.Windows.Forms.DataGridViewImageColumn();
+            this.bindingNavigator3 = new System.Windows.Forms.BindingNavigator(this.components);
+            this.valorToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -76,22 +78,25 @@ namespace Canaan.Telas.Movimentacoes.Venda.Envelope
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator2)).BeginInit();
             this.bindingNavigator2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagridEnvelope)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator3)).BeginInit();
+            this.bindingNavigator3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.toolstripActions);
+            this.panel1.Size = new System.Drawing.Size(1027, 39);
             // 
             // tabControl1
             // 
-            this.tabControl1.Size = new System.Drawing.Size(964, 419);
+            this.tabControl1.Size = new System.Drawing.Size(1001, 513);
             // 
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.groupBox2);
             this.tabPage1.Controls.Add(this.groupBox1);
-            this.tabPage1.Size = new System.Drawing.Size(956, 393);
-            this.tabPage1.Text = "Lista de Envelopes";
+            this.tabPage1.Size = new System.Drawing.Size(993, 487);
+            this.tabPage1.Text = "Seleção dos Produtos";
             // 
             // toolstripActions
             // 
@@ -103,7 +108,7 @@ namespace Canaan.Telas.Movimentacoes.Venda.Envelope
             this.toolstripActions.Location = new System.Drawing.Point(0, 0);
             this.toolstripActions.Name = "toolstripActions";
             this.toolstripActions.Padding = new System.Windows.Forms.Padding(5);
-            this.toolstripActions.Size = new System.Drawing.Size(990, 33);
+            this.toolstripActions.Size = new System.Drawing.Size(1027, 33);
             this.toolstripActions.TabIndex = 1;
             this.toolstripActions.Text = "toolStrip1";
             // 
@@ -125,12 +130,13 @@ namespace Canaan.Telas.Movimentacoes.Venda.Envelope
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.groupBox1.Controls.Add(this.bindingNavigator3);
             this.groupBox1.Controls.Add(this.dataGridProduto);
             this.groupBox1.Controls.Add(this.toolstripActionsProduto);
             this.groupBox1.Location = new System.Drawing.Point(6, 17);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(5);
-            this.groupBox1.Size = new System.Drawing.Size(459, 370);
+            this.groupBox1.Size = new System.Drawing.Size(459, 464);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Produtos Selecionados";
@@ -161,7 +167,7 @@ namespace Canaan.Telas.Movimentacoes.Venda.Envelope
             this.dataGridProduto.ShowCellToolTips = false;
             this.dataGridProduto.ShowEditingIcon = false;
             this.dataGridProduto.ShowRowErrors = false;
-            this.dataGridProduto.Size = new System.Drawing.Size(389, 316);
+            this.dataGridProduto.Size = new System.Drawing.Size(443, 316);
             this.dataGridProduto.TabIndex = 2;
             this.dataGridProduto.SelectionChanged += new System.EventHandler(this.dataGridProduto_SelectionChanged);
             // 
@@ -267,7 +273,7 @@ namespace Canaan.Telas.Movimentacoes.Venda.Envelope
             this.groupBox2.Controls.Add(this.datagridEnvelope);
             this.groupBox2.Location = new System.Drawing.Point(471, 17);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(479, 370);
+            this.groupBox2.Size = new System.Drawing.Size(516, 464);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Envelopes";
@@ -291,7 +297,7 @@ namespace Canaan.Telas.Movimentacoes.Venda.Envelope
             this.bindingNavigator1.MovePreviousItem = null;
             this.bindingNavigator1.Name = "bindingNavigator1";
             this.bindingNavigator1.PositionItem = null;
-            this.bindingNavigator1.Size = new System.Drawing.Size(473, 25);
+            this.bindingNavigator1.Size = new System.Drawing.Size(510, 25);
             this.bindingNavigator1.TabIndex = 0;
             this.bindingNavigator1.Text = "bindingNavigator1";
             // 
@@ -343,7 +349,7 @@ namespace Canaan.Telas.Movimentacoes.Venda.Envelope
             this.toolStripButton4,
             this.toolStripSeparator7,
             this.toolStripButton5});
-            this.bindingNavigator2.Location = new System.Drawing.Point(3, 342);
+            this.bindingNavigator2.Location = new System.Drawing.Point(3, 436);
             this.bindingNavigator2.MoveFirstItem = null;
             this.bindingNavigator2.MoveLastItem = null;
             this.bindingNavigator2.MoveNextItem = null;
@@ -351,7 +357,7 @@ namespace Canaan.Telas.Movimentacoes.Venda.Envelope
             this.bindingNavigator2.Name = "bindingNavigator2";
             this.bindingNavigator2.PositionItem = null;
             this.bindingNavigator2.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.bindingNavigator2.Size = new System.Drawing.Size(473, 25);
+            this.bindingNavigator2.Size = new System.Drawing.Size(510, 25);
             this.bindingNavigator2.TabIndex = 3;
             this.bindingNavigator2.Text = "bindingNavigator2";
             // 
@@ -382,8 +388,6 @@ namespace Canaan.Telas.Movimentacoes.Venda.Envelope
             this.datagridEnvelope.AllowUserToDeleteRows = false;
             this.datagridEnvelope.AllowUserToResizeColumns = false;
             this.datagridEnvelope.AllowUserToResizeRows = false;
-            this.datagridEnvelope.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.datagridEnvelope.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.datagridEnvelope.BackgroundColor = System.Drawing.Color.White;
             this.datagridEnvelope.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -403,7 +407,7 @@ namespace Canaan.Telas.Movimentacoes.Venda.Envelope
             this.datagridEnvelope.ShowCellToolTips = false;
             this.datagridEnvelope.ShowEditingIcon = false;
             this.datagridEnvelope.ShowRowErrors = false;
-            this.datagridEnvelope.Size = new System.Drawing.Size(467, 295);
+            this.datagridEnvelope.Size = new System.Drawing.Size(504, 295);
             this.datagridEnvelope.TabIndex = 5;
             this.datagridEnvelope.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.datagridEnvelope_DataBindingComplete);
             this.datagridEnvelope.SelectionChanged += new System.EventHandler(this.datagridEnvelope_SelectionChanged);
@@ -437,11 +441,40 @@ namespace Canaan.Telas.Movimentacoes.Venda.Envelope
             this.Status.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.Status.Width = 50;
             // 
+            // bindingNavigator3
+            // 
+            this.bindingNavigator3.AddNewItem = null;
+            this.bindingNavigator3.CountItem = null;
+            this.bindingNavigator3.DeleteItem = null;
+            this.bindingNavigator3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.bindingNavigator3.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.bindingNavigator3.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.valorToolStripButton});
+            this.bindingNavigator3.Location = new System.Drawing.Point(5, 434);
+            this.bindingNavigator3.MoveFirstItem = null;
+            this.bindingNavigator3.MoveLastItem = null;
+            this.bindingNavigator3.MoveNextItem = null;
+            this.bindingNavigator3.MovePreviousItem = null;
+            this.bindingNavigator3.Name = "bindingNavigator3";
+            this.bindingNavigator3.PositionItem = null;
+            this.bindingNavigator3.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.bindingNavigator3.Size = new System.Drawing.Size(449, 25);
+            this.bindingNavigator3.TabIndex = 4;
+            this.bindingNavigator3.Text = "bindingNavigator3";
+            // 
+            // valorToolStripButton
+            // 
+            this.valorToolStripButton.Image = global::Canaan.Telas.Properties.Resources.money2;
+            this.valorToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.valorToolStripButton.Name = "valorToolStripButton";
+            this.valorToolStripButton.Size = new System.Drawing.Size(82, 22);
+            this.valorToolStripButton.Text = "Valor Total";
+            // 
             // Lista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1000, 506);
+            this.ClientSize = new System.Drawing.Size(1037, 600);
             this.Location = new System.Drawing.Point(0, 0);
             this.Name = "Lista";
             this.Text = "Lista";
@@ -467,6 +500,9 @@ namespace Canaan.Telas.Movimentacoes.Venda.Envelope
             this.bindingNavigator2.ResumeLayout(false);
             this.bindingNavigator2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagridEnvelope)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator3)).EndInit();
+            this.bindingNavigator3.ResumeLayout(false);
+            this.bindingNavigator3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -503,5 +539,7 @@ namespace Canaan.Telas.Movimentacoes.Venda.Envelope
         protected ToolStripButton toolStripButton2;
         private ToolStripSeparator toolStripSeparator10;
         protected ToolStripButton toolStripButton3;
+        private BindingNavigator bindingNavigator3;
+        private ToolStripButton valorToolStripButton;
     }
 }

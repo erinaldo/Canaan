@@ -109,7 +109,7 @@ namespace Canaan.Telas.Movimentacoes.Venda.Envelope
             InitModel();
             InitBinding();
             CanUpdate();
-
+            AtualizaValorDataVenda();
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
@@ -179,6 +179,7 @@ namespace Canaan.Telas.Movimentacoes.Venda.Envelope
                 Venda.ValorBruto = valor;
                 LibVenda.Update(Venda);
 
+                valorToolStripButton.Text = string.Format("{0:c}", Venda.ValorBruto);
                 //Lib.MessageBoxUtilities.MessageInfo("Venda atualizada com sucesso");
             }
             catch (Exception ex)

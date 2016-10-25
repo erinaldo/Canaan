@@ -36,11 +36,9 @@ namespace Canaan.Telas.Configuracoes.Pedido.Produto
             System.Windows.Forms.Label nomeLabel;
             System.Windows.Forms.Label descricaoLabel;
             System.Windows.Forms.Label valorLabel;
-            System.Windows.Forms.Label custoLabel;
             this.produtoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.custoTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.valorTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.lkTableName = new System.Windows.Forms.LinkLabel();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -50,12 +48,10 @@ namespace Canaan.Telas.Configuracoes.Pedido.Produto
             nomeLabel = new System.Windows.Forms.Label();
             descricaoLabel = new System.Windows.Forms.Label();
             valorLabel = new System.Windows.Forms.Label();
-            custoLabel = new System.Windows.Forms.Label();
             this.panelEdit.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.produtoBindingSource)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.custoTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.valorTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.isAtivoCheckEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nomeTextEdit.Properties)).BeginInit();
@@ -94,15 +90,6 @@ namespace Canaan.Telas.Configuracoes.Pedido.Produto
             valorLabel.TabIndex = 8;
             valorLabel.Text = "Valor";
             // 
-            // custoLabel
-            // 
-            custoLabel.AutoSize = true;
-            custoLabel.Location = new System.Drawing.Point(179, 213);
-            custoLabel.Name = "custoLabel";
-            custoLabel.Size = new System.Drawing.Size(39, 13);
-            custoLabel.TabIndex = 9;
-            custoLabel.Text = "Custo:";
-            // 
             // produtoBindingSource
             // 
             this.produtoBindingSource.DataSource = typeof(Canaan.Dados.Produto);
@@ -122,8 +109,6 @@ namespace Canaan.Telas.Configuracoes.Pedido.Produto
             // tabPage1
             // 
             this.tabPage1.AutoScroll = true;
-            this.tabPage1.Controls.Add(custoLabel);
-            this.tabPage1.Controls.Add(this.custoTextEdit);
             this.tabPage1.Controls.Add(valorLabel);
             this.tabPage1.Controls.Add(this.valorTextEdit);
             this.tabPage1.Controls.Add(this.lkTableName);
@@ -141,24 +126,15 @@ namespace Canaan.Telas.Configuracoes.Pedido.Produto
             this.tabPage1.Text = "Produto";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // custoTextEdit
-            // 
-            this.custoTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.produtoBindingSource, "Custo", true));
-            this.custoTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.produtoBindingSource, "Custo", true));
-            this.custoTextEdit.Location = new System.Drawing.Point(182, 229);
-            this.custoTextEdit.Name = "custoTextEdit";
-            this.custoTextEdit.Properties.Mask.EditMask = "c";
-            this.custoTextEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.custoTextEdit.Size = new System.Drawing.Size(144, 20);
-            this.custoTextEdit.TabIndex = 4;
-            // 
             // valorTextEdit
             // 
-            this.valorTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.produtoBindingSource, "Valor", true));
-            this.valorTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.produtoBindingSource, "Valor", true));
+            this.valorTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.produtoBindingSource, "Valor", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "C2"));
+            this.valorTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.produtoBindingSource, "Valor", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "C2"));
             this.valorTextEdit.Location = new System.Drawing.Point(17, 229);
             this.valorTextEdit.Name = "valorTextEdit";
-            this.valorTextEdit.Properties.Mask.EditMask = "c";
+            this.valorTextEdit.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.valorTextEdit.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.valorTextEdit.Properties.Mask.EditMask = "n";
             this.valorTextEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.valorTextEdit.Size = new System.Drawing.Size(144, 20);
             this.valorTextEdit.TabIndex = 3;
@@ -220,7 +196,6 @@ namespace Canaan.Telas.Configuracoes.Pedido.Produto
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.custoTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.valorTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.isAtivoCheckEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nomeTextEdit.Properties)).EndInit();
@@ -241,6 +216,5 @@ namespace Canaan.Telas.Configuracoes.Pedido.Produto
         private TextBox textBox1;
         private LinkLabel lkTableName;
         private TextEdit valorTextEdit;
-        private TextEdit custoTextEdit;
     }
 }

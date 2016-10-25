@@ -150,7 +150,7 @@ namespace Canaan.Lib
 
         public dynamic CarregaGrid(List<Dados.VendaEvento> lista)
         {
-            return lista.Select(a => new 
+            return lista.Select(a => new
             {
                 Codigo = a.IdVendaEvento,
                 IdEvento = a.IdEvento,
@@ -158,7 +158,8 @@ namespace Canaan.Lib
                 Evento = a.Evento.Nome,
                 Parceria = a.Evento.Parceria.Nome,
                 DataInicio = a.DataInicio,
-                DataFim = a.DataFim
+                DataFim = a.DataFim,
+                Descricao = a.Descricao.Replace(Environment.NewLine, " - ")
             }).ToList();
         }
 

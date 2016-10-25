@@ -218,6 +218,16 @@ namespace Canaan.Telas.Movimentacoes.Agendamento
         {
             try
             {
+                //atualiza dados do cupom
+                Cupom.Nome = nomeTextBox.Text;
+                Cupom.Endereco = enderecoTextBox.Text;
+                Cupom.Email = emailTextBox.Text;
+                Cupom.Celular = celularMaskedTextBox.Text;
+                Cupom.Telefone = telefoneMaskedTextBox.Text;
+                Cupom.Obs = obsTextBox.Text;
+                LibCupom.Update(Cupom);
+
+
                 //Edita registro ja existente
                 if (IdAgendamento > 0)
                 {
@@ -259,6 +269,8 @@ namespace Canaan.Telas.Movimentacoes.Agendamento
                         Agendado = true;
                         Close();
                     }
+
+                    
 
                     //Atualiza Status e salva movimentação de Agendamento
                     AtualizarStatusCupom(Agendamento.IdCupom, EnumCupomStatus.Agendado, EnumTelemarketingStatus.Finalizado, agendamento.Status);
