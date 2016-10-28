@@ -151,6 +151,26 @@
     <Compile Include="Base\Viewer.Designer.cs">
       <DependentUpon>Viewer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Cliente\Listagem\Model.cs">
+      <DependentUpon>Model.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Cliente\Listagem\Model.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Cliente\Listagem\Relatorio.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Relatorio.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Cliente\Listagem\Viewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cliente\Listagem\Viewer.Designer.cs">
+      <DependentUpon>Viewer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Concurso\BabyShow\Model.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -379,6 +399,23 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Fichas\Envelope\Viewer.Designer.cs">
+      <DependentUpon>Viewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fichas\Recibo\Model.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Fichas\Recibo\Relatorio.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Relatorio.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Fichas\Recibo\Viewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fichas\Recibo\Viewer.Designer.cs">
       <DependentUpon>Viewer.cs</DependentUpon>
     </Compile>
     <Compile Include="Fichas\Servicos\Model.cs">
@@ -1006,6 +1043,17 @@
     <None Include="Atendimento\UsoImagem\Model.xss">
       <DependentUpon>Model.xsd</DependentUpon>
     </None>
+    <None Include="Cliente\Listagem\Model.xsc">
+      <DependentUpon>Model.xsd</DependentUpon>
+    </None>
+    <None Include="Cliente\Listagem\Model.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Model.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Cliente\Listagem\Model.xss">
+      <DependentUpon>Model.xsd</DependentUpon>
+    </None>
     <None Include="Concurso\BabyShow\Model.xsc">
       <DependentUpon>Model.xsd</DependentUpon>
     </None>
@@ -1125,6 +1173,17 @@
       <LastGenOutput>Model.Designer.cs</LastGenOutput>
     </None>
     <None Include="Fichas\Envelope\Model.xss">
+      <DependentUpon>Model.xsd</DependentUpon>
+    </None>
+    <None Include="Fichas\Recibo\Model.xsc">
+      <DependentUpon>Model.xsd</DependentUpon>
+    </None>
+    <None Include="Fichas\Recibo\Model.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Model.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Fichas\Recibo\Model.xss">
       <DependentUpon>Model.xsd</DependentUpon>
     </None>
     <None Include="Fichas\Servicos\Model.xsc">
@@ -1342,6 +1401,13 @@
     <EmbeddedResource Include="Base\Viewer.resx">
       <DependentUpon>Viewer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Cliente\Listagem\Relatorio.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Relatorio.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cliente\Listagem\Viewer.resx">
+      <DependentUpon>Viewer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Concurso\BabyShow\Relatorio.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Relatorio.cs</LastGenOutput>
@@ -1428,6 +1494,13 @@
       <LastGenOutput>Relatorio.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Fichas\Envelope\Viewer.resx">
+      <DependentUpon>Viewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fichas\Recibo\Relatorio.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Relatorio.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fichas\Recibo\Viewer.resx">
       <DependentUpon>Viewer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Fichas\Servicos\Relatorio.rpt">

@@ -31,6 +31,7 @@ namespace Canaan.Dados
         Venda_ComprovanteEntrada = 15,
         Concurso_BabyShow = 16,
         Concurso_Newborn = 17,
-        Venda_Cancelamento = 18
+        Venda_Cancelamento = 18,
+        Venda_Recibo = 19
     }
 }

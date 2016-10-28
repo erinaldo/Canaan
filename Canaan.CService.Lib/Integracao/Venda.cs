@@ -128,6 +128,10 @@ namespace Canaan.CService.Lib.Integracao
         {
             using (var conn = new RM.Dados.CorporeEntities())
             {
+                var vendaRM = conn.TMOV.FirstOrDefault(a => a.IDMOV == venda.IdVenda && a.CODCOLIGADA == codColigada);
+
+                venda.DataEmissao = venda.DataEmissao;
+                
                 //pega vendas a faturar que nao foram syncronizadas
                 var update = conn.TMOVCOMPL.FirstOrDefault(a => a.CODCOLIGADA == codColigada && a.IDMOV == venda.IdVenda);
 

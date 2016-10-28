@@ -39,13 +39,15 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lbCliente = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.descricaoTextBox = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.valorTextEdit.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // salvarButton
             // 
-            this.salvarButton.Location = new System.Drawing.Point(134, 152);
+            this.salvarButton.Location = new System.Drawing.Point(134, 194);
             this.salvarButton.Name = "salvarButton";
             this.salvarButton.Size = new System.Drawing.Size(75, 23);
             this.salvarButton.TabIndex = 4;
@@ -57,6 +59,8 @@
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.descricaoTextBox);
+            this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.produtosComboBox);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.quantTextBox);
@@ -68,7 +72,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(339, 134);
+            this.groupBox1.Size = new System.Drawing.Size(339, 176);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Informações da Venda";
@@ -86,7 +90,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(119, 87);
+            this.label4.Location = new System.Drawing.Point(119, 126);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(62, 13);
             this.label4.TabIndex = 8;
@@ -94,7 +98,7 @@
             // 
             // quantTextBox
             // 
-            this.quantTextBox.Location = new System.Drawing.Point(122, 103);
+            this.quantTextBox.Location = new System.Drawing.Point(122, 142);
             this.quantTextBox.Name = "quantTextBox";
             this.quantTextBox.Size = new System.Drawing.Size(75, 20);
             this.quantTextBox.TabIndex = 7;
@@ -103,7 +107,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(202, 87);
+            this.label3.Location = new System.Drawing.Point(202, 126);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(31, 13);
             this.label3.TabIndex = 6;
@@ -111,7 +115,7 @@
             // 
             // valorTextEdit
             // 
-            this.valorTextEdit.Location = new System.Drawing.Point(203, 103);
+            this.valorTextEdit.Location = new System.Drawing.Point(203, 142);
             this.valorTextEdit.Name = "valorTextEdit";
             this.valorTextEdit.Properties.Mask.EditMask = "c";
             this.valorTextEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
@@ -121,7 +125,7 @@
             // dataDateTimePicker
             // 
             this.dataDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dataDateTimePicker.Location = new System.Drawing.Point(6, 103);
+            this.dataDateTimePicker.Location = new System.Drawing.Point(6, 142);
             this.dataDateTimePicker.Name = "dataDateTimePicker";
             this.dataDateTimePicker.Size = new System.Drawing.Size(110, 20);
             this.dataDateTimePicker.TabIndex = 4;
@@ -129,7 +133,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 87);
+            this.label2.Location = new System.Drawing.Point(6, 126);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(104, 13);
             this.label2.TabIndex = 3;
@@ -158,12 +162,28 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Descrição da Despesa";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(6, 87);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(139, 13);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "Informações / Obsercações";
+            // 
+            // descricaoTextBox
+            // 
+            this.descricaoTextBox.Location = new System.Drawing.Point(6, 103);
+            this.descricaoTextBox.Name = "descricaoTextBox";
+            this.descricaoTextBox.Size = new System.Drawing.Size(322, 20);
+            this.descricaoTextBox.TabIndex = 11;
+            // 
             // Venda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(363, 187);
+            this.ClientSize = new System.Drawing.Size(363, 229);
             this.Controls.Add(this.salvarButton);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -191,5 +211,7 @@
         private System.Windows.Forms.ComboBox produtosComboBox;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox quantTextBox;
+        private System.Windows.Forms.TextBox descricaoTextBox;
+        private System.Windows.Forms.Label label5;
     }
 }

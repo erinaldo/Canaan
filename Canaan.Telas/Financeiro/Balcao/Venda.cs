@@ -78,6 +78,7 @@ namespace Canaan.Telas.Financeiro.Balcao
             dataDateTimePicker.Value = DateTime.Today;
             quantTextBox.Text = "1";
             valorTextEdit.EditValue = 0;
+            descricaoTextBox.Text = "";
         }
 
         private void CalculaPreco()
@@ -123,6 +124,7 @@ namespace Canaan.Telas.Financeiro.Balcao
             this.Item.DataConfirmacao = DateTime.Today;
             this.Item.TipoVenda = (int)Lib.Utilitarios.TipoVenda.AVista;
             this.Item.IsAtivo = true;
+            this.Item.EventoEspecificacao = descricaoTextBox.Text;
 
             //salva venda
             this.Item = new Lib.Venda().Insert(this.Item);

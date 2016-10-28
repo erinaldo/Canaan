@@ -96,6 +96,29 @@ namespace Canaan.Relatorios.Base
         {
             ddlTipoBusca.Items.Clear();
             ddlTipoBusca.Items.AddRange(Enum.GetNames(typeof(Lib.Utilitarios.TipoBusca)));
+
+            var config = new Lib.Config().GetByFilial(Lib.Session.Instance.Contexto.IdFilial);
+
+            if (!string.IsNullOrEmpty(config.BuscaPadrao))
+            {
+                switch (config.BuscaPadrao)
+                {
+                    case "Codigo":
+                        ddlTipoBusca.SelectedIndex = 0;
+                        break;
+                    case "Cpf":
+                        ddlTipoBusca.SelectedIndex = 1;
+                        break;
+                    case "Nome":
+                        ddlTipoBusca.SelectedIndex = 2;
+                        break;
+                    default:
+                        ddlTipoBusca.SelectedIndex = 0;
+                        break;
+                }
+            }
+            else
+                ddlTipoBusca.SelectedIndex = 0;
         }
 
         private void CarregaGridAtendimentos()
@@ -179,6 +202,10 @@ namespace Canaan.Relatorios.Base
                     var frmCancelamento = new Relatorios.Fichas.Cancelamento.Viewer(CurrentVenda);
                     frmCancelamento.Show();
                     break;
+                case Canaan.Dados.EnumRelatorioTipo.Venda_Recibo:
+                    var frmRecibo = new Relatorios.Fichas.Recibo.Viewer(CurrentVenda);
+                    frmRecibo.Show();
+                    break;
                 default:
                     break;
             }
@@ -194,8 +221,6 @@ namespace Canaan.Relatorios.Base
             dgvAtendimentos.AutoGenerateColumns = false;
 
             CarregaTipoBusca();
-
-            ddlTipoBusca.SelectedIndex = 0;
         }
        
         private void btnBusca_Click(object sender, EventArgs e)

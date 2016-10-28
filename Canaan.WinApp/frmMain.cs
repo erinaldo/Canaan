@@ -973,5 +973,17 @@ namespace Canaan.WinApp
             var frm = new Telas.Suporte.DevolveVenda.Formulario();
             frm.ShowDialog();
         }
+
+        private void listagemDeClientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var frm = new Relatorios.Cliente.Listagem.Viewer();
+            frm.Show();
+        }
+
+        private void fichaDeAcompanhamentoDeVendaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var frm = new Relatorios.Base.FiltroVenda(EnumRelatorioTipo.Venda_Recibo);
+            frm.ShowDialog();
+        }
     }
 }

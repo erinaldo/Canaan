@@ -76,8 +76,11 @@ namespace Canaan.CService.Telas.Integracao.Venda.Sincronismo
             {
                 if (usuario.env_usuarios_grupos.nome.Contains("Administrador"))
                 {
+                    Venda.DataEmissao = DateTime.Today;
+
                     foreach (var item in Venda.Envelopes)
                     {
+                        item.DataVenda = DateTime.Today;
                         item.Observacao = item.Observacao + Environment.NewLine  + @"************ Autorizado por: " + usuario.nome + " - " + DateTime.Now.ToString() + " ************";
                     }
 

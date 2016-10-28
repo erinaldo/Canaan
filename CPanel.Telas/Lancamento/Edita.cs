@@ -106,10 +106,12 @@ namespace CPanel.Telas.Lancamento
             try
             {
                 var entDinheiro = (decimal)this.entradaDinheiro.EditValue;
-                var entCartao = (decimal)this.entradaCartao.EditValue - ((decimal)this.entradaCartao.EditValue * 5 / 100);
+                //var entCartao = (decimal)this.entradaCartao.EditValue - ((decimal)this.entradaCartao.EditValue * 5 / 100);
+                var entCartao = (decimal)this.entradaCartao.EditValue;
                 var entDepos = (decimal)this.entradaDepositada.EditValue;
                 var vendVista = (decimal)this.vendaDinheiro.EditValue;
-                var vendCartao = (decimal)this.vendaCartao.EditValue - ((decimal)this.vendaCartao.EditValue * 20 / 100);
+                //var vendCartao = (decimal)this.vendaCartao.EditValue - ((decimal)this.vendaCartao.EditValue * 5 / 100);
+                var vendCartao = (decimal)this.vendaCartao.EditValue;
 
                 entradaTotal.EditValue = entDinheiro + entCartao + vendVista + vendCartao - entDepos;
             }
@@ -179,7 +181,7 @@ namespace CPanel.Telas.Lancamento
                 var entCartao = Decimal.Parse(this.entradaCartao.EditValue.ToString()) - (Decimal.Parse(this.entradaCartao.EditValue.ToString()) * 5 / 100);
                 var entDepos = Decimal.Parse(this.entradaDepositada.EditValue.ToString());
                 var vendVista = Decimal.Parse(this.vendaDinheiro.EditValue.ToString());
-                var vendCartao = Decimal.Parse(this.vendaCartao.EditValue.ToString()) - (Decimal.Parse(this.vendaCartao.EditValue.ToString()) * 20 / 100);
+                var vendCartao = Decimal.Parse(this.vendaCartao.EditValue.ToString()) - (Decimal.Parse(this.vendaCartao.EditValue.ToString()) * 5 / 100);
                 var recebRM = Decimal.Parse(this.recebimentoRM.EditValue.ToString());
                 var recebCaixa = Decimal.Parse(this.recebimentoCaixa.EditValue.ToString());
                 var recebPherfil = Decimal.Parse(this.recebimentoPherfil.EditValue.ToString());

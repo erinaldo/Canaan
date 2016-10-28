@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Canaan.Relatorios.Financeiro.Lancamento.Shared {
+namespace Canaan.Relatorios.Cliente.Listagem {
     using System;
     using System.ComponentModel;
     using CrystalDecisions.Shared;
@@ -41,7 +41,7 @@ namespace Canaan.Relatorios.Financeiro.Lancamento.Shared {
         
         public override string FullResourceName {
             get {
-                return "Canaan.Relatorios.Financeiro.Lancamento.Shared.Relatorio.rpt";
+                return "Canaan.Relatorios.Cliente.Listagem.Relatorio.rpt";
             }
             set {
                 // Do nothing

@@ -192,9 +192,16 @@ namespace Canaan.Lib.Utilitarios
             var result = double.TryParse(phone, out number);
 
             if (result)
-                return string.Format("{0:(##)####-####}", number);
+            {
+                if(phone.Length <= 10)
+                    return string.Format("{0:(##)####-####}", number);
+                else
+                    return string.Format("{0:(##) # ####-####}", number);
+            }
             else
+            {
                 return phone;
+            }
         }     
 
         public static string RemoveSpecialCharacters(string input)
