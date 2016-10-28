@@ -83,6 +83,14 @@ namespace Canaan.Telas.Movimentacoes.Venda.Evento
             CarregaForm();
         }
 
+        private void isAgendamentoCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (isAgendamentoCheckBox.Checked)
+                agendamentoPanel.Visible = true;
+            else
+                agendamentoPanel.Visible = false;
+        }
+
         #endregion
 
         #region METODOS
@@ -108,11 +116,12 @@ namespace Canaan.Telas.Movimentacoes.Venda.Evento
             var evento = LibEvento.GetById(this.VendaEvento.IdEvento);
 
             eventoComboBox.SelectedValue = this.VendaEvento.IdEvento;
+            isAgendamentoCheckBox.Checked = this.VendaEvento.IsAgendamento.GetValueOrDefault();
             dataInicioDateTimePicker.Value = this.VendaEvento.DataInicio;
             horaInicioDateTimePicker.Value = this.VendaEvento.DataInicio;
             dataFimDateTimePicker.Value = this.VendaEvento.DataFim;
             horaFimDateTimePicker.Value = this.VendaEvento.DataFim;
-
+            
             if (!string.IsNullOrEmpty(this.VendaEvento.Descricao))
                 descricaoTextBox.Text = this.VendaEvento.Descricao;
             else
@@ -128,6 +137,7 @@ namespace Canaan.Telas.Movimentacoes.Venda.Evento
             this.VendaEvento.DataInicio = new DateTime(dataInicioDateTimePicker.Value.Year, dataInicioDateTimePicker.Value.Month, dataInicioDateTimePicker.Value.Day, horaInicioDateTimePicker.Value.Hour, horaInicioDateTimePicker.Value.Minute, horaInicioDateTimePicker.Value.Second);
             this.VendaEvento.DataFim = new DateTime(dataFimDateTimePicker.Value.Year, dataFimDateTimePicker.Value.Month, dataFimDateTimePicker.Value.Day, horaFimDateTimePicker.Value.Hour, horaFimDateTimePicker.Value.Minute, horaFimDateTimePicker.Value.Second);
             this.VendaEvento.Descricao = descricaoTextBox.Text;
+            this.VendaEvento.IsAgendamento = isAgendamentoCheckBox.Checked;
         }
 
         protected override void Incluir()
@@ -144,8 +154,9 @@ namespace Canaan.Telas.Movimentacoes.Venda.Evento
                 MessageBox.Show(string.Format("Registro '{0}' incluido com sucesso", this.VendaEvento.Evento.Nome));
 
                 //marca para edicao
-                IsNovo = false;
-                SetTitle();
+                //IsNovo = false;
+                //SetTitle();
+                this.Close();
             }
             catch (Exception ex)
             {
@@ -178,6 +189,6 @@ namespace Canaan.Telas.Movimentacoes.Venda.Evento
             }
         }
 
-        #endregion
+        #endregion       
     }
 }

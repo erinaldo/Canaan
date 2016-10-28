@@ -126,7 +126,7 @@ namespace Canaan.Telas.Movimentacoes.Venda.Busca
 
             CarregaTipoBusca();
 
-            ddlTipoBusca.SelectedIndex = 0;
+            
         }
 
         private void dgvAtendimentos_SelectionChanged(object sender, EventArgs e)
@@ -560,6 +560,29 @@ namespace Canaan.Telas.Movimentacoes.Venda.Busca
         {
             ddlTipoBusca.Items.Clear();
             ddlTipoBusca.Items.AddRange(Enum.GetNames(typeof(TipoBusca)));
+
+            var config = new Lib.Config().GetByFilial(Lib.Session.Instance.Contexto.IdFilial);
+
+            if (!string.IsNullOrEmpty(config.BuscaPadrao))
+            {
+                switch (config.BuscaPadrao)
+                {
+                    case "Codigo":
+                        ddlTipoBusca.SelectedIndex = 0;
+                        break;
+                    case "Cpf":
+                        ddlTipoBusca.SelectedIndex = 1;
+                        break;
+                    case "Nome":
+                        ddlTipoBusca.SelectedIndex = 2;
+                        break;
+                    default:
+                        ddlTipoBusca.SelectedIndex = 0;
+                        break;
+                }
+            }
+            else
+                ddlTipoBusca.SelectedIndex = 0;
         }
 
         private void CarregaVendas()

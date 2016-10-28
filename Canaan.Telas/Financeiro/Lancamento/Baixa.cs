@@ -182,7 +182,11 @@ namespace Canaan.Telas.Financeiro.Lancamento
             //verifica troco
             if (CalculaTroco() < 0)
             {
-                MessageBoxUtilities.MessageInfo("Valor pago não pode ser menor que o valor líquido");
+                var config = new Lib.Config().GetByFilial(Lib.Session.Instance.Contexto.IdFilial);
+                if (config.UsaBaixaParcial == true)
+                    EfetuaBaixaParcial();
+                else
+                    MessageBoxUtilities.MessageInfo("Valor pago não pode ser menor que o valor líquido");
             }
             else 
             {
@@ -208,6 +212,92 @@ namespace Canaan.Telas.Financeiro.Lancamento
                         MessageBoxUtilities.MessageError(null, ex);
                     }
                 }
+            }
+        }
+
+        private void EfetuaBaixaParcial()
+        {
+            if (Lancamentos.Count == 1)
+            {
+                var msg = "O valor pago é menor que o valor do lançamento. Deseja efetuar a baixa parcial?";
+                if (MessageBoxUtilities.MessageQuestion(msg) == DialogResult.Yes)
+                {
+                    try
+                    {
+                        var frm = new Data();
+                        frm.ShowDialog();
+
+                        if (frm.DataLancamento != null)
+                        {
+                            //altera valor do lancamento
+                            var valorPago = valorPagoTextEdit.EditValue == null ? 0 : decimal.Parse(valorPagoTextEdit.EditValue.ToString().Replace('.', ','));
+                            var valorRestante = BindList.FirstOrDefault().ValorLiquido - valorPago;
+                            BindList.FirstOrDefault().ValorLiquido = valorPago;
+                            BindList.FirstOrDefault().ValorOriginal = BindList.FirstOrDefault().ValorLiquido - BindList.FirstOrDefault().ValorAcrescimo - BindList.FirstOrDefault().ValorJuros - BindList.FirstOrDefault().ValorMulta + BindList.FirstOrDefault().ValorDesconto;
+
+                            if (MessageBoxUtilities.MessageQuestion(ConfirmaInfo()) == DialogResult.Yes)
+                            {
+                                //salva o lancamento
+                                var lancamento = Lancamentos.FirstOrDefault();
+                                lancamento.ValorOriginal = BindList.FirstOrDefault().ValorOriginal;
+                                lancamento.ValorLiquido = BindList.FirstOrDefault().ValorLiquido;
+
+                                objLib.Update(lancamento);
+
+                                //cria lancamento com a diferença
+                                var novo = new Dados.Lancamento();
+                                novo.IdCliFor = lancamento.IdCliFor;
+                                novo.IdFilial = lancamento.IdFilial;
+                                novo.IdContaCaixa = lancamento.IdContaCaixa;
+                                novo.IdPedido = lancamento.IdPedido;
+                                novo.Tipo = lancamento.Tipo;
+                                novo.Status = EnumStatusLanc.EmAberto;
+                                novo.ClasseContabil = EnumClasseContabil.Parcela;
+                                novo.DataEmissao = DateTime.Today;
+                                novo.DataVencimento = frm.DataLancamento.GetValueOrDefault();
+                                novo.ValorOriginal = valorRestante;
+                                novo.ValorJuros = 0;
+                                novo.ValorMulta = 0;
+                                novo.ValorDesconto = 0;
+                                novo.ValorAcrescimo = 0;
+                                novo.ValorLiquido = valorRestante;
+                                novo.IsEntrada = false;
+                                novo.Descricao = string.Format("Restante da baixa parcial do lancamento {0} efetuado por {1} no dia {2}", lancamento.IdLancamento, Session.Usuario.Nome, DateTime.Today.ToShortDateString());
+                                novo.Observacoes = "";
+
+                                objLib.Insert(novo);
+
+
+                                //altera dados no banco de dados
+                                SalvaExtrato();
+                                UpdateLancamentos();
+
+                                //imprime recibo
+                                var recibo = new Relatorios.Financeiro.Recibo.Viewer(Extrato.IdExtrato);
+                                recibo.ShowDialog();
+
+                                //fecha a janela
+                                Close();
+
+                            }
+                            
+                        }
+                        else
+                        {
+                            MessageBoxUtilities.MessageInfo("Baixa parcial cancelada");
+                        }
+                        
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBoxUtilities.MessageError(null, ex);
+                    }
+                }
+            }
+            else
+            {
+                MessageBoxUtilities.MessageInfo("Não é possivel fazer baixa parcial de vários lancamentos");
             }
         }
 

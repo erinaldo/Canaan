@@ -386,5 +386,36 @@ namespace Canaan.Telas.Movimentacoes.Venda.Info
 
         #endregion
 
+        private void cLbCliente_Click(object sender, EventArgs e)
+        {
+            var frm = new Telas.Cadastros.ClienteFornecedor.Wizard(CliForAtendimento.IdCliFor);
+            frm.ShowDialog();
+
+            if (frm.CliFor != null)
+            {
+                CliForAtendimento = frm.CliFor;
+
+                if (CliForAtendimento.IdCliFor == CliForFinanceiro.IdCliFor)
+                    CliForFinanceiro = frm.CliFor;
+            }
+
+            ConfiguraForm();
+        }
+
+        private void cLbResponsavelFinanceiro_Click(object sender, EventArgs e)
+        {
+            var frm = new Telas.Cadastros.ClienteFornecedor.Wizard(CliForFinanceiro.IdCliFor);
+            frm.ShowDialog();
+
+            if (frm.CliFor != null)
+            {
+                CliForFinanceiro = frm.CliFor;
+
+                if (CliForAtendimento.IdCliFor == CliForFinanceiro.IdCliFor)
+                    CliForAtendimento = frm.CliFor;
+            }
+
+            ConfiguraForm();
+        }
     }
 }

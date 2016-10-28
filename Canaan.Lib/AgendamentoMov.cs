@@ -82,7 +82,8 @@ namespace Canaan.Lib
                         Data = DateTime.Today,
                         Hora = DateTime.Now.TimeOfDay,
                         IdUsuario = Session.Instance.Usuario.IdUsuario,
-                        Status = item.Status
+                        Status = item.Status,
+                        Usuario = null
                     };
 
                     //salva no banco de dados

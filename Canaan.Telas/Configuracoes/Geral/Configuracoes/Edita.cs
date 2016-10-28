@@ -89,6 +89,9 @@ namespace Canaan.Telas.Configuracoes.Geral.Configuracoes
             IsCriptogradadoCheckBox.Checked = this.Item.IsCriptogradado;
             UsaManipulacaoCheckBox.Checked = this.Item.UsaManipulacao.GetValueOrDefault();
             UsaLuberacaoCheckBox.Checked = this.Item.UsaLiberacao.GetValueOrDefault();
+            usaBaixaParcialCheckBox.Checked = this.Item.UsaBaixaParcial.GetValueOrDefault();
+            usaMenuSimplificadocheckBox.Checked = this.Item.UsaMenuSimplificado.GetValueOrDefault();
+            buscaPadraoTextBox.Text = this.Item.BuscaPadrao;
             pastaUsaAnoCheckBox.Checked = this.Item.PastaUsaAno.GetValueOrDefault();
             pastaUsaMesCheckBox.Checked = this.Item.PastaUsaMes.GetValueOrDefault();
 
@@ -137,9 +140,12 @@ namespace Canaan.Telas.Configuracoes.Geral.Configuracoes
             this.Item.LocalFolder = localFolderTextBox.Text;
             this.Item.IsCriptogradado = IsCriptogradadoCheckBox.Checked;
             this.Item.UsaManipulacao = UsaManipulacaoCheckBox.Checked;
+            this.Item.UsaMenuSimplificado = usaMenuSimplificadocheckBox.Checked;
             this.Item.UsaLiberacao = UsaLuberacaoCheckBox.Checked;
             this.Item.PastaUsaAno = pastaUsaAnoCheckBox.Checked;
             this.Item.PastaUsaMes = pastaUsaMesCheckBox.Checked;
+            this.Item.UsaBaixaParcial = usaBaixaParcialCheckBox.Checked;
+            this.Item.BuscaPadrao = buscaPadraoTextBox.Text;
 
             if(this.UpdateImage)
                 this.Item.Logomarca = Lib.Utilitarios.ImageUtility.GetBytes(logomarcaPictureBox.Image);

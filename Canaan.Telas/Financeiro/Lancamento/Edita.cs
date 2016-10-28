@@ -382,6 +382,18 @@ namespace Canaan.Telas.Financeiro.Lancamento
                 {
                     Lancamento = objLib.Update(Lancamento, false);
                 }
+
+                if (Lancamento.IdExtrato != null)
+                {
+                    var libExtrato = new Lib.Extrato();
+                    var extrato = libExtrato.GetById(Lancamento.IdExtrato.Value);
+                    if (extrato.Data.Date != Lancamento.DataBaixa.GetValueOrDefault().Date)
+                    {
+                        extrato.Data = Lancamento.DataBaixa.GetValueOrDefault().Date;
+
+                        libExtrato.Update(extrato);
+                    }
+                }
                 
 
                 //mensagem de retorno

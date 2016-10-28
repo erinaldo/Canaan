@@ -57,7 +57,6 @@ namespace Canaan.Telas.Movimentacoes.Venda.Envelope.Colecoes
             dataGrid.DataBindings.Add(new Binding("DataSource", Model, "Colecoes"));
             txtUnitario.DataBindings.Add(new Binding("Text", Model, "PrecoUnitarioStr"));
             txtTotal.DataBindings.Add(new Binding("Text", Model, "PrecoTotalStr"));
-
             txtQuantidade.DataBindings.Add(new Binding("Text", Model, "Quantidade"));
         }
 
@@ -84,6 +83,11 @@ namespace Canaan.Telas.Movimentacoes.Venda.Envelope.Colecoes
             try
             {
                 Model.Quantidade = decimal.Parse(txtQuantidade.Text);
+                if (Model.Quantidade == 0)
+                {
+                    txtQuantidade.Text = "1";
+                    Model.Quantidade = 1;
+                }
 
                 //Valor Unitário
                 if (Model.ColecaoSelecionada != null)

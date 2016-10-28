@@ -161,7 +161,7 @@ namespace Canaan.Relatorios.Fichas.Contrato
                     rowProdutos.Descricao = item.Produto.Descricao;
                     Dataset.Produtos.AddProdutosRow(rowProdutos);
 
-                    produtosText += string.Format("{0}\n", item.Produto.Nome);
+                    produtosText += string.Format("{1} - {0} - {2:c}\n", item.Produto.Nome, item.Quant, item.ValorTotal);
                 }
 
                 //Servicos
@@ -211,9 +211,7 @@ namespace Canaan.Relatorios.Fichas.Contrato
                 {
                     txtEvento += produtosText;
                 }
-                
-                
-
+               
                 foreach (var evento in eventos)
                 {
                     txtEvento += string.Format("{0}:", evento.Evento.Nome);
@@ -230,7 +228,11 @@ namespace Canaan.Relatorios.Fichas.Contrato
 
                 if (!string.IsNullOrEmpty(venda.EventoEspecificacao))
                 {
-                    rowVenda.Servicos = venda.EventoEspecificacao;
+                    rowVenda.Servicos = "";
+
+                    rowVenda.Servicos += produtosText;
+                    rowVenda.Servicos += Environment.NewLine;
+                    rowVenda.Servicos += venda.EventoEspecificacao;
                 }
                 else
                 {

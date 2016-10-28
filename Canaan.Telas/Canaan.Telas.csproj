@@ -442,6 +442,12 @@
     <Compile Include="Financeiro\Lancamento\Baixa.Designer.cs">
       <DependentUpon>Baixa.cs</DependentUpon>
     </Compile>
+    <Compile Include="Financeiro\Lancamento\Data.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Financeiro\Lancamento\Data.Designer.cs">
+      <DependentUpon>Data.cs</DependentUpon>
+    </Compile>
     <Compile Include="Financeiro\Lancamento\Edita.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -991,6 +997,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Financeiro\Balcao\Venda.resx">
       <DependentUpon>Venda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Financeiro\Lancamento\Data.resx">
+      <DependentUpon>Data.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Financeiro\Lancamento\Filtro.resx">
       <DependentUpon>Filtro.cs</DependentUpon>

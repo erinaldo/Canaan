@@ -354,7 +354,7 @@ namespace Canaan.Telas.Financeiro.Lancamento
             this.xtraTabPage2.Controls.Add(this.groupBox4);
             this.xtraTabPage2.Name = "xtraTabPage2";
             this.xtraTabPage2.Padding = new System.Windows.Forms.Padding(5);
-            this.xtraTabPage2.Size = new System.Drawing.Size(456, 310);
+            this.xtraTabPage2.Size = new System.Drawing.Size(493, 322);
             this.xtraTabPage2.Text = "Datas e Valores";
             // 
             // groupBox5
@@ -378,7 +378,7 @@ namespace Canaan.Telas.Financeiro.Lancamento
             this.groupBox5.Location = new System.Drawing.Point(8, 130);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Padding = new System.Windows.Forms.Padding(5);
-            this.groupBox5.Size = new System.Drawing.Size(477, 184);
+            this.groupBox5.Size = new System.Drawing.Size(514, 184);
             this.groupBox5.TabIndex = 1;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Informações dos Valores";
@@ -525,7 +525,7 @@ namespace Canaan.Telas.Financeiro.Lancamento
             this.groupBox4.Location = new System.Drawing.Point(8, 8);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(5);
-            this.groupBox4.Size = new System.Drawing.Size(477, 116);
+            this.groupBox4.Size = new System.Drawing.Size(514, 116);
             this.groupBox4.TabIndex = 0;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Informações das Datas";
@@ -533,7 +533,6 @@ namespace Canaan.Telas.Financeiro.Lancamento
             // dataAgendamentoDateEdit
             // 
             this.dataAgendamentoDateEdit.EditValue = null;
-            this.dataAgendamentoDateEdit.Enabled = false;
             this.dataAgendamentoDateEdit.Location = new System.Drawing.Point(173, 74);
             this.dataAgendamentoDateEdit.Name = "dataAgendamentoDateEdit";
             this.dataAgendamentoDateEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -555,7 +554,6 @@ namespace Canaan.Telas.Financeiro.Lancamento
             // dataBaixaDateEdit
             // 
             this.dataBaixaDateEdit.EditValue = null;
-            this.dataBaixaDateEdit.Enabled = false;
             this.dataBaixaDateEdit.Location = new System.Drawing.Point(173, 35);
             this.dataBaixaDateEdit.Name = "dataBaixaDateEdit";
             this.dataBaixaDateEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -635,7 +633,7 @@ namespace Canaan.Telas.Financeiro.Lancamento
             this.groupBox7.Location = new System.Drawing.Point(13, 8);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Padding = new System.Windows.Forms.Padding(5);
-            this.groupBox7.Size = new System.Drawing.Size(467, 306);
+            this.groupBox7.Size = new System.Drawing.Size(541, 306);
             this.groupBox7.TabIndex = 1;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Informações Adicionais";
@@ -678,7 +676,7 @@ namespace Canaan.Telas.Financeiro.Lancamento
             this.xtraTabPage4.Controls.Add(this.groupBox6);
             this.xtraTabPage4.Name = "xtraTabPage4";
             this.xtraTabPage4.Padding = new System.Windows.Forms.Padding(5);
-            this.xtraTabPage4.Size = new System.Drawing.Size(493, 322);
+            this.xtraTabPage4.Size = new System.Drawing.Size(456, 310);
             this.xtraTabPage4.Text = "Integração Bancária";
             // 
             // groupBox6
@@ -697,7 +695,7 @@ namespace Canaan.Telas.Financeiro.Lancamento
             this.groupBox6.Location = new System.Drawing.Point(8, 8);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Padding = new System.Windows.Forms.Padding(5);
-            this.groupBox6.Size = new System.Drawing.Size(514, 306);
+            this.groupBox6.Size = new System.Drawing.Size(551, 306);
             this.groupBox6.TabIndex = 4;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Informações Bancárias";

@@ -219,13 +219,16 @@ namespace Canaan.Telas.Movimentacoes.Agendamento
             try
             {
                 //atualiza dados do cupom
-                Cupom.Nome = nomeTextBox.Text;
-                Cupom.Endereco = enderecoTextBox.Text;
-                Cupom.Email = emailTextBox.Text;
-                Cupom.Celular = celularMaskedTextBox.Text;
-                Cupom.Telefone = telefoneMaskedTextBox.Text;
-                Cupom.Obs = obsTextBox.Text;
-                LibCupom.Update(Cupom);
+                Agendamento.Cupom.Nome = nomeTextBox.Text;
+                Agendamento.Cupom.Endereco = enderecoTextBox.Text;
+                Agendamento.Cupom.Email = emailTextBox.Text;
+                Agendamento.Cupom.Celular = celularMaskedTextBox.Text;
+                Agendamento.Cupom.Telefone = telefoneMaskedTextBox.Text;
+                Agendamento.Cupom.Obs = obsTextBox.Text;
+                Agendamento.Cupom.IsAtivo = true;
+
+                if(Agendamento.Cupom.IdCupom != 0)
+                    LibCupom.Update(Agendamento.Cupom);
 
 
                 //Edita registro ja existente
@@ -333,6 +336,11 @@ namespace Canaan.Telas.Movimentacoes.Agendamento
         {
             if (CloseForm)
                 Close();
+
+            Cupom = new Dados.Cupom();
+            Cupom.Status = EnumCupomStatus.Agendado;
+            Cupom.IdParceria = int.Parse(idParceriaTextBox.Text);
+            nomeTextBox.Focus();
         }
 
         private void lbData_Click(object sender, EventArgs e)

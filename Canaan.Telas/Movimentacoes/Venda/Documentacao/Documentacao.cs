@@ -79,6 +79,7 @@ namespace Canaan.Telas.Movimentacoes.Venda.Documentacao
         {
             CanUpdate();
             CarregaVendedoras();
+            DesabilitaBotoes();
         }
 
         private void btnBoleto_Click(object sender, EventArgs e)
@@ -175,6 +176,20 @@ namespace Canaan.Telas.Movimentacoes.Venda.Documentacao
 
             if (Venda.IdUsuario != null)
                 cbVendedoras.SelectedValue = Venda.IdUsuario;
+        }
+
+        private void DesabilitaBotoes()
+        {
+            var config = LibConfig.GetByFilial(Session.Instance.Contexto.IdFilial);
+
+            if (config.UsaMenuSimplificado == true)
+            {
+                btnComprovante.Visible = true;
+                btnServicos.Visible = true;
+                btAditamento.Visible = true;
+                btnIndiquePlus.Visible = true;
+                btnBoleto.Visible = true;
+            }
         }
 
         private void CanUpdate()
@@ -365,16 +380,15 @@ namespace Canaan.Telas.Movimentacoes.Venda.Documentacao
 
             if (vendaEventos.Count > 0)
             {
-                var msg = "Deseja incluir os Eventos / Acompanhamentos na agenda?";
-                if (MessageBox.Show(msg, "Confirmação", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                var agenda = new Lib.Agenda().GetByFilial(true, this.Venda.IdFilial);
+
+                foreach (var item in vendaEventos)
                 {
-                    var agenda = new Lib.Agenda().GetByFilial(true, this.Venda.IdFilial);
+                    var vendaEvento = new Lib.VendaEvento().GetById(item.IdVendaEvento);
+                    var agendamento = new Lib.Agendamento().GetByVendaEvento(item.IdVendaEvento);
 
-                    foreach (var item in vendaEventos)
+                    if (vendaEvento.IsAgendamento == true)
                     {
-                        var vendaEvento = new Lib.VendaEvento().GetById(item.IdVendaEvento);
-                        var agendamento = new Lib.Agendamento().GetByVendaEvento(item.IdVendaEvento);
-
                         //verifica se agendamento ja existe
                         if (agendamento == null)
                         {
@@ -386,8 +400,16 @@ namespace Canaan.Telas.Movimentacoes.Venda.Documentacao
                         }
                     }
 
-                    MessageBox.Show("Agendamentos atualizados com sucesso");
+                    
                 }
+                //var msg = "Deseja incluir os Eventos / Acompanhamentos na agenda?";
+
+                //if (MessageBox.Show(msg, "Confirmação", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                //{
+
+
+                //    MessageBox.Show("Agendamentos atualizados com sucesso");
+                //}
             }
         }
 
@@ -419,15 +441,15 @@ namespace Canaan.Telas.Movimentacoes.Venda.Documentacao
             //cria o agendamento
             var agendamento = new Dados.Agendamento
             {
-                Cupom = cupom,
+                IdCupom = cupom.IdCupom,
                 IdAgenda = agenda.IdAgenda,
                 Status = EnumAgendamentoStatus.Agendado,
                 Inicio = vendaEvento.DataInicio,
                 Termino = vendaEvento.DataFim,
                 Observacao = vendaEvento.Descricao,
                 Modelo = this.Venda.CliFor.Nome,
-                IdUsuario = Lib.Session.Instance.Usuario.IdUsuario
             };
+
             agendamento = new Lib.Agendamento().Insert(agendamento);
 
             return agendamento;

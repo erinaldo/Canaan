@@ -216,10 +216,13 @@ namespace Canaan.Lib
             {
                 using (var conn = new Dados.CanaanModelContainer())
                 {
-
+                    item.Data = DateTime.Now;
+                    item.DataPreenchimento = DateTime.Now;
+                    item.IdUsuario = Lib.Session.Instance.Usuario.IdUsuario;
                     item.IsAgendado = false;
                     item.IsDescartado = false;
                     item.IsLembrete = false;
+                    item.Usuario = null;
 
                     //salva no banco de dados
                     conn.Cupom.Add(item);

@@ -20,6 +20,7 @@ namespace Canaan.Dados
         public System.DateTime DataInicio { get; set; }
         public System.DateTime DataFim { get; set; }
         public string Descricao { get; set; }
+        public Nullable<bool> IsAgendamento { get; set; }
     
         public virtual Evento Evento { get; set; }
         public virtual Venda Venda { get; set; }

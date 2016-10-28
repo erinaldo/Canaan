@@ -314,22 +314,28 @@ namespace Canaan.Telas.Movimentacoes.Venda.Info
             // cLbResponsavelFinanceiro
             // 
             this.cLbResponsavelFinanceiro.AutoSize = true;
+            this.cLbResponsavelFinanceiro.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cLbResponsavelFinanceiro.ForeColor = System.Drawing.Color.Blue;
             this.cLbResponsavelFinanceiro.Location = new System.Drawing.Point(203, 151);
             this.cLbResponsavelFinanceiro.Name = "cLbResponsavelFinanceiro";
             this.cLbResponsavelFinanceiro.Padding = new System.Windows.Forms.Padding(5);
             this.cLbResponsavelFinanceiro.Size = new System.Drawing.Size(146, 23);
             this.cLbResponsavelFinanceiro.TabIndex = 17;
             this.cLbResponsavelFinanceiro.Text = "cLbResponsavelFinanceiro";
+            this.cLbResponsavelFinanceiro.Click += new System.EventHandler(this.cLbResponsavelFinanceiro_Click);
             // 
             // cLbCliente
             // 
             this.cLbCliente.AutoSize = true;
+            this.cLbCliente.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cLbCliente.ForeColor = System.Drawing.Color.Blue;
             this.cLbCliente.Location = new System.Drawing.Point(203, 126);
             this.cLbCliente.Name = "cLbCliente";
             this.cLbCliente.Padding = new System.Windows.Forms.Padding(5);
             this.cLbCliente.Size = new System.Drawing.Size(67, 23);
             this.cLbCliente.TabIndex = 16;
             this.cLbCliente.Text = "cLbCliente";
+            this.cLbCliente.Click += new System.EventHandler(this.cLbCliente_Click);
             // 
             // cLbAtendenteResponsavel
             // 

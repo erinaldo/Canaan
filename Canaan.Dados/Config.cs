@@ -45,6 +45,10 @@ namespace Canaan.Dados
         public Nullable<bool> UsaAtendimentoAutomatico { get; set; }
         public byte[] Logomarca { get; set; }
         public Nullable<bool> UsaBaixaEntrada { get; set; }
+        public Nullable<bool> UsaBaixaParcial { get; set; }
+        public Nullable<bool> UsaCPanel { get; set; }
+        public string BuscaPadrao { get; set; }
+        public Nullable<bool> UsaMenuSimplificado { get; set; }
     
         public virtual Filial Filial { get; set; }
     }

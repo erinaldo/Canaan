@@ -66,6 +66,9 @@ namespace Canaan.Lib
                     updated.PastaUsaAno = item.PastaUsaAno;
                     updated.PastaUsaMes = item.PastaUsaMes;
                     updated.Logomarca = item.Logomarca;
+                    updated.UsaBaixaParcial = item.UsaBaixaParcial;
+                    updated.UsaMenuSimplificado = item.UsaMenuSimplificado;
+                    updated.BuscaPadrao = item.BuscaPadrao;
 
                     //atualiza imagem da sessao
                     Session.Instance.LogoReport = item.Logomarca;

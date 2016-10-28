@@ -71,6 +71,7 @@ namespace Canaan.Lib
                     //Seta numero de confirmacoes para 0
                     item.NumConfirmacao = 0;
                     item.IdUsuario = Lib.Session.Instance.Usuario.IdUsuario;
+                    item.Usuario = null;
 
                     //salva no banco de dados
                     conn.Agendamento.Add(item);
@@ -103,8 +104,8 @@ namespace Canaan.Lib
         public bool ValidaSalvarCupom(Dados.Cupom item)
         {
 
-            if (new Cupom().ValidacaoCupomTel(item) == false)
-                throw new Exception("Telefone ou Celular é obrigatório");
+            //if (new Cupom().ValidacaoCupomTel(item) == false)
+            //    throw new Exception("Telefone ou Celular é obrigatório");
 
             //if (item.IdCupom > 0)
             //{

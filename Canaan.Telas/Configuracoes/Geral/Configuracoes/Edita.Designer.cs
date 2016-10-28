@@ -61,12 +61,16 @@
             this.ftpHostTextBox = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.usaBaixaParcialCheckBox = new System.Windows.Forms.CheckBox();
+            this.usaBaixaEntradaCheckBox = new System.Windows.Forms.CheckBox();
             this.usaFinanceiroCheckBox = new System.Windows.Forms.CheckBox();
             this.multaTextBox = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.jurosTextBox = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.buscaPadraoTextBox = new System.Windows.Forms.TextBox();
+            this.label21 = new System.Windows.Forms.Label();
             this.currentBackupTextBox = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.currentAtendimentoTextBox = new System.Windows.Forms.TextBox();
@@ -86,7 +90,7 @@
             this.eventoTextBox = new System.Windows.Forms.TextBox();
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.contratoTextBox = new System.Windows.Forms.TextBox();
-            this.usaBaixaEntradaCheckBox = new System.Windows.Forms.CheckBox();
+            this.usaMenuSimplificadocheckBox = new System.Windows.Forms.CheckBox();
             this.panelEdit.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -122,6 +126,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.usaMenuSimplificadocheckBox);
             this.tabPage1.Controls.Add(this.btnAlteraLogo);
             this.tabPage1.Controls.Add(this.label20);
             this.tabPage1.Controls.Add(this.logomarcaPictureBox);
@@ -334,7 +339,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(5);
-            this.tabPage2.Size = new System.Drawing.Size(717, 335);
+            this.tabPage2.Size = new System.Drawing.Size(454, 312);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Laboratório";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -421,6 +426,7 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.usaBaixaParcialCheckBox);
             this.tabPage3.Controls.Add(this.usaBaixaEntradaCheckBox);
             this.tabPage3.Controls.Add(this.usaFinanceiroCheckBox);
             this.tabPage3.Controls.Add(this.multaTextBox);
@@ -430,10 +436,30 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(5);
-            this.tabPage3.Size = new System.Drawing.Size(717, 335);
+            this.tabPage3.Size = new System.Drawing.Size(454, 312);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Financeiro";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // usaBaixaParcialCheckBox
+            // 
+            this.usaBaixaParcialCheckBox.AutoSize = true;
+            this.usaBaixaParcialCheckBox.Location = new System.Drawing.Point(11, 134);
+            this.usaBaixaParcialCheckBox.Name = "usaBaixaParcialCheckBox";
+            this.usaBaixaParcialCheckBox.Size = new System.Drawing.Size(107, 17);
+            this.usaBaixaParcialCheckBox.TabIndex = 18;
+            this.usaBaixaParcialCheckBox.Text = "Usa Baixa Parcial";
+            this.usaBaixaParcialCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // usaBaixaEntradaCheckBox
+            // 
+            this.usaBaixaEntradaCheckBox.AutoSize = true;
+            this.usaBaixaEntradaCheckBox.Location = new System.Drawing.Point(11, 111);
+            this.usaBaixaEntradaCheckBox.Name = "usaBaixaEntradaCheckBox";
+            this.usaBaixaEntradaCheckBox.Size = new System.Drawing.Size(148, 17);
+            this.usaBaixaEntradaCheckBox.TabIndex = 17;
+            this.usaBaixaEntradaCheckBox.Text = "Baixa Entrada Ao Faturar";
+            this.usaBaixaEntradaCheckBox.UseVisualStyleBackColor = true;
             // 
             // usaFinanceiroCheckBox
             // 
@@ -479,6 +505,8 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.buscaPadraoTextBox);
+            this.tabPage4.Controls.Add(this.label21);
             this.tabPage4.Controls.Add(this.currentBackupTextBox);
             this.tabPage4.Controls.Add(this.label14);
             this.tabPage4.Controls.Add(this.currentAtendimentoTextBox);
@@ -490,6 +518,22 @@
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Variáveis";
             this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // buscaPadraoTextBox
+            // 
+            this.buscaPadraoTextBox.Location = new System.Drawing.Point(11, 99);
+            this.buscaPadraoTextBox.Name = "buscaPadraoTextBox";
+            this.buscaPadraoTextBox.Size = new System.Drawing.Size(163, 21);
+            this.buscaPadraoTextBox.TabIndex = 19;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(8, 83);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(72, 13);
+            this.label21.TabIndex = 18;
+            this.label21.Text = "Busca Padrão";
             // 
             // currentBackupTextBox
             // 
@@ -663,15 +707,15 @@
             this.contratoTextBox.Size = new System.Drawing.Size(448, 306);
             this.contratoTextBox.TabIndex = 1;
             // 
-            // usaBaixaEntradaCheckBox
+            // usaMenuSimplificadocheckBox
             // 
-            this.usaBaixaEntradaCheckBox.AutoSize = true;
-            this.usaBaixaEntradaCheckBox.Location = new System.Drawing.Point(11, 111);
-            this.usaBaixaEntradaCheckBox.Name = "usaBaixaEntradaCheckBox";
-            this.usaBaixaEntradaCheckBox.Size = new System.Drawing.Size(148, 17);
-            this.usaBaixaEntradaCheckBox.TabIndex = 17;
-            this.usaBaixaEntradaCheckBox.Text = "Baixa Entrada Ao Faturar";
-            this.usaBaixaEntradaCheckBox.UseVisualStyleBackColor = true;
+            this.usaMenuSimplificadocheckBox.AutoSize = true;
+            this.usaMenuSimplificadocheckBox.Location = new System.Drawing.Point(203, 254);
+            this.usaMenuSimplificadocheckBox.Name = "usaMenuSimplificadocheckBox";
+            this.usaMenuSimplificadocheckBox.Size = new System.Drawing.Size(131, 17);
+            this.usaMenuSimplificadocheckBox.TabIndex = 19;
+            this.usaMenuSimplificadocheckBox.Text = "Usa Menu Simplificado";
+            this.usaMenuSimplificadocheckBox.UseVisualStyleBackColor = true;
             // 
             // Edita
             // 
@@ -764,5 +808,9 @@
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.PictureBox logomarcaPictureBox;
         private System.Windows.Forms.CheckBox usaBaixaEntradaCheckBox;
+        private System.Windows.Forms.CheckBox usaBaixaParcialCheckBox;
+        private System.Windows.Forms.TextBox buscaPadraoTextBox;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.CheckBox usaMenuSimplificadocheckBox;
     }
 }

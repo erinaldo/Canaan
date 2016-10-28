@@ -77,8 +77,10 @@ namespace Canaan.WinApp
         private void frmMain_Load(object sender, EventArgs e)
         {
             CarregaVersao();
+            
             EfetuaLogin();
             UpdateFaltantes();
+
         }
 
         private void frmMain_FormClosed(object sender, FormClosedEventArgs e)
@@ -100,6 +102,8 @@ namespace Canaan.WinApp
 
             //Aplica Permissoes e Habilita Timer de Lembretes
             AplicarPermissoes();
+
+            CarregaMenuSimplificado();
         }
 
         private void CarregaSessionInfo()
@@ -306,6 +310,71 @@ namespace Canaan.WinApp
             var assemName = assembly.GetName();
             var ver = assemName.Version;
             Text = string.Format("{0}{1}{2}", Text, ' ', ver);
+        }
+
+        private void CarregaMenuSimplificado()
+        {
+            var config = new Lib.Config().GetByFilial(Session.Contexto.IdFilial);
+
+            if (config.UsaMenuSimplificado == true)
+            {
+                atendimentosToolStripMenuItem.Visible = false;
+                toolStripSeparator14.Visible = false;
+                mConsulta.Visible = false;
+                consultaCPCToolStripMenuItem.Visible = false;
+                consultaClubeDaAmizadeToolStripMenuItem.Visible = false;
+                toolStripSeparator15.Visible = false;
+                recebimentoDeProdutoToolStripMenuItem.Visible = false;
+                entregaDeProdutoToolStripMenuItem.Visible = false;
+
+                cadastrosToolStripMenuItem.Visible = false;
+                clienteFornecedorToolStripMenuItem.Visible = false;
+
+                laboratórioToolStripMenuItem.Visible = false;
+                pedidosPendentesToolStripMenuItem.Visible = false;
+                pedidoAvulsoToolStripMenuItem.Visible = false;
+                toolStripMenuItem2.Visible = false;
+                envioDeImagensToolStripMenuItem.Visible = false;
+
+                cuponsXFuncionarioToolStripMenuItem.Visible = false;
+                toolStripSeparator21.Visible = false;
+                resultadoDasParceriasToolStripMenuItem.Visible = false;
+                resultadosDasIndicaçõesToolStripMenuItem.Visible = false;
+                parceriasXPeriodoToolStripMenuItem.Visible = false;
+                resumoDeMaterialToolStripMenuItem.Visible = false;
+                toolStripMenuItem4.Visible = false;
+
+                backupFotografadosToolStripMenuItem.Visible = false;
+                toolStripSeparator11.Visible = false;
+                conferênciaToolStripMenuItem.Visible = false;
+
+                mMarketingGeral.Visible = false;
+                parceriasToolStripMenuItem.Visible = false;
+                cuponsToolStripMenuItem.Visible = false;
+                toolStripSeparator1.Visible = false;
+                mTelemarketing.Visible = false;
+                toolStripSeparator2.Visible = false;
+                mRotinasDistCupons.Visible = false;
+                mRotinasDistFaltantes.Visible = false;
+
+                toolStripSeparator6.Visible = false;
+                retornoBancarioToolStripMenuItem.Visible = false;
+
+                atendidosXPeriodoToolStripMenuItem.Visible = false;
+                toolStripMenuItem3.Visible = false;
+                toolStripSeparator23.Visible = false;
+                pacotesParaLiberaçãoToolStripMenuItem.Visible = false;
+                vendasDevolvidasToolStripMenuItem.Visible = false;
+                vendasProgramadasToolStripMenuItem.Visible = false;
+
+                termoDeResposabilidadeToolStripMenuItem.Visible = false;
+                autorizacaoDeUsoDeImagemToolStripMenuItem.Visible = false;
+                toolStripSeparator19.Visible = false;
+                serviçosContratadosToolStripMenuItem.Visible = false;
+                boletoToolStripMenuItem.Visible = false;
+                termoDeAditamentoToolStripMenuItem.Visible = false;
+                trocaDeTitularidadeToolStripMenuItem.Visible = false;
+            }
         }
 
         #endregion

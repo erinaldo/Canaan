@@ -104,6 +104,7 @@ namespace Canaan.Lib
                     updated.DataInicio = item.DataInicio;
                     updated.DataFim = item.DataFim;
                     updated.Descricao = item.Descricao;
+                    updated.IsAgendamento = item.IsAgendamento;
 
                     //valida e salva
                     if (Validacao.IsValid(conn))
