@@ -51,7 +51,7 @@ namespace Canaan.Telas.Financeiro.Balcao
         {
             lbFornecedor.Text = this.CliFor.Nome;
             dataDateTimePicker.Value = DateTime.Today;
-            valorTextEdit.EditValue = 0;
+            valorTextEdit.EditValue = 0.00M;
         }
 
         private void SalvaRegistro()
@@ -72,8 +72,8 @@ namespace Canaan.Telas.Financeiro.Balcao
             this.Lancamento.ClasseContabil = Dados.EnumClasseContabil.Parcela;
             this.Lancamento.DataEmissao = DateTime.Today;
             this.Lancamento.DataVencimento = dataDateTimePicker.Value.Date;
-            this.Lancamento.ValorOriginal = (decimal)valorTextEdit.EditValue;
-            this.Lancamento.ValorLiquido = (decimal)valorTextEdit.EditValue;
+            this.Lancamento.ValorOriginal = decimal.Parse(valorTextEdit.EditValue.ToString());
+            this.Lancamento.ValorLiquido = decimal.Parse(valorTextEdit.EditValue.ToString());
             this.Lancamento.IsEntrada = false;
             this.Lancamento.Descricao = descricaoTextbox.Text;
 

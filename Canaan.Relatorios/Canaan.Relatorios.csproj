@@ -507,6 +507,29 @@
     <Compile Include="Financeiro\Boleto\Itau\Viewer.Designer.cs">
       <DependentUpon>Viewer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Financeiro\Caixa\LivroCaixa\Filtro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Financeiro\Caixa\LivroCaixa\Filtro.Designer.cs">
+      <DependentUpon>Filtro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Financeiro\Caixa\LivroCaixa\Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Financeiro\Caixa\LivroCaixa\Relatorio1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Relatorio.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Financeiro\Caixa\LivroCaixa\Viewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Financeiro\Caixa\LivroCaixa\Viewer.Designer.cs">
+      <DependentUpon>Viewer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Financeiro\Lancamento\Receber\Filtro.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1230,6 +1253,17 @@
     <None Include="Financeiro\Boleto\Itau\Model.xss">
       <DependentUpon>Model.xsd</DependentUpon>
     </None>
+    <None Include="Financeiro\Caixa\LivroCaixa\Model.xsc">
+      <DependentUpon>Model.xsd</DependentUpon>
+    </None>
+    <None Include="Financeiro\Caixa\LivroCaixa\Model.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Financeiro\Caixa\LivroCaixa\Model.xss">
+      <DependentUpon>Model.xsd</DependentUpon>
+    </None>
     <None Include="Financeiro\Lancamento\Shared\Model.xsc">
       <DependentUpon>Model.xsd</DependentUpon>
     </None>
@@ -1536,6 +1570,16 @@
       <LastGenOutput>Relatorio.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Financeiro\Boleto\Itau\Viewer.resx">
+      <DependentUpon>Viewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Financeiro\Caixa\LivroCaixa\Filtro.resx">
+      <DependentUpon>Filtro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Financeiro\Caixa\LivroCaixa\Relatorio.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Relatorio1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Financeiro\Caixa\LivroCaixa\Viewer.resx">
       <DependentUpon>Viewer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Financeiro\Lancamento\Receber\Filtro.resx">

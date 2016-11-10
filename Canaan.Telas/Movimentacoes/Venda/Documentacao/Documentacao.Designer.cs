@@ -32,14 +32,15 @@ namespace Canaan.Telas.Movimentacoes.Venda.Documentacao
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnIndiquePlus = new System.Windows.Forms.Button();
+            this.btnFichaCliente = new System.Windows.Forms.Button();
             this.btnControlePgto = new System.Windows.Forms.Button();
-            this.btAditamento = new System.Windows.Forms.Button();
             this.btnComprovante = new System.Windows.Forms.Button();
-            this.btnServicos = new System.Windows.Forms.Button();
             this.btnContrato = new System.Windows.Forms.Button();
             this.btnEnvelope = new System.Windows.Forms.Button();
+            this.btnIndiquePlus = new System.Windows.Forms.Button();
             this.btnBoleto = new System.Windows.Forms.Button();
+            this.btAditamento = new System.Windows.Forms.Button();
+            this.btnServicos = new System.Windows.Forms.Button();
             this.toolstripActions = new System.Windows.Forms.ToolStrip();
             this.btLiberarVenda = new System.Windows.Forms.ToolStripButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -58,20 +59,21 @@ namespace Canaan.Telas.Movimentacoes.Venda.Documentacao
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.btnIndiquePlus);
             this.tabPage1.Controls.Add(this.groupBox2);
+            this.tabPage1.Controls.Add(this.btnServicos);
             this.tabPage1.Controls.Add(this.groupBox1);
+            this.tabPage1.Controls.Add(this.btAditamento);
+            this.tabPage1.Controls.Add(this.btnBoleto);
             this.tabPage1.Text = "Documentação / Finalização";
             // 
             // groupBox1
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.groupBox1.Controls.Add(this.btnIndiquePlus);
+            this.groupBox1.Controls.Add(this.btnFichaCliente);
             this.groupBox1.Controls.Add(this.btnControlePgto);
-            this.groupBox1.Controls.Add(this.btnBoleto);
-            this.groupBox1.Controls.Add(this.btAditamento);
             this.groupBox1.Controls.Add(this.btnComprovante);
-            this.groupBox1.Controls.Add(this.btnServicos);
             this.groupBox1.Controls.Add(this.btnContrato);
             this.groupBox1.Controls.Add(this.btnEnvelope);
             this.groupBox1.Location = new System.Drawing.Point(15, 6);
@@ -82,15 +84,15 @@ namespace Canaan.Telas.Movimentacoes.Venda.Documentacao
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Documentação";
             // 
-            // btnIndiquePlus
+            // btnFichaCliente
             // 
-            this.btnIndiquePlus.Location = new System.Drawing.Point(53, 230);
-            this.btnIndiquePlus.Name = "btnIndiquePlus";
-            this.btnIndiquePlus.Size = new System.Drawing.Size(175, 23);
-            this.btnIndiquePlus.TabIndex = 7;
-            this.btnIndiquePlus.Text = "Indique e Ganhe Plus";
-            this.btnIndiquePlus.UseVisualStyleBackColor = true;
-            this.btnIndiquePlus.Click += new System.EventHandler(this.btnIndiquePlus_Click);
+            this.btnFichaCliente.Location = new System.Drawing.Point(53, 114);
+            this.btnFichaCliente.Name = "btnFichaCliente";
+            this.btnFichaCliente.Size = new System.Drawing.Size(175, 23);
+            this.btnFichaCliente.TabIndex = 7;
+            this.btnFichaCliente.Text = "Ficha de Venda";
+            this.btnFichaCliente.UseVisualStyleBackColor = true;
+            this.btnFichaCliente.Click += new System.EventHandler(this.btnFichaCliente_Click);
             // 
             // btnControlePgto
             // 
@@ -102,35 +104,15 @@ namespace Canaan.Telas.Movimentacoes.Venda.Documentacao
             this.btnControlePgto.UseVisualStyleBackColor = true;
             this.btnControlePgto.Click += new System.EventHandler(this.btnControlePgto_Click);
             // 
-            // btAditamento
-            // 
-            this.btAditamento.Location = new System.Drawing.Point(53, 201);
-            this.btAditamento.Name = "btAditamento";
-            this.btAditamento.Size = new System.Drawing.Size(175, 23);
-            this.btAditamento.TabIndex = 5;
-            this.btAditamento.Text = "Aditamento";
-            this.btAditamento.UseVisualStyleBackColor = true;
-            this.btAditamento.Click += new System.EventHandler(this.btAditamento_Click);
-            // 
             // btnComprovante
             // 
-            this.btnComprovante.Location = new System.Drawing.Point(53, 114);
+            this.btnComprovante.Location = new System.Drawing.Point(53, 143);
             this.btnComprovante.Name = "btnComprovante";
             this.btnComprovante.Size = new System.Drawing.Size(175, 23);
             this.btnComprovante.TabIndex = 4;
             this.btnComprovante.Text = "Comprovante de Entrada";
             this.btnComprovante.UseVisualStyleBackColor = true;
             this.btnComprovante.Click += new System.EventHandler(this.btnComprovante_Click);
-            // 
-            // btnServicos
-            // 
-            this.btnServicos.Location = new System.Drawing.Point(53, 143);
-            this.btnServicos.Name = "btnServicos";
-            this.btnServicos.Size = new System.Drawing.Size(175, 23);
-            this.btnServicos.TabIndex = 0;
-            this.btnServicos.Text = "Serviços Contratados";
-            this.btnServicos.UseVisualStyleBackColor = true;
-            this.btnServicos.Click += new System.EventHandler(this.btnServicos_Click);
             // 
             // btnContrato
             // 
@@ -152,9 +134,19 @@ namespace Canaan.Telas.Movimentacoes.Venda.Documentacao
             this.btnEnvelope.UseVisualStyleBackColor = true;
             this.btnEnvelope.Click += new System.EventHandler(this.btnEnvelope_Click);
             // 
+            // btnIndiquePlus
+            // 
+            this.btnIndiquePlus.Location = new System.Drawing.Point(332, 178);
+            this.btnIndiquePlus.Name = "btnIndiquePlus";
+            this.btnIndiquePlus.Size = new System.Drawing.Size(175, 23);
+            this.btnIndiquePlus.TabIndex = 7;
+            this.btnIndiquePlus.Text = "Indique e Ganhe Plus";
+            this.btnIndiquePlus.UseVisualStyleBackColor = true;
+            this.btnIndiquePlus.Click += new System.EventHandler(this.btnIndiquePlus_Click);
+            // 
             // btnBoleto
             // 
-            this.btnBoleto.Location = new System.Drawing.Point(53, 172);
+            this.btnBoleto.Location = new System.Drawing.Point(332, 120);
             this.btnBoleto.Name = "btnBoleto";
             this.btnBoleto.Size = new System.Drawing.Size(175, 23);
             this.btnBoleto.TabIndex = 2;
@@ -162,6 +154,26 @@ namespace Canaan.Telas.Movimentacoes.Venda.Documentacao
             this.btnBoleto.UseVisualStyleBackColor = true;
             this.btnBoleto.Visible = false;
             this.btnBoleto.Click += new System.EventHandler(this.btnBoleto_Click);
+            // 
+            // btAditamento
+            // 
+            this.btAditamento.Location = new System.Drawing.Point(332, 149);
+            this.btAditamento.Name = "btAditamento";
+            this.btAditamento.Size = new System.Drawing.Size(175, 23);
+            this.btAditamento.TabIndex = 5;
+            this.btAditamento.Text = "Aditamento";
+            this.btAditamento.UseVisualStyleBackColor = true;
+            this.btAditamento.Click += new System.EventHandler(this.btAditamento_Click);
+            // 
+            // btnServicos
+            // 
+            this.btnServicos.Location = new System.Drawing.Point(332, 86);
+            this.btnServicos.Name = "btnServicos";
+            this.btnServicos.Size = new System.Drawing.Size(175, 23);
+            this.btnServicos.TabIndex = 0;
+            this.btnServicos.Text = "Serviços Contratados";
+            this.btnServicos.UseVisualStyleBackColor = true;
+            this.btnServicos.Click += new System.EventHandler(this.btnServicos_Click);
             // 
             // toolstripActions
             // 
@@ -241,6 +253,6 @@ namespace Canaan.Telas.Movimentacoes.Venda.Documentacao
         private ComboBox cbVendedoras;
         private Button btnControlePgto;
         private Button btnIndiquePlus;
-
+        private Button btnFichaCliente;
     }
 }

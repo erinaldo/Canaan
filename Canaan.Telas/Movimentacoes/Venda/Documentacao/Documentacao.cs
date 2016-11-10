@@ -184,11 +184,11 @@ namespace Canaan.Telas.Movimentacoes.Venda.Documentacao
 
             if (config.UsaMenuSimplificado == true)
             {
-                btnComprovante.Visible = true;
-                btnServicos.Visible = true;
-                btAditamento.Visible = true;
-                btnIndiquePlus.Visible = true;
-                btnBoleto.Visible = true;
+                btnComprovante.Visible = false;
+                btnServicos.Visible = false;
+                btAditamento.Visible = false;
+                btnIndiquePlus.Visible = false;
+                btnBoleto.Visible = false;
             }
         }
 
@@ -469,5 +469,11 @@ namespace Canaan.Telas.Movimentacoes.Venda.Documentacao
         }
 
         #endregion
+
+        private void btnFichaCliente_Click(object sender, EventArgs e)
+        {
+            var frmRecibo = new Relatorios.Fichas.Recibo.Viewer(Venda.IdPedido);
+            frmRecibo.Show();
+        }
     }
 }

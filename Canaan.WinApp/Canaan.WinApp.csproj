@@ -169,6 +169,7 @@
     <Content Include="Configuration\PagSeguroConfig.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\graph_performanceChart_5171_16x_LG.png" />
     <None Include="Resources\pencil_005_16xLG.png" />
     <None Include="Resources\manifest_16xLG.png" />
     <None Include="Resources\process_16xLG.png" />

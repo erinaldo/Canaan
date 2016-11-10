@@ -83,6 +83,7 @@
             this.financeiroToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.aReceberXPeriodoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.recebidoXPeríodoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.livroCaixaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator12 = new System.Windows.Forms.ToolStripSeparator();
             this.reimpressãoDeDocumentosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fichaDeAtendimentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -95,6 +96,7 @@
             this.contratoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.controleDePagamentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.comprovanteDeEntradaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fichaDeAcompanhamentoDeVendaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.termoDeAditamentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.trocaDeTitularidadeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cancelamentoDeContratoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -163,11 +165,12 @@
             this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
             this.vendaToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
-            this.retiradaToolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator13 = new System.Windows.Forms.ToolStripSeparator();
             this.caixaToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator13 = new System.Windows.Forms.ToolStripSeparator();
+            this.retiradaToolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator16 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.mainPanel = new System.Windows.Forms.Panel();
-            this.fichaDeAcompanhamentoDeVendaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mainMenu.SuspendLayout();
             this.mainStatusStrip.SuspendLayout();
             this.mainToolStrip.SuspendLayout();
@@ -582,7 +585,8 @@
             // 
             this.financeiroToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aReceberXPeriodoToolStripMenuItem,
-            this.recebidoXPeríodoToolStripMenuItem});
+            this.recebidoXPeríodoToolStripMenuItem,
+            this.livroCaixaToolStripMenuItem});
             this.financeiroToolStripMenuItem1.Name = "financeiroToolStripMenuItem1";
             this.financeiroToolStripMenuItem1.Size = new System.Drawing.Size(228, 22);
             this.financeiroToolStripMenuItem1.Text = "Financeiro";
@@ -600,6 +604,13 @@
             this.recebidoXPeríodoToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
             this.recebidoXPeríodoToolStripMenuItem.Text = "Recebido x Período";
             this.recebidoXPeríodoToolStripMenuItem.Click += new System.EventHandler(this.recebidoXPeríodoToolStripMenuItem_Click);
+            // 
+            // livroCaixaToolStripMenuItem
+            // 
+            this.livroCaixaToolStripMenuItem.Name = "livroCaixaToolStripMenuItem";
+            this.livroCaixaToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
+            this.livroCaixaToolStripMenuItem.Text = "Livro Caixa";
+            this.livroCaixaToolStripMenuItem.Click += new System.EventHandler(this.livroCaixaToolStripMenuItem_Click);
             // 
             // toolStripSeparator12
             // 
@@ -696,6 +707,13 @@
             this.comprovanteDeEntradaToolStripMenuItem.Size = new System.Drawing.Size(272, 22);
             this.comprovanteDeEntradaToolStripMenuItem.Text = "Comprovante de Entrada";
             this.comprovanteDeEntradaToolStripMenuItem.Click += new System.EventHandler(this.comprovanteDeEntradaToolStripMenuItem_Click);
+            // 
+            // fichaDeAcompanhamentoDeVendaToolStripMenuItem
+            // 
+            this.fichaDeAcompanhamentoDeVendaToolStripMenuItem.Name = "fichaDeAcompanhamentoDeVendaToolStripMenuItem";
+            this.fichaDeAcompanhamentoDeVendaToolStripMenuItem.Size = new System.Drawing.Size(272, 22);
+            this.fichaDeAcompanhamentoDeVendaToolStripMenuItem.Text = "Ficha de Acompanhamento de Venda";
+            this.fichaDeAcompanhamentoDeVendaToolStripMenuItem.Click += new System.EventHandler(this.fichaDeAcompanhamentoDeVendaToolStripMenuItem_Click);
             // 
             // termoDeAditamentoToolStripMenuItem
             // 
@@ -1128,9 +1146,11 @@
             this.toolStripSeparator10,
             this.vendaToolStripButton,
             this.toolStripSeparator8,
-            this.retiradaToolStripButton1,
+            this.caixaToolStripButton,
             this.toolStripSeparator13,
-            this.caixaToolStripButton});
+            this.retiradaToolStripButton1,
+            this.toolStripSeparator16,
+            this.toolStripButton1});
             this.mainToolStrip.Location = new System.Drawing.Point(0, 24);
             this.mainToolStrip.Name = "mainToolStrip";
             this.mainToolStrip.Padding = new System.Windows.Forms.Padding(5);
@@ -1226,20 +1246,6 @@
             this.toolStripSeparator8.Name = "toolStripSeparator8";
             this.toolStripSeparator8.Size = new System.Drawing.Size(6, 23);
             // 
-            // retiradaToolStripButton1
-            // 
-            this.retiradaToolStripButton1.Image = global::Canaan.WinApp.Properties.Resources.Money_16xLG;
-            this.retiradaToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.retiradaToolStripButton1.Name = "retiradaToolStripButton1";
-            this.retiradaToolStripButton1.Size = new System.Drawing.Size(118, 20);
-            this.retiradaToolStripButton1.Text = "Retirada do Caixa";
-            this.retiradaToolStripButton1.Click += new System.EventHandler(this.retiradaToolStripButton1_Click);
-            // 
-            // toolStripSeparator13
-            // 
-            this.toolStripSeparator13.Name = "toolStripSeparator13";
-            this.toolStripSeparator13.Size = new System.Drawing.Size(6, 23);
-            // 
             // caixaToolStripButton
             // 
             this.caixaToolStripButton.Image = global::Canaan.WinApp.Properties.Resources.process_16xLG;
@@ -1249,6 +1255,34 @@
             this.caixaToolStripButton.Text = "Recebimento de Parcelas";
             this.caixaToolStripButton.Click += new System.EventHandler(this.caixaToolStripButton_Click);
             // 
+            // toolStripSeparator13
+            // 
+            this.toolStripSeparator13.Name = "toolStripSeparator13";
+            this.toolStripSeparator13.Size = new System.Drawing.Size(6, 23);
+            // 
+            // retiradaToolStripButton1
+            // 
+            this.retiradaToolStripButton1.Image = global::Canaan.WinApp.Properties.Resources.Money_16xLG;
+            this.retiradaToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.retiradaToolStripButton1.Name = "retiradaToolStripButton1";
+            this.retiradaToolStripButton1.Size = new System.Drawing.Size(153, 20);
+            this.retiradaToolStripButton1.Text = "Pagamentos e Retiradas";
+            this.retiradaToolStripButton1.Click += new System.EventHandler(this.retiradaToolStripButton1_Click);
+            // 
+            // toolStripSeparator16
+            // 
+            this.toolStripSeparator16.Name = "toolStripSeparator16";
+            this.toolStripSeparator16.Size = new System.Drawing.Size(6, 23);
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.Image = global::Canaan.WinApp.Properties.Resources.graph_performanceChart_5171_16x_LG;
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(84, 20);
+            this.toolStripButton1.Text = "Livro Caixa";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
             // mainPanel
             // 
             this.mainPanel.BackColor = System.Drawing.Color.Transparent;
@@ -1257,13 +1291,6 @@
             this.mainPanel.Name = "mainPanel";
             this.mainPanel.Size = new System.Drawing.Size(1219, 654);
             this.mainPanel.TabIndex = 3;
-            // 
-            // fichaDeAcompanhamentoDeVendaToolStripMenuItem
-            // 
-            this.fichaDeAcompanhamentoDeVendaToolStripMenuItem.Name = "fichaDeAcompanhamentoDeVendaToolStripMenuItem";
-            this.fichaDeAcompanhamentoDeVendaToolStripMenuItem.Size = new System.Drawing.Size(272, 22);
-            this.fichaDeAcompanhamentoDeVendaToolStripMenuItem.Text = "Ficha de Acompanhamento de Venda";
-            this.fichaDeAcompanhamentoDeVendaToolStripMenuItem.Click += new System.EventHandler(this.fichaDeAcompanhamentoDeVendaToolStripMenuItem_Click);
             // 
             // frmMain
             // 
@@ -1436,6 +1463,9 @@
         private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listagemDeClientesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem fichaDeAcompanhamentoDeVendaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem livroCaixaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator16;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
     }
 }
 

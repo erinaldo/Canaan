@@ -915,7 +915,7 @@ namespace Canaan.WinApp
         private void agendaToolStripButton_Click(object sender, EventArgs e)
         {
             var frm = new Telas.Movimentacoes.Agendamento.Agendamento();
-            frm.ShowDialog();
+            frm.Show();
         }
 
         private void sessaoToolStripButton_Click(object sender, EventArgs e)
@@ -983,6 +983,18 @@ namespace Canaan.WinApp
         private void fichaDeAcompanhamentoDeVendaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var frm = new Relatorios.Base.FiltroVenda(EnumRelatorioTipo.Venda_Recibo);
+            frm.ShowDialog();
+        }
+
+        private void livroCaixaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var frm = new Relatorios.Financeiro.Caixa.LivroCaixa.Filtro();
+            frm.ShowDialog();
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            var frm = new Relatorios.Financeiro.Caixa.LivroCaixa.Filtro();
             frm.ShowDialog();
         }
     }
